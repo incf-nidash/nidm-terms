@@ -1,0 +1,20 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "comment": "http://www.w3.org/2000/01/rdf-schema#comment",
+    "label": "http://www.w3.org/2000/01/rdf-schema#label",
+    "schema": "http://schema.org/",
+    "description": "http://purl.org/dc/terms/description",
+    "isAbout": "http://purl.org/dc/terms/isAbout",
+    "url": {
+      "@id": "http://schema.org/url",
+      "@type": "@id"
+    },
+    "ilx_id": "http://uri.interlex.org/base/ilx_0382972"
+  },
+  "description": "RECOMMENDED. This is actually the \"effective\" total readout time , defined as the readout duration, specified in seconds, that would have generated data with the given level of distortion. It is NOT the actual, physical duration of the readout train. If\u00a0EffectiveEchoSpacing\u00a0has been properly computed, it is just\u00a0EffectiveEchoSpacing * (ReconMatrixPE - 1).3\u00a0. This parameter is REQUIRED if corresponding \"field/distortion\" maps acquired with opposing phase encoding directions are present (see 8.9.4).",
+  "isAbout": "Constants.DICOM[\"TotalReadoutTime\"]",
+  "url": "https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html",
+  "comment": "There is something off with the formula to calculate this in the BIDS definition. Is it supposed to be \"/3\" rather than \".3\"?",
+  "label": "TotalReadoutTime"
+}
