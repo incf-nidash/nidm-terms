@@ -1,0 +1,20 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "comment": "http://www.w3.org/2000/01/rdf-schema#comment",
+    "label": "http://www.w3.org/2000/01/rdf-schema#label",
+    "schema": "http://schema.org/",
+    "description": "http://purl.org/dc/terms/description",
+    "isAbout": "http://purl.org/dc/terms/isAbout",
+    "url": {
+      "@id": "http://schema.org/url",
+      "@type": "@id"
+    },
+    "candidateTerms": "http://purl.org/nidash/nidm#candidateTerms",
+    "associatedTerms": "http://www.w3.org/ns/prov#specializationOf"
+  },
+  "description": "REQUIRED. The time at which each volume was acquired during the acquisition. It is described using a list of times (in JSON format) referring to the onset of each volume in the BOLD series. The list must have the same length as the BOLD series, and the values must be non-negative and monotonically increasing. This field is mutually exclusive with\u00a0RepetitionTime\u00a0and\u00a0DelayTime. If defined, this requires acquisition time (TA) be defined via either\u00a0SliceTiming\u00a0or\u00a0AcquisitionDuration\u00a0be defined.",
+  "candidateTerms": "nidm:\"volume timing\"",
+  "url": "https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html",
+  "label": "VolumeTiming"
+}

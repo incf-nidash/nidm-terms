@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "comment": "http://www.w3.org/2000/01/rdf-schema#comment",
+    "label": "http://www.w3.org/2000/01/rdf-schema#label",
+    "schema": "http://schema.org/",
+    "description": "http://purl.org/dc/terms/description",
+    "isAbout": "http://purl.org/dc/terms/isAbout",
+    "url": {
+      "@id": "http://schema.org/url",
+      "@type": "@id"
+    },
+    "candidateTerms": "http://purl.org/nidash/nidm#candidateTerms",
+    "associatedTerms": "http://www.w3.org/ns/prov#specializationOf"
+  },
+  "description": "RECOMMENDED. User specified time (in seconds) to delay the acquisition of data for the following volume. If the field is not present it is assumed to be set to zero. Corresponds to Siemens CSA header field\u00a0lDelayTimeInTR. This field is REQUIRED for sparse sequences using the\u00a0RepetitionTime\u00a0field that do not have the\u00a0SliceTiming\u00a0field set to allowed for accurate calculation of \"acquisition time\". This field is mutually exclusive with\u00a0VolumeTiming.",
+  "isAbout": "Constants.NIDM[\"DelayTime\"]",
+  "candidateTerms": "nidm:\"delay time\", but we could be more specific as there are many potential meanings of \"delay time\".",
+  "url": "https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html",
+  "label": "DelayTime"
+}

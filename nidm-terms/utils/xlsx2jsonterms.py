@@ -5,7 +5,7 @@ import pandas as pd
 from pyld import jsonld
 from os.path import join
 import json
-import math
+from urllib.parse import urlparse
 
 def main(argv):
     parser = ArgumentParser(description='This program will load in a custom Excel spreadsheet and create separate'
@@ -29,12 +29,16 @@ def main(argv):
         "description": "http://purl.org/dc/terms/description",
         "isAbout": "http://purl.org/dc/terms/isAbout",
         "url": {"@id": "http://schema.org/url", "@type": "@id"},
-        "ilx_id" : "http://uri.interlex.org/base/ilx_0382972"
+        #"ilx_id" : "http://uri.interlex.org/base/ilx_0382972",
+        "candidateTerms" : "http://purl.org/nidash/nidm#candidateTerms",
+        "associatedTerms" : "http://www.w3.org/ns/prov#specializationOf"
+
 
     }
 
     # loop through all rows and grab info if exists
     for (i,row) in df.iterrows():
+        print("processingi term: %s" %row['BIDS_Term (Key)'])
         doc = {}
         # column D "BIDS_Term (Key)" contains term label
         if pd.isnull(row['BIDS_Term (Key)']):
@@ -45,17 +49,32 @@ def main(argv):
             if not pd.isnull(row['BIDS_Definition (Value)']):
                 doc[context['description']] = row['BIDS_Definition (Value)']
             if not pd.isnull(row['URL that provided the definitions']):
-                doc[context['url']['@id']] = {"@id": row['URL that provided the definitions']}
+                try:
+                    result = urlparse(row['URL that provided the definitions'])
+                    if bool(result.scheme):
+                        doc[context['url']['@id']] = {"@id": row['URL that provided the definitions']}
+                    else:
+                        doc[context['comment']] = row['URL that provided the definitions']
+                except:
+                    doc[context['comment']] = row['URL that provided the definitions']
+            if not pd.isnull(row['NIDM_Owl_Term']):
+                if context['comment'] in doc:
+                    doc[context['comment']] = doc[context['comment']] + "\n" + row['NIDM_Owl_Term']
+                else:
+                    doc[context['comment']] = row['NIDM_Owl_Term']
             if not pd.isnull(row['NIDM_Term']):
                 doc[context['isAbout']] = row['NIDM_Term']
-            if not pd.isnull(row['NIDM_Owl_Term']):
-                doc[context['comment']] = row['NIDM_Owl_Term']
-            if not pd.isnull(row['InterLex']):
-                doc[context['ilx_id']] = row['InterLex']
+            #if not pd.isnull(row['InterLex']):
+            #    doc[context['ilx_id']] = row['InterLex']
+            if not pd.isnull(row['Candidate Terms']):
+                doc[context['candidateTerms']] = row['Candidate Terms']
+            if not pd.isnull(row['Associated Term']):
+                doc[context['associatedTerms']] = row['Associated Term']
+
 
             # write JSON file out
             compacted = jsonld.compact(doc,context)
-            with open (join(args.output_dir,row['BIDS_Term (Key)']+".json"),'w') as outfile:
+            with open (join(args.output_dir,row['BIDS_Term (Key)'].replace("/","_")+".jsonld"),'w') as outfile:
                 json.dump(compacted,outfile,indent=2)
 
 if __name__ == "__main__":
