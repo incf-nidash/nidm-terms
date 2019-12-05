@@ -93,11 +93,12 @@ def main(argv):
     with open(context_file) as context_data:
         context = json.load(context_data)
     # context = createCDEContext()
-
+    doc = {}
     # loop through all rows and grab info if exists
     for (i,row) in df.iterrows():
-        print("processingi term: %s" %row['BIDS_Term (Key)'])
-        doc = {}
+        print("starting iteration...")
+        print("processing term: %s" %row['BIDS_Term (Key)'])
+
         # column D "BIDS_Term (Key)" contains term label
         if pd.isnull(row['BIDS_Term (Key)']):
             continue
@@ -105,46 +106,56 @@ def main(argv):
 
             doc[context['@context']['label']] = row['BIDS_Term (Key)']
             if not pd.isnull(row['BIDS_Definition (Value)']):
-                doc[context['@context']['description']] = row['BIDS_Definition (Value)']
+                print("\tFound BIDS_Definition")
+                doc[context['@context']['description']] = str(row['BIDS_Definition (Value)'])
             if not pd.isnull(row['URL that provided the definitions']):
                 try:
                     result = urlparse(row['URL that provided the definitions'])
+                    print("\tFound URL that provided the definitions")
                     if bool(result.scheme):
                         doc[context['@context']['url']['@id']] = {"@id": row['URL that provided the definitions']}
                     else:
-                        doc[context['@context']['comment']] = row['URL that provided the definitions']
+                        doc[context['@context']['comment']] = str(row['URL that provided the definitions'])
                 except:
-                    doc[context['@context']['comment']] = row['URL that provided the definitions']
+                    doc[context['@context']['comment']] = str(row['URL that provided the definitions'])
             if not pd.isnull(row['NIDM_Owl_Term']):
+                print("\tFound NIDM_Owl_Term: %s" %row['NIDM_Owl_Term'] )
                 if context['@context']['comment'] in doc:
-                    doc[context['@context']['comment']] = doc[context['comment']] + "\n" + row['NIDM_Owl_Term']
+                    doc[context['@context']['comment']] = str(doc[context['@context']['comment']]) + "\n" + str(row['NIDM_Owl_Term'])
                 else:
-                    doc[context['@context']['comment']] = row['NIDM_Owl_Term']
+                    doc[context['@context']['comment']] = str(row['NIDM_Owl_Term'])
             if not pd.isnull(row['NIDM_Term']):
-                doc[context['@context']['isAbout']] = row['NIDM_Term']
+                print("\tFound NIDM_Term")
+                doc[context['@context']['isAbout']] = str(row['NIDM_Term'])
             #if not pd.isnull(row['InterLex']):
             #    doc[context['ilx_id']] = row['InterLex']
             if not pd.isnull(row['Candidate Terms']):
-                doc[context['@context']['candidateTerms']] = row['Candidate Terms']
+                print("\tFound Candidate Terms")
+                doc[context['@context']['candidateTerms']] = str(row['Candidate Terms'])
             if not pd.isnull(row['Associated Term']):
-                doc[context['@context']['relatedConcepts']] = row['Associated Term']
+                print("\tFound Associated Term")
+                doc[context['@context']['relatedConcepts']] = str(row['Associated Term'])
 
             # placeholder for additional properties that need to be included in CDEs
-            doc[context['@context']["unitCode"]] = 'undefined'
-            doc[context['@context']["unitLabel"]] = 'undefined'
-            doc[context['@context']["valueType"]] = 'undefined'
-            doc[context['@context']["minimumValue"]] = 'undefined'
-            doc[context['@context']["maximumValue"]] = 'undefined'
-            doc[context['@context']["allowableValues"]] = 'undefined'
-            doc[context['@context']["provenance"]] = 'undefined'
-            doc[context['@context']["ontologyConceptID"]] = 'undefined'
-            doc[context['@context']["subtypeCDEs"]] = 'undefined'
-            doc[context['@context']["supertypeCDEs"]] = 'undefined'
+            # doc[context['@context']["unitCode"]] = 'undefined'
+            # doc[context['@context']["unitLabel"]] = 'undefined'
+            # doc[context['@context']["valueType"]] = 'undefined'
+            # doc[context['@context']["minimumValue"]] = 'undefined'
+            # doc[context['@context']["maximumValue"]] = 'undefined'
+            # doc[context['@context']["allowableValues"]] = 'undefined'
+            # doc[context['@context']["provenance"]] = 'undefined'
+            # doc[context['@context']["ontologyConceptID"]] = 'undefined'
+            # doc[context['@context']["subtypeCDEs"]] = 'undefined'
+            # doc[context['@context']["supertypeCDEs"]] = 'undefined'
 
             # write JSON file out
             compacted = jsonld.compact(doc,args.context)
             with open (join(args.output_dir,row['BIDS_Term (Key)'].replace("/","_")+".jsonld"),'w') as outfile:
                 json.dump(compacted,outfile,indent=2)
+
+            print("size of dict: %d" %sys.getsizeof(doc))
+            doc.clear()
+
 
 if __name__ == "__main__":
    main(sys.argv[1:])
