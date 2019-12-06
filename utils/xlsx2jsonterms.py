@@ -103,7 +103,8 @@ def main(argv):
         if pd.isnull(row['BIDS_Term (Key)']):
             continue
         else:
-
+            # add type as schema.org/DefinedTerm
+            doc['@type'] = context['@context']['DefinedTerm']
             doc[context['@context']['label']] = row['BIDS_Term (Key)']
             if not pd.isnull(row['BIDS_Definition (Value)']):
                 print("\tFound BIDS_Definition")
