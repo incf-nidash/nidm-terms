@@ -32,3 +32,4 @@ To begin:
   * "subtypeCDEs":
   * "supertypeCDEs":
   * "relatedConcepts":
+  * "termSet":
