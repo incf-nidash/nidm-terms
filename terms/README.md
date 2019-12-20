@@ -33,3 +33,4 @@ To begin:
   * "supertypeCDEs":
   * "relatedConcepts":
   * "termSet":
+  * "sameAs":
