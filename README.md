@@ -7,5 +7,35 @@ Reuse of existing neuroscience data relies, in part, on our ability to understan
 
 ### Getting Started
 
-* [How do I submit terms?](https://github.com/NIDM-Terms/terms/blob/master/terms/README.md)
+* How do I search for terms?
+	* As work on the grant matures there will be many ways to search for terms.  Below is a list of available methods to perform broad term searches.  
+		* Use our [NIDM-Terms SciCrunch](https://scicrunch.org/nidm-terms)site 
+		* Annotating existing BIDS datasets using [PyNIDM's](https://github.com/INCF-NIDASH/PyNIDM) bidsmri2nidm tool
+			* The bidsmri2nidm tool will iterate over your BIDS dataset and help you create JSON "sidecar" files for variables in the TSV files contained.  During annotation, a query for each variable will be sent to the InterLex terminology server allowing the user to select which term is appropriate to annotate their data or provides the capability to add a new term.
+		* Annotate existing CSV files using [PyNIDM's](https://github.com/INCF-NIDASH/PyNIDM) csv2nidm tool
+			* Similar to the BIDS example, this tool will create a JSON mapping file which relates your variables to terms in the NIDM-Terms vocabulary.  
+		* WIP: Use our javascript tool
+			* This tool works in a similar fashion to bidsmri2nidm and csv2nidm where one can query the InterLex and select terms to annotate a data file and/or create new terms when needed.
+			* This tool is a work in progress and will be linked when ready for testing.
+		
+* How do I submit new terms and where do they go?
+	* NIDM-Terms is a community-driven vocabulary seeded with terms from prior neuroimaging-based data annotations and existing project (e.g. [ReproSchemas](https://github.com/ReproNim/reproschema), [mentalhealthDB](https://github.com/ChildMindInstitute/mhdb), etc.).  Because it is a community-driven vocabulary, we are developing step-by-step procedures for submitting new terms, community discussion around submitted terms, curration of new terms which connect them (when possible) to existing, related terms, or broader concepts putting new terms in context of other known entities.
+	* WIP: Options for submitting new terms
+		* Using the [NIDM-Terms GitHub repository](https://github.com/NIDM-Terms/terms/blob/master/terms/README.md)
+		* Submit via our website [NIDM-Terms SciCrunch](https://scicrunch.org/nidm-terms)
+			* When you submit a new term via the NIDM-Terms website, a JSON-LD file describing the new term and properties will be created and submitted to this archive (see [README](https://github.com/NIDM-Terms/terms/blob/master/terms/README.md))
+			* Contributors who have choosen to participate in our community vocabulary building activities by watching this repo or cloning it will receive a notice that a new term has been submitted as a pull request.
+			* Discussion / edits to the submitted term will ensue in the typical way social coding is done in GitHub
+			* Once discussion has ended and the participating community has decided the term is appropriately well-defined for the NIDM-Terms vocabulary, it will be merged with the NIDM-Terms GitHub repository and pushed to the [NIDM-Terms SciCrunch](https://scicrunch.org/nidm-terms)site for broad use.
+				* For those interested in using the JSON-LD files directly, the term description files will remain in this repository as well.
+				* For those interested in using/querying terms via [OWL](https://www.w3.org/OWL/)representations, there will be a content negotiation layer added to the [NIDM-Terms SciCrunch](https://scicrunch.org/nidm-terms)site to download the NIDM-Terms vocabulary in common RDF serialization formats.
+
+* WIP: How do I contribute to NIDM-Terms?
+	  * We are firm supporters of open science and inclusivity.  We are always happy to have interested people involved. Below are some steps to get involved.
+	  * Create a free account on our [NIDM-Terms SciCrunch](https://scicrunch.org/nidm-terms)site and click "Join the NIDM Terminology Community" link
+	  * Fork our [NIDM-Terms GitHub repository](https://github.com/NIDM-Terms/terms)
+
+* WIP: Term curration and Governance
+	* We are currently working on a governance structure for this work.  We are basing it on other open science projects.  Please stay tuned for more information.
+	  
 
