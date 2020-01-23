@@ -19,7 +19,7 @@ Reuse of existing neuroscience data relies, in part, on our ability to understan
 * **How do I search for terms?**
 
 	* As work on the grant matures there will be many ways to search for terms.  Below is a list of available methods to perform broad term searches.  
-		* Use our [NIDM-Terms SciCrunch](https://scicrunch.org/nidm-terms)site 
+		* Use our [NIDM-Terms SciCrunch](https://scicrunch.org/nidm-terms) site 
 		* Annotating existing BIDS datasets using [PyNIDM's](https://github.com/INCF-NIDASH/PyNIDM) bidsmri2nidm tool		
 			* The bidsmri2nidm tool will iterate over your BIDS dataset and help you create JSON "sidecar" files for variables in the TSV files contained.  During annotation, a query for each variable will be sent to the InterLex terminology server allowing the user to select which term is appropriate to annotate their data or provides the capability to add a new term.
 		* Annotate existing CSV files using [PyNIDM's](https://github.com/INCF-NIDASH/PyNIDM) csv2nidm tool
@@ -41,7 +41,7 @@ Reuse of existing neuroscience data relies, in part, on our ability to understan
 			* Discussion / edits to the submitted term will ensue in the typical way social coding is done in GitHub
 			* Once discussion has ended and the participating community has decided the term is appropriately well-defined for the NIDM-Terms vocabulary, it will be merged with the NIDM-Terms GitHub repository and pushed to the [NIDM-Terms SciCrunch](https://scicrunch.org/nidm-terms)site for broad use.
 				* For those interested in using the JSON-LD files directly, the term description files will remain in this repository as well.
-				* For those interested in using/querying terms via [OWL](https://www.w3.org/OWL/)representations, there will be a content negotiation layer added to the [NIDM-Terms SciCrunch](https://scicrunch.org/nidm-terms)site to download the NIDM-Terms vocabulary in common RDF serialization formats.
+				* For those interested in using/querying terms via [OWL](https://www.w3.org/OWL/)representations, there will be a content negotiation layer added to the [NIDM-Terms SciCrunch](https://scicrunch.org/nidm-terms) site to download the NIDM-Terms vocabulary in common RDF serialization formats.
 
 * **WIP: How do I contribute to NIDM-Terms?**
 	 
