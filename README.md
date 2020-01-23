@@ -8,10 +8,15 @@ Reuse of existing neuroscience data relies, in part, on our ability to understan
 #### Core Project Team
 
 [David Keator](www.davidkeator.com) - UC Irvine
+
 [Karl Helmer](https://www.nmr.mgh.harvard.edu/user/6787) – MGH / Harvard
+
 [Jeff Grethe](https://profiles.ucsd.edu/jeffrey.grethe) – UC San Diego
+
 [Jean-Baptiste Poline](https://www.mcgill.ca/neuro/jean-baptiste-poline-0) – McGill
+
 [Satra Ghosh](https://satra.cogitatum.org/group/) – MIT
+
 [Theo G.M. VanErp](https://www.faculty.uci.edu/profile.cfm?faculty_id=5812) - UC Irvine
 
 ### Getting Started
