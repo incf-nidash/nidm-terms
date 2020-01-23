@@ -16,7 +16,7 @@ Reuse of existing neuroscience data relies, in part, on our ability to understan
 
 ### Getting Started
 
-* How do I search for terms?
+* **How do I search for terms?**
 
 	* As work on the grant matures there will be many ways to search for terms.  Below is a list of available methods to perform broad term searches.  
 		* Use our [NIDM-Terms SciCrunch](https://scicrunch.org/nidm-terms)site 
@@ -29,7 +29,7 @@ Reuse of existing neuroscience data relies, in part, on our ability to understan
 			* This tool works in a similar fashion to bidsmri2nidm and csv2nidm where one can query the InterLex and select terms to annotate a data file and/or create new terms when needed.
 			* This tool is a work in progress and will be linked when ready for testing.
 		
-* How do I submit new terms and where do they go?
+* **How do I submit new terms and where do they go?**
 
 	* NIDM-Terms is a community-driven vocabulary seeded with terms from prior neuroimaging-based data annotations and existing project (e.g. [ReproSchemas](https://github.com/ReproNim/reproschema), [mentalhealthDB](https://github.com/ChildMindInstitute/mhdb), etc.).  Because it is a community-driven vocabulary, we are developing step-by-step procedures for submitting new terms, community discussion around submitted terms, curration of new terms which connect them (when possible) to existing, related terms, or broader concepts putting new terms in context of other known entities.	
 	* WIP: Options for submitting new terms
@@ -43,13 +43,13 @@ Reuse of existing neuroscience data relies, in part, on our ability to understan
 				* For those interested in using the JSON-LD files directly, the term description files will remain in this repository as well.
 				* For those interested in using/querying terms via [OWL](https://www.w3.org/OWL/)representations, there will be a content negotiation layer added to the [NIDM-Terms SciCrunch](https://scicrunch.org/nidm-terms)site to download the NIDM-Terms vocabulary in common RDF serialization formats.
 
-* WIP: How do I contribute to NIDM-Terms?
+* **WIP: How do I contribute to NIDM-Terms?**
 	 
 	 * We are firm supporters of open science and inclusivity.  We are always happy to have interested people involved. Below are some steps to get involved.
 	 * Create a free account on our [NIDM-Terms SciCrunch](https://scicrunch.org/nidm-terms)site and click "Join the NIDM Terminology Community" link
 	 * Fork our [NIDM-Terms GitHub repository](https://github.com/NIDM-Terms/terms)
 
-* WIP: Term curration and Governance
+* **WIP: Term curration and Governance**
 	* We are currently working on a governance structure for this work.  We are basing it on other open science projects.  Please stay tuned for more information.
 	  
 
