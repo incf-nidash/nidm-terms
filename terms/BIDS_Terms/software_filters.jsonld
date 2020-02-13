@@ -1,7 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "description": "OPTIONAL. List of temporal and/or spatial software filters applied (e.g. \"SSS\",\u00a0\"SpatialCompensation\"). Note that parameters should be defined in the general MEG sidecar .json file. Indicate\u00a0n/a\u00a0in the absence of software filters applied.",
-  "url": "https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/02-magnetoencephalography.html",
-  "comment": "nidm:\"signal filter\" we don't distinguish between hardware and software filters",
-  "label": "software_filters"
+  "@type": "DefinedTerm",
+  "description": "OPTIONAL. List of temporal and/or spatial software filters applied (e.g. SSS, SpatialCompensation). Note that parameters should be defined in the general MEG sidecar .json file. Indicate n/a in the absence of software filters applied.",
+  "candidateTerms": "software_filters",
+  "comment": [
+    "Note that the NIDM-E term is more general and applies to both hardware and software filters.",
+    "To be discussed"
+  ],
+  "label": "software_filters",
+  "provenance": "http://purl.org/nidash/bids",
+  "relatedConcepts": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+  "sameAs": "http://purl.org/nidash/nidm#AppliedFilters"
 }

@@ -1,8 +1,10 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
   "@type": "DefinedTerm",
-  "description": "REQUIRED. Name of the task (for resting state use the\u00a0rest\u00a0prefix). Different Tasks SHOULD NOT have the same name. The Task label is derived from this field by removing all non alphanumeric ([a-zA-Z0-9]) characters.",
-  "url": "https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/02-magnetoencephalography.html",
-  "comment": "same responses as above for MRI for following terms up to and including CogPOID",
-  "label": "TaskName"
+  "description": "REQUIRED. Name of the task. No two tasks should have the same name. Task label (task-) included in the file name is derived from this field by removing all non alphanumeric ([a-zA-Z0-9]) characters. For example task name faces n-back will corresponds to task label facesnback. A RECOMMENDED convention is to name resting state task using labels beginning with rest.",
+  "candidateTerms": "TaskName",
+  "comment": "To be discussed",
+  "label": "TaskName",
+  "provenance": "http://purl.org/nidash/bids",
+  "relatedConcepts": "http://www.w3.org/2002/07/owl#DatatypeProperty"
 }

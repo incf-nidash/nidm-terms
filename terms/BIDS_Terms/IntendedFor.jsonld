@@ -1,6 +1,10 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "description": "RECOMMENDED. This can be an MRI/CT or a file containing the operative photo, x-ray or drawing with path relative to the project folder. If only a surface reconstruction is available, this should point to the surface reconstruction file. Note that this file should have the same coordinate system specified in\u00a0iEEGCoordinateSystem. For example,\u00a0T1:\u00a0sub-<label>/ses-<label>/anat/sub-01_T1w.nii.gz\u00a0Surface:\u00a0/derivatives/surfaces/sub-<label>/ses-<label>/anat/sub-01_T1w_pial.R.surf.gii\u00a0Operative photo:\u00a0/sub-<label>/ses-<label>/ieeg/sub-0001_ses-01_acq-photo1_photo.jpg\u00a0Talairach:\u00a0/derivatives/surfaces/sub-Talairach/ses-01/anat/sub-Talairach_T1w_pial.R.surf.gii",
-  "url": "https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/04-intracranial-electroencephalography.html",
-  "label": "IntendedFor"
+  "@type": "DefinedTerm",
+  "description": "OPTIONAL. Path or list of path relative to the subject subfolder pointing to the structural MRI, possibly of different types if a list is specified, to be used with the MEG recording. The path(s) need(s) to use forward slashes instead of backward slashes (e.g. ses-/anat/sub-01_T1w.nii.gz).",
+  "candidateTerms": "IntendedFor",
+  "comment": "To be discussed",
+  "label": "IntendedFor",
+  "provenance": "http://purl.org/nidash/bids",
+  "relatedConcepts": "http://www.w3.org/2002/07/owl#DatatypeProperty"
 }

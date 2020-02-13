@@ -1,6 +1,10 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "description": "OPTIONAL. Optional field to specify the group that the electrode is a part of. Note that any group specified here should match a group specified in\u00a0_channels.tsv.",
-  "url": "https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/04-intracranial-electroencephalography.html",
-  "label": "group"
+  "@type": "DefinedTerm",
+  "description": "OPTIONAL. Which group of channels (grid/strip/seeg/depth) this channel belongs to. This is relevant because one group has one cable-bundle and noise can be shared. This can be a name or number. Note that any groups specified in _electrodes.tsv must match those present here.",
+  "candidateTerms": "group",
+  "comment": "To be discussed",
+  "label": "group",
+  "provenance": "http://purl.org/nidash/bids",
+  "relatedConcepts": "http://www.w3.org/2002/07/owl#DatatypeProperty"
 }

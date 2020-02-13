@@ -1,7 +1,13 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "description": "RECOMMENDED. Manufacturer's designation of the EEG cap model (e.g., \"actiCAP 64 Ch Standard-2\").",
-  "url": "https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/03-electroencephalography.html#electroencephalography-eeg",
-  "comment": "dcm\"manufacturers model name\"",
-  "label": "CapManufacturersModelName"
+  "@type": "DefinedTerm",
+  "description": "OPTIONAL. Manufacturer\u2019s designation of the EEG cap model (e.g., M10)",
+  "candidateTerms": "CapManufacturersModelName",
+  "comment": [
+    "Instead of a specific term, could use the DICOM tag ManufacturerModelName and use it as a object property for the prov:Entity cap.",
+    "To be discussed"
+  ],
+  "label": "CapManufacturersModelName",
+  "provenance": "http://purl.org/nidash/bids",
+  "relatedConcepts": "http://www.w3.org/2002/07/owl#DatatypeProperty"
 }

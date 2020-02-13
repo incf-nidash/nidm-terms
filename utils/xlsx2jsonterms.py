@@ -46,7 +46,8 @@ def createCDEContext(filename=None):
         "ontologyConceptID" : "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#ontologyConceptID",
         "subtypeCDEs" : "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#subtypeCDEs",
         "supertypeCDEs" : "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#supertypeCDEs",
-        "relatedConcepts" : "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#relatedConcepts"
+        "relatedConcepts" : "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#relatedConcepts",
+        "levels" : "https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html"
     }
 
     # save context as filename
