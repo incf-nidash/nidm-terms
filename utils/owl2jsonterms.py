@@ -62,7 +62,8 @@ def main(argv):
         # create empty document dictionary
         doc={}
         # add type as schema.org/DefinedTerm
-        doc['@type'] = context['@context']['DefinedTerm']
+        doc['@type'] = []
+        #doc['@type'].append(context['@context']['DefinedTerm'])
         #store term as localpart of subject identifier
         url, fragment = urldefrag(so[0])
         doc[context['@context']['candidateTerms']] = fragment
@@ -93,11 +94,7 @@ def main(argv):
                     doc[context['@context']['comment']] = []
                     doc[context['@context']['comment']].append(str(tuples[1]))
             elif tuples[0] == RDF["type"]:
-                if context['@context']['relatedConcepts'] in doc:
-                    doc[context['@context']['relatedConcepts']].append(str(tuples[1]))
-                else:
-                    doc[context['@context']['relatedConcepts']] = []
-                    doc[context['@context']['relatedConcepts']].append(str(tuples[1]))
+                doc['@type'].append(str(tuples[1]))
 
         # save JSON-LD file
         if args.context is None:
