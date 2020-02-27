@@ -16,7 +16,7 @@ import numpy as np
 # parse lists with different string formats
 def parseRV(df_row,doc,context):
     '''
-    This function pareses ValueRange strings with different formats and assigns them to the proper jsonld terms.
+    This function parse ValueRange strings with different formats and assigns them to the proper jsonld terms.
 
     :param df_row:
     :param doc:
@@ -30,64 +30,10 @@ def parseRV(df_row,doc,context):
     minimum=9999999999999
     maximum=-999999999999
     additional_values=[]
-    temp_level=''
     level=[]
-    state=1
-    #for digit in row:
-    #    if row in '':
-    #        continue
-    #    else:
-    #        if (digit.isdigit()):
-    #            if (digit.isdigit()) and state==1:
-    #                aval = aval + digit
-    #                if digit == ':':
-    #                    state=2
-    #                elif digit ==':' and state==2:
-    #                    state=3
-    #                    minimum = aval
-    #                elif (digit.isdigit()) and state==3:
-    #                    maximum = maximum + digit
-    #                elif digit == ';' and state==3:
-    #                    additional_values = additional_values + digit
-    #                    state=4
-    #                elif digit.isdigit() and state==4:
-    #                    additional_values = additional_values + digit
-    #            else:
-    #                values = values + digit
-    #                values = digit.split(';')
-    #        elif digit.isalpha() or digit.isalpha() and digit.isdigit():
-    #            temp_level = temp_level + digit
-    #            if digit == ';' and state == 1:
-    #                level.append(temp_level)
-    #                temp_level = ''
 
 
-        #if (digit.isdigit()) and state==1:
-         #   minimum=minimum + digit
-        #elif digit == ':':
-         #   state=2
-         #   continue
-        #elif (digit.isdigit()) and state==2:
-         #   maximum=maximum + digit
-        #elif digit == ';' and state==2:
-         #  additional_values.append(digit)
-         #  state=3
-        #elif digit == ';' and state == 1:
-         #   state=3
-         #   continue
-        #elif digit.isdigit() and state==3:
-         #   additional_values.append(digit)
-        #elif (digit.isalpha() and (state==1 or state==4)):
-         #   level.append(digit)
-         #   state = 4
-        #elif digit == ';' and state == 4:
-         #   continue
-        #  temp_level=''
-
-
-
-
-
+    # passes over rows with no values
     if isinstance(row,float) and np.isnan(row) :
         return
 
@@ -95,20 +41,26 @@ def parseRV(df_row,doc,context):
     semicolon_splits = row.split(';')
     colon_splits = row.split("::")
 
-    # parse and evaluate values separated by semicolons only
+    # parse and evaluate values separated by semicolons only and assigns them to allowable values
     if len(semicolon_splits) > 1:
         for token in semicolon_splits:
             if token.isdigit() and len(level) == 0:
                 additional_values.append(int(token))
+                doc[context['@context']['allowableValues']] = semicolon_splits
             elif not token.isdigit():
                 level.append(token)
+                doc[context['@context']['allowableValues']] = semicolon_splits
             elif token.isdigit() and len(level) > 0:
                 level.append(token)
     elif not semicolon_splits[0][0].isdigit():
         additional_values.append(semicolon_splits)
+        doc[context['@context']['allowableValues']] = additional_values
     if len(additional_values) > 1:
         minimum = min(additional_values)
         maximum = max(additional_values)
+        doc[context['@context']['minimumValue']] = int(minimum)
+        doc[context['@context']['maximumValue']] = int(maximum)
+
 
     # parse and evaluate values separated by colons and semicolons and return min and max values
     if len(colon_splits) > 1:
@@ -120,39 +72,90 @@ def parseRV(df_row,doc,context):
                     additional_values.append(minimum)
                 elif int(token) > maximum:
                     maximum = int(token)
+                allowable_range = list(range(int(minimum),int(maximum)))
+                allowable_range.append(maximum)
+                doc[context['@context']['allowableValues']] = allowable_range
+            minimum1 = minimum
             temp = token.split(';')
+            # detect out of range values, set the maximum number, and include them in allowable values
             if len(temp) > 1:
                 maximum = max(temp)
+                min_range = int(min(temp))
                 additional_values.append(temp)
+                allowable_range = list(range(int(minimum1),int(min_range)))
+                allowable_range.append(min_range)
+                doc[context['@context']['allowableValues']] = allowable_range
+                # in the case of out of range negative numbers this statement adjust the minimum and maximum values and still includes the negative number in allowable values
+                if min_range < 0:
+                    allowable_range = list(range(int(minimum1),int(maximum)))
+                    allowable_range.append(int(maximum))
+                    allowable_range.append(min_range)
+                    doc[context['@context']['allowableValues']] = allowable_range
 
+        # assign minimum and maximum values
         doc[context['@context']['minimumValue']] = int(minimum)
         doc[context['@context']['maximumValue']] = int(maximum)
 
-    doc[context['@context']['allowableValues']] = additional_values
 
 
 
+def parseNotes(df_row,doc,context):
+
+    row = df_row['Notes']
+    # passes over rowns with no values
 
 
-
-    #if (additional_values!='') and (int(additional_values) > int(maximum)):
-    #    maximum = additional_values
-
-#    if minimum != '' and maximum != '':
-#        for i in range(int(minimum),int(maximum)):
-#           doc[context['@context']['allowableValues']] = doc[context['@context']['allowableValues']] + "," + int(i)
-#        if additional_values != '':
-#           doc[context['@context']['allowableValues']] = doc[context['@context']['allowableValues']] + "," + str(additional_values)
+    split_string = []
+    equal_split = []
+    levels = []
+    check = ''
+    split_at_space = []
 
 
-#    if minimum != '':
-#       doc[context['@context']['minimumValue']] = doc[context['@context']['minimumValue']] + "," + minimum
-#
-#    if maximum != '':
-#        doc[context['@context']['maximumValue']] = doc[context['@context']['maximumValue']] + "," + maximum
+    if isinstance(row,float) and np.isnan(row) :
+        return
+
+    if row == '?':
+        return
+
+    split_at_semicolon = row.split(';')
 
 
+    if len(split_at_semicolon) > 1:
+        for l in range(0, len(split_at_semicolon)):
+            if l != '=':
+                doc[context['@context']['unitLabel']] = split_at_semicolon[0]
+                continue
+            else:
+                for x in split_at_semicolon:
+                    equal_split = x.split('=')
+                    level1 = equal_split[0]
+                    level2 = equal_split[1]
+                    levels1n2 = [[level1],[level2]]
+                    levels.append(levels1n2)
+                    #assign levels
+                doc[context['@context']['levels']] = levels
 
+    if len(split_at_semicolon) < 1:
+        string = split_at_semicolon
+        for element in range(0, len(string)):
+            if element == '=':
+                equal_split_1 = string.split('=')
+                #assign levels
+            elif element == ':':
+                colon_split = string.split(':')
+                level_1 = colon_split[0]
+                level_2 = colon_split[1]
+            else:
+                for i in string:
+                    split_string = string.split()
+                    if split_string[0] == 'Enter':
+                        doc[context['@context']['allowableValues']] = '0'
+                        doc[context['@context']['unitLabel']] = row
+                    else:
+                        text = row
+                        #assign text to an appropriate property
+                        doc[context['@context']['unitLabel']] = text
 
 
 
@@ -229,14 +232,12 @@ def main(argv):
 
         parseRV(row,doc,context)
 
+        #parseNotes(row,doc,context)
+
 
         # placeholder for additional properties that need to be included in CDEs
         # doc[context['@context']["unitCode"]] = 'undefined'
         # doc[context['@context']["unitLabel"]] = 'undefined'
-        # doc[context['@context']["valueType"]] = 'undefined'
-        # doc[context['@context']["minimumValue"]] = 'undefined'
-        # doc[context['@context']["maximumValue"]] = 'undefined'
-        # doc[context['@context']["allowableValues"]] = 'undefined'
         # doc[context['@context']["provenance"]] = 'undefined'
         # doc[context['@context']["ontologyConceptID"]] = 'undefined'
         # doc[context['@context']["subtypeCDEs"]] = 'undefined'
@@ -250,6 +251,9 @@ def main(argv):
 
         print("size of dict: %d" %sys.getsizeof(doc))
         doc.clear()
+
+
+
 
 if __name__ == "__main__":
    main(sys.argv[1:])
