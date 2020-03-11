@@ -110,6 +110,10 @@ def parseNotes(df_row,doc,context):
     levels = []
     check = ''
     split_at_space = []
+    levels1n2 = []
+    word = ''
+    lev1n2 = []
+    equalsplit = []
 
 
     if isinstance(row,float) and np.isnan(row) :
@@ -122,40 +126,52 @@ def parseNotes(df_row,doc,context):
 
 
     if len(split_at_semicolon) > 1:
-        for l in range(0, len(split_at_semicolon)):
-            if l != '=':
-                doc[context['@context']['unitLabel']] = split_at_semicolon[0]
-                continue
-            else:
-                for x in split_at_semicolon:
-                    equal_split = x.split('=')
-                    level1 = equal_split[0]
-                    level2 = equal_split[1]
-                    levels1n2 = [[level1],[level2]]
-                    levels.append(levels1n2)
-                    #assign levels
-                doc[context['@context']['levels']] = levels
+        for s in range (0, len(split_at_semicolon)):
+            semi_string = split_at_semicolon[s]
+            for l in semi_string:
+                if semi_string[0] == 'In years':
+                    doc[context['@context']['unitLabel']] = semi_string[0]
+                elif l == '=':
+                    equalsplit = semi_string.split('=')
+                    #lev1 = equalsplit[0]
+                    #lev2 = equalsplit[1]
+                    #lev1n2 = [[lev1],[lev2]]
+                    equalsplit.append(equalsplit)
+                doc[context['@context']['levels']] = str(equalsplit)
 
-    if len(split_at_semicolon) < 1:
-        string = split_at_semicolon
-        for element in range(0, len(string)):
-            if element == '=':
-                equal_split_1 = string.split('=')
-                #assign levels
-            elif element == ':':
-                colon_split = string.split(':')
-                level_1 = colon_split[0]
-                level_2 = colon_split[1]
-            else:
-                for i in string:
+
+        #for x in split_at_semicolon:
+         #   equal_split = x.split('=')
+         #   level1 = equal_split[0]
+          #  level2 = equal_split[1]
+           # levels1n2 = [[level1],[level2]]
+            #levels1n2.append(levels1n2)
+                    #assign levels
+        #doc[context['@context']['levels']] = str(levels1n2)
+
+
+    else:
+        string = row
+        equal_split_t = string.split('=')
+        space_split = string.split()
+
+        if len(equal_split_t) > 1:
+            doc[context['@context']['levels']] = equal_split_t
+        for element in space_split:
+            for z in element:
+                if z == ':':
+                    colon_split = space_split.split(':')
+                    level_1 = colon_split[0]
+                    level_2 = colon_split[1]
+                    doc[context['@context']['levels']] = str[[level_1],[level_2]]
+                else:
                     split_string = string.split()
                     if split_string[0] == 'Enter':
                         doc[context['@context']['allowableValues']] = '0'
-                        doc[context['@context']['unitLabel']] = row
+                        doc[context['@context']['unitLabel']] = string
                     else:
-                        text = row
                         #assign text to an appropriate property
-                        doc[context['@context']['unitLabel']] = text
+                        doc[context['@context']['unitLabel']] = string
 
 
 
@@ -232,7 +248,7 @@ def main(argv):
 
         parseRV(row,doc,context)
 
-        #parseNotes(row,doc,context)
+        parseNotes(row,doc,context)
 
 
         # placeholder for additional properties that need to be included in CDEs
