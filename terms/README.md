@@ -29,8 +29,8 @@ Below is an exhaustive set of possible term properties.  The specific term you a
   * **"allowableValues":** For categorical variables the allowable values.  For example, handedness may be Right=1, Left=5, Ambidextrious=10 so the allowableValues is the set 1,5,10
   * **"levels":** Levels is a concept that corresponds to the [BIDS](https://bids.neuroimaging.io/) standard for categorical variables where you're mapping the value (often an integer) to some text string.  Using the handedness example from above, the levels would be {1=Right, 5=Left, 10=Ambidextrious}
   * **"isAbout":** This property is typically added during term curation.  It is a link to terms that this term "is about" providing context for this term amongst broader terminologies.
-  * **"hasMeasurementType":**
-  * **"hasDatumType":**
+  * **"measureOf":**
+  * **"datumType":**
   * **"provenance":** A description of how the data element is recorded or derived.
   * **"subtypeCDEs":** This property is typically added during term curation.  It links the term to lower-level (child) terms in the NIDM-Terms terminology if applicable.
   * **"supertypeCDEs":** This property is typically added during term curation.  It links the term to higher-level (parent) terms in the NIDM-Terms terminology if applicable.
