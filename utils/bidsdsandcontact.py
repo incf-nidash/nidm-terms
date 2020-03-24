@@ -19,9 +19,10 @@ def main(argv):
     path = args.directory
 
     df_tuples = []
-    author = []
-    ref = []
-    T_name = ''
+    global author
+    global ref
+    global T_name
+
 
     #acress every ds individually
     for i in dsid:
@@ -43,22 +44,35 @@ def main(argv):
                     for key in dd_read:
                         if key == 'Authors':
                             author = [dd_read[key]]
+                            break
+                        else:
+                            author = ['']
+                            continue
 
-                        if key == 'ReferencesAndLinks':
-                            ref = dd_read[key]
+                    for k in dd_read:
+                        if k == 'ReferencesAndLinks':
+                            ref = [dd_read[k]]
+                            break
+                        else:
+                            ref = ['']
+                            continue
 
-                        if key == 'Name':
-                            T_name = [dd_read[key]]
+                    for element in dd_read:
+                        if element == 'Name':
+                            T_name = [dd_read[element]]
+                            break
+                        else:
+                            T_name = ['']
+                            continue
 
 
-                    #craetes a tuple file with elements extracted to convert to a data frame
-                    tuples = list(zip(ds_num, T_name, author, ref))
-                    df_tuples.extend(tuples)
+        #craetes a tuple file with elements extracted to convert to a data frame
+        tuples = list(zip(ds_num, T_name, author, ref))
+        df_tuples.extend(tuples)
+
 
         path = args.directory
-        author = []
-        ref = []
-        T_name = ''
+
 
 
     #create and save data frame to csv
@@ -66,7 +80,6 @@ def main(argv):
     df.to_csv(args.output_dir+'Openneuro_BIDS_DSID_and_Contactinfo.csv', header = ['ds_number', 'Task Name','Author','Reference'], index=False)
 
     print('Data set identifications and contact information have been saved into a csv file in your output directory')
-
 
 
 
