@@ -100,8 +100,11 @@ def level_parser(df_row,doc,context):
         doc[context['@context']['maximumValue']] = int(maximum)
 
 
+    for k in levels:
+        doc[context['@context']['levels']] = k
+        for v in [levels[k]]:
+            doc[context['@context']['levels'][v]] = levels[k][v]
 
-    doc[context['@context']['levels']] = levels
 
     doc[context['@context']['allowableValues']] = all_val
 
@@ -188,14 +191,17 @@ def main(argv):
         doc['@type'] = context['@context']['DefinedTerm']
         doc[context['@context']['label']] = row['Term']
 
+        #if not pd.isnull(row['label']):
+         #   print("\tFound OpenNeuro Label")
+         #   doc[context['@context']['label']] = str(row['LongName'])
+
         if not pd.isnull(row['Description']):
-                print("\tFound OpenNeuro_Definition")
-                doc[context['@context']['description']] = str(row['Description'])
+            print("\tFound OpenNeuro_Definition")
+            doc[context['@context']['description']] = str(row['Description'])
 
         if not pd.isnull(row['ValueType']):
             print("\tFound OpenNeuro_ValueType")
             doc[context['@context']['valueType']] = str(row['ValueType'])
-
 
         if not pd.isnull(row['Units']):
             print("\tFound OpenNeuro_Units")
