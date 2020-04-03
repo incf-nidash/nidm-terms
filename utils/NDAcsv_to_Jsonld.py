@@ -248,7 +248,7 @@ def main(argv):
 
         parseRV(row,doc,context)
 
-        parseNotes(row,doc,context)
+        #parseNotes(row,doc,context)
 
 
         # placeholder for additional properties that need to be included in CDEs
