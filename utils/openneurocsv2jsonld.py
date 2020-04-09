@@ -122,13 +122,10 @@ def level_parser(df_row,doc,context):
         doc[context['@context']['minimumValue']] = int(minimum)
         doc[context['@context']['maximumValue']] = int(maximum)
 
-    # assign level dict to the jsonld property levels
+    # assign levels to the jsonld property levels
     doc[context['@context']['levels']] = []
     for key,value in levels.items():
         doc[context['@context']['levels']].append(key + ":" + value)
-
-    #compacted['@context']['levels'] = {}
-    #compacted['@context']['levels'] = doc[context['@context']['levels']]
 
 
     # assign allowable values to allowableValues in jsonld property
@@ -311,7 +308,6 @@ def main(argv):
             #write JSON file out
             compacted = jsonld.compact(doc,args.context)
 
-            #level_parser(row,doc,context,compacted)
 
             # opens pre-made directory with with a number that matches the ds ID and creates a jsonld file inside that directory
             with open (join((os.path.join(args.output_dir, str(l))), row['Term'].replace("/","_") + '.jsonld'),'w+') as outfile:
