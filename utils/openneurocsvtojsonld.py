@@ -5,8 +5,6 @@ from pyld import jsonld
 from os.path import join
 import json
 import shutil
-import ast
-from urllib.parse import urlparse
 import tempfile
 import urllib.request as ur
 from urllib.parse import urlparse
@@ -32,7 +30,7 @@ def url_validator(url):
 
 
 
-def level_parser(df_row,doc,context,compacted):
+def level_parser(df_row,doc,context):
     '''
     Parse through term levels in the CVS file and assign them to a dictionary,
     and assign minimum, maximum, and allowable values to doc
@@ -57,6 +55,8 @@ def level_parser(df_row,doc,context,compacted):
     # passes over rows with no values
     if isinstance(row,float) and np.isnan(row) :
         return
+
+    print("\tFound OpenNeuro_levels")
 
     #split each row in levels at semicolon
     semicolon_splits = row.split(';')
@@ -168,6 +168,31 @@ def isAbout_parser(df_row,doc,context):
     doc[context['@context']['isAbout']] = str(isabouts)
 
 
+def isPartOf_parser(df_row,doc,context):
+
+    # extract the levels column from the data frame
+    row = df_row['isPartOf']
+
+    ispartof = []
+
+
+    # passes over rows with no values
+    if isinstance(row,float) and np.isnan(row) :
+        return
+
+    semicolon_splits = row.split(';')
+
+    #split the string by semicolon and validate each URL using the url_validator function
+    for s in semicolon_splits:
+        url_validator(s)
+
+        if s is not False:
+            ispartof.append(s)
+
+    print("\tFound OpenNeuro_isAbout")
+    doc[context['@context']['isAbout']] = str(ispartof)
+
+
 
 def main(argv):
     parser = ArgumentParser(description='This program will load in a custom csv spreadsheet and create separate'
@@ -227,7 +252,7 @@ def main(argv):
         path_to_dir = os.path.join(args.output_dir, str(l))
         if os.path.exists(path_to_dir):
             shutil.rmtree(path_to_dir)
-        ds_dir = os.mkdir(os.path.join(args.output_dir, str(l)))
+        os.mkdir(os.path.join(args.output_dir, str(l)))
 
         # lock the dataframe to only read rows with specific ds_number
         dataset = df.loc[df['ds_number'] == dl]
@@ -262,13 +287,28 @@ def main(argv):
                 print("\tFound OpenNeuro_Units")
                 doc[context['@context']['hasUnit']] = str(row['Units'])
 
+            #assign unit label to measureOf property in doc
+            if not pd.isnull(row['measureOf']):
+                print("\tFound OpenNeuro_measureOf")
+                doc[context['@context']['measureOf']] = str(row['measureOf'])
+
+            #assign unit label to datumType property in doc
+            if not pd.isnull(row['datumType']):
+                print("\tFound OpenNeuro_measureOf")
+                doc[context['@context']['datumType']] = str(row['datumType'])
+
+            if not pd.isnull(row['isPartOf']):
+                print("\tFound OenNeuro_isPartOf")
+                doc[context['@context']['isPartOf']] = str(row['isPartOf'])
+
 
             isAbout_parser(row,doc,context)
-            #level_parser(row,doc,context)
+            isPartOf_parser(row,doc,context)
+            level_parser(row,doc,context)
 
             #write JSON file out
             compacted = jsonld.compact(doc,args.context)
-            level_parser(row,doc,context,compacted)
+            #level_parser(row,doc,context,compacted)
 
             # opens pre-made directory with with a number that matches the ds ID and creates a jsonld file inside that directory
             with open (join((os.path.join(args.output_dir, str(l))), row['Term'].replace("/","_") + '.jsonld'),'w+') as outfile:
