@@ -14,8 +14,6 @@ Reuse of existing neuroscience data relies, in part, on our ability to understan
 * [Satra Ghosh](https://satra.cogitatum.org/group/) – MIT
 * [Theo G.M. VanErp](https://www.faculty.uci.edu/profile.cfm?faculty_id=5812) - UC Irvine
 
-Query Demo: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NIDM-Terms/terms/master?filepath=utils%2Fquery_demo)
-
 ### Getting Started
 
 * **How do I search for terms?**
@@ -54,4 +52,7 @@ Query Demo: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.or
 * **WIP: Term curration and Governance**
 	* We are currently working on a governance structure for this work.  We are basing it on other open science projects.  Please stay tuned for more information.
 	  
+### Demos
+
+Query Demo: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NIDM-Terms/terms/master?filepath=utils%2Fquery_demo)
 
