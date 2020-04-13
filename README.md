@@ -14,7 +14,7 @@ Reuse of existing neuroscience data relies, in part, on our ability to understan
 * [Satra Ghosh](https://satra.cogitatum.org/group/) – MIT
 * [Theo G.M. VanErp](https://www.faculty.uci.edu/profile.cfm?faculty_id=5812) - UC Irvine
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NIDM-Terms/terms/master?filepath=utils%2Fquery_demo)
+Query Demo: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NIDM-Terms/terms/master?filepath=utils%2Fquery_demo)
 
 ### Getting Started
 
