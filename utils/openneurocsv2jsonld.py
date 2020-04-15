@@ -134,6 +134,22 @@ def level_parser(df_row,doc,context):
     case = ''
 
 
+def CogAt_WO_json(row2, isabouts):
+
+
+    if isinstance(row2,float) and np.isnan(row2):
+        return
+
+    semicolon_splits2 = row2.split(';')
+
+    for q in semicolon_splits2:
+        q = q.rstrip().lstrip()
+        url_validator(q)
+
+        if q is not False:
+            isabouts.append(q)
+
+
 
 def isAbout_parser(df_row,doc,context):
     '''
@@ -145,23 +161,29 @@ def isAbout_parser(df_row,doc,context):
     '''
 
     # extract the levels column from the data frame
-    row = df_row['isAbout']
+    row1 = df_row['is about']
+    row2 = df_row['cognitive atlas terms without .json']
 
     isabouts = []
 
 
     # passes over rows with no values
-    if isinstance(row,float) and np.isnan(row) :
+    if isinstance(row1,float) and np.isnan(row1):
         return
 
-    semicolon_splits = row.split(';')
+    semicolon_splits1 = row1.split(';')
 
     #split the string by semicolon and validate each URL using the url_validator function
-    for s in semicolon_splits:
+    for s in semicolon_splits1:
+        s = s.rstrip().lstrip()
         url_validator(s)
 
         if s is not False:
             isabouts.append(s)
+
+
+    CogAt_WO_json(row2,isabouts)
+
 
     print("\tFound OpenNeuro_isAbout")
     doc[context['@context']['isAbout']] = str(isabouts)
@@ -259,12 +281,12 @@ def main(argv):
         #loop through all rows and grab info if exists
         for (i,row) in dataset.iterrows():
             print('starting iteration...')
-            print('processing term: %s'%row['Term'])
+            print('processing term: %s'%row['sourceVariable'])
 
 
             #add type as schema.org/DataElement
             doc['@type'] = context['@context']['DataElement']
-            doc[context['@context']['source_variable']] = row['Term']
+            doc[context['@context']['source_variable']] = row['sourceVariable']
 
             #assign Long Name to the label property in doc
             if not pd.isnull(row['LongName']):
@@ -310,7 +332,7 @@ def main(argv):
 
 
             # opens pre-made directory with with a number that matches the ds ID and creates a jsonld file inside that directory
-            with open (join((os.path.join(args.output_dir, str(l))), row['Term'].replace("/","_") + '.jsonld'),'w+') as outfile:
+            with open (join((os.path.join(args.output_dir, str(l))), row['sourceVariable'].replace("/","_") + '.jsonld'),'w+') as outfile:
                 json.dump(compacted,outfile,indent=2)
 
             print("size of dict: %d" %sys.getsizeof(doc))
