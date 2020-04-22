@@ -189,6 +189,8 @@ def isAbout_parser(df_row,doc,context):
     doc[context['@context']['isAbout']] = str(isabouts)
 
 
+
+
 def isPartOf_parser(df_row,doc,context):
 
     # extract the levels column from the data frame
@@ -215,9 +217,13 @@ def isPartOf_parser(df_row,doc,context):
 
 
 
+
+
+
 def main(argv):
-    parser = ArgumentParser(description='This program will load in a custom csv spreadsheet and create separate'
-                                        'JSON files and add the appropriate properties for each term')
+    parser = ArgumentParser(description='This program takes a costume csv spreadsheet with annotated terms extracted from '
+                                        'both participants.tsv and phenotype.tsv files of OpenNeuro datasets and term properties. '
+                                        'I will then create a jsonld representation for each term based on the provided context file.')
 
     parser.add_argument('-csv', dest='csv_file', required=True, help="Path to csv file to convert. NOTE: the spreadsheet must be in a comma-separated values format")
     parser.add_argument('-out', dest='output_dir', required=True, help="Output directory to save JSON files")
