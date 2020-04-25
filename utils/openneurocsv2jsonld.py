@@ -134,22 +134,6 @@ def level_parser(df_row,doc,context):
     case = ''
 
 
-def CogAt_WO_json(row2, isabouts):
-
-
-    if isinstance(row2,float) and np.isnan(row2):
-        return
-
-    semicolon_splits2 = row2.split(';')
-
-    for q in semicolon_splits2:
-        q = q.rstrip().lstrip()
-        url_validator(q)
-
-        if q is not False:
-            isabouts.append(q)
-
-
 
 def isAbout_parser(df_row,doc,context):
     '''
@@ -179,9 +163,9 @@ def isAbout_parser(df_row,doc,context):
     for s in semicolon_splits:
 
         s = s.rstrip().lstrip()
-        url_validator(s)
 
-        if s is not False:
+
+        if url_validator(s) is True:
             isabouts.append(s)
 
 
