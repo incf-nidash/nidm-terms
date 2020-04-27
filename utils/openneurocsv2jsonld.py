@@ -176,10 +176,14 @@ def isAbout_parser(df_row,doc,context):
     #split the string by semicolon and validate each URL using the url_validator function
     for s in semicolon_splits1:
         s = s.rstrip().lstrip()
-        url_validator(s)
 
-        if s is not False:
+
+        if url_validator(s) is not False:
             isabouts.append(s)
+
+        if url_validator(s) is False:
+            print('here')
+
 
 
     CogAt_WO_json(row2,isabouts)
@@ -207,11 +211,22 @@ def isPartOf_parser(df_row,doc,context):
     for s in semicolon_splits:
         url_validator(s)
 
-        if s is not False:
+        if url_validator(s) is not False:
             ispartof.append(s)
 
-    print("\tFound OpenNeuro_isAbout")
-    doc[context['@context']['isAbout']] = str(ispartof)
+
+    if len(ispartof) == 1:
+        for i in ispartof:
+            doc[context['@context']['isAbout']] = str(i)
+
+    elif len(ispartof) > 1:
+        doc[context['@context']['isAbout']] = []
+        doc[context['@context']['isAbout']].append(ispartof)
+
+
+    print("\tFound OpenNeuro_isPartof")
+
+
 
 
 
