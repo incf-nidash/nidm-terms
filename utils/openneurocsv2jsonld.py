@@ -190,13 +190,13 @@ def isAbout_parser(df_row,doc,context):
 
 
 
-    if len(isabouts) == 1:
-        for i in isabouts:
-            doc[context['@context']['isAbout']] = str(i)
+    #if len(isabouts) == 1:
+    #    for i in isabouts:
+    #        doc[context['@context']['isAbout']] = str(i)
 
-    elif len(isabouts) > 1:
-        doc[context['@context']['isAbout']] = []
-        doc[context['@context']['isAbout']].append(isabouts)
+    #elif len(isabouts) > 1:
+    doc[context['@context']['isAbout']] = []
+    doc[context['@context']['isAbout']].append(isabouts)
 
 
     print("\tFound OpenNeuro_isAbout")
