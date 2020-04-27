@@ -134,6 +134,22 @@ def level_parser(df_row,doc,context):
     case = ''
 
 
+def CogAt_WO_json(row2, isabouts):
+
+
+    if isinstance(row2,float) and np.isnan(row2):
+        return
+
+    semicolon_splits2 = row2.split(';')
+
+    for q in semicolon_splits2:
+        q = q.rstrip().lstrip()
+        url_validator(q)
+
+        if q is not False:
+            isabouts.append(q)
+
+
 
 def isAbout_parser(df_row,doc,context):
     '''
@@ -165,8 +181,12 @@ def isAbout_parser(df_row,doc,context):
         s = s.rstrip().lstrip()
 
 
-        if url_validator(s) is True:
+        if url_validator(s) is not False:
             isabouts.append(s)
+
+        if url_validator(s) is False:
+            print('here')
+
 
 
 
@@ -202,11 +222,22 @@ def isPartOf_parser(df_row,doc,context):
     for s in semicolon_splits:
         url_validator(s)
 
-        if s is not False:
+        if url_validator(s) is not False:
             ispartof.append(s)
 
-    print("\tFound OpenNeuro_isAbout")
-    doc[context['@context']['isAbout']] = str(ispartof)
+
+    if len(ispartof) == 1:
+        for i in ispartof:
+            doc[context['@context']['isAbout']] = str(i)
+
+    elif len(ispartof) > 1:
+        doc[context['@context']['isAbout']] = []
+        doc[context['@context']['isAbout']].append(ispartof)
+
+
+    print("\tFound OpenNeuro_isPartof")
+
+
 
 
 
