@@ -161,23 +161,20 @@ def isAbout_parser(df_row,doc,context):
     '''
 
     # extract the levels column from the data frame
-    row = df_row['isAbout']
+    row1 = df_row['is about']
+    row2 = df_row['cognitive atlas terms without .json']
 
     isabouts = []
 
 
     # passes over rows with no values
-    if isinstance(row,float) and np.isnan(row):
+    if isinstance(row1,float) and np.isnan(row1):
         return
 
-    semicolon_splits = row.split(';')
-
-    while '' in semicolon_splits:
-        semicolon_splits.remove('')
+    semicolon_splits1 = row1.split(';')
 
     #split the string by semicolon and validate each URL using the url_validator function
-    for s in semicolon_splits:
-
+    for s in semicolon_splits1:
         s = s.rstrip().lstrip()
 
 
@@ -189,19 +186,11 @@ def isAbout_parser(df_row,doc,context):
 
 
 
-
-    if len(isabouts) == 1:
-        for i in isabouts:
-            doc[context['@context']['isAbout']] = str(i)
-
-    elif len(isabouts) > 1:
-        doc[context['@context']['isAbout']] = []
-        doc[context['@context']['isAbout']].append(isabouts)
+    CogAt_WO_json(row2,isabouts)
 
 
     print("\tFound OpenNeuro_isAbout")
-
-
+    doc[context['@context']['isAbout']] = str(isabouts)
 
 
 def isPartOf_parser(df_row,doc,context):
@@ -241,11 +230,9 @@ def isPartOf_parser(df_row,doc,context):
 
 
 
-
 def main(argv):
-    parser = ArgumentParser(description='This program takes a costume csv spreadsheet with annotated terms extracted from '
-                                        'both participants.tsv and phenotype.tsv files of OpenNeuro datasets and term properties. '
-                                        'I will then create a jsonld representation for each term based on the provided context file.')
+    parser = ArgumentParser(description='This program will load in a custom csv spreadsheet and create separate'
+                                        'JSON files and add the appropriate properties for each term')
 
     parser.add_argument('-csv', dest='csv_file', required=True, help="Path to csv file to convert. NOTE: the spreadsheet must be in a comma-separated values format")
     parser.add_argument('-out', dest='output_dir', required=True, help="Output directory to save JSON files")
