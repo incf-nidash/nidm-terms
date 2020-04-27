@@ -10,7 +10,14 @@ import urllib.request as ur
 from urllib.parse import urlparse
 import numpy as np
 
-
+# added by DBK
+from os import system
+try:
+    from cognitiveatlas.api import get_concept, get_disorder
+except ImportError:
+    system('python -m pip install cognitiveatlas')
+    from cognitiveatlas.api import get_concept, get_disorder
+import requests
 
 
 def url_validator(url):
@@ -149,6 +156,55 @@ def CogAt_WO_json(row2, isabouts):
         if q is not False:
             isabouts.append(q)
 
+def get_isAbout_label(url):
+    '''
+    Added by DBK to get labels for isAbout urls
+    :param url: url to get label for
+    :return: string label
+    '''
+
+
+
+    scicrunch_base_uri = 'https://scicrunch.org/api/1/ilx/search/curie/'
+
+    # load user's api key from environment variable. If not found then exit with error message
+    try:
+        user_key = os.environ["INTERLEX_API_KEY"]
+    except KeyError:
+        print("Please set the environment variable INTERLEX_API_KEY")
+        sys.exit(1)
+
+    if "cognitiveatlas" in url:
+        #skip for things that aren't concepts or disorders for the time being
+        if ("concept" not in url) and ("disorder" not in url):
+            # for now if we don't have a concept or disorder url from cogatlas then just return nothing for label
+            # will need to work with cog atlas folks about how to retrieve tasks and other types from cog atlas
+            return ""
+        #print(url)
+        # parse out id of term and get using cog atlas python tool...
+        id = url.rsplit('/',1)[0].rsplit('/',1)[1]
+        # don't know if this is a concept or disorder so we'll try both
+        try:
+            tmp = get_concept(id=id,silent=True)
+            label = tmp.json['name'].lower()
+            #print("cogatlas concept label: %s" %(isAbout_term_labels[url]))
+        except:
+            tmp = get_disorder(id=id,silent=True)
+            label = tmp.json['name'].lower()
+            #print("cogatlas disorder label: %s" %isAbout_term_labels[url])
+
+    elif "interlex" in url:
+        # get label for interlex terms
+        payload={}
+        headers={}
+        full_url = scicrunch_base_uri + url.rsplit('/',1)[1].replace('_',':').rstrip("']'") + "?key=" + user_key
+        #print(full_url)
+        response = requests.request("GET",full_url,headers=headers,data=payload)
+        # response is a json dictionary. here we want the label
+        label= response.json()["data"]["label"].lower()
+        #print("interlex label: %s" %isAbout_term_labels[url] )
+
+    return label
 
 
 def isAbout_parser(df_row,doc,context):
@@ -182,19 +238,16 @@ def isAbout_parser(df_row,doc,context):
 
 
         if url_validator(s) is not False:
-            isabouts.append(s)
+            # added by DBK to get labels for isabout URLs
+            # first make sure we have an InterLex API key stored as an environment variable
+            label = get_isAbout_label(s)
+            isabouts.append(s+":"+label)
 
         if url_validator(s) is False:
             print('here')
 
 
 
-
-    #if len(isabouts) == 1:
-    #    for i in isabouts:
-    #        doc[context['@context']['isAbout']] = str(i)
-
-    #elif len(isabouts) > 1:
     doc[context['@context']['isAbout']] = []
     doc[context['@context']['isAbout']].append(isabouts)
 
