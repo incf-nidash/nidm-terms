@@ -40,7 +40,7 @@ def main(argv):
     formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
     hdlr.setFormatter(formatter)
     logger.addHandler(hdlr)
-    logger.setLevel(logging.NOTSET)
+    logger.setLevel(logging.INFO)
 
     # step 1 check directories exist
     if not isdir(args.datalad_dir):
