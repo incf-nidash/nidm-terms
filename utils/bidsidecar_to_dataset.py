@@ -50,6 +50,9 @@ def main(argv):
         logger.error("BIDS augmented sidecar directory not found: %s" % args.sidecar_dir)
         exit(1)
 
+    # set working directory to args.datalad_dir
+    os.setwd(args.datalad_dir)
+
     # step 2 loop through all datasets in args.sidecar_dir
     bids_datasets = [ x for x in os.listdir(args.sidecar_dir) if isdir(join(args.sidecar_dir,x)) ]
     # for each dataset
@@ -63,7 +66,8 @@ def main(argv):
             continue
 
         # download datalad dataset and install
-        cmd = ["datalad","get", "-r", join(args.datalad_dir,ds)]
+        #cmd = ["datalad","get", "-r", join(args.datalad_dir,ds)]
+        cmd = ["datalad", "get", "-r", ds]
         logger.info("Running command: %s" %cmd)
         ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
 
@@ -79,10 +83,10 @@ def main(argv):
 
         # now run bidsmri2nidm
         if args.nidm_dir is not None:
-            cmd = ["bidsmri2nidm","-d",join(args.datalad_dir,ds),"-o",join(args.nidm_dir,ds,"nidm.ttl"),"-bidsignore"]
+            cmd = ["bidsmri2nidm","-d",join(args.datalad_dir,ds),"-o",join(args.nidm_dir,ds,"nidm.ttl"),"-bidsignore","-no_concepts"]
         else:
             cmd = ["bidsmri2nidm", "-d", join(args.datalad_dir, ds), "-o", join(args.datalad_dir, ds, "nidm.ttl"),
-                   "-bidsignore"]
+                   "-bidsignore","-no_concepts"]
         logger.info("Running command: %s" % cmd)
         ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
 
