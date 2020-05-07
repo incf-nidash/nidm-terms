@@ -308,6 +308,67 @@ def ValueType(pathtotsv,term):
 
 
 
+def parse_property(file, root_dir, term, property):
+
+
+    #extracts the name of the tsv file without the extension
+    tsvfile = os.path.splitext(file)[0]
+
+
+    #parse through the phenotype directory looking for a matching json file
+    for root, dirs, files in os.walk(root_dir, topdown=True):
+        json_path = os.path.join(root_dir, root)
+        #if phenotype has other directories look for json in those directories
+        for dir in dirs:
+            #set a path
+            dir_root = os.path.join(json_path, dir)
+            for rt, dr, fl in os.walk(dir_root, topdown=True):
+                for j in fl:
+                    if j.endswith('json'):
+                        # extract name of json file and check if it matches the given tsv file name
+                        Json = os.path.splitext(j)[0]
+                        if Json == tsvfile:
+                            json_path2 = os.path.join(dir_root, j)
+
+                            #open json and extract the term url
+                            with open(json_path2) as f:
+                                jread = json.load(f)
+                                for k in jread:
+                                    if k == term:
+                                        for emp in jread[term]:
+                                            #check if the dictionary has a long name element
+                                            if emp == property:
+                                                jsterm = jread[term][property]
+                                                jsonln =  jsterm
+                                                return jsonln
+                                            else:
+                                                continue
+
+        #look for matching json file in the phenotype directory
+        for j_file in files:
+            if j_file.endswith('json'):
+                # extract name of json file and check if it matches the given tsv file name
+                jfile = os.path.splitext(j_file)[0]
+                if jfile == tsvfile:
+                    json_path1 = os.path.join(json_path, j_file)
+
+                    #open json and extract the term long name
+                    with open(json_path1) as d:
+                        j_read = json.load(d)
+                        for key in j_read:
+                            if key == term:
+                                for empty in j_read[term]:
+                                    #check if the dictionary has a long name element
+                                    if empty == property:
+                                        js_term = j_read[term][property]
+                                        json_ln = js_term
+                                        return json_ln
+                                    else:
+                                        continue
+
+
+
+
 
 def phenotype_parser(i,path):
     '''
@@ -358,6 +419,10 @@ def phenotype_parser(i,path):
                                         jsonlevels = []
                                         jsonunits = []
                                         termtype = []
+                                        termurl = []
+                                        termMin = []
+                                        termMax = []
+                                        termDer = []
 
                                         #loop through the terms extract description, long name, levels, units, type respectively
                                         for term in term_list:
@@ -366,6 +431,10 @@ def phenotype_parser(i,path):
                                             jsonlevels.append(json_lev(FL,root_dir,term))
                                             jsonunits.append(json_Units(FL,root_dir,term))
                                             termtype.append(ValueType(p_tsv,term))
+                                            termurl.append(parse_property(FL,root_dir,term, 'TermURL'))
+                                            termMin.append(parse_property(FL, root_dir,term, 'MinValue'))
+                                            termMax.append(parse_property(FL, root_dir,term, 'MaxValue'))
+                                            termDer.append(parse_property(FL, root_dir,term, 'Derivative'))
 
                                         #create a data set ID list
                                         ds_list = i*len(term_list)
@@ -373,7 +442,7 @@ def phenotype_parser(i,path):
                                         while '' in d_s:
                                             d_s.remove('')
 
-                                        tuple1 = list(zip(term_list,d_s,jsonterm,jsonlongname,jsonlevels,jsonunits,termtype))
+                                        tuple1 = list(zip(term_list,d_s,jsonterm,jsonlongname,jsonlevels,jsonunits,termurl,termMin, termMax, termDer, termtype))
                                         df_tuple.extend(tuple1)
 
 
@@ -397,6 +466,10 @@ def phenotype_parser(i,path):
                                 json_l = []
                                 json_u = []
                                 term_t = []
+                                term_url = []
+                                term_min = []
+                                term_max = []
+                                term_der = []
 
                                 #loop through the terms extract description, long name, levels, units, type respectively
                                 for term in termlist:
@@ -405,6 +478,10 @@ def phenotype_parser(i,path):
                                     json_l.append(json_lev(file,root_dir,term))
                                     json_u.append(json_Units(file,root_dir,term))
                                     term_t.append(ValueType(pathtotsv,term))
+                                    term_url.append(parse_property(file,root_dir,term,'TermURL'))
+                                    term_min.append(parse_property(file,root_dir,term,'MinValue'))
+                                    term_max.append(parse_property(file,root_dir,term,'MaxValue'))
+                                    term_der.append(parse_property(file,root_dir,term,'Derivative'))
 
                                 #create a data set ID list
                                 dslist = i*len(termlist)
@@ -413,7 +490,7 @@ def phenotype_parser(i,path):
                                     ds.remove('')
 
                                 #create a tuple of term and its properties
-                                tuple2 = list(zip(termlist,ds,json_d,json_ln,json_l,json_u,term_t))
+                                tuple2 = list(zip(termlist,ds,json_d,json_ln,json_l,json_u,term_url,term_min,term_max,term_der,term_t))
                                 df_tuple.extend(tuple2)
 
     return df_tuple
@@ -505,6 +582,10 @@ def main(argv):
                         term_levels = []
                         term_units = []
                         term_type = []
+                        term_URL = []
+                        term_min = []
+                        term_max = []
+                        term_der = []
                         global s
 
                         #if the dataset doesn't have a participants.json file add an empty item to the list
@@ -515,6 +596,10 @@ def main(argv):
                                 term_levels.extend([''])
                                 term_units.extend([''])
                                 term_type.append(ValueType(pathtotsv,t))
+                                term_URL.extend([''])
+                                term_min.extend([''])
+                                term_max.extend([''])
+                                term_der.extend([''])
 
                         #if the dataset has a participants.json file extract the appropriate term
                         elif state == 1:
@@ -533,6 +618,10 @@ def main(argv):
                                 l = ''
                                 lv = ''
                                 u = ''
+                                z = ''
+                                y = ''
+                                w = ''
+                                r = ''
 
                                 #look for a key that matches the term
                                 for key in json_read:
@@ -580,6 +669,42 @@ def main(argv):
                                             elif c != 'Units':
                                                 u = 3
 
+                                        for d in json_read[term]:
+                                            if d == 'TermURL':
+                                                term_t = json_read[term]['TermURL']
+                                                term_URL.append(term_t)
+                                                z = 2
+                                                break
+                                            elif d != 'TermURL':
+                                                z = 3
+
+                                        for f in json_read[term]:
+                                            if f == 'MinValue':
+                                                termmin = json_read[term]['MinValue']
+                                                term_min.append(termmin)
+                                                y = 2
+                                                break
+                                            elif f != 'MinValue':
+                                                y = 3
+
+                                        for g in json_read[term]:
+                                            if g == 'MaxValue':
+                                                termmax = json_read[term]['MaxValue']
+                                                term_max.append(termmax)
+                                                w = 2
+                                                break
+                                            elif g != 'MaxValue':
+                                                w = 3
+
+                                        for h in json_read[term]:
+                                            if h == 'Derivative':
+                                                termder = json_read[term]['Derivative']
+                                                term_der.append(termder)
+                                                r = 2
+                                                break
+                                            elif h != 'Derivative':
+                                                r = 3
+
                                     elif key != term:
                                         if s != 2:
                                             s = 1
@@ -589,6 +714,14 @@ def main(argv):
                                             lv =1
                                         if u != 2:
                                             u = 1
+                                        if z != 2:
+                                            z = 1
+                                        if y != 2:
+                                            y = 1
+                                        if w != 2:
+                                            w = 1
+                                        if r != 2:
+                                            r = 1
 
                                 #if no description, long name, levels, or unit was found add an empty item to the list
                                 if s == 1 or s == 3:
@@ -607,14 +740,26 @@ def main(argv):
                                     term_units.extend([''])
                                     u = ''
 
+                                if z == 1 or z == 3:
+                                    term_URL.extend([''])
+
+                                if y == 1 or y == 3:
+                                    term_min.extend([''])
+
+                                if w == 1 or w == 3:
+                                    term_max.extend([''])
+
+                                if r == 1 or r == 3:
+                                    term_der.extend([''])
+
 
 
                         #pair each term with the appropriate ds ID
-                        tuples = list(zip(term_list,ds,term_des,term_long,term_levels,term_units,term_type))
+                        tuples = list(zip(term_list,ds,term_des,term_long,term_levels,term_units,term_URL,term_min,term_max,term_der,term_type))
                         df_tuples.extend(tuples)
 
                 if st == 1:
-                    print('Found phenotype directory for %s' %i)
+                    print('Found phenotype directory of %s' %i)
                     df_tuples.extend(phenotype_parser(i,path))
                 else:
                     continue
@@ -625,7 +770,7 @@ def main(argv):
 
     #create and save data frame to csv
     df = pd.DataFrame(df_tuples)
-    df.to_csv('OpenNeuro_BIDS_terms.csv', header = ['Term','ds_number','Description', 'LongName','Levels','Units','ValueType'], index=False)
+    df.to_csv('TEST_terms_sheet.csv', header = ['source_variable','ds_number','Description', 'LongName','Levels','Units','Term_URL','Minimum Value','Maximum Value', 'Derivative','ValueType'], index=False)
 
 
 

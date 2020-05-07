@@ -15,9 +15,51 @@ from bids_validator  import BIDSValidator
 ## 2- Parse the phenotype directory, if found, and updates/ creates a json sidecar file for each tsv file
 
 
-def save_sidecar(i,outfile,output):
+def save_sidecar(i,NIDM_dict,output_dir):
+    '''
+
+    Saves a copy of participants.json to the output directory
+
+    '''
+
+    ds_dir = os.path.join(output_dir,i)
+    if not os.path.exists(ds_dir):
+        os.mkdir(ds_dir, mode=0o777)
 
 
+    with open(join(ds_dir, 'participants' + '.json'), 'w+') as O:
+        json.dump(NIDM_dict,O,indent=2)
+
+
+
+
+def save_phenotype_sidecar(i,dict,output_dir, file_name, dir_name):
+    '''
+
+    Saves a copy of participants.json to the output directory
+
+    '''
+
+
+    ds_dir = os.path.join(output_dir,i)
+    if not os.path.exists(ds_dir):
+        os.mkdir(ds_dir, mode=0o777)
+
+    phenotype_dir = os.path.join(ds_dir,'phenotype')
+    if not os.path.exists(phenotype_dir):
+        os.mkdir(phenotype_dir)
+
+    if dir_name == 'phenotype':
+        with open(join(phenotype_dir, file_name + '.json'), 'w+') as f:
+            json.dump(dict,f,indent=2)
+
+    else:
+        subdir_path = os.path.join(phenotype_dir, dir_name)
+        if not os.path.exists(subdir_path):
+            os.mkdir(subdir_path)
+
+        with open(join(subdir_path, file_name + '.json'), 'w+') as l:
+            json.dump(dict,l,indent=2)
 
 
 
@@ -30,6 +72,46 @@ def bids_sp_validator(path):
 
     for p in path:
         print(validator.is_bids(p))
+
+
+
+
+def isabout_parser(jsonld_read, dict, term):
+    '''
+    Converts isabouts section from a string to a dictionary with URI as a key and label as a value
+
+    :param jsonld_read: dictionary created based off of the jsonld file
+    :param dict: dictionary which includes term as dict a key, and jsonld dictionary as value
+    :param term: the term extracted from participants.tsv or phenotype.tsv
+    :return:
+
+    The passed dictionary with isAbout property as a dictionary in which each URI maps to a label
+    '''
+
+
+    isabout_dict = {}
+
+
+    for key in jsonld_read:
+        if key == 'isAbout':
+            if isinstance(jsonld_read[key],str):
+                for i in [jsonld_read[key]]:
+                    isabout_split = i.rsplit(':',1)
+                    k = isabout_split[0]
+                    v = isabout_split[1]
+                    isabout_dict[k] = v
+                    dict[term]['isAbout'] = isabout_dict
+
+            elif isinstance(jsonld_read[key],list):
+                for l in jsonld_read[key]:
+                    isaboutsplit = l.rsplit(':',1)
+                    K = isaboutsplit[0]
+                    V = isaboutsplit[1]
+                    isabout_dict[K] = V
+                    dict[term]['isAbout'] = isabout_dict
+
+
+    return dict
 
 
 
@@ -68,7 +150,8 @@ def levels_parser(jsonld_read, dict, term):
 
 
 
-def Phenotype(pathtophenotype,jsonld_path,i):
+
+def Phenotype(pathtophenotype,jsonld_path,i,output_dir):
     '''
     If the dataset has a phenotype directory, this function creates/updates a BIDS compliant json sidecar file
     for each phenotype.tsv file in the directory based on our annotated OpenNeuro terms in jsonld representaions.
@@ -127,9 +210,25 @@ def Phenotype(pathtophenotype,jsonld_path,i):
                                                 jsonld_file = os.path.join(jsonldpath, j_ld)
                                                 with open(jsonld_file) as d:
                                                     jsonld_read = json.load(d)
-                                                phenotype_dict[pheno_term] = jsonld_read
+
+
+                                                ##Create a dictionary and add json properties from jsonld files
+                                                ##This will exclude @context and @type when writing the new json files
+                                                term_dict = {}
+                                                for key in jsonld_read:
+                                                    if key != '@context' and key != '@type':
+                                                        for val in [jsonld_read[key]]:
+                                                            term_dict[key] = val
+
+                                                phenotype_dict[pheno_term] = term_dict
+
+
                                                 ## Call levels parser to change the value of the property levels to a dictionary
                                                 levels_parser(jsonld_read,phenotype_dict, pheno_term)
+                                                isabout_parser(jsonld_read,phenotype_dict, pheno_term)
+
+                                                print(pheno_term, 'phenotype json file has been updated')
+
 
                         ## Write and update the original json sidecar file with our jsonld files based on the location of the original json file
                         for json_file in subfile:
@@ -138,8 +237,7 @@ def Phenotype(pathtophenotype,jsonld_path,i):
                                 if json_file_name == FL_name:
                                     with open (join(sub_dir, json_file_name + '.json'),'w+') as outfile:
                                         json.dump(phenotype_dict,outfile,indent=2)
-
-
+                                    save_phenotype_sidecar(i,phenotype_dict,output_dir,json_file_name, dir)
 
 
                                 elif not json_file_name == FL_name:
@@ -150,6 +248,9 @@ def Phenotype(pathtophenotype,jsonld_path,i):
                                                 with open (join(sub_dir, jf_name + '.json'),'w+') as outfile:
                                                     json.dump(phenotype_dict,outfile,indent=2)
 
+                                                sub_dir_save = os.path.join(output_dir)
+                                                save_phenotype_sidecar(i,phenotype_dict,output_dir, dir)
+
                             elif not json_file.endswith('.json'):
                                 for f in files:
                                     if f.endswith('.json'):
@@ -158,10 +259,11 @@ def Phenotype(pathtophenotype,jsonld_path,i):
                                             with open (join(pathtophenotype, f + '.json'),'w+') as outfile:
                                                 json.dump(phenotype_dict, outfile, indent=2)
 
-
+                                            save_phenotype_sidecar(i,phenotype_dict,output_dir, f, 'phenotype')
 
         ## Access tsv files that are in phenotype directory and outside of subdir like (T1 and T2 subdir)
         for tsv_file in files:
+
             global phenotypedict
             if tsv_file.endswith('.tsv'):
                 tsv_file_name = tsv_file[:-4]
@@ -190,16 +292,35 @@ def Phenotype(pathtophenotype,jsonld_path,i):
                                         with open(jsonldfile) as d:
                                             jsonldread = json.load(d)
 
-                                        phenotypedict[phenoterm] = jsonldread
+
+                                        ##Create a dictionary and add json properties from jsonld files
+                                        ##This will exclude @context and @type when writing the new json files
+                                        termdict = {}
+                                        for k in jsonldread:
+                                            if k != '@context' and k != '@type':
+                                                for v in [jsonldread[k]]:
+                                                    termdict[k] = v
+                                                    
+
+                                        phenotypedict[phenoterm] = termdict
+
+
                                         levels_parser(jsonldread,phenotypedict, phenoterm)
+                                        isabout_parser(jsonldread,phenotypedict, phenoterm)
 
                                     else:
                                         continue
 
 
+                                    print(phenoterm, ' phenotype json file has been updated')
+
+
                 ## Write and update the original json sidecar file with our jsonld files
                 with open (join(root, tsv_file_name + '.json'),'w+') as outfile:
                     json.dump(phenotypedict,outfile,indent=2)
+
+                save_phenotype_sidecar(i,phenotypedict,output_dir,tsv_file_name, 'phenotype')
+
 
         return outfile
 
@@ -217,14 +338,16 @@ def main(argv):
 
     parser.add_argument('-jsonld', dest='jsonld', required=True, help="Path to OpenNeuro jsonld directory")
     parser.add_argument('-ds_dir', dest='ds_dir', required=True, help="Path to OpenNeuro datasets directory")
-    parser.add_aggument('-out', dest='output_dir', required=True, help='Path to output directory')
+    parser.add_argument('-out', dest='output_dir', required=True, help='Path to output directory')
 
     args = parser.parse_args()
 
 
     #list ds ID's inside the given directory and set path to both the OpenNeuro dataset directory and to jsonld directory
     dsid = os.listdir(args.ds_dir)
-    output = args.output_dir
+    output = os.path.join(args.output_dir,'OpenNeuro_BIDS_json_sidecar')
+    if not os.path.exists(output):
+        os.mkdir(output)
     term_path = args.ds_dir
     jsonld_path = args.jsonld
 
@@ -277,9 +400,23 @@ def main(argv):
                                             jsonld_file = os.path.join(jsonldpath, ld)
                                             with open(jsonld_file) as d:
                                                 jsonld_read = json.load(d)
-                                            NIDM_p_dict[term] = jsonld_read
+
+
+                                            ##Create a dictionary and add json properties from jsonld files
+                                            ##This will exclude @context and @type when writing the new json files
+                                            term_dict = {}
+                                            for key in jsonld_read:
+                                                if key != '@context' and key != '@type':
+                                                    for val in [jsonld_read[key]]:
+                                                        term_dict[key] = val
+
+
+                                            NIDM_p_dict[term] = term_dict
+
+
                                             ## parse levels property and change it to dictionary
                                             levels_parser(jsonld_read, NIDM_p_dict,term)
+                                            isabout_parser(jsonld_read,NIDM_p_dict,term)
 
 
                     ## Open a new json file and dump the created dictionary in it to update/replace the original participants.json file in each dataset
@@ -288,12 +425,14 @@ def main(argv):
 
                     #bids_sp_validator(path)
 
-                    save_sidecar(i,outfile,output)
+                    save_sidecar(i,NIDM_p_dict,output)
+
+                    print( i, 'participants.json has been updated')
 
                 ## Check if the dataset has a phenotype directory. If yes, set path to it and call Phenotype function
                 if p_tsv == 'phenotype':
                     pathtophenotype = os.path.join(path, p_tsv)
-                    Phenotype(pathtophenotype, jsonld_path, i)
+                    Phenotype(pathtophenotype, jsonld_path, i,output)
 
 
 

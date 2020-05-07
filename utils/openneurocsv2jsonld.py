@@ -10,6 +10,7 @@ import urllib.request as ur
 from urllib.parse import urlparse
 import numpy as np
 
+
 # added by DBK
 from os import system
 try:
@@ -18,6 +19,7 @@ except ImportError:
     system('python -m pip install cognitiveatlas')
     from cognitiveatlas.api import get_concept, get_disorder
 import requests
+
 
 
 def url_validator(url):
@@ -75,14 +77,20 @@ def level_parser(df_row,doc,context):
         if s.count(';') == 2:
             case = 2
             break
-        elif s.count(';') == 1 or s.count(';') == 0:
+        elif s.count(';') > 2 or s.count('!') > 0:
+            case = 3
+            break
+        elif s.count(';') == 1 or s.count(';') == 0 and s.count('!') == 0:
             case = 1
+
 
     # if level string doesn't contain semicolon in text
     if case == 1:
         # for every item in semicolon splits extract the key and value and assign it to levels dictionary
         for i in semicolon_splits:
+
             c_split = i.split(':')
+
             levels[c_split[0]] = c_split[1]
             all_val.append(c_split[0])
             # check if the level key is a string and set a state
@@ -90,6 +98,7 @@ def level_parser(df_row,doc,context):
                 state = 1
             else:
                 state = ''
+
 
     # else if the level string contain an extra semicolon in text
     elif case == 2:
@@ -121,13 +130,36 @@ def level_parser(df_row,doc,context):
         else:
             state = ''
 
-    # if the key in the level property is digit assign a minimum and a maximum value
-    if state == 1:
-        minimum = min(all_val)
-        maximum = max(all_val)
 
-        doc[context['@context']['minimumValue']] = int(minimum)
-        doc[context['@context']['maximumValue']] = int(maximum)
+    elif case == 3:
+
+        excount = row.count('!')
+        if excount == 1:
+            semisplit = row.split(';')
+            for g in semisplit:
+                colonsplit = g.split(':')
+                levels[colonsplit[0]] = colonsplit[1]
+                all_val.append(colonsplit[0])
+
+                if colonsplit[0].isdigit():
+                    state = 1
+                else:
+                    state = ''
+
+        elif excount > 1:
+
+            exsplit = row.split('!')
+
+            for l in exsplit:
+                colon = l.split(':',1)
+                levels[colon[0]] = colon[1]
+                all_val.append(colon[0])
+
+                if colon[0].isdigit():
+                    state = 1
+                else:
+                    state = ''
+
 
     # assign levels to the jsonld property levels
     doc[context['@context']['levels']] = []
@@ -138,7 +170,60 @@ def level_parser(df_row,doc,context):
     # assign allowable values to allowableValues in jsonld property
     doc[context['@context']['allowableValues']] = all_val
 
+
+    # if the key in the level property is digit assign a minimum and a maximum value
+    if state == 1:
+        while '' in all_val:
+            all_val.remove('')
+
+        if len(all_val) > 1:
+
+            negval = []
+            posval = []
+            f = ''
+
+            for a in all_val:
+                if a[0] == '-':
+                    s = 1
+                    break
+                elif a.isdigit():
+                    s = 0
+                elif a == 'Nothing':
+                    s = 2
+                    break
+                for pr in a:
+                    if pr == '(':
+                        f = 'break'
+
+
+            if f == 'break':
+                return
+
+            elif s == 2:
+                return
+
+            elif s == 1:
+                for b in all_val:
+                    if b[0] == '-':
+                        negval.append(b)
+                        minimum = max(negval)
+                    elif b[0].isdigit():
+                        posval.append(b)
+                        maximum = max(all_val)
+
+            elif s == 0:
+                minimum = min(all_val)
+                all_val.sort(key=lambda x: int(str(x)))
+                maximum = all_val[-1]
+
+
+
+
+            doc[context['@context']['minimumValue']] = minimum
+            doc[context['@context']['maximumValue']] = maximum
+
     case = ''
+
 
 
 def CogAt_WO_json(row2, isabouts):
@@ -156,13 +241,14 @@ def CogAt_WO_json(row2, isabouts):
         if q is not False:
             isabouts.append(q)
 
+
+
 def get_isAbout_label(url):
     '''
     Added by DBK to get labels for isAbout urls
     :param url: url to get label for
     :return: string label
     '''
-
 
 
     scicrunch_base_uri = 'https://scicrunch.org/api/1/ilx/search/curie/'
@@ -219,6 +305,7 @@ def isAbout_parser(df_row,doc,context):
     # extract the levels column from the data frame
     row = df_row['isAbout']
 
+
     isabouts = []
 
 
@@ -242,10 +329,6 @@ def isAbout_parser(df_row,doc,context):
             # first make sure we have an InterLex API key stored as an environment variable
             label = get_isAbout_label(s)
             isabouts.append(s+":"+label)
-
-        if url_validator(s) is False:
-            print('here')
-
 
 
     doc[context['@context']['isAbout']] = []
@@ -279,17 +362,11 @@ def isPartOf_parser(df_row,doc,context):
             ispartof.append(s)
 
 
-    if len(ispartof) == 1:
-        for i in ispartof:
-            doc[context['@context']['isAbout']] = str(i)
-
-    elif len(ispartof) > 1:
-        doc[context['@context']['isAbout']] = []
-        doc[context['@context']['isAbout']].append(ispartof)
+        doc[context['@context']['isPartOf']] = []
+        doc[context['@context']['isPartOf']].append(ispartof)
 
 
     print("\tFound OpenNeuro_isPartof")
-
 
 
 
@@ -402,6 +479,30 @@ def main(argv):
             if not pd.isnull(row['isPartOf']):
                 print("\tFound OenNeuro_isPartOf")
                 doc[context['@context']['isPartOf']] = str(row['isPartOf'])
+
+            if not pd.isnull(row['Derivative']):
+                print('\tFound OpenNeuro_Derivative')
+                doc[context['@context']['derivative']] = str(row['Derivative'])
+
+            if not pd.isnull(row['Term_URL']):
+                print('\tFound OpenNeuro_TermURL')
+                doc[context['@context']['url']['@id']] = str(row['Term_URL'])
+
+
+            if not pd.isnull(row['Minimum Value']):
+                print('\tFound OpenNeuro_minimum value')
+                doc[context['@context']['minimumValue']] = str(row['Minimum Value'])
+
+            if not pd.isnull(row['Maximum Value']):
+                print('\tFound OpenNeuro_maximum value')
+                doc[context['@context']['maximumValue']] = str(row['Maximum Value'])
+
+
+            # allowable values based on given min and max values in the spreadsheet
+            if not pd.isnull(row['Minimum Value']) and not pd.isnull(row['Maximum Value']):
+                all_vall = np.arange(int(row['Minimum Value']), int(row['Maximum Value'])).tolist()
+                doc[context['@context']['allowableValues']] = all_vall
+
 
 
             isAbout_parser(row,doc,context)
