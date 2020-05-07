@@ -16,6 +16,7 @@ import tempfile
 import urllib.request as ur
 from urllib.parse import urldefrag
 
+import datalad.api as dl
 
 
 
@@ -67,9 +68,11 @@ def main(argv):
 
         # download datalad dataset and install
         #cmd = ["datalad","get", "-r", join(args.datalad_dir,ds)]
-        cmd = ["datalad", "get", "-r", ds]
-        logger.info("Running command: %s" %cmd)
-        ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
+        # replacing with datalad api
+        #cmd = ["datalad", "get", "-r", ds]
+        dl.get(path=join(args.datalad_dir,ds),recursive=True)
+        logger.info("Running datalad get command on dataset: %s" %join(args.datalad_dir,ds))
+        #ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
 
         # now copy each of the json_files into the datalad dataset
         for file in json_files:
@@ -91,9 +94,11 @@ def main(argv):
         ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
 
         # now remove the datalad dataset to save space
-        cmd = ["datalad", "uninstall", "-r", join(args.datalad_dir, ds)]
-        logger.info("Running command: %s" % cmd)
-        ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
+        # replacing with datalad api call
+        #cmd = ["datalad", "uninstall", "-r", join(args.datalad_dir, ds)]
+        dl.uninstall(path=join(args.datalad_dir,ds),recursive=True)
+        logger.info("Running datalad uninstall command on dataset: %s" %join(args.datalad_dir,ds))
+        #ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
 
 
 
