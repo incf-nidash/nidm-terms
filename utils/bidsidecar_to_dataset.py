@@ -17,7 +17,7 @@ import urllib.request as ur
 from urllib.parse import urldefrag
 
 import datalad.api as dl
-
+from shutil import copyfile
 
 
 def main(argv):
@@ -76,12 +76,14 @@ def main(argv):
 
         # now copy each of the json_files into the datalad dataset
         for file in json_files:
-            cmd = ["cp",join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds)]
-            logger.info("Running command: %s" % cmd)
-            ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
+            # changing copy to use copyfile from shutil
+            #cmd = ["cp",join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds)]
+            copyfile(join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds))
+            logger.info("Copying file: source=%s, dest=%s" %(join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds)))
+            #ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
 
         # make sure it's there
-        if not isfile(join(args.datalad_dir,ds)):
+        if not isfile(join(args.datalad_dir,ds,file)):
             logger.error("ERROR: copy of file %s to %s didn't complete successfully!" %(join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds)))
 
         # now run bidsmri2nidm
