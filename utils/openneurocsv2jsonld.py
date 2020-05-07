@@ -217,8 +217,6 @@ def level_parser(df_row,doc,context):
                 maximum = all_val[-1]
 
 
-
-
             doc[context['@context']['minimumValue']] = minimum
             doc[context['@context']['maximumValue']] = maximum
 
@@ -304,10 +302,7 @@ def isAbout_parser(df_row,doc,context):
 
     # extract the levels column from the data frame
     row = df_row['isAbout']
-<<<<<<< HEAD
 
-=======
->>>>>>> dedacc83a26f3602fa90e49f050c0fb215168fe2
 
     isabouts = []
 
@@ -338,25 +333,9 @@ def isAbout_parser(df_row,doc,context):
     doc[context['@context']['isAbout']].append(isabouts)
 
 
-<<<<<<< HEAD
     print("\tFound OpenNeuro_isAbout")
 
 
-=======
-
-    if len(isabouts) == 1:
-        for i in isabouts:
-            doc[context['@context']['isAbout']] = str(i)
-
-    elif len(isabouts) > 1:
-        doc[context['@context']['isAbout']] = []
-        doc[context['@context']['isAbout']].append(isabouts)
-
-
-    print("\tFound OpenNeuro_isAbout")
-
-
->>>>>>> dedacc83a26f3602fa90e49f050c0fb215168fe2
 
 
 def isPartOf_parser(df_row,doc,context):
@@ -386,7 +365,6 @@ def isPartOf_parser(df_row,doc,context):
 
 
     print("\tFound OpenNeuro_isPartof")
-
 
 
 
@@ -511,18 +489,18 @@ def main(argv):
 
             if not pd.isnull(row['Minimum Value']):
                 print('\tFound OpenNeuro_minimum value')
-                doc[context['@context']['minimumValue']] = str(row['Minimum Value'])
+                doc[context['@context']['minimumValue']] = int(row['Minimum Value'])
 
             if not pd.isnull(row['Maximum Value']):
                 print('\tFound OpenNeuro_maximum value')
-                doc[context['@context']['maximumValue']] = str(row['Maximum Value'])
+                doc[context['@context']['maximumValue']] = int(row['Maximum Value'])
 
 
             # allowable values based on given min and max values in the spreadsheet
             if not pd.isnull(row['Minimum Value']) and not pd.isnull(row['Maximum Value']):
                 all_vall = np.arange(int(row['Minimum Value']), int(row['Maximum Value'])).tolist()
+                all_vall.append(int(row['Maximum Value']))
                 doc[context['@context']['allowableValues']] = all_vall
-
 
 
             isAbout_parser(row,doc,context)
