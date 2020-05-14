@@ -16,7 +16,8 @@ import tempfile
 import urllib.request as ur
 from urllib.parse import urldefrag
 
-
+import datalad.api as dl
+from shutil import copyfile
 
 
 def main(argv):
@@ -50,6 +51,9 @@ def main(argv):
         logger.error("BIDS augmented sidecar directory not found: %s" % args.sidecar_dir)
         exit(1)
 
+    # set working directory to args.datalad_dir
+    os.setwd(args.datalad_dir)
+
     # step 2 loop through all datasets in args.sidecar_dir
     bids_datasets = [ x for x in os.listdir(args.sidecar_dir) if isdir(join(args.sidecar_dir,x)) ]
     # for each dataset
@@ -63,33 +67,40 @@ def main(argv):
             continue
 
         # download datalad dataset and install
-        cmd = ["datalad","get", "-r", join(args.datalad_dir,ds)]
-        logger.info("Running command: %s" %cmd)
-        ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
+        #cmd = ["datalad","get", "-r", join(args.datalad_dir,ds)]
+        # replacing with datalad api
+        #cmd = ["datalad", "get", "-r", ds]
+        dl.get(path=join(args.datalad_dir,ds),recursive=True)
+        logger.info("Running datalad get command on dataset: %s" %join(args.datalad_dir,ds))
+        #ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
 
         # now copy each of the json_files into the datalad dataset
         for file in json_files:
-            cmd = ["cp",join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds)]
-            logger.info("Running command: %s" % cmd)
-            ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
+            # changing copy to use copyfile from shutil
+            #cmd = ["cp",join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds)]
+            copyfile(join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds))
+            logger.info("Copying file: source=%s, dest=%s" %(join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds)))
+            #ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
 
         # make sure it's there
-        if not isfile(join(args.datalad_dir,ds)):
+        if not isfile(join(args.datalad_dir,ds,file)):
             logger.error("ERROR: copy of file %s to %s didn't complete successfully!" %(join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds)))
 
         # now run bidsmri2nidm
         if args.nidm_dir is not None:
-            cmd = ["bidsmri2nidm","-d",join(args.datalad_dir,ds),"-o",join(args.nidm_dir,ds,"nidm.ttl"),"-bidsignore"]
+            cmd = ["bidsmri2nidm","-d",join(args.datalad_dir,ds),"-o",join(args.nidm_dir,ds,"nidm.ttl"),"-bidsignore","-no_concepts"]
         else:
             cmd = ["bidsmri2nidm", "-d", join(args.datalad_dir, ds), "-o", join(args.datalad_dir, ds, "nidm.ttl"),
-                   "-bidsignore"]
+                   "-bidsignore","-no_concepts"]
         logger.info("Running command: %s" % cmd)
         ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
 
         # now remove the datalad dataset to save space
-        cmd = ["datalad", "uninstall", "-r", join(args.datalad_dir, ds)]
-        logger.info("Running command: %s" % cmd)
-        ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
+        # replacing with datalad api call
+        #cmd = ["datalad", "uninstall", "-r", join(args.datalad_dir, ds)]
+        dl.uninstall(path=join(args.datalad_dir,ds),recursive=True)
+        logger.info("Running datalad uninstall command on dataset: %s" %join(args.datalad_dir,ds))
+        #ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
 
 
 
