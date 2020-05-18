@@ -167,11 +167,10 @@ def level_parser(df_row,doc,context):
         doc[context['@context']['levels']].append(key + ":" + value)
 
 
-    # assign allowable values to allowableValues in jsonld property
-    doc[context['@context']['allowableValues']] = all_val
 
 
-    # if the key in the level property is digit assign a minimum and a maximum value
+
+    # if key in the level property is digit assign a minimum and a maximum value
     if state == 1:
         while '' in all_val:
             all_val.remove('')
@@ -219,6 +218,10 @@ def level_parser(df_row,doc,context):
 
             doc[context['@context']['minimumValue']] = minimum
             doc[context['@context']['maximumValue']] = maximum
+
+
+    # assign allowable values to allowableValues in jsonld property
+    doc[context['@context']['allowableValues']] = all_val
 
     case = ''
 
@@ -305,7 +308,7 @@ def isAbout_parser(df_row,doc,context):
 
 
     isabouts = []
-
+    global label
 
     # passes over rows with no values
     if isinstance(row,float) and np.isnan(row):
@@ -326,11 +329,12 @@ def isAbout_parser(df_row,doc,context):
             # added by DBK to get labels for isabout URLs
             # first make sure we have an InterLex API key stored as an environment variable
             label = get_isAbout_label(s)
-            isabouts.append(s+":"+label)
+            #isabouts.append(s+":"+label)
 
 
-    doc[context['@context']['isAbout']] = []
-    doc[context['@context']['isAbout']].append(isabouts)
+    doc[context['@context']['isAbout']] = {}
+    doc[context['@context']['isAbout']][s] = label
+    #doc[context['@context']['isAbout']].append(isabouts)
 
 
     print("\tFound OpenNeuro_isAbout")
@@ -368,6 +372,326 @@ def isPartOf_parser(df_row,doc,context):
 
 
 
+def jsonld_dict(d,row,context,args):
+    '''
+    Creates compacted dictionary for every term passed and the main dictionary d.
+
+    :param d: dictionary passed for each BIDS json file to the function to load multiple jsonld dictionaries(doc)
+    :param row: term row from the dataframe
+    :param context: context file as a jsonld dictionary
+    :param args: pass arguments
+    :return:
+
+    dictionary d with a compatced jsonld file for each row (i.e. term) passed
+    '''
+
+    # open a new dictionary
+    doc = {}
+
+    #add type as schema.org/DataElement
+    doc['@type'] = context['@context']['DataElement']
+    doc[context['@context']['source_variable']] = row['sourceVariable']
+
+    #assign Long Name to the label property in doc
+    if not pd.isnull(row['LongName']):
+        print("\tFound OpenNeuro Label")
+        doc[context['@context']['label']] = str(row['LongName'])
+
+    #assign description to the description property in doc
+    if not pd.isnull(row['Description']):
+        print("\tFound OpenNeuro_Definition")
+        doc[context['@context']['description']] = str(row['Description'])
+
+    #assign type of the input value to the ValueType property in doc
+    if not pd.isnull(row['ValueType']):
+        print("\tFound OpenNeuro_ValueType")
+        doc[context['@context']['valueType']] = str(row['ValueType'])
+
+    #assign unit label to hasUnit property in doc
+    if not pd.isnull(row['Units']):
+        print("\tFound OpenNeuro_Units")
+        doc[context['@context']['hasUnit']] = str(row['Units'])
+
+    #assign unit label to measureOf property in doc
+    if not pd.isnull(row['measureOf']):
+        print("\tFound OpenNeuro_measureOf")
+        doc[context['@context']['measureOf']] = str(row['measureOf'])
+
+    #assign unit label to datumType property in doc
+    if not pd.isnull(row['datumType']):
+        print("\tFound OpenNeuro_measureOf")
+        doc[context['@context']['datumType']] = str(row['datumType'])
+
+    #assign unit label to datumType isPartOf in doc
+    if not pd.isnull(row['isPartOf']):
+        print("\tFound OenNeuro_isPartOf")
+        doc[context['@context']['isPartOf']] = str(row['isPartOf'])
+
+    #assign unit label to Derivative property in doc
+    if not pd.isnull(row['Derivative']):
+        print('\tFound OpenNeuro_Derivative')
+        doc[context['@context']['derivative']] = str(row['Derivative'])
+
+    #assign unit label to url property in doc
+    if not pd.isnull(row['Term_URL']):
+        print('\tFound OpenNeuro_TermURL')
+        doc[context['@context']['url']['@id']] = str(row['Term_URL'])
+
+    #assign unit label to Min value property in doc
+    if not pd.isnull(row['Minimum Value']):
+        print('\tFound OpenNeuro_minimum value')
+        doc[context['@context']['minimumValue']] = int(row['Minimum Value'])
+
+    #assign unit label to Max value property in doc
+    if not pd.isnull(row['Maximum Value']):
+        print('\tFound OpenNeuro_maximum value')
+        doc[context['@context']['maximumValue']] = int(row['Maximum Value'])
+
+    # allowable values based on given min and max values in the spreadsheet
+    if not pd.isnull(row['Minimum Value']) and not pd.isnull(row['Maximum Value']):
+        all_vall = np.arange(int(row['Minimum Value']), int(row['Maximum Value'])).tolist()
+        all_vall.append(int(row['Maximum Value']))
+        doc[context['@context']['allowableValues']] = all_vall
+
+
+    isAbout_parser(row,doc,context)
+    isPartOf_parser(row,doc,context)
+    level_parser(row,doc,context)
+
+    #write JSON file out
+    compacted = jsonld.compact(doc,args.context)
+
+    # add the the jsonld dictionary to the main dictionary
+    d[row['sourceVariable']] = compacted
+
+    return d
+
+
+def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
+    '''
+
+    This function checks if the original json sidecar files have extra data elements that are not included in in the tsv file
+    (like MeasurmentMetadataTool) and return a complete dictionary ready to be written in the proper directory consistant with
+    the original dataset number and sub-directories.
+
+    :param d: main dictionary for every BIDS json file that contains little jsonld files for every term
+    :param datasets_path: path to original BIDS dataset dir (in this case it's OpenNeuro)
+    :param l: dataset number extracted from the passed data frame
+    :param source: name of the json file that was passed (it could be participants.json or a name of the json file in phenotype )
+    :param args: passed argument
+    :param context: context file passed in the argument
+    :param pathtophenodir: path to the new updated datasets
+    :param subdirectory: session T1 or T2 if the original dataset has such directories
+    :returns
+
+    d: complete dictionary with data elements from both tsv file and json dictionary
+
+    '''
+
+
+    # add ds to the beginning  of the dataset number to be able to access that original directory
+    l = 'ds'+l
+
+    # open a new dictionary for each data element
+    doc = {}
+
+    # check if the passed data elements come from participants file
+    if source == 'participants.json':
+        ## set path to the original participants.json file
+        part_path = os.path.join(datasets_path,l + '/' + 'participants.json')
+        # check if the dataset has a participants.json file
+        ## if not then the function will just return that passed dictionary (d) with nothing added to it
+        if not os.path.exists(part_path):
+
+            return d
+
+        ## if the original dataset has a participants.json file
+        elif os.path.exists(part_path):
+            ## open the json file as a dictionary
+            with open (part_path) as dict:
+                part_json = json.load(dict)
+            ## now check if the keys in teh original files are included in the new dictionary
+            for key in part_json:
+
+                if key in d.keys():
+                    continue
+
+                ## if a new key is found in the original json file and not in the d add that key
+                elif not key in d.keys():
+
+                    #add type as schema.org/DataElement
+                    doc['@type'] = context['@context']['DataElement']
+                    doc[context['@context']['source_variable']] = key
+
+                    # loop through the data elements properties and change them to be consistent with cde_context.jsonld
+                    # (https://github.com/nqueder/terms/blob/master/context/cde_context.jsonld)
+                    for subkey in part_json[key]:
+
+                        if subkey == 'Description':
+                            print("\tFound OpenNeuro_Definition")
+                            doc[context['@context']['description']] = str(part_json[key][subkey])
+
+                        if subkey == 'LongName':
+                            print("\tFound OpenNeuro_Definition")
+                            doc[context['@context']['label']] = str(part_json[key][subkey])
+
+                        if subkey == 'TermURL':
+                            print('\tFound OpenNeuro_TermURL')
+                            doc[context['@context']['url']['@id']] = str(part_json[key][subkey])
+
+                        if subkey == 'Derivative':
+                            print("\tFound OpenNeuro_Derivative")
+                            doc[context['@context']['derivative']] = str(part_json[key][subkey])
+
+                        if subkey == 'Citation':
+                            print("\tFound OpenNeuro_Citation")
+                            doc[context['@context']['citation']] = str(part_json[key][subkey])
+
+                    ## create a compacted file from the data element dictionary and the context file
+                    compacted = jsonld.compact(doc,args.context)
+
+                    ## write that compacted file as a dictionary in the the master dictionary d
+                    d[key] = compacted
+
+            # return updated master dictionary d
+            return d
+
+    # if the passed dictionary comes from a phenotype file
+    else:
+        # set path to the original phenotype directory
+        ds_path = os.path.join(datasets_path,l + '/' + 'phenotype')
+
+        # parse the directory to be able to access both files that are placed inside or outside of a sub directory
+        for root, dirs, files in os.walk(ds_path, topdown=True):
+            #access sub-directories to extract assessment terms
+            for dir in dirs:
+
+                #set path to the sub directory
+                sub_dir = os.path.join(ds_path,dir)
+
+                #access tsv files in sub-directories
+                for subroot, subdirs, json_files in os.walk(sub_dir):
+
+                    # look for file with .json extension in the files of sub directories like T1 or T2
+                    for FL in json_files:
+                        # if a file with .json extension and starts with the same name as the tsv file passed to this function
+                        # set a path to the file and open it
+                        if FL.endswith('.json') and FL.startswith(source):
+
+                            j_dir = os.path.join(sub_dir, source+'.json')
+
+                            save_j_path = os.path.join(pathtophenodir,dir)
+
+                            # open json file as a dictionary
+                            with open (j_dir) as f:
+                                phenojson1 = json.load(f)
+
+                            # check if each data element is in the master dictionary d
+                            for k in phenojson1:
+
+                                if k in d.keys():
+                                    continue
+
+                                elif not k in d.keys():
+
+                                    #add type as schema.org/DataElement
+                                    doc['@type'] = context['@context']['DataElement']
+                                    doc[context['@context']['source_variable']] = str(k)
+
+                                    #for each data element that is not in the master dictionary d access its properties
+                                    # and change them to be consistent with context
+                                    for subk in phenojson1[k]:
+
+
+                                        if subk == 'Description':
+                                            print("\tFound OpenNeuro_Definition")
+                                            doc[context['@context']['description']] = str(phenojson1[k][subk])
+
+                                        if subk == 'LongName':
+                                            print("\tFound OpenNeuro_LongName")
+                                            doc[context['@context']['label']] = str(phenojson1[k][subk])
+
+                                        if subk == 'TermURL':
+                                            print('\tFound OpenNeuro_TermURL')
+                                            doc[context['@context']['url']['@id']] = str(phenojson1[k][subk])
+
+                                        if subk == 'Derivative':
+                                            print('\tFound OpenNeuro_Derivative')
+                                            doc[context['@context']['derivative']] = str(phenojson1[k][subk])
+
+                                        if subk == 'Citation':
+                                            print('\tFound OpenNeuro_Citaion')
+                                            doc[context['@context']['citation']] = str(phenojson1[k][subk])
+
+                                    # compact file with doc and context
+                                    compacted = jsonld.compact(doc,args.context)
+                                    # add compacted file to the master dictionary d
+                                    d[k] = compacted
+
+                                #return updated master dictionary d
+                                return d
+
+            # not that we checked for json files in phenotype sub directories check files in phenotype
+            for file in files:
+                # if a file with .json extension and starts with the same name as the tsv file passed to this function
+                # set a path to the file and open it
+                if file.endswith('.json') and file.startswith(source):
+
+                    file_path = os.path.join(ds_path,source+'.json')
+
+                    # check if the directory has the desired json file
+                    if os.path.exists(file_path):
+                        # open the json file as a dictionary
+                        with open (file_path) as g:
+                            phenojson2 = json.load(g)
+
+                        # check if each data element is in the master dictionary d
+                        for kk in phenojson2:
+
+                            if kk in d.keys():
+                                continue
+
+                            elif not kk in d.keys():
+
+                                #add type as schema.org/DataElement
+                                doc['@type'] = context['@context']['DataElement']
+                                doc[context['@context']['source_variable']] = str(kk)
+
+                                for subkk in phenojson2[kk]:
+
+
+                                    if subkk == 'Description':
+                                        print("\tFound OpenNeuro_Definition")
+                                        doc[context['@context']['description']] = str(phenojson2[kk][subkk])
+
+                                    if subkk == 'LongName':
+                                        print("\tFound OpenNeuro_LongName")
+                                        doc[context['@context']['label']] = str(phenojson2[kk][subkk])
+
+                                    if subkk == 'TermURL':
+                                        print('\tFound OpenNeuro_TermURL')
+                                        doc[context['@context']['url']['@id']] = str(phenojson2[kk][subkk])
+
+                                    if subkk == 'Derivative':
+                                        print('\tFound OpenNeuro_Derivative')
+                                        doc[context['@context']['derivative']] = str(phenojson2[kk][subkk])
+
+                                    if subkk == 'Citation':
+                                        print('\tFound OpenNeuro_Citation')
+                                        doc[context['@context']['citation']] = str(phenojson2[kk][subkk])
+
+                                # compact file with doc and context
+                                compacted = jsonld.compact(doc,args.context)
+                                # add compacted file to the master dictionary d
+                                d[kk] = compacted
+
+                            #return updated master dictionary d
+                            return d
+
+                    # if no json file is found return master dictionary d
+                    elif not os.path.exists(file_path):
+
+                        return d
 
 
 def main(argv):
@@ -377,9 +701,14 @@ def main(argv):
 
     parser.add_argument('-csv', dest='csv_file', required=True, help="Path to csv file to convert. NOTE: the spreadsheet must be in a comma-separated values format")
     parser.add_argument('-out', dest='output_dir', required=True, help="Output directory to save JSON files")
+    parser.add_argument('-ds_dir', dest='datasets', required=True, help="Path to OpenNeuro datasets directory")
     parser.add_argument('-context', dest= 'context', required=True, help='URL to context file')
     args = parser.parse_args()
 
+    print('Preparing for iteration...')
+
+    #set output directory
+    output = args.output_dir
 
     # open csv file and load into a data frame
     df = pd.read_csv(args.csv_file, encoding = 'latin-1', error_bad_lines=False)
@@ -411,11 +740,10 @@ def main(argv):
         context = json.load(context_data)
 
     #starting a new python dictionary
-    doc = {}
+    d = {}
 
     # put data set Id's in a list
     ds_number = df['ds_number'].tolist()
-
     # create an empty list for non duplicated data set ID's
     ds_list = []
     for s in ds_number:
@@ -423,103 +751,178 @@ def main(argv):
             ds_list.append(s)
 
 
+    global state
+
+
     # make directory for every dataset
     for dl in ds_list:
         l = str(dl).zfill(6)
-        path_to_dir = os.path.join(args.output_dir, str(l))
+
+        ## dataset 001107 has a unique structure
+        ### files are placed inside a directory titled "eyetracking while movie watching, plus visual localizers"
+        #if l == '001107':
+            #path_to_dir1 = os.path.join(output,str(l))
+        #    if os.path.exists(path_to_dir1):
+         #       shutil.rmtree(path_to_dir1)
+          #  path_to_dir1 = os.path.join(output,str(l))
+           # os.mkdir(path_to_dir1)
+            #pathtodataset = os.mkdir(os.path.join(path_to_dir1, 'eyetracking while movie watching, plus visual localizers'))
+
+        #else:
+
+
+        #create an output directory for each dataset in the main output directory passed to the argument
+        path_to_dir = os.path.join(output, str(l))
         if os.path.exists(path_to_dir):
             shutil.rmtree(path_to_dir)
-        os.mkdir(os.path.join(args.output_dir, str(l)))
+        pathtodataset = os.path.join(output, str(l))
+        os.mkdir(pathtodataset, mode = 0o777)
+
 
         # lock the dataframe to only read rows with specific ds_number
         dataset = df.loc[df['ds_number'] == dl]
 
+        print('PROCESSING TERMS FROM ds%s' %l)
+
         #loop through all rows and grab info if exists
         for (i,row) in dataset.iterrows():
             print('starting iteration...')
-            print('processing term: %s'%row['sourceVariable'])
+            #print('processing term: %s'%row['sourceVariable'])
 
+            #loc data frame only at terms that are not phenotype terms
+            par_ter = dataset.loc[dataset['Phenotype Term?'] == 'NO']
 
-            #add type as schema.org/DataElement
-            doc['@type'] = context['@context']['DataElement']
-            doc[context['@context']['source_variable']] = row['sourceVariable']
-
-            #assign Long Name to the label property in doc
-            if not pd.isnull(row['LongName']):
-                print("\tFound OpenNeuro Label")
-                doc[context['@context']['label']] = str(row['LongName'])
-
-            #assign description to the description property in doc
-            if not pd.isnull(row['Description']):
-                print("\tFound OpenNeuro_Definition")
-                doc[context['@context']['description']] = str(row['Description'])
-
-            #assign type of the input value to the ValueType property in doc
-            if not pd.isnull(row['ValueType']):
-                print("\tFound OpenNeuro_ValueType")
-                doc[context['@context']['valueType']] = str(row['ValueType'])
-
-            #assign unit label to hasUnit property in doc
-            if not pd.isnull(row['Units']):
-                print("\tFound OpenNeuro_Units")
-                doc[context['@context']['hasUnit']] = str(row['Units'])
-
-            #assign unit label to measureOf property in doc
-            if not pd.isnull(row['measureOf']):
-                print("\tFound OpenNeuro_measureOf")
-                doc[context['@context']['measureOf']] = str(row['measureOf'])
-
-            #assign unit label to datumType property in doc
-            if not pd.isnull(row['datumType']):
-                print("\tFound OpenNeuro_measureOf")
-                doc[context['@context']['datumType']] = str(row['datumType'])
-
-            if not pd.isnull(row['isPartOf']):
-                print("\tFound OenNeuro_isPartOf")
-                doc[context['@context']['isPartOf']] = str(row['isPartOf'])
-
-            if not pd.isnull(row['Derivative']):
-                print('\tFound OpenNeuro_Derivative')
-                doc[context['@context']['derivative']] = str(row['Derivative'])
-
-            if not pd.isnull(row['Term_URL']):
-                print('\tFound OpenNeuro_TermURL')
-                doc[context['@context']['url']['@id']] = str(row['Term_URL'])
-
-
-            if not pd.isnull(row['Minimum Value']):
-                print('\tFound OpenNeuro_minimum value')
-                doc[context['@context']['minimumValue']] = int(row['Minimum Value'])
-
-            if not pd.isnull(row['Maximum Value']):
-                print('\tFound OpenNeuro_maximum value')
-                doc[context['@context']['maximumValue']] = int(row['Maximum Value'])
-
-
-            # allowable values based on given min and max values in the spreadsheet
-            if not pd.isnull(row['Minimum Value']) and not pd.isnull(row['Maximum Value']):
-                all_vall = np.arange(int(row['Minimum Value']), int(row['Maximum Value'])).tolist()
-                all_vall.append(int(row['Maximum Value']))
-                doc[context['@context']['allowableValues']] = all_vall
-
-
-            isAbout_parser(row,doc,context)
-            isPartOf_parser(row,doc,context)
-            level_parser(row,doc,context)
-
-            #write JSON file out
-            compacted = jsonld.compact(doc,args.context)
+            # loop through the rows and call function json_check to create a master dictionary d
+            for ii, rr in par_ter.iterrows():
+                print('processing term: %s'%rr['sourceVariable'])
+                d = jsonld_dict(d,rr,context,args)
 
 
             # opens pre-made directory with with a number that matches the ds ID and creates a jsonld file inside that directory
-            with open (join((os.path.join(args.output_dir, str(l))), row['sourceVariable'].replace("/","_") + '.jsonld'),'w+') as outfile:
-                json.dump(compacted,outfile,indent=2)
+            with open (join(pathtodataset, 'participants' + '.jsonld'),'w+') as outfile:
+                json.dump(json_check(d,args.datasets,str(l),'participants.json',args, context,''),outfile,indent=2)
 
-            print("size of dict: %d" %sys.getsizeof(doc))
-            doc.clear()
+
+            print("size of dict: %d" %sys.getsizeof(d))
+            d.clear()
+
+
+
+            # check if the original dataset dir has a phenotype dir,
+            ## if it does create one in the same dataset output directory
+            pathtods = args.datasets
+            dataset_list = os.listdir(pathtods)
+            for p in dataset_list:
+                if p[2:] == l:
+                    path = os.path.join(pathtods,p)
+                    original_phenotype = os.path.join(path, 'phenotype')
+                    if os.path.exists(original_phenotype):
+                        pathtophenodir = os.path.join(pathtodataset, 'phenotype')
+                        if os.path.exists(pathtophenodir):
+                            shutil.rmtree(pathtophenodir)
+                        os.mkdir(pathtophenodir)
+
+
+
+                        #parse through the phenotype directory looking for assessment terms
+                        for root, dirs, files in os.walk(original_phenotype, topdown=True):
+                            #access sub-directories to extract assessment terms
+                            for dir in dirs:
+                                sub_dir = os.path.join(original_phenotype, dir)
+                                subdir_output = os.path.join(pathtophenodir,dir)
+                                os.mkdir(subdir_output)
+                                #access tsv files in sub-directories
+                                for subroot, subdirs, tsv_files in os.walk(sub_dir):
+                                    for FL in tsv_files:
+                                        if FL.endswith('.tsv'):
+                                            FL_name = FL[:-4]
+                                            p_tsv = os.path.join(subroot, FL)
+                                            r_tsv = pd.read_csv(p_tsv, error_bad_lines=False)
+
+                                            #exract terms from tsv files
+                                            for c in r_tsv.columns :
+                                                #create a term list
+                                                term_list = c.split("\t")
+                                                while '' in term_list:
+                                                    term_list.remove('')
+                                                for T in term_list:
+                                                    if T == 'participant_id':
+                                                        term_list.remove('participant_id')
+
+                                                #include only terms that are extracted from the associated tsv file
+                                                pheno_ter = dataset.loc[dataset['sourceVariable'].isin(term_list)]
+
+                                                #loop through those terms and if the term is a phenotype term pass it to jsonld_dict to create the master dictionary
+                                                for II, R in pheno_ter.iterrows():
+
+                                                    print('starting iteration...')
+                                                    print('processing term: %s'%R['sourceVariable'])
+
+                                                    if R['Phenotype Term?'] == 'YES':
+                                                        print('processing term: %s'%R['sourceVariable'])
+                                                        d = jsonld_dict(d,R,context,args)
+
+
+                                            # opens pre-made directory with with a number that matches the ds ID and creates a jsonld file inside that directory
+                                            with open (join(pathtophenodir, FL_name + '.jsonld'),'w+') as outfile:
+                                                json.dump(json_check(d,args.datasets,str(l),FL_name,args,context,pathtophenodir),outfile,indent=2)
+
+
+                                            print("size of dict: %d" %sys.getsizeof(d))
+                                            d.clear()
+
+                                    break
+
+
+                            #look for tsv files in phenotype directory
+                            for file in files:
+                                if file.endswith('.tsv'):
+                                    file_name = file[:-4]
+                                    pathtotsv = os.path.join(root, file)
+                                    rtsv = pd.read_csv(pathtotsv, error_bad_lines=False)
+                                    #extract terms from tsv files
+                                    for col in rtsv.columns :
+                                        #create a term list
+                                        termlist = col.split("\t")
+                                        while '' in termlist:
+                                            termlist.remove('')
+                                        for t in termlist:
+                                            if t == 'participant_id':
+                                                termlist.remove('participant_id')
+
+                                        #include only terms that are extracted from the associated tsv file
+                                        ter = dataset.loc[dataset['sourceVariable'].isin(termlist)]
+
+                                        #loop through those terms and if the term is a phenotype term pass it to jsonld_dict to create the master dictionary
+                                        for I, r in ter.iterrows():
+
+                                            print('starting iteration...')
+                                            print('processing term: %s'%r['sourceVariable'])
+
+                                            if r['Phenotype Term?'] == 'YES':
+                                                print('processing term: %s'%r['sourceVariable'])
+                                                d = jsonld_dict(d,r,context,args)
+
+
+                                    # opens pre-made directory with with a number that matches the ds ID and creates a jsonld file inside that directory
+                                    with open (join(pathtophenodir, file_name + '.jsonld'),'w+') as outfile:
+                                        json.dump(json_check(d,args.datasets,str(l),file_name,args, context,pathtophenodir),outfile,indent=2)
+
+                                    print("size of dict: %d" %sys.getsizeof(d))
+                                    d.clear()
+
+                            break
+
+                # reset the path to its original state datasets
+                path = args.datasets
+
+            break
+
 
 
 
 if __name__ == "__main__":
    main(sys.argv[1:])
+
+
 

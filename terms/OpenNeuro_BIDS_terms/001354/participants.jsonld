@@ -1,0 +1,49 @@
+{
+  "age": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "age of the participant",
+    "isAbout": {
+      "http://uri.interlex.org/ilx_0100400": "age"
+    },
+    "source_variable": "age",
+    "hasUnit": "years",
+    "valueType": "xsd:float"
+  },
+  "gender": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "gender of the participant",
+    "isAbout": {
+      "http://uri.interlex.org/ilx_0738437": "gender"
+    },
+    "source_variable": "gender",
+    "levels": [
+      "m:male",
+      "f:female"
+    ],
+    "allowableValues": [
+      "m",
+      "f"
+    ],
+    "valueType": "xsd:string"
+  },
+  "group": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "group the participant belonged to in the experimental paradigm",
+    "isAbout": {
+      "http://uri.interlex.org/ilx_0108556": "participant group"
+    },
+    "source_variable": "group",
+    "levels": [
+      "CONTROL:healthy subject",
+      "PD-denovo:de novo Parkinson's disease patient"
+    ],
+    "allowableValues": [
+      "CONTROL",
+      "PD-denovo"
+    ],
+    "valueType": "xsd:string"
+  }
+}
