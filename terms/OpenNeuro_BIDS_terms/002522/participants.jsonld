@@ -1,0 +1,49 @@
+{
+  "age": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "age of participant",
+    "isAbout": {
+      "http://uri.interlex.org/ilx_0100400": "age"
+    },
+    "source_variable": "age",
+    "hasUnit": "years (rounded down)",
+    "valueType": "xsd:integer"
+  },
+  "group": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "group membership",
+    "isAbout": {
+      "http://uri.interlex.org/ilx_0108556": "participant group"
+    },
+    "source_variable": "group",
+    "levels": [
+      "ASD:ASD (Autism Spectrum Disorders)",
+      "Neurotypical:Neurotypicals (controls)"
+    ],
+    "allowableValues": [
+      "ASD",
+      "Neurotypical"
+    ],
+    "valueType": "xsd:string"
+  },
+  "sex": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "biological sex of participant",
+    "isAbout": {
+      "http://uri.interlex.org/ilx_0112866": "sex"
+    },
+    "source_variable": "sex",
+    "levels": [
+      "m:male",
+      "f:female"
+    ],
+    "allowableValues": [
+      "m",
+      "f"
+    ],
+    "valueType": "xsd:string"
+  }
+}
