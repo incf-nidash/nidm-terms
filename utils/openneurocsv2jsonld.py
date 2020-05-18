@@ -470,49 +470,62 @@ def jsonld_dict(d,row,context,args):
 def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
     '''
 
+    This function checks if the original json sidecar files have extra data elements that are not included in in the tsv file
+    (like MeasurmentMetadataTool) and return a complete dictionary ready to be written in the proper directory consistant with
+    the original dataset number and sub-directories.
 
     :param d: main dictionary for every BIDS json file that contains little jsonld files for every term
     :param datasets_path: path to original BIDS dataset dir (in this case it's OpenNeuro)
     :param l: dataset number extracted from the passed data frame
     :param source: name of the json file that was passed (it could be participants.json or a name of the json file in phenotype )
-    :param args:
-    :param context:
-    :param pathtophenodir:
-    :param subdirectory:
-    :return:
+    :param args: passed argument
+    :param context: context file passed in the argument
+    :param pathtophenodir: path to the new updated datasets
+    :param subdirectory: session T1 or T2 if the original dataset has such directories
+    :returns
+
+    d: complete dictionary with data elements from both tsv file and json dictionary
+
     '''
 
+
+    # add ds to the beginning  of the dataset number to be able to access that original directory
     l = 'ds'+l
 
+    # open a new dictionary for each data element
     doc = {}
 
-
+    # check if the passed data elements come from participants file
     if source == 'participants.json':
-
+        ## set path to the original participants.json file
         part_path = os.path.join(datasets_path,l + '/' + 'participants.json')
-
+        # check if the dataset has a participants.json file
+        ## if not then the function will just return that passed dictionary (d) with nothing added to it
         if not os.path.exists(part_path):
 
             return d
 
+        ## if the original dataset has a participants.json file
         elif os.path.exists(part_path):
-
+            ## open the json file as a dictionary
             with open (part_path) as dict:
                 part_json = json.load(dict)
-
+            ## now check if the keys in teh original files are included in the new dictionary
             for key in part_json:
 
                 if key in d.keys():
                     continue
 
+                ## if a new key is found in the original json file and not in the d add that key
                 elif not key in d.keys():
 
                     #add type as schema.org/DataElement
                     doc['@type'] = context['@context']['DataElement']
                     doc[context['@context']['source_variable']] = key
 
+                    # loop through the data elements properties and change them to be consistent with cde_context.jsonld
+                    # (https://github.com/nqueder/terms/blob/master/context/cde_context.jsonld)
                     for subkey in part_json[key]:
-
 
                         if subkey == 'Description':
                             print("\tFound OpenNeuro_Definition")
@@ -534,40 +547,46 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                             print("\tFound OpenNeuro_Citation")
                             doc[context['@context']['citation']] = str(part_json[key][subkey])
 
-
+                    ## create a compacted file from the data element dictionary and the context file
                     compacted = jsonld.compact(doc,args.context)
 
+                    ## write that compacted file as a dictionary in the the master dictionary d
                     d[key] = compacted
 
-
+            # return updated master dictionary d
             return d
 
-
+    # if the passed dictionary comes from a phenotype file
     else:
-
+        # set path to the original phenotype directory
         ds_path = os.path.join(datasets_path,l + '/' + 'phenotype')
 
+        # parse the directory to be able to access both files that are placed inside or outside of a sub directory
         for root, dirs, files in os.walk(ds_path, topdown=True):
             #access sub-directories to extract assessment terms
             for dir in dirs:
 
+                #set path to the sub directory
                 sub_dir = os.path.join(ds_path,dir)
 
                 #access tsv files in sub-directories
                 for subroot, subdirs, json_files in os.walk(sub_dir):
 
+                    # look for file with .json extension in the files of sub directories like T1 or T2
                     for FL in json_files:
-
+                        # if a file with .json extension and starts with the same name as the tsv file passed to this function
+                        # set a path to the file and open it
                         if FL.endswith('.json') and FL.startswith(source):
 
                             j_dir = os.path.join(sub_dir, source+'.json')
 
                             save_j_path = os.path.join(pathtophenodir,dir)
 
+                            # open json file as a dictionary
                             with open (j_dir) as f:
                                 phenojson1 = json.load(f)
 
-
+                            # check if each data element is in the master dictionary d
                             for k in phenojson1:
 
                                 if k in d.keys():
@@ -579,6 +598,8 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                                     doc['@type'] = context['@context']['DataElement']
                                     doc[context['@context']['source_variable']] = str(k)
 
+                                    #for each data element that is not in the master dictionary d access its properties
+                                    # and change them to be consistent with context
                                     for subk in phenojson1[k]:
 
 
@@ -602,24 +623,29 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                                             print('\tFound OpenNeuro_Citaion')
                                             doc[context['@context']['citation']] = str(phenojson1[k][subk])
 
+                                    # compact file with doc and context
                                     compacted = jsonld.compact(doc,args.context)
+                                    # add compacted file to the master dictionary d
                                     d[k] = compacted
 
+                                #return updated master dictionary d
                                 return d
 
-
+            # not that we checked for json files in phenotype sub directories check files in phenotype
             for file in files:
-
+                # if a file with .json extension and starts with the same name as the tsv file passed to this function
+                # set a path to the file and open it
                 if file.endswith('.json') and file.startswith(source):
 
                     file_path = os.path.join(ds_path,source+'.json')
 
-
+                    # check if the directory has the desired json file
                     if os.path.exists(file_path):
-
+                        # open the json file as a dictionary
                         with open (file_path) as g:
                             phenojson2 = json.load(g)
 
+                        # check if each data element is in the master dictionary d
                         for kk in phenojson2:
 
                             if kk in d.keys():
@@ -654,15 +680,15 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                                         print('\tFound OpenNeuro_Citation')
                                         doc[context['@context']['citation']] = str(phenojson2[kk][subkk])
 
-
+                                # compact file with doc and context
                                 compacted = jsonld.compact(doc,args.context)
-
+                                # add compacted file to the master dictionary d
                                 d[kk] = compacted
 
-
+                            #return updated master dictionary d
                             return d
 
-
+                    # if no json file is found return master dictionary d
                     elif not os.path.exists(file_path):
 
                         return d
@@ -744,6 +770,8 @@ def main(argv):
 
         #else:
 
+
+        #create an output directory for each dataset in the main output directory passed to the argument
         path_to_dir = os.path.join(output, str(l))
         if os.path.exists(path_to_dir):
             shutil.rmtree(path_to_dir)
@@ -761,9 +789,10 @@ def main(argv):
             print('starting iteration...')
             #print('processing term: %s'%row['sourceVariable'])
 
-
+            #loc data frame only at terms that are not phenotype terms
             par_ter = dataset.loc[dataset['Phenotype Term?'] == 'NO']
 
+            # loop through the rows and call function json_check to create a master dictionary d
             for ii, rr in par_ter.iterrows():
                 print('processing term: %s'%rr['sourceVariable'])
                 d = jsonld_dict(d,rr,context,args)
@@ -820,10 +849,10 @@ def main(argv):
                                                     if T == 'participant_id':
                                                         term_list.remove('participant_id')
 
-
+                                                #include only terms that are extracted from the associated tsv file
                                                 pheno_ter = dataset.loc[dataset['sourceVariable'].isin(term_list)]
 
-
+                                                #loop through those terms and if the term is a phenotype term pass it to jsonld_dict to create the master dictionary
                                                 for II, R in pheno_ter.iterrows():
 
                                                     print('starting iteration...')
@@ -861,9 +890,10 @@ def main(argv):
                                             if t == 'participant_id':
                                                 termlist.remove('participant_id')
 
-
+                                        #include only terms that are extracted from the associated tsv file
                                         ter = dataset.loc[dataset['sourceVariable'].isin(termlist)]
 
+                                        #loop through those terms and if the term is a phenotype term pass it to jsonld_dict to create the master dictionary
                                         for I, r in ter.iterrows():
 
                                             print('starting iteration...')
@@ -872,6 +902,7 @@ def main(argv):
                                             if r['Phenotype Term?'] == 'YES':
                                                 print('processing term: %s'%r['sourceVariable'])
                                                 d = jsonld_dict(d,r,context,args)
+
 
                                     # opens pre-made directory with with a number that matches the ds ID and creates a jsonld file inside that directory
                                     with open (join(pathtophenodir, file_name + '.jsonld'),'w+') as outfile:
@@ -882,6 +913,7 @@ def main(argv):
 
                             break
 
+                # reset the path to its original state datasets
                 path = args.datasets
 
             break
