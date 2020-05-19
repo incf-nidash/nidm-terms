@@ -412,37 +412,38 @@ def jsonld_dict(d,row,context,args):
         print("\tFound OpenNeuro_Units")
         doc[context['@context']['hasUnit']] = str(row['Units'])
 
-    #assign unit label to measureOf property in doc
+    #assign label to measureOf property in doc
     if not pd.isnull(row['measureOf']):
         print("\tFound OpenNeuro_measureOf")
         doc[context['@context']['measureOf']] = str(row['measureOf'])
 
-    #assign unit label to datumType property in doc
+    #assign label to datumType property in doc
     if not pd.isnull(row['datumType']):
         print("\tFound OpenNeuro_measureOf")
         doc[context['@context']['datumType']] = str(row['datumType'])
 
-    #assign unit label to datumType isPartOf in doc
+    #assign label to datumType isPartOf in doc
     if not pd.isnull(row['isPartOf']):
         print("\tFound OenNeuro_isPartOf")
         doc[context['@context']['isPartOf']] = str(row['isPartOf'])
 
-    #assign unit label to Derivative property in doc
+    #assign label to Derivative property in doc
     if not pd.isnull(row['Derivative']):
         print('\tFound OpenNeuro_Derivative')
-        doc[context['@context']['derivative']] = str(row['Derivative'])
+        doc[context['@context']['derivative']] = bool(2)
 
-    #assign unit label to url property in doc
+
+    #assign label to url property in doc
     if not pd.isnull(row['Term_URL']):
         print('\tFound OpenNeuro_TermURL')
         doc[context['@context']['url']['@id']] = str(row['Term_URL'])
 
-    #assign unit label to Min value property in doc
+    #assign label to Min value property in doc
     if not pd.isnull(row['Minimum Value']):
         print('\tFound OpenNeuro_minimum value')
         doc[context['@context']['minimumValue']] = int(row['Minimum Value'])
 
-    #assign unit label to Max value property in doc
+    #assign label to Max value property in doc
     if not pd.isnull(row['Maximum Value']):
         print('\tFound OpenNeuro_maximum value')
         doc[context['@context']['maximumValue']] = int(row['Maximum Value'])
