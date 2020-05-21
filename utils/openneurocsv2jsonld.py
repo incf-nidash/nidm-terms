@@ -167,9 +167,6 @@ def level_parser(df_row,doc,context):
         doc[context['@context']['levels']].append(key + ":" + value)
 
 
-
-
-
     # if key in the level property is digit assign a minimum and a maximum value
     if state == 1:
         while '' in all_val:
@@ -332,7 +329,7 @@ def isAbout_parser(df_row,doc,context):
             #isabouts.append(s+":"+label)
 
 
-    doc[context['@context']['isAbout']] = {}
+    doc[context['@context']['isAbout']] = []
     doc[context['@context']['isAbout']][s] = label
     #doc[context['@context']['isAbout']].append(isabouts)
 
@@ -430,7 +427,8 @@ def jsonld_dict(d,row,context,args):
     #assign unit label to Derivative property in doc
     if not pd.isnull(row['Derivative']):
         print('\tFound OpenNeuro_Derivative')
-        doc[context['@context']['derivative']] = str(row['Derivative'])
+        doc[context['@context']['derivative']] = bool(2)
+
 
     #assign unit label to url property in doc
     if not pd.isnull(row['Term_URL']):
@@ -451,12 +449,14 @@ def jsonld_dict(d,row,context,args):
     if not pd.isnull(row['Minimum Value']) and not pd.isnull(row['Maximum Value']):
         all_vall = np.arange(int(row['Minimum Value']), int(row['Maximum Value'])).tolist()
         all_vall.append(int(row['Maximum Value']))
-        doc[context['@context']['allowableValues']] = all_vall
-
+        #doc[context['@context']['allowableValues']] = all_vall
 
     isAbout_parser(row,doc,context)
     isPartOf_parser(row,doc,context)
     level_parser(row,doc,context)
+
+    # add property to specify that the term is associated with NIDM
+    doc[context['@context']['associatedWith']] = str('NIDM')
 
     #write JSON file out
     compacted = jsonld.compact(doc,args.context)
@@ -547,6 +547,8 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                             print("\tFound OpenNeuro_Citation")
                             doc[context['@context']['citation']] = str(part_json[key][subkey])
 
+                        doc[context['@context']['associatedWith']] = str('NIDM')
+
                     ## create a compacted file from the data element dictionary and the context file
                     compacted = jsonld.compact(doc,args.context)
 
@@ -623,6 +625,8 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                                             print('\tFound OpenNeuro_Citaion')
                                             doc[context['@context']['citation']] = str(phenojson1[k][subk])
 
+                                        doc[context['@context']['associatedWith']] = str('NIDM')
+
                                     # compact file with doc and context
                                     compacted = jsonld.compact(doc,args.context)
                                     # add compacted file to the master dictionary d
@@ -679,6 +683,8 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                                     if subkk == 'Citation':
                                         print('\tFound OpenNeuro_Citation')
                                         doc[context['@context']['citation']] = str(phenojson2[kk][subkk])
+
+                                    doc[context['@context']['associatedWith']] = str('NIDM')
 
                                 # compact file with doc and context
                                 compacted = jsonld.compact(doc,args.context)
