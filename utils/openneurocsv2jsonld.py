@@ -329,7 +329,7 @@ def isAbout_parser(df_row,doc,context):
             #isabouts.append(s+":"+label)
 
 
-    doc[context['@context']['isAbout']] = {}
+    doc[context['@context']['isAbout']] = []
     doc[context['@context']['isAbout']][s] = label
     #doc[context['@context']['isAbout']].append(isabouts)
 
