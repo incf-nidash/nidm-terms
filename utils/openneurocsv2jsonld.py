@@ -167,9 +167,6 @@ def level_parser(df_row,doc,context):
         doc[context['@context']['levels']].append(key + ":" + value)
 
 
-
-
-
     # if key in the level property is digit assign a minimum and a maximum value
     if state == 1:
         while '' in all_val:
@@ -412,38 +409,38 @@ def jsonld_dict(d,row,context,args):
         print("\tFound OpenNeuro_Units")
         doc[context['@context']['hasUnit']] = str(row['Units'])
 
-    #assign label to measureOf property in doc
+    #assign unit label to measureOf property in doc
     if not pd.isnull(row['measureOf']):
         print("\tFound OpenNeuro_measureOf")
         doc[context['@context']['measureOf']] = str(row['measureOf'])
 
-    #assign label to datumType property in doc
+    #assign unit label to datumType property in doc
     if not pd.isnull(row['datumType']):
         print("\tFound OpenNeuro_measureOf")
         doc[context['@context']['datumType']] = str(row['datumType'])
 
-    #assign label to datumType isPartOf in doc
+    #assign unit label to datumType isPartOf in doc
     if not pd.isnull(row['isPartOf']):
         print("\tFound OenNeuro_isPartOf")
         doc[context['@context']['isPartOf']] = str(row['isPartOf'])
 
-    #assign label to Derivative property in doc
+    #assign unit label to Derivative property in doc
     if not pd.isnull(row['Derivative']):
         print('\tFound OpenNeuro_Derivative')
         doc[context['@context']['derivative']] = bool(2)
 
 
-    #assign label to url property in doc
+    #assign unit label to url property in doc
     if not pd.isnull(row['Term_URL']):
         print('\tFound OpenNeuro_TermURL')
         doc[context['@context']['url']['@id']] = str(row['Term_URL'])
 
-    #assign label to Min value property in doc
+    #assign unit label to Min value property in doc
     if not pd.isnull(row['Minimum Value']):
         print('\tFound OpenNeuro_minimum value')
         doc[context['@context']['minimumValue']] = int(row['Minimum Value'])
 
-    #assign label to Max value property in doc
+    #assign unit label to Max value property in doc
     if not pd.isnull(row['Maximum Value']):
         print('\tFound OpenNeuro_maximum value')
         doc[context['@context']['maximumValue']] = int(row['Maximum Value'])
@@ -452,12 +449,14 @@ def jsonld_dict(d,row,context,args):
     if not pd.isnull(row['Minimum Value']) and not pd.isnull(row['Maximum Value']):
         all_vall = np.arange(int(row['Minimum Value']), int(row['Maximum Value'])).tolist()
         all_vall.append(int(row['Maximum Value']))
-        doc[context['@context']['allowableValues']] = all_vall
-
+        #doc[context['@context']['allowableValues']] = all_vall
 
     isAbout_parser(row,doc,context)
     isPartOf_parser(row,doc,context)
     level_parser(row,doc,context)
+
+    # add property to specify that the term is associated with NIDM
+    doc[context['@context']['associatedWith']] = str('NIDM')
 
     #write JSON file out
     compacted = jsonld.compact(doc,args.context)
@@ -548,6 +547,8 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                             print("\tFound OpenNeuro_Citation")
                             doc[context['@context']['citation']] = str(part_json[key][subkey])
 
+                        doc[context['@context']['associatedWith']] = str('NIDM')
+
                     ## create a compacted file from the data element dictionary and the context file
                     compacted = jsonld.compact(doc,args.context)
 
@@ -624,6 +625,8 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                                             print('\tFound OpenNeuro_Citaion')
                                             doc[context['@context']['citation']] = str(phenojson1[k][subk])
 
+                                        doc[context['@context']['associatedWith']] = str('NIDM')
+
                                     # compact file with doc and context
                                     compacted = jsonld.compact(doc,args.context)
                                     # add compacted file to the master dictionary d
@@ -680,6 +683,8 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                                     if subkk == 'Citation':
                                         print('\tFound OpenNeuro_Citation')
                                         doc[context['@context']['citation']] = str(phenojson2[kk][subkk])
+
+                                    doc[context['@context']['associatedWith']] = str('NIDM')
 
                                 # compact file with doc and context
                                 compacted = jsonld.compact(doc,args.context)

@@ -147,6 +147,9 @@ def update_json(part_dict):
             # add allowable value and its appropriate value
             if key == 'allowableValues':
                 bids_dict[term]['allowableValues'] = part_dict[term]['allowableValues']
+            # add associated with and its appropriate value
+            if key == 'associatedWith':
+                bids_dict[term]['associatedWith'] = part_dict[term]['associatedWith']
 
 
     return bids_dict
