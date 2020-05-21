@@ -316,6 +316,8 @@ def isAbout_parser(df_row,doc,context):
     while '' in semicolon_splits:
         semicolon_splits.remove('')
 
+    doc[context['@context']['isAbout']] = {}
+
     #split the string by semicolon and validate each URL using the url_validator function
     for s in semicolon_splits:
 
@@ -329,9 +331,9 @@ def isAbout_parser(df_row,doc,context):
             #isabouts.append(s+":"+label)
 
 
-    doc[context['@context']['isAbout']] = []
-    doc[context['@context']['isAbout']][s] = label
-    #doc[context['@context']['isAbout']].append(isabouts)
+
+            doc[context['@context']['isAbout']][s] = label
+            #doc[context['@context']['isAbout']].append(isabouts)
 
 
     print("\tFound OpenNeuro_isAbout")
