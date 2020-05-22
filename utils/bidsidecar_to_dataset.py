@@ -52,7 +52,7 @@ def main(argv):
         exit(1)
 
     # set working directory to args.datalad_dir
-    os.setwd(args.datalad_dir)
+    #os.chdir(args.datalad_dir)
 
     # step 2 loop through all datasets in args.sidecar_dir
     bids_datasets = [ x for x in os.listdir(args.sidecar_dir) if isdir(join(args.sidecar_dir,x)) ]
@@ -70,16 +70,22 @@ def main(argv):
         #cmd = ["datalad","get", "-r", join(args.datalad_dir,ds)]
         # replacing with datalad api
         #cmd = ["datalad", "get", "-r", ds]
-        dl.get(path=join(args.datalad_dir,ds),recursive=True)
-        logger.info("Running datalad get command on dataset: %s" %join(args.datalad_dir,ds))
-        #ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
+        try:
+        	dl.get(path=join(args.datalad_dir,ds),recursive=True)
+        	logger.info("Running datalad get command on dataset: %s" %join(args.datalad_dir,ds))
+        	#ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
+        except:
+                logger.error("Datalad returned error: %s for dataset %s." %(sys.exc_info()[0], ds))
+                continue
 
         # now copy each of the json_files into the datalad dataset
         for file in json_files:
             # changing copy to use copyfile from shutil
             #cmd = ["cp",join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds)]
-            copyfile(join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds))
+            if not isdir(join(args.datalad_dir,ds)):
+                 os.mkdir(join(args.datalad_dir,ds))
             logger.info("Copying file: source=%s, dest=%s" %(join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds)))
+            copyfile(join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds,file))
             #ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
 
         # make sure it's there
