@@ -8,10 +8,7 @@
 		"label": "http://www.w3.org/2000/01/rdf-schema#label",
 		"schema": "http://schema.org/",
 		"description": "http://purl.org/dc/terms/description",
-		"isAbout": {
-			"@id": "http://purl.org/dc/terms/isAbout",
-			"@type": "@list"
-		},
+		"isAbout": "http://purl.org/dc/terms/isAbout",
 		"isPartOf": "http://uri.interlex.org/ilx_0112785",
 		"sameAs": "https://www.w3.org/TR/2009/REC-skos-reference-20090818#sameAs",
 		"closeMatch": "https://www.w3.org/TR/2009/REC-skos-reference-20090818#closeMatch",
@@ -28,11 +25,13 @@
 		"measureOf": "http://uri.interlex.org/ilx_0381389",
 		"minValue": {
 			"@id":"https://schema.org/minValue", 
-			"@type": "https://schema.org/Number"
+			"@type": "https://schema.org/Number",
+			"@nest": "responseOptions"
 		},
 		"maxValue": {
 			"@id":"https://schema.org/maxValue", 
-			"@type": "https://schema.org/Number"
+			"@type": "https://schema.org/Number",
+			"@nest" : "responseOptions"
 		},
 		"allowableValues": "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#allowableValues",
 		"provenance": "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#provenance",
@@ -43,6 +42,7 @@
 		"levels": "https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html",
 		"derivative": "https://github.com/NIDM-Terms/terms/blob/master/terms/BIDS_Terms/Derivative.jsonld",
 		"citation": "https://github.com/NIDM-Terms/terms/blob/master/terms/BIDS_Terms/ReferencesAndLinks.jsonld",
-		"associatedWith": "http://uri.interlex.org/ilx_0739289"
+		"associatedWith": "http://uri.interlex.org/ilx_0739289",
+		"responseOptions" : "@nest"
 	}
 }
