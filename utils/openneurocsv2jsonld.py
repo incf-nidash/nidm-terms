@@ -39,7 +39,7 @@ def url_validator(url):
 
 
 
-def level_parser(df_row,doc,context):
+def responseOptions_parser(df_row,doc,context):
     '''
     Parse through term levels in the CVS file and assign them to a dictionary,
     and assign minimum, maximum, and allowable values to doc
@@ -160,11 +160,20 @@ def level_parser(df_row,doc,context):
                 else:
                     state = ''
 
+    little_doc = {}
 
-    # assign levels to the jsonld property levels
-    doc[context['@context']['levels']] = []
+    list = []
+
+    levels_dict = {}
+
     for key,value in levels.items():
-        doc[context['@context']['levels']].append(key + ":" + value)
+        levels_dict[context['@context']['name']] = key
+        levels_dict[context['@context']['value']] = value
+
+
+        list.append(levels_dict)
+
+    little_doc[context['@context']['choices']] = list
 
 
     # if key in the level property is digit assign a minimum and a maximum value
@@ -213,12 +222,22 @@ def level_parser(df_row,doc,context):
                 maximum = all_val[-1]
 
 
-            doc[context['@context']['minimumValue']] = minimum
-            doc[context['@context']['maximumValue']] = maximum
+            #minmax['minValue'] = minimum
+            #minmax['maxValue'] = maximum
+
+
+            little_doc[context['@context']['minValue']] = minimum
+            little_doc[context['@context']['maxValue']] = maximum
 
 
     # assign allowable values to allowableValues in jsonld property
-    doc[context['@context']['allowableValues']] = all_val
+    #doc[context['@context']['allowableValues']] = all_val
+
+
+
+
+
+    doc[context['@context']['responseOptions']['@id']] = little_doc
 
     case = ''
 
@@ -316,6 +335,10 @@ def isAbout_parser(df_row,doc,context):
     while '' in semicolon_splits:
         semicolon_splits.remove('')
 
+    #doc[context['@context']['isAbout']['@id']] =
+    label_dict = {}
+    isabout_dict = {}
+
     #split the string by semicolon and validate each URL using the url_validator function
     for s in semicolon_splits:
 
@@ -329,10 +352,17 @@ def isAbout_parser(df_row,doc,context):
             #isabouts.append(s+":"+label)
 
 
-    doc[context['@context']['isAbout']] = {}
-    doc[context['@context']['isAbout']][s] = label
-    #doc[context['@context']['isAbout']].append(isabouts)
+        #label_dict[context['@context']['label']] = label
+        #isabout_dict[s] = label_dict
 
+
+
+        #doc[context['@context']['isAbout']['@id']] = s
+
+
+
+
+    #doc[context['@context']['isAbout']] = isabouts
 
     print("\tFound OpenNeuro_isAbout")
 
@@ -429,7 +459,6 @@ def jsonld_dict(d,row,context,args):
         print('\tFound OpenNeuro_Derivative')
         doc[context['@context']['derivative']] = bool(2)
 
-
     #assign unit label to url property in doc
     if not pd.isnull(row['Term_URL']):
         print('\tFound OpenNeuro_TermURL')
@@ -438,12 +467,12 @@ def jsonld_dict(d,row,context,args):
     #assign unit label to Min value property in doc
     if not pd.isnull(row['Minimum Value']):
         print('\tFound OpenNeuro_minimum value')
-        doc[context['@context']['minimumValue']] = int(row['Minimum Value'])
+        doc[context['@context']['minValue']] = int(row['Minimum Value'])
 
     #assign unit label to Max value property in doc
     if not pd.isnull(row['Maximum Value']):
         print('\tFound OpenNeuro_maximum value')
-        doc[context['@context']['maximumValue']] = int(row['Maximum Value'])
+        doc[context['@context']['maxValue']] = int(row['Maximum Value'])
 
     # allowable values based on given min and max values in the spreadsheet
     if not pd.isnull(row['Minimum Value']) and not pd.isnull(row['Maximum Value']):
@@ -453,10 +482,10 @@ def jsonld_dict(d,row,context,args):
 
     isAbout_parser(row,doc,context)
     isPartOf_parser(row,doc,context)
-    level_parser(row,doc,context)
+    responseOptions_parser(row,doc,context)
 
     # add property to specify that the term is associated with NIDM
-    doc[context['@context']['associatedWith']] = str('NIDM')
+    doc[context['@context']['associatedWith']] = ['NIDM',"BIDS"]
 
     #write JSON file out
     compacted = jsonld.compact(doc,args.context)
@@ -710,6 +739,7 @@ def main(argv):
     parser.add_argument('-ds_dir', dest='datasets', required=True, help="Path to OpenNeuro datasets directory")
     parser.add_argument('-context', dest= 'context', required=True, help='URL to context file')
     args = parser.parse_args()
+
 
     print('Preparing for iteration...')
 
