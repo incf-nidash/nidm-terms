@@ -39,7 +39,7 @@ def url_validator(url):
 
 
 
-def responseOptions_parser(df_row,doc,context):
+def responseOptions_parser(df_row,context):
     '''
     Parse through term levels in the CVS file and assign them to a dictionary,
     and assign minimum, maximum, and allowable values to doc
@@ -52,7 +52,7 @@ def responseOptions_parser(df_row,doc,context):
     # extract the levels column from the data frame
     row = df_row['Levels']
 
-
+    little_doc = {}
     levels = {}
     all_val = []
     global case
@@ -61,9 +61,21 @@ def responseOptions_parser(df_row,doc,context):
     global maximum
 
 
+    #assign type of the input value to the ValueType property in doc
+    if not pd.isnull(df_row['ValueType']):
+        print("\tFound OpenNeuro_ValueType")
+        little_doc[context['@context']['valueType']] = str(df_row['ValueType'])
+
+
+    #assign unit label to hasUnit property in doc
+    if not pd.isnull(df_row['Units']):
+        print("\tFound OpenNeuro_Units")
+        little_doc[context['@context']['unitCode']] = str(df_row['Units'])
+
+
     # passes over rows with no values
-    if isinstance(row,float) and np.isnan(row) :
-        return
+    if isinstance(row,float) and np.isnan(row):
+        return little_doc
 
     print("\tFound OpenNeuro_levels")
 
@@ -160,20 +172,22 @@ def responseOptions_parser(df_row,doc,context):
                 else:
                     state = ''
 
-    little_doc = {}
-
-    list = []
 
     levels_dict = {}
+    list = []
+
+    # assign levels to the jsonld property levels
 
     for key,value in levels.items():
         levels_dict[context['@context']['name']] = key
         levels_dict[context['@context']['value']] = value
 
+        dict_copy = levels_dict.copy()
+        list.append(dict_copy)
 
-        list.append(levels_dict)
 
     little_doc[context['@context']['choices']] = list
+
 
 
     # if key in the level property is digit assign a minimum and a maximum value
@@ -222,9 +236,9 @@ def responseOptions_parser(df_row,doc,context):
                 maximum = all_val[-1]
 
 
-            #minmax['minValue'] = minimum
-            #minmax['maxValue'] = maximum
-
+            # changed by DBK
+            #doc[context['@context']['minValue']] = minimum
+            #doc[context['@context']['maxValue']] = maximum
 
             little_doc[context['@context']['minValue']] = minimum
             little_doc[context['@context']['maxValue']] = maximum
@@ -234,13 +248,11 @@ def responseOptions_parser(df_row,doc,context):
     #doc[context['@context']['allowableValues']] = all_val
 
 
-
-
-
-    doc[context['@context']['responseOptions']['@id']] = little_doc
-
     case = ''
 
+
+
+    return little_doc
 
 
 def CogAt_WO_json(row2, isabouts):
@@ -304,7 +316,7 @@ def get_isAbout_label(url):
         #print(full_url)
         response = requests.request("GET",full_url,headers=headers,data=payload)
         # response is a json dictionary. here we want the label
-        label= response.json()["data"]["label"].lower()
+        label = response.json()["data"]["label"].lower()
         #print("interlex label: %s" %isAbout_term_labels[url] )
 
     return label
@@ -324,7 +336,7 @@ def isAbout_parser(df_row,doc,context):
 
 
     isabouts = []
-    global label
+
 
     # passes over rows with no values
     if isinstance(row,float) and np.isnan(row):
@@ -335,9 +347,10 @@ def isAbout_parser(df_row,doc,context):
     while '' in semicolon_splits:
         semicolon_splits.remove('')
 
-    #doc[context['@context']['isAbout']['@id']] =
-    label_dict = {}
-    isabout_dict = {}
+
+    # Added by DBK
+    doc[context['@context']['isAbout']['@id']]=[]
+
 
     #split the string by semicolon and validate each URL using the url_validator function
     for s in semicolon_splits:
@@ -352,17 +365,11 @@ def isAbout_parser(df_row,doc,context):
             #isabouts.append(s+":"+label)
 
 
-        #label_dict[context['@context']['label']] = label
-        #isabout_dict[s] = label_dict
+            # Changed by DBK
+            doc[context['@context']['isAbout']['@id']].append({'@id':s,context['@context']['label']:label})
+            #doc[context['@context']['isAbout']][s] = label
+            #doc[context['@context']['isAbout']].append(isabouts)
 
-
-
-        #doc[context['@context']['isAbout']['@id']] = s
-
-
-
-
-    #doc[context['@context']['isAbout']] = isabouts
 
     print("\tFound OpenNeuro_isAbout")
 
@@ -412,12 +419,22 @@ def jsonld_dict(d,row,context,args):
     dictionary d with a compatced jsonld file for each row (i.e. term) passed
     '''
 
+
+
     # open a new dictionary
     doc = {}
+    # dictionary to contain elements of response options
+    #ro_dict = {}
+
+    # Added by DBK
+    #doc['@context'] = context_url
 
     #add type as schema.org/DataElement
     doc['@type'] = context['@context']['DataElement']
     doc[context['@context']['source_variable']] = row['sourceVariable']
+
+    ro_dict = responseOptions_parser(row,context)
+
 
     #assign Long Name to the label property in doc
     if not pd.isnull(row['LongName']):
@@ -428,16 +445,6 @@ def jsonld_dict(d,row,context,args):
     if not pd.isnull(row['Description']):
         print("\tFound OpenNeuro_Definition")
         doc[context['@context']['description']] = str(row['Description'])
-
-    #assign type of the input value to the ValueType property in doc
-    if not pd.isnull(row['ValueType']):
-        print("\tFound OpenNeuro_ValueType")
-        doc[context['@context']['valueType']] = str(row['ValueType'])
-
-    #assign unit label to hasUnit property in doc
-    if not pd.isnull(row['Units']):
-        print("\tFound OpenNeuro_Units")
-        doc[context['@context']['hasUnit']] = str(row['Units'])
 
     #assign unit label to measureOf property in doc
     if not pd.isnull(row['measureOf']):
@@ -467,32 +474,42 @@ def jsonld_dict(d,row,context,args):
     #assign unit label to Min value property in doc
     if not pd.isnull(row['Minimum Value']):
         print('\tFound OpenNeuro_minimum value')
-        doc[context['@context']['minValue']] = int(row['Minimum Value'])
+        ro_dict[context['@context']['minValue']] = int(row['Minimum Value'])
 
     #assign unit label to Max value property in doc
     if not pd.isnull(row['Maximum Value']):
         print('\tFound OpenNeuro_maximum value')
-        doc[context['@context']['maxValue']] = int(row['Maximum Value'])
+        ro_dict[context['@context']['maxValue']] = int(row['Maximum Value'])
 
     # allowable values based on given min and max values in the spreadsheet
-    if not pd.isnull(row['Minimum Value']) and not pd.isnull(row['Maximum Value']):
-        all_vall = np.arange(int(row['Minimum Value']), int(row['Maximum Value'])).tolist()
-        all_vall.append(int(row['Maximum Value']))
+    #if not pd.isnull(row['Minimum Value']) and not pd.isnull(row['Maximum Value']):
+        #all_vall = np.arange(int(row['Minimum Value']), int(row['Maximum Value'])).tolist()
+        #all_vall.append(int(row['Maximum Value']))
         #doc[context['@context']['allowableValues']] = all_vall
 
     isAbout_parser(row,doc,context)
     isPartOf_parser(row,doc,context)
-    responseOptions_parser(row,doc,context)
+
+    # assign response options properties
+    if bool(ro_dict):
+        doc[context['@context']['responseOptions']['@id']] = ro_dict
+
 
     # add property to specify that the term is associated with NIDM
-    doc[context['@context']['associatedWith']] = ['NIDM',"BIDS"]
+    doc[context['@context']['associatedWith']] = ['NIDM','BIDS']
+
+    #Added by DBK
+    #with open("/Users/dbkeator/Downloads/temp/test.jsonld","w") as fp:
+    #    json.dump(doc,fp,indent=4)
 
     #write JSON file out
     compacted = jsonld.compact(doc,args.context)
 
+
     # add the the jsonld dictionary to the main dictionary
     d[row['sourceVariable']] = compacted
 
+    # changed by DBK to return the loaded context from passed context_url
     return d
 
 
@@ -739,7 +756,6 @@ def main(argv):
     parser.add_argument('-ds_dir', dest='datasets', required=True, help="Path to OpenNeuro datasets directory")
     parser.add_argument('-context', dest= 'context', required=True, help='URL to context file')
     args = parser.parse_args()
-
 
     print('Preparing for iteration...')
 
