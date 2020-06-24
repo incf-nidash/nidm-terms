@@ -9,6 +9,7 @@ import tempfile
 import urllib.request as ur
 from urllib.parse import urlparse
 import numpy as np
+from rdflib.namespace import split_uri
 
 
 # added by DBK
@@ -500,6 +501,14 @@ def jsonld_dict(d,row,context_url,args):
     #write JSON file out
     compacted = jsonld.compact(doc,args.context)
 
+    # DBK hacking isAbout which in compacted form still uses the URL as the key
+    # so simple hack, which is still valid json-ld, is to replace the key
+    # with the string isAbout
+    obj_nm,obj_term = split_uri(context['@context']['isAbout']['@id'])
+
+    if 'ilx_id' + ':' + obj_term in compacted.keys():
+        compacted['isAbout'] = compacted['ilx_id' + ':' + obj_term]
+        del compacted['ilx_id' + ':' + obj_term]
 
 
     # add the the jsonld dictionary to the main dictionary
