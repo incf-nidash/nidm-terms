@@ -1,0 +1,111 @@
+{
+  "age": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Participant's age",
+    "sourceVariable": "age",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
+  },
+  "exclude": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Exclusion tag from further analyses",
+    "sourceVariable": "exclude",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "0",
+          "value": "Subject is included in analyses"
+        },
+        {
+          "name": "1",
+          "value": "Subject is excluded from analyses"
+        }
+      ],
+      "maxValue": "1",
+      "minValue": "0"
+    }
+  },
+  "handgrip_condition": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Participant's experiment condition for the IHG task",
+    "sourceVariable": "handgrip_condition",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "Control",
+          "value": "Participants do not squeeze the ball during the blue cue"
+        },
+        {
+          "name": "IHG",
+          "value": "Participants squeeze the ball during the blue cue"
+        }
+      ]
+    }
+  },
+  "hormone_group": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Participant's hormone group. Note that LU and HC are younger adult women and PM are older adult women",
+    "sourceVariable": "hormone_group",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "LU",
+          "value": "Luteal group - subjects in the luteal phase of their menstrual cycle"
+        },
+        {
+          "name": "HC",
+          "value": "Hormonal contraceptive group - subjects taking hormonal contraceptive"
+        },
+        {
+          "name": "PM",
+          "value": "Post-menopausal group - older post-menopausal women"
+        }
+      ]
+    }
+  },
+  "sex": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Participant's sex",
+    "sourceVariable": "sex",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112866",
+      "label": "sex"
+    }
+  }
+}

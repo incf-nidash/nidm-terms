@@ -1,0 +1,80 @@
+{
+  "age": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "age of the participant",
+    "sourceVariable": "age",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "years"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
+  },
+  "feedback_type": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Type of feedback visualisation of the bi-modal neurofeedback scores",
+    "sourceVariable": "feedback_type",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "1d",
+          "value": "1D gauge averaging NF-EEG and NF-fMRI scores"
+        },
+        {
+          "name": "2d",
+          "value": "ball moving into a 2D space whose axis are NF-EEG and NF-fMRI scores"
+        }
+      ]
+    }
+  },
+  "sex": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "sex of the participant",
+    "sourceVariable": "sex",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "M",
+          "value": "male"
+        },
+        {
+          "name": "F",
+          "value": "female"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112866",
+      "label": "sex"
+    }
+  },
+  "participant_id": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "anonymised participant IDs of XP2 dataset",
+    "sourceVariable": "participant_id",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ]
+  }
+}

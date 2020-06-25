@@ -1,0 +1,796 @@
+{
+  "ageCategory_y": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "age category in 5-year bins from 15 to 45 and then a 15-year bin from 46-60 (variable categorised to preserve anonymization)",
+    "sourceVariable": "ageCategory_y",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
+  },
+  "bai_1y": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Beck Anxiety Inventory, score at 1-year follow-up",
+    "sourceVariable": "bai_1y",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+        "label": "anxiety"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+        "label": "anxiety disorder"
+      }
+    ]
+  },
+  "bai_crossover": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Beck Anxiety Inventory, score after second treatment (crossover)",
+    "sourceVariable": "bai_crossover",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+        "label": "anxiety"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+        "label": "anxiety disorder"
+      }
+    ]
+  },
+  "bai_post": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Beck Anxiety Inventory, score after first treatment",
+    "sourceVariable": "bai_post",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+        "label": "anxiety"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+        "label": "anxiety disorder"
+      }
+    ]
+  },
+  "bai_pre": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Beck Anxiety Inventory, score before treatment",
+    "sourceVariable": "bai_pre",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+        "label": "anxiety"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+        "label": "anxiety disorder"
+      }
+    ]
+  },
+  "cgii_1y": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Clinical Global Impression-Improvement scale, rating at 1-year follow-up",
+    "sourceVariable": "cgii_1y",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "-3",
+          "value": "Very much worse"
+        },
+        {
+          "name": "-2",
+          "value": "Much worse"
+        },
+        {
+          "name": "-1",
+          "value": "Minimally worse"
+        },
+        {
+          "name": "0",
+          "value": "No change"
+        },
+        {
+          "name": "1",
+          "value": "Minimally Improved"
+        },
+        {
+          "name": "2",
+          "value": "Much Improved"
+        },
+        {
+          "name": "3",
+          "value": "Very Much Improved"
+        }
+      ],
+      "maxValue": "3",
+      "minValue": "-3"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0125072",
+      "label": "clinical global impression (cgi)"
+    }
+  },
+  "cgii_post": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Clinical Global Impression-Improvement scale, rating after treatment",
+    "sourceVariable": "cgii_post",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "-3",
+          "value": "Very much worse"
+        },
+        {
+          "name": "-2",
+          "value": "Much worse"
+        },
+        {
+          "name": "-1",
+          "value": "Minimally worse"
+        },
+        {
+          "name": "0",
+          "value": "No change"
+        },
+        {
+          "name": "1",
+          "value": "Minimally Improved"
+        },
+        {
+          "name": "2",
+          "value": "Much Improved"
+        },
+        {
+          "name": "3",
+          "value": "Very Much Improved"
+        }
+      ],
+      "maxValue": "3",
+      "minValue": "-3"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0125072",
+      "label": "clinical global impression (cgi)"
+    }
+  },
+  "group": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "patient or healthy comparison participant",
+    "sourceVariable": "group",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0108556",
+      "label": "participant group"
+    }
+  },
+  "lsassr_1y": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Liebowitz Social Anxiety Scale - self-report version, score at 1-year follow-up",
+    "sourceVariable": "lsassr_1y",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+        "label": "anxiety"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+        "label": "anxiety disorder"
+      }
+    ]
+  },
+  "lsassr_crossover": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Liebowitz Social Anxiety Scale - self-report version, score after second treatment (crossover)",
+    "sourceVariable": "lsassr_crossover",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+        "label": "anxiety"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+        "label": "anxiety disorder"
+      }
+    ]
+  },
+  "lsassr_post": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Liebowitz Social Anxiety Scale - self-report version, score after first treatment",
+    "sourceVariable": "lsassr_post",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+        "label": "anxiety"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+        "label": "anxiety disorder"
+      }
+    ]
+  },
+  "lsassr_pre": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Liebowitz Social Anxiety Scale - self-report version, score before treatment",
+    "sourceVariable": "lsassr_pre",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+        "label": "anxiety"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+        "label": "anxiety disorder"
+      }
+    ]
+  },
+  "madrss_1y": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Montgomery-\u00e2\u0080\u009a\u00c3\u00a2\u00c3\u00a0sberg Depression Rating Scale, self-rated, score at 1-year follow-up",
+    "sourceVariable": "madrss_1y",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "https://www.cognitiveatlas.org/disorder/id/dso_1470/",
+      "label": "major depressive disorder"
+    }
+  },
+  "madrss_crossover": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Montgomery-\u00e2\u0080\u009a\u00c3\u00a2\u00c3\u00a0sberg Depression Rating Scale, self-rated, score after second treatment (crossover)",
+    "sourceVariable": "madrss_crossover",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "https://www.cognitiveatlas.org/disorder/id/dso_1470/",
+      "label": "major depressive disorder"
+    }
+  },
+  "madrss_post": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Montgomery-\u00e2\u0080\u009a\u00c3\u00a2\u00c3\u00a0sberg Depression Rating Scale, self-rated, score after first treatment",
+    "sourceVariable": "madrss_post",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "https://www.cognitiveatlas.org/disorder/id/dso_1470/",
+      "label": "major depressive disorder"
+    }
+  },
+  "madrss_pre": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Montgomery-\u00e2\u0080\u009a\u00c3\u00a2\u00c3\u00a0sberg Depression Rating Scale, self-rated, score before treatment",
+    "sourceVariable": "madrss_pre",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
+    "isAbout": {
+      "@id": "https://www.cognitiveatlas.org/disorder/id/dso_1470/",
+      "label": "major depressive disorder"
+    }
+  },
+  "qoli_1y": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Quality of Life Inventory, score at 1-year follow-up",
+    "sourceVariable": "qoli_1y",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "qoli_crossover": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Quality of Life Inventory, score after second treatment (crossover)",
+    "sourceVariable": "qoli_crossover",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "qoli_post": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Quality of Life Inventory, score after first treatment",
+    "sourceVariable": "qoli_post",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "qoli_pre": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Quality of Life Inventory, score before treatment",
+    "sourceVariable": "qoli_pre",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "sadDuration_y": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "duration of social anxiety disorder (calculated by subtracting age at onset from age at scanning)",
+    "sourceVariable": "sadDuration_y",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "scid_sad_diagnosis_1y": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Diagnosis of social anxiety disorder as detemined by the Structured Clinical Interview for DSM-5 Disorders (SCID) at 1-year follow-up",
+    "sourceVariable": "scid_sad_diagnosis_1y",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "1",
+          "value": "yes"
+        },
+        {
+          "name": "0",
+          "value": "no"
+        }
+      ],
+      "maxValue": "1",
+      "minValue": "0"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_11257/",
+      "label": "social phobia"
+    }
+  },
+  "scid_sad_diagnosis_post": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "sourceVariable": "scid_sad_diagnosis_post",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "1",
+          "value": "yes"
+        },
+        {
+          "name": "0",
+          "value": "no"
+        }
+      ],
+      "maxValue": "1",
+      "minValue": "0"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_11257/",
+      "label": "social phobia"
+    }
+  },
+  "sex": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "male/female",
+    "sourceVariable": "sex",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112866",
+      "label": "sex"
+    }
+  },
+  "sias_1y": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Social Interaction and Anxiety Scale, score at 1-year follow-up",
+    "sourceVariable": "sias_1y",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "sias_crossover": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Social Interaction and Anxiety Scale, score after first treatment",
+    "sourceVariable": "sias_crossover",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "sias_post": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Social Interaction and Anxiety Scale, score after second treatment (crossover)",
+    "sourceVariable": "sias_post",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "sias_pre": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Social Interaction and Anxiety Scale, score before treatment",
+    "sourceVariable": "sias_pre",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    }
+  },
+  "sps_1y": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Social Phobia Scale, score at 1-year follow-up",
+    "sourceVariable": "sps_1y",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "sps_crossover": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Social Phobia Scale, score after first treatment",
+    "sourceVariable": "sps_crossover",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "sps_post": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Social Phobia Scale, score after second treatment (crossover)",
+    "sourceVariable": "sps_post",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "sps_pre": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Social Phobia Scale, score before treatment",
+    "sourceVariable": "sps_pre",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    }
+  },
+  "spsq_1y": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Social Phobia Screening Questionnaire, total score at 1-year follow-up",
+    "sourceVariable": "spsq_1y",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "spsq_crossover": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Social Phobia Screening Questionnaire, total score after second treatment (crossover)",
+    "sourceVariable": "spsq_crossover",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "spsq_post": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Social Phobia Screening Questionnaire, total score after first treatment",
+    "sourceVariable": "spsq_post",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "spsq_pre": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Social Phobia Screening Questionnaire, total score before treatment",
+    "sourceVariable": "spsq_pre",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    }
+  },
+  "sud_anticipatory_distress_1y": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Subjective Units of Distress Scale, distress, at 1-year follow-up",
+    "sourceVariable": "sud_anticipatory_distress_1y",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "sud_anticipatory_distress_post": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Subjective Units of Distress Scale, distress, score after first treatment",
+    "sourceVariable": "sud_anticipatory_distress_post",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "sud_anticipatory_distress_pre": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Subjective Units of Distress Scale, distress, score before treatment",
+    "sourceVariable": "sud_anticipatory_distress_pre",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    }
+  },
+  "sud_anticipatory_fear_1y": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Subjective Units of Distress Scale, fear, score at 1-year follow-up",
+    "sourceVariable": "sud_anticipatory_fear_1y",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "sud_anticipatory_fear_post": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Subjective Units of Distress Scale, fear, score after first treatment",
+    "sourceVariable": "sud_anticipatory_fear_post",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "sud_anticipatory_fear_pre": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Subjective Units of Distress Scale, fear, score before treatment",
+    "sourceVariable": "sud_anticipatory_fear_pre",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    }
+  },
+  "treatment": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "type of psychotherapy administered first",
+    "sourceVariable": "treatment",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "ABM",
+          "value": "Attention Bias Modification"
+        },
+        {
+          "name": "CBT",
+          "value": "Cognitive Behavior Therapy"
+        },
+        {
+          "name": "NA",
+          "value": "No psychotherapy (healthy comparison participant)"
+        }
+      ]
+    }
+  },
+  "subID": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "subject ID",
+    "sourceVariable": "subID",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ]
+  }
+}

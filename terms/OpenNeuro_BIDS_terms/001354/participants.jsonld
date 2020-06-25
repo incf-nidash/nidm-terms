@@ -1,0 +1,74 @@
+{
+  "age": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "age of the participant",
+    "sourceVariable": "age",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "unitCode": "years"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
+  },
+  "gender": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "gender of the participant",
+    "sourceVariable": "gender",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "m",
+          "value": "male"
+        },
+        {
+          "name": "f",
+          "value": "female"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0738437",
+      "label": "gender"
+    }
+  },
+  "group": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "group the participant belonged to in the experimental paradigm",
+    "sourceVariable": "group",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "CONTROL",
+          "value": "healthy subject"
+        },
+        {
+          "name": "PD-denovo",
+          "value": "de novo Parkinson's disease patient"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0108556",
+      "label": "participant group"
+    }
+  }
+}

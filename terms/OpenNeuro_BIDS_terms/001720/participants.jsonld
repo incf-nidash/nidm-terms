@@ -1,0 +1,192 @@
+{
+  "breathing": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Breathing condition",
+    "sourceVariable": "breathing",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "v",
+          "value": "Mechanically ventilated"
+        },
+        {
+          "name": "f",
+          "value": "Free-breathing"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0487479",
+      "label": "work of breathing"
+    }
+  },
+  "coil": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Radio-frequency coil system",
+    "sourceVariable": "coil",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "Cryo",
+          "value": "Bruker Cryoprobe"
+        },
+        {
+          "name": "RT",
+          "value": "room-temperature coil"
+        }
+      ]
+    }
+  },
+  "dataset": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "dataset identification",
+    "sourceVariable": "dataset",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string"
+    }
+  },
+  "field": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Field strength of the MRI system",
+    "sourceVariable": "field",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "gender": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "C57Bl/6J mice",
+    "sourceVariable": "gender",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "m",
+          "value": "Male"
+        },
+        {
+          "name": "f",
+          "value": "Female"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0738437",
+      "label": "gender"
+    }
+  },
+  "isoflurane": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Percentage of either isoflurane or halothane",
+    "sourceVariable": "isoflurane",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "med.bolus": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Bolus of medetomidine in mg / kg",
+    "sourceVariable": "med.bolus",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "med.infusion": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Infusion of medetomidine in mg / kg / h",
+    "sourceVariable": "med.infusion",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
+  },
+  "med.route": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Route of injection for medetomidine",
+    "sourceVariable": "med.route",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string"
+    }
+  },
+  "sedation": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Sedation protocol",
+    "sourceVariable": "sedation",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "Mediso",
+          "value": "Combination of medetomidine and isolfurane"
+        },
+        {
+          "name": "Med",
+          "value": "Medetomidine"
+        },
+        {
+          "name": "Iso",
+          "value": "Isoflurane"
+        },
+        {
+          "name": "Hal",
+          "value": "Halothane"
+        },
+        {
+          "name": "Awake",
+          "value": "Awake (no sedation)"
+        }
+      ]
+    }
+  }
+}

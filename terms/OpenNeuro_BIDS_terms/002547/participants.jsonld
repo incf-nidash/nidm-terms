@@ -1,0 +1,56 @@
+{
+  "sex": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "(Self-reported) sex of participant",
+    "sourceVariable": "sex",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "M",
+          "value": "male"
+        },
+        {
+          "name": "F",
+          "value": "female"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112866",
+      "label": "sex"
+    }
+  },
+  "validation_session": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Which session was used for the validation set. For participants with two sessions, the other session was used for exploration.",
+    "sourceVariable": "validation_session",
+    "associatedWith": [
+      "NIDM",
+      "BIDS"
+    ],
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "1",
+          "value": "The first session was used for validation (if present, the second session was used for exploration)"
+        },
+        {
+          "name": "2",
+          "value": "The second session was used for validation (the first session was used for exploration)"
+        },
+        {
+          "name": "n/a",
+          "value": "The data was not used for the (validation) analyses"
+        }
+      ]
+    }
+  }
+}
