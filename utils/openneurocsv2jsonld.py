@@ -9,6 +9,7 @@ import tempfile
 import urllib.request as ur
 from urllib.parse import urlparse
 import numpy as np
+from rdflib.namespace import split_uri
 
 
 # added by DBK
@@ -179,8 +180,8 @@ def responseOptions_parser(df_row,context):
     # assign levels to the jsonld property levels
 
     for key,value in levels.items():
-        levels_dict[context['@context']['name']] = key
-        levels_dict[context['@context']['value']] = value
+        levels_dict[context['@context']['value']] = key
+        levels_dict[context['@context']['name']] = value
 
         dict_copy = levels_dict.copy()
         list.append(dict_copy)
@@ -431,7 +432,7 @@ def jsonld_dict(d,row,context,args):
 
     #add type as schema.org/DataElement
     doc['@type'] = context['@context']['DataElement']
-    doc[context['@context']['source_variable']] = row['sourceVariable']
+    doc[context['@context']['sourceVariable']] = row['sourceVariable']
 
     ro_dict = responseOptions_parser(row,context)
 
@@ -496,7 +497,7 @@ def jsonld_dict(d,row,context,args):
 
 
     # add property to specify that the term is associated with NIDM
-    doc[context['@context']['associatedWith']] = ['NIDM','BIDS']
+    doc[context['@context']['associatedWith']] = str('NIDM')
 
     #Added by DBK
     #with open("/Users/dbkeator/Downloads/temp/test.jsonld","w") as fp:
@@ -504,6 +505,17 @@ def jsonld_dict(d,row,context,args):
 
     #write JSON file out
     compacted = jsonld.compact(doc,args.context)
+
+
+    # DBK hacking isAbout which in compacted form still uses the URL as the key
+    # so simple hack, which is still valid json-ld, is to replace the key
+    # with the string isAbout
+    obj_nm,obj_term = split_uri(context['@context']['isAbout']['@id'])
+
+    if 'ilx_id' + ':' + obj_term in compacted.keys():
+        compacted['isAbout'] = compacted['ilx_id' + ':' + obj_term]
+        del compacted['ilx_id' + ':' + obj_term]
+
 
 
     # add the the jsonld dictionary to the main dictionary
@@ -567,7 +579,7 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
 
                     #add type as schema.org/DataElement
                     doc['@type'] = context['@context']['DataElement']
-                    doc[context['@context']['source_variable']] = key
+                    doc[context['@context']['sourceVariable']] = key
 
                     # loop through the data elements properties and change them to be consistent with cde_context.jsonld
                     # (https://github.com/nqueder/terms/blob/master/context/cde_context.jsonld)
@@ -644,7 +656,7 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
 
                                     #add type as schema.org/DataElement
                                     doc['@type'] = context['@context']['DataElement']
-                                    doc[context['@context']['source_variable']] = str(k)
+                                    doc[context['@context']['sourceVariable']] = str(k)
 
                                     #for each data element that is not in the master dictionary d access its properties
                                     # and change them to be consistent with context
@@ -705,7 +717,7 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
 
                                 #add type as schema.org/DataElement
                                 doc['@type'] = context['@context']['DataElement']
-                                doc[context['@context']['source_variable']] = str(kk)
+                                doc[context['@context']['sourceVariable']] = str(kk)
 
                                 for subkk in phenojson2[kk]:
 

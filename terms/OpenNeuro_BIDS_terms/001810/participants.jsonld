@@ -4,10 +4,7 @@
     "@type": "DataElement",
     "description": "age of the participant (at the time of data acquisition)",
     "sourceVariable": "age",
-    "associatedWith": [
-      "NIDM",
-      "BIDS"
-    ],
+    "associatedWith": "NIDM",
     "responseOptions": {
       "valueType": "xsd:float"
     },
@@ -21,10 +18,7 @@
     "@type": "DataElement",
     "description": "gender of the participant (at the time of data acquisition)",
     "sourceVariable": "gender",
-    "associatedWith": [
-      "NIDM",
-      "BIDS"
-    ],
+    "associatedWith": "NIDM",
     "responseOptions": {
       "valueType": "xsd:string"
     },
@@ -38,20 +32,17 @@
     "@type": "DataElement",
     "description": "Specifies which tDCS polarity participants received on the first lab visit (anodal or cathodal). Participants visited lab twice in total (separated by about a week). On the second visit, they received the opposite polarity (cathodal or anaodal).",
     "sourceVariable": "tDCS_on_first_day",
-    "associatedWith": [
-      "NIDM",
-      "BIDS"
-    ],
+    "associatedWith": "NIDM",
     "responseOptions": {
       "valueType": "xsd:string",
       "choices": [
         {
-          "name": "cathodal",
-          "value": "cathodal tDCS applied on the first lab visit; anodal tDCS applied on the second"
+          "name": "cathodal tDCS applied on the first lab visit; anodal tDCS applied on the second",
+          "value": "cathodal"
         },
         {
-          "name": "anodal",
-          "value": "anodal tDCS applied on the first lab visit; cathodal tDCS applied on the second"
+          "name": "anodal tDCS applied on the first lab visit; cathodal tDCS applied on the second",
+          "value": "anodal"
         }
       ]
     }

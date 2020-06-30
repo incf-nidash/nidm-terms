@@ -4,10 +4,7 @@
     "@type": "DataElement",
     "description": "Date given in DD.MM.YYYY format",
     "sourceVariable": "date",
-    "associatedWith": [
-      "NIDM",
-      "BIDS"
-    ],
+    "associatedWith": "NIDM",
     "responseOptions": {
       "valueType": "xsd:string"
     },
@@ -22,10 +19,7 @@
     "@type": "DataElement",
     "description": "Time between the start of medetomidine administration and the experimental endpoint (for details, see paper)",
     "sourceVariable": "duration",
-    "associatedWith": [
-      "NIDM",
-      "BIDS"
-    ],
+    "associatedWith": "NIDM",
     "responseOptions": {
       "valueType": "xsd:integer",
       "unitCode": "minutes"
@@ -36,10 +30,7 @@
     "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "sourceVariable": "efs_runs",
-    "associatedWith": [
-      "NIDM",
-      "BIDS"
-    ],
+    "associatedWith": "NIDM",
     "responseOptions": {
       "valueType": "xsd:integer"
     },
@@ -50,28 +41,25 @@
     "@type": "DataElement",
     "description": "subcutaneous (SC) or intravenous (IV), with or without bolus",
     "sourceVariable": "protocol",
-    "associatedWith": [
-      "NIDM",
-      "BIDS"
-    ],
+    "associatedWith": "NIDM",
     "responseOptions": {
       "valueType": "xsd:integer",
       "choices": [
         {
-          "name": "1",
-          "value": "SC with bolus"
+          "name": "SC with bolus",
+          "value": "1"
         },
         {
-          "name": "2",
-          "value": "IV with bolus"
+          "name": "IV with bolus",
+          "value": "2"
         },
         {
-          "name": "3",
-          "value": "IV no bolus"
+          "name": "IV no bolus",
+          "value": "3"
         },
         {
-          "name": "4",
-          "value": "IV lower dose"
+          "name": "IV lower dose",
+          "value": "4"
         }
       ],
       "maxValue": "4",
@@ -83,10 +71,7 @@
     "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "sourceVariable": "rs_runs",
-    "associatedWith": [
-      "NIDM",
-      "BIDS"
-    ],
+    "associatedWith": "NIDM",
     "responseOptions": {
       "valueType": "xsd:integer"
     },
@@ -97,10 +82,7 @@
     "@type": "DataElement",
     "description": "Weight was measured right before the induction of anesthesia",
     "sourceVariable": "weight",
-    "associatedWith": [
-      "NIDM",
-      "BIDS"
-    ],
+    "associatedWith": "NIDM",
     "responseOptions": {
       "valueType": "xsd:integer",
       "unitCode": "grams"
@@ -116,9 +98,6 @@
     "@type": "DataElement",
     "description": "ID of the rat, from sub-01 to sub-24",
     "sourceVariable": "participant_id",
-    "associatedWith": [
-      "NIDM",
-      "BIDS"
-    ]
+    "associatedWith": "NIDM"
   }
 }

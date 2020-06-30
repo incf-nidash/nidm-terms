@@ -22,25 +22,33 @@ def main(argv):
 
     terms_list = os.listdir(path)
 
+
+    dict = {}
+
     for term in terms_list:
         term_path = os.path.join(path, term)
+        print('Updating %s' % term)
 
         with open (term_path) as j:
             term_dict = json.load(j)
 
         for key, value in term_dict.items():
 
+            if key != 'candidateTerms':
+                if key == 'provenance':
+                    continue
 
-            if key == 'provenance':
-                term_dict['provenance'] = term_dict['associatedWith']
-                term_dict['associatedWith'] = ['BIDS','NIDM']
+                else:
+                    dict[key] = value
 
-            if 'candidateTerms' in term_dict:
-                del term_dict['candidateTerms']
+        dict['associatedWith'] = ['BIDS','NIDM']
+
+            #if 'candidateTerms' in term_dict:
+                #del term_dict['candidateTerms']
 
 
         with open(join(output_path,term), 'w+') as r:
-            json.dump(term_dict,r,indent=2)
+            json.dump(dict,r,indent=2)
 
 
 
