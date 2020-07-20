@@ -52,4 +52,7 @@ Reuse of existing neuroscience data relies, in part, on our ability to understan
 * **WIP: Term curration and Governance**
 	* We are currently working on a governance structure for this work.  We are basing it on other open science projects.  Please stay tuned for more information.
 	  
+### Demos
+
+OpenNeuro Concept Query Demo: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NIDM-Terms/terms/master?filepath=utils%2Fquery_demo)
 

@@ -1,0 +1,39 @@
+{
+  "sex": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "(Self-reported) sex of participant",
+    "isAbout": {
+      "http://uri.interlex.org/ilx_0112866": "sex"
+    },
+    "source_variable": "sex",
+    "associatedWith": "NIDM",
+    "levels": [
+      "M:male",
+      "F:female"
+    ],
+    "allowableValues": [
+      "M",
+      "F"
+    ],
+    "valueType": "xsd:string"
+  },
+  "validation_session": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Which session was used for the validation set. For participants with two sessions, the other session was used for exploration.",
+    "source_variable": "validation_session",
+    "associatedWith": "NIDM",
+    "levels": [
+      "1:The first session was used for validation (if present, the second session was used for exploration)",
+      "2:The second session was used for validation (the first session was used for exploration)",
+      "n/a:The data was not used for the (validation) analyses"
+    ],
+    "allowableValues": [
+      "1",
+      "2",
+      "n/a"
+    ],
+    "valueType": "xsd:float"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "age": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Age of participant at standardized testing visit",
+    "isAbout": {
+      "http://uri.interlex.org/ilx_0100400": "age"
+    },
+    "source_variable": "age",
+    "associatedWith": "NIDM",
+    "label": "Age of participant",
+    "valueType": "xsd:float"
+  },
+  "ethnicity": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "How would you describe your child's ethnicity? Hispanic or Latino , Not Hispanic or Latino",
+    "isAbout": {
+      "http://uri.interlex.org/ilx_0103955": "ethnicity"
+    },
+    "source_variable": "ethnicity",
+    "associatedWith": "NIDM",
+    "label": "Participant ethnicity",
+    "levels": [
+      "1:Hispanic or Latino",
+      "2:Not Hispanic or Latino"
+    ],
+    "allowableValues": [
+      "1",
+      "2"
+    ],
+    "maximumValue": "2",
+    "minimumValue": "1",
+    "valueType": "xsd:float"
+  },
+  "handedness": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Left or Right-Handed",
+    "isAbout": {
+      "http://uri.interlex.org/ilx_0104886": "handedness assessment"
+    },
+    "source_variable": "handedness",
+    "associatedWith": "NIDM",
+    "label": "Participant handedness",
+    "levels": [
+      "1:Left",
+      "2:Right"
+    ],
+    "allowableValues": [
+      "1",
+      "2"
+    ],
+    "maximumValue": "2",
+    "minimumValue": "1",
+    "valueType": "xsd:integer"
+  },
+  "race": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "How would you describe your child's race? Please select all that apply.",
+    "isAbout": {
+      "http://uri.interlex.org/ilx_0109596": "race assessment"
+    },
+    "source_variable": "race",
+    "associatedWith": "NIDM",
+    "label": "Participant race",
+    "levels": [
+      "1:American Indian or Alaskan",
+      "2:Asian",
+      "3:Black or African American",
+      "4:Hawaiian or Pacific Islander",
+      "5:White",
+      "6:Other"
+    ],
+    "allowableValues": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "maximumValue": "6",
+    "minimumValue": "1",
+    "valueType": "xsd:float"
+  },
+  "sex": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Sex of participants",
+    "isAbout": {
+      "http://uri.interlex.org/ilx_0112866": "sex"
+    },
+    "source_variable": "sex",
+    "associatedWith": "NIDM",
+    "label": "Sex",
+    "levels": [
+      "1:male",
+      "2:female"
+    ],
+    "allowableValues": [
+      "1",
+      "2"
+    ],
+    "maximumValue": "2",
+    "minimumValue": "1",
+    "valueType": "xsd:integer"
+  },
+  "shifted_birthdate": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Date of birth randomly shifted from 0 to -375 days and year changed to 18-- to maintain anonymity. Shift amount is consistant within subjects but random accross subjects",
+    "source_variable": "shifted_birthdate",
+    "associatedWith": "NIDM",
+    "label": "Shifted date of birth",
+    "valueType": "xsd:string"
+  }
+}

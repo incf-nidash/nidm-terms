@@ -20,21 +20,22 @@ Below is an exhaustive set of possible term properties.  The specific term you a
 
   * **"description":** An explanation of the nature, scope, or meaning of the new term.
   * **"url":** Typically when adding a new term the URL will be automatically generated when it is incorporated into the NIDM-Terms terminology. 
-  * **"label":** Short label for the term
-  * **"valueType":** 
-  * **"unitCode":** The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.  See the [Metric Interchange Format](https://people.csail.mit.edu/jaffer/MIXF/) for SI units and numerical value strings.
-  * **"unitLabel":** A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for [unitCode](https://units.unf.edu/) 
-  * **"maximumValue":** The upper value of the term
-  * **"minimumValue":** The lower value of the term
+  * **"label":** Label for the term
+  * **"source_variable":** Variable name from dataset
+  * **"valueType":** A value representation such as integer, float, string, date/time (e.g. xsd:int, xsd:float, xsd:string): see [XSD Data Types](https://www.w3schools.com/xml/schema_simple.asp)
+  * **"datumType":** What type of datum it is (e.g. range,count,scalar etc.): see [IAO definitions](http://www.ontobee.org/ontology/STATO?iri=http://purl.obolibrary.org/obo/IAO_0000109) 
+  * **"hasUnit":** Unit of measurement following [BIDS specification](https://bids-specification.readthedocs.io/en/stable/99-appendices/05-units.html) 
+  * **"maximumValue":** The upper value of the data element
+  * **"minimumValue":** The lower value of the data element
   * **"allowableValues":** For categorical variables the allowable values.  For example, handedness may be Right=1, Left=5, Ambidextrious=10 so the allowableValues is the set 1,5,10
   * **"levels":** Levels is a concept that corresponds to the [BIDS](https://bids.neuroimaging.io/) standard for categorical variables where you're mapping the value (often an integer) to some text string.  Using the handedness example from above, the levels would be {1=Right, 5=Left, 10=Ambidextrious}
-  * **"isAbout":** This property is typically added during term curation.  It is a link to terms that this term "is about" providing context for this term amongst broader terminologies.
-  * **"hasMeasurementType":**
-  * **"hasDatumType":**
-  * **"provenance":** A description of how the data element is recorded or derived.
+  * **"isAbout":** Typically a broad context or concept related to the data element. Typically used to search across datasets. It is a link providing context for this term amongst broader terminologies.
+  * **"isPartOf":** Used to link data elements to assessments (e.g. WASI_Vocab_Raw linked to [WASI scale](https://www.cognitiveatlas.org/task/id/tsk_4a57abb949f12/#)
+  * **"measureOf":** Describe what the data element measures (e.g. volume, area, distance, intensity, health status, duration/period, intelligence) 
+  * **"provenance":** A description of how the data element is recorded or derived, where it came from, etc.
   * **"subtypeCDEs":** This property is typically added during term curation.  It links the term to lower-level (child) terms in the NIDM-Terms terminology if applicable.
   * **"supertypeCDEs":** This property is typically added during term curation.  It links the term to higher-level (parent) terms in the NIDM-Terms terminology if applicable.
-  * **"relatedConcepts":** This property is typically added during term curation where one can link this term to broader concepts.
+
   
 
 ## Examples
