@@ -9,6 +9,7 @@ import tempfile
 import urllib.request as ur
 from urllib.parse import urlparse
 import numpy as np
+from rdflib.namespace import split_uri
 
 
 # added by DBK
@@ -213,8 +214,9 @@ def level_parser(df_row,doc,context):
                 maximum = all_val[-1]
 
 
-            doc[context['@context']['minimumValue']] = minimum
-            doc[context['@context']['maximumValue']] = maximum
+            # changed by DBK
+            doc[context['@context']['minValue']] = minimum
+            doc[context['@context']['maxValue']] = maximum
 
 
     # assign allowable values to allowableValues in jsonld property
@@ -316,6 +318,11 @@ def isAbout_parser(df_row,doc,context):
     while '' in semicolon_splits:
         semicolon_splits.remove('')
 
+
+    # Added by DBK
+    doc[context['@context']['isAbout']['@id']]=[]
+
+
     #split the string by semicolon and validate each URL using the url_validator function
     for s in semicolon_splits:
 
@@ -329,9 +336,10 @@ def isAbout_parser(df_row,doc,context):
             #isabouts.append(s+":"+label)
 
 
-    doc[context['@context']['isAbout']] = []
-    doc[context['@context']['isAbout']][s] = label
-    #doc[context['@context']['isAbout']].append(isabouts)
+            # Changed by DBK
+            doc[context['@context']['isAbout']['@id']].append({'@id':s,context['@context']['label']:label})
+            #doc[context['@context']['isAbout']][s] = label
+            #doc[context['@context']['isAbout']].append(isabouts)
 
 
     print("\tFound OpenNeuro_isAbout")
@@ -369,7 +377,7 @@ def isPartOf_parser(df_row,doc,context):
 
 
 
-def jsonld_dict(d,row,context,args):
+def jsonld_dict(d,row,context_url,args):
     '''
     Creates compacted dictionary for every term passed and the main dictionary d.
 
@@ -382,8 +390,36 @@ def jsonld_dict(d,row,context,args):
     dictionary d with a compatced jsonld file for each row (i.e. term) passed
     '''
 
+     #check whether the context url is valid or not
+    url = url_validator(context_url)
+
+
+    # if user supplied a url as a segfile
+    if url is not False:
+
+        #try to open the url and get the pointed to file
+        try:
+            #open url and get file
+            opener = ur.urlopen(args.context)
+            # write temporary file to disk and use for stats
+            temp = tempfile.NamedTemporaryFile(delete=False)
+            temp.write(opener.read())
+            temp.close()
+            context_file = temp.name
+        except:
+            print("ERROR! Can't open url: %s" %args.context)
+            exit()
+
+    # read in jsonld context
+    with open(context_file) as context_data:
+        context = json.load(context_data)
+
+
     # open a new dictionary
     doc = {}
+
+    # Added by DBK
+    #doc['@context'] = context_url
 
     #add type as schema.org/DataElement
     doc['@type'] = context['@context']['DataElement']
@@ -458,13 +494,28 @@ def jsonld_dict(d,row,context,args):
     # add property to specify that the term is associated with NIDM
     doc[context['@context']['associatedWith']] = str('NIDM')
 
+    #Added by DBK
+    #with open("/Users/dbkeator/Downloads/temp/test.jsonld","w") as fp:
+    #    json.dump(doc,fp,indent=4)
+
     #write JSON file out
     compacted = jsonld.compact(doc,args.context)
+
+    # DBK hacking isAbout which in compacted form still uses the URL as the key
+    # so simple hack, which is still valid json-ld, is to replace the key
+    # with the string isAbout
+    obj_nm,obj_term = split_uri(context['@context']['isAbout']['@id'])
+
+    if 'ilx_id' + ':' + obj_term in compacted.keys():
+        compacted['isAbout'] = compacted['ilx_id' + ':' + obj_term]
+        del compacted['ilx_id' + ':' + obj_term]
+
 
     # add the the jsonld dictionary to the main dictionary
     d[row['sourceVariable']] = compacted
 
-    return d
+    # changed by DBK to return the loaded context from passed context_url
+    return d,context
 
 
 def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
@@ -720,30 +771,8 @@ def main(argv):
     df = pd.read_csv(args.csv_file, encoding = 'latin-1', error_bad_lines=False)
 
 
-    #check whether the context url is valid or not
-    url = url_validator(args.context)
 
 
-    # if user supplied a url as a segfile
-    if url is not False:
-
-        #try to open the url and get the pointed to file
-        try:
-            #open url and get file
-            opener = ur.urlopen(args.context)
-            # write temporary file to disk and use for stats
-            temp = tempfile.NamedTemporaryFile(delete=False)
-            temp.write(opener.read())
-            temp.close()
-            context_file = temp.name
-        except:
-            print("ERROR! Can't open url: %s" %args.context)
-            exit()
-
-
-    # read in jsonld context
-    with open(context_file) as context_data:
-        context = json.load(context_data)
 
     #starting a new python dictionary
     d = {}
@@ -801,7 +830,8 @@ def main(argv):
             # loop through the rows and call function json_check to create a master dictionary d
             for ii, rr in par_ter.iterrows():
                 print('processing term: %s'%rr['sourceVariable'])
-                d = jsonld_dict(d,rr,context,args)
+                # changed by DBK
+                d,context = jsonld_dict(d,rr,args.context,args)
 
 
             # opens pre-made directory with with a number that matches the ds ID and creates a jsonld file inside that directory
