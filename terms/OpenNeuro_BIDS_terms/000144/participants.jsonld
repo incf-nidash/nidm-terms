@@ -2,10 +2,23 @@
   "AnyAnx_f": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
+    "description": "Meets criteria for GAD, SAD, and/or SOC at follow-up",
     "sourceVariable": "AnyAnx_f",
     "associatedWith": "NIDM",
     "responseOptions": {
-      "valueType": "xsd:integer"
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "Not Meeting Criteria for Anx at Follow-up",
+          "value": "0"
+        },
+        {
+          "name": "Meeting Criteria for Anx at Follow-up",
+          "value": "1"
+        }
+      ],
+      "maxValue": "1",
+      "minValue": "0"
     },
     "isAbout": [
       {
@@ -21,10 +34,23 @@
   "AnyAnx_p": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
+    "description": "Meets criteria for GAD, SAD, and/or SOC at preschool",
     "sourceVariable": "AnyAnx_p",
     "associatedWith": "NIDM",
     "responseOptions": {
-      "valueType": "xsd:integer"
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "Not Meeting Criteria for Anx at preschool",
+          "value": "0"
+        },
+        {
+          "name": "Meeting Criteria for Anx at preschool",
+          "value": "1"
+        }
+      ],
+      "maxValue": "1",
+      "minValue": "0"
     },
     "isAbout": [
       {
@@ -108,7 +134,9 @@
     "sourceVariable": "GADSx_f",
     "associatedWith": "NIDM",
     "responseOptions": {
-      "valueType": "xsd:integer"
+      "valueType": "xsd:integer",
+      "maxValue": 5,
+      "minValue": 0
     },
     "isAbout": [
       {
@@ -128,7 +156,9 @@
     "sourceVariable": "GADSx_p",
     "associatedWith": "NIDM",
     "responseOptions": {
-      "valueType": "xsd:integer"
+      "valueType": "xsd:integer",
+      "maxValue": 5,
+      "minValue": 0
     },
     "isAbout": [
       {
@@ -144,6 +174,7 @@
   "hand": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
+    "description": "Handednes",
     "sourceVariable": "hand",
     "associatedWith": "NIDM",
     "responseOptions": {
@@ -173,7 +204,9 @@
     "sourceVariable": "Imp_f",
     "associatedWith": "NIDM",
     "responseOptions": {
-      "valueType": "xsd:integer"
+      "valueType": "xsd:integer",
+      "maxValue": 10,
+      "minValue": 0
     },
     "isAbout": {
       "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a666/",
@@ -183,10 +216,13 @@
   "Imp_P": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
+    "description": "Impairment at preschool - continuous variable",
     "sourceVariable": "Imp_P",
     "associatedWith": "NIDM",
     "responseOptions": {
-      "valueType": "xsd:integer"
+      "valueType": "xsd:integer",
+      "maxValue": 10,
+      "minValue": 0
     },
     "isAbout": {
       "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a666/",
@@ -240,7 +276,9 @@
     "sourceVariable": "IQ",
     "associatedWith": "NIDM",
     "responseOptions": {
-      "valueType": "xsd:integer"
+      "valueType": "xsd:integer",
+      "maxValue": 132,
+      "minValue": 79
     },
     "isAbout": {
       "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a666/",
@@ -296,6 +334,7 @@
   "race": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
+    "description": "Race",
     "sourceVariable": "race",
     "associatedWith": "NIDM",
     "responseOptions": {
@@ -389,7 +428,9 @@
     "sourceVariable": "SADSx_f",
     "associatedWith": "NIDM",
     "responseOptions": {
-      "valueType": "xsd:integer"
+      "valueType": "xsd:integer",
+      "maxValue": 6,
+      "minValue": 0
     },
     "isAbout": [
       {
@@ -409,7 +450,9 @@
     "sourceVariable": "SADSx_p",
     "associatedWith": "NIDM",
     "responseOptions": {
-      "valueType": "xsd:integer"
+      "valueType": "xsd:integer",
+      "maxValue": 6,
+      "minValue": 0
     },
     "isAbout": [
       {
@@ -429,7 +472,9 @@
     "sourceVariable": "ScanAge",
     "associatedWith": "NIDM",
     "responseOptions": {
-      "valueType": "xsd:integer"
+      "valueType": "xsd:integer",
+      "maxValue": 9,
+      "minValue": 5
     },
     "isAbout": {
       "@id": "ilx_id:ilx_0100400",
@@ -529,7 +574,9 @@
     "sourceVariable": "SOCSx_f",
     "associatedWith": "NIDM",
     "responseOptions": {
-      "valueType": "xsd:integer"
+      "valueType": "xsd:integer",
+      "maxValue": 14,
+      "minValue": 0
     },
     "isAbout": [
       {
@@ -549,7 +596,9 @@
     "sourceVariable": "SOCSx_p",
     "associatedWith": "NIDM",
     "responseOptions": {
-      "valueType": "xsd:integer"
+      "valueType": "xsd:integer",
+      "maxValue": 13,
+      "minValue": 0
     },
     "isAbout": [
       {
@@ -567,13 +616,6 @@
     "@type": "DataElement",
     "description": "Subject Number",
     "sourceVariable": "SUBJECTID",
-    "associatedWith": "NIDM"
-  },
-  "Imp_p": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Impairment at Preschool - continuous variable",
-    "sourceVariable": "Imp_p",
     "associatedWith": "NIDM"
   }
 }
