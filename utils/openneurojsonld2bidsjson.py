@@ -33,6 +33,24 @@ def save_sidecar(i,NIDM_dict,output_dir):
 
 
 
+def isabout_parser(part_dict,bids_dict,term):
+
+
+    if isinstance(part_dict[term]['isAbout'], dict):
+        bids_dict[term]['isAbout'] = {}
+        bids_dict[term]['isAbout']['url'] = part_dict[term]['isAbout']['@id']
+        bids_dict[term]['isAbout']['label'] = part_dict[term]['isAbout']['label']
+
+    if isinstance(part_dict[term]['isAbout'], list):
+        temp = {}
+        bids_dict[term]['isAbout'] = []
+
+        for l in part_dict[term]['isAbout']:
+            temp['url'] = l['@id']
+            temp['label'] = l['label']
+
+
+            bids_dict[term]['isAbout'].append(temp)
 
 
 
@@ -131,9 +149,14 @@ def update_json(part_dict):
             if key == 'derivative':
                 bids_dict[term]['Derivative'] = part_dict[term]['derivative']
             # add isAbout and its appropriate value
-            #if key == 'isAbout':
-                #bids_dict[term]['isAbout'] = {}
-                #bids_dict[term]['isAbout'] = part_dict[term]['isAbout']
+            if key == 'isAbout':
+                isabout_parser(part_dict,bids_dict,term)
+                #if isinstance(bids_dict[term]['isAbout'], list):
+                    #if part_dict[term]['isAbout'] == '@id':
+                        #bids_dict[term]['isAbout']['url'] = part_dict[term]['isAbout']['@id']
+                    #if part_dict[term]['isAbout'] == '@id':
+                        #bids_dict[term]['isAbout']['label'] = part_dict[term]['isAbout']['label']
+
             # add isPartOF and its appropriate value
             if key == 'isPartOf':
                 bids_dict[term]['isPartOf'] = part_dict[term]['isPartOf']
