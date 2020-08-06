@@ -1,28 +1,33 @@
 {
   "sex": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Biological sex of the participant",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0112866": "sex"
-    },
-    "source_variable": "sex",
+    "sourceVariable": "sex",
     "associatedWith": "NIDM",
-    "levels": [
-      "F:female",
-      "M:male"
-    ],
-    "allowableValues": [
-      "F",
-      "M"
-    ],
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "female",
+          "value": "F"
+        },
+        {
+          "name": "male",
+          "value": "M"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112866",
+      "label": "sex"
+    }
   },
   "participant_id": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Unique participant identifier",
-    "source_variable": "participant_id",
+    "sourceVariable": "participant_id",
     "associatedWith": "NIDM"
   }
 }

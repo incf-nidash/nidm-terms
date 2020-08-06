@@ -1,41 +1,49 @@
 {
   "age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Participant age",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0100400": "age"
-    },
-    "source_variable": "age",
+    "sourceVariable": "age",
     "associatedWith": "NIDM",
-    "hasUnit": "Years",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "Years"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
   },
   "gender": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Participant gender",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0738437": "gender"
-    },
-    "source_variable": "gender",
+    "sourceVariable": "gender",
     "associatedWith": "NIDM",
-    "levels": [
-      "M:Male",
-      "F:Female"
-    ],
-    "allowableValues": [
-      "M",
-      "F"
-    ],
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "Male",
+          "value": "M"
+        },
+        {
+          "name": "Female",
+          "value": "F"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0738437",
+      "label": "gender"
+    }
   },
   "MeasurementToolMetadata": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Demographic information",
     "schema:url": "N/A",
-    "source_variable": "MeasurementToolMetadata",
+    "sourceVariable": "MeasurementToolMetadata",
     "associatedWith": "NIDM"
   }
 }

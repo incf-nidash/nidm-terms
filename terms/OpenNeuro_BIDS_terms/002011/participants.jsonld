@@ -1,24 +1,30 @@
 {
   "Age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Participant's age",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0100400": "age"
-    },
-    "source_variable": "Age",
+    "sourceVariable": "Age",
     "associatedWith": "NIDM",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
   },
   "sex": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Participant's sex",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0112866": "sex"
-    },
-    "source_variable": "sex",
+    "sourceVariable": "sex",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112866",
+      "label": "sex"
+    }
   }
 }

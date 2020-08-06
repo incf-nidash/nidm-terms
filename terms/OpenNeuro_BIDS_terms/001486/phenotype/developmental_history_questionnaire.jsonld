@@ -1,818 +1,1045 @@
 {
   "family_history_ADD": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Any family history of attention deficit disorder?",
-    "isAbout": {
-      "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a54b/": "inattention",
-      "http://cognitiveatlas.org/concept/json/trm_50070dce14554/": "impulsivity",
-      "http://cognitiveatlas.org/concept/json/trm_523c7c13bc55f/": "hyperactivity",
-      "http://cognitiveatlas.org/disorder/id/dso_1094/": "attention deficit hyperactivity disorder"
-    },
-    "source_variable": "family_history_ADD",
+    "sourceVariable": "family_history_ADD",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_523c7c13bc55f/",
+        "label": "hyperactivity"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_50070dce14554/",
+        "label": "impulsivity"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a54b/",
+        "label": "inattention"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1094/",
+        "label": "attention deficit hyperactivity disorder"
+      }
+    ]
   },
   "family_history_behavioral_problems": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Any family history of behavioral problems?",
-    "source_variable": "family_history_behavioral_problems",
+    "sourceVariable": "family_history_behavioral_problems",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "family_history_learning_problems": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Any family history of learning problems?",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_8927/": "learning disability"
-    },
-    "source_variable": "family_history_learning_problems",
+    "sourceVariable": "family_history_learning_problems",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
+      "label": "learning disability"
+    }
   },
   "family_history_neurological_problems": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Any family history of neurological problems?",
-    "source_variable": "family_history_neurological_problems",
+    "sourceVariable": "family_history_neurological_problems",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "father_age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0140201": "father_age (demographics)"
-    },
-    "source_variable": "father_age",
+    "sourceVariable": "father_age",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
     "label": "Father's age",
-    "valueType": "xsd:float"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0140201",
+      "label": "father_age (demographics)"
+    }
   },
   "father_behavioral_problems": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Father any history of behavioral problems?",
-    "source_variable": "father_behavioral_problems",
+    "sourceVariable": "father_behavioral_problems",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "father_drug_alcohol_abuse": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Father any history of drug or alcohol abuse?",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1574/": "alcohol abuse",
-      "http://cognitiveatlas.org/disorder/id/dso_302/": "substance abuse"
-    },
-    "source_variable": "father_drug_alcohol_abuse",
+    "sourceVariable": "father_drug_alcohol_abuse",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1574/",
+        "label": "alcohol abuse"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_302/",
+        "label": "substance abuse"
+      }
+    ]
   },
   "father_emotional_problems": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Father any history of emotional problems?",
-    "isAbout": {
-      "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a17f/": "emotion",
-      "http://cognitiveatlas.org/concept/json/trm_59d184d09066b/": "arousal (emotion)"
-    },
-    "source_variable": "father_emotional_problems",
+    "sourceVariable": "father_emotional_problems",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_59d184d09066b/",
+        "label": "arousal (emotion)"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a17f/",
+        "label": "emotion"
+      }
+    ]
   },
   "father_highest_grade": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0104128": "father's education"
-    },
-    "source_variable": "father_highest_grade",
+    "sourceVariable": "father_highest_grade",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
     "label": "Father's highest grade/degree completed",
-    "valueType": "xsd:float"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0104128",
+      "label": "father's education"
+    }
   },
   "father_learning_problems": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Father any history of learning problems?",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_8927/": "learning disability"
-    },
-    "source_variable": "father_learning_problems",
+    "sourceVariable": "father_learning_problems",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
+      "label": "learning disability"
+    }
   },
   "father_medical_problems": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Father any history of medical problems?",
-    "source_variable": "father_medical_problems",
+    "sourceVariable": "father_medical_problems",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "father_occupation": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0104129": "father's occupation"
-    },
-    "source_variable": "father_occupation",
+    "sourceVariable": "father_occupation",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
     "label": "Father's occupation",
-    "valueType": "xsd:string"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0104129",
+      "label": "father's occupation"
+    }
   },
   "father_speech_problems": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Father any history of speech problems?",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_92/": "speech disorder"
-    },
-    "source_variable": "father_speech_problems",
+    "sourceVariable": "father_speech_problems",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_92/",
+      "label": "speech disorder"
+    }
   },
   "individual_education_plan/504_plan": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Does your child have an Individualized Education Plan or a 504 Plan?",
-    "source_variable": "individual_education_plan/504_plan",
+    "sourceVariable": "individual_education_plan/504_plan",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "learning_preference_demonstrations": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "How does your child prefer to learn? Selected: Watching demonstrations",
-    "source_variable": "learning_preference_demonstrations",
+    "sourceVariable": "learning_preference_demonstrations",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "learning_preference_discussions": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "How does your child prefer to learn? Selected: Participating in discussions",
-    "source_variable": "learning_preference_discussions",
+    "sourceVariable": "learning_preference_discussions",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "learning_preference_other": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "How does your child prefer to learn? Selected: other. Write-in response.",
-    "source_variable": "learning_preference_other",
+    "sourceVariable": "learning_preference_other",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    }
   },
   "learning_preference_peer-interactions": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "How does your child prefer to learn? Selected: Interaction with peers",
-    "source_variable": "learning_preference_peer-interactions",
+    "sourceVariable": "learning_preference_peer-interactions",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "learning_preference_teacher": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "How does your child prefer to learn? Selected: Listening in class to teacher.",
-    "source_variable": "learning_preference_teacher",
+    "sourceVariable": "learning_preference_teacher",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "learning_preference_visual": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "How does your child prefer to learn? Selected: Viewing visual information provided in class.",
-    "source_variable": "learning_preference_visual",
+    "sourceVariable": "learning_preference_visual",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "lives_with": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Child lives with:",
-    "source_variable": "lives_with",
+    "sourceVariable": "lives_with",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    }
   },
   "math_disability_diagnosis": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_8927/": "learning disability"
-    },
-    "source_variable": "math_disability_diagnosis",
+    "sourceVariable": "math_disability_diagnosis",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
+      "label": "learning disability"
+    }
   },
   "math_disability_tested": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Has your child ever been tested for a Math Disability?",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_8927/": "learning disability"
-    },
-    "source_variable": "math_disability_tested",
+    "sourceVariable": "math_disability_tested",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
+      "label": "learning disability"
+    }
   },
   "mother_age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0100400": "age"
-    },
-    "source_variable": "mother_age",
+    "sourceVariable": "mother_age",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
     "label": "Mother's age",
-    "valueType": "xsd:float"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
   },
   "mother_behavioral_problems": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Mother any history of behavioral problems?",
-    "source_variable": "mother_behavioral_problems",
+    "sourceVariable": "mother_behavioral_problems",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "mother_drug_alcohol_abuse": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Mother any history of drug or alcohol abuse?",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1574/": "alcohol abuse",
-      "http://cognitiveatlas.org/disorder/id/dso_302/": "substance abuse"
-    },
-    "source_variable": "mother_drug_alcohol_abuse",
+    "sourceVariable": "mother_drug_alcohol_abuse",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1574/",
+        "label": "alcohol abuse"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_302/",
+        "label": "substance abuse"
+      }
+    ]
   },
   "mother_emotional_problems": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Mother any history of emotional problems?",
-    "isAbout": {
-      "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a17f/": "emotion",
-      "http://cognitiveatlas.org/concept/json/trm_59d184d09066b/": "arousal (emotion)"
-    },
-    "source_variable": "mother_emotional_problems",
+    "sourceVariable": "mother_emotional_problems",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_59d184d09066b/",
+        "label": "arousal (emotion)"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a17f/",
+        "label": "emotion"
+      }
+    ]
   },
   "mother_highest_grade": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Mother's highest grade/degree completed",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0140820": "mother_education (demographics short form)"
-    },
-    "source_variable": "mother_highest_grade",
+    "sourceVariable": "mother_highest_grade",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:No High School",
-      "2:High School",
-      "3:Some College",
-      "4:Bachelor's Degree",
-      "5:Graduate Degree"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5"
-    ],
-    "maximumValue": "5",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "No High School",
+          "value": "1"
+        },
+        {
+          "name": "High School",
+          "value": "2"
+        },
+        {
+          "name": "Some College",
+          "value": "3"
+        },
+        {
+          "name": "Bachelor's Degree",
+          "value": "4"
+        },
+        {
+          "name": "Graduate Degree",
+          "value": "5"
+        }
+      ],
+      "maxValue": "5",
+      "minValue": "1"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0140820",
+      "label": "mother_education (demographics short form)"
+    }
   },
   "mother_learning_problems": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Mother any history of learning problems?",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_8927/": "learning disability"
-    },
-    "source_variable": "mother_learning_problems",
+    "sourceVariable": "mother_learning_problems",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
+      "label": "learning disability"
+    }
   },
   "mother_medical_problems": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Mother any history of medical problems?",
-    "source_variable": "mother_medical_problems",
+    "sourceVariable": "mother_medical_problems",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "mother_occupation": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0107886": "occupation"
-    },
-    "source_variable": "mother_occupation",
+    "sourceVariable": "mother_occupation",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
     "label": "Mother's occupation",
-    "valueType": "xsd:string"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0107886",
+      "label": "occupation"
+    }
   },
   "mother_speech_problems": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Mother any history of speech problems?",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_92/": "speech disorder"
-    },
-    "source_variable": "mother_speech_problems",
+    "sourceVariable": "mother_speech_problems",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_92/",
+      "label": "speech disorder"
+    }
   },
   "other_classroom_type": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "If no [regular_classroom], please specify:",
-    "source_variable": "other_classroom_type",
+    "sourceVariable": "other_classroom_type",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    }
   },
   "primary_language": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Primary language spoken at home:",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0108613": "patients primary language code modifier sequence"
-    },
-    "source_variable": "primary_language",
+    "sourceVariable": "primary_language",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0108613",
+      "label": "patients primary language code modifier sequence"
+    }
   },
   "reading_disability_diagnosis": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_13365/": "reading disorder"
-    },
-    "source_variable": "reading_disability_diagnosis",
+    "sourceVariable": "reading_disability_diagnosis",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_13365/",
+      "label": "reading disorder"
+    }
   },
   "reading_disability_tested": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Has your child ever been tested for a Reading Disability?",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_13365/": "reading disorder"
-    },
-    "source_variable": "reading_disability_tested",
+    "sourceVariable": "reading_disability_tested",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_13365/",
+      "label": "reading disorder"
+    }
   },
   "regular_classroom": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Is your child in a regular classroom?",
-    "source_variable": "regular_classroom",
+    "sourceVariable": "regular_classroom",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "school_type": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "My child/children attend(s):",
-    "source_variable": "school_type",
+    "sourceVariable": "school_type",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    }
   },
   "skipped_grades": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Has your child repeated or skipped any grades?",
-    "source_variable": "skipped_grades",
+    "sourceVariable": "skipped_grades",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "skipped_grades_other": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "If yes [skipped_grades], please specify:",
-    "source_variable": "skipped_grades_other",
+    "sourceVariable": "skipped_grades_other",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    }
   },
   "speech_delay": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Does your child have speech delays/problems? (ie: stutters, difficult to understand?)",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_92/": "speech disorder"
-    },
-    "source_variable": "speech_delay",
+    "sourceVariable": "speech_delay",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_92/",
+      "label": "speech disorder"
+    }
   },
   "speech_delay_explanation": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "If yes [speech_delay], please explain",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_92/": "speech disorder"
-    },
-    "source_variable": "speech_delay_explanation",
+    "sourceVariable": "speech_delay_explanation",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_92/",
+      "label": "speech disorder"
+    }
   },
   "speech_language_therapy": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Was speech/language therapy ever necessary?",
-    "source_variable": "speech_language_therapy",
+    "sourceVariable": "speech_language_therapy",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    }
   },
   "struggle_math": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Does your child struggle with math?",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_8927/": "learning disability"
-    },
-    "source_variable": "struggle_math",
+    "sourceVariable": "struggle_math",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
+      "label": "learning disability"
+    }
   },
   "struggle_reading": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Does your child struggle with reading?",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_8927/": "learning disability"
-    },
-    "source_variable": "struggle_reading",
+    "sourceVariable": "struggle_reading",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
+      "label": "learning disability"
+    }
   },
   "struggle_reading_explanation": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "If yes [struggle_reading], please describe the nature of their difficulty:",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_8927/": "learning disability"
-    },
-    "source_variable": "struggle_reading_explanation",
+    "sourceVariable": "struggle_reading_explanation",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
+      "label": "learning disability"
+    }
   },
   "tutoring_math": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Is or has your child received remediation/tutoring for math issues?",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_8927/": "learning disability"
-    },
-    "source_variable": "tutoring_math",
+    "sourceVariable": "tutoring_math",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
+      "label": "learning disability"
+    }
   },
   "tutoring_reading": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Is or has your child received remediation/tutoring for reading issues?",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_8927/": "learning disability"
-    },
-    "source_variable": "tutoring_reading",
+    "sourceVariable": "tutoring_reading",
     "associatedWith": "NIDM",
-    "levels": [
-      "1:Yes",
-      "2:No"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Yes",
+          "value": "1"
+        },
+        {
+          "name": "No",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
+      "label": "learning disability"
+    }
   },
   "MeasurementToolMetadata": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Questions about subject and family history given prior to first study visit",
-    "source_variable": "MeasurementToolMetadata",
+    "sourceVariable": "MeasurementToolMetadata",
     "associatedWith": "NIDM",
     "label": "Medical and Developmental History Questionnaire"
   }

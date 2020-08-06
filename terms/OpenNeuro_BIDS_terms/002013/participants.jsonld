@@ -1,32 +1,37 @@
 {
   "date": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Exact day of the scanning session",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0383109": "date"
-    },
     "schema:url": "https://en.wikipedia.org/wiki/ISO_8601",
-    "source_variable": "date",
+    "sourceVariable": "date",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
     "label": "Date",
-    "valueType": "xsd:string"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0383109",
+      "label": "date"
+    }
   },
   "time": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Start time of the first main run",
     "schema:url": "https://en.wikipedia.org/wiki/ISO_8601",
-    "source_variable": "time",
+    "sourceVariable": "time",
     "associatedWith": "NIDM",
-    "label": "Time",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "label": "Time"
   },
   "participant_id": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Participant ID as provided during the scanning session",
-    "source_variable": "participant_id",
+    "sourceVariable": "participant_id",
     "associatedWith": "NIDM",
     "label": "Participant ID"
   }

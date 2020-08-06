@@ -1,146 +1,202 @@
 {
   "controlstatus": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Control Status",
-    "source_variable": "controlstatus",
+    "sourceVariable": "controlstatus",
     "associatedWith": "NIDM",
-    "levels": [
-      "0:Inactive",
-      "1:Active",
-      "2:Completed"
-    ],
-    "allowableValues": [
-      "0",
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "0",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Inactive",
+          "value": "0"
+        },
+        {
+          "name": "Active",
+          "value": "1"
+        },
+        {
+          "name": "Completed",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "0"
+    }
   },
   "dq_reason": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Drop Reason",
-    "source_variable": "dq_reason",
+    "sourceVariable": "dq_reason",
     "associatedWith": "NIDM",
-    "levels": [
-      "11:Discontinued: Psychoactive Medication",
-      "15:Discontinued: MRI- Data Unusable",
-      "3:Discontinued: SCID",
-      "14:Discontinued: MRI- Incomplete Scan",
-      "7:Head Injury/Trauma",
-      "2:Discontinued: ADHD Screener",
-      "5:Discontinued: No Show",
-      "12:Modified ADHD Screening Interview",
-      "9:Medical Condition",
-      "18:Withdrew: MRI (please specify)",
-      "6:Discontinued: Other",
-      "10:Discontinued: Positive Urinalysis",
-      "4:Discontinued: Visual Acuity",
-      "13:Discontinued: MRI- No Show",
-      "16:Discontinued: MRI- Screen Failure (please specify)",
-      "17:Discontinued: MRI- Other (please specify)",
-      "1:Withdrew",
-      "8:Screen Failure (please specify)"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "11",
-      "12",
-      "13",
-      "14",
-      "15",
-      "16",
-      "17",
-      "18"
-    ],
-    "maximumValue": "18",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Discontinued: Psychoactive Medication",
+          "value": "11"
+        },
+        {
+          "name": "Discontinued: MRI- Data Unusable",
+          "value": "15"
+        },
+        {
+          "name": "Discontinued: SCID",
+          "value": "3"
+        },
+        {
+          "name": "Discontinued: MRI- Incomplete Scan",
+          "value": "14"
+        },
+        {
+          "name": "Head Injury/Trauma",
+          "value": "7"
+        },
+        {
+          "name": "Discontinued: ADHD Screener",
+          "value": "2"
+        },
+        {
+          "name": "Discontinued: No Show",
+          "value": "5"
+        },
+        {
+          "name": "Modified ADHD Screening Interview",
+          "value": "12"
+        },
+        {
+          "name": "Medical Condition",
+          "value": "9"
+        },
+        {
+          "name": "Withdrew: MRI (please specify)",
+          "value": "18"
+        },
+        {
+          "name": "Discontinued: Other",
+          "value": "6"
+        },
+        {
+          "name": "Discontinued: Positive Urinalysis",
+          "value": "10"
+        },
+        {
+          "name": "Discontinued: Visual Acuity",
+          "value": "4"
+        },
+        {
+          "name": "Discontinued: MRI- No Show",
+          "value": "13"
+        },
+        {
+          "name": "Discontinued: MRI- Screen Failure (please specify)",
+          "value": "16"
+        },
+        {
+          "name": "Discontinued: MRI- Other (please specify)",
+          "value": "17"
+        },
+        {
+          "name": "Withdrew",
+          "value": "1"
+        },
+        {
+          "name": "Screen Failure (please specify)",
+          "value": "8"
+        }
+      ],
+      "maxValue": "18",
+      "minValue": "1"
+    }
   },
   "flag_reason": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Flag reason",
-    "source_variable": "flag_reason",
+    "sourceVariable": "flag_reason",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    }
   },
   "mriseq": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "MRI Scan Order",
-    "source_variable": "mriseq",
+    "sourceVariable": "mriseq",
     "associatedWith": "NIDM",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float"
+    }
   },
   "mriseq2": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "MRI2 Scan Order",
-    "source_variable": "mriseq2",
+    "sourceVariable": "mriseq2",
     "associatedWith": "NIDM"
   },
   "researchdb": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Research database",
-    "source_variable": "researchdb",
+    "sourceVariable": "researchdb",
     "associatedWith": "NIDM",
-    "levels": [
-      "T:I agree to have my research data shared with other investigators",
-      "F:I do not agree to have my research data shared with other investigators"
-    ],
-    "allowableValues": [
-      "T",
-      "F"
-    ],
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "I agree to have my research data shared with other investigators",
+          "value": "T"
+        },
+        {
+          "name": "I do not agree to have my research data shared with other investigators",
+          "value": "F"
+        }
+      ]
+    }
   },
   "status": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Status",
-    "source_variable": "status",
+    "sourceVariable": "status",
     "associatedWith": "NIDM",
-    "levels": [
-      "0:Inactive",
-      "1:Active",
-      "2:Completed"
-    ],
-    "allowableValues": [
-      "0",
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "0",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Inactive",
+          "value": "0"
+        },
+        {
+          "name": "Active",
+          "value": "1"
+        },
+        {
+          "name": "Completed",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "0"
+    }
   },
   "switchptid": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "New Patient ID when participant switches to a new group",
-    "source_variable": "switchptid",
+    "sourceVariable": "switchptid",
     "associatedWith": "NIDM"
   },
   "MeasurementToolMetadata": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Administrative",
     "schema:url": "",
-    "source_variable": "MeasurementToolMetadata",
+    "sourceVariable": "MeasurementToolMetadata",
     "associatedWith": "NIDM"
   }
 }

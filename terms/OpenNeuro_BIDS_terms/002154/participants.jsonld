@@ -1,64 +1,80 @@
 {
   "condition": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Experimental group",
-    "source_variable": "condition",
+    "sourceVariable": "condition",
     "associatedWith": "NIDM",
-    "levels": [
-      "veh:Vehicle",
-      "psi05:Psilocybin 0.5 mg/kg"
-    ],
-    "allowableValues": [
-      "veh",
-      "psi05"
-    ],
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "Vehicle",
+          "value": "veh"
+        },
+        {
+          "name": "Psilocybin 0.5 mg/kg",
+          "value": "psi05"
+        }
+      ]
+    }
   },
   "Experiment_Date": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Date of recording",
-    "source_variable": "Experiment_Date",
+    "sourceVariable": "Experiment_Date",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    }
   },
   "gender": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "C57Bl/6J mice",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0738437": "gender"
-    },
-    "source_variable": "gender",
+    "sourceVariable": "gender",
     "associatedWith": "NIDM",
-    "levels": [
-      "m:Male",
-      "f:Female"
-    ],
-    "allowableValues": [
-      "m",
-      "f"
-    ],
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "Male",
+          "value": "m"
+        },
+        {
+          "name": "Female",
+          "value": "f"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0738437",
+      "label": "gender"
+    }
   },
   "session": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Imaging session",
-    "source_variable": "session",
+    "sourceVariable": "session",
     "associatedWith": "NIDM",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    }
   },
   "weight": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/patch-2/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "animal weight in gram",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0112616": "weight"
-    },
-    "source_variable": "weight",
+    "sourceVariable": "weight",
     "associatedWith": "NIDM",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112616",
+      "label": "weight"
+    }
   }
 }
