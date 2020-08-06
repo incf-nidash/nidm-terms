@@ -237,6 +237,9 @@ def responseOptions_parser(df_row,context):
                 maximum = all_val[-1]
 
 
+            # changed by DBK
+            #doc[context['@context']['minValue']] = minimum
+            #doc[context['@context']['maxValue']] = maximum
 
             little_doc[context['@context']['minValue']] = minimum
             little_doc[context['@context']['maxValue']] = maximum
@@ -404,7 +407,7 @@ def isPartOf_parser(df_row,doc,context):
 
 
 
-def jsonld_dict(d,row,context_url,args):
+def jsonld_dict(d,row,context,args):
     '''
     Creates compacted dictionary for every term passed and the main dictionary d.
 
@@ -417,38 +420,12 @@ def jsonld_dict(d,row,context_url,args):
     dictionary d with a compatced jsonld file for each row (i.e. term) passed
     '''
 
-    #check whether the context url is valid or not
-    url = url_validator(context_url)
-
-
-    # if user supplied a url as a segfile
-    if url is not False:
-
-        #try to open the url and get the pointed to file
-        try:
-            open url and get file
-            opener = ur.urlopen(args.context)
-            write temporary file to disk and use for stats
-            temp = tempfile.NamedTemporaryFile(delete=False)
-            temp.write(opener.read())
-            temp.close()
-            context_file = temp.name
-        except:
-            print("ERROR! Can't open url: %s" %args.context)
-            exit()
-
-    # read in jsonld context
-    with open(context_file) as context_data:
-        context = json.load(context_data)
 
 
     # open a new dictionary
     doc = {}
     # dictionary to contain elements of response options
     #ro_dict = {}
-
-    # Added by DBK
-    #doc['@context'] = context_url
 
     # Added by DBK
     #doc['@context'] = context_url
@@ -545,8 +522,7 @@ def jsonld_dict(d,row,context_url,args):
     d[row['sourceVariable']] = compacted
 
     # changed by DBK to return the loaded context from passed context_url
-
-    return d, context
+    return d
 
 
 def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
@@ -802,8 +778,30 @@ def main(argv):
     df = pd.read_csv(args.csv_file, encoding = 'latin-1', error_bad_lines=False)
 
 
+    #check whether the context url is valid or not
+    url = url_validator(args.context)
 
 
+    # if user supplied a url as a segfile
+    if url is not False:
+
+        #try to open the url and get the pointed to file
+        try:
+            #open url and get file
+            opener = ur.urlopen(args.context)
+            # write temporary file to disk and use for stats
+            temp = tempfile.NamedTemporaryFile(delete=False)
+            temp.write(opener.read())
+            temp.close()
+            context_file = temp.name
+        except:
+            print("ERROR! Can't open url: %s" %args.context)
+            exit()
+
+
+    # read in jsonld context
+    with open(context_file) as context_data:
+        context = json.load(context_data)
 
     #starting a new python dictionary
     d = {}
@@ -861,8 +859,7 @@ def main(argv):
             # loop through the rows and call function json_check to create a master dictionary d
             for ii, rr in par_ter.iterrows():
                 print('processing term: %s'%rr['sourceVariable'])
-                # changed by DBK
-                d,context = jsonld_dict(d,rr,args.context,args)
+                d = jsonld_dict(d,rr,context,args)
 
 
             # opens pre-made directory with with a number that matches the ds ID and creates a jsonld file inside that directory
