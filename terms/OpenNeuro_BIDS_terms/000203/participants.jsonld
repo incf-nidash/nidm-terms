@@ -2,252 +2,317 @@
   "Age": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0100400": "age"
-    },
-    "source_variable": "Age",
+    "sourceVariable": "Age",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
     "label": "Age",
-    "valueType": "xsd:integer"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
   },
   "Br": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Tendency to remember presented words as presented pictures",
-    "source_variable": "Br",
+    "sourceVariable": "Br",
     "associatedWith": "NIDM",
-    "label": "Br index",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "label": "Br index"
   },
   "CorrectRejections": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "presented words remembered as words",
-    "source_variable": "CorrectRejections",
+    "sourceVariable": "CorrectRejections",
     "associatedWith": "NIDM",
-    "label": "Correct rejections",
-    "hasUnit": "number of correct rejections",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "number of correct rejections"
+    },
+    "label": "Correct rejections"
   },
   "DELUproneness": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Proneness to delusions was assessed by means of the Peters Delusion Inventory scale",
-    "source_variable": "DELUproneness",
+    "sourceVariable": "DELUproneness",
     "associatedWith": "NIDM",
-    "label": "Proneness to delusions",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
+    "label": "Proneness to delusions"
   },
   "Education": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
-    "description": "Education level, self\u00c2\u00ac\u00e2\u0089\u00a0rated by participant",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0325823": "education (wechsler test of adult reading)"
-    },
-    "source_variable": "Education",
+    "description": "Education level, self\u00c2\u00ac\u00c2\u00a8\u00e2\u0080\u009a\u00c3\u00a2\u00e2\u0080\u00a0rated by participant",
+    "sourceVariable": "Education",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "no studies",
+          "value": "1"
+        },
+        {
+          "name": "uncompleted primary studies",
+          "value": "2"
+        },
+        {
+          "name": "completed primary studies",
+          "value": "3"
+        },
+        {
+          "name": "high school uncompleted",
+          "value": "4"
+        },
+        {
+          "name": "high school completed",
+          "value": "5"
+        },
+        {
+          "name": "undergraduate studies",
+          "value": "6"
+        },
+        {
+          "name": "bachelor\u00e2\u0080\u009a\u00c3\u0084\u00c3\u00b6\u00e2\u0088\u009a\u00c3\u0091\u00e2\u0088\u009a\u00c2\u00a5s or master\u00e2\u0080\u009a\u00c3\u0084\u00c3\u00b6\u00e2\u0088\u009a\u00c3\u0091\u00e2\u0088\u009a\u00c2\u00a5s degree",
+          "value": "7"
+        },
+        {
+          "name": "doctorate",
+          "value": "8"
+        }
+      ],
+      "maxValue": "8",
+      "minValue": "1"
+    },
     "label": "Education level",
-    "levels": [
-      "1:no studies",
-      "2:uncompleted primary studies",
-      "3:completed primary studies",
-      "4:high school uncompleted",
-      "5:high school completed",
-      "6:undergraduate studies",
-      "7:bachelor\u00e2\u0080\u009a\u00c3\u0084\u00c3\u00b4s or master\u00e2\u0080\u009a\u00c3\u0084\u00c3\u00b4s degree",
-      "8:doctorate"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8"
-    ],
-    "maximumValue": "8",
-    "minimumValue": "1",
-    "valueType": "xsd:integer"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0325823",
+      "label": "education (wechsler test of adult reading)"
+    }
   },
   "FalseAlarms": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "presented words remembered as pictures",
-    "source_variable": "FalseAlarms",
+    "sourceVariable": "FalseAlarms",
     "associatedWith": "NIDM",
-    "label": "False alarms",
-    "hasUnit": "number of false alarms",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "number of false alarms"
+    },
+    "label": "False alarms"
   },
   "Hits": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "presented pictures remembered as pictures",
-    "source_variable": "Hits",
+    "sourceVariable": "Hits",
     "associatedWith": "NIDM",
-    "label": "Hits",
-    "hasUnit": "number of hits",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "number of hits"
+    },
+    "label": "Hits"
   },
   "IQverbal": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
-    "description": "Verbal IQ was assessed by means of the Acentuaci\u00e2\u0088\u009a\u00e2\u0089\u00a5n de Palabras test. The equivalent verbal IQ for 24.2 is 104 (39).",
-    "isAbout": {
-      "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a666/": "intelligence"
-    },
-    "source_variable": "IQverbal",
+    "description": "Verbal IQ was assessed by means of the Acentuaci\u00e2\u0080\u009a\u00c3\u00a0\u00c3\u00b6\u00e2\u0080\u009a\u00c3\u00a2\u00e2\u0080\u00a2n de Palabras test. The equivalent verbal IQ for 24.2 is 104 (39).",
+    "sourceVariable": "IQverbal",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
     "label": "IQ verbal",
-    "valueType": "xsd:integer"
+    "isAbout": {
+      "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a666/",
+      "label": "intelligence"
+    }
   },
   "LSHS_14": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Proneness to hallucinations in healthy participants",
-    "isAbout": {
-      "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a4a6/": "hallucination"
-    },
-    "source_variable": "LSHS_14",
+    "sourceVariable": "LSHS_14",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
     "label": "Launay-Slade Hallucination Scale",
-    "valueType": "xsd:integer"
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a4a6/",
+      "label": "hallucination"
+    }
   },
   "LSHSaudit_items57": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Items 5 and 7 of the LSHS scale, related to auditory hallucinations",
-    "isAbout": {
-      "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a4a6/": "hallucination"
-    },
-    "source_variable": "LSHSaudit_items57",
+    "sourceVariable": "LSHSaudit_items57",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
     "label": "Items 5 and 7 of the LSHS scale",
-    "valueType": "xsd:integer"
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a4a6/",
+      "label": "hallucination"
+    }
   },
   "LSHSvoice_items4910": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Items 4, 9, and 10 of the LSHS scale, related to verbal hallucinations",
-    "isAbout": {
-      "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a4a6/": "hallucination"
-    },
-    "source_variable": "LSHSvoice_items4910",
+    "sourceVariable": "LSHSvoice_items4910",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
     "label": "Items 4, 9, and 10 of the LSHS scale",
-    "valueType": "xsd:integer"
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a4a6/",
+      "label": "hallucination"
+    }
   },
   "Omissions": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "presented pictures remembered as words",
-    "source_variable": "Omissions",
+    "sourceVariable": "Omissions",
     "associatedWith": "NIDM",
-    "label": "Omissions",
-    "hasUnit": "number of omissions",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "number of omissions"
+    },
+    "label": "Omissions"
   },
   "Pr": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Ability to discriminate presented pictures from presented words",
-    "source_variable": "Pr",
+    "sourceVariable": "Pr",
     "associatedWith": "NIDM",
-    "label": "Pr index",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "label": "Pr index"
   },
   "Sex": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Sex of participants",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0112866": "sex"
-    },
-    "source_variable": "Sex",
+    "sourceVariable": "Sex",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "male",
+          "value": "1"
+        },
+        {
+          "name": "female",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
     "label": "Sex",
-    "levels": [
-      "1:male",
-      "2:female"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:integer"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112866",
+      "label": "sex"
+    }
   },
   "TRcorrectRej": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Average response time for correct rejection trials",
-    "source_variable": "TRcorrectRej",
+    "sourceVariable": "TRcorrectRej",
     "associatedWith": "NIDM",
-    "label": "Correct rejection response time",
-    "hasUnit": "ms",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "ms"
+    },
+    "label": "Correct rejection response time"
   },
   "TRfalseAlarm": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Average response time for false alarm trials",
-    "source_variable": "TRfalseAlarm",
+    "sourceVariable": "TRfalseAlarm",
     "associatedWith": "NIDM",
-    "label": "False alarm response time",
-    "hasUnit": "ms",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "ms"
+    },
+    "label": "False alarm response time"
   },
   "TRhit": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Average response time for hit trials",
-    "source_variable": "TRhit",
+    "sourceVariable": "TRhit",
     "associatedWith": "NIDM",
-    "label": "Hit response time",
-    "hasUnit": "ms",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "ms"
+    },
+    "label": "Hit response time"
   },
   "TRmean": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Average response time across all trials",
-    "source_variable": "TRmean",
+    "sourceVariable": "TRmean",
     "associatedWith": "NIDM",
-    "label": "Mean response time",
-    "hasUnit": "ms",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "unitCode": "ms"
+    },
+    "label": "Mean response time"
   },
   "TRomission": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Average response time for omission trials",
-    "source_variable": "TRomission",
+    "sourceVariable": "TRomission",
     "associatedWith": "NIDM",
-    "label": "Omission response time",
-    "hasUnit": "ms",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "ms"
+    },
+    "label": "Omission response time"
   },
   "VisScore_high": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Participants scoring at least 2 at one or both of the items",
-    "source_variable": "VisScore_high",
+    "sourceVariable": "VisScore_high",
     "associatedWith": "NIDM",
-    "label": "Participants with high visual imagery score",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "label": "Participants with high visual imagery score"
   },
   "VisualScore": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "The subjects were asked to self-rate the truth of the following statements using a 0-3 scale, 0 being the least true: 'I can easily identify animals or things in the clouds', 'When I see spots (of painting, humidity...), I can see faces, silhouettes or objects in them.' The sum of these two scores constitutes the VisualScore",
-    "source_variable": "VisualScore",
+    "sourceVariable": "VisualScore",
     "associatedWith": "NIDM",
-    "label": "Visual imagery score",
-    "hasUnit": "0-6, 0 being lowest proneness to visual imagery",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "0-6, 0 being lowest proneness to visual imagery"
+    },
+    "label": "Visual imagery score"
   }
 }

@@ -3,38 +3,48 @@
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Experimental arm",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0108556": "participant group"
-    },
-    "source_variable": "group",
+    "sourceVariable": "group",
     "associatedWith": "NIDM",
-    "levels": [
-      "movement: Group that trained movement sequences",
-      "cue:Group that trained cue sequences"
-    ],
-    "allowableValues": [
-      "movement",
-      "cue"
-    ],
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": " Group that trained movement sequences",
+          "value": "movement"
+        },
+        {
+          "name": "Group that trained cue sequences",
+          "value": "cue"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0108556",
+      "label": "participant group"
+    }
   },
   "handedness": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Self reported dominant hand",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0104886": "handedness assessment"
-    },
-    "source_variable": "handedness",
+    "sourceVariable": "handedness",
     "associatedWith": "NIDM",
-    "levels": [
-      "R:Right Handed",
-      "L:Left Handed"
-    ],
-    "allowableValues": [
-      "R",
-      "L"
-    ],
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "Right Handed",
+          "value": "R"
+        },
+        {
+          "name": "Left Handed",
+          "value": "L"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0104886",
+      "label": "handedness assessment"
+    }
   }
 }

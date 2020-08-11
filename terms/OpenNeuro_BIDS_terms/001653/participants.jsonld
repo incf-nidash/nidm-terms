@@ -3,67 +3,86 @@
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Date of acquistion at Singapore Bioimaging Consortium",
-    "source_variable": "acquisition_date",
+    "sourceVariable": "acquisition_date",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    }
   },
   "breathing_rate": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Breathing rate in breath per minutes (bpm), recorded with a breathing pillow",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0487479": "work of breathing"
-    },
-    "source_variable": "breathing_rate",
+    "sourceVariable": "breathing_rate",
     "associatedWith": "NIDM",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0487479",
+      "label": "work of breathing"
+    }
   },
   "condition": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Animals underwent one of the following condition",
-    "source_variable": "condition",
+    "sourceVariable": "condition",
     "associatedWith": "NIDM",
-    "levels": [
-      "awake:Awake sate. Animals underwent incremental aclimatisation training over 10 days, 2 x 2 min, 2 x 5 min, 2 x 10 min, 2 x 30 min, 2 x 60 min, animal body was wrapped in padded fabric to restrain movement",
-      "iso:Isoflurane 1% in air/O2 1",
-      "mediso:Medetomidine 0.05mg/kg bolus / 0.1 mg/kg/h infusion (i.v.) + Isoflurane 0.5% in air/O2 1"
-    ],
-    "allowableValues": [
-      "awake",
-      "iso",
-      "mediso"
-    ],
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "Awake sate. Animals underwent incremental aclimatisation training over 10 days, 2 x 2 min, 2 x 5 min, 2 x 10 min, 2 x 30 min, 2 x 60 min, animal body was wrapped in padded fabric to restrain movement",
+          "value": "awake"
+        },
+        {
+          "name": "Isoflurane 1% in air/O2 1",
+          "value": "iso"
+        },
+        {
+          "name": "Medetomidine 0.05mg/kg bolus / 0.1 mg/kg/h infusion (i.v.) + Isoflurane 0.5% in air/O2 1",
+          "value": "mediso"
+        }
+      ]
+    }
   },
   "gender": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Female c57bl/6 obtained from InVivos, Singapore, between 10 and 15 weeks",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0738437": "gender"
-    },
-    "source_variable": "gender",
+    "sourceVariable": "gender",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0738437",
+      "label": "gender"
+    }
   },
   "session": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "acquistion session",
-    "source_variable": "session",
+    "sourceVariable": "session",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    }
   },
   "weight": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Weight in gram",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0112616": "weight"
-    },
-    "source_variable": "weight",
+    "sourceVariable": "weight",
     "associatedWith": "NIDM",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112616",
+      "label": "weight"
+    }
   }
 }

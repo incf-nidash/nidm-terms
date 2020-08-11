@@ -2,75 +2,93 @@
   "age": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0100400": "age"
-    },
-    "source_variable": "age",
+    "sourceVariable": "age",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "years"
+    },
     "label": "age",
-    "hasUnit": "years",
-    "valueType": "xsd:integer"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
   },
   "gender": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "gender",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0738437": "gender"
-    },
-    "source_variable": "gender",
+    "sourceVariable": "gender",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "male",
+          "value": "M"
+        },
+        {
+          "name": "female",
+          "value": "F"
+        }
+      ]
+    },
     "label": "gender",
-    "levels": [
-      "M:male",
-      "F:female"
-    ],
-    "allowableValues": [
-      "M",
-      "F"
-    ],
-    "valueType": "xsd:string"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0738437",
+      "label": "gender"
+    }
   },
   "handedness": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "handedness",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0104886": "handedness assessment"
-    },
-    "source_variable": "handedness",
+    "sourceVariable": "handedness",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "right",
+          "value": "R"
+        },
+        {
+          "name": "left",
+          "value": "L"
+        }
+      ]
+    },
     "label": "handedness",
-    "levels": [
-      "R:right",
-      "L:left"
-    ],
-    "allowableValues": [
-      "R",
-      "L"
-    ],
-    "valueType": "xsd:string"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0104886",
+      "label": "handedness assessment"
+    }
   },
   "scan_time": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Variable indicates the starting time. fMRI scan sessions always lasted for 2 hours",
-    "source_variable": "scan_time",
+    "sourceVariable": "scan_time",
     "associatedWith": "NIDM",
-    "label": "Starting time of the fMRI scan session",
-    "hasUnit": "HH:mm",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "unitCode": "HH:mm"
+    },
+    "label": "Starting time of the fMRI scan session"
   },
   "scandate": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0383109": "date"
-    },
-    "source_variable": "scandate",
+    "sourceVariable": "scandate",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "unitCode": "DD-MM-YY"
+    },
     "label": "Date of the fMRI scan session",
-    "hasUnit": "DD-MM-YY",
-    "valueType": "xsd:string"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0383109",
+      "label": "date"
+    }
   }
 }

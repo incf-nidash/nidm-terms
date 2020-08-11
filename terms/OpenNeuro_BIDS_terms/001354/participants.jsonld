@@ -3,50 +3,63 @@
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "age of the participant",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0100400": "age"
-    },
-    "source_variable": "age",
+    "sourceVariable": "age",
     "associatedWith": "NIDM",
-    "hasUnit": "years",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "unitCode": "years"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
   },
   "gender": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "gender of the participant",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0738437": "gender"
-    },
-    "source_variable": "gender",
+    "sourceVariable": "gender",
     "associatedWith": "NIDM",
-    "levels": [
-      "m:male",
-      "f:female"
-    ],
-    "allowableValues": [
-      "m",
-      "f"
-    ],
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "male",
+          "value": "m"
+        },
+        {
+          "name": "female",
+          "value": "f"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0738437",
+      "label": "gender"
+    }
   },
   "group": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "group the participant belonged to in the experimental paradigm",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0108556": "participant group"
-    },
-    "source_variable": "group",
+    "sourceVariable": "group",
     "associatedWith": "NIDM",
-    "levels": [
-      "CONTROL:healthy subject",
-      "PD-denovo:de novo Parkinson's disease patient"
-    ],
-    "allowableValues": [
-      "CONTROL",
-      "PD-denovo"
-    ],
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "healthy subject",
+          "value": "CONTROL"
+        },
+        {
+          "name": "de novo Parkinson's disease patient",
+          "value": "PD-denovo"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0108556",
+      "label": "participant group"
+    }
   }
 }
