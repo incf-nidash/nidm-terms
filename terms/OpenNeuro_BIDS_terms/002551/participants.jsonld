@@ -3,67 +3,87 @@
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Breathing condition",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0487479": "work of breathing"
-    },
-    "source_variable": "breathing",
+    "sourceVariable": "breathing",
     "associatedWith": "NIDM",
-    "levels": "f:Free-breathing",
-    "allowableValues": "f",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": {
+        "name": "Free-breathing",
+        "value": "f"
+      }
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0487479",
+      "label": "work of breathing"
+    }
   },
   "coil": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Radio-frequency coil system",
-    "source_variable": "coil",
+    "sourceVariable": "coil",
     "associatedWith": "NIDM",
-    "levels": "Cryo:Bruker Cryoprobe",
-    "allowableValues": "Cryo",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": {
+        "name": "Bruker Cryoprobe",
+        "value": "Cryo"
+      }
+    }
   },
   "field": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Field strength of the MRI system",
-    "source_variable": "field",
+    "sourceVariable": "field",
     "associatedWith": "NIDM",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    }
   },
   "gender": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "C57Bl/6J mice",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0738437": "gender"
-    },
-    "source_variable": "gender",
+    "sourceVariable": "gender",
     "associatedWith": "NIDM",
-    "levels": [
-      "m:Male",
-      "f:Female"
-    ],
-    "allowableValues": [
-      "m",
-      "f"
-    ],
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "Male",
+          "value": "m"
+        },
+        {
+          "name": "Female",
+          "value": "f"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0738437",
+      "label": "gender"
+    }
   },
   "sedation": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Sedation protocol",
-    "source_variable": "sedation",
+    "sourceVariable": "sedation",
     "associatedWith": "NIDM",
-    "levels": "Awake:Awake (no sedation)",
-    "allowableValues": "Awake",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": {
+        "name": "Awake (no sedation)",
+        "value": "Awake"
+      }
+    }
   },
   "dataset": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "dataset identification",
-    "source_variable": "dataset",
+    "sourceVariable": "dataset",
     "associatedWith": "NIDM"
   }
 }

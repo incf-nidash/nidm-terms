@@ -40,7 +40,7 @@ def url_validator(url):
 
 
 
-def level_parser(df_row,doc,context):
+def responseOptions_parser(df_row,context):
     '''
     Parse through term levels in the CVS file and assign them to a dictionary,
     and assign minimum, maximum, and allowable values to doc
@@ -53,7 +53,7 @@ def level_parser(df_row,doc,context):
     # extract the levels column from the data frame
     row = df_row['Levels']
 
-
+    little_doc = {}
     levels = {}
     all_val = []
     global case
@@ -62,9 +62,21 @@ def level_parser(df_row,doc,context):
     global maximum
 
 
+    #assign type of the input value to the ValueType property in doc
+    if not pd.isnull(df_row['ValueType']):
+        print("\tFound OpenNeuro_ValueType")
+        little_doc[context['@context']['valueType']] = str(df_row['ValueType'])
+
+
+    #assign unit label to hasUnit property in doc
+    if not pd.isnull(df_row['Units']):
+        print("\tFound OpenNeuro_Units")
+        little_doc[context['@context']['unitCode']] = str(df_row['Units'])
+
+
     # passes over rows with no values
-    if isinstance(row,float) and np.isnan(row) :
-        return
+    if isinstance(row,float) and np.isnan(row):
+        return little_doc
 
     print("\tFound OpenNeuro_levels")
 
@@ -162,10 +174,21 @@ def level_parser(df_row,doc,context):
                     state = ''
 
 
+    levels_dict = {}
+    list = []
+
     # assign levels to the jsonld property levels
-    doc[context['@context']['levels']] = []
+
     for key,value in levels.items():
-        doc[context['@context']['levels']].append(key + ":" + value)
+        levels_dict[context['@context']['value']] = key
+        levels_dict[context['@context']['name']] = value
+
+        dict_copy = levels_dict.copy()
+        list.append(dict_copy)
+
+
+    little_doc[context['@context']['choices']] = list
+
 
 
     # if key in the level property is digit assign a minimum and a maximum value
@@ -215,15 +238,22 @@ def level_parser(df_row,doc,context):
 
 
             # changed by DBK
-            doc[context['@context']['minValue']] = minimum
-            doc[context['@context']['maxValue']] = maximum
+            #doc[context['@context']['minValue']] = minimum
+            #doc[context['@context']['maxValue']] = maximum
+
+            little_doc[context['@context']['minValue']] = minimum
+            little_doc[context['@context']['maxValue']] = maximum
 
 
     # assign allowable values to allowableValues in jsonld property
-    doc[context['@context']['allowableValues']] = all_val
+    #doc[context['@context']['allowableValues']] = all_val
+
 
     case = ''
 
+
+
+    return little_doc
 
 
 def CogAt_WO_json(row2, isabouts):
@@ -287,7 +317,7 @@ def get_isAbout_label(url):
         #print(full_url)
         response = requests.request("GET",full_url,headers=headers,data=payload)
         # response is a json dictionary. here we want the label
-        label= response.json()["data"]["label"].lower()
+        label = response.json()["data"]["label"].lower()
         #print("interlex label: %s" %isAbout_term_labels[url] )
 
     return label
@@ -307,7 +337,7 @@ def isAbout_parser(df_row,doc,context):
 
 
     isabouts = []
-    global label
+
 
     # passes over rows with no values
     if isinstance(row,float) and np.isnan(row):
@@ -377,7 +407,7 @@ def isPartOf_parser(df_row,doc,context):
 
 
 
-def jsonld_dict(d,row,context_url,args):
+def jsonld_dict(d,row,context,args):
     '''
     Creates compacted dictionary for every term passed and the main dictionary d.
 
@@ -390,40 +420,22 @@ def jsonld_dict(d,row,context_url,args):
     dictionary d with a compatced jsonld file for each row (i.e. term) passed
     '''
 
-     #check whether the context url is valid or not
-    url = url_validator(context_url)
-
-
-    # if user supplied a url as a segfile
-    if url is not False:
-
-        #try to open the url and get the pointed to file
-        try:
-            #open url and get file
-            opener = ur.urlopen(args.context)
-            # write temporary file to disk and use for stats
-            temp = tempfile.NamedTemporaryFile(delete=False)
-            temp.write(opener.read())
-            temp.close()
-            context_file = temp.name
-        except:
-            print("ERROR! Can't open url: %s" %args.context)
-            exit()
-
-    # read in jsonld context
-    with open(context_file) as context_data:
-        context = json.load(context_data)
 
 
     # open a new dictionary
     doc = {}
+    # dictionary to contain elements of response options
+    #ro_dict = {}
 
     # Added by DBK
     #doc['@context'] = context_url
 
     #add type as schema.org/DataElement
     doc['@type'] = context['@context']['DataElement']
-    doc[context['@context']['source_variable']] = row['sourceVariable']
+    doc[context['@context']['sourceVariable']] = row['sourceVariable']
+
+    ro_dict = responseOptions_parser(row,context)
+
 
     #assign Long Name to the label property in doc
     if not pd.isnull(row['LongName']):
@@ -434,16 +446,6 @@ def jsonld_dict(d,row,context_url,args):
     if not pd.isnull(row['Description']):
         print("\tFound OpenNeuro_Definition")
         doc[context['@context']['description']] = str(row['Description'])
-
-    #assign type of the input value to the ValueType property in doc
-    if not pd.isnull(row['ValueType']):
-        print("\tFound OpenNeuro_ValueType")
-        doc[context['@context']['valueType']] = str(row['ValueType'])
-
-    #assign unit label to hasUnit property in doc
-    if not pd.isnull(row['Units']):
-        print("\tFound OpenNeuro_Units")
-        doc[context['@context']['hasUnit']] = str(row['Units'])
 
     #assign unit label to measureOf property in doc
     if not pd.isnull(row['measureOf']):
@@ -465,7 +467,6 @@ def jsonld_dict(d,row,context_url,args):
         print('\tFound OpenNeuro_Derivative')
         doc[context['@context']['derivative']] = bool(2)
 
-
     #assign unit label to url property in doc
     if not pd.isnull(row['Term_URL']):
         print('\tFound OpenNeuro_TermURL')
@@ -474,22 +475,26 @@ def jsonld_dict(d,row,context_url,args):
     #assign unit label to Min value property in doc
     if not pd.isnull(row['Minimum Value']):
         print('\tFound OpenNeuro_minimum value')
-        doc[context['@context']['minimumValue']] = int(row['Minimum Value'])
+        ro_dict[context['@context']['minValue']] = int(row['Minimum Value'])
 
     #assign unit label to Max value property in doc
     if not pd.isnull(row['Maximum Value']):
         print('\tFound OpenNeuro_maximum value')
-        doc[context['@context']['maximumValue']] = int(row['Maximum Value'])
+        ro_dict[context['@context']['maxValue']] = int(row['Maximum Value'])
 
     # allowable values based on given min and max values in the spreadsheet
-    if not pd.isnull(row['Minimum Value']) and not pd.isnull(row['Maximum Value']):
-        all_vall = np.arange(int(row['Minimum Value']), int(row['Maximum Value'])).tolist()
-        all_vall.append(int(row['Maximum Value']))
+    #if not pd.isnull(row['Minimum Value']) and not pd.isnull(row['Maximum Value']):
+        #all_vall = np.arange(int(row['Minimum Value']), int(row['Maximum Value'])).tolist()
+        #all_vall.append(int(row['Maximum Value']))
         #doc[context['@context']['allowableValues']] = all_vall
 
     isAbout_parser(row,doc,context)
     isPartOf_parser(row,doc,context)
-    level_parser(row,doc,context)
+
+    # assign response options properties
+    if bool(ro_dict):
+        doc[context['@context']['responseOptions']['@id']] = ro_dict
+
 
     # add property to specify that the term is associated with NIDM
     doc[context['@context']['associatedWith']] = str('NIDM')
@@ -501,6 +506,7 @@ def jsonld_dict(d,row,context_url,args):
     #write JSON file out
     compacted = jsonld.compact(doc,args.context)
 
+
     # DBK hacking isAbout which in compacted form still uses the URL as the key
     # so simple hack, which is still valid json-ld, is to replace the key
     # with the string isAbout
@@ -511,11 +517,12 @@ def jsonld_dict(d,row,context_url,args):
         del compacted['ilx_id' + ':' + obj_term]
 
 
+
     # add the the jsonld dictionary to the main dictionary
     d[row['sourceVariable']] = compacted
 
     # changed by DBK to return the loaded context from passed context_url
-    return d,context
+    return d
 
 
 def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
@@ -572,7 +579,7 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
 
                     #add type as schema.org/DataElement
                     doc['@type'] = context['@context']['DataElement']
-                    doc[context['@context']['source_variable']] = key
+                    doc[context['@context']['sourceVariable']] = key
 
                     # loop through the data elements properties and change them to be consistent with cde_context.jsonld
                     # (https://github.com/nqueder/terms/blob/master/context/cde_context.jsonld)
@@ -649,7 +656,7 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
 
                                     #add type as schema.org/DataElement
                                     doc['@type'] = context['@context']['DataElement']
-                                    doc[context['@context']['source_variable']] = str(k)
+                                    doc[context['@context']['sourceVariable']] = str(k)
 
                                     #for each data element that is not in the master dictionary d access its properties
                                     # and change them to be consistent with context
@@ -710,7 +717,7 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
 
                                 #add type as schema.org/DataElement
                                 doc['@type'] = context['@context']['DataElement']
-                                doc[context['@context']['source_variable']] = str(kk)
+                                doc[context['@context']['sourceVariable']] = str(kk)
 
                                 for subkk in phenojson2[kk]:
 
@@ -771,8 +778,30 @@ def main(argv):
     df = pd.read_csv(args.csv_file, encoding = 'latin-1', error_bad_lines=False)
 
 
+    #check whether the context url is valid or not
+    url = url_validator(args.context)
 
 
+    # if user supplied a url as a segfile
+    if url is not False:
+
+        #try to open the url and get the pointed to file
+        try:
+            #open url and get file
+            opener = ur.urlopen(args.context)
+            # write temporary file to disk and use for stats
+            temp = tempfile.NamedTemporaryFile(delete=False)
+            temp.write(opener.read())
+            temp.close()
+            context_file = temp.name
+        except:
+            print("ERROR! Can't open url: %s" %args.context)
+            exit()
+
+
+    # read in jsonld context
+    with open(context_file) as context_data:
+        context = json.load(context_data)
 
     #starting a new python dictionary
     d = {}
@@ -830,8 +859,7 @@ def main(argv):
             # loop through the rows and call function json_check to create a master dictionary d
             for ii, rr in par_ter.iterrows():
                 print('processing term: %s'%rr['sourceVariable'])
-                # changed by DBK
-                d,context = jsonld_dict(d,rr,args.context,args)
+                d = jsonld_dict(d,rr,context,args)
 
 
             # opens pre-made directory with with a number that matches the ds ID and creates a jsonld file inside that directory

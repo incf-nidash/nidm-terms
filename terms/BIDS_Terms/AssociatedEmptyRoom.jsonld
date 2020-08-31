@@ -1,12 +1,20 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
   "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-  "description": "RECOMMENDED. Relative path in BIDS folder structure to empty-room file associated with the subject\u2019s MEG recording. The path needs to use forward slashes instead of backward slashes (e.g. sub-emptyroom/ses-/meg/sub-emptyroom/ses-task-noise/run-meg.ds).",
+  "description": "RECOMMENDED. Relative path in BIDS folder structure to empty-room file associated with the subject's MEG recording. The path needs to use forward slashes instead of backward slashes (e.g. sub-emptyroom/ses-/meg/sub-emptyroom/ses-task-noise/run-meg.ds).",
   "candidateTerms": "AssociatedEmptyRoom",
   "comment": [
     "This term should be more specific so that it is clear that it refers to a file. Could also use nidm:AcquisitionObject resulting from a nidm:Acquisition activity where the label is Empty Room.",
     "To be discussed"
   ],
   "label": "AssociatedEmptyRoom",
-  "provenance": "http://purl.org/nidash/bids"
+  "associatedWith": [
+    "BIDS",
+    "NIDM"
+  ],
+  "sameAs": "http://purl.org/nidash/nidm#Magnetoencephalography",
+  "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
+  "url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html",
+  "provenance": "http://purl.org/nidash/bids",
+  "ilx_id": "ilx_0739354"
 }

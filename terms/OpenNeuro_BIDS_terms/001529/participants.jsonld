@@ -3,34 +3,46 @@
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Female c57bl/6 obtained from Janvier, Le Genest-St Isle, France, between 10 and 15 weeks, weighting between 20 and 23g",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0738437": "gender"
-    },
-    "source_variable": "gender",
+    "sourceVariable": "gender",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0738437",
+      "label": "gender"
+    }
   },
   "group": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Animals underwent one of the following anesthesia condition",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0108556": "participant group"
-    },
-    "source_variable": "group",
+    "sourceVariable": "group",
     "associatedWith": "NIDM",
-    "levels": [
-      "iso1:Isoflurane 1%",
-      "med0.1:Medetomidine 0.1 mg/kg bolus / 0.2 mg/kg/h infusion (i.v.)",
-      "med0.05:Medetomidine 0.05mg/kg bolus / 0.1 mg/kg/h infusion (i.v.)",
-      "mediso:Medetomidine 0.05mg/kg bolus / 0.1 mg/kg/h infusion (i.v.) + Isoflurane 0.5%"
-    ],
-    "allowableValues": [
-      "iso1",
-      "med0.1",
-      "med0.05",
-      "mediso"
-    ],
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "Isoflurane 1%",
+          "value": "iso1"
+        },
+        {
+          "name": "Medetomidine 0.1 mg/kg bolus / 0.2 mg/kg/h infusion (i.v.)",
+          "value": "med0.1"
+        },
+        {
+          "name": "Medetomidine 0.05mg/kg bolus / 0.1 mg/kg/h infusion (i.v.)",
+          "value": "med0.05"
+        },
+        {
+          "name": "Medetomidine 0.05mg/kg bolus / 0.1 mg/kg/h infusion (i.v.) + Isoflurane 0.5%",
+          "value": "mediso"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0108556",
+      "label": "participant group"
+    }
   }
 }

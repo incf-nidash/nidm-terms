@@ -3,38 +3,46 @@
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "age of the participant",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0100400": "age"
-    },
-    "source_variable": "age",
+    "sourceVariable": "age",
     "associatedWith": "NIDM",
-    "hasUnit": "years",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "years"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
   },
   "sex": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "sex of the participant",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0112866": "sex"
-    },
-    "source_variable": "sex",
+    "sourceVariable": "sex",
     "associatedWith": "NIDM",
-    "levels": [
-      "M:male",
-      "F:female"
-    ],
-    "allowableValues": [
-      "M",
-      "F"
-    ],
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "male",
+          "value": "M"
+        },
+        {
+          "name": "female",
+          "value": "F"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112866",
+      "label": "sex"
+    }
   },
   "participant_id": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "anonymised participant IDs of XP2 dataset",
-    "source_variable": "participant_id",
+    "sourceVariable": "participant_id",
     "associatedWith": "NIDM"
   }
 }

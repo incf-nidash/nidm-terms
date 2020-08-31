@@ -3,958 +3,1564 @@
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Difficult to assess due to formal thought disorder",
-    "source_variable": "assessqdisorder",
+    "sourceVariable": "assessqdisorder",
     "associatedWith": "NIDM",
-    "levels": "1: Check",
-    "allowableValues": "1"
+    "responseOptions": {
+      "choices": {
+        "name": " Check",
+        "value": "1"
+      }
+    }
   },
   "assessqother": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Other",
-    "source_variable": "assessqother",
+    "sourceVariable": "assessqother",
     "associatedWith": "NIDM",
-    "levels": "1: Check",
-    "allowableValues": "1"
+    "responseOptions": {
+      "choices": {
+        "name": " Check",
+        "value": "1"
+      }
+    }
   },
   "assessqrapport": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Under reported due to lack of rapport",
-    "source_variable": "assessqrapport",
+    "sourceVariable": "assessqrapport",
     "associatedWith": "NIDM",
-    "levels": "1: Check",
-    "allowableValues": "1"
+    "responseOptions": {
+      "choices": {
+        "name": " Check",
+        "value": "1"
+      }
+    }
   },
   "assessqsymptom": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Symptoms possibly substance-induced",
-    "source_variable": "assessqsymptom",
+    "sourceVariable": "assessqsymptom",
     "associatedWith": "NIDM",
-    "levels": [
-      "0:",
-      "1:"
-    ],
-    "allowableValues": [
-      "0",
-      "1"
-    ],
-    "maximumValue": "1",
-    "minimumValue": "0"
+    "responseOptions": {
+      "choices": [
+        {
+          "name": "",
+          "value": "0"
+        },
+        {
+          "name": "",
+          "value": "1"
+        }
+      ],
+      "maxValue": "1",
+      "minValue": "0"
+    }
   },
   "assessquncooprative": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Patient uncooperative",
-    "source_variable": "assessquncooprative",
+    "sourceVariable": "assessquncooprative",
     "associatedWith": "NIDM",
-    "levels": "1: Check",
-    "allowableValues": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": {
+        "name": " Check",
+        "value": "1"
+      }
+    }
   },
   "bprs_depanx": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "average of 2, 3, 4, 5",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder"
-    },
-    "source_variable": "bprs_depanx",
+    "sourceVariable": "bprs_depanx",
     "associatedWith": "NIDM",
-    "valueType": "xsd:float",
-    "derivative": true
+    "derivative": true,
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+      "label": "major depressive disorder"
+    }
   },
   "bprs_mania": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "average of 6, 7, 8, 21, 22, 23",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs_mania",
+    "sourceVariable": "bprs_mania",
     "associatedWith": "NIDM",
-    "valueType": "xsd:float",
-    "derivative": true
+    "derivative": true,
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+      "label": "bipolar disorder"
+    }
   },
   "bprs_negative": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "average of 13, 16, 17, 18",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder"
-    },
-    "source_variable": "bprs_negative",
+    "sourceVariable": "bprs_negative",
     "associatedWith": "NIDM",
-    "valueType": "xsd:float",
-    "derivative": true
+    "derivative": true,
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+      "label": "psychotic disorder"
+    }
   },
   "bprs_positive": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "average of 9, 10, 11, 12, 14",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder"
-    },
-    "source_variable": "bprs_positive",
+    "sourceVariable": "bprs_positive",
     "associatedWith": "NIDM",
-    "valueType": "xsd:float",
-    "derivative": true
+    "derivative": true,
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+      "label": "psychotic disorder"
+    }
   },
   "bprs1": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "1. Somatic Concern",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs1",
+    "sourceVariable": "bprs1",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs10": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "10. Hallucinations",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs10",
+    "sourceVariable": "bprs10",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs11": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "11. Unusual Thought Content",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs11",
+    "sourceVariable": "bprs11",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs12": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "12. Bizarre Behavior",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs12",
+    "sourceVariable": "bprs12",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs13": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "13. Self-neglect",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs13",
+    "sourceVariable": "bprs13",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs14": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "14. Disorientation",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs14",
+    "sourceVariable": "bprs14",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs15": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "15. Conceptual Disorganization",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs15",
+    "sourceVariable": "bprs15",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs16": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "16. Blunted Affect",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs16",
+    "sourceVariable": "bprs16",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs17": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "17. Emotional Withdrawal",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs17",
+    "sourceVariable": "bprs17",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs18": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "18. Motor Retardation",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs18",
+    "sourceVariable": "bprs18",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs19": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "19. Tension",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs19",
+    "sourceVariable": "bprs19",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs2": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "2. Anxiety",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs2",
+    "sourceVariable": "bprs2",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs20": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "20. Uncooperativeness",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs20",
+    "sourceVariable": "bprs20",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs21": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "21. Excitement",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs21",
+    "sourceVariable": "bprs21",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs22": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "22. Distractibility",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs22",
+    "sourceVariable": "bprs22",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs23": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "23. Motor hyperactivity",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs23",
+    "sourceVariable": "bprs23",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs24": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "24. Mannerisms and Posturing",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs24",
+    "sourceVariable": "bprs24",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs3": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "3. Depression",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs3",
+    "sourceVariable": "bprs3",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs4": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "4. Suicidality",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs4",
+    "sourceVariable": "bprs4",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs5": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "5. Guilt",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs5",
+    "sourceVariable": "bprs5",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs6": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "6. Hostility",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs6",
+    "sourceVariable": "bprs6",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs7": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "7. Elevated Mood",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs7",
+    "sourceVariable": "bprs7",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs8": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "8. Grandiosity",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs8",
+    "sourceVariable": "bprs8",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "bprs9": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "9. Suspiciousness",
-    "isAbout": {
-      "http://cognitiveatlas.org/disorder/id/dso_1470/": "major depressive disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_2468/": "psychotic disorder",
-      "http://cognitiveatlas.org/disorder/id/dso_3312/": "bipolar disorder"
-    },
-    "source_variable": "bprs9",
+    "sourceVariable": "bprs9",
     "associatedWith": "NIDM",
-    "levels": [
-      "6:Severe",
-      "3:Mild",
-      "4:Moderate",
-      "2:Very Mild",
-      "5:Moderately Severe",
-      "7:Extremely Severe",
-      "1:Not Present"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "maximumValue": "7",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Severe",
+          "value": "6"
+        },
+        {
+          "name": "Mild",
+          "value": "3"
+        },
+        {
+          "name": "Moderate",
+          "value": "4"
+        },
+        {
+          "name": "Very Mild",
+          "value": "2"
+        },
+        {
+          "name": "Moderately Severe",
+          "value": "5"
+        },
+        {
+          "name": "Extremely Severe",
+          "value": "7"
+        },
+        {
+          "name": "Not Present",
+          "value": "1"
+        }
+      ],
+      "maxValue": "7",
+      "minValue": "1"
+    },
+    "isAbout": [
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_3312/",
+        "label": "bipolar disorder"
+      },
+      {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_2468/",
+        "label": "psychotic disorder"
+      }
+    ]
   },
   "confidencassess": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "1 not at all - 5 very confident",
-    "source_variable": "confidencassess",
+    "sourceVariable": "confidencassess",
     "associatedWith": "NIDM",
-    "maximumValue": 5,
-    "minimumValue": 1,
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "maxValue": 5,
+      "minValue": 1
+    }
   },
   "srcchart": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Chart",
-    "source_variable": "srcchart",
+    "sourceVariable": "srcchart",
     "associatedWith": "NIDM",
-    "levels": "1: Check",
-    "allowableValues": "1"
+    "responseOptions": {
+      "choices": {
+        "name": " Check",
+        "value": "1"
+      }
+    }
   },
   "srcother": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Other (e.g., police report)",
-    "source_variable": "srcother",
+    "sourceVariable": "srcother",
     "associatedWith": "NIDM",
-    "levels": "1: Check",
-    "allowableValues": "1"
+    "responseOptions": {
+      "choices": {
+        "name": " Check",
+        "value": "1"
+      }
+    }
   },
   "srcpatient": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Patient",
-    "source_variable": "srcpatient",
+    "sourceVariable": "srcpatient",
     "associatedWith": "NIDM",
-    "levels": "1: Check",
-    "allowableValues": "1",
-    "valueType": "xsd:float"
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": {
+        "name": " Check",
+        "value": "1"
+      }
+    }
   },
   "srcprofessional": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Mental health professionals",
-    "source_variable": "srcprofessional",
+    "sourceVariable": "srcprofessional",
     "associatedWith": "NIDM",
-    "levels": "1: Check",
-    "allowableValues": "1"
+    "responseOptions": {
+      "choices": {
+        "name": " Check",
+        "value": "1"
+      }
+    }
   },
   "srcrelatives": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Parents/Relatives",
-    "source_variable": "srcrelatives",
+    "sourceVariable": "srcrelatives",
     "associatedWith": "NIDM",
-    "levels": "1: Check",
-    "allowableValues": "1"
+    "responseOptions": {
+      "choices": {
+        "name": " Check",
+        "value": "1"
+      }
+    }
   },
   "MeasurementToolMetadata": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Brief Psychiatric Rating Scale",
     "schema:url": "http://www.cognitiveatlas.org/task/id/trm_55a6a52537c2b",
-    "source_variable": "MeasurementToolMetadata",
+    "sourceVariable": "MeasurementToolMetadata",
     "associatedWith": "NIDM"
   }
 }

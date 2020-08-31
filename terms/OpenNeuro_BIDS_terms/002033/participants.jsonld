@@ -3,169 +3,206 @@
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "age of participant",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0100400": "age"
-    },
-    "source_variable": "age",
+    "sourceVariable": "age",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
     "label": "age",
-    "valueType": "xsd:integer"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
   },
   "handedness": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Participant reported handedness, note that left handers were not included in any analysis",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0104886": "handedness assessment"
-    },
-    "source_variable": "handedness",
+    "sourceVariable": "handedness",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "Left",
+          "value": "L"
+        },
+        {
+          "name": "Right",
+          "value": "R"
+        }
+      ]
+    },
     "label": "HandednessPerformance_Handedness",
-    "levels": [
-      "L:Left",
-      "R:Right"
-    ],
-    "allowableValues": [
-      "L",
-      "R"
-    ],
-    "valueType": "xsd:string"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0104886",
+      "label": "handedness assessment"
+    }
   },
   "Participant_Included": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Was this participant included in data analyses?",
-    "source_variable": "Participant_Included",
+    "sourceVariable": "Participant_Included",
     "associatedWith": "NIDM",
-    "label": "Participant_Included",
-    "levels": [
-      "1:Participant was included in final analyses",
-      "0:Participant was NOT included in analyses"
-    ],
-    "allowableValues": [
-      "0",
-      "1"
-    ],
-    "maximumValue": "1",
-    "minimumValue": "0",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "Participant was included in final analyses",
+          "value": "1"
+        },
+        {
+          "name": "Participant was NOT included in analyses",
+          "value": "0"
+        }
+      ],
+      "maxValue": "1",
+      "minValue": "0"
+    },
+    "label": "Participant_Included"
   },
   "Post_hoc_Analysis_Participant_Included": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Was this participant included in the post hoc data analyses?",
-    "source_variable": "Post_hoc_Analysis_Participant_Included",
+    "sourceVariable": "Post_hoc_Analysis_Participant_Included",
     "associatedWith": "NIDM",
-    "label": "Post_hoc_Analysis_Participant_Included",
-    "levels": [
-      "1:Participant was included in post-hoc analyses",
-      "0:Participant was NOT included in post-hoc analyses"
-    ],
-    "allowableValues": [
-      "0",
-      "1"
-    ],
-    "maximumValue": "1",
-    "minimumValue": "0",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "Participant was included in post-hoc analyses",
+          "value": "1"
+        },
+        {
+          "name": "Participant was NOT included in post-hoc analyses",
+          "value": "0"
+        }
+      ],
+      "maxValue": "1",
+      "minValue": "0"
+    },
+    "label": "Post_hoc_Analysis_Participant_Included"
   },
   "Run1_Included": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
-    "source_variable": "Run1_Included",
+    "sourceVariable": "Run1_Included",
     "associatedWith": "NIDM",
-    "label": "Run1_Included",
-    "levels": [
-      "1:Included in analyses",
-      "0:Not included in analyses"
-    ],
-    "allowableValues": [
-      "0",
-      "1"
-    ],
-    "maximumValue": "1",
-    "minimumValue": "0",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "Included in analyses",
+          "value": "1"
+        },
+        {
+          "name": "Not included in analyses",
+          "value": "0"
+        }
+      ],
+      "maxValue": "1",
+      "minValue": "0"
+    },
+    "label": "Run1_Included"
   },
   "Run2_Included": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
-    "source_variable": "Run2_Included",
+    "sourceVariable": "Run2_Included",
     "associatedWith": "NIDM",
-    "label": "Run2_Included",
-    "levels": [
-      "1:Included in analyses",
-      "0:Not included in analyses"
-    ],
-    "allowableValues": [
-      "0",
-      "1"
-    ],
-    "maximumValue": "1",
-    "minimumValue": "0",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "Included in analyses",
+          "value": "1"
+        },
+        {
+          "name": "Not included in analyses",
+          "value": "0"
+        }
+      ],
+      "maxValue": "1",
+      "minValue": "0"
+    },
+    "label": "Run2_Included"
   },
   "Run3_Included": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
-    "source_variable": "Run3_Included",
+    "sourceVariable": "Run3_Included",
     "associatedWith": "NIDM",
-    "label": "Run3_Included",
-    "levels": [
-      "1:Included in analyses",
-      "0:Not included in analyses"
-    ],
-    "allowableValues": [
-      "0",
-      "1"
-    ],
-    "maximumValue": "1",
-    "minimumValue": "0",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "Included in analyses",
+          "value": "1"
+        },
+        {
+          "name": "Not included in analyses",
+          "value": "0"
+        }
+      ],
+      "maxValue": "1",
+      "minValue": "0"
+    },
+    "label": "Run3_Included"
   },
   "Run4_Included": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
-    "source_variable": "Run4_Included",
+    "sourceVariable": "Run4_Included",
     "associatedWith": "NIDM",
-    "label": "Run4_Included",
-    "levels": [
-      "1:Included in analyses",
-      "0:Not included in analyses"
-    ],
-    "allowableValues": [
-      "0",
-      "1"
-    ],
-    "maximumValue": "1",
-    "minimumValue": "0",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "Included in analyses",
+          "value": "1"
+        },
+        {
+          "name": "Not included in analyses",
+          "value": "0"
+        }
+      ],
+      "maxValue": "1",
+      "minValue": "0"
+    },
+    "label": "Run4_Included"
   },
   "sex": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Sex of participants",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0112866": "sex"
-    },
-    "source_variable": "sex",
+    "sourceVariable": "sex",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "male",
+          "value": "M"
+        },
+        {
+          "name": "female",
+          "value": "F"
+        }
+      ]
+    },
     "label": "sex",
-    "levels": [
-      "M:male",
-      "F:female"
-    ],
-    "allowableValues": [
-      "M",
-      "F"
-    ],
-    "valueType": "xsd:string"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112866",
+      "label": "sex"
+    }
   },
   "participant_id": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "participant id",
-    "source_variable": "participant_id",
+    "sourceVariable": "participant_id",
     "associatedWith": "NIDM",
     "label": "participant_id"
   }

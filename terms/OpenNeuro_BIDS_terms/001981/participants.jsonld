@@ -3,81 +3,101 @@
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Date given in DD.MM.YYYY format",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0383109": "date"
-    },
-    "source_variable": "date",
+    "sourceVariable": "date",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
     "label": "Date of fMRI session",
-    "valueType": "xsd:string"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0383109",
+      "label": "date"
+    }
   },
   "duration": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Time between the start of medetomidine administration and the experimental endpoint (for details, see paper)",
-    "source_variable": "duration",
+    "sourceVariable": "duration",
     "associatedWith": "NIDM",
-    "label": "Duration of medetomidine anesthesia",
-    "hasUnit": "minutes",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "minutes"
+    },
+    "label": "Duration of medetomidine anesthesia"
   },
   "efs_runs": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
-    "source_variable": "efs_runs",
+    "sourceVariable": "efs_runs",
     "associatedWith": "NIDM",
-    "label": "Number of electrical forepaw stimulaiton (EFS) fMRI runs",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
+    "label": "Number of electrical forepaw stimulaiton (EFS) fMRI runs"
   },
   "protocol": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "subcutaneous (SC) or intravenous (IV), with or without bolus",
-    "source_variable": "protocol",
+    "sourceVariable": "protocol",
     "associatedWith": "NIDM",
-    "label": "medetomidine administration protocol",
-    "levels": [
-      "1:SC with bolus",
-      "2:IV with bolus",
-      "3:IV no bolus",
-      "4:IV lower dose"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4"
-    ],
-    "maximumValue": "4",
-    "minimumValue": "1",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "SC with bolus",
+          "value": "1"
+        },
+        {
+          "name": "IV with bolus",
+          "value": "2"
+        },
+        {
+          "name": "IV no bolus",
+          "value": "3"
+        },
+        {
+          "name": "IV lower dose",
+          "value": "4"
+        }
+      ],
+      "maxValue": "4",
+      "minValue": "1"
+    },
+    "label": "medetomidine administration protocol"
   },
   "rs_runs": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
-    "source_variable": "rs_runs",
+    "sourceVariable": "rs_runs",
     "associatedWith": "NIDM",
-    "label": "Number of resting state (RS) fMRI runs",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
+    "label": "Number of resting state (RS) fMRI runs"
   },
   "weight": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Weight was measured right before the induction of anesthesia",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0112616": "weight"
-    },
-    "source_variable": "weight",
+    "sourceVariable": "weight",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "grams"
+    },
     "label": "Body weight",
-    "hasUnit": "grams",
-    "valueType": "xsd:integer"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112616",
+      "label": "weight"
+    }
   },
   "participant_id": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "ID of the rat, from sub-01 to sub-24",
-    "source_variable": "participant_id",
+    "sourceVariable": "participant_id",
     "associatedWith": "NIDM"
   }
 }

@@ -3,117 +3,150 @@
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Age of participant at standardized testing visit",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0100400": "age"
-    },
-    "source_variable": "age",
+    "sourceVariable": "age",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
     "label": "Age of participant",
-    "valueType": "xsd:float"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
   },
   "ethnicity": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "How would you describe your child's ethnicity? Hispanic or Latino , Not Hispanic or Latino",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0103955": "ethnicity"
-    },
-    "source_variable": "ethnicity",
+    "sourceVariable": "ethnicity",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "Hispanic or Latino",
+          "value": "1"
+        },
+        {
+          "name": "Not Hispanic or Latino",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
     "label": "Participant ethnicity",
-    "levels": [
-      "1:Hispanic or Latino",
-      "2:Not Hispanic or Latino"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0103955",
+      "label": "ethnicity"
+    }
   },
   "handedness": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Left or Right-Handed",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0104886": "handedness assessment"
-    },
-    "source_variable": "handedness",
+    "sourceVariable": "handedness",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "Left",
+          "value": "1"
+        },
+        {
+          "name": "Right",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
     "label": "Participant handedness",
-    "levels": [
-      "1:Left",
-      "2:Right"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:integer"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0104886",
+      "label": "handedness assessment"
+    }
   },
   "race": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "How would you describe your child's race? Please select all that apply.",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0109596": "race assessment"
-    },
-    "source_variable": "race",
+    "sourceVariable": "race",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "choices": [
+        {
+          "name": "American Indian or Alaskan",
+          "value": "1"
+        },
+        {
+          "name": "Asian",
+          "value": "2"
+        },
+        {
+          "name": "Black or African American",
+          "value": "3"
+        },
+        {
+          "name": "Hawaiian or Pacific Islander",
+          "value": "4"
+        },
+        {
+          "name": "White",
+          "value": "5"
+        },
+        {
+          "name": "Other",
+          "value": "6"
+        }
+      ],
+      "maxValue": "6",
+      "minValue": "1"
+    },
     "label": "Participant race",
-    "levels": [
-      "1:American Indian or Alaskan",
-      "2:Asian",
-      "3:Black or African American",
-      "4:Hawaiian or Pacific Islander",
-      "5:White",
-      "6:Other"
-    ],
-    "allowableValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6"
-    ],
-    "maximumValue": "6",
-    "minimumValue": "1",
-    "valueType": "xsd:float"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0109596",
+      "label": "race assessment"
+    }
   },
   "sex": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Sex of participants",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0112866": "sex"
-    },
-    "source_variable": "sex",
+    "sourceVariable": "sex",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "choices": [
+        {
+          "name": "male",
+          "value": "1"
+        },
+        {
+          "name": "female",
+          "value": "2"
+        }
+      ],
+      "maxValue": "2",
+      "minValue": "1"
+    },
     "label": "Sex",
-    "levels": [
-      "1:male",
-      "2:female"
-    ],
-    "allowableValues": [
-      "1",
-      "2"
-    ],
-    "maximumValue": "2",
-    "minimumValue": "1",
-    "valueType": "xsd:integer"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112866",
+      "label": "sex"
+    }
   },
   "shifted_birthdate": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Date of birth randomly shifted from 0 to -375 days and year changed to 18-- to maintain anonymity. Shift amount is consistant within subjects but random accross subjects",
-    "source_variable": "shifted_birthdate",
+    "sourceVariable": "shifted_birthdate",
     "associatedWith": "NIDM",
-    "label": "Shifted date of birth",
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string"
+    },
+    "label": "Shifted date of birth"
   }
 }

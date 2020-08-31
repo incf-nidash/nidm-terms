@@ -3,139 +3,170 @@
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Age of participant in years.",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0100400": "age"
-    },
-    "source_variable": "age",
+    "sourceVariable": "age",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:integer",
+      "unitCode": "years"
+    },
     "label": "Age in years",
-    "hasUnit": "years",
-    "valueType": "xsd:integer"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
   },
   "BMI": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Participant's Body Mass Index (weight in kilograms / height in meters) as obtained by Tanita body composition scale.",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0263110": "bmi (physical examination)"
-    },
-    "source_variable": "BMI",
+    "sourceVariable": "BMI",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "unitCode": "kilograms / height in meters"
+    },
     "label": "Body Mass Index",
-    "hasUnit": "kilograms / height in meters",
-    "valueType": "xsd:float"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0263110",
+      "label": "bmi (physical examination)"
+    }
   },
   "bodyfat": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Participant's percentage body fat as estimated by Tanita body composition scale.",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0160509": "bodyfat (eating disorder demographics)"
-    },
-    "source_variable": "bodyfat",
+    "sourceVariable": "bodyfat",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "unitCode": "seconds"
+    },
     "label": "Percentage body fat",
-    "hasUnit": "seconds",
-    "valueType": "xsd:float"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0160509",
+      "label": "bodyfat (eating disorder demographics)"
+    }
   },
   "concern_dieting": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Total score for the Concern for Dieting subscale of the Dietary Restraint Scale.",
-    "source_variable": "concern_dieting",
+    "sourceVariable": "concern_dieting",
     "associatedWith": "NIDM",
-    "label": "Concern for Dieting Subscale Score",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
+    "label": "Concern for Dieting Subscale Score"
   },
   "dieting_status": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Discrete categorization of participant's dieting status (non-dieter or dieter) as determined by their Restraint Scale Score (> 14 as Dieters, <= 14 Non-dieters).",
-    "source_variable": "dieting_status",
+    "sourceVariable": "dieting_status",
     "associatedWith": "NIDM",
-    "label": "Dieting Status",
-    "levels": [
-      "Non-dieter:Non-dieter",
-      "Dieter:Dieter"
-    ],
-    "allowableValues": [
-      "Non-dieter",
-      "Dieter"
-    ],
-    "valueType": "xsd:string"
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "Non-dieter",
+          "value": "Non-dieter"
+        },
+        {
+          "name": "Dieter",
+          "value": "Dieter"
+        }
+      ]
+    },
+    "label": "Dieting Status"
   },
   "gender": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Participant's reported gender.",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0738437": "gender"
-    },
-    "source_variable": "gender",
+    "sourceVariable": "gender",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "female",
+          "value": "F"
+        },
+        {
+          "name": "male",
+          "value": "M"
+        }
+      ]
+    },
     "label": "Gender",
-    "levels": [
-      "F:female",
-      "M:male"
-    ],
-    "allowableValues": [
-      "F",
-      "M"
-    ],
-    "valueType": "xsd:string"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0738437",
+      "label": "gender"
+    }
   },
   "height_in": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Participant's obtained height in inches.",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0104922": "height"
-    },
-    "source_variable": "height_in",
+    "sourceVariable": "height_in",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "unitCode": "inches"
+    },
     "label": "Height in inches",
-    "hasUnit": "inches",
-    "valueType": "xsd:float"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0104922",
+      "label": "height"
+    }
   },
   "restraint_scale": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Total Dietary Restraint Scale Score.",
-    "source_variable": "restraint_scale",
+    "sourceVariable": "restraint_scale",
     "associatedWith": "NIDM",
-    "label": "Dietary Restraint Scale Total Score",
-    "valueType": "xsd:integer"
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
+    "label": "Dietary Restraint Scale Total Score"
   },
   "weight_fluctuation": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Total score for the Weight Fluctuation subscale of the Dietary Restraint Scale.",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0112616": "weight"
-    },
-    "source_variable": "weight_fluctuation",
+    "sourceVariable": "weight_fluctuation",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:integer"
+    },
     "label": "Weight Fluctuation Subscale Score",
-    "valueType": "xsd:integer"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112616",
+      "label": "weight"
+    }
   },
   "weight_lbs": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "Participant's weight in pounds as obtained by Tanita body composition scale.",
-    "isAbout": {
-      "http://uri.interlex.org/ilx_0112616": "weight"
-    },
-    "source_variable": "weight_lbs",
+    "sourceVariable": "weight_lbs",
     "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float",
+      "unitCode": "pounds"
+    },
     "label": "Weight in pounds",
-    "hasUnit": "pounds",
-    "valueType": "xsd:float"
+    "isAbout": {
+      "@id": "ilx_id:ilx_0112616",
+      "label": "weight"
+    }
   },
   "participant_id": {
     "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
     "@type": "DataElement",
     "description": "ID number assigned to participant (prefix sub-).",
-    "source_variable": "participant_id",
+    "sourceVariable": "participant_id",
     "associatedWith": "NIDM",
     "label": "Participant ID number"
   }
