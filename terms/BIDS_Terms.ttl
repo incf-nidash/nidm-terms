@@ -1,0 +1,1624 @@
+@prefix ns1: <http://purl.org/dc/terms/> .
+@prefix ns2: <http://uri.interlex.org/> .
+@prefix ns3: <https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#> .
+@prefix ns4: <http://schema.org/> .
+@prefix ns5: <https://www.w3.org/TR/2009/REC-skos-reference-20090818#> .
+@prefix ns6: <http://purl.org/nidash/nidm#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://localhost:8000/./.jsonld> a <http://www.w3.org/2002/07/owl#Ontology> ;
+    ns6:candidateTerms "" ;
+    ns3:provenance "ub1bL16C1" .
+
+<http://localhost:8000/./Acknowledgements.jsonld> a <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+    ns1:description "OPTIONAL. Text acknowledging contributions of individuals or institutions beyond those listed in Authors or Funding." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "Acknowledgements" .
+
+<http://localhost:8000/./AcquisitionDuration.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Duration (in seconds) of volume acquisition. Corresponds to DICOM Tag 0018,9073 Acquisition Duration. This field is REQUIRED for sequences that are described with the VolumeTiming field and that not have the SliceTiming field set to allowed for accurate calculation of acquisition time. This field is mutually exclusive with RepetitionTime." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189073" ;
+    <rdfs:label> "AcquisitionDuration" .
+
+<http://localhost:8000/./AnatomicalLandmarkCoordinateSystem.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Defines the coordinate system for the anatomical landmarks. See Appendix VIII: preferred names of Coordinate systems. If Other, provide definition of the coordinate system in AnatomicalLandmarkCoordinateSystemDescription." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180021" ;
+    <rdfs:label> "AnatomicalLandmarkCoordinateSystem" .
+
+<http://localhost:8000/./AnatomicalLandmarkCoordinateSystemDescription.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Freeform text description or link to document describing the Head Coil coordinate system system in detail." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "AnatomicalLandmarkCoordinateSystemDescription" .
+
+<http://localhost:8000/./AnatomicalLandmarkCoordinateUnits.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Units of the coordinates of AnatomicalLandmarkCoordinateSystem. MUST be m, cm, or mm." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189073" ;
+    <rdfs:label> "AnatomicalLandmarkCoordinateUnits" .
+
+<http://localhost:8000/./AnatomicalLandmarkCoordinates.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Key:value pairs of the labels and 3-D digitized locations of anatomical landmarks, interpreted following the AnatomicalLandmarkCoordinateSystem, e.g., {NAS: [12.7,21.3,13.9], LPA: [5.2,11.3,9.6], RPA: [20.2,11.3,9.1]}." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "AnatomicalLandmarkCoordinates" .
+
+<http://localhost:8000/./Angiography.jsonld> a <http://www.w3.org/2002/07/owl#Class> ;
+    ns1:description "angio" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Angiography" ;
+    <rdfs:label> "Angiography" .
+
+<http://localhost:8000/./AssociatedEmptyRoom.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Relative path in BIDS folder structure to empty-room file associated with the subject’s MEG recording. The path needs to use forward slashes instead of backward slashes (e.g. sub-emptyroom/ses-/meg/sub-emptyroom/ses-task-noise/run-meg.ds)." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "This term should be more specific so that it is clear that it refers to a file. Could also use nidm:AcquisitionObject resulting from a nidm:Acquisition activity where the label is Empty Room.",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Magnetoencephalography" ;
+    <rdfs:label> "AssociatedEmptyRoom" .
+
+<http://localhost:8000/./Authors.jsonld> a <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+    ns1:description "OPTIONAL. List of individuals who contributed to the creation/curation of the dataset." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00081090" ;
+    <rdfs:label> "Authors" .
+
+<http://localhost:8000/./BIDSVersion.jsonld> a <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+    ns1:description "REQUIRED. The version of the BIDS standard that was used." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Magnetoencephalography" ;
+    <rdfs:label> "BIDSVersion" .
+
+<http://localhost:8000/./BOLD.jsonld> a <http://www.w3.org/2002/07/owl#Class> ;
+    ns1:description "bold" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#BloodOxygenLevelDependent" ;
+    <rdfs:label> "BOLD" .
+
+<http://localhost:8000/./CBV.jsonld> a <http://www.w3.org/2002/07/owl#Class> ;
+    ns1:description "cbv" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#CerebralBloodVolume" ;
+    <rdfs:label> "CBV" .
+
+<http://localhost:8000/./CapManufacturer.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Manufacturer of the EEG cap (e.g. EasyCap)" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "Instead of a specific term, could use the DICOM tag Manufacturer and use it as a object property for the prov:Entity cap.",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T2StarWeighted" ;
+    <rdfs:label> "CapManufacturer" .
+
+<http://localhost:8000/./CapManufacturersModelName.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Manufacturer’s designation of the EEG cap model (e.g., M10)" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "Instead of a specific term, could use the DICOM tag ManufacturerModelName and use it as a object property for the prov:Entity cap.",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180021" ;
+    <rdfs:label> "CapManufacturersModelName" .
+
+<http://localhost:8000/./CogAtlasID.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. URL of the corresponding Cognitive Atlas Task term." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00080080" ;
+    <rdfs:label> "CogAtlasID" .
+
+<http://localhost:8000/./CogPOID.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. URL of the corresponding CogPO term." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "CogPOID" .
+
+<http://localhost:8000/./CoilCombinationMethod.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Almost all fMRI studies using phased-array coils use root-sum-of-squares (rSOS) combination, but other methods exist. The image reconstruction is changed by the coil combination method (as for the matrix coil mode above), so anything non-standard should be reported" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00080080" ;
+    <rdfs:label> "CoilCombinationMethod" .
+
+<http://localhost:8000/./Columns.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. Names of columns in file." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "Columns" .
+
+<http://localhost:8000/./CombinedPDT2.jsonld> a <http://www.w3.org/2002/07/owl#Class> ;
+    ns1:description "PDT2" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Magnetoencephalography" ;
+    <rdfs:label> "Combined PD/T2" .
+
+<http://localhost:8000/./ContinuousHeadLocalization.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Boolean (true or false) value indicating whether continuous head localisation was performed." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_0018101A" ;
+    <rdfs:label> "ContinuousHeadLocalization" .
+
+<http://localhost:8000/./DCOffsetCorrection.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. A description of the method (if any) used to correct for a DC offset. If the method used was subtracting the mean value for each channel, use mean." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T1Weighted" ;
+    <rdfs:label> "DCOffsetCorrection" .
+
+<http://localhost:8000/./DatasetDOI.jsonld> a <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+    ns1:description "OPTIONAL. The Document Object Identifier of the dataset (not the corresponding paper)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T2Weighted" ;
+    <rdfs:label> "DatasetDOI" .
+
+<http://localhost:8000/./DelayAfterTrigger.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Duration (in seconds) from trigger delivery to scan onset. This delay is commonly caused by adjustments and loading times. This specification is entirely independent of NumberOfVolumesDiscardedByScanner or NumberOfVolumesDiscardedByUser, as the delay precedes the acquisition." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "DelayAfterTrigger" .
+
+<http://localhost:8000/./DelayTime.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. User specified time (in seconds) to delay the acquisition of data for the following volume. If the field is not present it is assumed to be set to zero. Corresponds to Siemens CSA header field lDelayTimeInTR. This field is REQUIRED for sparse sequences using the RepetitionTime field that do not have the SliceTiming field set to allowed for accurate calculation of acquisition time. This field is mutually exclusive with VolumeTiming." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#BloodOxygenLevelDependent" ;
+    <rdfs:label> "DelayTime" .
+
+<http://localhost:8000/./Derivative.jsonld> a <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+    ns1:description "Derivatives are outputs of common processing pipelines, capturing data and meta-data sufficient for a researcher to understand and (critically) reuse those outputs in subsequent processing. Standardizing derivatives is motivated by use cases where formalized machine-readable access to processed data enables higher level processing." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "Derivative" .
+
+<http://localhost:8000/./DeviceSerialNumber.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. The serial number of the equipment that produced the composite instances. Corresponds to DICOM Tag 0018, 1000 DeviceSerialNumber. A pseudonym can also be used to prevent the equipment from being identifiable, so long as each pseudonym is unique within the dataset" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00181000" ;
+    <rdfs:label> "DeviceSerialNumber" .
+
+<http://localhost:8000/./DewarPosition.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. Position of the dewar during the MEG scan: upright, supine or degrees of angle from vertical: for example on CTF systems, upright=15 degrees, supine = 90 degrees." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#FastLowAngleShot" ;
+    <rdfs:label> "DewarPosition" .
+
+<http://localhost:8000/./DigitizedHeadPoints.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Relative path to the file containing the locations of digitized head points collected during the session (e.g., sub-01_headshape.pos). RECOMMENDED for all MEG systems, especially for CTF and BTi/4D. For Elekta/Neuromag the head points will be stored in the fif file." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_003A001A" ;
+    <rdfs:label> "DigitizedHeadPoints" .
+
+<http://localhost:8000/./DigitizedHeadPointsCoordinateSystem.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Defines the coordinate system for the digitized head points. See Appendix VIII: preferred names of Coordinate systems. If Other, provide definition of the coordinate system in DigitizedHeadPointsCoordinateSystemDescription." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_0018101A" ;
+    <rdfs:label> "DigitizedHeadPointsCoordinateSystem" .
+
+<http://localhost:8000/./DigitizedHeadPointsCoordinateSystemDescription.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Freeform text description or link to document describing the Digitized head Points coordinate system system in detail." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "DigitizedHeadPointsCoordinateSystemDescription" .
+
+<http://localhost:8000/./DigitizedHeadPointsCoordinateUnits.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Units of the coordinates of DigitizedHeadPointsCoordinateSystem. MUST be m, cm, or mm." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "DigitizedHeadPointsCoordinateUnits" .
+
+<http://localhost:8000/./DigitizedLandmarks.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. Boolean (true or false) value indicating whether anatomical landmark points (i.e. fiducials) are contained within this recording." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "DigitizedLandmarks" .
+
+<http://localhost:8000/./DwellTime.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Actual dwell time (in seconds) of the receiver per point in the readout direction, including any oversampling. For Siemens, this corresponds to DICOM field (0019,1018) (in ns). This value is necessary for the optional readout distortion correction of anatomicals in the HCP Pipelines. It also usefully provides a handle on the readout bandwidth, which isn’t captured in the other metadata tags. Not to be confused with EffectiveEchoSpacing, and the frequent mislabeling of echo spacing (which is spacing in the phase encoding direction) as dwell time (which is spacing in the readout direction)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00191018" ;
+    <rdfs:label> "DwellTime" .
+
+<http://localhost:8000/./ECGChannelCount.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Number of ECG channels." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "ECGChannelCount" .
+
+<http://localhost:8000/./ECOGChannelCount.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Number of ECoG channels" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "ECOGChannelCount" .
+
+<http://localhost:8000/./EEGChannelCount.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Number of EEG channels included in the recording (e.g., 128)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "EEGChannelCount" .
+
+<http://localhost:8000/./EEGCoordinateSystem.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Describes how the coordinates of the EEG sensors are to be interpreted." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180021" ;
+    <rdfs:label> "EEGCoordinateSystem" .
+
+<http://localhost:8000/./EEGCoordinateSystemDescription.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Freeform text description or link to document describing the EEG coordinate system system in detail." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    <rdfs:label> "EEGCoordinateSystemDescription" .
+
+<http://localhost:8000/./EEGCoordinateUnits.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Units of the coordinates of EEGCoordinateSystem. MUST be m, cm, or mm." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180024" ;
+    <rdfs:label> "EEGCoordinateUnits" .
+
+<http://localhost:8000/./EEGGround.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Description of the location of the ground electrode (e.g., placed on right mastoid (M2))." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00081090" ;
+    <rdfs:label> "EEGGround" .
+
+<http://localhost:8000/./EEGPlacementScheme.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Placement scheme of EEG electrodes. Either the name of a standardized placement system (e.g., 10-20) or a list of standardized electrode names (e.g., [Cz, Pz])." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00080080" ;
+    <rdfs:label> "EEGPlacementScheme" .
+
+<http://localhost:8000/./EEGReference.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Description of the type of EEG reference used (e.g., M1 for left mastoid, average, or longitudinal bipolar)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/dc/terms/license" ;
+    <rdfs:label> "EEGReference" .
+
+<http://localhost:8000/./EMGChannelCount.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Number of EMG channels." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "EMGChannelCount" .
+
+<http://localhost:8000/./EOGChannelCount.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Number of EOG channels." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "EOGChannelCount" .
+
+<http://localhost:8000/./EchoTime.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. The echo time (TE) for the acquisition, specified in seconds. This parameter is REQUIRED if corresponding fieldmap data is present or the data comes from a multi echo sequence. Corresponds to DICOM Tag 0018, 0081 Echo Time(please note that the DICOM term is in milliseconds not seconds)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180081" ;
+    <rdfs:label> "EchoTime" .
+
+<http://localhost:8000/./EffectiveEchoSpacing.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. The effective sampling interval, specified in seconds, between lines in the phase-encoding direction, defined based on the size of the reconstructed image in the phase direction. It is frequently, but incorrectly, referred to as dwell time (see DwellTime parameter below for actual dwell time). It is required for unwarping distortions using field maps. Note that beyond just in-plane acceleration, a variety of other manipulations to the phase encoding need to be accounted for properly, including partial fourier, phase oversampling, phase resolution, phase field-of-view and interpolation.2This parameter is REQUIRED if corresponding fieldmap data is present." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_0018101A" ;
+    <rdfs:label> "EffectiveEchoSpacing" .
+
+<http://localhost:8000/./ElectricalStimulation.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Boolean field to specify if electrical stimulation was done during the recording (options are true or false). Parameters for event-like stimulation should be specified in the events.tsv file (see example below)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "ElectricalStimulation" .
+
+<http://localhost:8000/./ElectricalStimulationParameters.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Free form description of stimulation parameters, such as frequency, shape etc. Specific onsets can be specified in the events.tsv file. Specific shapes can be described here in freeform text." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189069" ;
+    <rdfs:label> "ElectricalStimulationParameters" .
+
+<http://localhost:8000/./ElectrodeManufacturer.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. can be used if all electrodes are of the same manufacturer (e.g., AD-TECH, DIXI). If electrodes of different manufacturers are used, please use the corresponding table in the _electrodes.tsv file." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "Note that this term does not exist in the EEG specifications.",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#ProtonDensityWeighted" ;
+    <rdfs:label> "ElectrodeManufacturer" .
+
+<http://localhost:8000/./ElectrodeManufacturersModelName.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. If different electrode types are used, please use the corresponding table in the electrodes.tsv file." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "Note that this term does not exist in the EEG specifications.",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "ElectrodeManufacturersModelName" .
+
+<http://localhost:8000/./Electroencephalography.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Electroencephalography" ;
+    <rdfs:label> "Electroencephalography" .
+
+<http://localhost:8000/./EpochLength.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Duration of individual epochs in seconds (e.g. 1) in case of epoched data" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180024" ;
+    <rdfs:label> "EpochLength" .
+
+<http://localhost:8000/./FLAIR.jsonld> a <http://www.w3.org/2002/07/owl#Class> ;
+    ns1:description "FLAIR" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#FluidAttenuatedInversionRecovery" ;
+    <rdfs:label> "FLAIR" .
+
+<http://localhost:8000/./FLASH.jsonld> a <http://www.w3.org/2002/07/owl#Class> ;
+    ns1:description "FLASH" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#FastLowAngleShot" ;
+    <rdfs:label> "FLASH" .
+
+<http://localhost:8000/./FiducialsCoordinateSystem.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Refers to the coordinate space to which the landmarks positions are to be interpreted - preferably the same as the EEGCoordinateSystem." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#FluidAttenuatedInversionRecovery" ;
+    <rdfs:label> "FiducialsCoordinateSystem" .
+
+<http://localhost:8000/./FiducialsCoordinateSystemDescription.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Free-form text description of the coordinate system. May also include a link to a documentation page or paper describing the system in greater detail." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_003A001A" ;
+    <rdfs:label> "FiducialsCoordinateSystemDescription" .
+
+<http://localhost:8000/./FiducialsCoordinateUnits.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Units in which the coordinates that are listed in the field AnatomicalLandmarkCoordinateSystem are represented (e.g., mm, cm)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "FiducialsCoordinateUnits" .
+
+<http://localhost:8000/./FiducialsCoordinates.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Key:value pairs of the labels and 3-D digitized position of anatomical landmarks, interpreted following the FiducialsCoordinateSystem (e.g., {NAS: [12.7,21.3,13.9], LPA: [5.2,11.3,9.6], RPA: [20.2,11.3,9.1]})." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "FiducialsCoordinates" .
+
+<http://localhost:8000/./FiducialsDescription.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. A freeform text field documenting the anatomical landmarks that were used and how the head localization coils were placed relative to these. This field can describe, for instance, whether the true anatomical locations of the left and right pre-auricular points were used and digitized, or rather whether they were defined as the intersection between the tragus and the helix (the entry of the ear canal), or any other anatomical description of selected points in the vicinity of the ears." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Phase" ;
+    <rdfs:label> "FiducialsDescription" .
+
+<http://localhost:8000/./FlipAngle.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Flip angle for the acquisition, specified in degrees. Corresponds to: DICOM Tag 0018, 1314 Flip Angle." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00181314" ;
+    <rdfs:label> "FlipAngle" .
+
+<http://localhost:8000/./Funding.jsonld> a <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+    ns1:description "OPTIONAL. List of sources of funding (grant numbers)" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180020" ;
+    <rdfs:label> "Funding" .
+
+<http://localhost:8000/./GradientSetType.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. It should be possible to infer the gradient coil from the scanner model. If not, e.g. because of a custom upgrade or use of a gradient insert set, then the specifications of the actual gradient coil should be reported independently" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T1Weighted" ;
+    <rdfs:label> "GradientSetType" .
+
+<http://localhost:8000/./HardcopyDeviceSoftwareVersion.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "(Deprecated) Manufacturer’s designation of the software of the device that created this Hardcopy Image (the printer). Corresponds to DICOM Tag 0018, 101A Hardcopy Device Software Version" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_0018101A" ;
+    <rdfs:label> "HardcopyDeviceSoftwareVersion" .
+
+<http://localhost:8000/./HardwareFilters.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. List of temporal hardware filters applied. Ideally key:value pairs of pre-applied hardware filters and their parameter values: e.g., {HardwareFilters: {Highpass RC filter: {Half amplitude cutoff (Hz): 0.0159, Roll-off: 6dB/Octave}}}. Write n/a if no hardware filters applied." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "This is a specific usage (hardware) of nidm:AppliedFilter that covers both hard- and software filters.",
+        "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189073" ;
+    <rdfs:label> "HardwareFilters" .
+
+<http://localhost:8000/./HeadCircumference.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Circumference of the participants head, expressed in cm (e.g., 58)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "HeadCircumference" .
+
+<http://localhost:8000/./HeadCoilCoordinateSystem.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Defines the coordinate system for the coils. See Appendix VIII: preferred names of Coordinate systems. If Other, provide definition of the coordinate system in HeadCoilCoordinateSystemDescription." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00080080" ;
+    <rdfs:label> "HeadCoilCoordinateSystem" .
+
+<http://localhost:8000/./HeadCoilCoordinateSystemDescription.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Freeform text description or link to document describing the Head Coil coordinate system system in detail." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#BloodOxygenLevelDependent" ;
+    <rdfs:label> "HeadCoilCoordinateSystemDescription" .
+
+<http://localhost:8000/./HeadCoilCoordinateUnits.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Units of the coordinates of HeadCoilCoordinateSystem. MUST be m, cm, or mm." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Magnetoencephalography" ;
+    <rdfs:label> "HeadCoilCoordinateUnits" .
+
+<http://localhost:8000/./HeadCoilCoordinates.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Key:value pairs describing head localization coil labels and their coordinates, interpreted following the HeadCoilCoordinateSystem, e.g., {NAS: [12.7,21.3,13.9], LPA: [5.2,11.3,9.6], RPA: [20.2,11.3,9.1]}. Note that coils are not always placed at locations that have a known anatomical name (e.g. for Elekta, Yokogawa systems); in that case generic labels can be used (e.g. {coil1: [12.2,21.3,12.3], coil2: [6.7,12.3,8.6], coil3: [21.9,11.0,8.1]} )." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180024" ;
+    <rdfs:label> "HeadCoilCoordinates" .
+
+<http://localhost:8000/./HeadCoilFrequency.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. List of frequencies (in Hz) used by the head localisation coils (HLC in CTF systems, HPI in Elekta, COH in BTi/4D) that track the subject’s head position in the MEG helmet (e.g. [293, 307, 314, 321])" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "HeadCoilFrequency" .
+
+<http://localhost:8000/./HowToAcknowledge.jsonld> a <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+    ns1:description "OPTIONAL. Instructions how researchers using this dataset should acknowledge the original authors. This field can also be used to define a publication that should be cited in publications that use the dataset." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00081090" ;
+    <rdfs:label> "HowToAcknowledge" .
+
+<http://localhost:8000/./InplaneT1.jsonld> a ns6:AcquisitionObject,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    ns1:description "T1-weighted anatomical image matched to functional acquisition" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T2Weighted" ;
+    <rdfs:label> "Inplane T1" .
+
+<http://localhost:8000/./InplaneT2.jsonld> a ns6:AcquisitionObject,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    ns1:description "T2-weighted anatomical image matched to functional acquisition" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180082" ;
+    <rdfs:label> "Inplane T2" .
+
+<http://localhost:8000/./InstitutionAddress.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. The address of the institution in charge of the equipment that produced the composite instances. Corresponds to DICOM Tag 0008, 0081 InstitutionAddress." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00080081" ;
+    <rdfs:label> "InstitutionAddress" .
+
+<http://localhost:8000/./InstitutionName.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. The name of the institution in charge of the equipment that produced the composite instances. Corresponds to DICOM Tag 0008, 0080 InstitutionName." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00080080" ;
+    <rdfs:label> "InstitutionName" .
+
+<http://localhost:8000/./InstitutionalDepartmentName.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. The department in the institution in charge of the equipment that produced the composite instances. Corresponds to DICOM Tag 0008, 1040 Institutional Department Name." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00081040" ;
+    <rdfs:label> "InstitutionalDepartmentName" .
+
+<http://localhost:8000/./Instructions.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Text of the instructions given to participants before the scan. This is especially important in context of resting state fMRI and distinguishing between eyes open and eyes closed paradigms." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189069" ;
+    <rdfs:label> "Instructions" .
+
+<http://localhost:8000/./IntendedFor.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Path or list of path relative to the subject subfolder pointing to the structural MRI, possibly of different types if a list is specified, to be used with the MEG recording. The path(s) need(s) to use forward slashes instead of backward slashes (e.g. ses-/anat/sub-01_T1w.nii.gz)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00181000" ;
+    <rdfs:label> "IntendedFor" .
+
+<http://localhost:8000/./IntracranialElectroencephalography.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00081090" ;
+    <rdfs:label> "Intracranial Electroencephalography" .
+
+<http://localhost:8000/./InversionTime.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. The inversion time (TI) for the acquisition, specified in seconds. Inversion time is the time after the middle of inverting RF pulse to middle of excitation pulse to detect the amount of longitudinal magnetization. Corresponds to DICOM Tag 0018, 0082 Inversion Time (please note that the DICOM term is in milliseconds not seconds)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180082" ;
+    <rdfs:label> "InversionTime" .
+
+<http://localhost:8000/./License.jsonld> a <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+    ns1:description "RECOMMENDED. What license is this dataset distributed under? The use of license name abbreviations is suggested for specifying a license. A list of common licenses with suggested abbreviations can be found in Appendix II." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/dc/terms/license" ;
+    <rdfs:label> "License" .
+
+<http://localhost:8000/./MEGChannelCount.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Number of MEG channels (e.g. 275)" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "MEGChannelCount" .
+
+<http://localhost:8000/./MEGCoordinateSystem.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. Defines the coordinate system for the MEG sensors. See Appendix VIII: preferred names of Coordinate systems. If Other, provide definition of the coordinate system in [MEGCoordinateSystemDescription]." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189069" ;
+    <rdfs:label> "MEGCoordinateSystem" .
+
+<http://localhost:8000/./MEGCoordinateSystemDescription.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Freeform text description or link to document describing the MEG coordinate system system in detail." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00081090" ;
+    <rdfs:label> "MEGCoordinateSystemDescription" .
+
+<http://localhost:8000/./MEGCoordinateUnits.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. Units of the coordinates of MEGCoordinateSystem. MUST be m, cm, or mm." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189069" ;
+    <rdfs:label> "MEGCoordinateUnits" .
+
+<http://localhost:8000/./MEGREFChannelCount.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Number of MEG reference channels (e.g. 23). For systems without such channels (e.g. Neuromag Vectorview), MEGREFChannelCount=0" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "MEGREFChannelCount" .
+
+<http://localhost:8000/./MRTransmitCoilSequence.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. This is a relevant field if a non-standard transmit coil is used. Corresponds to DICOM Tag 0018, 9049 MR Transmit Coil Sequence" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189049" ;
+    <rdfs:label> "MRTransmitCoilSequence" .
+
+<http://localhost:8000/./MagneticFieldStrength.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Nominal field strength of MR magnet in Tesla. Corresponds to DICOM Tag 0018,0087 Magnetic Field Strength" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180087" ;
+    <rdfs:label> "MagneticFieldStrength" .
+
+<http://localhost:8000/./Magnetoencephalography.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Magnetoencephalography" ;
+    <rdfs:label> "Magnetoencephalography" .
+
+<http://localhost:8000/./Manufacturer.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Manufacturer of the equipment that produced the composite instances. Corresponds to DICOM Tag 0008, 0070 Manufacturer" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00080070" ;
+    <rdfs:label> "Manufacturer" .
+
+<http://localhost:8000/./ManufacturersModelName.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Manufacturer's model name of the equipment that produced the composite instances. Corresponds to DICOM Tag 0008, 1090 Manufacturers Model Name" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00081090" ;
+    <rdfs:label> "ManufacturersModelName" .
+
+<http://localhost:8000/./MatrixCoilMode.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. (If used) A method for reducing the number of independent channels by combining in analog the signals from multiple coil elements. There are typically different default modes when using un-accelerated or accelerated (e.g. GRAPPA, SENSE) imaging" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Magnetoencephalography" ;
+    <rdfs:label> "MatrixCoilMode" .
+
+<http://localhost:8000/./MaxMovement.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Maximum head movement (in mm) detected during the recording, as measured by the head localisation coils (e.g., 4.8)" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00181000" ;
+    <rdfs:label> "MaxMovement" .
+
+<http://localhost:8000/./MiscChannelCount.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Number of miscellaneous analog channels for auxiliary signals." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "MiscChannelCount" .
+
+<http://localhost:8000/./MultibandAccelerationFactor.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. The multiband factor, for multiband acquisitions." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189081" ;
+    <rdfs:label> "MultibandAccelerationFactor" .
+
+<http://localhost:8000/./Name.jsonld> a <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+    ns1:description "REQUIRED. Name of the dataset." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T2Weighted" ;
+    <rdfs:label> "Name" .
+
+<http://localhost:8000/./NegativeContrast.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Boolean (true or false) value specifying whether increasing voxel intensity (within sample voxels) denotes a decreased value with respect to the contrast suffix. This is commonly the case when Cerebral Blood Volume is estimated via usage of a contrast agent in conjunction with a T2* weighted acquisition protocol." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00081090" ;
+    <rdfs:label> "NegativeContrast" .
+
+<http://localhost:8000/./NonlinearGradientCorrection.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Boolean stating if the image saved has been corrected for gradient nonlinearities by the scanner sequence." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#BloodOxygenLevelDependent" ;
+    <rdfs:label> "NonlinearGradientCorrection" .
+
+<http://localhost:8000/./NumberOfVolumesDiscardedByScanner.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Number of volumes (dummy scans) discarded by the scanner (as opposed to those discarded by the user post hoc) before saving the imaging file. For example, a sequence that automatically discards the first 4 volumes before saving would have this field as 4. A sequence that doesn't discard dummy scans would have this set to 0. Please note that the onsets recorded in the event.tsv file should always refer to the beginning of the acquisition of the first volume in the corresponding imaging file - independent of the value of NumberOfVolumesDiscardedByScanner field." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Phase" ;
+    <rdfs:label> "NumberOfVolumesDiscardedByScanner" .
+
+<http://localhost:8000/./NumberOfVolumesDiscardedByUser.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Number of volumes (also known as dummy scans) discarded by the user before including the file in the dataset. If possible, including all of the volumes is strongly recommended. Please note that the onsets recorded in the event.tsv file should always refer to the beginning of the acquisition of the first volume in the corresponding imaging file - independent of the value of NumberOfVolumesDiscardedByUser field." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "NumberOfVolumesDiscardedByUser" .
+
+<http://localhost:8000/./NumberShots.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. The number of RF excitations need to reconstruct a slice or volume. Please mind that this is not the same as Echo Train Length which denotes the number of lines of k-space collected after an excitation." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "NumberShots" .
+
+<http://localhost:8000/./ParallelAcquisitionTechnique.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. The type of parallel imaging used (e.g. GRAPPA, SENSE). Corresponds to DICOM Tag 0018, 9078 Parallel Acquisition Technique." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189078" ;
+    <rdfs:label> "ParallelAcquisitionTechnique" .
+
+<http://localhost:8000/./ParallelReductionFactorInPlane.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. The parallel imaging (e.g, GRAPPA) factor. Use the denominator of the fraction of k-space encoded for each slice. For example, 2 means half of k-space is encoded. Corresponds to DICOM Tag 0018, 9069 Parallel Reduction Factor In-plane." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189069" ;
+    <rdfs:label> "ParallelReductionFactorInPlane" .
+
+<http://localhost:8000/./PartialFourier.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. The fraction of partial Fourier information collected. Corresponds to DICOM Tag 0018, 9081 Partial Fourier." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189081" ;
+    <rdfs:label> "PartialFourier" .
+
+<http://localhost:8000/./PartialFourierDirection.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. The direction where only partial Fourier information was collected. Corresponds to DICOM Tag 0018, 9036 Partial Fourier Direction." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189036" ;
+    <rdfs:label> "PartialFourierDirection" .
+
+<http://localhost:8000/./Phase.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "phase" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Phase" ;
+    <rdfs:label> "Phase" .
+
+<http://localhost:8000/./PhaseEncodingDirection.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Possible values: i, j, k, i-, j- k-. The letters i, j, kcorrespond to the first, second and third axis of the data in the NIFTI file. The polarity of the phase encoding is assumed to go from zero index to maximum index unless - sign is present (then the order is reversed - starting from the highest index instead of zero). PhaseEncodingDirection is defined as the direction along which phase is was modulated which may result in visible distortions. Note that this is not the same as the DICOM term InPlanePhaseEncodingDirection which can have ROW or COL values. This parameter is REQUIRED if corresponding fieldmap data is present or when using multiple runs with different phase encoding directions (which can be later used for field inhomogeneity correction)." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_0018101A" ;
+    <rdfs:label> "PhaseEncodingDirection" .
+
+<http://localhost:8000/./PowerLineFrequency.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. Frequency (in Hz) of the power grid at the geographical location of the MEG instrument (i.e. 50 or 60)" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#ElectrodeImpedance" ;
+    <rdfs:label> "PowerLineFrequency" .
+
+<http://localhost:8000/./Protondensity.jsonld> a <http://www.w3.org/2002/07/owl#Class> ;
+    ns1:description "PD" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "The relation here is has only proposed status and would make this a child term  to nidm:ImageContrastType",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#ProtonDensityWeighted" ;
+    <rdfs:label> "Proton density" .
+
+<http://localhost:8000/./Protondensitymap.jsonld> a ns6:ParameterEstimateMap,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    ns1:description "PDmap" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "This is related to nidm:0000052, which is nidm:Map from NIDM-Results, but is unrelated to nidm:ContrastMap since the contrast in that case is related to fMRI condition contrasts, rather than an NMR physics-related concept.  It is related to nidm:ParameterEstimateMap from NIDM-Results in the sense that calculation of a parameter map from a set of images in which the contrast is changed by modifying an acquisition parameter related to a parameter of interest (in this case proton density), is an estimate of a parameter resulting from the fitting of image data on a pixel-by-pixel basis.",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "Proton density map" .
+
+<http://localhost:8000/./PulseSequenceDetails.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Information beyond pulse sequence type that identifies the specific pulse sequence used (i.e. Standard Siemens Sequence distributed with the VB17 software, Siemens WIP ### version #.##, or Sequence written by X using a version compiled on MM/DD/YYYY)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189069" ;
+    <rdfs:label> "PulseSequenceDetails" .
+
+<http://localhost:8000/./PulseSequenceType.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. A general description of the pulse sequence used for the scan (i.e. MPRAGE, Gradient Echo EPI, Spin Echo EPI, Multiband gradient echo EPI)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#AppliedFilters" ;
+    <rdfs:label> "PulseSequenceType" .
+
+<http://localhost:8000/./ReceiveCoilActiveElements.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Information describing the active/selected elements of the receiver coil. This doesn’t correspond to a tag in the DICOM ontology. The vendor-defined terminology for active coil elements can go in this field. As an example, for Siemens, coil channels are typically not activated/selected individually, but rather in pre-defined selectable groups of individual channels, and the list of the groups of elements that are active/selected in any given scan populates the Coil String entry in Siemens’ private DICOM fields (e.g., HEA;HEP for the Siemens standard 32 ch coil when both the anterior and posterior groups are activated). This is a flexible field that can be used as most appropriate for a given vendor and coil to define the active coil elements. Since individual scans can sometimes not have the intended coil elements selected, it is preferable for this field to be populated directly from the DICOM for each individual scan, so that it can be used as a mechanism for checking that a given scan was collected with the intended coil elements selected" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T2Weighted" ;
+    <rdfs:label> "ReceiveCoilActiveElements" .
+
+<http://localhost:8000/./ReceiveCoilName.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Information describing the receiver coil. Corresponds to DICOM Tag 0018, 1250 Receive Coil Name, although not all vendors populate that DICOM Tag, in which case this field can be derived from an appropriate private DICOM field" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00181250" ;
+    <rdfs:label> "ReceiveCoilName" .
+
+<http://localhost:8000/./RecordingDuration.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Length of the recording in seconds (e.g. 3600)" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#FastLowAngleShot" ;
+    <rdfs:label> "RecordingDuration" .
+
+<http://localhost:8000/./RecordingType.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Defines whether the recording is continuous or epoched; this latter limited to time windows about events of interest (e.g., stimulus presentations, subject responses etc.)" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#FastLowAngleShot" ;
+    <rdfs:label> "RecordingType" .
+
+<http://localhost:8000/./ReferencesAndLinks.jsonld> a <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+    ns1:description "OPTIONAL. List of references to publication that contain information on the dataset, or links." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Magnetoencephalography" ;
+    <rdfs:label> "ReferencesAndLinks" .
+
+<http://localhost:8000/./RepetitionTime.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. The time in seconds between the beginning of an acquisition of one volume and the beginning of acquisition of the volume following it (TR). Please note that this definition includes time between scans (when no data has been acquired) in case of sparse acquisition schemes. This value needs to be consistent with the pixdim[4] field (after accounting for units stored in xyzt units field) in the NIfTI header. This field is mutually exclusive with VolumeTiming and is derived from DICOM Tag 0018, 0080 and converted to seconds." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "RepetitionTime" .
+
+<http://localhost:8000/./SEEGChannelCount.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Number of SEEG channels" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "SEEGChannelCount" .
+
+<http://localhost:8000/./SamplingFrequency.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. Sampling frequency (in Hz) of all the data in the recording, regardless of their type (e.g., 2400)" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_003A001A" ;
+    <rdfs:label> "SamplingFrequency" .
+
+<http://localhost:8000/./ScanOptions.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Parameters of ScanningSequence. Corresponds to DICOM Tag 0018, 0022 Scan Options." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180022" ;
+    <rdfs:label> "ScanOptions" .
+
+<http://localhost:8000/./ScanningSequence.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Description of the type of data acquired. Corresponds to DICOM Tag 0018, 0020 Scanning Sequence." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180020" ;
+    <rdfs:label> "ScanningSequence" .
+
+<http://localhost:8000/./SequenceName.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Manufacturer’s designation of the sequence name. Corresponds to DICOM Tag 0018, 0024 Sequence Name." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180024" ;
+    <rdfs:label> "SequenceName" .
+
+<http://localhost:8000/./SequenceVariant.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Variant of the ScanningSequence. Corresponds to DICOM Tag 0018, 0021 Sequence Variant." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180021" ;
+    <rdfs:label> "SequenceVariant" .
+
+<http://localhost:8000/./SliceEncodingDirection.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Possible values: i, j, k, i-, j-, k- (the axis of the NIfTI data along which slices were acquired, and the direction in which SliceTiming is defined with respect to). i, j, k identifiers correspond to the first, second and third axis of the data in the NIfTI file. A - sign indicates that the contents of SliceTiming are defined in reverse order - that is, the first entry corresponds to the slice with the largest index, and the final entry corresponds to slice index zero. When present, the axis defined by SliceEncodingDirection needs to be consistent with the slice dim field in the NIfTI header. When absent, the entries in SliceTiming must be in the order of increasing slice index as defined by the NIfTI header." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T2Weighted" ;
+    <rdfs:label> "SliceEncodingDirection" .
+
+<http://localhost:8000/./SliceTiming.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. The time at which each slice was acquired within each volume (frame) of the acquisition. Slice timing is not slice order -- rather, it is a list of times (in JSON format) containing the time (in seconds) of each slice acquisition in relation to the beginning of volume acquisition. The list goes through the slices along the slice axis in the slice encoding dimension (see below). Note that to ensure the proper interpretation of the SliceTiming field, it is important to check if the OPTIONAL SliceEncodingDirection exists. In particular, if SliceEncodingDirection is negative, the entries in SliceTiming are defined in reverse order with respect to the slice axis (i.e., the final entry in the SliceTiming list is the time of acquisition of slice 0). This parameter is REQUIRED for sparse sequences that do not have the DelayTimefield set. In addition without this parameter slice time correction will not be possible." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T1Weighted" ;
+    <rdfs:label> "SliceTiming" .
+
+<http://localhost:8000/./SoftwareFilters.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. List of temporal and/or spatial software filters applied, or ideally key:value pairs of pre-applied software filters and their parameter values: e.g., {SSS: {frame: head, badlimit: 7}}, {SpatialCompensation: {GradientOrder: Order of the gradient compensation}}. Write n/a if no software filters applied." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00081090" ;
+    <rdfs:label> "SoftwareFilters" .
+
+<http://localhost:8000/./SoftwareVersions.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Manufacturer’s designation of software version of the equipment that produced the composite instances. Corresponds to DICOM Tag 0018, 1020 Software Versions" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00181020" ;
+    <rdfs:label> "SoftwareVersions" .
+
+<http://localhost:8000/./StartTime.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. Start time in seconds in relation to the start of acquisition of the first data sample in the corresponding neural dataset (negative values are allowed)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180021" ;
+    <rdfs:label> "StartTime" .
+
+<http://localhost:8000/./StationName.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Institution defined name of the machine that produced the composite instances. Corresponds to DICOM Tag 0008, 1010 Station Name" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00081010" ;
+    <rdfs:label> "StationName" .
+
+<http://localhost:8000/./SubjectArtefactDescription.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Freeform description of the observed subject artefact and its possible cause (e.g. Vagus Nerve Stimulator, non-removable implant). If this field is set to n/a, it will be interpreted as absence of major source of artifacts except cardiac and blinks." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "SubjectArtefactDescription" .
+
+<http://localhost:8000/./T1Rhomap.jsonld> a ns6:ParameterEstimateMap,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    ns1:description "T1 rho" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "This is related to nidm:0000052, which is nidm:Map, in NIDM-Results, but is unrelated to nidm:ContrastMap since the contrast in that case is related to fMRI condition contrasts, rather than an NMR physics-related concept.  It is related to nidm:ParameterEstimateMap from NIDM-Results in the sense that calculation of a parameter map from a set of images in which the contrast is changed by modifying an acquisition parameter related to a parameter of interest (in this case T1 rho), is an estimate of a parameter resulting from the fitting of image data on a pixel-by-pixel basis.",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "T1 Rho map" .
+
+<http://localhost:8000/./T1map.jsonld> a ns6:ParameterEstimateMap,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    ns1:description "T1 map" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "This is related to nidm:0000052, which is nidm:Map, in NIDM-Results, but is unrelated to nidm:ContrastMap since the contrast in that case is related to fMRI condition contrasts, rather than an NMR physics-related concept.  It is related to nidm:ParameterEstimateMap from NIDM-Results in the sense that calculation of a parameter map from a set of images in which the contrast is changed by modifying an acquisition parameter related to a parameter of interest (in this case T1), is an estimate of a parameter resulting from the fitting of image data on a pixel-by-pixel basis.",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Phase" ;
+    <rdfs:label> "T1 map" .
+
+<http://localhost:8000/./T1w.jsonld> a <http://www.w3.org/2002/07/owl#Class> ;
+    ns1:description "T1w" ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "This relation to nidm:T1Weighted is proposed and would make this term a child of nidm:ImageContrastType",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T1Weighted" ;
+    <rdfs:label> "T1w" .
+
+<http://localhost:8000/./T2Star.jsonld> a <http://www.w3.org/2002/07/owl#Class> ;
+    ns1:description "T2star" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "The relation here is has only proposed status and would make this a child term to nidm:ImageContrastType",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T2StarWeighted" ;
+    <rdfs:label> "T2*" .
+
+<http://localhost:8000/./T2map.jsonld> a ns6:ParameterEstimateMap,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    ns1:description "T2 map" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "This is related to nidm:0000052, which is nidm:Map, in NIDM-Results, but is unrelated to nidm:ContrastMap since the contrast in that case is related to fMRI condition contrasts, rather than an NMR physics-related concept.  It is related to nidm:ParameterEstimateMap from NIDM-Results in the sense that calculation of a parameter map from a set of images in which the contrast is changed by modifying an acquisition parameter related to a parameter of interest (in this case T2), is an estimate of a parameter resulting from the fitting of image data on a pixel-by-pixel basis.",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "T2 map" .
+
+<http://localhost:8000/./T2w.jsonld> a <http://www.w3.org/2002/07/owl#Class> ;
+    ns1:description "T2w" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "This relation to nidm:T2Weighted is proposed and would make this term a child of nidm:imageContrastType",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T2Weighted" ;
+    <rdfs:label> "T2w" .
+
+<http://localhost:8000/./TaskDescription.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Longer description of the task." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00081090" ;
+    <rdfs:label> "TaskDescription" .
+
+<http://localhost:8000/./TaskName.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. Name of the task. No two tasks should have the same name. Task label (task-) included in the file name is derived from this field by removing all non alphanumeric ([a-zA-Z0-9]) characters. For example task name faces n-back will corresponds to task label facesnback. A RECOMMENDED convention is to name resting state task using labels beginning with rest." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T1Weighted" ;
+    <rdfs:label> "TaskName" .
+
+<http://localhost:8000/./TotalReadoutTime.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. This is actually the effective total readout time , defined as the readout duration, specified in seconds, that would have generated data with the given level of distortion. It is NOT the actual, physical duration of the readout train. If EffectiveEchoSpacing has been properly computed, it is just EffectiveEchoSpacing * (ReconMatrixPE - 1).3. This parameter is REQUIRED if corresponding field/distortion maps acquired with opposing phase encoding directions are present (see 8.9.4)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "TotalReadoutTime" .
+
+<http://localhost:8000/./TriggerChannelCount.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Number of channels for digital (TTL bit level) trigger." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "TriggerChannelCount" .
+
+<http://localhost:8000/./VolumeTiming.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. The time at which each volume was acquired during the acquisition. It is described using a list of times (in JSON format) referring to the onset of each volume in the BOLD series. The list must have the same length as the BOLD series, and the values must be non-negative and monotonically increasing. This field is mutually exclusive with RepetitionTime and DelayTime. If defined, this requires acquisition time (TA) be defined via either SliceTiming or AcquisitionDuration be defined." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "VolumeTiming" .
+
+<http://localhost:8000/./description.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "Term used to indicate a string that provides clarifying information about another term. This is a generalization of the way the term is used within the BIDS specification." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/dc/terms/description" ;
+    <rdfs:label> "type" .
+
+<http://localhost:8000/./dimension.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Size of the group (grid/strip/probe) that this electrode belongs to. Must be of form [AxB] with the smallest dimension first (e.g., [1x8])." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00181020" ;
+    <rdfs:label> "dimension" .
+
+<http://localhost:8000/./duration.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. Duration of the event (measured from onset) in seconds. Must always be either zero or positive. A duration value of zero implies that the delta function or event is so short as to be effectively modeled as an impulse." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180082" ;
+    <rdfs:label> "duration" .
+
+<http://localhost:8000/./group.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Which group of channels (grid/strip/seeg/depth) this channel belongs to. This is relevant because one group has one cable-bundle and noise can be shared. This can be a name or number. Note that any groups specified in electrodes.tsv must match those present here." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180024" ;
+    <rdfs:label> "group" .
+
+<http://localhost:8000/./hemisphere.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Optional field to specify the hemisphere in which the electrode is placed, one of [L or R] (use capital)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180024" ;
+    <rdfs:label> "hemisphere" .
+
+<http://localhost:8000/./high_cutoff.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Frequencies used for the low-pass filter applied to the channel in Hz. If no low-pass filter applied, use n/a. Note that hardware anti-aliasing in A/D conversion of all MEG/EEG electronics applies a low-pass filter; specify its frequency here if applicable." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "The DICOM term is the nominal 3dB point of lower frequency of pass band, in Hz.",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "high_cutoff" .
+
+<http://localhost:8000/./iEEGCoordinateProcessingDescription.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Has any post-processing (such as projection) been done on the electrode positions (e.g., surface_projection, none)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_003A001A" ;
+    <rdfs:label> "iEEGCoordinateProcessingDescription" .
+
+<http://localhost:8000/./iEEGCoordinateProcessingReference.jsonld> a <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+    ns1:description "RECOMMENDED. A reference to a paper that defines in more detail the method used to localize the electrodes and to post-process the electrode positions. ." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/dc/terms/license" ;
+    <rdfs:label> "iEEGCoordinateProcessingReference" .
+
+<http://localhost:8000/./iEEGCoordinateSystem.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. Defines the coordinate system for the iEEG electrodes. See Appendix VIII for a list of restricted keywords. If positions correspond to pixel indices in a 2D image (of either a volume-rendering, surface-rendering, operative photo, or operative drawing), this must be Pixels. For more information, see the section on 2D coordinate systems" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189081" ;
+    <rdfs:label> "iEEGCoordinateSystem" .
+
+<http://localhost:8000/./iEEGCoordinateSystemDescription.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Freeform text description or link to document describing the iEEG coordinate system system in detail (e.g., Coordinate system with the origin at anterior commissure (AC), negative y-axis going through the posterior commissure (PC), z-axis going to a mid-hemisperic point which lies superior to the AC-PC line, x-axis going to the right)." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00081090" ;
+    <rdfs:label> "iEEGCoordinateSystemDescription" .
+
+<http://localhost:8000/./iEEGCoordinateUnits.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. Units of the electrodes.tsv, MUST be m, mm, cm or pixels." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T2Weighted" ;
+    <rdfs:label> "iEEGCoordinateUnits" .
+
+<http://localhost:8000/./iEEGElectrodeGroups.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Field to describe the way electrodes are grouped into strips, grids or depth probes e.g., {grid1: 10x8 grid on left temporal pole, strip2: 1x8 electrode strip on xxx}." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#FastLowAngleShot" ;
+    <rdfs:label> "iEEGElectrodeGroups" .
+
+<http://localhost:8000/./iEEGGround.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Description of the location of the ground electrode (e.g., placed on right mastoid (M2))." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#FastLowAngleShot" ;
+    <rdfs:label> "iEEGGround" .
+
+<http://localhost:8000/./iEEGPlacementScheme.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Freeform description of the placement of the iEEG electrodes. Left/right/bilateral/depth/surface (e.g., left frontal grid and bilateral hippocampal depth or surface strip and STN depth or clinical indication bitemporal, bilateral temporal strips and left grid)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189073" ;
+    <rdfs:label> "iEEGPlacementScheme" .
+
+<http://localhost:8000/./iEEGReference.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. General description of the reference scheme used and (when applicable) of location of the reference electrode in the raw recordings (e.g., left mastoid, bipolar, T01 for electrode with name T01, intracranial electrode on top of a grid, not included with data, upside down electrode). If different channels have a different reference, this field should have a general description and the channel specific reference should be defined in the channels.tsv file." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "iEEGReference" .
+
+<http://localhost:8000/./impedance.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Impedance of the electrode in kOhm" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#ElectrodeImpedance" ;
+    <rdfs:label> "impedance" .
+
+<http://localhost:8000/./low_cutoff.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Frequencies used for the high-pass filter applied to the channel in Hz. If no high-pass filter applied, use n/a." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "The DICOM term is the nominal 3dB point of upper frequency of pass band, in Hz.",
+        "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00189036" ;
+    <rdfs:label> "low_cutoff" .
+
+<http://localhost:8000/./material.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "RECOMMENDED. Material of the electrode, e.g., Tin, Ag/AgCl, Gold" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180020" ;
+    <rdfs:label> "material" .
+
+<http://localhost:8000/./notch.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Frequencies used for the notch filter applied to the channel, in Hz. If no notch filter applied, use n/a." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "The DICOM term is the center frequency of notch filter, in Hz.",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_0018101A" ;
+    <rdfs:label> "notch" .
+
+<http://localhost:8000/./onset.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. Onset (in seconds) of the event measured from the beginning of the acquisition of the first volume in the corresponding task imaging data file. If any acquired scans have been discarded before forming the imaging data file, ensure that a time of 0 corresponds to the first image stored. In other words negative numbers in onset are allowed." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T2Weighted" ;
+    <rdfs:label> "onset" .
+
+<http://localhost:8000/./reference.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Name of the reference electrode(s) (not needed when it is common to all channels, in that case it can be specified in * eeg.json as EEGReference)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#CalculatedParameter" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180022" ;
+    <rdfs:label> "reference" .
+
+<http://localhost:8000/./respiratory.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "continuous breathing measurement" ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#T2Weighted" ;
+    <rdfs:label> "respiratory" .
+
+<http://localhost:8000/./response_time.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Response time measured in seconds. A negative response time can be used to represent preemptive responses and n/a denotes a missed response." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Phase" ;
+    <rdfs:label> "response_time" .
+
+<http://localhost:8000/./sample.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Onset of the event according to the sampling scheme of the recorded modality (i.e., referring to the raw data file that the events.tsv file accompanies)." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#ElectrodeImpedance" ;
+    <rdfs:label> "sample" .
+
+<http://localhost:8000/./sampling_frequency.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Sampling rate of the channel in Hz." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "The DICOM term also uses the same units as the BIDS version.",
+        "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_003A001A" ;
+    <rdfs:label> "sampling_frequency" .
+
+<http://localhost:8000/./size.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "REQUIRED. Surface area of the electrode, in mm^2." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "The description for this term is specific to electrodes.",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180080" ;
+    <rdfs:label> "size" .
+
+<http://localhost:8000/./software_filters.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. List of temporal and/or spatial software filters applied (e.g. SSS, SpatialCompensation). Note that parameters should be defined in the general MEG sidecar .json file. Indicate n/a in the absence of software filters applied." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "Note that the NIDM-E term is more general and applies to both hardware and software filters.",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#AppliedFilters" ;
+    <rdfs:label> "software_filters" .
+
+<http://localhost:8000/./status.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Data quality observed on the channel (good/bad). A channel is considered bad if its data quality is compromised by excessive noise. Description of noise type SHOULD be provided in [status_description]." ;
+    ns4:url <https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html> ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "This should be attached to a nidm:AcquisitionObject.",
+        "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#ImageContrastType" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#Magnetoencephalography" ;
+    <rdfs:label> "status" .
+
+<http://localhost:8000/./status_description.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Freeform text description of noise or artifact affecting data quality on the channel. It is meant to explain why the channel was declared bad in [status]." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/dicom#dicom_00180020" ;
+    <rdfs:label> "status_description" .
+
+<http://localhost:8000/./stim_file.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Represents the location of the stimulus file (image, video, sound etc.) presented at the given onset time. There are no restrictions on the file formats of the stimuli files, but they should be stored in the /stimuli folder (under the root folder of the dataset; with optional subfolders). The values under the stim_file column correspond to a path relative to /stimuli. For example images/cat03.jpg will be translated to /stimuli/images/cat03.jpg." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "stim_file" .
+
+<http://localhost:8000/./trial_type.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "OPTIONAL. Primary categorisation of each trial to identify them as instances of the experimental conditions. For example: for a response inhibition task, it could take on values go and no-go to refer to response initiation and response inhibition experimental conditions." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#ElectrodeImpedance" ;
+    <rdfs:label> "trial_type" .
+
+<http://localhost:8000/./type.jsonld> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    ns1:description "Term used to indicate the sub-category of the general class being described. Example: if the prov:Entity is an electrode, the bids:type could be disk or needle. This is a generalization of the way the term is used within the BIDS specification." ;
+    ns2:ilx_0739289 "BIDS",
+        "NIDM" ;
+    rdfs:comment "To be discussed" ;
+    ns3:supertypeCDEs "http://purl.org/nidash/nidm#AcquisitionMethod" ;
+    ns5:sameAs "http://purl.org/nidash/nidm#NumberOfChannels" ;
+    <rdfs:label> "type" .
+
