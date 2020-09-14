@@ -1,0 +1,385 @@
+{
+  "Age": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Continuous variable denoting age in years at the time of data collection (range: 3.5-39 years).",
+    "sourceVariable": "Age",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "unitCode": "Years",
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
+  },
+  "AgeGroup": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Specifies age bin of participant at the time of data collection.",
+    "sourceVariable": "AgeGroup",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": " three-year-old children",
+          "value": "3yr"
+        },
+        {
+          "name": " four-year-old children",
+          "value": " 4yr"
+        },
+        {
+          "name": " five-year-old children",
+          "value": " 5yr"
+        },
+        {
+          "name": " seven-yea- old children",
+          "value": " 7yr"
+        },
+        {
+          "name": " eight- to twelve-year-old children",
+          "value": " 8-12yo"
+        },
+        {
+          "name": " participants ages 18 years and older.",
+          "value": " Adult"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0100400",
+      "label": "age"
+    }
+  },
+  "Child_Adult": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Specifies whether participant was a child or adult at the time of data collection.",
+    "sourceVariable": "Child_Adult",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": " Participant ages 3-12 years",
+          "value": "Child"
+        },
+        {
+          "name": " Participant ages 18+ years",
+          "value": " Adult"
+        }
+      ]
+    }
+  },
+  "DCCS Summary": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Dimensional Change Card Sort Summary Score; calculated as outlined in Zelazo, 2006.",
+    "sourceVariable": "DCCS Summary",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": [
+      {
+        "@id": "https://www.cognitiveatlas.org/concept/json/trm_4aae62e4ad209/",
+        "label": "cognitive control"
+      },
+      {
+        "@id": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0ba25/",
+        "label": "central executive"
+      }
+    ]
+  },
+  "FB_Composite": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "False-Belief Items Composite Score; indicates how manyfalse belief items were answered correctly (out of 6) .",
+    "sourceVariable": "FB_Composite",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "unitCode": "Items",
+      "valueType": "xsd:float"
+    }
+  },
+  "FB_Group": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "False-Belief Items Performance Group.",
+    "sourceVariable": "FB_Group",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": " Children who answered at least 5 of 6 False Belief items correctly",
+          "value": "Pass"
+        },
+        {
+          "name": " Children who answered 3-4 of 6 False Belief items correctly (\"Inconsistent\")",
+          "value": " Inc"
+        },
+        {
+          "name": " Children who answered at most 2 of 6 False Belief Items correctly.",
+          "value": " Fail"
+        }
+      ]
+    }
+  },
+  "Gender": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Parent-reported gender",
+    "sourceVariable": "Gender",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": " Male",
+          "value": "M"
+        },
+        {
+          "name": " Female",
+          "value": " F"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0738437",
+      "label": "gender"
+    }
+  },
+  "Handedness": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Parent-reported handedness",
+    "sourceVariable": "Handedness",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": " Right-handed",
+          "value": "R"
+        },
+        {
+          "name": " Left-handed",
+          "value": " L"
+        },
+        {
+          "name": " Ambidextrous",
+          "value": " Ambi"
+        }
+      ]
+    },
+    "isAbout": {
+      "@id": "ilx_id:ilx_0104886",
+      "label": "handedness assessment"
+    }
+  },
+  "KBIT_raw": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Raw Score on the KBIT-II Matrices test, which is a measure of non-verbal IQ (Kaufman, 1997)",
+    "sourceVariable": "KBIT_raw",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a666/",
+      "label": "intelligence"
+    }
+  },
+  "KBIT_standard": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Age-Standardized Score on the KBIT-II Matrices test, which is a measure of non-verbal IQ (Kaufman, 1997)",
+    "sourceVariable": "KBIT_standard",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a666/",
+      "label": "intelligence"
+    }
+  },
+  "Scanlog: Coil": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Children under age five years used one of two custom 32-channel phased-array head coils made for younger (n=3, M(SD)=3.91(.42) years) or older (n=28, M(SD)=4.07(.42) years) children (Keil et al., 2011); all other participants used the standard Siemens 32-channel head coil.",
+    "sourceVariable": "Scanlog: Coil",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "Custom 32ch coil made for young children",
+          "value": "5-6yo 32ch"
+        },
+        {
+          "name": "Custom 32ch coil made for older children",
+          "value": "7-8yo 32ch"
+        },
+        {
+          "name": "Standard Siemens 32-channel head coil",
+          "value": "32ch adult"
+        }
+      ]
+    }
+  },
+  "Scanlog: Scanner": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "At the time of data collection, the Athinoula A. Martinos Imaging Center at MIT had two identical 3T Siemens scanners. Data collection occurred on both scanners.",
+    "sourceVariable": "Scanlog: Scanner",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "Scanner 1",
+          "value": "3T1"
+        },
+        {
+          "name": "Scanner 2",
+          "value": "3T2"
+        }
+      ]
+    }
+  },
+  "Scanlog: Slice Gap": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Slice gap (i.e., distance between adjacent images) during functional imaging. This varies because different participants were initally recruited for different studies.",
+    "sourceVariable": "Scanlog: Slice Gap",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "unitCode": "mm",
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": "No slice gap",
+          "value": "None"
+        },
+        {
+          "name": "10% slice gap",
+          "value": ".1"
+        },
+        {
+          "name": "20% slice gap",
+          "value": ".2"
+        }
+      ]
+    }
+  },
+  "Scanlog: Voxel slize": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Voxel size during functional imaging. This varies because different participants were initally recruited for different studies.",
+    "sourceVariable": "Scanlog: Voxel slize",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "unitCode": "mm",
+      "valueType": "xsd:string",
+      "choices": [
+        {
+          "name": " 3mm isotrophic (3 x 3 x 3)",
+          "value": "3mm iso"
+        },
+        {
+          "name": " 3.13mm isotropic (3.13 x 3.13 x 3.13)",
+          "value": " 3.13 mm iso"
+        }
+      ]
+    }
+  },
+  "ToM Booklet-Matched": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Continuous variable denoting proportion of ToM Booklet questions answered correctly.",
+    "sourceVariable": "ToM Booklet-Matched",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b392/",
+      "label": "theory of mind"
+    }
+  },
+  "ToM Booklet-Matched-NOFB": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Continuous variable denoting proportion of ToM Booklet questions answered correctly, not including false-belief task items (used to generate the composite score and False-Belief grouping).",
+    "sourceVariable": "ToM Booklet-Matched-NOFB",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0b392/",
+      "label": "theory of mind"
+    }
+  },
+  "WPPSI BD raw": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Raw score on the WPPSI Block Design subtest, which is a measure of non-verbal IQ (Wechsler, 1989)",
+    "sourceVariable": "WPPSI BD raw",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0b1a6/",
+      "label": "spatial ability"
+    }
+  },
+  "WPPSI BD scaled": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Age-Standardized Score on the WPPSI Block Design subtest, which is a measure of non-verbal IQ (Wechsler, 1989)",
+    "sourceVariable": "WPPSI BD scaled",
+    "associatedWith": "NIDM",
+    "responseOptions": {
+      "valueType": "xsd:float"
+    },
+    "isAbout": {
+      "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0b1a6/",
+      "label": "spatial ability"
+    }
+  },
+  "Participant Demographics, Behavioral Data, and Scan Info": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "sourceVariable": "Participant Demographics, Behavioral Data, and Scan Info",
+    "associatedWith": "NIDM"
+  },
+  "Dimensional Change Card Sort Metadata": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Dimensional Change Card Sort (DCCS) is a task that measures the response inhibition component of executive functions, designd for young children (Zelazo, 2006). Children ages 3-5 years old completed this task. The task is comprised of two versions: the standard version (pre-switch task and post-switch task), where children have to sort cards according to one rule (pre-switch), and then according to a new rule (post-switch), and the border version, where children must sort cards according to two rules, depending on whether the card has a border. The shared data is the summary score (0-3), described below.",
+    "sourceVariable": "Dimensional Change Card Sort Metadata",
+    "associatedWith": "NIDM"
+  },
+  "Scanlog Metadata": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Whole-brain structural and functional MRI data were acquired on one of two 3-Tesla Siemens Tim Trio scanners located at the Athinoula A. Martinos Imaging Center at MIT, using one of three 32-channel head coils (see Coil column). As participants were initially recruited for different studies, there are small differences in voxel size and slice gaps across participants (voxel size: 3 mm vs. 3.13 mm isotropic; slice gap: 0, 10% and 20%).",
+    "sourceVariable": "Scanlog Metadata",
+    "associatedWith": "NIDM"
+  },
+  "Scanlog: Voxel Size": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "DataElement",
+    "description": "Whole-brain structural and functional MRI data were acquired on one of two 3-Tesla Siemens Tim Trio scanners located at the Athinoula A. Martinos Imaging Center at MIT, using one of three 32-channel head coils (see Coil column). As participants were initially recruited for different studies, there are small differences in voxel size and slice gaps across participants (voxel size: 3 mm vs. 3.13 mm isotropic; slice gap: 0, 10% and 20%).",
+    "sourceVariable": "Scanlog: Voxel Size",
+    "associatedWith": "NIDM"
+  }
+}
