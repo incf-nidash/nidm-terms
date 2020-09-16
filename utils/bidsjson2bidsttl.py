@@ -22,8 +22,8 @@ def main(argv):
     # set path to bids terms jsonld's
     path = args.bids_terms
     # listing the Jsonld's of all BIDS specification terms
-    os.path.join(bids-terms,'terms/BIDS_Terms')
-    bids_terms = os.listdir(path)
+    terms_path = os.path.join(path,'terms/BIDS_Terms')
+    bids_terms = os.listdir(terms_path)
 
 
     # open a temporary text file
@@ -35,7 +35,7 @@ def main(argv):
         if i.endswith('.jsonld'):
 
             # add each file to the path to access it
-            pathtojsonld = os.path.join(path, i)
+            pathtojsonld = os.path.join(terms_path, i)
             print(i)
             # load the jsonld file
             file = reproschema.jsonldutils.load_file(pathtojsonld)
