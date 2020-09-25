@@ -10,7 +10,7 @@ To begin:
 
 * Read the term property definitions below
 * Fork the GitHub [terms](https://github.com/NIDM-Terms/terms) repository
-* Copy the [TermTemplate.jsonld](https://github.com/NIDM-Terms/terms/blob/master/terms/TermTemplate.jsonld) file and rename it as the label of your proposed term
+* Copy the [DataElementTemplate.jsonld](https://github.com/NIDM-Terms/terms/blob/master/terms/DataElementTemplate.jsonld) file and rename it as the label of your proposed term
 * Fill in as much information in the JSON-LD file as you can and create a [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) to the main repository
 
 
@@ -45,14 +45,14 @@ Below is an exhaustive set of possible term properties.  The specific term you a
 	]
 	```
   
-  * **"isAbout":** Used to store a mapping to a broader concept related to the data element. These annotations can be used to search across datasets. Concept annotations should only be used for terms you think are useful to search across datasets.  For example, if one has a variable that measures "age at visit" with a particular frame of reference (e.g. postnatal) in a particular unit (e.g. months) and another dataset collected a variable "age at scan" with units "year" then we can annotate both variables with a broader concept of [age](http://uri.interlex.org/base/ilx_0100400) and use this to search for datasets with the concept of "age" without regarding how age was collected.  This approach helps with locating datasets that contain information desired by investigators while abstracting away from the complexity of how these data were stored in the datasets. Once datasets have been identified at this high level, the data dictionaries for each variable in each dataset can be further interrogated using the properties here to determine a proper mapping across variables prior to analysis.  "isAbout" entries using the [TermTemplate.jsonld](https://github.com/NIDM-Terms/terms/blob/master/terms/TermTemplate.jsonld) are formatted as follows.  Multiple "isAbout" annotations can be formatted in a similar fashion to "choices" using an array ([]) of dictionaries.
+  * **"isAbout":** Used to store a mapping to a broader concept related to the data element. These annotations can be used to search across datasets. Concept annotations should only be used for terms you think are useful to search across datasets.  For example, if one has a variable that measures "age at visit" with a particular frame of reference (e.g. postnatal) in a particular unit (e.g. months) and another dataset collected a variable "age at scan" with units "year" then we can annotate both variables with a broader concept of [age](http://uri.interlex.org/base/ilx_0100400) and use this to search for datasets with the concept of "age" without regarding how age was collected.  This approach helps with locating datasets that contain information desired by investigators while abstracting away from the complexity of how these data were stored in the datasets. Once datasets have been identified at this high level, the data dictionaries for each variable in each dataset can be further interrogated using the properties here to determine a proper mapping across variables prior to analysis.  "isAbout" entries using the [DataElementTemplate.jsonld](https://github.com/NIDM-Terms/terms/blob/master/terms/DataElementTemplate.jsonld) are formatted as follows.  Multiple "isAbout" annotations can be formatted in a similar fashion to "choices" using an array ([]) of dictionaries.
   	```
     "isAbout": {
       "@id": "ilx_id:ilx_0100400",
       "label": "age"
     }
 	```
-  * **"associatedWith":**  This can be kept as it is in the [TermTemplate.jsonld](https://github.com/NIDM-Terms/terms/blob/master/terms/TermTemplate.jsonld).  It is used by the InterLex information resource to group data elements into buckets where one can quickly query for all data elements that have been used in "NIDM" for example.  One can add additional strings here to do further groupings (e.g. "BIDS" if the data element is part of the canonical BIDS specification).
+  * **"associatedWith":**  This can be kept as it is in the [DataElementTemplate.jsonld](https://github.com/NIDM-Terms/terms/blob/master/terms/DataElementTemplate.jsonld).  It is used by the [Interlex](https://scicrunch.org/nidm-terms) information resource to group data elements into buckets where one can quickly query for all data elements that have been used in "NIDM" for example.  One can add additional strings here to do further groupings (e.g. "BIDS" if the data element is part of the canonical BIDS specification).
   
   ### Additional Properties
   
