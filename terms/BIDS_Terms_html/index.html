@@ -12,6 +12,7 @@
 
     <script src= "https://code.jquery.com/jquery-3.5.1.js"></script> 
     <script src="./js_lib/jquery.treeView.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsonld@1.0.0/dist/jsonld.min.js"></script>
     
     <style></style>
 
@@ -35,66 +36,38 @@
     <h2><b>Terms:</b></h2>
 
 
-    <ul class="treeview">
-
-        <div id = "Add_t_me">    
-
-            <li id = "term"> term
-                <ul>
-                    <li id = "prop_1">subitem 1</li>
-                    <li id = "prop_2">subitem 2</li>
-                    <li id = "prop_3">subitem 3</li>
-                    <li id = "prop_4">subitem 4</li>
-                    <li id = "prop_5">subitem 5</li>
-                    <li id = "prop_6">subitem 6</li>
-                    <li id = "prop_7">subitem 7</li>
-                </ul>
-            </li>
-
-        </div>  
-
-    </ul>
-     
-
-        
-        <script>$('.treeview').treeView();</script>
+    <div id="test">
+            
 
 
+    </div>
+
+    <style id = "style">.treeview,
+        .treeview ul {list-style-type:none;
+        overflow:hidden;
+        }
+        .treeview li {
+            text-indent:1%;
+            margin-top:0.2em;
+            padding:0.15em 0 0.5em 1.5em;
+            line-height:22px;
+            background-repeat:no-repeat;
+            background-size:24px 24px;
+        }
+        .treeview li.contains-items {background-image:url(
+            'js_lib/icons/arrow-left.png'); }
     
-
-        <style>.treeview,
-            .treeview ul {list-style-type:none;
-            overflow:hidden;
-            }
-            .treeview li {
-                text-indent:1%;
-                margin-top:0.2em;
-                padding:0.15em 0 0.5em 1.5em;
-                line-height:22px;
-                background-repeat:no-repeat;
-                background-size:24px 24px;
-            }
-            .treeview li.contains-items {background-image:url(
-                'js_lib/icons/arrow-left.png'); }
-
-            .treeview li.items-expanded {background-image:url(
-                'js_lib/icons/arrow-down.png'); }
-
-            .treeview>li:hover {cursor:pointer; }
-
-            .treeview span:hover {background-color: rgba(246,246,246,0.7
-            
-            ); } 
-
-        </style>
-
-        <script>
-            // Expands all the nodes of treeviews
-            //$('.treeview').treeView('expandAll');
-            // Collapses all the nodes of treeviews
-            $('.treeview').treeView('collapseAll');
-        </script>
-            
+        .treeview li.items-expanded {background-image:url(
+            'js_lib/icons/arrow-down.png'); }
+    
+        .treeview>li:hover {cursor:pointer; }
+    
+        .treeview span:hover {background-color: rgba(246,246,246,0.7
+        
+        ); } 
+    
+    </style>
+     
 
     </body>
 
@@ -103,6 +76,7 @@
     <script>
         /// This function fetches data from the BIDS_Terms jsonld file
     
+        $(document).ready(function(event) { 
 
         fetch("https://raw.githubusercontent.com/nqueder/terms/master/terms/BIDS_Terms.jsonld")
         .then(function(resp){
@@ -110,34 +84,91 @@
         })
 
 
-        .then(function (data) {
-                console.log(data);
-                var term = '';
+        .then(function (dict_data) {
+            console.log(dict_data);
 
-                var prop = '';
+            function sortOnKeys(dict_data) {
+                var sorted = [];
 
-                for (var key in data) {
-                    if (data.hasOwnProperty(key)) {
-                        console.log(key)
-                        
-                        // display the term
-                        term += '<li id = "add_properties" >';
-
-                            
-
-                        // loop through the context file and grab the term properties
-                        for (var k in data[key]) {}
-
-                        term += '<li>';
-
-                    //Insert rows into html tree structure
-                    $('#add_to_me').append(term)                        
-                    
-                
-
+                for (var k in dict_data) {
+                    sorted[sorted.length] = k;
                 }
 
+                sorted.sort();
+
+                var tempDict = {};
+
+                for(var g = 0; g < sorted.length; g++) {
+                    tempDict[sorted[g]] = dict_data[sorted[g]];
+                }
+
+                return tempDict
+
+            };
+
+            var term = '';
+
+            var prop = '';
+
+            var html = '<ul class= "treeview">';
+
+            const data = sortOnKeys(dict_data)
+
+            for (var n in data) { // Each top-level entry
+                html += '<li>' + n + '<ul>';
+
+                for (var i in data[n]) { // Each sub-entry
+
+                    if (i == 'description') {
+                    html += '<li>'  +  '<b>Description</b>  ' + ':  '+ data[n][i] + '</li>';}
+                    if (i == 'comment') {
+                    html += '<li>'  +  '<b>Comment</b>  ' + ':  '+ data[n][i] + '</li>';}
+                    if (i == 'sameAs') {
+                    html += '<li>'  +  '<b>Same As</b>  ' + ':  '+ data[n][i] + '</li>';}
+                    if (i == 'wasDerivedFrom') {
+                    html += '<li>'  +  '<b>Was Derived From</b>  ' + ':  '+ data[n][i] + '</li>';}
+                    if (i == 'associatedWith') {
+                    html += '<li>'  +  '<b>Associated With</b>  ' + '<ul>' + '<li>' + data[n][i][0] + '</li>' + '<li>' + data[n][i][1] + '</li>' + '</ul></li>' ;}
+                    if (i == 'ilxId') {
+                    html += '<li>'  +  '<b>Interlex</b>  ' + ':  '+  '<a href= "http://uri.interlex.org/'+data[n][i]+'">' + data[n][i] + '</a>' + '</li>'}
+                }
+                
+                html += '</ul></li>';
             }
+
+            html += '</ul>';
+
+
+            $('#test').append(html);
+
+            $('.treeview').treeView();
+
+
+            var style = ".treeview,";
+            style += ".treeview ul {list-style-type:none;overflow:hidden;}";
+            style += ".treeview li {text-indent:1%;margin-top:0.2em;padding:0.15em 0 0.5em 1.5em;line-height:22px;background-repeat:no-repeat;background-size:24px 24px;}";
+            style += ".treeview li.contains-items {background-image:url('js_lib/icons/arrow-left.png');}";
+            style += ".treeview li.contains-items {background-image:url('js_lib/icons/arrow-right.png');}";
+            style += ".treeview>li:hover {cursor:pointer; }";
+            style += ".treeview span:hover {background-color: rgba(246,246,246,0.7); }";
+
+
+            //$('#style').append(style);
+
+
+            $.each(data, function (key, value) {
+
+                console.log(key)
+
+                }); 
+
+            });
+
+
+            // Expands all the nodes of treeviews
+            //$('.treeview').treeView('expandAll');
+            // Collapses all the nodes of treeviews
+            $('.treeview').treeView('collapseAll');
 
         });
 
@@ -145,7 +176,14 @@
 
 
 
+<script>
+    
+</script>
+    
 
 
+
+
+    
 
 </html>
