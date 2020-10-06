@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIDM: BIDS Specification Terms</title>
+    
+    <!-- INCLUDING JQUERY-->
+
+    <script src= "https://code.jquery.com/jquery-3.5.1.js"></script> 
+    <script src="/Smoot-Collapsible-Tree-View-Plugin-with-jQuery-TreeViewJS/jquery.treeView.js"></script>
+    <link href="/Smoot-Collapsible-Tree-View-Plugin-with-jQuery-TreeViewJS/icons/arrow-left.png">
+    
+    <style></style>
+
+</head>
+
+
+
+
+<body>
+
+
+    <header>
+        <div class="inner">
+        <center><h1 class="title toc-ignore">BIDS Specification Terms</h1></center>
+        <center><h4>NIDM-Terms</h4><center>
+            <hr>
+        </div>
+    </header>
+
+
+    <h2><b>Terms:</b></h2>
+
+
+    <ul class="treeview">
+
+        <div id = "Add_t_me">    
+
+            <li id = "term"> term
+                <ul>
+                    <li id = "prop_1">subitem 1</li>
+                    <li id = "prop_2">subitem 2</li>
+                    <li id = "prop_3">subitem 3</li>
+                    <li id = "prop_4">subitem 4</li>
+                    <li id = "prop_5">subitem 5</li>
+                    <li id = "prop_6">subitem 6</li>
+                    <li id = "prop_7">subitem 7</li>
+                </ul>
+            </li>
+
+        </div>  
+
+    </ul>
+     
+
+        
+        <script>$('.treeview').treeView();</script>
+
+
+    
+
+        <style>.treeview,
+            .treeview ul {list-style-type:none;
+            overflow:hidden;
+            }
+            .treeview li {
+                text-indent:1%;
+                margin-top:0.2em;
+                padding:0.15em 0 0.5em 1.5em;
+                line-height:22px;
+                background-repeat:no-repeat;
+                background-size:24px 24px;
+            }
+            .treeview li.contains-items {background-image:url(
+                'Smoot-Collapsible-Tree-View-Plugin-with-jQuery-TreeViewJS/icons/arrow-left.png'); }
+
+            .treeview li.items-expanded {background-image:url(
+                'Smoot-Collapsible-Tree-View-Plugin-with-jQuery-TreeViewJS/icons/arrow-down.png'); }
+
+            .treeview>li:hover {cursor:pointer; }
+
+            .treeview span:hover {background-color: rgba(246,246,246,0.7
+            
+            ); } 
+
+        </style>
+
+        <script>
+            // Expands all the nodes of treeviews
+            //$('.treeview').treeView('expandAll');
+            // Collapses all the nodes of treeviews
+            $('.treeview').treeView('collapseAll');
+        </script>
+            
+
+    </body>
+
+
+
+    <script>
+        /// This function fetches data from the BIDS_Terms jsonld file
+    
+
+        fetch("https://raw.githubusercontent.com/nqueder/terms/master/terms/BIDS_Terms.jsonld")
+        .then(function(resp){
+            return resp.json(); 
+        })
+
+
+        .then(function (data) {
+                console.log(data);
+                var term = '';
+
+                var prop = '';
+
+                for (var key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        console.log(key)
+                        
+                        // display the term
+                        term += '<li id = "add_properties" >';
+
+                            
+
+                        // loop through the context file and grab the term properties
+                        for (var k in data[key]) {}
+
+                        term += '<li>';
+
+                    //Insert rows into html tree structure
+                    $('#add_to_me').append(term)                        
+                    
+                
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+
+
+
+
+
+</html>
