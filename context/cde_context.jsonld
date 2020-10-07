@@ -3,57 +3,66 @@
 		"@version": 1.1,
 		"rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
 		"xsd": "http://www.w3.org/2001/XMLSchema#",
-		"comment": "http://www.w3.org/2000/01/rdf-schema#comment",
-		"sourceVariable": "http://uri.interlex.org/ilx_0383246",
-		"label": "http://www.w3.org/1999/02/22-rdf-syntax-ns#/label",
+	    "nidm": "http://purl.org/nidash/nidm#",
+	    "skos": "https://www.w3.org/TR/2009/REC-skos-reference-20090818#",
+	    "owl": "http://www.w3.org/2002/07/owl#",
+	    "ilx": "http://uri.interlex.org/ilx_",
 		"schema": "http://schema.org/",
+	    "prov": "http://www.w3.org/ns/prov#",
+		"comment": "rdfs:comment",
+		"sourceVariable": "ilx:0383246",
+		"label": "rdfs:label",
 		"description": "http://purl.org/dc/terms/description",
 		"isAbout": {
-			"@id": "http://uri.interlex.org/ilx_0381385",
+			"@id": "ilx:0381385",
 			"@container": "@list"
 		},
-		"isPartOf": "http://uri.interlex.org/ilx_0112785",
+		"isPartOf": "ilx:0112785",
 		"sameAs": {
-			"@id": "https://www.w3.org/TR/2009/REC-skos-reference-20090818#sameAs",
+			"@id": "skos:sameAs",
 			"@type": "@id"
 		},
-		"closeMatch": "https://www.w3.org/TR/2009/REC-skos-reference-20090818#closeMatch",
+		"closeMatch": "skos:closeMatch",
 		"url": {
-			"@id": "http://schema.org/url",
+			"@id": "schema:url",
 			"@type": "@id"
 		},
-		"DataElement": "http://purl.org/nidash/nidm#DataElement",
-		"candidateTerms": "http://purl.org/nidash/nidm#candidateTerms",
-		"unitCode": "https://schema.org/unitCode",
-		"valueType": "http://uri.interlex.org/ilx_0382583",
-		"datumType": "http://www.ontobee.org/ontology/STATO?iri=http://purl.obolibrary.org/obo/IAO_0000109",
-		"measureOf": "http://uri.interlex.org/ilx_0381389",
-		"minValue": "https://schema.org/minValue",
-		"maxValue": "https://schema.org/maxValue",
-		"allowableValues": "http://uri.interlex.org/ilx_0770181",
+		"DataElement": "nidm:DataElement",
+		"candidateTerms": "nidm:candidateTerms",
+		"unitCode": "schema:unitCode",
+		"valueType": "ilx:0382583",
+		"datumType": "http://purl.obolibrary.org/obo/IAO_0000109",
+		"measureOf": "ilx:0381389",
+		"minValue": "schema:minValue",
+		"maxValue": "schema:maxValue",
+		"allowableValues": "ilx:0770181",
 		"wasDerivedFrom": {
-			"@id": "http://uri.interlex.org/ilx_0770182",
+			"@id": "prov:wasDerivedFrom",
 			"@type": "@id"
 		},
-		"ontologyConceptID": "http://uri.interlex.org/ilx_0770186",
+		"ontologyConceptID": "ilx:0770186",
 		"subtypeCDEs": {
-			"@id": "http://uri.interlex.org/ilx_0770183",
+			"@id": "ilx:0770183",
 			"@type": "@id"
 		},
 		"supertypeCDEs": {
-			"@id": "http://uri.interlex.org/ilx_0770184",
+			"@id": "ilx:0770184",
 			"@type": "@id"
 		},
-		"relatedConcepts": "http://uri.interlex.org/ilx_0770185",
-		"choices": "https://schema.org/itemListElement",
-		"derivative": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/terms/BIDS_Terms/Derivative.jsonld",
-		"citation": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/terms/BIDS_Terms/ReferencesAndLinks.jsonld",
-		"associatedWith": "http://uri.interlex.org/ilx_0739289",
+		"relatedConcepts": "ilx:0770185",
+		"choices": "schema:itemListElement",
+		"derivative": "ilx:0739337",
+		"citation": "schema:citation",
+		"associatedWith": "prov:wasAssociatedWith",
 		"responseOptions": {
-			"@id": "http://schema.repronim.org/responseOptions"
+			"@id": "rs:responseOptions"
 		},
-		"name": "http://schema.org/name",
-		"value": "http://schema.org/value",
-		"ilxId": "https://scicrunch.org/nidm-terms"
+		"name": "schema:name",
+		"value": "schema:value",
+		"ilxId": "https://scicrunch.org/nidm-terms",
+	    "bids": "http://nidash.org/bids#",
+	    "terms": {
+	      "@id": "prov:hasMember",
+	      "@container": ["@id"]},
 	}
 }
