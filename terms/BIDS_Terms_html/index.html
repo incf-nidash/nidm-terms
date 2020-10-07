@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIDM: BIDS Specification Terms</title>
+    
+    <!-- INCLUDING JQUERY-->
+
+    <script src= "https://code.jquery.com/jquery-3.5.1.js"></script> 
+    <script src="./js_lib/jquery.treeView.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsonld@1.0.0/dist/jsonld.min.js"></script>
+    
+    <style></style>
+
+</head>
+
+
+
+
+<body>
+
+
+    <header>
+        <div class="inner">
+        <center><h1 class="title toc-ignore">BIDS Specification Terms</h1></center>
+        <center><h4>NIDM-Terms</h4><center>
+            <hr>
+        </div>
+    </header>
+
+    <h2><b>Terms:</b></h2>
+
+
+    <div id="test">
+            
+
+
+    </div>
+
+    <style id = "style">.treeview,
+        .treeview ul {list-style-type:none;
+        overflow:hidden;
+        }
+        .treeview li {
+            text-indent:1%;
+            margin-top:0.2em;
+            padding:0.15em 0 0.5em 1.5em;
+            line-height:22px;
+            background-repeat:no-repeat;
+            background-size:24px 24px;
+        }
+        .treeview li.contains-items {background-image:url(
+            'js_lib/icons/arrow-left.png'); }
+    
+        .treeview li.items-expanded {background-image:url(
+            'js_lib/icons/arrow-down.png'); }
+    
+        .treeview>li:hover {cursor:pointer; }
+    
+        .treeview span:hover {background-color: rgba(246,246,246,0.7
+        
+        ); } 
+    
+    </style>
+     
+
+    </body>
+
+
+
+    <script>
+        /// This function fetches data from the BIDS_Terms jsonld file
+    
+        $(document).ready(function(event) { 
+
+        fetch("https://raw.githubusercontent.com/nqueder/terms/master/terms/BIDS_Terms.jsonld")
+        .then(function(resp){
+            return resp.json(); 
+        })
+
+
+        .then(function (dict_data) {
+            console.log(dict_data);
+
+            function sortOnKeys(dict_data) {
+                var sorted = [];
+
+                for (var k in dict_data) {
+                    sorted[sorted.length] = k;
+                }
+
+                sorted.sort();
+
+                var tempDict = {};
+
+                for(var g = 0; g < sorted.length; g++) {
+                    tempDict[sorted[g]] = dict_data[sorted[g]];
+                }
+
+                return tempDict
+
+            };
+
+            var term = '';
+
+            var prop = '';
+
+            var html = '<ul class= "treeview">';
+
+            const data = sortOnKeys(dict_data)
+
+            for (var n in data) { // Each top-level entry
+                html += '<li>' + n + '<ul>';
+
+                for (var i in data[n]) { // Each sub-entry
+
+                    if (i == 'description') {
+                    html += '<li>'  +  '<b>Description</b>  ' + ':  '+ data[n][i] + '</li>';}
+                    if (i == 'comment') {
+                    html += '<li>'  +  '<b>Comment</b>  ' + ':  '+ data[n][i] + '</li>';}
+                    if (i == 'sameAs') {
+                    html += '<li>'  +  '<b>Same As</b>  ' + ':  '+ data[n][i] + '</li>';}
+                    if (i == 'wasDerivedFrom') {
+                    html += '<li>'  +  '<b>Was Derived From</b>  ' + ':  '+ data[n][i] + '</li>';}
+                    if (i == 'associatedWith') {
+                    html += '<li>'  +  '<b>Associated With</b>  ' + '<ul>' + '<li>' + data[n][i][0] + '</li>' + '<li>' + data[n][i][1] + '</li>' + '</ul></li>' ;}
+                    if (i == 'ilxId') {
+                    html += '<li>'  +  '<b>Interlex</b>  ' + ':  '+  '<a href= "http://uri.interlex.org/'+data[n][i]+'">' + data[n][i] + '</a>' + '</li>'}
+                }
+                
+                html += '</ul></li>';
+            }
+
+            html += '</ul>';
+
+
+            $('#test').append(html);
+
+            $('.treeview').treeView();
+
+
+            var style = ".treeview,";
+            style += ".treeview ul {list-style-type:none;overflow:hidden;}";
+            style += ".treeview li {text-indent:1%;margin-top:0.2em;padding:0.15em 0 0.5em 1.5em;line-height:22px;background-repeat:no-repeat;background-size:24px 24px;}";
+            style += ".treeview li.contains-items {background-image:url('js_lib/icons/arrow-left.png');}";
+            style += ".treeview li.contains-items {background-image:url('js_lib/icons/arrow-right.png');}";
+            style += ".treeview>li:hover {cursor:pointer; }";
+            style += ".treeview span:hover {background-color: rgba(246,246,246,0.7); }";
+
+
+            //$('#style').append(style);
+
+
+            $.each(data, function (key, value) {
+
+                console.log(key)
+
+                }); 
+
+            });
+
+
+            // Expands all the nodes of treeviews
+            //$('.treeview').treeView('expandAll');
+            // Collapses all the nodes of treeviews
+            $('.treeview').treeView('collapseAll');
+
+        });
+
+    </script>
+
+
+
+<script>
+    
+</script>
+    
+
+
+
+
+    
+
+</html>
