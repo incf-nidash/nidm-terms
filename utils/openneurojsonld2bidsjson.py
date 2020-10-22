@@ -42,15 +42,20 @@ def isabout_parser(part_dict,bids_dict,term):
         bids_dict[term]['isAbout']['label'] = part_dict[term]['isAbout']['label']
 
     if isinstance(part_dict[term]['isAbout'], list):
-        temp = {}
-        bids_dict[term]['isAbout'] = []
+        temp_list = []
+
 
         for l in part_dict[term]['isAbout']:
-            temp['url'] = l['@id']
-            temp['label'] = l['label']
+            temp_dict = {}
+            for k, v in l.items():
+                if k == '@id':
+                    temp_dict['url'] = l[k]
+                if k == 'label':
+                    temp_dict['label'] = l[k]
 
+            temp_list.append(temp_dict)
 
-            bids_dict[term]['isAbout'].append(temp)
+        bids_dict[term]['isAbout'] = temp_list
 
 
 
