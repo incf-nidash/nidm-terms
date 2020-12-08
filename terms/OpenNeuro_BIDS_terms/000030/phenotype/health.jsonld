@@ -1,0 +1,591 @@
+{
+  "bmi": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "BMI calculated using formula based on pounds",
+    "ilx:0381385": {
+      "@id": "http://uri.interlex.org/ilx_0263110",
+      "rdfs:label": "bmi (physical examination)"
+    },
+    "ilx:0383246": "bmi",
+    "ilx:0739337": true,
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:float"
+    }
+  },
+  "ht": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "Height in inches",
+    "ilx:0381385": {
+      "@id": "http://uri.interlex.org/ilx_0104922",
+      "rdfs:label": "height"
+    },
+    "ilx:0383246": "ht",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:float",
+      "schema:maxValue": 90,
+      "schema:minValue": 1
+    }
+  },
+  "ht_ft": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "1. Height: FEET",
+    "ilx:0381385": {
+      "@id": "http://uri.interlex.org/ilx_0104922",
+      "rdfs:label": "height"
+    },
+    "ilx:0383246": "ht_ft",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:float",
+      "schema:maxValue": 9,
+      "schema:minValue": 1
+    }
+  },
+  "ht_in": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "1. Height: INCH",
+    "ilx:0381385": {
+      "@id": "http://uri.interlex.org/ilx_0104922",
+      "rdfs:label": "height"
+    },
+    "ilx:0383246": "ht_in",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:float",
+      "schema:maxValue": 11,
+      "schema:minValue": 0
+    }
+  },
+  "la2khealth_score": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "Sum of Items 1-21 for Total Health Score.",
+    "ilx:0383246": "la2khealth_score",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer"
+    }
+  },
+  "la2khealth1": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "1. Heart or Artery disease including heart attack, stroke, aneurysm, arteriosclerosis, chest pain, rheumatic, fever or heart murmur\"",
+    "ilx:0383246": "la2khealth1",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth10": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "10. Asthma, emphysema, tuberculosis, pleurisy or other diseases of the lungs\"",
+    "ilx:0383246": "la2khealth10",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth11": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "11. Paralysis, epilepsy, M.S. or other neuromuscular disorder\"",
+    "ilx:0383246": "la2khealth11",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth12": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "12. Bleeding or blood disorders\"",
+    "ilx:0383246": "la2khealth12",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth13": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "13. Are you now pregnant\"",
+    "ilx:0383246": "la2khealth13",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth14": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "14. Any other medical condition that has not been disclosed above\"",
+    "ilx:0383246": "la2khealth14",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth14s": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "14s. If so, describe in detail here.",
+    "ilx:0383246": "la2khealth14s",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:string"
+    }
+  },
+  "la2khealth15": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "15. Have you smoked in the last 2 year\"",
+    "ilx:0383246": "la2khealth15",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth16": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "16. Are you still smoking\"",
+    "ilx:0383246": "la2khealth16",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:float",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth17": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "17. Are you taking any medication (except antibiotics or contraceptives)that require a prescription by a physician\"",
+    "ilx:0383246": "la2khealth17",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:float",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth18": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "18. Have you gained or lose more than 20 pounds in the last year\"",
+    "ilx:0383246": "la2khealth18",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth18_gain": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "Weight Gain (Lbs.)",
+    "ilx:0383246": "la2khealth18_gain",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:float"
+    }
+  },
+  "la2khealth18_lost": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "Weight Loss (Lbs.)",
+    "ilx:0383246": "la2khealth18_lost",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:float"
+    }
+  },
+  "la2khealth19": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "19. Are you actively at work at least 20 hours per week\"",
+    "ilx:0383246": "la2khealth19",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth2": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "2. Hypertension\"",
+    "ilx:0383246": "la2khealth2",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth20": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "20. Have you been admitted to a hospital or had surgery in the past five(5) years\"",
+    "ilx:0383246": "la2khealth20",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth21": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "21. Have you been told that it may be necessary to be admitted to the hospital or have surgery in the future\"",
+    "ilx:0383246": "la2khealth21",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth3": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "3. Cancer, tumor or other malignancy\"",
+    "ilx:0383246": "la2khealth3",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth4": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "4. Diseases of the kidney, liver, gall bladder, pancreas, or male/female organs including venereal disease\"",
+    "ilx:0383246": "la2khealth4",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth5": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "5. Arthritis, back pain, rheumatic fever or musculoskeletal/joint problems\"",
+    "ilx:0383246": "la2khealth5",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth6": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "6. AIDS, AIDS-related complex or other immune deficiency disorders, infections or chronic infection problems\"",
+    "ilx:0383246": "la2khealth6",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth7": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "7. Alcohol or substance abuse, mental/nervous disorders\"",
+    "ilx:0383246": "la2khealth7",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth8": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "8. Ulcer, colitis, difficulty swallowing, stomach problems, hernia or rectal problems\"",
+    "ilx:0383246": "la2khealth8",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "la2khealth9": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "9. Diabetes, cystic fibrosis, albumin or sugar in the urine or other endocrine problems\"",
+    "ilx:0383246": "la2khealth9",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:integer",
+      "schema:itemListElement": [
+        {
+          "schema:name": "No",
+          "schema:value": "0"
+        },
+        {
+          "schema:name": "Yes",
+          "schema:value": "1"
+        }
+      ],
+      "schema:maxValue": "1",
+      "schema:minValue": "0"
+    }
+  },
+  "wt": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "1. Weight (Pound)",
+    "ilx:0381385": {
+      "@id": "http://uri.interlex.org/ilx_0738277",
+      "rdfs:label": "weight (lbs)"
+    },
+    "ilx:0383246": "wt",
+    "prov:wasAssociatedWith": "NIDM",
+    "responseOptions": {
+      "ilx:0382583": "xsd:float",
+      "schema:maxValue": 450,
+      "schema:minValue": 0
+    }
+  },
+  "MeasurementToolMetadata": {
+    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
+    "@type": "nidm:DataElement",
+    "description": "Health Questionnaire",
+    "ilx:0383246": "MeasurementToolMetadata",
+    "prov:wasAssociatedWith": "NIDM",
+    "schema:url": ""
+  }
+}
