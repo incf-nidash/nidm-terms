@@ -1,15 +1,10 @@
 import os,sys
 from argparse import ArgumentParser
-import pandas as pd
 from pyld import jsonld
 from os.path import join
 import json
-import shutil
 import tempfile
 import urllib.request as ur
-from urllib.parse import urlparse
-import numpy as np
-from rdflib.namespace import split_uri
 import requests
 
 
@@ -20,7 +15,6 @@ def main(argv):
 
     parser.add_argument('-input', dest='input', required=True, help="single bids jsonld file")
     parser.add_argument('-output', dest='output_dir', required=True, help="output directory ")
-    parser.add_argument('-context', dest='cnt', required=True, help="path to the context file")
 
     args = parser.parse_args()
 
@@ -86,8 +80,8 @@ def main(argv):
                 temp[context['@context']['label']] = value
             if key == 'comment':
                 temp[context['@context']['comment']] = value
-            if key == 'sameAS':
-                temp[context['@context']['sameAs']] = value
+            if key == 'sameAs':
+                temp[context['@context']['sameAs']['@id']] = value
             if key == 'wasDerivedFrom':
                 temp[context['@context']['wasDerivedFrom']['@id']] = value
             if key == 'ilxId':
@@ -96,6 +90,8 @@ def main(argv):
                 temp[context['@context']['candidateTerms']] = value
             if key == 'supertypeCDEs':
                 temp[context['@context']['supertypeCDEs']['@id']] = value
+            if key == 'subtypeCDEs':
+                temp[context['@context']['subtypeCDEs']['@id']] = value
             if key == 'url':
                 temp[context['@context']['url']['@id']] = value
             if key == 'closeMatch':
@@ -126,9 +122,8 @@ def main(argv):
 
     print(compacted)
 
-    print('')
 
-    with open ('TEST_BIDS_Terms.jsonld','w+') as outfile:
+    with open (join(output,'BIDS_Terms.jsonld'),'w+') as outfile:
         json.dump(compacted,outfile,indent=2)
 
 
