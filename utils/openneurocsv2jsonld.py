@@ -510,7 +510,7 @@ def jsonld_dict(d,row,context,args):
     # DBK hacking isAbout which in compacted form still uses the URL as the key
     # so simple hack, which is still valid json-ld, is to replace the key
     # with the string isAbout
-    obj_nm,obj_term = split_uri(context['@context']['isAbout']['@id'])
+    obj_nm,obj_term = split_uri('http://uri.interlex.org/ilx_0381385')
 
     if 'ilx_id' + ':' + obj_term in compacted.keys():
         compacted['isAbout'] = compacted['ilx_id' + ':' + obj_term]
@@ -852,6 +852,8 @@ def main(argv):
         for (i,row) in dataset.iterrows():
             print('starting iteration...')
             #print('processing term: %s'%row['sourceVariable'])
+
+            print(i,row)
 
             #loc data frame only at terms that are not phenotype terms
             par_ter = dataset.loc[dataset['Phenotype Term?'] == 'NO']

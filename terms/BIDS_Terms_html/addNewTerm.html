@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+    <head>
+
+        <title>NIDM-Terms: Add Terms</title>
+
+        <script src= "https://code.jquery.com/jquery-3.5.1.js"></script> 
+        <script src="./js_lib/jquery.treeView.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jsonld@1.0.0/dist/jsonld.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    </head>
+
+
+    <body>
+
+        <div class="about">
+            <form action = "https://github.com/NIDM-Terms/terms" target="_blank">
+                <button class= "github">Github <i class="fa fa-github" style="font-size:17px"></i>
+                </button>
+            </form>
+            <form action = "https://scicrunch.org/nidm-terms/about/project" target="_blank">
+               <button  class= "website">NIDM Website</button>
+            </form>
+            <form action = "http://nidm.nidash.org/" target="_blank">
+                <button class = "nidmSpecs"> NIDM Specs</button>
+            </form>
+            <form action ="https://github.com/incf-nidash/PyNIDM" target= "_blank" >
+                <button class= "pyNidm"> PyNIDM</a>
+            </form>
+        </div>
+    
+    
+        <header>
+            <div class= "logo">
+                <img src="img/nidm-terms_576163.png" width= "85" height="85">
+            </div>
+            <div class="inner">
+                <h>NIDM-Terms</h>
+            </div>
+            <div class="bidsTitle">
+                <h> BIDS Specification Terms</h>
+                <div class= "search-box">
+                    <input id= "searchBar" class="search_bar" type="text" name="box" placeholder = "Search BIDS Terms..."><i id= "searchIcon" class="fa fa-search" style="font-size:24px"></i>
+                </div>
+            </div>
+        </header>
+    
+        <div>
+            <nav>
+                <ul class= "menuUl"><center>
+    
+                    <li class= "menuLi">
+                        <form action= "index.html">
+                            <button class = "available_terms" type="submit">Available Terms</button>
+                        </form>
+                    </li>
+                
+                    <li class= "menuLi">
+                        <form action= "addNewTerm.html">
+                            <button class = "add_terms" type="submit">Add New Terms</button>
+                        </form>
+                    </li>
+    
+                    <li class= "menuLi">
+                        <form action="createTable.html">
+                            <button class = "createTable">Create MD Table</button>
+                        </form>
+                    </li>
+    
+                    <li class= "menuLi">
+                        <form action="info.html">
+                            <button class = "resources">About</button>
+                        </form> 
+                    </li>
+    
+                    <center><hr id="menuLine"></center>
+    
+                </center></ul>
+    
+            </nav>
+        </div>
+
+        <center><div class="container">
+
+            <div class="headerBrdr"><center>
+                STEP 1: fill out the following information
+            </center></div>
+
+
+            <form class="inputs">
+                
+                <h4>Label</h4>
+                <input id= "label" class="TermInput" type="text" name="label" placeholder = "Term in cammelCase (e.g. durationTime, author)">
+                
+                <h4>Description</h4>
+                <input id= "des" class="TermInput" type="text" name="description" placeholder = "Term description">
+            
+
+                <h4>Comment</h4>
+                <input id= "comment" class="TermInput" type="text" name="comment" placeholder = "Additional comments">
+            
+
+                <h4>URL</h4>
+                <input id="url" class="TermInput" type="text" name="url" placeholder = "Term URL">
+
+                <h4>Unit</h4>
+                <input id="unit" class="TermInput" type="text" name="unit" placeholder = "Term unit">
+
+                
+                <label><h4>Value Type</h4></label>
+
+                    <select name="valueType" id="VT" class="VT">
+                        <option value="select">--select--</option>
+                        <option value="string">string</option>
+                        <option value="boolean">boolean</option>
+                        <option value="integer">integer</option>
+                        <option value="float">float</option>
+                        <option value="double">double</option>
+                        <option value="duration">duration</option>
+                        <option value="dateTime">dateTime</option>
+                        <option value="time">time</option>
+                        <option value="date">date</option>
+                        <option value="anyURI">anyURI</option>
+                        <option value="complexType">complexType</option>
+                    </select>
+
+                
+                <h4>Is the term categorical?</h4>
+
+                <div id="wrapper">
+                    <input onclick= "resOptions()" type="radio" id= "yes" name="choice" value="yes"> Yes
+                    <input type="radio" id= "no" name="choice" value="no"> No
+
+                    <br><br>
+
+                </div>
+
+            </form>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class= "btn">
+
+                    <div>
+                        <button onclick= "submitTerm()" class= "btn1"> Save & Continue </button>
+                    </div>
+
+                    <br><br>
+                
+                    <button class= "btn2"> Save & Add Another Term </button>
+                
+            </div>
+
+
+        </div></center>
+
+
+        <center><div class="container"><center>
+
+            <div class="headerBrdr">
+                STEP 2: enter your Github API Key 
+                <br><br>
+            </div>
+
+            <div>
+                
+            </div>
+
+
+            <form class="inputs">
+                
+                <input class="git" type="text"  placeholder="GitHub API Token">
+            
+            </form>
+
+
+            <button class= "btn1"> Save & Continue </button>
+            
+                
+            </p>
+            </div>
+                
+
+        </div></center>
+
+
+        <center><div class="container"><center>
+
+            <div class="headerBrdr">
+                STEP 3: enter your Github login credentials and submit
+                <br><br>
+                <i class="fa fa-github" style="font-size:104px"></i>
+            </div>
+
+
+            <form class="inputs">
+                
+                <input class="git" type="text"  placeholder="Username">
+                <br><br><br>
+                <input class="git" type="password"  placeholder="Password">
+            
+            </form>
+
+
+            <button class= "btn1"> Submit Pull Request </button>
+            
+            
+
+        </div></center>
+
+
+    </body>
+
+    <footer>
+        <hr id = "footer">
+        <p><center>This project was supported by the National Institutes of Mental Health (NIMH) grant 1RF1MH120021</center></p>
+    </footer>
+
+    <style>
+        .about{
+            color: #52575e;
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .github{
+            float: right;
+            padding: 20px;
+            margin-right: 10px;
+            margin-top: 56px;
+            color: #52575e;
+            font-size: 14px;
+            width: 130px;
+            height:50px;
+        }
+
+        .github:hover{
+            color: #32e17c;
+            transition: 0.1s;
+        }
+        
+        .website{
+            float: right;
+            margin-top: 61px;
+            color: #52575e;
+            font-size: 14px;
+            width: 130px;
+            height:50px;
+        }
+
+        .website:hover{
+            color: #32e17c;
+            transition: 0.1s;
+        }
+
+        .nidmSpecs{
+            float: right;
+            margin-top: 61px;
+            color: #52575e;
+            font-size: 14px;
+            width: 130px;
+            height:50px;
+        }
+
+        .nidmSpecs:hover{
+            color: #32e17c;
+            transition: 0.1s;
+        }
+
+        .pyNidm{
+            float: right;
+            margin-top: 61px;
+            color: #52575e;
+            font-size: 14px;
+            width: 130px;
+            height:50px;
+        }
+
+        .pyNidm:hover{
+            color: #32e17c;
+            transition: 0.1s;
+        }
+
+        .inner{
+            margin: 40px;
+            padding-top: 20px;
+            padding-left: 124px;
+            font-weight:lighter;
+            font-size: 30px;
+            font-family: serif;
+            text-transform: uppercase;
+            color: #a6a6a6;
+        }
+        .logo{
+            position: absolute;
+            top: 30px;
+            left: 60px;
+        }
+
+        header{
+            width: 100%;
+
+        }
+
+        .bidsTitle{
+            color: white;
+            background-size: 100px;
+            background-color: #52575e;
+            font-size: 40px;
+            text-indent: 100px;
+            padding-top: 20px;
+            padding-left: 60px;
+            padding-bottom: 20px;
+        }
+
+        .search_bar{
+            float: right;
+            margin-top: -47px;
+            margin-right: 50px;
+            border: 2px solid #32e17c;
+            height: 45px;
+            width: 325px;
+            border-radius: 5px;
+            background-color: #fefcfb;
+            font-size: 18px;
+            text-indent: 44px;
+            outline: none;
+        } 
+
+        #searchIcon{
+        color: #828486;
+        float: right;
+        margin-top: -35px;
+        margin-right: -38px;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+
+        .menuUl{
+            width: auto;
+            margin-top: 70px;
+        }
+
+        .menuLi{
+            display: inline-block;
+            padding: 20px 10px;
+        }
+
+        button{
+            width: 250px;
+            height: 60px;
+            background-color: transparent;
+            border: transparent;
+            border-radius: 0px;
+            font-size: 18px;
+            font-weight:bold;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .available_terms{
+            color: #EA2027;
+            
+        }
+        .available_terms:hover{
+            border: 2px solid #EA2027;
+            border-radius: 5px;
+        }
+
+        .add_terms{
+            color: #EE5A24;
+            border: 2px solid #EE5A24;
+            border-radius: 5px;
+        }
+        
+        .createTable{
+            color: #F79F1F;
+        }
+        .createTable:hover{
+            border: 2px solid #F79F1F;
+            border-radius: 5px;
+
+        }
+
+        .resources{
+            color: #FFC312;
+        }
+        .resources:hover{
+            border: 2px solid #FFC312;
+            border-radius: 5px;
+
+        }
+
+        #menuLine{
+            height: 10px;
+            background-image: linear-gradient(
+                to right, 
+                #EA2027, 
+                #EE5A24, 
+                #F79F1F, 
+                #FFC312
+                );
+            margin-top: -23px;
+            width: 1200px;
+        }
+
+        .container{
+            width: 875px;
+            height: 170%;
+            text-align: left;
+            font-family:Arial, Helvetica, sans-serif;
+            border: 1px solid #b3b3b3 ;
+            border-radius: 0px;
+            padding: 80px;
+            padding-top: 80px;
+            padding-right: -10px;
+            margin-top: 50px;
+            margin-bottom: 100px;
+            background-color: #F7F7F7 ;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+        }
+
+        .headerBrdr{
+            font-size: 30px;
+            text-indent: 34px;
+            color: #7e7e7e;
+            font-weight: bold;
+        }
+
+        .git{
+            height: 45px;
+            width: 40%;
+            border-radius: 5px;
+            border-color: #7e7e7e;
+            padding: 0px 20px;
+            background-color: #fdfdfd;
+            font-size: 18px;
+            text-indent: 20px;
+            outline: none;
+            font-size: 16px;
+            margin-top: -25px;
+            margin-bottom: 30px;
+        }
+    
+        .TermInput{
+            height: 45px;
+            width: 90%;
+            border-radius: 5px;
+            border-color: #7e7e7e;
+            padding: 0px 20px;
+            background-color: #fdfdfd;
+            font-size: 18px;
+            text-indent: 20px;
+            outline: none;
+            font-size: 16px;
+            margin-top: -25px;
+            margin-bottom: 30px;
+
+        }
+
+        .inputs{
+            padding-top: 50px;
+            padding-left: 75px;
+        }
+
+        .subTermInput{
+            height: 35px;
+            width: 30%;
+            border-radius: 5px;
+            border-color: #7e7e7e;
+            padding: 0px 20px;
+            background-color: #fdfdfd;
+            font-size: 18px;
+            text-indent: 10px;
+            outline: none;
+            font-size: 16px;
+            margin-left: 35px;
+            margin-top: 5px;
+            margin-bottom: 30px;
+        }
+
+        .VT{
+            height: 53px;
+            width: 95.5%;
+            border-radius: 5px;
+            border-color: #7e7e7e;
+            border: 2px solid #696969;
+            background-color: #fdfdfd;
+            font-size: 18px;
+            text-indent: 20px;
+            outline: none;
+            font-size: 16px;
+            margin-top: -25px;
+            margin-bottom: 30px;
+            
+            background-color: #f9f9f9;
+            min-width: 160px;
+            padding: 12px 16px;
+        }
+
+        #name{
+            float: left;
+            margin-left: 30px;
+        }
+
+        #value{
+            float:right;
+            margin-left: 40px;
+        }
+        
+
+        #wrapper{
+            text-indent: 0px;
+            border: 2px solid #7e7e7e;
+            border-radius: 5px;
+            background-color: #fdfdfd;
+            width: 92%;
+            padding-top: 20px;
+            padding-left: 30px;
+            padding-bottom: 8%;
+        }
+
+        .btn{
+            margin-top: -30px;
+        }
+
+        .btn1{
+            float: right;
+            cursor: pointer;
+            width: 200px;
+            height: 50px;
+            background-color: #fefcfb;
+            border: 2px solid #EE5A24;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #EE5A24;
+        }
+
+        .btn1:active {
+            background: #e5e5e5;
+            -webkit-box-shadow: inset 0px 0px 5px #96161a;
+                -moz-box-shadow: inset 0px 0px 5px #96161a;
+                    box-shadow: inset 0px 0px 5px #96161a;
+            outline: none;
+
+        }
+        .btn1:hover{
+            color:#fefcfb;
+            background-image: linear-gradient(
+            to right, 
+            #EE5A24, 
+            #F79F1F
+            );
+            border: none;
+        }
+
+        .btn2{
+            float: left;
+            cursor: pointer;
+            width: 285px;
+            height: 50px;
+            background-color: #fefcfb;
+            border: 2px solid #EE5A24;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #EE5A24;
+            margin-top: -36px;
+        }
+
+        .btn2:active {
+            background: #e5e5e5;
+            -webkit-box-shadow: inset 0px 0px 5px #791316;
+                -moz-box-shadow: inset 0px 0px 5px #791316;
+                    box-shadow: inset 0px 0px 5px #791316;
+            outline: none;
+        }
+
+        .btn2:hover{
+            color:#fefcfb;
+            background-image: linear-gradient(
+            to right, 
+            #EE5A24, 
+            #F79F1F
+            );
+            border: none;
+        }
+
+        .btn3{
+            float: right;
+            cursor: pointer;
+            width: 120px;
+            height: 30px;
+            background-color: #e7e7e7;
+            border: 1px solid #52575e;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #52575e;
+            margin-top: 0px;
+            margin-right: 60px;
+        }
+        .btn3:hover{
+            border: 2px solid #52575e;
+        }
+        .btn3:active {
+            background: #e5e5e5;
+        }
+
+        h4{
+            color: #52575e;
+            font-weight:bold;
+            font-size: 20px;
+            text-indent: 20px;
+        }
+
+        h5{
+            color: #52575e;
+            font-weight:bold;
+            font-size: 16px;
+            text-indent: 30px; 
+            display: inline;
+        }
+
+        #footer{
+            height: 3px;
+            background-image: linear-gradient(
+                to right, 
+                #EA2027, 
+                #EE5A24, 
+                #F79F1F, 
+                #FFC312
+                );
+            width: 100%;
+        }
+
+        
+
+    </style>
+
+    <script>
+
+        var responseOption = {};
+
+
+        // This functions writes response Options to the html if the user selects yes
+        function resOptions(){
+            html = '<br>';
+
+            html += '<h5>Choice 1:</h5>';
+            html += '<input id="n" id="name" class="subTermInput" type="text" name="name" placeholder = "Name">';
+            html += '<input id="v" id="value" class="subTermInput" type="text" name="value" placeholder = "Value">';
+            html += '<br>'
+            html += '<h5>Choice 2:</h5> ';
+            html += '<input id="n1" id="name" class="subTermInput" type="text" name="name" placeholder = "Name">';
+            html += '<input id="v1" id="value" class="subTermInput" type="text" name="value" placeholder = "Value">';
+            html += '<button class= "btn3"> Add Choice </button>';
+
+            $('#wrapper').append(html);
+
+            console.log('this is working')
+
+        }
+
+        function submitTerm(){
+
+            //empty dicttionary 
+            var dict = {};
+            var termDict = {};
+            
+            // varable to assoctae with every term
+            var associatedWith = ["BIDS","NIDM"];
+
+            
+            $(document).ready(function(event) { 
+                // fetch the context file and create a jsonld
+                fetch("https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld")
+                .then(function(resp){
+                    return resp.json(); 
+                })
+
+                .then( async function(context){
+
+                    dict['@context'] = 'https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld'
+
+                    dict['terms'] = []
+                
+                    termDict[context["@context"]["label"]] = document.getElementById("label").value;
+                    if(document.getElementById("des").value.length != 0){
+                        termDict[context["@context"]["description"]] = document.getElementById("des").value;
+                    }
+                    if(document.getElementById("comment").value.length != 0){
+                        termDict[context["@context"]["comment"]] = document.getElementById("comment").value;
+                    }
+                    if(document.getElementById("url").value.length != 0){
+                        termDict[context["@context"]["url"]["@id"]] = document.getElementById("url").value;
+                    }
+                    if(document.getElementById("unit").value.length != 0){
+                        responseOption[context["@context"]["unitCode"]] = document.getElementById("unit").value;
+                    }
+                    if(document.getElementById("VT").value.length != 0 & document.getElementById("VT").value != '--select--'){
+                        responseOption[context["@context"]["valueType"]] = document.getElementById("VT").value;
+                    }
+                    if(document.getElementById('yes').checked){
+                        resOp = resOptions()    
+                    }
+
+                    if(Object.keys(responseOption).length != 0){
+                        console.log(responseOption)
+                    }
+
+
+                    termDict[context["@context"]["associatedWith"]] = associatedWith;
+
+                    dict['terms'].push(termDict)
+
+
+
+                    const compacted = await jsonld.compact(dict, context);
+                    console.log(compacted)
+
+                    
+
+
+                });
+
+                
+
+            });
+
+        };
+
+
+        
+    </script>
+
+
+    
+</html>

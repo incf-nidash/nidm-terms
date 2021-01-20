@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NIDM: BIDS Specification Terms</title>
+        
+        
+        <title>NIDM: BIDS Specification Terms</title>
+        <script src= "https://code.jquery.com/jquery-3.5.1.js"></script> 
+        <script src="./js_lib/jquery.treeView.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jsonld@1.0.0/dist/jsonld.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+
+    </head>
+
+
+
+
+    <body>
+
+        <div class="about">
+            <form action = "https://github.com/NIDM-Terms/terms" target="_blank">
+                <button class= "github">Github <i class="fa fa-github" style="font-size:17px"></i>
+                </button>
+            </form>
+            <form action = "https://scicrunch.org/nidm-terms/about/project" target="_blank">
+               <button  class= "website">NIDM Website</button>
+            </form>
+            <form action = "http://nidm.nidash.org/" target="_blank">
+                <button class = "nidmSpecs"> NIDM Specs</button>
+            </form>
+            <form action ="https://github.com/incf-nidash/PyNIDM" target= "_blank" >
+                <button class= "pyNidm"> PyNIDM</a>
+            </form>
+        </div>
+
+        <header>
+            <div class= "logo">
+                <img src="img/nidm-terms_576163.png" width= "85" height="85">
+            </div>
+            <div class="inner">
+                <h>NIDM-Terms</h>
+            </div>
+            <div class="bidsTitle">
+                <h> BIDS Specification Terms</h>
+                <div class= "search-box">
+                    <input id= "searchBar" class="search_bar" type="text" name="box" placeholder = "Search BIDS Terms..."><i id= "searchIcon" class="fa fa-search" style="font-size:24px"></i>
+                </div>
+            </div>
+        </header>
+
+
+
+        <div>
+            <nav>
+                <ul class= "menuUl"><center>
+
+                    <li class= "menuLi">
+                        <form action= "index.html">
+                            <button class = "available_terms" type="submit">Available Terms</button>
+                        </form>
+                    </li>
+                
+                    <li class= "menuLi">
+                        <form action= "addNewTerm.html">
+                            <button class = "add_terms" type="submit">Add New Terms</button>
+                        </form>
+                    </li>
+
+                    <li class= "menuLi">
+                        <form action="createTable.html">
+                            <button class = "createTable">Create MD Table</button>
+                        </form>
+                    </li>
+
+                    <li class= "menuLi">
+                        <form action="info.html">
+                            <button class = "resources">About</button>
+                        </form> 
+                    </li>
+
+                    <center><hr id="menuLine"></center>
+
+                </center></ul>
+
+            </nav>
+        </div>
+
+
+
+        <center><div class="container">
+
+            <div>
+                <div class = "headerBrdr">Select term properties:</div>
+                <br><br>
+
+                <form class = "properties">
+
+                    <input type= "checkbox" id= "associatedWith" class = "prop" name = "prop" value="associatedWith">
+                    <label for = "associatedWith"> Associated With </label><br><br>
+                    <input type= "checkbox" id= "candidateTerms" class = "prop" name = "prop" value="candidateTerms">
+                    <label for = "candidateTerms"> Candidate Terms </label><br><br>
+                    <input type= "checkbox" id= "comment" class = "prop" name = "prop" value="comment">
+                    <label for = "comment"> Comment </label><br><br>
+                    <input type= "checkbox" id= "description" class = "prop" name = "prop" value="description">
+                    <label for = "description"> Description </label><br><br>
+                    <input type= "checkbox" id= "ilxId" class = "prop" name = "prop" value="ilxId">
+                    <label for = "ilxId"> Interlex ID </label><br><br>
+                    <input type= "checkbox" id= "label" class = "prop" name = "prop" value="label">
+                    <label for = "label"> Label </label><br><br>
+                    <input type= "checkbox" id= "sameAs" class = "prop" name = "prop" value="sameAs">
+                    <label for = "sameAs"> Same AS </label><br><br>
+                    <input type= "checkbox" id= "supertypeCDEs" class = "prop" name = "prop" value="supertypeCDEs">
+                    <label for = "supertypeCDEs"> Super Type CDEs </label><br><br>
+                    <input type= "checkbox" id= "unit" class = "prop" name = "prop" value="unit">
+                    <label for = "unit"> Unit </label><br><br>
+                    <input type= "checkbox" id= "url" class = "prop" name = "prop" value="url">
+                    <label for = "url"> URL </label><br><br>
+                    <input type= "checkbox" id= "wasDerivedFrom" class = "prop" name = "prop" value="wasDerivedFrom">
+                    <label for = "wasDerivedFrom"> Was Derived From </label><br><br>
+
+
+                    <button class= "btn" onclick = "getValue(this.form)"> Save & Continue </button>
+                    
+
+                </form>
+                
+                <br><br><br><br>
+                <hr>
+                <br><br>
+
+
+                <div class = "headerBrdr">
+                    Select BIDS terms: 
+
+                    <br><br>
+                </div>
+                
+                <form class = "terms" id = "terms">
+
+                    
+
+                </form>
+
+                <button class= "btn"> Download MD Table </button>
+
+            </div>
+            
+
+        </div></center>
+
+        </body>
+
+        <footer>
+            <hr id = "footer">
+            <p><center>This project was supported by the National Institutes of Mental Health (NIMH) grant 1RF1MH120021</center></p>
+        </footer>
+
+
+        <style id = "style">.treeview,
+            .treeview ul {list-style-type:none;
+            overflow:hidden;
+            }
+            .treeview li {
+                text-indent:1%;
+                margin-top:0.4em;
+                padding:0.15em 0 0.5em 1.5em;
+                line-height:22px;
+                background-repeat:no-repeat;
+                background-size:24px 24px;
+                margin-right: 30px;
+            }
+
+        
+            .treeview>li:hover {
+                cursor:pointer; 
+                overflow: hidden;
+            }
+        
+            .treeview span:hover {background-color: rgba(246,246,246,0.7
+            
+            ); } 
+
+            .terms{
+                margin-left: -22px;
+            }
+
+            .about{
+            color: #52575e;
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+            }
+
+        .github{
+            float: right;
+            padding: 20px;
+            margin-right: 10px;
+            margin-top: 56px;
+            color: #52575e;
+            font-size: 14px;
+            width: 130px;
+            height:50px;
+        }
+
+        .github:hover{
+            color: #32e17c;
+            transition: 0.1s;
+        }
+        
+        .website{
+            float: right;
+            margin-top: 61px;
+            color: #52575e;
+            font-size: 14px;
+            width: 130px;
+            height:50px;
+        }
+
+        .website:hover{
+            color: #32e17c;
+            transition: 0.1s;
+        }
+
+        .nidmSpecs{
+            float: right;
+            margin-top: 61px;
+            color: #52575e;
+            font-size: 14px;
+            width: 130px;
+            height:50px;
+        }
+
+        .nidmSpecs:hover{
+            color: #32e17c;
+            transition: 0.1s;
+        }
+
+        .pyNidm{
+            float: right;
+            margin-top: 61px;
+            color: #52575e;
+            font-size: 14px;
+            width: 130px;
+            height:50px;
+        }
+
+        .pyNidm:hover{
+            color: #32e17c;
+            transition: 0.1s;
+        }
+
+            .properties{
+                margin-left: 45px;
+            }
+
+            .inner{
+                margin: 40px;
+                padding-top: 20px;
+                padding-left: 124px;
+                font-weight:lighter;
+                font-size: 30px;
+                font-family: serif;
+                text-transform: uppercase;
+                color: #a6a6a6;
+            }
+            .logo{
+                position: absolute;
+                top: 30px;
+                left: 60px;
+            }
+
+            header{
+                width: 100%;
+
+            }
+
+            .bidsTitle{
+                color: white;
+                background-size: 100px;
+                background-color: #52575e;
+                font-size: 40px;
+                text-indent: 100px;
+                padding-top: 20px;
+                padding-left: 60px;
+                padding-bottom: 20px;
+            }
+
+            .search_bar{
+                float: right;
+                margin-top: -47px;
+                margin-right: 50px;
+                border: 2px solid #32e17c;
+                height: 45px;
+                width: 325px;
+                border-radius: 5px;
+                background-color: #fefcfb;
+                font-size: 18px;
+                text-indent: 44px;
+                outline: none;
+            } 
+
+            #searchIcon{
+                color: #828486;
+                float: right;
+                margin-top: -35px;
+                margin-right: -38px;
+            }
+
+            body {
+                background-color: #ffffff;
+            }
+
+            .menuUl{
+                width: auto;
+                margin-top: 70px;
+            }
+
+            .menuLi{
+                display: inline-block;
+                padding: 20px 10px;
+            }
+
+            button{
+                width: 250px;
+                height: 60px;
+                background-color: transparent;
+                border: transparent;
+                border-radius: 0px;
+                font-size: 18px;
+                font-weight:bold;
+                cursor: pointer;
+                outline: none;
+            }
+
+            .available_terms{
+                color: #EA2027;
+                
+            }
+            .available_terms:hover{
+                border: 2px solid #EA2027;
+                border-radius: 5px;
+            }
+
+            .add_terms{
+                color: #EE5A24;
+            }
+            .add_terms:hover{
+                border: 2px solid #EE5A24;
+                border-radius: 5px;
+            }
+            
+            .createTable{
+                color: #F79F1F;
+                border: 2px solid #F79F1F;
+                border-radius: 5px;
+            }
+
+            .resources{
+                color: #FFC312;
+            }
+            .resources:hover{
+                border: 2px solid #FFC312;
+                border-radius: 5px;
+
+            }
+
+            #menuLine{
+                height: 10px;
+                background-image: linear-gradient(
+                    to right, 
+                    #EA2027, 
+                    #EE5A24, 
+                    #F79F1F, 
+                    #FFC312
+                    );
+                margin-top: -23px;
+                width: 1200px;
+            }
+
+            .container{
+                width: 875px;
+                height: 170%;
+                text-align: left;
+                font-family:Arial, Helvetica, sans-serif;
+                border: 1px solid #b3b3b3 ;
+                border-radius: 0px;
+                padding: 80px;
+                padding-top: 80px;
+                padding-right: -10px;
+                padding-bottom: 80px;
+                margin-top: 50px;
+                background-color: #F7F7F7 ;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+            }
+
+            .headerBrdr{
+                font-size: 30px;
+                color: #7e7e7e;
+                font-weight: bold;
+            }
+        
+            .TermInput{
+                height: 40px;
+                width: 35%;
+                border-radius: 50px;
+                border-color: #7e7e7e;
+                padding: 0px 20px;
+                background-color: #fdfdfd;
+                font-size: 18px;
+                outline: none;
+                font-size: 18px;
+                margin-top: -25px;
+                margin-bottom: 10px;
+                text-indent: 25px
+            }
+
+            .inputs{
+                padding-top: 20px;
+            }
+
+            h4{
+                color: #52575e;
+                font-weight:bold;
+                font-size: 20px;
+            }
+
+            .statement{
+                color:#7e7e7e;
+                font-size: 14px;
+                padding-top: 90px;
+            }
+
+
+            .btn{
+                cursor: pointer;
+                width: 220px;
+                height: 50px;
+                border-radius: 50px;
+                font-size: 18px;
+                background-color: #fefcfb;
+                border: 2px solid #EE5A24;
+                border-radius: 5px;
+                font-size: 18px;
+                color: #EE5A24;
+                float:right;
+            }
+
+            .btn:hover{
+                color:#fefcfb;
+                background-image: linear-gradient(
+                to right, 
+                #EE5A24, 
+                #F79F1F
+                );
+                border: none;
+            }
+
+            .btn:active {
+                -webkit-box-shadow: inset 0px 0px 5px #791316;
+                    -moz-box-shadow: inset 0px 0px 5px #791316;
+                        box-shadow: inset 0px 0px 5px #791316;
+                outline: none;
+            }
+
+            .process{
+                color:#7e7e7e;
+                font-size: 18px;
+                padding-bottom: 90px;
+            }
+
+            #footer{
+            height: 3px;
+            background-image: linear-gradient(
+                to right, 
+                #EA2027, 
+                #EE5A24, 
+                #F79F1F, 
+                #FFC312
+                );
+            width: 100%; 
+            margin-top: 130px
+            }   
+        
+        </style>
+
+        <script>
+
+            // get selected properties in a list
+            var array = [];
+
+            function getValue(form) {
+                
+                
+            };
+
+
+
+            // dosplay and main function
+
+            $(document).ready(function(event) {
+
+
+            fetch("https://raw.githubusercontent.com/nqueder/terms/master/terms/BIDS_Terms.jsonld")
+            .then(function(resp){
+                return resp.json(); 
+            })
+
+
+            .then(function sortOnKeys(dict_data) {
+                var sorted = [];
+
+                dict_data['terms'].sort((a, b) => (a.label > b.label) ? 1 : (a.label === b.label) ? ((a.description > b.size) ? 1 : -1) : -1 );
+
+                for (var p in dict_data['terms']) {
+                    sorted[sorted.length] = dict_data.terms[p].label;
+                }
+
+                sorted.sort();
+
+                var tempDict = {};
+
+                for(var g = 0; g < sorted.length; g++) {
+                    tempDict['@context'] = dict_data['@context'];
+                    tempDict['terms'] = dict_data['terms']
+                };
+                
+                console.log(dict_data['terms']);
+
+                return tempDict
+
+            })
+
+            .then(function(data){
+
+
+                //Get search input and pass the search
+                const searchBar = document.getElementById("searchBar");
+
+                console.log(searchBar)
+                searchBar.addEventListener("keyup", (e) => {
+                    console.log(e.target.value)
+                    const searchString = e.target.value;
+
+                    const searchedTerms = filterTerms(data, searchString);
+
+                    if(isEmpty(searchedTerms)){
+                        document.getElementById('termsView').innerHTML = ''
+                        doc = '<div style= "color:#52575e;font-size:24px;font-weight:bold;"> NO MATCHING TERMS HAVE BEEN FOUND... </div>'
+                        $('#termsView').append(doc);
+                        return;
+                    }
+
+                    displayTerms(searchedTerms)
+
+                    //console.log(searchedTerms);
+
+                    //return searchedTerms
+
+                });
+
+                displayTerms(data) 
+
+                //Function to display the terms in a treeview
+                function displayTerms(data) {
+
+                    //Clear previous term display
+                    document.getElementById('terms').innerHTML = "";
+
+                    var html = '<ul class= "treeview">';
+
+                     
+                    
+                    for (var l in data['terms']) { // Each sub-entry
+
+                        html += '<li><input type= "checkbox" id= "' + data.terms[l].label +'">';
+                        html += '  <label for = "'+data.terms[l].label+'">'+ data.terms[l].label + '</label><br><ul>';
+                        
+
+                        if ('description' in data.terms[l]) {
+                            html += '<li>  '+ data.terms[l].description + '</li>';
+                        }
+
+                        html += '</ul></li>';
+                    }
+                    
+
+                    html += '</ul>';
+
+
+                    $('#terms').append(html);
+                    $('.treeview').treeView();
+
+                    var style = ".treeview,";
+                    style += ".treeview ul {list-style-type:none;overflow:hidden;}";
+                    style += ".treeview li {text-indent:1%;margin-top:0.2em;padding:0.15em 0 0.5em 1.5em;line-height:22px;background-repeat:no-repeat;background-size:24px 24px;}";
+                    style += ".treeview li.contains-items {background-image:url('js_lib/icons/arrow-left.png');}";
+                    style += ".treeview li.contains-items {background-image:url('js_lib/icons/arrow-right.png');}";
+                    style += ".treeview>li:hover {cursor:pointer; .add_terms:hover;background-color: #dbe9ee}";
+                    style += ".treeview span:hover {background-color: rgba(246,246,246,0.7);}";
+
+
+                    //$('#style').append(style);
+
+
+                    // Expands all the nodes of treeviews
+                    //$('.treeview').treeView('expandAll');
+                    // Collapses all the nodes of treeviews
+                    $('.treeview').treeView('collapseAll');
+
+
+                };
+
+                // this function filters the data dictionary based on the input of the search bar
+                function filterTerms(data, searchedTerms){
+                    
+                    var results = {};
+                    var termsDict = {};
+                    var termsList = [];
+
+                    for (var l in data['terms']){
+                        $.each(data.terms[l], function (key, value) {
+
+                            if(key == 'label' & data.terms[l].label.toLowerCase().includes(searchedTerms.toLowerCase())){
+                                termsDict = data.terms[l] 
+                                termsList.push(termsDict)  
+                            };
+                            
+                        }); 
+
+                    };
+                    
+                    results['@context'] = 'https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld';
+                    results['terms'] = termsList
+                    
+                    return results
+
+                };
+
+                // This function checks if the dictionary is empty
+                function isEmpty(obj) {                
+                    for(var key in obj) {
+                        if(obj.hasOwnProperty(key))
+                            return false;
+                    }
+                    return true;
+                };
+
+
+            });
+
+            });
+
+        </script>
+
+        
+     
+</html>
