@@ -99,6 +99,36 @@
         <center><div class="container">
 
             <div>
+
+                <div class = "headerBrdr">Select file form:</div>
+                <br><br>
+
+
+                <form class = "fileForm">
+
+                    <input type= "checkbox" id= "markdown" class = "prop" name = "prop" value="markdown">
+                    <label for = "markdown"> Markdown Table </label><br><br>
+                    <input type= "checkbox" id= "jsonld" class = "prop" name = "prop" value="jsonld">
+                    <label for = "jsonld"> JSON-LD </label><br><br>
+                    <input type= "checkbox" id= "turtle" class = "prop" name = "prop" value="turtle">
+                    <label for = "turtle"> Turtle </label><br><br>
+                    <input type= "checkbox" id= "csv" class = "prop" name = "prop" value="csv">
+                    <label for = "csv"> CSV </label><br><br>
+                    <input type= "checkbox" id= "yaml" class = "prop" name = "prop" value="yaml">
+                    <label for = "yaml"> YAML </label><br><br>
+                    
+
+
+                    <button class= "btn"> Download </button>
+                    
+
+                </form>
+                
+                <br>
+                <hr>
+                <br><br>
+
+
                 <div class = "headerBrdr">Select term properties:</div>
                 <br><br>
 
@@ -128,12 +158,11 @@
                     <label for = "wasDerivedFrom"> Was Derived From </label><br><br>
 
 
-                    <button class= "btn" onclick = "getValue(this.form)"> Save & Continue </button>
                     
 
                 </form>
                 
-                <br><br><br><br>
+                <br>
                 <hr>
                 <br><br>
 
@@ -150,7 +179,6 @@
 
                 </form>
 
-                <button class= "btn"> Download MD Table </button>
 
             </div>
             
@@ -258,6 +286,11 @@
             transition: 0.1s;
         }
 
+        .fileForm{
+                margin-left: 45px;
+            }
+
+            
             .properties{
                 margin-left: 45px;
             }
@@ -453,6 +486,7 @@
                 font-size: 18px;
                 color: #EE5A24;
                 float:right;
+                margin-top: -270px;
             }
 
             .btn:hover{
@@ -490,6 +524,8 @@
             width: 100%; 
             margin-top: 130px
             }   
+
+            
         
         </style>
 

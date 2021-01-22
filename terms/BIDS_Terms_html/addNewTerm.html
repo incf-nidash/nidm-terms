@@ -182,7 +182,7 @@
             </form>
 
 
-            <button class= "btn1"> Save & Continue </button>
+            <button class= "btn1"> Send Pull Request </button>
             
                 
             </p>
@@ -191,30 +191,6 @@
 
         </div></center>
 
-
-        <center><div class="container"><center>
-
-            <div class="headerBrdr">
-                STEP 3: enter your Github login credentials and submit
-                <br><br>
-                <i class="fa fa-github" style="font-size:104px"></i>
-            </div>
-
-
-            <form class="inputs">
-                
-                <input class="git" type="text"  placeholder="Username">
-                <br><br><br>
-                <input class="git" type="password"  placeholder="Password">
-            
-            </form>
-
-
-            <button class= "btn1"> Submit Pull Request </button>
-            
-            
-
-        </div></center>
 
 
     </body>
@@ -650,25 +626,43 @@
 
     <script>
 
-        var responseOption = {};
+        
+        
 
 
         // This functions writes response Options to the html if the user selects yes
         function resOptions(){
             html = '<br>';
 
-            html += '<h5>Choice 1:</h5>';
-            html += '<input id="n" id="name" class="subTermInput" type="text" name="name" placeholder = "Name">';
-            html += '<input id="v" id="value" class="subTermInput" type="text" name="value" placeholder = "Value">';
-            html += '<br>'
-            html += '<h5>Choice 2:</h5> ';
-            html += '<input id="n1" id="name" class="subTermInput" type="text" name="name" placeholder = "Name">';
-            html += '<input id="v1" id="value" class="subTermInput" type="text" name="value" placeholder = "Value">';
-            html += '<button class= "btn3"> Add Choice </button>';
+            html += '<h5>Please enter the number of values: <input id="numOfValues" class="numOfValues" type="text"> </h5>';
+            html += '<button class= "btn3" onclick = "addMoreOptions()"> Add Choice </button>';
+            html += '<div id= "add"></div>'
 
             $('#wrapper').append(html);
 
-            console.log('this is working')
+
+            //if(document.getElementById("numOfValues").value.length != 0){
+              //  addOptions(document.getElementById("numOfValues").value)
+            //}
+
+
+        }
+
+        function addOptions(numOfOptions){
+
+            html = '<br>';
+
+            for (var i = 0; i < numOfOptions; i++){
+
+                html += '<h5>Choice '+i+':</h5>';
+                html += '<input id="n'+i+'" id="name" class="subTermInput" type="text" name="name" placeholder = "Name">';
+                html += '<input id="v'+i+'" id="value" class="subTermInput" type="text" name="value" placeholder = "Value">';
+                html += '<br>'
+                
+            }
+
+            $('#add').append(html);
+
 
         }
 
@@ -676,7 +670,7 @@
 
             //empty dicttionary 
             var dict = {};
-            var termDict = {};
+            var responseOption = {};
             
             // varable to assoctae with every term
             var associatedWith = ["BIDS","NIDM"];
@@ -691,19 +685,18 @@
 
                 .then( async function(context){
 
-                    dict['@context'] = 'https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld'
+                    dict['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
 
-                    dict['terms'] = []
-                
-                    termDict[context["@context"]["label"]] = document.getElementById("label").value;
+                    //assign inputted values to term properties
+                    dict[context["@context"]["label"]] = document.getElementById("label").value;
                     if(document.getElementById("des").value.length != 0){
-                        termDict[context["@context"]["description"]] = document.getElementById("des").value;
+                        dict[context["@context"]["description"]] = document.getElementById("des").value;
                     }
                     if(document.getElementById("comment").value.length != 0){
-                        termDict[context["@context"]["comment"]] = document.getElementById("comment").value;
+                        dict[context["@context"]["comment"]] = document.getElementById("comment").value;
                     }
                     if(document.getElementById("url").value.length != 0){
-                        termDict[context["@context"]["url"]["@id"]] = document.getElementById("url").value;
+                        dict[context["@context"]["url"]["@id"]] = document.getElementById("url").value;
                     }
                     if(document.getElementById("unit").value.length != 0){
                         responseOption[context["@context"]["unitCode"]] = document.getElementById("unit").value;
@@ -714,18 +707,15 @@
                     if(document.getElementById('yes').checked){
                         resOp = resOptions()    
                     }
-
+                    //add response options values
                     if(Object.keys(responseOption).length != 0){
-                        console.log(responseOption)
+                        dict[context["@context"]["responseOptions"]["@id"]] = responseOption
                     }
+                    //always associate the term with BIDS and NIDM
+                    dict[context["@context"]["associatedWith"]] = associatedWith;
 
 
-                    termDict[context["@context"]["associatedWith"]] = associatedWith;
-
-                    dict['terms'].push(termDict)
-
-
-
+                    //compact term dictionary
                     const compacted = await jsonld.compact(dict, context);
                     console.log(compacted)
 
