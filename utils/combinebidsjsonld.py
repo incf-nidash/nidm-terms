@@ -19,10 +19,10 @@ def main(argv):
     args = parser.parse_args()
 
     #set an input directory
-    input_dir = args.input
+    input_dir = '/Users/nqueder/Documents/Coding/terms/terms/BIDS_Terms'
 
     #set output directory
-    output = args.output_dir
+    output = '/Users/nqueder/Documents/Coding/terms/terms/'
 
     url = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
 
@@ -40,6 +40,11 @@ def main(argv):
         except:
             print("ERROR! Can't open url: %s" %args.context)
             exit()
+
+
+
+
+
 
 
 
