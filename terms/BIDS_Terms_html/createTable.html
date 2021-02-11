@@ -11,16 +11,32 @@
         
         
         <title>NIDM: BIDS Specification Terms</title>
+        <link rel="stylesheet" type="text/css" herf="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" herf="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
         <script src= "https://code.jquery.com/jquery-3.5.1.js"></script> 
         <script src="./js_lib/jquery.treeView.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jsonld@1.0.0/dist/jsonld.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/jsonld@1.0.0/dist/jsonld.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/danfojs@0.1.1/dist/index.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.7.1.js" type="text/javascript"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsonld/1.0.0/jsonld.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jsonld@1.0.0/dist/jsonld.min.js"></script>
+        <script src="https://unpkg.com/jsonld@1.0.0/dist/jsonld.min.js"></script>
+
+
+        
         
 
     </head>
-
 
 
 
@@ -62,127 +78,89 @@
         <div>
             <nav>
                 <ul class= "menuUl"><center>
-
                     <li class= "menuLi">
                         <form action= "index.html">
                             <button class = "available_terms" type="submit">Available Terms</button>
                         </form>
                     </li>
-                
                     <li class= "menuLi">
                         <form action= "addNewTerm.html">
                             <button class = "add_terms" type="submit">Add New Terms</button>
                         </form>
                     </li>
-
                     <li class= "menuLi">
                         <form action="createTable.html">
-                            <button class = "createTable">Create MD Table</button>
+                            <button class = "createTable">Export Terms</button>
                         </form>
                     </li>
-
                     <li class= "menuLi">
                         <form action="info.html">
                             <button class = "resources">About</button>
                         </form> 
                     </li>
-
                     <center><hr id="menuLine"></center>
-
                 </center></ul>
-
             </nav>
         </div>
-
-
-
-        <center><div class="container">
-
+        <center><div>
             <div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+                <div class="container mt-5">
+                    <div class="row">
+                            
+                        <div class="col-md-6">
+                            <div id="format" class="form-group"> <label>Select File Format</label> 
+                                <br><br>
+                                <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="  select one or more formats" style="width: 100%;" tabindex="-1" aria-hidden="true">     
+                                    <option value="md">Markdown Table</option>
+                                    <option value="json">JSON</option>
+                                    <option value="jsonld">JSON-LD</option>
+                                    <option value="rdf">RDF-Turtle</option>
+                                    <option value="csv">CSV</option>
+                                    <option value="yaml">YAML</option>
+                                </select> </div> <!-- /.form-group -->
+                        </div> <!-- /.col -->
 
-                <div class = "headerBrdr">Select file form:</div>
-                <br><br>
+                        <br><br><br><br>
+                        
+                        <div class="col-md-6">
+                            <div id="properties" class="form-group"> <label>Select Term Properties</label>
+                                <br><br>
+                                <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder=" select term properties" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                    <option>Associated With</option>
+                                    <option>Candidate Terms</option>
+                                    <option>Comment</option>
+                                    <option>Description</option>
+                                    <option>Interlex ID</option>
+                                    <option>Label</option>
+                                    <option>Same AS</option>
+                                    <option>Super Type CDEs</option>
+                                    <option>Unit</option>
+                                    <option>URL</option>
+                                    <option>Was Derived From</option>
+                                </select> </div> <!-- /.form-group -->
+                        </div> <!-- /.col -->
 
+                        <br><br><br><br>
 
-                <form class = "fileForm">
+                        <div class="col-md-6">
+                            <div class="form-group"> <label>Select BIDS Term </label>
+                                <br><br>
+                                <select id = "bidsTerms" class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="  search BIDS terms" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                    
+                                </select> </div> <!-- /.form-group -->
+                        </div> <!-- /.col -->
 
-                    <input type= "checkbox" id= "markdown" class = "prop" name = "prop" value="markdown">
-                    <label for = "markdown"> Markdown Table </label><br><br>
-                    <input type= "checkbox" id= "jsonld" class = "prop" name = "prop" value="jsonld">
-                    <label for = "jsonld"> JSON-LD </label><br><br>
-                    <input type= "checkbox" id= "turtle" class = "prop" name = "prop" value="turtle">
-                    <label for = "turtle"> Turtle </label><br><br>
-                    <input type= "checkbox" id= "csv" class = "prop" name = "prop" value="csv">
-                    <label for = "csv"> CSV </label><br><br>
-                    <input type= "checkbox" id= "yaml" class = "prop" name = "prop" value="yaml">
-                    <label for = "yaml"> YAML </label><br><br>
-                    
+                        <br><br><br><br>
 
-
-                    <button class= "btn"> Download </button>
-                    
-
-                </form>
-                
-                <br>
-                <hr>
-                <br><br>
-
-
-                <div class = "headerBrdr">Select term properties:</div>
-                <br><br>
-
-                <form class = "properties">
-
-                    <input type= "checkbox" id= "associatedWith" class = "prop" name = "prop" value="associatedWith">
-                    <label for = "associatedWith"> Associated With </label><br><br>
-                    <input type= "checkbox" id= "candidateTerms" class = "prop" name = "prop" value="candidateTerms">
-                    <label for = "candidateTerms"> Candidate Terms </label><br><br>
-                    <input type= "checkbox" id= "comment" class = "prop" name = "prop" value="comment">
-                    <label for = "comment"> Comment </label><br><br>
-                    <input type= "checkbox" id= "description" class = "prop" name = "prop" value="description">
-                    <label for = "description"> Description </label><br><br>
-                    <input type= "checkbox" id= "ilxId" class = "prop" name = "prop" value="ilxId">
-                    <label for = "ilxId"> Interlex ID </label><br><br>
-                    <input type= "checkbox" id= "label" class = "prop" name = "prop" value="label">
-                    <label for = "label"> Label </label><br><br>
-                    <input type= "checkbox" id= "sameAs" class = "prop" name = "prop" value="sameAs">
-                    <label for = "sameAs"> Same AS </label><br><br>
-                    <input type= "checkbox" id= "supertypeCDEs" class = "prop" name = "prop" value="supertypeCDEs">
-                    <label for = "supertypeCDEs"> Super Type CDEs </label><br><br>
-                    <input type= "checkbox" id= "unit" class = "prop" name = "prop" value="unit">
-                    <label for = "unit"> Unit </label><br><br>
-                    <input type= "checkbox" id= "url" class = "prop" name = "prop" value="url">
-                    <label for = "url"> URL </label><br><br>
-                    <input type= "checkbox" id= "wasDerivedFrom" class = "prop" name = "prop" value="wasDerivedFrom">
-                    <label for = "wasDerivedFrom"> Was Derived From </label><br><br>
-
-
-                    
-
-                </form>
-                
-                <br>
-                <hr>
-                <br><br>
-
-
-                <div class = "headerBrdr">
-                    Select BIDS terms: 
-
-                    <br><br>
+                        <div>
+                            <button class="btn" id="downloadBtn" onclick="getFile()"> Download </button>
+                        </div>
+                    </div>
                 </div>
-                
-                <form class = "terms" id = "terms">
-
-                    
-
-                </form>
-
-
             </div>
-            
-
         </div></center>
 
         </body>
@@ -486,7 +464,7 @@
                 font-size: 18px;
                 color: #EE5A24;
                 float:right;
-                margin-top: -270px;
+                margin-bottom: 50px;
             }
 
             .btn:hover{
@@ -505,6 +483,7 @@
                         box-shadow: inset 0px 0px 5px #791316;
                 outline: none;
             }
+            
 
             .process{
                 color:#7e7e7e;
@@ -525,174 +504,768 @@
             margin-top: 130px
             }   
 
+            .multi_select_box{
+                width: 400px;
+                margin: 80px auto;
+            }
+
+            .multi_select_box select{
+                width: 100%;
+            }
+
+            .multi_select_box button{
+                background-color: lightgray !important;
+                color: #fff !important;
+                padding: 15px 25px;
+            }
             
+
+            .form-control {
+                border-radius: 0;
+                box-shadow: none;
+                border-color: #d2d6de
+            }
+
+            .select2-hidden-accessible {
+                border: 0 !important;
+                clip: rect(0 0 0 0) !important;
+                height: 1px !important;
+                margin: -1px !important;
+                overflow: hidden !important;
+                padding: 0 !important;
+                position: absolute !important;
+                width: 1px !important
+            }
+
+            .form-control {
+                display: block;
+                width: 100%;
+                height: 34px;
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #555;
+                background-color: #fff;
+                background-image: none;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+                -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+                -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+            }
+
+            .select2-container--default .select2-selection--single,
+            .select2-selection .select2-selection--single {
+                border: 1px solid #d2d6de;
+                border-radius: 0;
+                padding: 6px 12px;
+                height: 34px
+            }
+
+            .select2-container--default .select2-selection--single {
+                background-color: #fff;
+                border: 1px solid #aaa;
+                border-radius: 4px
+            }
+
+            .select2-container .select2-selection--single {
+                box-sizing: border-box;
+                cursor: pointer;
+                display: block;
+                height: 28px;
+                user-select: none;
+                -webkit-user-select: none
+            }
+
+            .select2-container .select2-selection--single .select2-selection__rendered {
+                padding-right: 10px
+            }
+
+            .select2-container .select2-selection--single .select2-selection__rendered {
+                padding-left: 0;
+                padding-right: 0;
+                height: auto;
+                margin-top: -3px
+            }
+
+            .select2-container--default .select2-selection--single .select2-selection__rendered {
+                color: #444;
+                line-height: 28px
+            }
+
+            .select2-container--default .select2-selection--single,
+            .select2-selection .select2-selection--single {
+                border: 1px solid #d2d6de;
+                border-radius: 0 !important;
+                padding: 6px 12px;
+                height: 40px !important
+            }
+
+            .select2-container--default .select2-selection--single .select2-selection__arrow {
+                height: 26px;
+                position: absolute;
+                top: 6px !important;
+                right: 1px;
+                width: 20px
+            }
+
+
         
         </style>
 
         <script>
 
-            // get selected properties in a list
-            var array = [];
 
-            function getValue(form) {
-                
-                
-            };
-
-
-
-            // dosplay and main function
-
-            $(document).ready(function(event) {
-
-
-            fetch("https://raw.githubusercontent.com/nqueder/terms/master/terms/BIDS_Terms.jsonld")
-            .then(function(resp){
-                return resp.json(); 
-            })
-
-
-            .then(function sortOnKeys(dict_data) {
-                var sorted = [];
-
-                dict_data['terms'].sort((a, b) => (a.label > b.label) ? 1 : (a.label === b.label) ? ((a.description > b.size) ? 1 : -1) : -1 );
-
-                for (var p in dict_data['terms']) {
-                    sorted[sorted.length] = dict_data.terms[p].label;
-                }
-
-                sorted.sort();
-
-                var tempDict = {};
-
-                for(var g = 0; g < sorted.length; g++) {
-                    tempDict['@context'] = dict_data['@context'];
-                    tempDict['terms'] = dict_data['terms']
-                };
-                
-                console.log(dict_data['terms']);
-
-                return tempDict
-
-            })
-
-            .then(function(data){
-
-
-                //Get search input and pass the search
-                const searchBar = document.getElementById("searchBar");
-
-                console.log(searchBar)
-                searchBar.addEventListener("keyup", (e) => {
-                    console.log(e.target.value)
-                    const searchString = e.target.value;
-
-                    const searchedTerms = filterTerms(data, searchString);
-
-                    if(isEmpty(searchedTerms)){
-                        document.getElementById('termsView').innerHTML = ''
-                        doc = '<div style= "color:#52575e;font-size:24px;font-weight:bold;"> NO MATCHING TERMS HAVE BEEN FOUND... </div>'
-                        $('#termsView').append(doc);
-                        return;
-                    }
-
-                    displayTerms(searchedTerms)
-
-                    //console.log(searchedTerms);
-
-                    //return searchedTerms
-
+            /////////////////////////////////////////////
+            //bootstrap dropdown list function
+            $(document).ready(function() {
+                $('.select2').select2({
+                    closeOnSelect: false
                 });
+            });
 
-                displayTerms(data) 
+            ///////////////////////////////////////////////////////////
+            //function to fetch the single jsonld file
+            function getFile(){
+                fetch("https://raw.githubusercontent.com/nqueder/terms/master/terms/BIDS_Terms.jsonld")
 
-                //Function to display the terms in a treeview
-                function displayTerms(data) {
+                .then(function(resp){
+                    return resp.json(); 
+                })
 
-                    //Clear previous term display
-                    document.getElementById('terms').innerHTML = "";
+                .then(function sortOnKeys(dict_data) {
+                    var sorted = [];
 
-                    var html = '<ul class= "treeview">';
+                    dict_data['terms'].sort((a, b) => (a.label > b.label) ? 1 : (a.label === b.label) ? ((a.description > b.size) ? 1 : -1) : -1 );
 
-                     
-                    
-                    for (var l in data['terms']) { // Each sub-entry
-
-                        html += '<li><input type= "checkbox" id= "' + data.terms[l].label +'">';
-                        html += '  <label for = "'+data.terms[l].label+'">'+ data.terms[l].label + '</label><br><ul>';
-                        
-
-                        if ('description' in data.terms[l]) {
-                            html += '<li>  '+ data.terms[l].description + '</li>';
-                        }
-
-                        html += '</ul></li>';
+                    for (var p in dict_data['terms']) {
+                        sorted[sorted.length] = dict_data.terms[p].label;
                     }
-                    
 
-                    html += '</ul>';
+                    sorted.sort();
 
+                    var tempDict = {};
 
-                    $('#terms').append(html);
-                    $('.treeview').treeView();
-
-                    var style = ".treeview,";
-                    style += ".treeview ul {list-style-type:none;overflow:hidden;}";
-                    style += ".treeview li {text-indent:1%;margin-top:0.2em;padding:0.15em 0 0.5em 1.5em;line-height:22px;background-repeat:no-repeat;background-size:24px 24px;}";
-                    style += ".treeview li.contains-items {background-image:url('js_lib/icons/arrow-left.png');}";
-                    style += ".treeview li.contains-items {background-image:url('js_lib/icons/arrow-right.png');}";
-                    style += ".treeview>li:hover {cursor:pointer; .add_terms:hover;background-color: #dbe9ee}";
-                    style += ".treeview span:hover {background-color: rgba(246,246,246,0.7);}";
-
-
-                    //$('#style').append(style);
-
-
-                    // Expands all the nodes of treeviews
-                    //$('.treeview').treeView('expandAll');
-                    // Collapses all the nodes of treeviews
-                    $('.treeview').treeView('collapseAll');
-
-
-                };
-
-                // this function filters the data dictionary based on the input of the search bar
-                function filterTerms(data, searchedTerms){
-                    
-                    var results = {};
-                    var termsDict = {};
-                    var termsList = [];
-
-                    for (var l in data['terms']){
-                        $.each(data.terms[l], function (key, value) {
-
-                            if(key == 'label' & data.terms[l].label.toLowerCase().includes(searchedTerms.toLowerCase())){
-                                termsDict = data.terms[l] 
-                                termsList.push(termsDict)  
-                            };
-                            
-                        }); 
-
+                    for(var g = 0; g < sorted.length; g++) {
+                        tempDict['@context'] = dict_data['@context'];
+                        tempDict['terms'] = dict_data['terms']
                     };
                     
-                    results['@context'] = 'https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld';
-                    results['terms'] = termsList
+                    return tempDict
+
+                })
+
+                //This function gets the form of download the user chooses
+                .then(function download(jsonldData){
+
+                    //get selected properties
+                    selectedProperties = $('#properties :selected').map((_,e) => e.value).get();
+                    console.log(selectedProperties)
+
+                    //get selected terms
+                    selectedTerms = $('#bidsTerms :selected').map((_,e) => e.value).get();
+                    console.log(selectedTerms)
                     
-                    return results
+                    //get selected formats
+                    selectedFormats = $('#format :selected').map((_,e) => e.value).get();
+                    arrayLength = selectedFormats.length;
+                    console.log(selectedFormats)
 
-                };
-
-                // This function checks if the dictionary is empty
-                function isEmpty(obj) {                
-                    for(var key in obj) {
-                        if(obj.hasOwnProperty(key))
-                            return false;
+                    //call formats functions
+                    for(var i = 0; i < arrayLength; i++){
+                        if(selectedFormats[i] == 'md'){
+                            mdTable(jsonldData,selectedProperties,selectedTerms)
+                        };
+                        if(selectedFormats[i] == 'json'){
+                            getJson(jsonldData,selectedProperties,selectedTerms)
+                        };
+                        if(selectedFormats[i] == 'jsonld'){
+                            getjsonld(jsonldData,selectedProperties,selectedTerms)
+                        };
+                        if(selectedFormats[i] == 'rdf'){
+                            rdf(jsonldData,selectedProperties,selectedTerms)
+                        };
+                        if(selectedFormats[i] == 'csv'){
+                            csv(jsonldData,selectedProperties,selectedTerms)
+                        };
+                        if(selectedFormats[i] == 'yaml'){
+                            yaml(jsonldData,selectedProperties,selectedTerms)
+                        };
                     }
-                    return true;
+                })
+            }
+            
+            //This function exports a Mark down Table of the choosen terms
+            function mdTable(jsonldData,selectedProperties,selectedTerms){
+                console.log('mdTable is working')
+
+                rowDiv = '--------------';
+                colDiv = '|'
+
+                buildRows = "|          ";
+
+                //get the selected properties
+                selectedPropertiesLength = selectedProperties.length;
+                for(p = 0; p < selectedPropertiesLength; p++){
+
+                    buildRows += "| " + selectedProperties[p];
+
+                }
+
+                buildRows += colDiv
+                buildRows += "\n"
+                buildRows += colDiv + rowDiv + colDiv
+
+                for(l = 0; l < selectedPropertiesLength; l++){
+                    buildRows += rowDiv +colDiv
+                } 
+                
+                buildRows += "\n"
+                buildRows += colDiv
+
+                for (var l in jsonldData['terms']) {
+                        
+                    //for every term selected get the selected properties of that term
+                    selectedTermsLength = selectedTerms.length;
+                    for(t = 0; t < selectedTermsLength; t++){
+                        
+                        if(selectedTerms[t].toLowerCase() == jsonldData.terms[l].label.toLowerCase()){
+
+                            buildRows += jsonldData.terms[l].label + colDiv 
+
+                            for(tp = 0; tp < selectedPropertiesLength; tp++){
+                                if(selectedProperties[tp] == "Associated With"){
+                                    if('associatedWith' in jsonldData.terms[l]){
+                                        buildRows += " NIDM, BIDS" + colDiv
+                                    } else{
+                                        buildRows += "         " + colDiv
+                                    }
+                                }
+                                if(selectedProperties[tp] == "Candidate Terms"){
+                                    if('candidateTerms' in jsonldData.terms[l]){
+                                        buildRows += jsonldData.terms[l].candidateTerms + colDiv
+                                    } else{
+                                        buildRows += "         " + colDiv
+                                    }
+                                }
+                                if(selectedProperties[tp] == "Comment"){
+                                    if('comment' in jsonldData.terms[l]){
+                                        buildRows += jsonldData.terms[l].comment + colDiv
+                                    } else{
+                                        buildRows += "         " + colDiv
+                                    }
+                                }
+                                if(selectedProperties[tp] == "Description"){
+                                    if('description' in jsonldData.terms[l]){
+                                        buildRows += jsonldData.terms[l].description + colDiv
+                                    } else{
+                                        buildRows += "         " + colDiv
+                                    }
+                                }
+                                if(selectedProperties[tp] == "Interlex ID"){
+                                    if('ilxId' in jsonldData.terms[l]){
+                                        buildRows += jsonldData.terms[l].ilxId + colDiv
+                                    } else{
+                                        buildRows += "         " + colDiv
+                                    }
+                                }
+                                if(selectedProperties[tp] == "Same As"){    
+                                    if('sameAs' in jsonldData.terms[l]){
+                                        buildRows += jsonldData.terms[l].sameAs + colDiv
+                                    } else{
+                                        buildRows += "         " + colDiv
+                                    }
+                                }
+                                if(selectedProperties[tp] == "Super Type CDEs"){
+                                    if('supertypeCDEs' in jsonldData.terms[l]){
+                                        buildRows += jsonldData.terms[l].supertypeCDEs + colDiv
+                                    } else{
+                                        buildRows += "         " + colDiv
+                                    }
+                                }
+                                if(selectedProperties[tp] == "Unit"){
+                                    if('unit' in jsonldData.terms[l]){
+                                        buildRows += jsonldData.terms[l].unit + colDiv
+                                    } else{
+                                        buildRows += "         " + colDiv
+                                    }
+                                }
+                                if(selectedProperties[tp] == "URL"){
+                                    if('url' in jsonldData.terms[l]){
+                                        buildRows += jsonldData.terms[l].url + colDiv
+                                    } else{
+                                        buildRows += "         " + colDiv
+                                    }
+                                }
+                                if(selectedProperties[tp] == "Was Derived From"){
+                                    if('wasDerivedFrom' in jsonldData.terms[l]){
+                                        buildRows += jsonldData.terms[l].wasDerivedFrom + colDiv
+                                    } else{
+                                        buildRows += "         " + colDiv
+                                    }
+                                }
+
+                            }
+
+                            buildRows += "\n"
+
+                        }
+                    }
+                    
+
+                }      
+
+                downloadObjectAsJson(buildRows, "BIDS_Terms_MD_Table")
+
+                function downloadObjectAsJson(exportObj, exportName){
+                    var dataStr = "data:text/md;charset=utf-8," + encodeURIComponent(exportObj);
+                    var downloadAnchorNode = document.createElement('a');
+                    downloadAnchorNode.setAttribute("href",     dataStr);
+                    downloadAnchorNode.setAttribute("download", exportName + ".md");
+                    document.body.appendChild(downloadAnchorNode); // required for firefox
+                    downloadAnchorNode.click();
+                    downloadAnchorNode.remove();
+                }
+
+            }
+
+            //This function exports json formatted file 
+            function getJson(jsonldData,selectedProperties,selectedTerms){
+                jsonDict = {};
+
+                for (var l in jsonldData['terms']) {
+
+                    //for every term selected get the selected properties of that term
+                    selectedTermsLength = selectedTerms.length;
+                    for(t = 0; t < selectedTermsLength; t++){
+                        if(selectedTerms[t].toLowerCase() == jsonldData.terms[l].label.toLowerCase()){
+                            temp = {};
+
+                            //get the selected properties
+                            selectedPropertiesLength = selectedProperties.length;
+                            for(p = 0; p < selectedTermsLength; p++){
+                                temp['label'] = jsonldData.terms[l].label
+                                temp['associatedWith'] = ["NIDM","BIDS"]
+        
+                                if('candidateTerms' in jsonldData.terms[l]){
+                                    if(selectedProperties[p] == "Candidate Terms"){
+                                        temp['candidateTerms'] = jsonldData.terms[l].candidateTerms
+                                    }
+                                }
+                                if('comment' in jsonldData.terms[l]){
+                                    if(selectedProperties[p] == "Comment"){
+                                        temp['comment'] = jsonldData.terms[l].comment
+                                    }
+                                }
+                                if('description' in jsonldData.terms[l]){
+                                    if(selectedProperties[p] == "Description"){
+                                        temp['description'] = jsonldData.terms[l].description
+                                    }
+                                }
+                                if('ilxId' in jsonldData.terms[l]){
+                                    if(selectedProperties[p] == "Interlex ID"){
+                                        temp['ilxId'] = jsonldData.terms[l].ilxId
+                                    }
+                                }
+                                    
+                                if('sameAs' in jsonldData.terms[l]){
+                                    if(selectedProperties[p] == "Same As"){
+                                        temp['sameAs'] = jsonldData.terms[l].sameAs
+                                    }
+                                }
+                                if('supertypeCDEs' in jsonldData.terms[l]){
+                                    if(selectedProperties[p] == "Super Type CDEs"){
+                                        temp['supertypeCDEs'] = jsonldData.terms[l].supertypeCDEs
+                                    }
+                                }
+                                if('unit' in jsonldData.terms[l]){
+                                    if(selectedProperties[p] == "Unit"){
+                                        temp['unit'] = jsonldData.terms[l].unit
+                                    }
+                                }
+                                if('url' in jsonldData.terms[l]){
+                                    if(selectedProperties[p] == "URL"){
+                                        temp['url'] = jsonldData.terms[l].url
+                                    }
+                                }
+                                if('wasDerivedFrom' in jsonldData.terms[l]){
+                                    if(selectedProperties[p] == "Was Derived From"){
+                                        temp['wasDerivedFrom'] = jsonldData.terms[l].wasDerivedFrom
+                                    }
+                                }
+                            };
+
+                            jsonDict[jsonldData.terms[l].label] = temp
+                        }
+                    }
+                }
+
+                downloadObjectAsJson(jsonDict, "BIDS_Terms")
+
+                function downloadObjectAsJson(exportObj, exportName){
+                    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
+                    var downloadAnchorNode = document.createElement('a');
+                    downloadAnchorNode.setAttribute("href",     dataStr);
+                    downloadAnchorNode.setAttribute("download", exportName + ".json");
+                    document.body.appendChild(downloadAnchorNode); // required for firefox
+                    downloadAnchorNode.click();
+                    downloadAnchorNode.remove();
+                }
+                
+            }
+
+            function getjsonld(jsonldData,selectedProperties,selectedTerms){
+
+                //get the context file
+                fetch("https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld")
+
+                .then(function(resp){
+                    return resp.json(); 
+                })
+
+                .then(async function  getDict(context){
+
+                    for (var l in jsonldData['terms']) {
+
+                        //for every term selected get the selected properties of that term
+                        selectedTermsLength = selectedTerms.length;
+                        for(t = 0; t < selectedTermsLength; t++){
+                            if(selectedTerms[t].toLowerCase() == jsonldData.terms[l].label.toLowerCase()){
+                                temp = {};
+
+                                temp['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld';
+                                temp['@type'] = 'DataElement';
+                                temp[context['@context']['associatedWith']] = ["NIDM","BIDS"];
+
+                                //get the selected properties
+                                selectedPropertiesLength = selectedProperties.length;
+                                for(p = 0; p < selectedTermsLength; p++){
+                                    
+                                    temp[context['@context']['label']] = jsonldData.terms[l].label;
+
+                                    if('candidateTerms' in jsonldData.terms[l]){
+                                        if(selectedProperties[p] == "Candidate Terms"){
+                                            temp[context['@context']['candidateTerms']] = jsonldData.terms[l].candidateTerms
+                                        }
+                                    }
+                                    if('comment' in jsonldData.terms[l]){
+                                        if(selectedProperties[p] == "Comment"){
+                                            temp[context['@context']['comment']] = jsonldData.terms[l].comment
+                                        }
+                                    }
+                                    if('description' in jsonldData.terms[l]){
+                                        if(selectedProperties[p] == "Description"){
+                                            temp[context['@context']['description']] = jsonldData.terms[l].description
+                                        }
+                                    }
+                                    if('ilxId' in jsonldData.terms[l]){
+                                        if(selectedProperties[p] == "Interlex ID"){
+                                            temp[context['@context']['ilxId']] = jsonldData.terms[l].ilxId
+                                        }
+                                    }
+                                    if('sameAs' in jsonldData.terms[l]){
+                                        if(selectedProperties[p] == "Same As"){
+                                            temp[context['@context']['sameAs']] = jsonldData.terms[l].sameAs
+                                        }
+                                    }
+                                    if('supertypeCDEs' in jsonldData.terms[l]){
+                                        if(selectedProperties[p] == "Super Type CDEs"){
+                                            temp[context['@context']['supertypeCDEs']] = jsonldData.terms[l].supertypeCDEs
+                                        }
+                                    }
+                                    if('unit' in jsonldData.terms[l]){
+                                        if(selectedProperties[p] == "Unit"){
+                                            temp[context['@context']['unit']] = jsonldData.terms[l].unit
+                                        }
+                                    }
+                                    if('url' in jsonldData.terms[l]){
+                                        if(selectedProperties[p] == "URL"){
+                                            temp[context['@context']['url']] = jsonldData.terms[l].url
+                                        }
+                                    }
+                                    if('wasDerivedFrom' in jsonldData.terms[l]){
+                                        if(selectedProperties[p] == "Was Derived From"){
+                                            temp[context['@context']['wasDerivedFrom']] = jsonldData.terms[l].wasDerivedFrom
+                                        }
+                                    }
+                                };
+
+                                console.log(temp)
+                                //compact term dictionary
+                                const compacted = await jsonld.compact(temp, 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld');
+
+                                downloadObjectAsJson(compacted, jsonldData.terms[l].label)
+
+                                function downloadObjectAsJson(exportObj, exportName){
+                                    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
+                                    var downloadAnchorNode = document.createElement('a');
+                                    downloadAnchorNode.setAttribute("href",     dataStr);
+                                    downloadAnchorNode.setAttribute("download", exportName + ".jsonld");
+                                    document.body.appendChild(downloadAnchorNode); // required for firefox
+                                    downloadAnchorNode.click();
+                                    downloadAnchorNode.remove();
+                                }
+
+                            }
+                        }
+                    }
+                }) 
+            }
+
+            function rdf(jsonldData,selectedProperties,selectedTerms){
+                console.log('rdf is working')
+            }
+
+            function csv(jsonldData,selectedProperties,selectedTerms){
+                console.log('csv is working')
+                table = [];
+
+                //get terms and properties
+                for (var l in jsonldData['terms']) {
+
+                    //for every term selected get the selected properties of that term
+                    selectedTermsLength = selectedTerms.length;
+                    for(t = 0; t < selectedTermsLength; t++){
+                        if(selectedTerms[t].toLowerCase() == jsonldData.terms[l].label.toLowerCase()){
+                            temp = {};
+
+                            //get the selected properties
+                            selectedPropertiesLength = selectedProperties.length;
+                            for(p = 0; p < selectedPropertiesLength; p++){
+                                temp['label'] = jsonldData.terms[l].label
+
+                                
+                                if (selectedProperties[p] == "Associated With"){
+                                    temp['associatedWith'] = ['BIDS', 'NIDM']
+                                } 
+                                if(selectedProperties[p] == "Candidate Terms"){
+                                    if('candidateTerms' in jsonldData.terms[l]){
+                                        temp['candidateTerms'] = jsonldData.terms[l].candidateTerms
+                                    } else {
+                                    temp['candidateTerms'] = ''
+                                }
+                                } 
+                                if(selectedProperties[p] == "Comment"){
+                                    if('comment' in jsonldData.terms[l]){
+                                        temp['comment'] = jsonldData.terms[l].comment
+                                    } else {
+                                        temp['comment'] = ''
+                                    }
+                                } 
+                                if(selectedProperties[p] == "Description"){
+                                    if('description' in jsonldData.terms[l]){
+                                        temp['description'] = jsonldData.terms[l].description
+                                    } else {
+                                        temp['description'] = ''
+                                    }
+                                } 
+                                if(selectedProperties[p] == "Interlex ID"){
+                                    if('ilxId' in jsonldData.terms[l]){
+                                        temp['ilxId'] = jsonldData.terms[l].ilxId
+                                    } else {
+                                        temp['ilxId'] = ''
+                                    } 
+                                } 
+                                if(selectedProperties[p] == "Same As"){
+                                    if('sameAs' in jsonldData.terms[l]){
+                                        temp['sameAs'] = jsonldData.terms[l].sameAs
+                                    } else {
+                                        temp['sameAs'] = ''
+                                    }
+                                } 
+                                if(selectedProperties[p] == "Super Type CDEs"){
+                                    if('supertypeCDEs' in jsonldData.terms[l]){
+                                        temp['supertypeCDEs'] = jsonldData.terms[l].supertypeCDEs
+                                    } else {
+                                        temp['supertypeCDEs'] = ''
+                                    }
+                                } 
+                                if(selectedProperties[p] == "Unit"){
+                                    if('unit' in jsonldData.terms[l]){
+                                        temp['unit'] = jsonldData.terms[l].unit
+                                    } else {
+                                        temp['unit'] = ''
+                                    }
+                                } 
+                                if(selectedProperties[p] == "URL"){
+                                    if('url' in jsonldData.terms[l]){
+                                        temp['url'] = jsonldData.terms[l].url
+                                    } else {
+                                        temp['url'] = ''
+                                    }
+                                } 
+                                if(selectedProperties[p] == "Was Derived From"){
+                                    if('wasDerivedFrom' in jsonldData.terms[l]){
+                                        temp['wasDerivedFrom'] = jsonldData.terms[l].wasDerivedFrom
+                                    } else {
+                                        temp['wasDerivedFrom'] = ''
+                                    }
+                                } 
+                            };
+
+                            //add temp dictionary to table to build the dataframe
+                            table.push(temp);
+                        }
+                    }
+                }
+
+                // Convert Object to JSON
+                var jsonObject = JSON.stringify(table);
+
+                //ConvertToCSV(jsonObject)
+
+                function ConvertToCSV(objArray) {
+                    const array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
+                    let str = `${Object.keys(array[0]).map(value => `"${value}"`).join(",")}` + '\r\n';
+
+                    return array.reduce((str, next) => {
+                        str += `${Object.values(next).map(value => `"${value}"`).join(",")}` + '\r\n';
+                        return str;
+                        }, str);
                 };
 
+                var blob = new Blob([ConvertToCSV(jsonObject)], { type: 'text/csv;charset=utf-8;' });
+                var link = document.createElement("a");
+                if (link.download !== undefined) { // feature detection
+                    // Browsers that support HTML5 download attribute
+                    var url = URL.createObjectURL(blob);
+                    link.setAttribute("href", url);
+                    link.setAttribute("download", "BIDS_Terms");
+                    link.style.visibility = 'hidden';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
 
-            });
+                };
+
+            };
+
+            function yaml(jsonldData,selectedProperties,selectedTerms){
+                console.log('yaml is working')
+            }
+
+
+            /////////////////////////////////////////////
+            // dosplay and main function
+            $(document).ready(function(event) {
+
+                fetch("https://raw.githubusercontent.com/nqueder/terms/master/terms/BIDS_Terms.jsonld")
+
+                .then(function(resp){
+                    return resp.json(); 
+                })
+
+                .then(function sortOnKeys(dict_data) {
+                    var sorted = [];
+
+                    dict_data['terms'].sort((a, b) => (a.label > b.label) ? 1 : (a.label === b.label) ? ((a.description > b.size) ? 1 : -1) : -1 );
+
+                    for (var p in dict_data['terms']) {
+                        sorted[sorted.length] = dict_data.terms[p].label;
+                    }
+
+                    sorted.sort();
+
+                    var tempDict = {};
+
+                    for(var g = 0; g < sorted.length; g++) {
+                        tempDict['@context'] = dict_data['@context'];
+                        tempDict['terms'] = dict_data['terms']
+                    };
+
+                    return tempDict
+
+                })
+
+                .then(function(data){
+
+
+                    //Get search input and pass the search
+                    const searchBar = document.getElementById("searchBar");
+
+                    console.log(searchBar)
+                    searchBar.addEventListener("keyup", (e) => {
+                        const searchString = e.target.value;
+
+                        const searchedTerms = filterTerms(data, searchString);
+
+                        if(isEmpty(searchedTerms)){
+                            document.getElementById('termsView').innerHTML = ''
+                            doc = '<div style= "color:#52575e;font-size:24px;font-weight:bold;"> NO MATCHING TERMS HAVE BEEN FOUND... </div>'
+                            $('#termsView').append(doc);
+                            return;
+                        }
+
+                        displayTerms(searchedTerms)
+
+                        //console.log(searchedTerms);
+
+                        //return searchedTerms
+
+                    });
+
+                    displayTerms(data) 
+
+                    //Function to display the terms in a treeview
+                    function displayTerms(data) {
+
+                        //Clear previous term display
+                        document.getElementById('bidsTerms').innerHTML = "";
+
+                        var html = '';
+
+                        
+                        
+                        for (var l in data['terms']) { // Each sub-entry
+
+                            html += '<option>' + data.terms[l].label +'</option>';
+                            
+                        }
+                        
+                        $('#bidsTerms').append(html);
+
+                    };
+
+                    // this function filters the data dictionary based on the input of the search bar
+                    function filterTerms(data, searchedTerms){
+                        
+                        var results = {};
+                        var termsDict = {};
+                        var termsList = [];
+
+                        for (var l in data['terms']){
+                            $.each(data.terms[l], function (key, value) {
+
+                                if(key == 'label' & data.terms[l].label.toLowerCase().includes(searchedTerms.toLowerCase())){
+                                    termsDict = data.terms[l] 
+                                    termsList.push(termsDict)  
+                                };
+                                
+                            }); 
+
+                        };
+                        
+                        results['@context'] = 'https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld';
+                        results['terms'] = termsList
+                        
+                        return results
+
+                    };
+
+                    // This function checks if the dictionary is empty
+                    function isEmpty(obj) {                
+                        for(var key in obj) {
+                            if(obj.hasOwnProperty(key))
+                                return false;
+                        }
+                        return true;
+                    };
+                    
+
+
+                });
 
             });
 

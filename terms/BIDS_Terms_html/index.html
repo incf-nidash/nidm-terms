@@ -74,7 +74,7 @@
 
                 <li class= "menuLi">
                     <form action="createTable.html">
-                        <button class = "createTable">Create MD Table</button>
+                        <button class = "createTable">Export Terms</button>
                     </form>
                 </li>
 
@@ -459,7 +459,7 @@
                         if ('associatedWith' in data.terms[l]) {
                         html += '<li>'  +  '<b>Associated With</b>  ' + '<ul>' + '<li>' + data.terms[l].associatedWith[0] + '</li>' + '<li>' + data.terms[l].associatedWith[1] + '</li>' + '</ul></li>' ;}
                         if ('ilxId' in data.terms[l]) {
-                        html += '<li>'  +  '<b>Interlex</b>  ' + ':  '+  '<a href= "http://uri.interlex.org/'+data.terms[l].ilxId+'" target="_blank">' + data.terms[l].ilxId + '</a>' + '</li>'}
+                        html += '<li>'  +  '<b>Interlex</b>  ' + ':  '+  '<a href= "'+data.terms[l].ilxId+'" target="_blank">' + data.terms[l].ilxId + '</a>' + '</li>'}
                 
                         
 
