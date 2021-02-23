@@ -16,6 +16,9 @@
 
         <script scr="octokit-rest.es2015.min.js"></script>
 
+        <script type= "module">import { Octokit } from "@octokit/core";</script>
+
+
 
     </head>
 
@@ -613,7 +616,8 @@
 
     <script>
 
-        // const { Octokit } = require("@octokit/core")
+        //const { Octokit } = require("@octokit/core")
+        
 
         var email = {
             "name": "sanu",
@@ -701,7 +705,7 @@
 
                     //var Token = await document.getElementById('token').value
 
-                    var Token = '2d23321ddb2e216ba39cf87ea5f12a8ad5b990fb';
+                    var Token = 'b20604741a13ae76193708e1d6f957b81bf5e6bc';
                     var userName = 'nqueder';
 
                     //need to convert the data to a file
@@ -711,36 +715,38 @@
 
                     console.log(JSON.stringify(email))
 
-                    // await octokit.request('PUT /repos/nqueder/terms/contents/terms/Test.json', {
-                    //     owner: 'nqueder',
-                    //     repo: 'terms',
-                    //     path: 'terms.Test.json',
-                    //     message: 'New Commit',
-                    //     content: content
-                    // });
+                    const octokit = new Octokit({ auth: `b20604741a13ae76193708e1d6f957b81bf5e6bc` });
+
+                    await octokit.request('PUT /repos/nqueder/terms/contents/terms/Test.json', {
+                        owner: 'nqueder',
+                        repo: 'terms',
+                        path: 'terms.Test.json',
+                        message: 'New Commit',
+                        content: content
+                    });
 
                     // commit
-                    $(document).ready(function() {
-                        $.ajax({
-                            url: "https://api.github.com/repos/nqueder/terms/contents/BIDS_Terms_Test.json",
-                            type: "PUT",
-                            headers: {
-                                'Authorization': 'token ' + Token,
-                                'Content-Type': 'application/json'
-                            },
-                            body:{
-                                message: 'added a test file',
-                                content: content
-                            },
-                            success: function(result) {
-                                console.log(result);
-                            },
-                            //error: function(error) {
-                            //    console.log(error);
-                            //}
-                        });
+                    // $(document).ready(function() {
+                    //     $.ajax({
+                    //         url: "https://api.github.com/repos/nqueder/terms/contents/terms/BIDS_Terms/Test.json",
+                    //         type: "PUT",
+                    //         headers: {
+                    //             'Authorization': 'token ' + Token,
+                    //             'Content-Type': 'application/json'
+                    //         },
+                    //         body:{
+                    //             message: 'added a test file',
+                    //             content: 'Insia2V5XzEiOiJzb21lIHRleHQiLCJrZXlfMiI6dHJ1ZSwia2V5XzMiOjV9Ig=='
+                    //         },
+                    //         success: function(result) {
+                    //             console.log(result);
+                    //         },
+                    //         error: function(error) {
+                    //             console.log(error);
+                    //         }
+                    //     });
 
-                    });
+                    // });
 
                 })
 

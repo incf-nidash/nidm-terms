@@ -42,12 +42,6 @@ def main(argv):
             exit()
 
 
-
-
-
-
-
-
     # read in jsonld context
     with open(context_file) as context_data:
         context = json.load(context_data)
