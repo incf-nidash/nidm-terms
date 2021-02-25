@@ -440,36 +440,33 @@
                         html += '<li>' + data.terms[l].label + '<ul>';
 
                         
-                        console.log(data.terms[l].comment)
 
                         if ('description' in data.terms[l]) {
-                        html += '<li>'  +  '<b>Description</b>  ' + ':  '+ data.terms[l].description + '</li>';}
-                        //if ('comment' in data.terms[l]) {
-                        //html += '<li>'  +  '<b>Comment</b>  ' + ':  '+ data.term[l].comment + '</li>';}
+                            html += '<li>'  +  '<b>Description</b>  ' + ':  '+ data.terms[l].description + '</li>';}
+                        if ('comment' in data.terms[l]) {
+                            console.log('got conditioning to work')}
+                            //html += '<li>'  +  '<b>Comment</b>  ' + ':  '+ data.term[l].comment + '</li>';}
                         if ('sameAs' in data.terms[l]) {
-                        html += '<li>'  +  '<b>Same As</b>  ' + ':  '+ data.terms[l].sameAs + '</li>';}
+                            html += '<li>'  +  '<b>Same As</b>  ' + ':  '+ data.terms[l].sameAs + '</li>';}
                         if ('wasDerivedFrom' in data.terms[l]) {
-                        html += '<li>'  +  '<b>Was Derived From</b>  ' + ':  '+ data.terms[l].wasDerivedFrom + '</li>';}
+                            html += '<li>'  +  '<b>Was Derived From</b>  ' + ':  '+ data.terms[l].wasDerivedFrom + '</li>';}
                         if ('candidateTerms' in data.terms[l]) {
-                        html += '<li>'  +  '<b>Candidate Terms</b>  ' + ':  '+ data.terms[l].candidateTerms + '</li>';}
+                            html += '<li>'  +  '<b>Candidate Terms</b>  ' + ':  '+ data.terms[l].candidateTerms + '</li>';}
                         if ('supertypeCDEs' in data.terms[l]) {
-                        html += '<li>'  +  '<b>Supertype Common Data Elements</b>  ' + ':  '+ data.terms[l].supertypeCDEs + '</li>';}
+                            html += '<li>'  +  '<b>Supertype Common Data Elements</b>  ' + ':  '+ data.terms[l].supertypeCDEs + '</li>';}
                         if ('url' in data.terms[l]) {
-                        html += '<li>'  +  '<b>URL</b>  ' + ':  '+ data.terms[l].url + '</li>';}
+                            html += '<li>'  +  '<b>URL</b>  ' + ':  '+ data.terms[l].url + '</li>';}
                         if ('associatedWith' in data.terms[l]) {
-                        html += '<li>'  +  '<b>Associated With</b>  ' + '<ul>' + '<li>' + data.terms[l].associatedWith[0] + '</li>' + '<li>' + data.terms[l].associatedWith[1] + '</li>' + '</ul></li>' ;}
+                            html += '<li>'  +  '<b>Associated With</b>  ' + '<ul>' + '<li>' + data.terms[l].associatedWith[0] + '</li>' + '<li>' + data.terms[l].associatedWith[1] + '</li>' + '</ul></li>' ;}
                         if ('ilxId' in data.terms[l]) {
-                        html += '<li>'  +  '<b>Interlex</b>  ' + ':  '+  '<a href= "'+data.terms[l].ilxId+'" target="_blank">' + data.terms[l].ilxId + '</a>' + '</li>'}
-                
+                            html += '<li>'  +  '<b>Interlex</b>  ' + ':  '+  '<a href= "'+data.terms[l].ilxId+'" target="_blank">' + data.terms[l].ilxId + '</a>' + '</li>'}
                         
-
                         html += '</ul></li>';
                     
                     }
                     
 
                     html += '</ul>';
-
 
                     $('#termsView').append(html);
 
