@@ -69,7 +69,7 @@ def main(argv):
         for key, value in term_dict.items():
 
 
-            temp['@type'] = context['@context']['DataElement']
+            temp['@type'] = context['@context']['nidm:DataElement']
 
             if key =='@type' and key == '@context':
                 continue
