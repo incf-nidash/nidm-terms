@@ -150,7 +150,7 @@
 
                 <br><br><br>
 
-                <div id='remove'><button class= "btn1" type = "button" onclick= "nextStep()"> Continue </button></div>
+                <div id='remove'><button class= "btn1" type = "button" onclick= "nextStep()"> Next </button></div>
 
                 <br>
 
@@ -623,32 +623,62 @@
         //validat that label and description have values
         ///////////////////////////////////////////////////////////////////////////
         function nextStep(){
-            //if label and description don't have values call the validation fonction
-            if (document.getElementById('label').value.length == 0 & document.getElementById('des').value.length == 0){
-                alert('An input is required for Label and Description')
-            }
-            if (document.getElementById('label').value.length == 0 & document.getElementById('des').value.length != 0){
-                alert('An input for Label is required')
-            }
-            if (document.getElementById('label').value.length != 0 & document.getElementById('des').value.length == 0){
-                alert('An input for Description is required')
-            }
-            //else next step, which is an iput for the github API and a button 
-            else if (document.getElementById('label').value.length != 0 & document.getElementById('des').value.length != 0) {
 
-                $("#remove").html("")
+            // fetch the BIDS_Terms.jsonld file and read as a dictionary
+            fetch("https://raw.githubusercontent.com/nqueder/terms/master/terms/BIDS_Terms.jsonld")
+            .then(function(resp){
+                return resp.json(); 
+            })
 
-                html = '<br><br><hr><br><br><br><br>';
+            .then(function(termsDict){
+                //lets to contain the available labels
+                var avLabelList = [];
 
-                html += '<center><div class="headerBrdr"> STEP 2: enter your Github API Key <br><br></div>';
-                html += '<form class="inputs"><input class="TermInput" id = "token" type="text"  placeholder="GitHub API Token"></form>';
-                html += '<br><br><br>';
-                html += '<button class= "btn1"  onclick= "submitTerm()"> Send Pull Request </button>';
-                html += '<br></p></div></center>';  
-                
-                $('#PR').append(html);
+                for (var t in termsDict['terms']) {
 
-            }
+                    var label = termsDict.terms[t].label;
+
+                    avLabelList.push(label.toLowerCase())
+
+                }
+                return avLabelList
+
+            })
+            
+            .then(function(avLabelList){
+                //if label and description don't have values call the validation fonction
+                if (document.getElementById('label').value.length == 0 & document.getElementById('des').value.length == 0){
+                    alert('An input is required for Label and Description')
+                }
+                else if (document.getElementById('label').value.length == 0 & document.getElementById('des').value.length != 0){
+                    alert('An input for Label is required')
+                }
+                else if (document.getElementById('label').value.length != 0 & document.getElementById('des').value.length == 0 ){
+                    alert('An input for Description is required')
+                }
+                else if (document.getElementById('label').value.length != 0 & document.getElementById('des').value.length != 0 & avLabelList.includes(document.getElementById('label').value.toLowerCase()) == true){
+                    window.alert('This term already exists in NIDM-Terms')
+                    location.reload()
+                }
+                //else next step, which is an iput for the github API and a button 
+                else {
+
+                    $("#remove").html("")
+
+                    html = '<br><br><hr><br><br><br><br>';
+
+                    html += '<center><div class="headerBrdr"> STEP 2: enter your Github API Key <br><br></div>';
+                    html += '<form class="inputs"><input class="TermInput" id = "token" type="text"  placeholder="GitHub API Token"></form>';
+                    html += '<br><br><br>';
+                    html += '<button class= "btn1"  onclick= "submitTerm()"> Send Pull Request </button>';
+                    html += '<br></p></div></center>';  
+                    
+                    $('#PR').append(html);
+
+                }
+            })
+
+            
         }
 
 
@@ -702,6 +732,7 @@
         };
 
         document.getElementById("catValue").addEventListener("click", addOptions)
+        
 
 
         //////////////////////////////////////////////////////////////////////////////////
@@ -728,7 +759,12 @@
 
                     dict['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
 
-                    //if label and description have values then assign the alues to dict and continue if not send an alert that these two properties is required
+                    //call checkTerm to checkif the lable of the term already exists to avoid duplication
+                    //returns 1 if the terms exists and 0 if the term doesn't exist
+                    //var check = checkLabel(document.getElementById("label").value)
+                    //console.log(checkLabel(document.getElementById("label").value))
+
+                    
                     
                     //assign inputted values to term properties
                     dict[context["@context"]["label"]] = document.getElementById("label").value;
@@ -784,9 +820,8 @@
 
                     //compact term dictionary
                     const compacted = await jsonld.compact(dict, 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld');
-                    console.log(compacted) 
-                    
-
+                    console.log(compacted)
+                        
                 })
 
                 .then( async function(newTermJsonld){

@@ -38,6 +38,9 @@
 
     <body>
 
+        <add key="webpages:Enabled" value="true" />
+
+
         <div class="about">
             <form action = "https://github.com/NIDM-Terms/terms" target="_blank">
                 <button class= "github">Github <i class="fa fa-github" style="font-size:17px"></i>
@@ -61,8 +64,9 @@
             <div class="inner">
                 <h>NIDM-Terms</h>
             </div>
-            <div class="bidsTitle">
+            <div class="bidsTitle"> 
                 <h> BIDS Specification Terms</h>
+                
             </div>
         </header>
 
@@ -129,7 +133,7 @@
                                     <option>Comment</option>
                                     <option>Description</option>
                                     <option>Interlex ID</option>
-                                    <option>Same AS</option>
+                                    <option>Same As</option>
                                     <option>Super Type CDEs</option>
                                     <option>Unit</option>
                                     <option>URL</option>
@@ -611,7 +615,6 @@
 
     <script>
 
-
         /////////////////////////////////////////////
         //bootstrap dropdown list function
         $(document).ready(function() {
@@ -722,7 +725,7 @@
                 selectedTermsLength = selectedTerms.length;
                 for(t = 0; t < selectedTermsLength; t++){
                     
-                    if(selectedTerms[t].toLowerCase() == jsonldData.terms[l].label.toLowerCase()){
+                    if(jsonldData.terms[l].label.toLowerCase() == selectedTerms[t].toLowerCase()){
 
                         buildRows += jsonldData.terms[l].label + colDiv 
 
@@ -831,58 +834,57 @@
                 //for every term selected get the selected properties of that term
                 selectedTermsLength = selectedTerms.length;
                 for(t = 0; t < selectedTermsLength; t++){
-                    if(selectedTerms[t].toLowerCase() == jsonldData.terms[l].label.toLowerCase()){
+                    if(jsonldData.terms[l].label.toLowerCase() == selectedTerms[t].toLowerCase()){
                         temp = {};
 
                         //get the selected properties
                         selectedPropertiesLength = selectedProperties.length;
-                        for(p = 0; p < selectedTermsLength; p++){
-                            temp['label'] = jsonldData.terms[l].label
+                        for(p = 0; p < selectedPropertiesLength; p++){
+                            //temp['label'] = jsonldData.terms[l].label
                             temp['associatedWith'] = ["NIDM","BIDS"]
     
-                            if('candidateTerms' in jsonldData.terms[l]){
-                                if(selectedProperties[p] == "Candidate Terms"){
+                            if(selectedProperties[p] == "Candidate Terms"){
+                                if('candidateTerms' in jsonldData.terms[l]){
                                     temp['candidateTerms'] = jsonldData.terms[l].candidateTerms
                                 }
                             }
-                            if('comment' in jsonldData.terms[l]){
-                                if(selectedProperties[p] == "Comment"){
+                            if(selectedProperties[p] == "Comment"){
+                                if('comment' in jsonldData.terms[l]){
                                     temp['comment'] = jsonldData.terms[l].comment
                                 }
                             }
-                            if('description' in jsonldData.terms[l]){
-                                if(selectedProperties[p] == "Description"){
+                            if(selectedProperties[p] == "Description"){
+                                if('description' in jsonldData.terms[l]){
                                     temp['description'] = jsonldData.terms[l].description
                                 }
                             }
-                            if('ilxId' in jsonldData.terms[l]){
-                                if(selectedProperties[p] == "Interlex ID"){
+                            if(selectedProperties[p] == "Interlex ID"){
+                                if('ilxId' in jsonldData.terms[l]){
                                     temp['ilxId'] = jsonldData.terms[l].ilxId
                                 }
-                            }
-                                
-                            if('sameAs' in jsonldData.terms[l]){
-                                if(selectedProperties[p] == "Same As"){
+                            } 
+                            if(selectedProperties[p] == "Same As"){
+                                if('sameAs' in jsonldData.terms[l]){
                                     temp['sameAs'] = jsonldData.terms[l].sameAs
                                 }
                             }
-                            if('supertypeCDEs' in jsonldData.terms[l]){
-                                if(selectedProperties[p] == "Super Type CDEs"){
+                            if(selectedProperties[p] == "Super Type CDEs"){
+                                if('supertypeCDEs' in jsonldData.terms[l]){
                                     temp['supertypeCDEs'] = jsonldData.terms[l].supertypeCDEs
                                 }
                             }
-                            if('unit' in jsonldData.terms[l]){
-                                if(selectedProperties[p] == "Unit"){
-                                    temp['unit'] = jsonldData.terms[l].unit
+                            if(selectedProperties[p] == "Unit"){
+                                if('unitCode' in jsonldData.terms[l]){
+                                    temp['unit'] = jsonldData.terms[l].unitCode
                                 }
                             }
-                            if('url' in jsonldData.terms[l]){
-                                if(selectedProperties[p] == "URL"){
+                            if(selectedProperties[p] == "URL"){
+                                if('url' in jsonldData.terms[l]){
                                     temp['url'] = jsonldData.terms[l].url
                                 }
                             }
-                            if('wasDerivedFrom' in jsonldData.terms[l]){
-                                if(selectedProperties[p] == "Was Derived From"){
+                            if(selectedProperties[p] == "Was Derived From"){
+                                if('wasDerivedFrom' in jsonldData.terms[l]){
                                     temp['wasDerivedFrom'] = jsonldData.terms[l].wasDerivedFrom
                                 }
                             }
@@ -918,89 +920,101 @@
 
             .then(async function  getDict(context){
 
+                mainTemp = {};
+                tempList =[];
+
+                mainTemp['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld';
+
+
                 for (var l in jsonldData['terms']) {
 
                     //for every term selected get the selected properties of that term
                     selectedTermsLength = selectedTerms.length;
                     for(t = 0; t < selectedTermsLength; t++){
-                        if(selectedTerms[t].toLowerCase() == jsonldData.terms[l].label.toLowerCase()){
+                        if(jsonldData.terms[l].label.toLowerCase() == selectedTerms[t].toLowerCase()){
+                            
                             temp = {};
-
-                            temp['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld';
-                            temp['@type'] = 'DataElement';
+                            
+                            temp['@type'] = 'nidm:DataElement';
                             temp[context['@context']['associatedWith']] = ["NIDM","BIDS"];
 
                             //get the selected properties
                             selectedPropertiesLength = selectedProperties.length;
-                            for(p = 0; p < selectedTermsLength; p++){
+                            for(p = 0; p < selectedPropertiesLength; p++){
                                 
                                 temp[context['@context']['label']] = jsonldData.terms[l].label;
 
-                                if('candidateTerms' in jsonldData.terms[l]){
-                                    if(selectedProperties[p] == "Candidate Terms"){
+                                if(selectedProperties[p] == "Candidate Terms"){
+                                    if('candidateTerms' in jsonldData.terms[l]){
                                         temp[context['@context']['candidateTerms']] = jsonldData.terms[l].candidateTerms
                                     }
                                 }
-                                if('comment' in jsonldData.terms[l]){
-                                    if(selectedProperties[p] == "Comment"){
+                                if(selectedProperties[p] == "Comment"){
+                                    if('comment' in jsonldData.terms[l]){
                                         temp[context['@context']['comment']] = jsonldData.terms[l].comment
                                     }
                                 }
-                                if('description' in jsonldData.terms[l]){
-                                    if(selectedProperties[p] == "Description"){
+                                if(selectedProperties[p] == "Description"){
+                                    if('description' in jsonldData.terms[l]){
                                         temp[context['@context']['description']] = jsonldData.terms[l].description
                                     }
                                 }
-                                if('ilxId' in jsonldData.terms[l]){
-                                    if(selectedProperties[p] == "Interlex ID"){
+                                if(selectedProperties[p] == "Interlex ID"){
+                                    if('ilxId' in jsonldData.terms[l]){
                                         temp[context['@context']['ilxId']] = jsonldData.terms[l].ilxId
                                     }
                                 }
-                                if('sameAs' in jsonldData.terms[l]){
-                                    if(selectedProperties[p] == "Same As"){
-                                        temp[context['@context']['sameAs']] = jsonldData.terms[l].sameAs
+                                if(selectedProperties[p] == "Same As"){
+                                    if('sameAs' in jsonldData.terms[l]){
+                                        temp[context['@context']['sameAs']['@id']] = jsonldData.terms[l].sameAs
                                     }
                                 }
-                                if('supertypeCDEs' in jsonldData.terms[l]){
-                                    if(selectedProperties[p] == "Super Type CDEs"){
-                                        temp[context['@context']['supertypeCDEs']] = jsonldData.terms[l].supertypeCDEs
+                                if(selectedProperties[p] == "Super Type CDEs"){
+                                    if('supertypeCDEs' in jsonldData.terms[l]){                             
+                                        temp[context['@context']['supertypeCDEs']['@id']] = jsonldData.terms[l].supertypeCDEs
                                     }
                                 }
-                                if('unit' in jsonldData.terms[l]){
-                                    if(selectedProperties[p] == "Unit"){
-                                        temp[context['@context']['unit']] = jsonldData.terms[l].unit
+                                if(selectedProperties[p] == "Unit"){
+                                    if('unitCode' in jsonldData.terms[l]){
+                                        temp[context['@context']['unitCode']] = jsonldData.terms[l].unitCode
                                     }
                                 }
-                                if('url' in jsonldData.terms[l]){
-                                    if(selectedProperties[p] == "URL"){
-                                        temp[context['@context']['url']] = jsonldData.terms[l].url
+                                if(selectedProperties[p] == "URL"){
+                                    if('url' in jsonldData.terms[l]){
+                                        temp[context['@context']['url']['@id']] = jsonldData.terms[l].url
                                     }
                                 }
-                                if('wasDerivedFrom' in jsonldData.terms[l]){
-                                    if(selectedProperties[p] == "Was Derived From"){
-                                        temp[context['@context']['wasDerivedFrom']] = jsonldData.terms[l].wasDerivedFrom
+                                if(selectedProperties[p] == "Was Derived From"){
+                                    if('wasDerivedFrom' in jsonldData.terms[l]){
+                                        temp[context['@context']['wasDerivedFrom']['@id']] = jsonldData.terms[l].wasDerivedFrom
                                     }
                                 }
                             };
 
-                            console.log(temp)
-                            //compact term dictionary
-                            const compacted = await jsonld.compact(temp, 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld');
-
-                            downloadObjectAsJson(compacted, jsonldData.terms[l].label)
-
-                            function downloadObjectAsJson(exportObj, exportName){
-                                var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
-                                var downloadAnchorNode = document.createElement('a');
-                                downloadAnchorNode.setAttribute("href",     dataStr);
-                                downloadAnchorNode.setAttribute("download", exportName + ".jsonld");
-                                document.body.appendChild(downloadAnchorNode); // required for firefox
-                                downloadAnchorNode.click();
-                                downloadAnchorNode.remove();
-                            }
+                            tempList.push(temp)
 
                         }
                     }
+                }
+
+                mainTemp[context['@context']['terms']['@id']] = tempList
+
+                //compact term dictionary
+                const compacted = await jsonld.compact(mainTemp, 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld');
+
+                compacted['terms'] = compacted['prov:hasMember']
+                delete compacted['prov:hasMember']
+                
+                downloadObjectAsJson(compacted, 'BIDS_Terms')
+
+                function downloadObjectAsJson(exportObj, exportName){
+                    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
+                    var downloadAnchorNode = document.createElement('a');
+                    downloadAnchorNode.setAttribute("href",     dataStr);
+                    downloadAnchorNode.setAttribute("download", exportName + ".jsonld");
+                    document.body.appendChild(downloadAnchorNode); // required for firefox
+                    downloadAnchorNode.click();
+                    downloadAnchorNode.remove();
                 }
             }) 
         }
@@ -1058,27 +1072,27 @@
                                 }
                                 if('sameAs' in jsonldData.terms[l]){
                                     if(selectedProperties[p] == "Same As"){
-                                        temp[context['@context']['sameAs']] = jsonldData.terms[l].sameAs
+                                        temp[context['@context']['sameAs']['@id']] = jsonldData.terms[l].sameAs
                                     }
                                 }
                                 if('supertypeCDEs' in jsonldData.terms[l]){
                                     if(selectedProperties[p] == "Super Type CDEs"){
-                                        temp[context['@context']['supertypeCDEs']] = jsonldData.terms[l].supertypeCDEs
+                                        temp[context['@context']['supertypeCDEs']['@id']] = jsonldData.terms[l].supertypeCDEs
                                     }
                                 }
-                                if('unit' in jsonldData.terms[l]){
+                                if('unitCode' in jsonldData.terms[l]){
                                     if(selectedProperties[p] == "Unit"){
-                                        temp[context['@context']['unit']] = jsonldData.terms[l].unit
+                                        temp[context['@context']['unitCode']] = jsonldData.terms[l].unitCode
                                     }
                                 }
                                 if('url' in jsonldData.terms[l]){
                                     if(selectedProperties[p] == "URL"){
-                                        temp[context['@context']['url']] = jsonldData.terms[l].url
+                                        temp[context['@context']['url']['@id']] = jsonldData.terms[l].url
                                     }
                                 }
                                 if('wasDerivedFrom' in jsonldData.terms[l]){
                                     if(selectedProperties[p] == "Was Derived From"){
-                                        temp[context['@context']['wasDerivedFrom']] = jsonldData.terms[l].wasDerivedFrom
+                                        temp[context['@context']['wasDerivedFrom']['@id']] = jsonldData.terms[l].wasDerivedFrom
                                     }
                                 }
                             };
@@ -1261,30 +1275,6 @@
 
             .then(function(data){
 
-
-                //Get search input and pass the search
-                const searchBar = document.getElementById("searchBar");
-
-                console.log(searchBar)
-                searchBar.addEventListener("keyup", (e) => {
-                    const searchString = e.target.value;
-
-                    const searchedTerms = filterTerms(data, searchString);
-
-                    if(isEmpty(searchedTerms)){
-                        document.getElementById('termsView').innerHTML = ''
-                        doc = '<div style= "color:#52575e;font-size:24px;font-weight:bold;"> NO MATCHING TERMS HAVE BEEN FOUND... </div>'
-                        $('#termsView').append(doc);
-                        return;
-                    }
-
-                    displayTerms(searchedTerms)
-
-                    //console.log(searchedTerms);
-
-                    //return searchedTerms
-
-                });
 
                 displayTerms(data) 
 
