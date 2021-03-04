@@ -12,6 +12,7 @@
         <script src="https://cdn.jsdelivr.net/npm/jsonld@1.0.0/dist/jsonld.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     </head>
 
@@ -44,9 +45,6 @@
             </div>
             <div class="bidsTitle">
                 <h> BIDS Specification Terms</h>
-                <div class= "search-box">
-                    <input id= "searchBar" class="search_bar" type="text" name="box" placeholder = "Search BIDS Terms..."><i id= "searchIcon" class="fa fa-search" style="font-size:24px"></i>
-                </div>
             </div>
         </header>
     
@@ -68,7 +66,7 @@
     
                     <li class= "menuLi">
                         <form action="createTable.html">
-                            <button class = "createTable">Create MD Table</button>
+                            <button class = "createTable">Export Terms</button>
                         </form>
                     </li>
     
@@ -95,21 +93,21 @@
             <form class="inputs">
                 
                 <h4>Label</h4>
-                <input id= "label" class="TermInput" type="text" name="label" placeholder = "Term in cammelCase (e.g. durationTime, author)">
+                <input id= "label" class="TermInput" type="text" name="label" placeholder = "REQUIRED: Term in cammelCase (e.g. durationTime, author)" required>
                 
                 <h4>Description</h4>
-                <input id= "des" class="TermInput" type="text" name="description" placeholder = "Term description">
+                <input id= "des" class="TermInput" type="text" name="description" placeholder = "REQUIRED: Term description" required>
             
 
                 <h4>Comment</h4>
-                <input id= "comment" class="TermInput" type="text" name="comment" placeholder = "Additional comments">
+                <input id= "comment" class="TermInput" type="text" name="comment" placeholder = "RECOMMENDED: Additional comments">
             
 
                 <h4>URL</h4>
-                <input id="url" class="TermInput" type="text" name="url" placeholder = "Term URL">
+                <input id="url" class="TermInput" type="text" name="url" placeholder = "RECOMMENDED: Term URL">
 
                 <h4>Unit</h4>
-                <input id="unit" class="TermInput" type="text" name="unit" placeholder = "Term unit">
+                <input id="unit" class="TermInput" type="text" name="unit" placeholder = "RECOMMENDED: Term unit">
 
                 
                 <label><h4>Value Type</h4></label>
@@ -130,91 +128,43 @@
                     </select>
 
                 
-                <h4>Is the term categorical?</h4>
+                <h4>OPTIONAL: categorical variables</h4>
+
 
                 <div id="wrapper">
-                    <input onclick= "resOptions()" type="radio" id= "yes" name="choice" value="yes"> Yes
-                    <input type="radio" id= "no" name="choice" value="no"> No
 
-                    <br><br>
+                    <br>
+
+                        <form>
+                            <h5>Please enter the number of values: <input id="numOfValues" class="numOfValues" type="text"> </h5>
+                            <button type = "button" class= "btn3" id = "catValue"> Add Choice </button>
+                        </form>
+
+                        <div id= "addParent">
+                            <div id= "add"></div>
+                        </div>
+
+                    <br>
 
                 </div>
 
-            </form>
-
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <div class= "btn">
-
-                    <div>
-                        <button onclick= "submitTerm()" class= "btn1"> Save & Continue </button>
-                    </div>
-
-                    <br><br>
-                
-                    <button class= "btn2"> Save & Add Another Term </button>
-                
-            </div>
-
-
-        </div></center>
-
-
-        <center><div class="container"><center>
-
-            <div class="headerBrdr">
-                STEP 2: enter your Github API Key 
-                <br><br>
-            </div>
-
-            <div>
-                
-            </div>
-
-
-            <form class="inputs">
-                
-                <input class="git" type="text"  placeholder="GitHub API Token">
-            
-            </form>
-
-
-            <button class= "btn1"> Save & Continue </button>
-            
-                
-            </p>
-            </div>
-                
-
-        </div></center>
-
-
-        <center><div class="container"><center>
-
-            <div class="headerBrdr">
-                STEP 3: enter your Github login credentials and submit
-                <br><br>
-                <i class="fa fa-github" style="font-size:104px"></i>
-            </div>
-
-
-            <form class="inputs">
-                
-                <input class="git" type="text"  placeholder="Username">
                 <br><br><br>
-                <input class="git" type="password"  placeholder="Password">
-            
+
+                <div id='remove'><button class= "btn1" type = "button" onclick= "nextStep()"> Next </button></div>
+
+                <br>
+
             </form>
-
-
-            <button class= "btn1"> Submit Pull Request </button>
             
-            
+
+            <div id="PR">
+
+                
+
+            </div>
 
         </div></center>
+
 
 
     </body>
@@ -644,39 +594,155 @@
             width: 100%;
         }
 
-        
-
     </style>
 
     <script>
 
-        var responseOption = {};
+
+        var email = {
+            "name": "sanu",
+            "repo": "terms"
+        };
 
 
-        // This functions writes response Options to the html if the user selects yes
-        function resOptions(){
-            html = '<br>';
+        $(document).ready(function() {
+            $.ajax({
+                url: "https://api.github.com/repos/nqueder/terms/pulls",
+                type: "GET",
+                success: function(result) {
+                    console.log(result);
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
 
-            html += '<h5>Choice 1:</h5>';
-            html += '<input id="n" id="name" class="subTermInput" type="text" name="name" placeholder = "Name">';
-            html += '<input id="v" id="value" class="subTermInput" type="text" name="value" placeholder = "Value">';
-            html += '<br>'
-            html += '<h5>Choice 2:</h5> ';
-            html += '<input id="n1" id="name" class="subTermInput" type="text" name="name" placeholder = "Name">';
-            html += '<input id="v1" id="value" class="subTermInput" type="text" name="value" placeholder = "Value">';
-            html += '<button class= "btn3"> Add Choice </button>';
+        }) 
 
-            $('#wrapper').append(html);
+        ///////////////////////////////////////////////////////////////////////////
+        //validat that label and description have values
+        ///////////////////////////////////////////////////////////////////////////
+        function nextStep(){
 
-            console.log('this is working')
+            // fetch the BIDS_Terms.jsonld file and read as a dictionary
+            fetch("https://raw.githubusercontent.com/nqueder/terms/master/terms/BIDS_Terms.jsonld")
+            .then(function(resp){
+                return resp.json(); 
+            })
 
+            .then(function(termsDict){
+                //lets to contain the available labels
+                var avLabelList = [];
+
+                for (var t in termsDict['terms']) {
+
+                    var label = termsDict.terms[t].label;
+
+                    avLabelList.push(label.toLowerCase())
+
+                }
+                return avLabelList
+
+            })
+            
+            .then(function(avLabelList){
+                //if label and description don't have values call the validation fonction
+                if (document.getElementById('label').value.length == 0 & document.getElementById('des').value.length == 0){
+                    alert('An input is required for Label and Description')
+                }
+                else if (document.getElementById('label').value.length == 0 & document.getElementById('des').value.length != 0){
+                    alert('An input for Label is required')
+                }
+                else if (document.getElementById('label').value.length != 0 & document.getElementById('des').value.length == 0 ){
+                    alert('An input for Description is required')
+                }
+                else if (document.getElementById('label').value.length != 0 & document.getElementById('des').value.length != 0 & avLabelList.includes(document.getElementById('label').value.toLowerCase()) == true){
+                    window.alert('This term already exists in NIDM-Terms')
+                    location.reload()
+                }
+                //else next step, which is an iput for the github API and a button 
+                else {
+
+                    $("#remove").html("")
+
+                    html = '<br><br><hr><br><br><br><br>';
+
+                    html += '<center><div class="headerBrdr"> STEP 2: enter your Github API Key <br><br></div>';
+                    html += '<form class="inputs"><input class="TermInput" id = "token" type="text"  placeholder="GitHub API Token"></form>';
+                    html += '<br><br><br>';
+                    html += '<button class= "btn1"  onclick= "submitTerm()"> Send Pull Request </button>';
+                    html += '<br></p></div></center>';  
+                    
+                    $('#PR').append(html);
+
+                }
+            })
+
+            
         }
 
+
+        ///////////////////////////////////////////////////////////////////////////
+        /// function created to add choices if the term is a catagorical variable
+        ///////////////////////////////////////////////////////////////////////////
+        var list = [];
+        function addOptions(){
+
+            html = '<br><br><br><br>';
+
+            var numOfOptions = document.getElementById('numOfValues').value;
+
+            list.push(numOfOptions)
+
+            if(document.getElementById('numOfValues').value != 0 & list.length == 1){
+
+                for (var i = 1; i <= numOfOptions; i++){
+
+                    html += '<h5>Choice '+i+':</h5>';
+                    html += '<input id="n'+i+'" id="name" class="subTermInput" type="text" name="name" placeholder = "Name">';
+                    html += '<input id="v'+i+'" id="value" class="subTermInput" type="text" name="value" placeholder = "Value">';
+                    html += '<br>'
+                        
+                }
+
+                $('#add').append(html);
+            } 
+            
+            if (document.getElementById('numOfValues').value != 0 & list.length > 1){
+
+                $("#add").html("");
+
+                for (var i = 1; i <= numOfOptions; i++){
+
+                    html += '<h5>Choice '+i+':</h5>';
+                    html += '<input id="n'+i+'" id="name" class="subTermInput" type="text" name="name" placeholder = "Name">';
+                    html += '<input id="v'+i+'" id="value" class="subTermInput" type="text" name="value" placeholder = "Value">';
+                    html += '<br>'
+                        
+                }
+
+                $('#add').append(html);
+
+            }
+
+            if (document.getElementById('numOfValues').value == 0){
+                $("#add").html("");
+            }
+
+        };
+
+        document.getElementById("catValue").addEventListener("click", addOptions)
+        
+
+
+        //////////////////////////////////////////////////////////////////////////////////
+        /// function created to create jsonld files and submit a pull request to github
+        //////////////////////////////////////////////////////////////////////////////////
         function submitTerm(){
 
             //empty dicttionary 
             var dict = {};
-            var termDict = {};
+            var responseOption = {};
             
             // varable to assoctae with every term
             var associatedWith = ["BIDS","NIDM"];
@@ -689,59 +755,125 @@
                     return resp.json(); 
                 })
 
-                .then( async function(context){
+                .then(async function(context){
 
-                    dict['@context'] = 'https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld'
+                    dict['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
 
-                    dict['terms'] = []
-                
-                    termDict[context["@context"]["label"]] = document.getElementById("label").value;
+                    //call checkTerm to checkif the lable of the term already exists to avoid duplication
+                    //returns 1 if the terms exists and 0 if the term doesn't exist
+                    //var check = checkLabel(document.getElementById("label").value)
+                    //console.log(checkLabel(document.getElementById("label").value))
+
+                    
+                    
+                    //assign inputted values to term properties
+                    dict[context["@context"]["label"]] = document.getElementById("label").value;
                     if(document.getElementById("des").value.length != 0){
-                        termDict[context["@context"]["description"]] = document.getElementById("des").value;
+                        dict[context["@context"]["description"]] = document.getElementById("des").value;
                     }
                     if(document.getElementById("comment").value.length != 0){
-                        termDict[context["@context"]["comment"]] = document.getElementById("comment").value;
+                        dict[context["@context"]["comment"]] = document.getElementById("comment").value;
                     }
                     if(document.getElementById("url").value.length != 0){
-                        termDict[context["@context"]["url"]["@id"]] = document.getElementById("url").value;
+                        dict[context["@context"]["url"]["@id"]] = document.getElementById("url").value;
                     }
                     if(document.getElementById("unit").value.length != 0){
                         responseOption[context["@context"]["unitCode"]] = document.getElementById("unit").value;
                     }
-                    if(document.getElementById("VT").value.length != 0 & document.getElementById("VT").value != '--select--'){
+                    if(document.getElementById("VT").value.length != 0 & document.getElementById("VT").value != 'select'){
                         responseOption[context["@context"]["valueType"]] = document.getElementById("VT").value;
                     }
-                    if(document.getElementById('yes').checked){
-                        resOp = resOptions()    
-                    }
-
-                    if(Object.keys(responseOption).length != 0){
-                        console.log(responseOption)
-                    }
-
-
-                    termDict[context["@context"]["associatedWith"]] = associatedWith;
-
-                    dict['terms'].push(termDict)
-
-
-
-                    const compacted = await jsonld.compact(dict, context);
-                    console.log(compacted)
-
+                    if(document.getElementById('numOfValues').value.length != 0){
+                        //empty list for choices dictionaries
+                        var choices_list = [];
                     
+                        //get the number of choices available
+                        var valNum = document.getElementById('numOfValues').value;
+                        //loop through the choices and add them to add to the jsonld
+                        for (var l = 1; l <= valNum; l++){
+                            console.log(l)
+
+                            // empty dictionary for each choice's name and value
+                            var choices = {};
+
+                            if(document.getElementById("n"+l).value.length != 0 & document.getElementById("v"+l).value.length != 0){
+                                choices[context['@context']['name']] = document.getElementById("n"+l).value;
+                                choices[context['@context']['value']] = document.getElementById("v"+l).value;
+                                choices_list.push(choices)
+                            }
+                        }
+
+                        //assign choices to responseOptions dictionary
+                        if(choices_list.length != 0){
+                            responseOption[context['@context']['choices']] = choices_list;
+                        }
+
+                    }    
+
+                    //add response options values
+                    if(Object.keys(responseOption).length != 0){
+                        dict[context["@context"]["responseOptions"]["@id"]] = responseOption
+                    }
+                    //always associate the term with BIDS and NIDM
+                    dict[context["@context"]["associatedWith"]] = associatedWith;
 
 
-                });
+                    //compact term dictionary
+                    const compacted = await jsonld.compact(dict, 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld');
+                    console.log(compacted)
+                        
+                })
 
-                
+                .then( async function(newTermJsonld){
+
+
+                    //need to convert the data to a file
+                    var content = 'Insia2V5XzEiOiJzb21lIHRleHQiLCJrZXlfMiI6dHJ1ZSwia2V5XzMiOjV9Ig==';
+
+                    console.log(content)
+
+                    console.log(JSON.stringify(email))
+
+                    await octokit.request('PUT /repos/nqueder/terms/contents/terms/Test.json', {
+                        owner: 'nqueder',
+                        repo: 'terms',
+                        path: 'terms.Test.json',
+                        message: 'New Commit',
+                        content: content
+                    });
+
+                    // commit
+                    // $(document).ready(function() {
+                    //     $.ajax({
+                    //         url: "https://api.github.com/repos/nqueder/terms/contents/terms/BIDS_Terms/Test.json",
+                    //         type: "PUT",
+                    //         headers: {
+                    //             'Authorization': 'token ' + Token,
+                    //             'Content-Type': 'application/json'
+                    //         },
+                    //         body:{
+                    //             message: 'added a test file',
+                    //             content: 'Insia2V5XzEiOiJzb21lIHRleHQiLCJrZXlfMiI6dHJ1ZSwia2V5XzMiOjV9Ig=='
+                    //         },
+                    //         success: function(result) {
+                    //             console.log(result);
+                    //         },
+                    //         error: function(error) {
+                    //             console.log(error);
+                    //         }
+                    //     });
+
+                    // });
+
+                })
 
             });
 
         };
 
-
         
+        
+
     </script>
 
 
