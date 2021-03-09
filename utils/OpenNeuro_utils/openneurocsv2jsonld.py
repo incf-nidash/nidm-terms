@@ -407,12 +407,10 @@ def isPartOf_parser(df_row,doc,context):
 
 
 
-def jsonld_dict(d,row,context,args):
+def jsonld_dict(df,context,args):
     '''
     Creates compacted dictionary for every term passed and the main dictionary d.
 
-    :param d: dictionary passed for each BIDS json file to the function to load multiple jsonld dictionaries(doc)
-    :param row: term row from the dataframe
     :param context: context file as a jsonld dictionary
     :param args: pass arguments
     :return:
@@ -420,109 +418,135 @@ def jsonld_dict(d,row,context,args):
     dictionary d with a compatced jsonld file for each row (i.e. term) passed
     '''
 
+    #set a new main dictionary
+    main_dict = {}
+    terms_list = []
 
 
-    # open a new dictionary
-    doc = {}
-    # dictionary to contain elements of response options
-    #ro_dict = {}
-
-    # Added by DBK
-    #doc['@context'] = context_url
-
-    #add type as schema.org/DataElement
-    doc['@type'] = context['@context']['DataElement']
-    doc[context['@context']['sourceVariable']] = row['sourceVariable']
-
-    ro_dict = responseOptions_parser(row,context)
+    main_dict['@context'] = args.context
 
 
-    #assign Long Name to the label property in doc
-    if not pd.isnull(row['LongName']):
-        print("\tFound OpenNeuro Label")
-        doc[context['@context']['label']] = str(row['LongName'])
 
-    #assign description to the description property in doc
-    if not pd.isnull(row['Description']):
-        print("\tFound OpenNeuro_Definition")
-        doc[context['@context']['description']] = str(row['Description'])
+    for i, row in df.iterrows():
+        print('processing term: %s'%row['sourceVariable'])
 
-    #assign unit label to measureOf property in doc
-    if not pd.isnull(row['measureOf']):
-        print("\tFound OpenNeuro_measureOf")
-        doc[context['@context']['measureOf']] = str(row['measureOf'])
+        doc = {}
 
-    #assign unit label to datumType property in doc
-    if not pd.isnull(row['datumType']):
-        print("\tFound OpenNeuro_measureOf")
-        doc[context['@context']['datumType']] = str(row['datumType'])
+        # dictionary to contain elements of response options
+        #ro_dict = {}
 
-    #assign unit label to datumType isPartOf in doc
-    if not pd.isnull(row['isPartOf']):
-        print("\tFound OenNeuro_isPartOf")
-        doc[context['@context']['isPartOf']] = str(row['isPartOf'])
+        # Added by DBK
+        #doc['@context'] = context_url
 
-    #assign unit label to Derivative property in doc
-    if not pd.isnull(row['Derivative']):
-        print('\tFound OpenNeuro_Derivative')
-        doc[context['@context']['derivative']] = bool(2)
+        #add type as schema.org/DataElement
+        doc['@type'] = context['@context']['DataElement']
+        doc[context['@context']['sourceVariable']] = row['sourceVariable']
 
-    #assign unit label to url property in doc
-    if not pd.isnull(row['Term_URL']):
-        print('\tFound OpenNeuro_TermURL')
-        doc[context['@context']['url']['@id']] = str(row['Term_URL'])
+        ro_dict = responseOptions_parser(row,context)
 
-    #assign unit label to Min value property in doc
-    if not pd.isnull(row['Minimum Value']):
-        print('\tFound OpenNeuro_minimum value')
-        ro_dict[context['@context']['minValue']] = int(row['Minimum Value'])
+        #assign Long Name to the label property in doc
+        if not pd.isnull(row['LongName']):
+            print("\tFound OpenNeuro Label")
+            doc[context['@context']['label']] = str(row['LongName'])
 
-    #assign unit label to Max value property in doc
-    if not pd.isnull(row['Maximum Value']):
-        print('\tFound OpenNeuro_maximum value')
-        ro_dict[context['@context']['maxValue']] = int(row['Maximum Value'])
+        #assign description to the description property in doc
+        if not pd.isnull(row['Description']):
+            print("\tFound OpenNeuro_Definition")
+            doc[context['@context']['description']] = str(row['Description'])
 
-    # allowable values based on given min and max values in the spreadsheet
-    #if not pd.isnull(row['Minimum Value']) and not pd.isnull(row['Maximum Value']):
-        #all_vall = np.arange(int(row['Minimum Value']), int(row['Maximum Value'])).tolist()
-        #all_vall.append(int(row['Maximum Value']))
-        #doc[context['@context']['allowableValues']] = all_vall
+        #assign unit label to measureOf property in doc
+        if not pd.isnull(row['measureOf']):
+            print("\tFound OpenNeuro_measureOf")
+            doc[context['@context']['measureOf']] = str(row['measureOf'])
 
-    isAbout_parser(row,doc,context)
-    isPartOf_parser(row,doc,context)
+        #assign unit label to datumType property in doc
+        if not pd.isnull(row['datumType']):
+            print("\tFound OpenNeuro_measureOf")
+            doc[context['@context']['datumType']] = str(row['datumType'])
 
-    # assign response options properties
-    if bool(ro_dict):
-        doc[context['@context']['responseOptions']['@id']] = ro_dict
+        #assign unit label to datumType isPartOf in doc
+        if not pd.isnull(row['isPartOf']):
+            print("\tFound OenNeuro_isPartOf")
+            doc[context['@context']['isPartOf']] = str(row['isPartOf'])
+
+        #assign unit label to Derivative property in doc
+        if not pd.isnull(row['Derivative']):
+            print('\tFound OpenNeuro_Derivative')
+            doc[context['@context']['derivative']] = bool(2)
+
+        #assign unit label to url property in doc
+        if not pd.isnull(row['Term_URL']):
+            print('\tFound OpenNeuro_TermURL')
+            doc[context['@context']['url']['@id']] = str(row['Term_URL'])
+
+        #assign unit label to Min value property in doc
+        if not pd.isnull(row['Minimum Value']):
+            print('\tFound OpenNeuro_minimum value')
+            if isinstance(row['Minimum Value'],int):
+                ro_dict[context['@context']['minValue']] = int(row['Minimum Value'])
+            if isinstance(row['Minimum Value'],float):
+                ro_dict[context['@context']['minValue']] = float(row['Minimum Value'])
+
+        #assign unit label to Max value property in doc
+        if not pd.isnull(row['Maximum Value']):
+            print('\tFound OpenNeuro_maximum value')
+            if isinstance(row['Maximum Value'],int):
+                ro_dict[context['@context']['maxValue']] = int(row['Maximum Value'])
+            if isinstance(row['Maximum Value'],float):
+                ro_dict[context['@context']['maxValue']] = float(row['Maximum Value'])
+
+        # allowable values based on given min and max values in the spreadsheet
+        #if not pd.isnull(row['Minimum Value']) and not pd.isnull(row['Maximum Value']):
+            #all_vall = np.arange(int(row['Minimum Value']), int(row['Maximum Value'])).tolist()
+            #all_vall.append(int(row['Maximum Value']))
+            #doc[context['@context']['allowableValues']] = all_vall
+
+        isAbout_parser(row,doc,context)
+        isPartOf_parser(row,doc,context)
+
+        # assign response options properties
+        if bool(ro_dict):
+            doc[context['@context']['responseOptions']['@id']] = ro_dict
 
 
-    # add property to specify that the term is associated with NIDM
-    doc[context['@context']['associatedWith']] = str('NIDM')
+        # add property to specify that the term is associated with NIDM
+        doc[context['@context']['associatedWith']] = str('NIDM')
 
-    #Added by DBK
-    #with open("/Users/dbkeator/Downloads/temp/test.jsonld","w") as fp:
-    #    json.dump(doc,fp,indent=4)
+        #Added by DBK
+        #with open("/Users/dbkeator/Downloads/temp/test.jsonld","w") as fp:
+        #    json.dump(doc,fp,indent=4)
 
-    #write JSON file out
-    compacted = jsonld.compact(doc,args.context)
+        #add each term dict to terms_list
+        terms_list.append(doc)
 
+    #assign terms_list to property terms
+    main_dict[context['@context']['terms']['@id']] = terms_list
+
+    #compact jsonld file
+    compacted = jsonld.compact(main_dict,args.context)
+
+    #hack terms to replace it with prov:hasMember after compaction
+    compacted['terms'] = compacted['prov:hasMember']
+    del compacted['prov:hasMember']
 
     # DBK hacking isAbout which in compacted form still uses the URL as the key
     # so simple hack, which is still valid json-ld, is to replace the key
     # with the string isAbout
-    obj_nm,obj_term = split_uri('http://uri.interlex.org/ilx_0381385')
-
-    if 'ilx_id' + ':' + obj_term in compacted.keys():
-        compacted['isAbout'] = compacted['ilx_id' + ':' + obj_term]
-        del compacted['ilx_id' + ':' + obj_term]
+    #obj_nm,obj_term = split_uri('http://uri.interlex.org/ilx_0381385')
 
 
+    # for loop added by NQ to access isAbout from the term list in the compacted file
+    # for term in compacted['terms']:
 
-    # add the the jsonld dictionary to the main dictionary
-    d[row['sourceVariable']] = compacted
+        # if "http://uri.interlex.org/ilx_0381385" in term.keys():
+        #     term['isAbout'] = term["http://uri.interlex.org/ilx_0381385"]
+        #     del term["http://uri.interlex.org/ilx_0381385"]
 
-    # changed by DBK to return the loaded context from passed context_url
-    return d
+
+    return compacted
+
+
+
 
 
 def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
@@ -804,11 +828,11 @@ def main(argv):
         context = json.load(context_data)
 
     #starting a new python dictionary
-    d = {}
+    #d = {}
 
     # put data set Id's in a list
     ds_number = df['ds_number'].tolist()
-    # create an empty list for non duplicated data set ID's
+    # create an empty list for non duplicated dataset ID's
     ds_list = []
     for s in ds_number:
         if s not in ds_list:
@@ -858,10 +882,13 @@ def main(argv):
             #loc data frame only at terms that are not phenotype terms
             par_ter = dataset.loc[dataset['Phenotype Term?'] == 'NO']
 
+            d = jsonld_dict(par_ter,context,args)
+
             # loop through the rows and call function json_check to create a master dictionary d
             for ii, rr in par_ter.iterrows():
                 print('processing term: %s'%rr['sourceVariable'])
-                d = jsonld_dict(d,rr,context,args)
+
+
 
 
             # opens pre-made directory with with a number that matches the ds ID and creates a jsonld file inside that directory
@@ -916,17 +943,22 @@ def main(argv):
                                                         term_list.remove('participant_id')
 
                                                 #include only terms that are extracted from the associated tsv file
-                                                pheno_ter = dataset.loc[dataset['sourceVariable'].isin(term_list)]
+                                                terms = dataset.loc[dataset['sourceVariable'].isin(term_list)]
+
+                                                #lock pheno_ter dataframe to include only phenotype terms
+                                                pheno_ter = terms.loc[terms['Phenotype Term?'] == 'YES']
+
+                                                d = jsonld_dict(pheno_ter,context,args)
 
                                                 #loop through those terms and if the term is a phenotype term pass it to jsonld_dict to create the master dictionary
-                                                for II, R in pheno_ter.iterrows():
+                                                # for II, R in pheno_ter.iterrows():
+                                                #
+                                                #     print('starting iteration...')
+                                                #     print('processing term: %s'%R['sourceVariable'])
+                                                #
+                                                #     if R['Phenotype Term?'] == 'YES':
+                                                #         print('processing term: %s'%R['sourceVariable'])
 
-                                                    print('starting iteration...')
-                                                    print('processing term: %s'%R['sourceVariable'])
-
-                                                    if R['Phenotype Term?'] == 'YES':
-                                                        print('processing term: %s'%R['sourceVariable'])
-                                                        d = jsonld_dict(d,R,context,args)
 
 
                                             # opens pre-made directory with with a number that matches the ds ID and creates a jsonld file inside that directory
@@ -959,15 +991,20 @@ def main(argv):
                                         #include only terms that are extracted from the associated tsv file
                                         ter = dataset.loc[dataset['sourceVariable'].isin(termlist)]
 
+                                        #lock pheno_ter dataframe to include only phenotype terms
+                                        phenoTer = ter.loc[ter['Phenotype Term?'] == 'YES']
+
+                                        d = jsonld_dict(phenoTer,context,args)
+
                                         #loop through those terms and if the term is a phenotype term pass it to jsonld_dict to create the master dictionary
-                                        for I, r in ter.iterrows():
+                                        # for I, r in ter.iterrows():
+                                        #
+                                        #     print('starting iteration...')
+                                        #     print('processing term: %s'%r['sourceVariable'])
+                                        #
+                                        #     if r['Phenotype Term?'] == 'YES':
+                                        #         print('processing term: %s'%r['sourceVariable'])
 
-                                            print('starting iteration...')
-                                            print('processing term: %s'%r['sourceVariable'])
-
-                                            if r['Phenotype Term?'] == 'YES':
-                                                print('processing term: %s'%r['sourceVariable'])
-                                                d = jsonld_dict(d,r,context,args)
 
 
                                     # opens pre-made directory with with a number that matches the ds ID and creates a jsonld file inside that directory
