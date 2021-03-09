@@ -1,36 +1,38 @@
 @prefix schema: <http://schema.org/> .
-@prefix rdfs: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix nidm: <http://purl.org/nidash/nidm#> .
 @prefix reproschema: <http://schema.repronim.org/> .
+@prefix rdfs: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix interlex: <http://uri.interlex.org/> .
 
 nidm:DataElementShape a sh:NodeShape ;
     sh:closed true ;
-	sh:ignoredProperties ( rdf:type ) ;
+	sh:ignoredProperties ( rdfs:type ) ;
 
-	sh:property [ sh:datatype xsd:string ;
+	sh:property [ sh:datatype rdfs:langString ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path schema:description ],
+            sh:path dct:description ],
 
         [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
-            sh:path rdfs:comment ] ;
+            sh:path rdfs:comment ] ,
 
         [ sh:nodeKind sh:IRI ;
             sh:maxCount 1 ;
-            sh:path schema:url ] ;
+            sh:path schema:url ] ,
+
+        [ sh:datatype rdfs:langString ;
+            sh:maxCount 1 ;
+            sh:minCount 1;
+            sh:path rdfs:label ] ,
 
         [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:minCount 1;
-            sh:path rdfs:label ] ;
-
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:minCount 1;
-            sh:path interlex:ilx_0383246 ] ;
+            sh:path interlex:ilx_0383246 ] ,
 
         [ sh:node reproschema:ResponseOptionsShape ;
             sh:path reproschema:responseOptions ],
@@ -38,14 +40,14 @@ nidm:DataElementShape a sh:NodeShape ;
         [ sh:node nidm:IsAboutShape ;
             sh:path interlex:ilx_0381385 ],
 
-        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
-    		sh:path interlex:ilx_0739289 ],
+        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype rdfs:langString ] ) ;
+    		sh:path interlex:ilx_0739289 ] ;
 
     sh:targetClass nidm:DataElement .
 
 nidm:IsAboutShape a sh:NodeShape ;
     sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
+    sh:ignoredProperties ( rdfs:type ) ;
     sh:property [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:minCount 1;
@@ -54,7 +56,7 @@ nidm:IsAboutShape a sh:NodeShape ;
 
 reproschema:ResponseOptionsShape a sh:NodeShape ;
     sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
+    sh:ignoredProperties ( rdfs:type ) ;
     sh:property [ sh:datatype schema:Boolean ;
             sh:maxCount 1 ;
             sh:path reproschema:multipleChoice ],
@@ -74,7 +76,7 @@ reproschema:ResponseOptionsShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:path reproschema:datumType ],
 
-        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype rdf:langString ] ) ;
+        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype rdfs:langString ] ) ;
             sh:path schema:unitCode ],
 
         [ sh:node reproschema:UnitOptionsShape ;
