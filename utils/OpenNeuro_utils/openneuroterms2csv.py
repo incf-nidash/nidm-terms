@@ -4,28 +4,29 @@ import prov.model as pm
 from argparse import ArgumentParser
 from more_itertools import sliced
 from datetime import datetime
+import glob
 
 
 
-def ValueType(pathtotsv,term):
-    '''
-    :param pathtotsv: path to the tsv file
-    :param term: BIDS term
-    :return: Type of input of the given term
-    '''
-
-    #open the tsv file as a data frame
-    df = pd.read_csv(pathtotsv, error_bad_lines=False, sep = '\t')
-
-    # iter through the rows based on the term and returns a value type
-    for (i,row) in df.iterrows():
-        if not pd.isnull(row[term]):
-            if isinstance(row[term],int):
-                return(pm.XSD["integer"])
-            elif isinstance(row[term],str):
-                return(pm.XSD["string"])
-            elif isinstance(row[term],float):
-                return(pm.XSD["float"])
+# def ValueType(pathtotsv,term):
+#     '''
+#     :param pathtotsv: path to the tsv file
+#     :param term: BIDS term
+#     :return: Type of input of the given term
+#     '''
+#
+#     #open the tsv file as a data frame
+#     df = pd.read_csv(pathtotsv, error_bad_lines=False, sep = '\t')
+#
+#     # iter through the rows based on the term and returns a value type
+#     for (i,row) in df.iterrows():
+#         if not pd.isnull(row[term]):
+#             if isinstance(row[term],int):
+#                 return(pm.XSD["integer"])
+#             elif isinstance(row[term],str):
+#                 return(pm.XSD["string"])
+#             elif isinstance(row[term],float):
+#                 return(pm.XSD["float"])
 
 
 def json_des(file, root_dir, term):
@@ -284,17 +285,24 @@ def json_Units(file, root_dir, term):
                                         continue
 
 
-def ValueType(pathtotsv,term):
+def ValueType(pathtotsv,term,dsNumber):
     '''
     :param pathtotsv: path to the tsv file
     :param term: the term of interest
     :return: the value type for each term
     '''
 
-    # open tsv file as a data frame
-    df = pd.read_csv(pathtotsv, error_bad_lines=False, sep = '\t')
+    #check if the dataset has variables with missed characters
+    if dsNumber == 'ds002717':
+        return
+    if dsNumber == 'ds003136':
+        return
 
-    # iter through the data frame and check and return the value type
+
+    # open tsv file as a data frame
+    df = pd.read_csv(pathtotsv, encoding='utf-8', error_bad_lines=False, sep = '\t')
+
+    #iter through the data frame and check and return the value type
     for (i,row) in df.iterrows():
         if not pd.isnull(row[term]):
             if isinstance(row[term],int):
@@ -305,6 +313,18 @@ def ValueType(pathtotsv,term):
                 return(pm.XSD["float"])
             elif isinstance(row[term],datetime.date):
                 return(pm.XSD["date"])
+
+
+    # if df[term].dtypes == 'object':
+    #     return(pm.XSD["string"])
+    # elif df[term].dtypes == 'int64':
+    #     return(pm.XSD["integer"])
+    # elif df[term].dtypes == 'float64':
+    #     return(pm.XSD["float"])
+    # elif df[term].dtypes == 'bool':
+    #     return(pm.XSD["boolean"])
+    # elif df[term].dtypes == 'datetime64':
+    #     return(pm.XSD["date"])
 
 
 
@@ -368,8 +388,6 @@ def parse_property(file, root_dir, term, property):
 
 
 
-
-
 def phenotype_parser(i,path):
     '''
     This function parses the phenotype directory and extract terms from assessment tsv files and add them to the csv sheet along with the
@@ -414,6 +432,7 @@ def phenotype_parser(i,path):
                                             if t == 'participant_id':
                                                 term_list.remove('participant_id')
 
+
                                         jsonterm = []
                                         jsonlongname = []
                                         jsonlevels = []
@@ -430,11 +449,16 @@ def phenotype_parser(i,path):
                                             jsonlongname.append(json_longname(FL,root_dir,term))
                                             jsonlevels.append(json_lev(FL,root_dir,term))
                                             jsonunits.append(json_Units(FL,root_dir,term))
-                                            termtype.append(ValueType(p_tsv,term))
+                                            termtype.append(ValueType(p_tsv,term,i))
                                             termurl.append(parse_property(FL,root_dir,term, 'TermURL'))
                                             termMin.append(parse_property(FL, root_dir,term, 'MinValue'))
                                             termMax.append(parse_property(FL, root_dir,term, 'MaxValue'))
                                             termDer.append(parse_property(FL, root_dir,term, 'Derivative'))
+
+                                        #create a list of the terms in lower case for easier sorting
+                                        lower_term_list = []
+                                        for l in range(len(term_list)):
+                                            lower_term_list.append(term_list[l].lower())
 
                                         #create a data set ID list
                                         ds_list = i*len(term_list)
@@ -442,7 +466,28 @@ def phenotype_parser(i,path):
                                         while '' in d_s:
                                             d_s.remove('')
 
-                                        tuple1 = list(zip(term_list,d_s,jsonterm,jsonlongname,jsonlevels,jsonunits,termurl,termMin, termMax, termDer, termtype))
+                                        #create a list indicating that the terms is a phenotype term
+                                        pheno_list = 'YES/'*len(term_list)
+                                        pheno = pheno_list.split('/')
+                                        while '' in pheno:
+                                            pheno.remove('')
+
+                                        #create a column for isPartOf porperty for annotation annotations
+                                        partOf_list = []
+                                        for partOf in term_list:
+                                            partOf_list.append('')
+
+                                        #create a column for isPartOf porperty for annotation annotations
+                                        isAbout_list = []
+                                        for isAbout in term_list:
+                                            isAbout_list.append('')
+
+                                        #create a column for isPartOf porperty for annotation annotations
+                                        concept_list = []
+                                        for concept in term_list:
+                                            concept_list.append('')
+
+                                        tuple1 = list(zip(term_list,lower_term_list,d_s,pheno,partOf_list,isAbout_list,concept_list,jsonterm,jsonlongname,jsonlevels,jsonunits,termurl,termMin, termMax, termDer))
                                         df_tuple.extend(tuple1)
 
 
@@ -450,7 +495,7 @@ def phenotype_parser(i,path):
                     for file in files:
                         if file.endswith('.tsv'):
                             pathtotsv = os.path.join(root, file)
-                            rtsv = pd.read_csv(pathtotsv, error_bad_lines=False)
+                            rtsv = pd.read_csv(pathtotsv, encoding='latin1', error_bad_lines=False)
                             #extract terms from tsv files
                             for col in rtsv.columns :
                                 #create a term list
@@ -477,11 +522,16 @@ def phenotype_parser(i,path):
                                     json_ln.append(json_longname(file,root_dir,term))
                                     json_l.append(json_lev(file,root_dir,term))
                                     json_u.append(json_Units(file,root_dir,term))
-                                    term_t.append(ValueType(pathtotsv,term))
+                                    term_t.append(ValueType(pathtotsv,term,i))
                                     term_url.append(parse_property(file,root_dir,term,'TermURL'))
                                     term_min.append(parse_property(file,root_dir,term,'MinValue'))
                                     term_max.append(parse_property(file,root_dir,term,'MaxValue'))
                                     term_der.append(parse_property(file,root_dir,term,'Derivative'))
+
+                                #create a list of the terms in lower case for easier sorting
+                                lower_termlist = []
+                                for l in range(len(termlist)):
+                                    lower_termlist.append(termlist[l].lower())
 
                                 #create a data set ID list
                                 dslist = i*len(termlist)
@@ -489,8 +539,31 @@ def phenotype_parser(i,path):
                                 while '' in ds:
                                     ds.remove('')
 
+                                #create a list indicating that the terms is a phenotype term
+                                phenoT_list = 'YES/'*len(termlist)
+                                phenoT = phenoT_list.split('/')
+                                while '' in phenoT:
+                                    phenoT.remove('')
+
+
+                                #create a column for isPartOf porperty for annotation annotations
+                                partOflist = []
+                                for PartOf in termlist:
+                                    partOflist.append('')
+
+                                #create a column for isPartOf porperty for annotation annotations
+                                isAboutlist = []
+                                for IsAbout in termlist:
+                                    isAboutlist.append('')
+
+                                #create a column for isPartOf porperty for annotation annotations
+                                conceptlist = []
+                                for Concept in termlist:
+                                    conceptlist.append('')
+
+
                                 #create a tuple of term and its properties
-                                tuple2 = list(zip(termlist,ds,json_d,json_ln,json_l,json_u,term_url,term_min,term_max,term_der,term_t))
+                                tuple2 = list(zip(termlist,lower_termlist,ds,phenoT,partOflist,isAboutlist,conceptlist,json_d,json_ln,json_l,json_u,term_url,term_min,term_max,term_der,term_t))
                                 df_tuple.extend(tuple2)
 
     return df_tuple
@@ -500,7 +573,7 @@ def phenotype_parser(i,path):
 
 def main(argv):
 
-    parser = ArgumentParser(description='This program will extract BIDS terms from participants.tsv and assessment tsv '
+    parser = ArgumentParser(description='This script will extract BIDS terms from participants.tsv and assessment tsv '
                                         'files in the phenotype directory if found. It will then associate the terms with'
                                         'their dataset ID and save the output in a csv file')
 
@@ -512,23 +585,28 @@ def main(argv):
 
     #list ds ID's inside the given directory and set path
     dsid = os.listdir(args.directory)
-    path = args.directory
+    #path = args.directory
 
     df_tuples = []
+    #if dataset has participant.json state value would be = 1
     global state
+    #if dataset has a phenotype directory st value would be = 1
     global st
 
 
     #acress every ds individually
-    for i in dsid:
+    for path in glob.iglob(args.directory + '/*'):
+
+        i = path.split('/')[-1]
+
         #add ds ID to the end of the path to access the data set
-        path = os.path.join(path, i)
+        #path = os.path.join(path, i)
         if os.path.isdir(path):
             tsv_extract = os.listdir(path)
             jp_extract = os.listdir(path)
 
 
-            #extract participant.tsv file from a dataset
+
             for file_name in jp_extract:
                 #search for participants.json file in the data set
                 if file_name != 'participants.json':
@@ -547,12 +625,13 @@ def main(argv):
 
 
 
+            #extract participant.tsv file from a dataset
             for filename in tsv_extract:
                 #search for phenotype directory in the data set
                 if filename != 'participants.tsv':
                     continue
                 if filename == 'participants.tsv':
-                    print('Extracting terms from participants.tsv for %s' %i)
+                    print('Extracting terms from participants.tsv of %s' %i)
                     pathtotsv = os.path.join(path, filename)
                     #read tsv file
                     r_tsv = pd.read_csv(pathtotsv, error_bad_lines=False)
@@ -562,6 +641,7 @@ def main(argv):
                     for c in r_tsv.columns:
                         #create a list with all terms in the tsv file
                         term_list = c.split("\t")
+                        #get rid of empty cells
                         while '' in term_list:
                             term_list.remove('')
                         #remove the term participant id
@@ -569,12 +649,42 @@ def main(argv):
                             if T == 'participant_id':
                                 term_list.remove('participant_id')
                                 continue
+
+                        #create a list of the terms in lower case for easier sorting
+                        lower_term_list = []
+                        for l in range(len(term_list)):
+                            lower_term_list.append(term_list[l].lower())
+
                         #create a list with ds ID to match to each term
                         ds_list = i*len(term_list)
                         ds = ds_list.split('ds')
                         #takeout any empty items in the ds list
                         while '' in ds:
                             ds.remove('')
+
+
+                        #create a list indicating that the terms is not a phenotype term
+                        pheno_list = 'NO/'*len(term_list)
+                        pheno = pheno_list.split('/')
+                        while '' in pheno:
+                            pheno.remove('')
+
+                        #create a column for isPartOf porperty for annotation annotations
+                        partOf_list = []
+                        for partOf in term_list:
+                            partOf_list.append('')
+
+                        #create a column for isPartOf porperty for annotation annotations
+                        isAbout_list = []
+                        for isAbout in term_list:
+                            isAbout_list.append('')
+
+                        #create a column for isPartOf porperty for annotation annotations
+                        concept_list = []
+                        for concept in term_list:
+                            concept_list.append('')
+
+
 
                         term_des = []
                         term_long = []
@@ -595,7 +705,7 @@ def main(argv):
                                 term_long.extend([''])
                                 term_levels.extend([''])
                                 term_units.extend([''])
-                                term_type.append(ValueType(pathtotsv,t))
+                                term_type.append(ValueType(pathtotsv,t,i))
                                 term_URL.extend([''])
                                 term_min.extend([''])
                                 term_max.extend([''])
@@ -604,6 +714,7 @@ def main(argv):
                         #if the dataset has a participants.json file extract the appropriate term
                         elif state == 1:
                             json_file = 'participants.json'
+                            #set path to the json file
                             pathtojson = os.path.join(path,json_file)
                             #load json file as a dictionary
                             with open(pathtojson) as d:
@@ -612,7 +723,7 @@ def main(argv):
                                 if term == '"ISI"':
                                     term = 'ISI'
                                 #call value type function to get the type of input and add it to the list
-                                term_type.append(ValueType(pathtotsv,term))
+                                term_type.append(ValueType(pathtotsv,term,i))
 
                                 s = ''
                                 l = ''
@@ -755,7 +866,7 @@ def main(argv):
 
 
                         #pair each term with the appropriate ds ID
-                        tuples = list(zip(term_list,ds,term_des,term_long,term_levels,term_units,term_URL,term_min,term_max,term_der,term_type))
+                        tuples = list(zip(term_list,lower_term_list,ds,pheno,partOf_list,isAbout_list,concept_list,term_des,term_long,term_levels,term_units,term_URL,term_min,term_max,term_der,term_type))
                         df_tuples.extend(tuples)
 
                 if st == 1:
@@ -770,7 +881,7 @@ def main(argv):
 
     #create and save data frame to csv
     df = pd.DataFrame(df_tuples)
-    df.to_csv('TEST_terms_sheet.csv', header = ['source_variable','ds_number','Description', 'LongName','Levels','Units','Term_URL','Minimum Value','Maximum Value', 'Derivative','ValueType'], index=False)
+    df.to_csv('recent_terms_sheet.csv', header = ['source_variable','Terms','ds_number','Phenotype Term?','isPartOf','isAbout','concept','Description', 'LongName','Levels','Units','Term_URL','Minimum Value','Maximum Value', 'Derivative','valueType'], index=False)
 
 
 

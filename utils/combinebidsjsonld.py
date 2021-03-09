@@ -13,16 +13,16 @@ import requests
 def main(argv):
     parser = ArgumentParser(description='This script fixes the single bids json file. producing properly formatted jsonld')
 
-    parser.add_argument('-input', dest='input', required=True, help="single bids jsonld file")
-    parser.add_argument('-output', dest='output_dir', required=True, help="output directory ")
+    parser.add_argument('-inputDir', dest='inputDir', required=True, help="single bids jsonld file")
+    parser.add_argument('-outputDir', dest='outputDir', required=True, help="output directory ")
 
     args = parser.parse_args()
 
     #set an input directory
-    input_dir = input.args()
+    input = args.inputDir
 
     #set output directory
-    output = output_dir.args()
+    output = args.outputDir
 
     url = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
 
@@ -42,12 +42,6 @@ def main(argv):
             exit()
 
 
-
-
-
-
-
-
     # read in jsonld context
     with open(context_file) as context_data:
         context = json.load(context_data)
@@ -60,67 +54,73 @@ def main(argv):
     main_dict['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
     main_dict['terms'] = []
 
-    for term in os.listdir(input_dir):
-        #set path to the term
-        path = os.path.join(input_dir,term)
+    for term in os.listdir(input):
 
-        #open every term as a dictionary
-        with open(path) as t:
-            term_dict = json.load(t)
+        if term == '.jsonld':
+            continue
+        else:
+            #set path to the term
+            path = os.path.join(input,term)
 
-        #set an empty dictionary
-        temp = {}
+            #open every term as a dictionary
+            with open(path) as t:
+                term_dict = json.load(t)
 
-        #remove @context and fix @type
-        for key, value in term_dict.items():
+            #set an empty dictionary
+            temp = {}
 
-
-            temp['@type'] = context['@context']['DataElement']
-
-            if key =='@type' and key == '@context':
-                continue
-            if key == 'description':
-                temp[context['@context']['description']] = value
-            if key == 'label':
-                temp[context['@context']['label']] = value
-            if key == 'comment':
-                temp[context['@context']['comment']] = value
-            if key == 'sameAs':
-                temp[context['@context']['sameAs']['@id']] = value
-            if key == 'wasDerivedFrom':
-                temp[context['@context']['wasDerivedFrom']['@id']] = value
-            if key == 'ilxId':
-                temp[context['@context']['ilxId']] = join('http://uri.interlex.org/'+value)
-            if key == 'candidateTerms':
-                temp[context['@context']['candidateTerms']] = value
-            if key == 'supertypeCDEs':
-                temp[context['@context']['supertypeCDEs']['@id']] = value
-            if key == 'subtypeCDEs':
-                temp[context['@context']['subtypeCDEs']['@id']] = value
-            if key == 'url':
-                temp[context['@context']['url']['@id']] = value
-            if key == 'closeMatch':
-                temp[context['@context']['closeMatch']] = value
-            if key == 'ontologyConceptID':
-                temp[context['@context']['ontologyConceptID']] = value
-            if key == 'relatedConcepts':
-                temp[context['@context']['relatedConcepts']] = value
-            if key == 'derivative':
-                temp[context['@context']['derivative']] = value
-            if key == 'citation':
-                temp[context['@context']['citation']] = value
-            if key == 'isAbout':
-                temp[context['@context']['isAbout']['@id']] = value
-            if key == 'isPartOf':
-                temp[context['@context']['isPartOf']['@id']] = value
+            #remove @context and fix @type
+            for key, value in term_dict.items():
 
 
+                
 
-            temp[context['@context']['associatedWith']] = ["BIDS","NIDM"]
+                if key == '@context':
+                    continue
+                if key == '@type':
+                    temp['@type'] = value
+                if key == 'description':
+                    temp[context['@context']['description']] = value
+                if key == 'label':
+                    temp[context['@context']['label']] = value
+                if key == 'comment':
+                    temp[context['@context']['comment']] = value
+                if key == 'sameAs':
+                    temp[context['@context']['sameAs']['@id']] = value
+                if key == 'wasDerivedFrom':
+                    temp[context['@context']['wasDerivedFrom']['@id']] = value
+                if key == 'ilxId':
+                    temp[context['@context']['ilxId']] = join('http://uri.interlex.org/'+value)
+                if key == 'candidateTerms':
+                    temp[context['@context']['candidateTerms']] = value
+                if key == 'supertypeCDEs':
+                    temp[context['@context']['supertypeCDEs']['@id']] = value
+                if key == 'subtypeCDEs':
+                    temp[context['@context']['subtypeCDEs']['@id']] = value
+                if key == 'url':
+                    temp[context['@context']['url']['@id']] = value
+                if key == 'closeMatch':
+                    temp[context['@context']['closeMatch']] = value
+                if key == 'ontologyConceptID':
+                    temp[context['@context']['ontologyConceptID']] = value
+                if key == 'relatedConcepts':
+                    temp[context['@context']['relatedConcepts']] = value
+                if key == 'derivative':
+                    temp[context['@context']['derivative']] = value
+                if key == 'citation':
+                    temp[context['@context']['citation']] = value
+                if key == 'isAbout':
+                    temp[context['@context']['isAbout']['@id']] = value
+                if key == 'isPartOf':
+                    temp[context['@context']['isPartOf']['@id']] = value
 
 
 
-        main_dict['terms'].append(temp)
+                temp[context['@context']['associatedWith']] = ["BIDS","NIDM"]
+
+
+
+            main_dict['terms'].append(temp)
 
     compacted = jsonld.compact(main_dict,'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld')
 
