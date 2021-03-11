@@ -1,0 +1,104 @@
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<script type="module">
+    import { Octokit } from "https://cdn.pika.dev/@octokit/core";
+
+    const octokit = new Octokit({ auth: '<token-variable>' });
+    const owner = 'sanuann';
+    const repo = 'terms';
+    const person = {
+        "name": "nazek",
+        "age": 20,
+        "sex": "Female"
+    }; // data to be POSTed
+
+    octokit.request(
+        `GET /repos/{owner}/{repo}`, {
+            headers: {
+                'User-Agent': 'terms',
+                'accept': 'application/json'
+            },
+            owner: owner,
+            repo: repo
+        }).then((res) => {
+        console.log(47, 'success', owner, repo, person); // repo exists!
+        // create File in repo: createFileInRepo(jsonObj, fileName, user)
+        createFileInRepo(person, 'new-file4.json', owner);
+    }).catch((e) => {
+        console.log(50, e.message);
+        if (e.message === "Not Found") { // repo not present, so fork the repo
+            // fork the repo
+            octokit.request(
+                `POST /repos/{owner}/{repo}/forks`, {
+                    headers: {
+                        'Authorization': 'token ' + '<token-variable>',
+                    },
+                    owner: 'nqueder',
+                    repo: repo
+                }).then((response) => {
+                console.log(71, 'successfully forked: ', response.status);
+                if (response.status === 200 || response.status=== 201) {
+                    createFileInRepo(person, 'test1.json', owner);
+                } else if (response.status === 202) {
+                    setTimeout(createFileInRepo, 3000, person, 'test1.json', owner);
+                }
+                console.log(77, "post fork: ", response);
+            }).catch((e) => {
+                console.log(79, e.message);
+            });
+        }
+    });
+
+    async function createFileInRepo(jsonTermObj, pathToFile, user) {
+        console.log(57, jsonTermObj, pathToFile, user);
+        // let content = Buffer.from(JSON.stringify(jsonTermObj, undefined, 2)).toString('base64');
+        const content = btoa(JSON.stringify(jsonTermObj, undefined, 2)); // for use in browser
+        console.log(63, content);
+        octokit.request(
+            `PUT /repos/{owner}/{repo}/contents/{path}`, {
+                headers: {
+                    'Authorization': 'token ' + '<token-variable>',
+                },
+                owner: user,
+                repo: repo,
+                path: pathToFile,
+                message: pathToFile + ' added',
+                content: content,
+                branch: '<branch-termLabel>'
+            }).then((response) => {
+            console.log(91, "statusCode for createFile: ", response.status);
+            if (response.status === 200 || response.status=== 201) {
+                createPullRequest(pathToFile, user);
+            }
+        }).catch((e) => {
+            console.log(93, e.message);
+        });
+
+    }
+
+    async function createPullRequest(pathToFile, user) {
+        console.log(96, 'in createPR');
+        octokit.request(
+            `POST /repos/{owner}/{repo}/pulls`, {
+                headers: {
+                    'Authorization': 'token ' + '<token-variable>',
+                },
+                owner: 'nqueder',
+                repo: repo,
+                title: "Sucessfully raised a PR using github API. Yuhoo!!!!",
+                body: "Edited or Added Terms:" + pathToFile,
+                head: user + ":master",
+                base: "master"
+            }).then(resp => {
+            console.log(108, "StatusCode for Pull Request: ", resp.status);
+        }).catch(e => {
+            console.log(110, 'error in raising PR: ', e);
+        })
+
+    }
+
+</script>
+</body>
