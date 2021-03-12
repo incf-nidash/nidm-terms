@@ -1,22 +1,23 @@
 {
-  "visualacuity": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "1. Visual Acuity (Both eyes)",
-    "sourceVariable": "visualacuity",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:float",
-      "maxValue": 160,
-      "minValue": 16
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "1. Visual Acuity (Both eyes)",
+      "sourceVariable": "visualacuity",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "maxValue": 160.0,
+        "minValue": 16.0,
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "nidm:DataElement",
+      "description": "Visual acuity",
+      "sourceVariable": "MeasurementToolMetadata",
+      "associatedWith": "NIDM",
+      "schema:url": ""
     }
-  },
-  "MeasurementToolMetadata": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Visual acuity",
-    "schema:url": "",
-    "sourceVariable": "MeasurementToolMetadata",
-    "associatedWith": "NIDM"
-  }
+  ]
 }

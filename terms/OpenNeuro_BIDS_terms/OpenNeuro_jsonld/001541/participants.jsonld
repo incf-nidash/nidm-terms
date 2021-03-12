@@ -1,262 +1,254 @@
 {
-  "day_post_infusion": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Days between viral vector injection and MRI acquisition",
-    "sourceVariable": "day_post_infusion",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer"
-    }
-  },
-  "gender": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "B6.Cg-Tg(Fev-cre)1Esd/J (ePet-cre mice) between 8 and 16 weeks, weighting between 20 and 23g",
-    "sourceVariable": "gender",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "Days between viral vector injection and MRI acquisition",
+      "sourceVariable": "day_post_infusion",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0738437",
-      "label": "gender"
-    }
-  },
-  "group": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Experimental group",
-    "sourceVariable": "group",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "Experimental, ePet-cre injected with ChR2-eYFP vector",
-          "value": "exp"
-        },
-        {
-          "name": "Control, ePet-cre injected with eYFP vector",
-          "value": "con"
-        }
-      ]
+    {
+      "@type": "DataElement",
+      "description": "B6.Cg-Tg(Fev-cre)1Esd/J (ePet-cre mice) between 8 and 16 weeks, weighting between 20 and 23g",
+      "sourceVariable": "gender",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738437",
+        "label": "gender"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0108556",
-      "label": "participant group"
-    }
-  },
-  "MRI_acquisition_date": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Date when MRI was carried out",
-    "sourceVariable": "MRI_acquisition_date",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
+    {
+      "@type": "DataElement",
+      "description": "Experimental group",
+      "sourceVariable": "group",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Experimental, ePet-cre injected with ChR2-eYFP vector",
+            "value": "exp"
+          },
+          {
+            "name": "Control, ePet-cre injected with eYFP vector",
+            "value": "con"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0108556",
+        "label": "participant group"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0383109",
-      "label": "date"
-    }
-  },
-  "run1": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Acquisition condition for run1",
-    "sourceVariable": "run1",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "Laser power 100% of 40 mW/mm^2, considered control condition",
-          "value": "100"
-        },
-        {
-          "name": "Laser power 33% of 40 mW/mm^2",
-          "value": "33"
-        },
-        {
-          "name": "Laser power 66% of 40 mW/mm^2",
-          "value": "66"
-        },
-        {
-          "name": "Long acquisition protocol (6 X 20 s ON blocks, 160 s OFF)",
-          "value": "l100"
-        },
-        {
-          "name": "Acquisition following acute 4.5 mg/kg Fluoxetine i.v.",
-          "value": "f100"
-        },
-        {
-          "name": "Acquisition following acute 60 min restrain",
-          "value": "r100"
-        }
-      ]
-    }
-  },
-  "run2": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Acquisition condition for run1",
-    "sourceVariable": "run2",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "Laser power 100% of 40 mW/mm^2, considered control condition",
-          "value": "100"
-        },
-        {
-          "name": "Laser power 33% of 40 mW/mm^2",
-          "value": "33"
-        },
-        {
-          "name": "Laser power 66% of 40 mW/mm^2",
-          "value": "66"
-        },
-        {
-          "name": "Long acquisition protocol (6 X 20 s ON blocks, 160 s OFF)",
-          "value": "l100"
-        },
-        {
-          "name": "Acquisition following acute 4.5 mg/kg Fluoxetine i.v.",
-          "value": "f100"
-        },
-        {
-          "name": "Acquisition following acute 60 min restrain",
-          "value": "r100"
-        }
-      ]
-    }
-  },
-  "run3": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Acquisition condition for run1",
-    "sourceVariable": "run3",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "Laser power 100% of 40 mW/mm^2, considered control condition",
-          "value": "100"
-        },
-        {
-          "name": "Laser power 33% of 40 mW/mm^2",
-          "value": "33"
-        },
-        {
-          "name": "Laser power 66% of 40 mW/mm^2",
-          "value": "66"
-        },
-        {
-          "name": "Long acquisition protocol (6 X 20 s ON blocks, 160 s OFF)",
-          "value": "l100"
-        },
-        {
-          "name": "Acquisition following acute 4.5 mg/kg Fluoxetine i.v.",
-          "value": "f100"
-        },
-        {
-          "name": "Acquisition following acute 60 min restrain",
-          "value": "r100"
-        }
-      ]
-    }
-  },
-  "run4": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Acquisition condition for run1",
-    "sourceVariable": "run4",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "Laser power 100% of 40 mW/mm^2, considered control condition",
-          "value": "100"
-        },
-        {
-          "name": "Laser power 33% of 40 mW/mm^2",
-          "value": "33"
-        },
-        {
-          "name": "Laser power 66% of 40 mW/mm^2",
-          "value": "66"
-        },
-        {
-          "name": "Long acquisition protocol (6 X 20 s ON blocks, 160 s OFF)",
-          "value": "l100"
-        },
-        {
-          "name": "Acquisition following acute 4.5 mg/kg Fluoxetine i.v.",
-          "value": "f100"
-        },
-        {
-          "name": "Acquisition following acute 60 min restrain",
-          "value": "r100"
-        }
-      ]
-    }
-  },
-  "session": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "acquistion session for this animal",
-    "sourceVariable": "session",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer"
-    }
-  },
-  "Viral_infusion_date": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Date when AAV injection into DRN was carried out",
-    "sourceVariable": "Viral_infusion_date",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    }
-  },
-  "viral_vector": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Viral vector injected",
-    "sourceVariable": "viral_vector",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "ePet-cre injected with ChR2-eYFP vector",
-          "value": "ChR2-eYFP"
-        },
-        {
-          "name": "ePet-cre injected with eYFP vector",
-          "value": "eYFP"
-        }
-      ]
-    }
-  },
-  "weight": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Animal weight in gram",
-    "sourceVariable": "weight",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:float"
+    {
+      "@type": "DataElement",
+      "description": "Date when MRI was carried out",
+      "sourceVariable": "MRI_acquisition_date",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0383109",
+        "label": "date"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0112616",
-      "label": "weight"
+    {
+      "@type": "DataElement",
+      "description": "Acquisition condition for run1",
+      "sourceVariable": "run1",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Laser power 100% of 40 mW/mm^2, considered control condition",
+            "value": "100"
+          },
+          {
+            "name": "Laser power 33% of 40 mW/mm^2",
+            "value": "33"
+          },
+          {
+            "name": "Laser power 66% of 40 mW/mm^2",
+            "value": "66"
+          },
+          {
+            "name": "Long acquisition protocol (6 X 20 s ON blocks, 160 s OFF)",
+            "value": "l100"
+          },
+          {
+            "name": "Acquisition following acute 4.5 mg/kg Fluoxetine i.v.",
+            "value": "f100"
+          },
+          {
+            "name": "Acquisition following acute 60 min restrain",
+            "value": "r100"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Acquisition condition for run1",
+      "sourceVariable": "run2",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Laser power 100% of 40 mW/mm^2, considered control condition",
+            "value": "100"
+          },
+          {
+            "name": "Laser power 33% of 40 mW/mm^2",
+            "value": "33"
+          },
+          {
+            "name": "Laser power 66% of 40 mW/mm^2",
+            "value": "66"
+          },
+          {
+            "name": "Long acquisition protocol (6 X 20 s ON blocks, 160 s OFF)",
+            "value": "l100"
+          },
+          {
+            "name": "Acquisition following acute 4.5 mg/kg Fluoxetine i.v.",
+            "value": "f100"
+          },
+          {
+            "name": "Acquisition following acute 60 min restrain",
+            "value": "r100"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Acquisition condition for run1",
+      "sourceVariable": "run3",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Laser power 100% of 40 mW/mm^2, considered control condition",
+            "value": "100"
+          },
+          {
+            "name": "Laser power 33% of 40 mW/mm^2",
+            "value": "33"
+          },
+          {
+            "name": "Laser power 66% of 40 mW/mm^2",
+            "value": "66"
+          },
+          {
+            "name": "Long acquisition protocol (6 X 20 s ON blocks, 160 s OFF)",
+            "value": "l100"
+          },
+          {
+            "name": "Acquisition following acute 4.5 mg/kg Fluoxetine i.v.",
+            "value": "f100"
+          },
+          {
+            "name": "Acquisition following acute 60 min restrain",
+            "value": "r100"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Acquisition condition for run1",
+      "sourceVariable": "run4",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Laser power 100% of 40 mW/mm^2, considered control condition",
+            "value": "100"
+          },
+          {
+            "name": "Laser power 33% of 40 mW/mm^2",
+            "value": "33"
+          },
+          {
+            "name": "Laser power 66% of 40 mW/mm^2",
+            "value": "66"
+          },
+          {
+            "name": "Long acquisition protocol (6 X 20 s ON blocks, 160 s OFF)",
+            "value": "l100"
+          },
+          {
+            "name": "Acquisition following acute 4.5 mg/kg Fluoxetine i.v.",
+            "value": "f100"
+          },
+          {
+            "name": "Acquisition following acute 60 min restrain",
+            "value": "r100"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "acquistion session for this animal",
+      "sourceVariable": "session",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Date when AAV injection into DRN was carried out",
+      "sourceVariable": "Viral_infusion_date",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Viral vector injected",
+      "sourceVariable": "viral_vector",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "ePet-cre injected with ChR2-eYFP vector",
+            "value": "ChR2-eYFP"
+          },
+          {
+            "name": "ePet-cre injected with eYFP vector",
+            "value": "eYFP"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Animal weight in gram",
+      "sourceVariable": "weight",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "gram",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112616",
+        "label": "weight"
+      }
     }
-  }
+  ]
 }

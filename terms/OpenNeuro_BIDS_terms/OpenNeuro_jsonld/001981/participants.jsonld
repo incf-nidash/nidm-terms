@@ -1,103 +1,99 @@
 {
-  "date": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Date given in DD.MM.YYYY format",
-    "sourceVariable": "date",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "Date given in DD.MM.YYYY format",
+      "sourceVariable": "date",
+      "associatedWith": "NIDM",
+      "label": "Date of fMRI session",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0383109",
+        "label": "date"
+      }
     },
-    "label": "Date of fMRI session",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0383109",
-      "label": "date"
+    {
+      "@type": "DataElement",
+      "description": "Time between the start of medetomidine administration and the experimental endpoint (for details, see paper)",
+      "sourceVariable": "duration",
+      "associatedWith": "NIDM",
+      "label": "Duration of medetomidine anesthesia",
+      "responseOptions": {
+        "unitCode": "minutes",
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "sourceVariable": "efs_runs",
+      "associatedWith": "NIDM",
+      "label": "Number of electrical forepaw stimulaiton (EFS) fMRI runs",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "subcutaneous (SC) or intravenous (IV), with or without bolus",
+      "sourceVariable": "protocol",
+      "associatedWith": "NIDM",
+      "label": "medetomidine administration protocol",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "SC with bolus",
+            "value": "1"
+          },
+          {
+            "name": "IV with bolus",
+            "value": "2"
+          },
+          {
+            "name": "IV no bolus",
+            "value": "3"
+          },
+          {
+            "name": "IV lower dose",
+            "value": "4"
+          }
+        ],
+        "maxValue": "4",
+        "minValue": "1",
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "sourceVariable": "rs_runs",
+      "associatedWith": "NIDM",
+      "label": "Number of resting state (RS) fMRI runs",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Weight was measured right before the induction of anesthesia",
+      "sourceVariable": "weight",
+      "associatedWith": "NIDM",
+      "label": "Body weight",
+      "responseOptions": {
+        "unitCode": "grams",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112616",
+        "label": "weight"
+      }
+    },
+    {
+      "@type": "nidm:DataElement",
+      "description": "ID of the rat, from sub-01 to sub-24",
+      "sourceVariable": "participant_id",
+      "associatedWith": "NIDM"
     }
-  },
-  "duration": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Time between the start of medetomidine administration and the experimental endpoint (for details, see paper)",
-    "sourceVariable": "duration",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer",
-      "unitCode": "minutes"
-    },
-    "label": "Duration of medetomidine anesthesia"
-  },
-  "efs_runs": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "sourceVariable": "efs_runs",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer"
-    },
-    "label": "Number of electrical forepaw stimulaiton (EFS) fMRI runs"
-  },
-  "protocol": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "subcutaneous (SC) or intravenous (IV), with or without bolus",
-    "sourceVariable": "protocol",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer",
-      "choices": [
-        {
-          "name": "SC with bolus",
-          "value": "1"
-        },
-        {
-          "name": "IV with bolus",
-          "value": "2"
-        },
-        {
-          "name": "IV no bolus",
-          "value": "3"
-        },
-        {
-          "name": "IV lower dose",
-          "value": "4"
-        }
-      ],
-      "maxValue": "4",
-      "minValue": "1"
-    },
-    "label": "medetomidine administration protocol"
-  },
-  "rs_runs": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "sourceVariable": "rs_runs",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer"
-    },
-    "label": "Number of resting state (RS) fMRI runs"
-  },
-  "weight": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Weight was measured right before the induction of anesthesia",
-    "sourceVariable": "weight",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer",
-      "unitCode": "grams"
-    },
-    "label": "Body weight",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0112616",
-      "label": "weight"
-    }
-  },
-  "participant_id": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "ID of the rat, from sub-01 to sub-24",
-    "sourceVariable": "participant_id",
-    "associatedWith": "NIDM"
-  }
+  ]
 }

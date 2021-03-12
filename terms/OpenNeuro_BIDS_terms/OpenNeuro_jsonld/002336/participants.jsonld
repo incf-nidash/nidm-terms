@@ -1,48 +1,48 @@
 {
-  "age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "age of the participant",
-    "sourceVariable": "age",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer",
-      "unitCode": "years"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "age of the participant",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0100400",
-      "label": "age"
-    }
-  },
-  "sex": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "sex of the participant",
-    "sourceVariable": "sex",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "male",
-          "value": "M"
-        },
-        {
-          "name": "female",
-          "value": "F"
-        }
-      ]
+    {
+      "@type": "DataElement",
+      "description": "anonymised participant IDs of XP2 dataset",
+      "sourceVariable": "participant_id",
+      "associatedWith": "NIDM"
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0112866",
-      "label": "sex"
+    {
+      "@type": "DataElement",
+      "description": "sex of the participant",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "M"
+          },
+          {
+            "name": "female",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112866",
+        "label": "sex"
+      }
     }
-  },
-  "participant_id": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "anonymised participant IDs of XP2 dataset",
-    "sourceVariable": "participant_id",
-    "associatedWith": "NIDM"
-  }
+  ]
 }

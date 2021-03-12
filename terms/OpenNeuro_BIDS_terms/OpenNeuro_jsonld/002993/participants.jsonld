@@ -1,0 +1,47 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "Age of the participant at time of testing",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Biological sex of the participant",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "female",
+            "value": "F"
+          },
+          {
+            "name": "male",
+            "value": "M"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112866",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "nidm:DataElement",
+      "description": "Unique participant identifier",
+      "sourceVariable": "participant_id",
+      "associatedWith": "NIDM"
+    }
+  ]
+}

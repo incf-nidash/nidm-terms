@@ -1,182 +1,174 @@
 {
-  "age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Age in years at imaging",
-    "sourceVariable": "age",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:float"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "Age in years at imaging",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "label": "Age",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
-    "label": "Age",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0100400",
-      "label": "age"
+    {
+      "@type": "DataElement",
+      "description": "How would you describe yourself?",
+      "sourceVariable": "race",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "American Indian or Alaskan Native",
+            "value": "1"
+          },
+          {
+            "name": "Asian",
+            "value": "2"
+          },
+          {
+            "name": "Black or African American",
+            "value": "3"
+          },
+          {
+            "name": "Native Hawaiian or Other Pacific Islander",
+            "value": "4"
+          },
+          {
+            "name": "White",
+            "value": "5"
+          },
+          {
+            "name": "Other",
+            "value": "6"
+          }
+        ],
+        "maxValue": "6",
+        "minValue": "1",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0109596",
+        "label": "race assessment"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Sex of participant",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "label": "Sex",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "1"
+          },
+          {
+            "name": "female",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112866",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "date and time of ses-T1_task-SLD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "SLD_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-SLD datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "date and time of ses-T1_task-SLI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "SLI_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-SLI datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "date and time of ses-T1_task-SSD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "SSD_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-SSD datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "date and time of ses-T1_task-SSI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "SSI_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-SSI datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "date and time of ses-T1_task-VLD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "VLD_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-VLD datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "date and time of ses-T1_task-VLI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "VLI_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-VLI datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "date and time of ses-T1_task-VSD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "VSD_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-VSD datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "date and time of ses-T1_task-VSI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "VSI_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-VSI datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "nidm:DataElement",
+      "description": "Prescribed medication taken for ADHD at ses-T1",
+      "sourceVariable": "ADHD_medication",
+      "associatedWith": "NIDM",
+      "rdfs:label": "ADHD Medication"
     }
-  },
-  "race": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "How would you describe yourself?",
-    "sourceVariable": "race",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:float",
-      "choices": [
-        {
-          "name": "American Indian or Alaskan Native",
-          "value": "1"
-        },
-        {
-          "name": "Asian",
-          "value": "2"
-        },
-        {
-          "name": "Black or African American",
-          "value": "3"
-        },
-        {
-          "name": "Native Hawaiian or Other Pacific Islander",
-          "value": "4"
-        },
-        {
-          "name": "White",
-          "value": "5"
-        },
-        {
-          "name": "Other",
-          "value": "6"
-        }
-      ],
-      "maxValue": "6",
-      "minValue": "1"
-    },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0109596",
-      "label": "race assessment"
-    }
-  },
-  "sex": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Sex of participant",
-    "sourceVariable": "sex",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer",
-      "choices": [
-        {
-          "name": "male",
-          "value": "1"
-        },
-        {
-          "name": "female",
-          "value": "2"
-        }
-      ],
-      "maxValue": "2",
-      "minValue": "1"
-    },
-    "label": "Sex",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0112866",
-      "label": "sex"
-    }
-  },
-  "SLD_datetime": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "date and time of ses-T1_task-SLD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-    "sourceVariable": "SLD_datetime",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "task-SLD datetime"
-  },
-  "SLI_datetime": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "date and time of ses-T1_task-SLI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-    "sourceVariable": "SLI_datetime",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "task-SLI datetime"
-  },
-  "SSD_datetime": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "date and time of ses-T1_task-SSD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-    "sourceVariable": "SSD_datetime",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "task-SSD datetime"
-  },
-  "SSI_datetime": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "date and time of ses-T1_task-SSI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-    "sourceVariable": "SSI_datetime",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "task-SSI datetime"
-  },
-  "VLD_datetime": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "date and time of ses-T1_task-VLD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-    "sourceVariable": "VLD_datetime",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "task-VLD datetime"
-  },
-  "VLI_datetime": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "date and time of ses-T1_task-VLI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-    "sourceVariable": "VLI_datetime",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "task-VLI datetime"
-  },
-  "VSD_datetime": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "date and time of ses-T1_task-VSD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-    "sourceVariable": "VSD_datetime",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "task-VSD datetime"
-  },
-  "VSI_datetime": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "date and time of ses-T1_task-VSI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-    "sourceVariable": "VSI_datetime",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "task-VSI datetime"
-  },
-  "ADHD_medication": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Prescribed medication taken for ADHD at ses-T1",
-    "sourceVariable": "ADHD_medication",
-    "associatedWith": "NIDM",
-    "label": "ADHD Medication"
-  }
+  ]
 }

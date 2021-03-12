@@ -1,0 +1,60 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "age of the participant during the imaging session as reported by the participant",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "handedness of the participant as reported by the participant",
+      "sourceVariable": "handedness",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0104886",
+        "label": "handedness assessment"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "imaging session identifier of the form s<site (and scanner if applicable)>x<session>",
+      "sourceVariable": "session_id",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "sex of the participant as reported by the participant",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112866",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "nidm:DataElement",
+      "description": "subject identifier of the form c<cohort>s<subject>",
+      "sourceVariable": "participant_id",
+      "associatedWith": "NIDM"
+    }
+  ]
+}

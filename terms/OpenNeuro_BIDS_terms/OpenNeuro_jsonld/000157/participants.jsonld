@@ -1,162 +1,154 @@
 {
-  "age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Age",
-    "sourceVariable": "age",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "unitCode": "years",
-      "valueType": "xsd:float"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "Age",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "label": "Age",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
-    "label": "Age",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0100400",
-      "label": "age"
+    {
+      "@type": "DataElement",
+      "description": "Subject's self-rating of appetite strength when asked after the scan",
+      "sourceVariable": "appetite_post",
+      "associatedWith": "NIDM",
+      "label": "Post-scan Appetite Rating",
+      "responseOptions": {
+        "unitCode": "1-5 scale, 5 being the highest",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_52583e083c9ab/",
+        "label": "appetite"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Subject's self-rating of appetite strength when asked before the scan",
+      "sourceVariable": "appetite_pre",
+      "associatedWith": "NIDM",
+      "label": "Pre-scan Appetite Rating (Hunger Covariate)",
+      "responseOptions": {
+        "unitCode": "5 being the highest, 1-5 scale",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_52583e083c9ab/",
+        "label": "appetite"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Body mass index",
+      "sourceVariable": "BMI",
+      "associatedWith": "NIDM",
+      "label": "Body mass index",
+      "responseOptions": {
+        "unitCode": "kg/m2",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0263110",
+        "label": "bmi (physical examination)"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Menstrual Cycle phase (based on days_since_menstruation and oral_contraceptive)",
+      "sourceVariable": "cycle_phase_covariate",
+      "associatedWith": "NIDM",
+      "label": "Cycle Phase Covariate",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Not in phase 1 or 2 (29 days or more) or using oral contraceptives",
+            "value": "0"
+          },
+          {
+            "name": "Follicular phase/ovulation (day 1-14)",
+            "value": " 1"
+          },
+          {
+            "name": "Luteal phase (day 15 to 28)",
+            "value": " 2"
+          }
+        ],
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "sourceVariable": "days_since_menstruationi",
+      "associatedWith": "NIDM",
+      "label": "Days since last menstruation",
+      "responseOptions": {
+        "unitCode": "days",
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Subject's self-rating of how important dieting is to them as assessed with 2 questions (i.e. To what extent are you concerned about your weight/being slim?)",
+      "sourceVariable": "diet_importance",
+      "associatedWith": "NIDM",
+      "label": "Diet goal Importance rating",
+      "responseOptions": {
+        "unitCode": "1-5 scale, 5 being the highest",
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Subject's self-rating of how well they adhere to their dieting goal",
+      "sourceVariable": "diet_success",
+      "associatedWith": "NIDM",
+      "label": "Diet success rating",
+      "responseOptions": {
+        "unitCode": "1-5 scale, 5 being the highest",
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Whether or not the subject was using an oral contraceptive",
+      "sourceVariable": "oral_contraceptive",
+      "associatedWith": "NIDM",
+      "label": "Oral Contraceptive use (Yes/No)",
+      "responseOptions": {
+        "unitCode": "yes/no",
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Sex",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "label": "Sex",
+      "responseOptions": {
+        "unitCode": "male/female",
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112866",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "nidm:DataElement",
+      "description": "number of days since last menstruation",
+      "sourceVariable": "days_since_menstruation",
+      "associatedWith": "NIDM",
+      "rdfs:label": "Days Since Last Menstruation (Day in Cycle)"
     }
-  },
-  "appetite_post": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Subject's self-rating of appetite strength when asked after the scan",
-    "sourceVariable": "appetite_post",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "unitCode": " 1-5 scale, 5 being the highest",
-      "valueType": "xsd:float"
-    },
-    "label": "Post-scan Appetite Rating",
-    "isAbout": {
-      "@id": "http://cognitiveatlas.org/concept/json/trm_52583e083c9ab/",
-      "label": "appetite"
-    }
-  },
-  "appetite_pre": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Subject's self-rating of appetite strength when asked before the scan",
-    "sourceVariable": "appetite_pre",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "unitCode": " 5 being the highest, 1-5 scale",
-      "valueType": "xsd:float"
-    },
-    "label": "Pre-scan Appetite Rating (Hunger Covariate)",
-    "isAbout": {
-      "@id": "http://cognitiveatlas.org/concept/json/trm_52583e083c9ab/",
-      "label": "appetite"
-    }
-  },
-  "BMI": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Body mass index",
-    "sourceVariable": "BMI",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "unitCode": "kg/m2",
-      "valueType": "xsd:float"
-    },
-    "label": "Body mass index",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0263110",
-      "label": "bmi (physical examination)"
-    }
-  },
-  "cycle_phase_covariate": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Menstrual Cycle phase (based on days_since_menstruation and oral_contraceptive)",
-    "sourceVariable": "cycle_phase_covariate",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer",
-      "choices": [
-        {
-          "name": "Not in phase 1 or 2 (29 days or more) or using oral contraceptives",
-          "value": " 0"
-        },
-        {
-          "name": "Follicular phase/ovulation (day 1-14)",
-          "value": " 1"
-        },
-        {
-          "name": "Luteal phase (day 15 to 28)",
-          "value": " 2"
-        }
-      ]
-    },
-    "label": "Cycle Phase Covariate"
-  },
-  "days_since_menstruationi": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "sourceVariable": "days_since_menstruationi",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "unitCode": "days",
-      "valueType": "xsd:integer"
-    },
-    "label": "Days since last menstruation"
-  },
-  "diet_importance": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Subject's self-rating of how important dieting is to them as assessed with 2 questions (i.e. To what extent are you concerned about your weight/being slim?)",
-    "sourceVariable": "diet_importance",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "unitCode": " 1-5 scale, 5 being the highest",
-      "valueType": "xsd:float"
-    },
-    "label": "Diet goal Importance rating"
-  },
-  "diet_success": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Subject's self-rating of how well they adhere to their dieting goal",
-    "sourceVariable": "diet_success",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "unitCode": " 1-5 scale, 5 being the highest",
-      "valueType": "xsd:float"
-    },
-    "label": "Diet success rating"
-  },
-  "oral_contraceptive": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Whether or not the subject was using an oral contraceptive",
-    "sourceVariable": "oral_contraceptive",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "unitCode": "yes/no",
-      "valueType": "xsd:string"
-    },
-    "label": "Oral Contraceptive use (Yes/No)"
-  },
-  "sex": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Sex",
-    "sourceVariable": "sex",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "unitCode": "male/female",
-      "valueType": "xsd:string"
-    },
-    "label": "Sex",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0112866",
-      "label": "sex"
-    }
-  },
-  "days_since_menstruation": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "number of days since last menstruation",
-    "sourceVariable": "days_since_menstruation",
-    "associatedWith": "NIDM",
-    "label": "Days Since Last Menstruation (Day in Cycle)"
-  }
+  ]
 }

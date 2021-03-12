@@ -1,28 +1,29 @@
 {
-  "gender": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "sourceVariable": "gender",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "sourceVariable": "gender",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738437",
+        "label": "gender"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0738437",
-      "label": "gender"
+    {
+      "@type": "DataElement",
+      "sourceVariable": "group",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0108556",
+        "label": "participant group"
+      }
     }
-  },
-  "group": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "sourceVariable": "group",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0108556",
-      "label": "participant group"
-    }
-  }
+  ]
 }

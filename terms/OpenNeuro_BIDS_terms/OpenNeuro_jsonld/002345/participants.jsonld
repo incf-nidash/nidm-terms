@@ -1,71 +1,69 @@
 {
-  "age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "age of the participant",
-    "sourceVariable": "age",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "unitCode": "years"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "age of the participant",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0100400",
-      "label": "age"
-    }
-  },
-  "comprehension": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "behavioral comprehension score ranging from 0 to 1 for corresponding task (if applicable)",
-    "sourceVariable": "comprehension",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    }
-  },
-  "condition": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "within- or between-subject experimental condition for corresponding task (if applicable)",
-    "sourceVariable": "condition",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    }
-  },
-  "sex": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "sex of the participant",
-    "sourceVariable": "sex",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "female",
-          "value": "f"
-        },
-        {
-          "name": "male",
-          "value": "m"
-        }
-      ]
+    {
+      "@type": "DataElement",
+      "description": "behavioral comprehension score ranging from 0 to 1 for corresponding task (if applicable)",
+      "sourceVariable": "comprehension",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0112866",
-      "label": "sex"
+    {
+      "@type": "DataElement",
+      "description": "within- or between-subject experimental condition for corresponding task (if applicable)",
+      "sourceVariable": "condition",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "sex of the participant",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "female",
+            "value": "f"
+          },
+          {
+            "name": "male",
+            "value": "m"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112866",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "tasks (story stimuli) collected for participant",
+      "sourceVariable": "task",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
     }
-  },
-  "task": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "tasks (story stimuli) collected for participant",
-    "sourceVariable": "task",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    }
-  }
+  ]
 }

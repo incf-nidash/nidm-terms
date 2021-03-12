@@ -1,54 +1,53 @@
 {
-  "age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Age of participant at time of MRI scan.",
-    "sourceVariable": "age",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:float"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "Age of participant at time of MRI scan.",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "label": "Age",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
-    "label": "Age",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0100400",
-      "label": "age"
+    {
+      "@type": "DataElement",
+      "description": "Metric for executive function, calculated from recent measurements of cognitive performance tasks. For further details see supplementary material as referenced in dataset_description.",
+      "sourceVariable": "EF",
+      "associatedWith": "NIDM",
+      "label": "Executive Function",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Metric for the rate of change in executive function, calculated from longitudinal measurements of cognitive performance tasks. For further details see supplementary material as referenced in dataset_description.",
+      "sourceVariable": "rLEF",
+      "associatedWith": "NIDM",
+      "label": "rate of change in longitudinal executive function",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "-",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "label": "Sex",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112866",
+        "label": "sex"
+      }
     }
-  },
-  "EF": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Metric for executive function, calculated from recent measurements of cognitive performance tasks. For further details see supplementary material as referenced in dataset_description.",
-    "sourceVariable": "EF",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:float"
-    },
-    "label": "Executive Function"
-  },
-  "rLEF": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Metric for the rate of change in executive function, calculated from longitudinal measurements of cognitive performance tasks. For further details see supplementary material as referenced in dataset_description.",
-    "sourceVariable": "rLEF",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:float"
-    },
-    "label": "rate of change in longitudinal executive function"
-  },
-  "sex": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "-",
-    "sourceVariable": "sex",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "Sex",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0112866",
-      "label": "sex"
-    }
-  }
+  ]
 }

@@ -73,7 +73,7 @@ def main(argv):
             for key, value in term_dict.items():
 
 
-                
+
 
                 if key == '@context':
                     continue

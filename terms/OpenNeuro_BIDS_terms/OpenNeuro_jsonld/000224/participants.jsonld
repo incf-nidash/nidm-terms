@@ -1,96 +1,94 @@
 {
-  "age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant age",
-    "sourceVariable": "age",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer",
-      "unitCode": "Years"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "Participant age",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "Years",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0100400",
-      "label": "age"
-    }
-  },
-  "education_degree": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Highest educational degree obtained",
-    "sourceVariable": "education_degree",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "Bachelor's degree",
-          "value": "Bachelors"
-        },
-        {
-          "name": "Master's degree",
-          "value": "Masters"
-        },
-        {
-          "name": "Some Professional degree",
-          "value": "Professional"
-        },
-        {
-          "name": "Ph.D.",
-          "value": "Doctorate"
-        }
-      ]
+    {
+      "@type": "DataElement",
+      "description": "Highest educational degree obtained",
+      "sourceVariable": "education_degree",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Bachelor's degree",
+            "value": "Bachelors"
+          },
+          {
+            "name": "Master's degree",
+            "value": "Masters"
+          },
+          {
+            "name": "Some Professional degree",
+            "value": "Professional"
+          },
+          {
+            "name": "Ph.D.",
+            "value": "Doctorate"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0325823",
+        "label": "education (wechsler test of adult reading)"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0325823",
-      "label": "education (wechsler test of adult reading)"
-    }
-  },
-  "education_years": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Number of total years of education",
-    "sourceVariable": "education_years",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:float",
-      "unitCode": "Years"
+    {
+      "@type": "DataElement",
+      "description": "Number of total years of education",
+      "sourceVariable": "education_years",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "Years",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0325823",
+        "label": "education (wechsler test of adult reading)"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0325823",
-      "label": "education (wechsler test of adult reading)"
-    }
-  },
-  "gender": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant gender",
-    "sourceVariable": "gender",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "Male",
-          "value": "M"
-        },
-        {
-          "name": "Female",
-          "value": "F"
-        }
-      ]
+    {
+      "@type": "DataElement",
+      "description": "Participant gender",
+      "sourceVariable": "gender",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Male",
+            "value": "M"
+          },
+          {
+            "name": "Female",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738437",
+        "label": "gender"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0738437",
-      "label": "gender"
+    {
+      "@type": "nidm:DataElement",
+      "description": "Demographic information",
+      "sourceVariable": "MeasurementToolMetadata",
+      "associatedWith": "NIDM",
+      "schema:url": "N/A"
     }
-  },
-  "MeasurementToolMetadata": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Demographic information",
-    "schema:url": "N/A",
-    "sourceVariable": "MeasurementToolMetadata",
-    "associatedWith": "NIDM"
-  }
+  ]
 }

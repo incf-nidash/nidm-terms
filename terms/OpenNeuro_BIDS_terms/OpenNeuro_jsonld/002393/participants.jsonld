@@ -1,82 +1,78 @@
 {
-  "age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "yy",
-    "sourceVariable": "age",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "yy",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "label": "Participant age",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
-    "label": "Participant age",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0100400",
-      "label": "age"
+    {
+      "@type": "DataElement",
+      "description": "yyyy-mm-dd",
+      "sourceVariable": "date_of_scan",
+      "associatedWith": "NIDM",
+      "label": "Date of scan",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0383109",
+        "label": "date"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "sourceVariable": "institution_id",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "sourceVariable": "manufacturer",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "sourceVariable": "manufacturers_model_name",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "M or F",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "label": "Participant gender",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112866",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "nidm:DataElement",
+      "description": "Unique ID",
+      "sourceVariable": "participant_id",
+      "associatedWith": "NIDM",
+      "rdfs:label": "Participant ID"
     }
-  },
-  "date_of_scan": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "yyyy-mm-dd",
-    "sourceVariable": "date_of_scan",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "Date of scan",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0383109",
-      "label": "date"
-    }
-  },
-  "sex": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "M or F",
-    "sourceVariable": "sex",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "Participant gender",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0112866",
-      "label": "sex"
-    }
-  },
-  "participant_id": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Unique ID",
-    "sourceVariable": "participant_id",
-    "associatedWith": "NIDM",
-    "label": "Participant ID"
-  },
-  "institution_id": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-	"sourceVariable": "institution_id",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-	"associatedWith": "NIDM"
-  },
-  "manufacturers_model_name": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-	"sourceVariable": "manufacturers_model_name",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-	"associatedWith": "NIDM"
-  },
-  "manufacturer": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-	"sourceVariable": "manufacturer",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-	"associatedWith": "NIDM"
-  }
+  ]
 }

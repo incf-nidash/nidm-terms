@@ -1,50 +1,51 @@
 {
-  "group": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Experimental arm",
-    "sourceVariable": "group",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": " Group that trained movement sequences",
-          "value": "movement"
-        },
-        {
-          "name": "Group that trained cue sequences",
-          "value": "cue"
-        }
-      ]
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "Experimental arm",
+      "sourceVariable": "group",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": " Group that trained movement sequences",
+            "value": "movement"
+          },
+          {
+            "name": "Group that trained cue sequences",
+            "value": "cue"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0108556",
+        "label": "participant group"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0108556",
-      "label": "participant group"
+    {
+      "@type": "DataElement",
+      "description": "Self reported dominant hand",
+      "sourceVariable": "handedness",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Right Handed",
+            "value": "R"
+          },
+          {
+            "name": "Left Handed",
+            "value": "L"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0104886",
+        "label": "handedness assessment"
+      }
     }
-  },
-  "handedness": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Self reported dominant hand",
-    "sourceVariable": "handedness",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "Right Handed",
-          "value": "R"
-        },
-        {
-          "name": "Left Handed",
-          "value": "L"
-        }
-      ]
-    },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0104886",
-      "label": "handedness assessment"
-    }
-  }
+  ]
 }

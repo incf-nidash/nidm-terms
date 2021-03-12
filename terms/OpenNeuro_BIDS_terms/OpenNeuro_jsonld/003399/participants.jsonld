@@ -1,0 +1,184 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "anti-epileptic drug status",
+      "sourceVariable": "aed",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "age of the patient during the session",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "anatomical coverage of the electrodes",
+      "sourceVariable": "coverage",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "temporal",
+            "value": "T"
+          },
+          {
+            "name": "occipital",
+            "value": "O"
+          },
+          {
+            "name": "parietal",
+            "value": "P"
+          },
+          {
+            "name": "frontal",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Engel epilepsy surgery outcome scale",
+      "sourceVariable": "engel 1 year",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "anatomical lobe of surgery",
+      "sourceVariable": "lobe surgery",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "temporal",
+            "value": "T"
+          },
+          {
+            "name": "occipital",
+            "value": "O"
+          },
+          {
+            "name": "parietal",
+            "value": "P"
+          },
+          {
+            "name": "frontal",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "pathology",
+      "sourceVariable": "pathology",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "gender of the patient (male/female/unknown)",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "M"
+          },
+          {
+            "name": "female",
+            "value": "F"
+          },
+          {
+            "name": "unknown",
+            "value": "unknown"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112866",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "side of the brain",
+      "sourceVariable": "side",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "left",
+            "value": "L"
+          },
+          {
+            "name": "right",
+            "value": "R"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "type of implantation",
+      "sourceVariable": "type iEEG",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "acute electrocorticography",
+            "value": "aECOG"
+          },
+          {
+            "name": "long-term electrocorticography",
+            "value": "cECOG"
+          },
+          {
+            "name": "stereo-encephalography",
+            "value": "SEEG"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "type of surgery",
+      "sourceVariable": "type surgery",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "nidm:DataElement",
+      "description": "name of the patient",
+      "sourceVariable": "participant_id",
+      "associatedWith": "NIDM"
+    }
+  ]
+}

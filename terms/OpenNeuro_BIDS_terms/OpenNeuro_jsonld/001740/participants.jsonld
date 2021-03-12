@@ -1,47 +1,47 @@
 {
-  "age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Age of the subject at time of scan with 3 digits",
-    "sourceVariable": "age",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "Age of the subject at time of scan with 3 digits",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0100400",
-      "label": "age"
-    }
-  },
-  "sex": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "sourceVariable": "sex",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "Male",
-          "value": "M"
-        },
-        {
-          "name": "Female",
-          "value": "F"
-        }
-      ]
+    {
+      "@type": "DataElement",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Male",
+            "value": "M"
+          },
+          {
+            "name": "Female",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112866",
+        "label": "sex"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0112866",
-      "label": "sex"
+    {
+      "@type": "nidm:DataElement",
+      "description": "anonymized, BIDS compatible identification",
+      "sourceVariable": "participant_id",
+      "associatedWith": "NIDM",
+      "rdfs:label": "patient identification"
     }
-  },
-  "participant_id": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "anonymized, BIDS compatible identification",
-    "sourceVariable": "participant_id",
-    "associatedWith": "NIDM",
-    "label": "patient identification"
-  }
+  ]
 }

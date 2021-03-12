@@ -1,74 +1,76 @@
 {
-  "age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Age or range of age of the subject",
-    "sourceVariable": "age",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "unitCode": "years"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "Age or range of age of the subject",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0100400",
-      "label": "age"
-    }
-  },
-  "handedness": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Tendency to use either the right or the left hand more naturally than the other.",
-    "sourceVariable": "handedness",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "Right",
-          "value": "R"
-        },
-        {
-          "name": "Left",
-          "value": "L"
-        }
-      ]
+    {
+      "@type": "DataElement",
+      "description": "Tendency to use either the right or the left hand more naturally than the other.",
+      "sourceVariable": "handedness",
+      "associatedWith": "NIDM",
+      "label": "Handedness of the subject",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Right",
+            "value": "R"
+          },
+          {
+            "name": "Left",
+            "value": "L"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0104886",
+        "label": "handedness assessment"
+      }
     },
-    "label": "Handedness of the subject",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0104886",
-      "label": "handedness assessment"
-    }
-  },
-  "sex": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Sex of the subject",
-    "sourceVariable": "sex",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "male",
-          "value": "M"
-        },
-        {
-          "name": "female",
-          "value": "F"
-        }
-      ]
+    {
+      "@type": "DataElement",
+      "description": "Unique subject identifier",
+      "sourceVariable": "participant_id",
+      "associatedWith": "NIDM",
+      "label": "Participant identifier",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0112866",
-      "label": "sex"
+    {
+      "@type": "DataElement",
+      "description": "Sex of the subject",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "M"
+          },
+          {
+            "name": "female",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112866",
+        "label": "sex"
+      }
     }
-  },
-  "participant_id": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Unique subject identifier",
-    "sourceVariable": "participant_id",
-    "associatedWith": "NIDM",
-    "label": "Participant identifier"
-  }
+  ]
 }

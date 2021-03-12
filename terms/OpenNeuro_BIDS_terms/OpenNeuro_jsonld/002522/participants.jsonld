@@ -1,65 +1,61 @@
 {
-  "age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "age of participant",
-    "sourceVariable": "age",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer",
-      "unitCode": "years (rounded down)"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "age of participant",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years (rounded down)",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0100400",
-      "label": "age"
-    }
-  },
-  "group": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "group membership",
-    "sourceVariable": "group",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "ASD (Autism Spectrum Disorders)",
-          "value": "ASD"
-        },
-        {
-          "name": "Neurotypicals (controls)",
-          "value": "Neurotypical"
-        }
-      ]
+    {
+      "@type": "DataElement",
+      "description": "group membership",
+      "sourceVariable": "group",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "ASD (Autism Spectrum Disorders)",
+            "value": "ASD"
+          },
+          {
+            "name": "Neurotypicals (controls)",
+            "value": "Neurotypical"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
     },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0108556",
-      "label": "participant group"
+    {
+      "@type": "DataElement",
+      "description": "biological sex of participant",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "m"
+          },
+          {
+            "name": "female",
+            "value": "f"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112866",
+        "label": "sex"
+      }
     }
-  },
-  "sex": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "biological sex of participant",
-    "sourceVariable": "sex",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "male",
-          "value": "m"
-        },
-        {
-          "name": "female",
-          "value": "f"
-        }
-      ]
-    },
-    "isAbout": {
-      "@id": "ilx_id:ilx_0112866",
-      "label": "sex"
-    }
-  }
+  ]
 }

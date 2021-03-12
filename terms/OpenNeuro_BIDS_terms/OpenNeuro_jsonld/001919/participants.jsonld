@@ -1,132 +1,124 @@
 {
-  "age": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "yy",
-    "sourceVariable": "age",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "yy",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "label": "Participant age",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
-    "label": "Participant age",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0100400",
-      "label": "age"
+    {
+      "@type": "DataElement",
+      "description": "yyyy-mm-dd",
+      "sourceVariable": "date_of_scan",
+      "associatedWith": "NIDM",
+      "label": "Date of scan",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0383109",
+        "label": "date"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "InstitutionName",
+      "sourceVariable": "institution",
+      "associatedWith": "NIDM",
+      "label": "InstitutionName",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "InstitutionId",
+      "sourceVariable": "institution_id",
+      "associatedWith": "NIDM",
+      "label": "institution_id",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "ManufacturerName",
+      "sourceVariable": "manufacturer",
+      "associatedWith": "NIDM",
+      "label": "ManufacturerName",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "ManufacturersModelName",
+      "sourceVariable": "manufacturers_model_name",
+      "associatedWith": "NIDM",
+      "label": "ManufacturersModelName",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "ReceiveCoilName",
+      "sourceVariable": "receive_coil_name",
+      "associatedWith": "NIDM",
+      "label": "ReceiveCoilName",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Researcher",
+      "sourceVariable": "researcher",
+      "associatedWith": "NIDM",
+      "label": "Researcher",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "M or F",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "label": "Participant gender",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112866",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "SoftwareVersions",
+      "sourceVariable": "software_versions",
+      "associatedWith": "NIDM",
+      "label": "SoftwareVersions",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "nidm:DataElement",
+      "description": "Unique ID",
+      "sourceVariable": "participant_id",
+      "associatedWith": "NIDM",
+      "rdfs:label": "Participant ID"
     }
-  },
-  "date_of_scan": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "yyyy-mm-dd",
-    "sourceVariable": "date_of_scan",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "Date of scan",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0383109",
-      "label": "date"
-    }
-  },
-  "institution": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "InstitutionName",
-    "sourceVariable": "institution",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "InstitutionName"
-  },
-  "institution_id": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "InstitutionId",
-    "sourceVariable": "institution_id",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "institution_id"
-  },
-  "manufacturer": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "ManufacturerName",
-    "sourceVariable": "manufacturer",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "ManufacturerName"
-  },
-  "manufacturers_model_name": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "ManufacturersModelName",
-    "sourceVariable": "manufacturers_model_name",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "ManufacturersModelName"
-  },
-  "receive_coil_name": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "ReceiveCoilName",
-    "sourceVariable": "receive_coil_name",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "ReceiveCoilName"
-  },
-  "researcher": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Researcher",
-    "sourceVariable": "researcher",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "Researcher"
-  },
-  "sex": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "M or F",
-    "sourceVariable": "sex",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "Participant gender",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0112866",
-      "label": "sex"
-    }
-  },
-  "software_versions": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "SoftwareVersions",
-    "sourceVariable": "software_versions",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string"
-    },
-    "label": "SoftwareVersions"
-  },
-  "participant_id": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Unique ID",
-    "sourceVariable": "participant_id",
-    "associatedWith": "NIDM",
-    "label": "Participant ID"
-  }
+  ]
 }

@@ -1,366 +1,353 @@
 {
-  "age_ses-T1": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Age in years at ses-T1",
-    "sourceVariable": "age_ses-T1",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:float"
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "DataElement",
+      "description": "Age in years at ses-T1",
+      "sourceVariable": "age_ses-T1",
+      "associatedWith": "NIDM",
+      "label": "Age at session 1",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
-    "label": "Age at session 1",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0100400",
-      "label": "age"
-    }
-  },
-  "age_ses-T2": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Age in years at ses-T2",
-    "sourceVariable": "age_ses-T2",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:float"
+    {
+      "@type": "DataElement",
+      "description": "Age in years at ses-T2",
+      "sourceVariable": "age_ses-T2",
+      "associatedWith": "NIDM",
+      "label": "Age at session 2",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
-    "label": "Age at session 2",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0100400",
-      "label": "age"
-    }
-  },
-  "handedness": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Left or Right-Handed",
-    "sourceVariable": "handedness",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer",
-      "choices": [
-        {
-          "name": "Left",
-          "value": "1"
-        },
-        {
-          "name": "Right",
-          "value": "2"
-        }
-      ],
-      "maxValue": "2",
-      "minValue": "1"
+    {
+      "@type": "DataElement",
+      "description": "Left or Right-Handed",
+      "sourceVariable": "handedness",
+      "associatedWith": "NIDM",
+      "label": "Participant handedness",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Left",
+            "value": "1"
+          },
+          {
+            "name": "Right",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0104886",
+        "label": "handedness assessment"
+      }
     },
-    "label": "Participant handedness",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0104886",
-      "label": "handedness assessment"
-    }
-  },
-  "ses-T1_task-Mult_run-01": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant has data for session T1 multiplication task run 01",
-    "sourceVariable": "ses-T1_task-Mult_run-01",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "has data",
-          "value": "yes"
-        },
-        {
-          "name": "does not have data",
-          "value": "no"
-        }
-      ]
-    }
-  },
-  "ses-T1_task-Mult_run-02": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant has data for session T1 multiplication task run 02",
-    "sourceVariable": "ses-T1_task-Mult_run-02",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "has data",
-          "value": "yes"
-        },
-        {
-          "name": "does not have data",
-          "value": "no"
-        }
-      ]
-    }
-  },
-  "ses-T1_task-Num_run-01": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant has data for session T1 numerosity task run 01",
-    "sourceVariable": "ses-T1_task-Num_run-01",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "has data",
-          "value": "yes"
-        },
-        {
-          "name": "does not have data",
-          "value": "no"
-        }
-      ]
-    }
-  },
-  "ses-T1_task-Num_run-02": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant has data for session T1 numerosity task run 02",
-    "sourceVariable": "ses-T1_task-Num_run-02",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "has data",
-          "value": "yes"
-        },
-        {
-          "name": "does not have data",
-          "value": "no"
-        }
-      ]
-    }
-  },
-  "ses-T1_task-Rhyming": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant has data for session T1 rhyming task",
-    "sourceVariable": "ses-T1_task-Rhyming",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "has data",
-          "value": "yes"
-        },
-        {
-          "name": "does not have data",
-          "value": "no"
-        }
-      ]
-    }
-  },
-  "ses-T1_task-Sub_run-01": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant has data for session T1 multiplication task run 01",
-    "sourceVariable": "ses-T1_task-Sub_run-01",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "has data",
-          "value": "yes"
-        },
-        {
-          "name": "does not have data",
-          "value": "no"
-        }
-      ]
-    }
-  },
-  "ses-T1_task-Sub_run-02": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant has data for session T1 multiplication task run 02",
-    "sourceVariable": "ses-T1_task-Sub_run-02",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "has data",
-          "value": "yes"
-        },
-        {
-          "name": "does not have data",
-          "value": "no"
-        }
-      ]
-    }
-  },
-  "ses-T2_task-Mult_run-01": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant has data for session T2 multiplication task run 01",
-    "sourceVariable": "ses-T2_task-Mult_run-01",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "has data",
-          "value": "yes"
-        },
-        {
-          "name": "does not have data",
-          "value": "no"
-        }
-      ]
-    }
-  },
-  "ses-T2_task-Mult_run-02": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant has data for session T2 multiplication task run 02",
-    "sourceVariable": "ses-T2_task-Mult_run-02",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "has data",
-          "value": "yes"
-        },
-        {
-          "name": "does not have data",
-          "value": "no"
-        }
-      ]
-    }
-  },
-  "ses-T2_task-Num_run-01": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant has data for session T2 numerosity task run 01",
-    "sourceVariable": "ses-T2_task-Num_run-01",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "has data",
-          "value": "yes"
-        },
-        {
-          "name": "does not have data",
-          "value": "no"
-        }
-      ]
-    }
-  },
-  "ses-T2_task-Num_run-02": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant has data for session T2 numerosity task run 02",
-    "sourceVariable": "ses-T2_task-Num_run-02",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "has data",
-          "value": "yes"
-        },
-        {
-          "name": "does not have data",
-          "value": "no"
-        }
-      ]
-    }
-  },
-  "ses-T2_task-Rhyming": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant has data for session T2 rhyming task",
-    "sourceVariable": "ses-T2_task-Rhyming",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "has data",
-          "value": "yes"
-        },
-        {
-          "name": "does not have data",
-          "value": "no"
-        }
-      ]
-    }
-  },
-  "ses-T2_task-Sub_run-01": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant has data for session T2 multiplication task run 01",
-    "sourceVariable": "ses-T2_task-Sub_run-01",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "has data",
-          "value": "yes"
-        },
-        {
-          "name": "does not have data",
-          "value": "no"
-        }
-      ]
-    }
-  },
-  "ses-T2_task-Sub_run-02": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Participant has data for session T2 multiplication task run 02",
-    "sourceVariable": "ses-T2_task-Sub_run-02",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:string",
-      "choices": [
-        {
-          "name": "has data",
-          "value": "yes"
-        },
-        {
-          "name": "does not have data",
-          "value": "no"
-        }
-      ]
-    }
-  },
-  "sex": {
-    "@context": "https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld",
-    "@type": "DataElement",
-    "description": "Sex of participants",
-    "sourceVariable": "sex",
-    "associatedWith": "NIDM",
-    "responseOptions": {
-      "valueType": "xsd:integer",
-      "choices": [
-        {
-          "name": "male",
-          "value": "1"
-        },
-        {
-          "name": "female",
-          "value": "2"
-        }
-      ],
-      "maxValue": "2",
-      "minValue": "1"
+    {
+      "@type": "DataElement",
+      "description": "Participant has data for session T1 multiplication task run 01",
+      "sourceVariable": "ses-T1_task-Mult_run-01",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
     },
-    "label": "Sex",
-    "isAbout": {
-      "@id": "ilx_id:ilx_0112866",
-      "label": "sex"
+    {
+      "@type": "DataElement",
+      "description": "Participant has data for session T1 multiplication task run 02",
+      "sourceVariable": "ses-T1_task-Mult_run-02",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Participant has data for session T1 numerosity task run 01",
+      "sourceVariable": "ses-T1_task-Num_run-01",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Participant has data for session T1 numerosity task run 02",
+      "sourceVariable": "ses-T1_task-Num_run-02",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Participant has data for session T1 rhyming task",
+      "sourceVariable": "ses-T1_task-Rhyming",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Participant has data for session T1 multiplication task run 01",
+      "sourceVariable": "ses-T1_task-Sub_run-01",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Participant has data for session T1 multiplication task run 02",
+      "sourceVariable": "ses-T1_task-Sub_run-02",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Participant has data for session T2 multiplication task run 01",
+      "sourceVariable": "ses-T2_task-Mult_run-01",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Participant has data for session T2 multiplication task run 02",
+      "sourceVariable": "ses-T2_task-Mult_run-02",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Participant has data for session T2 numerosity task run 01",
+      "sourceVariable": "ses-T2_task-Num_run-01",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Participant has data for session T2 numerosity task run 02",
+      "sourceVariable": "ses-T2_task-Num_run-02",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Participant has data for session T2 rhyming task",
+      "sourceVariable": "ses-T2_task-Rhyming",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Participant has data for session T2 multiplication task run 01",
+      "sourceVariable": "ses-T2_task-Sub_run-01",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Participant has data for session T2 multiplication task run 02",
+      "sourceVariable": "ses-T2_task-Sub_run-02",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "DataElement",
+      "description": "Sex of participants",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "label": "Sex",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "1"
+          },
+          {
+            "name": "female",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112866",
+        "label": "sex"
+      }
     }
-  }
+  ]
 }
