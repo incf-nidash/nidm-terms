@@ -211,9 +211,10 @@
                             var html = '<br><br><hr><br><br><br><br>';
 
                             html += '<center><div class="headerBrdr"> STEP 2: enter your Github API Key <br><br></div>';
+                            html += '<form class="inputs"><input class="TermInput" id = "userName" type="text"  placeholder="GitHub Username"></form>';
                             html += '<form class="inputs"><input class="TermInput" id = "token" type="text"  placeholder="GitHub API Token"></form>';
                             html += '<br><br><br>';
-                            html += '<button id= "pullRequest" class= "btn1" type = "button"> Send Pull Request </button>';
+                            html += '<button id= "pullRequest" class= "btn1" type = "button" > Send Pull Request </button>';
                             html += '<br></p></div></center>';  
                             
                             $('#PR').append(html);
@@ -377,8 +378,8 @@
                                 
                         })
 
-                        .then(function(){
-                            document.getElementById("pullRequest").addEventListener("click", sendPR)
+                        .then(function(newTermJsonld){
+                            document.getElementById("pullRequest").addEventListener("click", function(){ sendPR(newTermJsonld); })
                         })
                         
 
@@ -396,14 +397,19 @@
 
                 function sendPR (newTermJsonld){
                     
-                    console.log('111')
-
                     const gitToken = document.getElementById("token").value;
+                    const owner = document.getElementById("userName").value;
 
                     const octokit = new Octokit({ auth: gitToken });
-                    const owner = 'sanuann';
                     const repo = 'terms';
                     const fileName = document.getElementById("label").value;
+                    // const newTermJsonld = {
+                    //     "name": "nazek",
+                    //     "age": 20,
+                    //     "sex": "Female"
+                    // }; // data to be POSTed
+
+
 
                     octokit.request(
                         `GET /repos/{owner}/{repo}`, {
@@ -426,7 +432,7 @@
                                     headers: {
                                         'Authorization': 'token ' + gitToken,
                                     },
-                                    owner: 'nqueder',
+                                    owner: owner,
                                     repo: repo
                                 }).then((response) => {
                                 console.log(71, 'successfully forked: ', response.status);
@@ -441,6 +447,8 @@
                             });
                         }
                     });
+
+                    //create a branch here
 
                     async function createFileInRepo(jsonTermObj, pathToFile, user) {
                         console.log(57, jsonTermObj, pathToFile, user);
@@ -476,7 +484,7 @@
                                 headers: {
                                     'Authorization': 'token ' + gitToken,
                                 },
-                                owner: 'nqueder',
+                                owner: 'NIDM-Terms',
                                 repo: repo,
                                 title: "Sucessfully raised a PR using github API. Yuhoo!!!!",
                                 body: "Edited or Added Terms:" + pathToFile,
@@ -487,49 +495,14 @@
                         }).catch(e => {
                             console.log(110, 'error in raising PR: ', e);
                         })
+                        location.replace("./submission.html")
+
 
                     }
 
+                    
 
-                    //need to convert the data to a file
-                    // var content = 'Insia2V5XzEiOiJzb21lIHRleHQiLCJrZXlfMiI6dHJ1ZSwia2V5XzMiOjV9Ig==';
-
-                    // console.log(content)
-
-                    // console.log(JSON.stringify(email))
-
-                    // await octokit.request('PUT /repos/nqueder/terms/contents/terms/Test.json', {
-                    //     owner: 'nqueder',
-                    //     repo: 'terms',
-                    //     path: 'terms.Test.json',
-                    //     message: 'New Commit',
-                    //     content: content
-                    // });
-
-                    // commit
-                    // $(document).ready(function() {
-                    //     $.ajax({
-                    //         url: "https://api.github.com/repos/nqueder/terms/contents/terms/BIDS_Terms/Test.json",
-                    //         type: "PUT",
-                    //         headers: {
-                    //             'Authorization': 'token ' + Token,
-                    //             'Content-Type': 'application/json'
-                    //         },
-                    //         body:{
-                    //             message: 'added a test file',
-                    //             content: 'Insia2V5XzEiOiJzb21lIHRleHQiLCJrZXlfMiI6dHJ1ZSwia2V5XzMiOjV9Ig=='
-                    //         },
-                    //         success: function(result) {
-                    //             console.log(result);
-                    //         },
-                    //         error: function(error) {
-                    //             console.log(error);
-                    //         }
-                    //     });
-
-                    // });
                 }
-
 
 
             </script>
