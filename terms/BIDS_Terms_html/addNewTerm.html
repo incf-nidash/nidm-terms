@@ -465,7 +465,7 @@
                                 path: pathToFile,
                                 message: pathToFile + ' added',
                                 content: content,
-                                branch: 'master'
+                                branch: 'patch-2'
                             }).then((response) => {
                             console.log(91, "statusCode for createFile: ", response.status);
                             if (response.status === 200 || response.status=== 201) {
@@ -484,7 +484,7 @@
                                 headers: {
                                     'Authorization': 'token ' + gitToken,
                                 },
-                                owner: 'NIDM-Terms',
+                                owner: 'sanuann',
                                 repo: repo,
                                 title: "Sucessfully raised a PR using github API. Yuhoo!!!!",
                                 body: "Edited or Added Terms:" + pathToFile,
@@ -495,7 +495,6 @@
                         }).catch(e => {
                             console.log(110, 'error in raising PR: ', e);
                         })
-                        location.replace("./submission.html")
 
 
                     }
