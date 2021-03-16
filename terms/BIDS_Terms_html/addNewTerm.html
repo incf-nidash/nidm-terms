@@ -88,435 +88,463 @@
 
         <center><div class="container">
 
-            <div class="headerBrdr"><center>
-                STEP 1: fill out the following information
-            </center></div>
+            <divid id = "rmv">
+
+                <div class="headerBrdr"><center>
+                    STEP 1: fill out the following information
+                </center></div>
 
 
-            <form class="inputs">
+                <form class="inputs">
+                    
+                    <h4>Label</h4>
+                    <input id= "label" class="TermInput" type="text" name="label" placeholder = "REQUIRED: Term in cammelCase (e.g. durationTime, author)" required>
+                    
+                    <h4>Description</h4>
+                    <input id= "des" class="TermInput" type="text" name="description" placeholder = "REQUIRED: Term description" required>
                 
-                <h4>Label</h4>
-                <input id= "label" class="TermInput" type="text" name="label" placeholder = "REQUIRED: Term in cammelCase (e.g. durationTime, author)" required>
+
+                    <h4>Comment</h4>
+                    <input id= "comment" class="TermInput" type="text" name="comment" placeholder = "RECOMMENDED: Additional comments">
                 
-                <h4>Description</h4>
-                <input id= "des" class="TermInput" type="text" name="description" placeholder = "REQUIRED: Term description" required>
-            
 
-                <h4>Comment</h4>
-                <input id= "comment" class="TermInput" type="text" name="comment" placeholder = "RECOMMENDED: Additional comments">
-            
+                    <h4>URL</h4>
+                    <input id="url" class="TermInput" type="text" name="url" placeholder = "RECOMMENDED: Term URL">
 
-                <h4>URL</h4>
-                <input id="url" class="TermInput" type="text" name="url" placeholder = "RECOMMENDED: Term URL">
+                    <h4>Unit</h4>
+                    <input id="unit" class="TermInput" type="text" name="unit" placeholder = "RECOMMENDED: Term unit">
 
-                <h4>Unit</h4>
-                <input id="unit" class="TermInput" type="text" name="unit" placeholder = "RECOMMENDED: Term unit">
+                    
+                    <label><h4>Value Type</h4></label>
 
-                
-                <label><h4>Value Type</h4></label>
+                        <select name="valueType" id="VT" class="VT">
+                            <option value="select">--select--</option>
+                            <option value="string">string</option>
+                            <option value="boolean">boolean</option>
+                            <option value="integer">integer</option>
+                            <option value="float">float</option>
+                            <option value="double">double</option>
+                            <option value="duration">duration</option>
+                            <option value="dateTime">dateTime</option>
+                            <option value="time">time</option>
+                            <option value="date">date</option>
+                            <option value="anyURI">anyURI</option>
+                            <option value="complexType">complexType</option>
+                        </select>
 
-                    <select name="valueType" id="VT" class="VT">
-                        <option value="select">--select--</option>
-                        <option value="string">string</option>
-                        <option value="boolean">boolean</option>
-                        <option value="integer">integer</option>
-                        <option value="float">float</option>
-                        <option value="double">double</option>
-                        <option value="duration">duration</option>
-                        <option value="dateTime">dateTime</option>
-                        <option value="time">time</option>
-                        <option value="date">date</option>
-                        <option value="anyURI">anyURI</option>
-                        <option value="complexType">complexType</option>
-                    </select>
-
-                
-                <h4>OPTIONAL: categorical variables</h4>
+                    
+                    <h4>OPTIONAL: categorical variables</h4>
 
 
-                <div id="wrapper">
+                    <div id="wrapper">
+
+                        <br>
+
+                            <form>
+                                <h5>Please enter the number of values: <input id="numOfValues" class="numOfValues" type="text"> </h5>
+                                <button type = "button" class= "btn3" id = "catValue"> Add Choice </button>
+                            </form>
+
+                            <div id= "addParent">
+                                <div id= "add"></div>
+                            </div>
+
+                        <br>
+
+                    </div>
+
+                    <br><br><br>
+
+                    <div id='remove'><button id = "Next" class= "btn1" type = "button"> Next </button></div>
 
                     <br>
 
-                        <form>
-                            <h5>Please enter the number of values: <input id="numOfValues" class="numOfValues" type="text"> </h5>
-                            <button type = "button" class= "btn3" id = "catValue"> Add Choice </button>
-                        </form>
 
-                        <div id= "addParent">
-                            <div id= "add"></div>
-                        </div>
+                </form>
 
-                    <br>
 
-                </div>
+                <div id="PR"></div>
 
-                <br><br><br>
+            </div>
 
-                <div id='remove'><button id = "Next" class= "btn1" type = "button"> Next </button></div>
+                <script type = "module">
 
-                <br>
-
-            </form>
-
-            <script type = "module">
-
-                ///////////////////////////////////////////////////////////////////////////
-                //validat that label and description have values
-                ///////////////////////////////////////////////////////////////////////////
-                function nextStep(){
-                    var state = '';
-                
-                    // fetch the BIDS_Terms.jsonld file and read as a dictionary
-                    fetch("https://raw.githubusercontent.com/nqueder/terms/master/terms/BIDS_Terms.jsonld")
-                    .then(function(resp){
-                        return resp.json(); 
-                    })
-
-                    .then(function(termsDict){
-                        //lets to contain the available labels
-                        var avLabelList = [];
-
-                        for (var t in termsDict['terms']) {
-
-                            var label = termsDict.terms[t].label;
-
-                            avLabelList.push(label.toLowerCase())
-
-                        }
-                        return avLabelList
-
-                    })
+                    ///////////////////////////////////////////////////////////////////////////
+                    //validat that label and description have values
+                    ///////////////////////////////////////////////////////////////////////////
+                    function nextStep(){
+                        var state = '';
                     
-                    .then(function(avLabelList){
-                        //if label and description don't have values call the validation fonction
-                        if (document.getElementById('label').value.length == 0 & document.getElementById('des').value.length == 0){
-                            alert('An input is required for Label and Description')
-                        }
-                        else if (document.getElementById('label').value.length == 0 & document.getElementById('des').value.length != 0){
-                            alert('An input for Label is required')
-                        }
-                        else if (document.getElementById('label').value.length != 0 & document.getElementById('des').value.length == 0 ){
-                            alert('An input for Description is required')
-                        }
-                        else if (document.getElementById('label').value.length != 0 & document.getElementById('des').value.length != 0 & avLabelList.includes(document.getElementById('label').value.toLowerCase()) == true){
-                            window.alert('This term already exists in NIDM-Terms')
-                            location.reload()
-                        }
-                        //else next step, which is an iput for the github API and a button 
-                        else {
-
-                            $("#remove").html("")
-
-                            var html = '<br><br><hr><br><br><br><br>';
-
-                            html += '<center><div class="headerBrdr"> STEP 2: enter your Github API Key <br><br></div>';
-                            html += '<form class="inputs"><input class="TermInput" id = "userName" type="text"  placeholder="GitHub Username"></form>';
-                            html += '<form class="inputs"><input class="TermInput" id = "token" type="text"  placeholder="GitHub API Token"></form>';
-                            html += '<br><br><br>';
-                            html += '<button id= "pullRequest" class= "btn1" type = "button" > Send Pull Request </button>';
-                            html += '<br></p></div></center>';  
-                            
-                            $('#PR').append(html);
-
-                            state = '1'
-
-                        }
-                    })
-
-                    .then(function(){
-                        if(state == '1'){
-                            submitTerm()
-                        } else {
-                            console.log('submitTerms() wanst called')
-                        }
-
-                    })
-
-                    
-                }
-
-                document.getElementById("Next").addEventListener("click", nextStep)
-
-
-                ///////////////////////////////////////////////////////////////////////////
-                /// function created to add choices if the term is a catagorical variable
-                ///////////////////////////////////////////////////////////////////////////
-                var list = [];
-                function addOptions(){
-
-                    var html = '<br><br><br><br>';
-
-                    var numOfOptions = document.getElementById('numOfValues').value;
-
-                    list.push(numOfOptions)
-
-                    if(document.getElementById('numOfValues').value != 0 & list.length == 1){
-
-                        for (var i = 1; i <= numOfOptions; i++){
-
-                            html += '<h5>Choice '+i+':</h5>';
-                            html += '<input id="n'+i+'" id="name" class="subTermInput" type="text" name="name" placeholder = "Name">';
-                            html += '<input id="v'+i+'" id="value" class="subTermInput" type="text" name="value" placeholder = "Value">';
-                            html += '<br>'
-                                
-                        }
-
-                        $('#add').append(html);
-                    } 
-                    
-                    if (document.getElementById('numOfValues').value != 0 & list.length > 1){
-
-                        $("#add").html("");
-
-                        for (var i = 1; i <= numOfOptions; i++){
-
-                            html += '<h5>Choice '+i+':</h5>';
-                            html += '<input id="n'+i+'" id="name" class="subTermInput" type="text" name="name" placeholder = "Name">';
-                            html += '<input id="v'+i+'" id="value" class="subTermInput" type="text" name="value" placeholder = "Value">';
-                            html += '<br>'
-                                
-                        }
-
-                        $('#add').append(html);
-
-                    }
-
-                    if (document.getElementById('numOfValues').value == 0){
-                        $("#add").html("");
-                    }
-
-                };
-
-                document.getElementById("catValue").addEventListener("click", addOptions)
-
-                function submitTerm(){
-
-                    //empty dicttionary 
-                    var dict = {};
-                    var responseOption = {};
-
-                    // varable to assoctae with every term
-                    var associatedWith = ["BIDS","NIDM"];
-
-
-                    $(document).ready(function(event) { 
-                        // fetch the context file and create a jsonld
-                        fetch("https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld")
+                        // fetch the BIDS_Terms.jsonld file and read as a dictionary
+                        fetch("https://raw.githubusercontent.com/nqueder/terms/master/terms/BIDS_Terms.jsonld")
                         .then(function(resp){
                             return resp.json(); 
                         })
 
-                        .then(async function(context){
+                        .then(function(termsDict){
+                            //lets to contain the available labels
+                            var avLabelList = [];
 
-                            dict['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
+                            for (var t in termsDict['terms']) {
 
-                            //call checkTerm to checkif the lable of the term already exists to avoid duplication
-                            //returns 1 if the terms exists and 0 if the term doesn't exist
-                            //var check = checkLabel(document.getElementById("label").value)
-                            //console.log(checkLabel(document.getElementById("label").value))
+                                var label = termsDict.terms[t].label;
 
-                            
-                            
-                            //assign inputted values to term properties
-                            dict[context["@context"]["label"]] = document.getElementById("label").value;
-                            if(document.getElementById("des").value.length != 0){
-                                dict[context["@context"]["description"]] = document.getElementById("des").value;
+                                avLabelList.push(label.toLowerCase())
+
                             }
-                            if(document.getElementById("comment").value.length != 0){
-                                dict[context["@context"]["comment"]] = document.getElementById("comment").value;
-                            }
-                            if(document.getElementById("url").value.length != 0){
-                                dict[context["@context"]["url"]["@id"]] = document.getElementById("url").value;
-                            }
-                            if(document.getElementById("unit").value.length != 0){
-                                responseOption[context["@context"]["unitCode"]] = document.getElementById("unit").value;
-                            }
-                            if(document.getElementById("VT").value.length != 0 & document.getElementById("VT").value != 'select'){
-                                responseOption[context["@context"]["valueType"]] = document.getElementById("VT").value;
-                            }
-                            if(document.getElementById('numOfValues').value.length != 0){
-                                //empty list for choices dictionaries
-                                var choices_list = [];
-                            
-                                //get the number of choices available
-                                var valNum = document.getElementById('numOfValues').value;
-                                //loop through the choices and add them to add to the jsonld
-                                for (var l = 1; l <= valNum; l++){
-                                    console.log(l)
+                            return avLabelList
 
-                                    // empty dictionary for each choice's name and value
-                                    var choices = {};
-
-                                    if(document.getElementById("n"+l).value.length != 0 & document.getElementById("v"+l).value.length != 0){
-                                        choices[context['@context']['name']] = document.getElementById("n"+l).value;
-                                        choices[context['@context']['value']] = document.getElementById("v"+l).value;
-                                        choices_list.push(choices)
-                                    }
-                                }
-
-                                //assign choices to responseOptions dictionary
-                                if(choices_list.length != 0){
-                                    responseOption[context['@context']['choices']] = choices_list;
-                                }
-
-                            }    
-
-                            //add response options values
-                            if(Object.keys(responseOption).length != 0){
-                                dict[context["@context"]["responseOptions"]["@id"]] = responseOption
-                            }
-                            //always associate the term with BIDS and NIDM
-                            dict[context["@context"]["associatedWith"]] = associatedWith;
-
-
-                            //compact term dictionary
-                            const compacted = await jsonld.compact(dict, 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld');
-                            console.log(compacted)
-
-                            return compacted
-                                
-                        })
-
-                        .then(function(newTermJsonld){
-                            document.getElementById("pullRequest").addEventListener("click", function(){ sendPR(newTermJsonld); })
                         })
                         
+                        .then(function(avLabelList){
+                            //if label and description don't have values call the validation fonction
+                            if (document.getElementById('label').value.length == 0 & document.getElementById('des').value.length == 0){
+                                alert('An input is required for Label and Description')
+                            }
+                            else if (document.getElementById('label').value.length == 0 & document.getElementById('des').value.length != 0){
+                                alert('An input for Label is required')
+                            }
+                            else if (document.getElementById('label').value.length != 0 & document.getElementById('des').value.length == 0 ){
+                                alert('An input for Description is required')
+                            }
+                            else if (document.getElementById('label').value.length != 0 & document.getElementById('des').value.length != 0 & avLabelList.includes(document.getElementById('label').value.toLowerCase()) == true){
+                                window.alert('This term already exists in NIDM-Terms')
+                                location.reload()
+                            }
+                            //else next step, which is an iput for the github API and a button 
+                            else {
 
-                    });
+                                $("#remove").html("")
 
-                };
+                                var html = '<br><br><hr><br><br><br><br>';
+
+                                html += '<center><div class="headerBrdr"> STEP 2: enter your Github API Key <br><br></div>';
+                                html += '<form class="inputs"><input class="TermInput" id = "userName" type="text"  placeholder="GitHub Username"></form>';
+                                html += '<form class="inputs"><input class="TermInput" id = "token" type="text"  placeholder="GitHub API Token"></form>';
+                                html += '<br><br><br>';
+                                html += '<button id= "pullRequest" class= "btn1" type = "button" > Send Pull Request </button>';
+                                html += '<br></p></div></center>';  
+                                
+                                $('#PR').append(html);
+
+                                state = '1'
+
+                            }
+                        })
+
+                        .then(function(){
+                            if(state == '1'){
+                                submitTerm()
+                            } else {
+                                console.log('submitTerms() wanst called')
+                            }
+
+                        })
+
+                        
+                    }
+
+                    document.getElementById("Next").addEventListener("click", nextStep)
 
 
-                import { Octokit } from "https://cdn.pika.dev/@octokit/core";
+                    ///////////////////////////////////////////////////////////////////////////
+                    /// function created to add choices if the term is a catagorical variable
+                    ///////////////////////////////////////////////////////////////////////////
+                    var list = [];
+                    function addOptions(){
+
+                        var html = '<br><br><br><br>';
+
+                        var numOfOptions = document.getElementById('numOfValues').value;
+
+                        list.push(numOfOptions)
+
+                        if(document.getElementById('numOfValues').value != 0 & list.length == 1){
+
+                            for (var i = 1; i <= numOfOptions; i++){
+
+                                html += '<h5>Choice '+i+':</h5>';
+                                html += '<input id="n'+i+'" id="name" class="subTermInput" type="text" name="name" placeholder = "Name">';
+                                html += '<input id="v'+i+'" id="value" class="subTermInput" type="text" name="value" placeholder = "Value">';
+                                html += '<br>'
+                                    
+                            }
+
+                            $('#add').append(html);
+                        } 
+                        
+                        if (document.getElementById('numOfValues').value != 0 & list.length > 1){
+
+                            $("#add").html("");
+
+                            for (var i = 1; i <= numOfOptions; i++){
+
+                                html += '<h5>Choice '+i+':</h5>';
+                                html += '<input id="n'+i+'" id="name" class="subTermInput" type="text" name="name" placeholder = "Name">';
+                                html += '<input id="v'+i+'" id="value" class="subTermInput" type="text" name="value" placeholder = "Value">';
+                                html += '<br>'
+                                    
+                            }
+
+                            $('#add').append(html);
+
+                        }
+
+                        if (document.getElementById('numOfValues').value == 0){
+                            $("#add").html("");
+                        }
+
+                    };
+
+                    document.getElementById("catValue").addEventListener("click", addOptions)
+
+                    function submitTerm(){
+
+                        //empty dicttionary 
+                        var dict = {};
+                        var responseOption = {};
+
+                        // varable to assoctae with every term
+                        var associatedWith = ["BIDS","NIDM"];
 
 
-                //////////////////////////////////////////////////////////////////////////////////
-                /// function created to create jsonld files and submit a pull request to github
-                //////////////////////////////////////////////////////////////////////////////////
+                        $(document).ready(function(event) { 
+                            // fetch the context file and create a jsonld
+                            fetch("https://raw.githubusercontent.com/nqueder/terms/master/context/cde_context.jsonld")
+                            .then(function(resp){
+                                return resp.json(); 
+                            })
 
-                function sendPR (newTermJsonld){
-                    
-                    const gitToken = document.getElementById("token").value;
-                    const owner = document.getElementById("userName").value;
+                            .then(async function(context){
 
-                    const octokit = new Octokit({ auth: gitToken });
-                    const repo = 'terms';
-                    const fileName = document.getElementById("label").value;
-                    // const newTermJsonld = {
-                    //     "name": "nazek",
-                    //     "age": 20,
-                    //     "sex": "Female"
-                    // }; // data to be POSTed
+                                dict['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
+
+                                //call checkTerm to checkif the lable of the term already exists to avoid duplication
+                                //returns 1 if the terms exists and 0 if the term doesn't exist
+                                //var check = checkLabel(document.getElementById("label").value)
+                                //console.log(checkLabel(document.getElementById("label").value))
+
+                                
+                                
+                                //assign inputted values to term properties
+                                dict[context["@context"]["label"]] = document.getElementById("label").value;
+                                if(document.getElementById("des").value.length != 0){
+                                    dict[context["@context"]["description"]] = document.getElementById("des").value;
+                                }
+                                if(document.getElementById("comment").value.length != 0){
+                                    dict[context["@context"]["comment"]] = document.getElementById("comment").value;
+                                }
+                                if(document.getElementById("url").value.length != 0){
+                                    dict[context["@context"]["url"]["@id"]] = document.getElementById("url").value;
+                                }
+                                if(document.getElementById("unit").value.length != 0){
+                                    responseOption[context["@context"]["unitCode"]] = document.getElementById("unit").value;
+                                }
+                                if(document.getElementById("VT").value.length != 0 & document.getElementById("VT").value != 'select'){
+                                    responseOption[context["@context"]["valueType"]] = document.getElementById("VT").value;
+                                }
+                                if(document.getElementById('numOfValues').value.length != 0){
+                                    //empty list for choices dictionaries
+                                    var choices_list = [];
+                                
+                                    //get the number of choices available
+                                    var valNum = document.getElementById('numOfValues').value;
+                                    //loop through the choices and add them to add to the jsonld
+                                    for (var l = 1; l <= valNum; l++){
+                                        console.log(l)
+
+                                        // empty dictionary for each choice's name and value
+                                        var choices = {};
+
+                                        if(document.getElementById("n"+l).value.length != 0 & document.getElementById("v"+l).value.length != 0){
+                                            choices[context['@context']['name']] = document.getElementById("n"+l).value;
+                                            choices[context['@context']['value']] = document.getElementById("v"+l).value;
+                                            choices_list.push(choices)
+                                        }
+                                    }
+
+                                    //assign choices to responseOptions dictionary
+                                    if(choices_list.length != 0){
+                                        responseOption[context['@context']['choices']] = choices_list;
+                                    }
+
+                                }    
+
+                                //add response options values
+                                if(Object.keys(responseOption).length != 0){
+                                    dict[context["@context"]["responseOptions"]["@id"]] = responseOption
+                                }
+                                //always associate the term with BIDS and NIDM
+                                dict[context["@context"]["associatedWith"]] = associatedWith;
 
 
+                                //compact term dictionary
+                                const compacted = await jsonld.compact(dict, 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld');
+                                console.log(compacted)
 
-                    octokit.request(
-                        `GET /repos/{owner}/{repo}`, {
-                            headers: {
-                                'User-Agent': 'terms',
-                                'accept': 'application/json'
-                            },
-                            owner: owner,
-                            repo: repo
-                        }).then((res) => {
-                        console.log(47, 'success', owner, repo, newTermJsonld); // repo exists!
-                        // create File in repo: createFileInRepo(jsonObj, fileName, user)
-                        createFileInRepo(newTermJsonld, 'terms/BIDS_Terms/'+fileName+'.jsonld', owner);
-                    }).catch((e) => {
-                        console.log(50, e.message);
-                        if (e.message === "Not Found") { // repo not present, so fork the repo
-                            // fork the repo
+                                return compacted
+                                    
+                            })
+
+                            .then(function(newTermJsonld){
+                                document.getElementById("pullRequest").addEventListener("click", function(){ sendPR(newTermJsonld); })
+                            })
+                            
+
+                        });
+
+                    };
+
+
+                    import { Octokit } from "https://cdn.pika.dev/@octokit/core";
+
+
+                    //////////////////////////////////////////////////////////////////////////////////
+                    /// function created to create jsonld files and submit a pull request to github
+                    //////////////////////////////////////////////////////////////////////////////////
+
+                    function sendPR (newTermJsonld){
+
+                        if(document.getElementById("userName").value.length == 0 || document.getElementById("token").value.length == 0){
+                                    alert('An in put is required for both fields in step 2')
+                        } 
+                        else {
+                        
+                            const gitToken = document.getElementById("token").value;
+                            const owner = document.getElementById("userName").value;
+
+                            const octokit = new Octokit({ auth: gitToken });
+                            const repo = 'terms';
+                            const fileName = document.getElementById("label").value;
+
                             octokit.request(
-                                `POST /repos/{owner}/{repo}/forks`, {
+                                `GET /repos/{owner}/{repo}`, {
                                     headers: {
-                                        'Authorization': 'token ' + gitToken,
+                                        'User-Agent': 'terms',
+                                        'accept': 'application/json'
                                     },
                                     owner: owner,
                                     repo: repo
-                                }).then((response) => {
-                                console.log(71, 'successfully forked: ', response.status);
-                                if (response.status === 200 || response.status=== 201) {
-                                    createFileInRepo(newTermJsonld, 'terms/BIDS_Terms/'+fileName+'.jsonld', owner);
-                                } else if (response.status === 202) {
-                                    setTimeout(createFileInRepo, 3000, newTermJsonld, 'terms/BIDS_Terms/'+fileName+'.jsonld', owner);
-                                }
-                                console.log(77, "post fork: ", response);
+                                }).then((res) => {
+                                console.log(47, 'success', owner, repo, newTermJsonld); // repo exists!
+                                // create File in repo: createFileInRepo(jsonObj, fileName, user)
+                                createFileInRepo(newTermJsonld, 'terms/BIDS_Terms/'+fileName+'.jsonld', owner);
                             }).catch((e) => {
-                                console.log(79, e.message);
+                                console.log(50, e.message);
+                                if (e.message === "Not Found") { // repo not present, so fork the repo
+                                    // fork the repo
+                                    octokit.request(
+                                        `POST /repos/{owner}/{repo}/forks`, {
+                                            headers: {
+                                                'Authorization': 'token ' + gitToken,
+                                            },
+                                            owner: owner,
+                                            repo: repo
+                                        }).then((response) => {
+                                        console.log(71, 'successfully forked: ', response.status);
+                                        if (response.status === 200 || response.status=== 201) {
+                                            createFileInRepo(newTermJsonld, 'terms/BIDS_Terms/'+fileName+'.jsonld', owner);
+                                        } else if (response.status === 202) {
+                                            setTimeout(createFileInRepo, 3000, newTermJsonld, 'terms/BIDS_Terms/'+fileName+'.jsonld', owner);
+                                        }
+                                        console.log(77, "post fork: ", response);
+                                    }).catch((e) => {
+                                        console.log(79, e.message);
+                                    });
+                                }
                             });
-                        }
-                    });
 
-                    //create a branch here
+                            //create a branch here
 
-                    async function createFileInRepo(jsonTermObj, pathToFile, user) {
-                        console.log(57, jsonTermObj, pathToFile, user);
-                        // let content = Buffer.from(JSON.stringify(jsonTermObj, undefined, 2)).toString('base64');
-                        const content = btoa(JSON.stringify(jsonTermObj, undefined, 2)); // for use in browser
-                        console.log(63, content);
-                        octokit.request(
-                            `PUT /repos/{owner}/{repo}/contents/{path}`, {
-                                headers: {
-                                    'Authorization': 'token ' + gitToken,
-                                },
-                                owner: user,
-                                repo: repo,
-                                path: pathToFile,
-                                message: pathToFile + ' added',
-                                content: content,
-                                branch: 'master'
-                            }).then((response) => {
-                            console.log(91, "statusCode for createFile: ", response.status);
-                            if (response.status === 200 || response.status=== 201) {
-                                createPullRequest(pathToFile, user);
+                            async function createFileInRepo(jsonTermObj, pathToFile, user) {
+                                console.log(57, jsonTermObj, pathToFile, user);
+                                // let content = Buffer.from(JSON.stringify(jsonTermObj, undefined, 2)).toString('base64');
+                                const content = btoa(JSON.stringify(jsonTermObj, undefined, 2)); // for use in browser
+                                console.log(63, content);
+                                octokit.request(
+                                    `PUT /repos/{owner}/{repo}/contents/{path}`, {
+                                        headers: {
+                                            'Authorization': 'token ' + gitToken,
+                                        },
+                                        owner: user,
+                                        repo: repo,
+                                        path: pathToFile,
+                                        message: pathToFile + ' added',
+                                        content: content,
+                                        branch: 'master'
+                                    }).then((response) => {
+                                    console.log(91, "statusCode for createFile: ", response.status);
+                                    if (response.status === 200 || response.status=== 201) {
+                                        createPullRequest(pathToFile, user);
+                                    }
+                                }).catch((e) => {
+                                    console.log(93, e.message);
+                                });
+
                             }
-                        }).catch((e) => {
-                            console.log(93, e.message);
-                        });
 
+                            async function createPullRequest(pathToFile, user) {
+                                var st = '';
+                                console.log(96, 'in createPR');
+                                octokit.request(
+                                    `POST /repos/{owner}/{repo}/pulls`, {
+                                        headers: {
+                                            'Authorization': 'token ' + gitToken,
+                                        },
+                                        owner: 'NIDM_Terms',
+                                        repo: repo,
+                                        title: "New BIDS Term: " + fileName,
+                                        body: "Edited or Added Terms:" + pathToFile,
+                                        head: user + ":master",
+                                        base: "master"
+                                    }).then(resp => {
+                                    console.log(108, "StatusCode for Pull Request: ", resp.status);
+                                    var st = '1';
+                                    submission(st)
+                                }).catch(e => {
+                                    console.log(110, 'error in raising PR: ', e);
+                                })
+
+                            } 
+
+                            async function submission(state){
+                                if(state == '1'){
+
+                                    $('#rmv').html("")
+
+                                    var html = '<br><br><br>';
+
+                                    html += '<center>'
+
+                                    html += '<center><div class="headerBrdr"> Term has been submitted for further discussion <br><br></div>';
+                                    
+                                    html += '<div class="headerBrdr">';
+
+                                    html += '<form>';
+                                    html += '<button onClick="window.location.reload();" id = "newTerm" class= "subBtn" type = "button"> Add another term </button>';
+                                    html += '</form>';
+                                        
+                                    html += '<form>';
+                                    html += '<a href= "https://github.com/NIDM-Terms/terms/pulls" target = "_blank"> <button id = "viewPR" class= "subBtn" type = "button" > View Pull Request </button></a>';
+                                    html += '</form>';
+
+                                    html += '<br><br>';
+                                    html += '</div>';
+                                    html += '</center>';
+
+                                    $('#rmv').append(html)
+
+                                }
+                            }
+
+                        }
                     }
 
-                    async function createPullRequest(pathToFile, user) {
-                        console.log(96, 'in createPR');
-                        octokit.request(
-                            `POST /repos/{owner}/{repo}/pulls`, {
-                                headers: {
-                                    'Authorization': 'token ' + gitToken,
-                                },
-                                owner: 'sanuann',
-                                repo: repo,
-                                title: "Sucessfully raised a PR using github API. Yuhoo!!!!",
-                                body: "Edited or Added Terms:" + pathToFile,
-                                head: user + ":master",
-                                base: "master"
-                            }).then(resp => {
-                            console.log(108, "StatusCode for Pull Request: ", resp.status);
-                        }).catch(e => {
-                            console.log(110, 'error in raising PR: ', e);
-                        })
 
-                    } 
-
-                }
-
-
-            </script>
-            
-
-            <div id="PR">
-
+                </script>
                 
 
-            </div>
-
         </div></center>
-
-        <script type= "module">
-
-
-            
-        </script>
 
 
     </body>
@@ -908,8 +936,8 @@
             border: 1px solid #52575e;
             border-radius: 5px;
             font-size: 14px;
-            color: #52575e;
-            margin-top: 0px;
+            color: #45494e;
+            margin-top: 25px;
             margin-right: 60px;
         }
         .btn3:hover{
@@ -918,6 +946,37 @@
         .btn3:active {
             background: #e5e5e5;
         }
+
+        .subBtn{
+            cursor: pointer;
+            width: 200px;
+            height: 50px;
+            background-color: #fefcfb;
+            border: 2px solid #EE5A24;
+            border-radius: 5px;
+            font-size: 15px;
+            color: #EE5A24;
+            margin-top: 20px;
+        }
+
+        .subBtn:active {
+            background: #e5e5e5;
+            -webkit-box-shadow: inset 0px 0px 5px #96161a;
+                -moz-box-shadow: inset 0px 0px 5px #96161a;
+                    box-shadow: inset 0px 0px 5px #96161a;
+            outline: none;
+
+        }
+        .subBtn:hover{
+            color:#fefcfb;
+            background-image: linear-gradient(
+            to right, 
+            #EE5A24, 
+            #F79F1F
+            );
+            border: none;
+        }
+
 
         h4{
             color: #52575e;
