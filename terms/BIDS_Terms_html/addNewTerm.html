@@ -422,7 +422,7 @@
                         }).then((res) => {
                         console.log(47, 'success', owner, repo, newTermJsonld); // repo exists!
                         // create File in repo: createFileInRepo(jsonObj, fileName, user)
-                        createFileInRepo(newTermJsonld, fileName+'.jsonld', owner);
+                        createFileInRepo(newTermJsonld, 'terms/BIDS_Terms/'+fileName+'.jsonld', owner);
                     }).catch((e) => {
                         console.log(50, e.message);
                         if (e.message === "Not Found") { // repo not present, so fork the repo
@@ -437,9 +437,9 @@
                                 }).then((response) => {
                                 console.log(71, 'successfully forked: ', response.status);
                                 if (response.status === 200 || response.status=== 201) {
-                                    createFileInRepo(newTermJsonld, fileName+'.jsonld', owner);
+                                    createFileInRepo(newTermJsonld, 'terms/BIDS_Terms/'+fileName+'.jsonld', owner);
                                 } else if (response.status === 202) {
-                                    setTimeout(createFileInRepo, 3000, newTermJsonld, fileName+'.jsonld', owner);
+                                    setTimeout(createFileInRepo, 3000, newTermJsonld, 'terms/BIDS_Terms/'+fileName+'.jsonld', owner);
                                 }
                                 console.log(77, "post fork: ", response);
                             }).catch((e) => {
@@ -465,7 +465,7 @@
                                 path: pathToFile,
                                 message: pathToFile + ' added',
                                 content: content,
-                                branch: 'patch-2'
+                                branch: 'master'
                             }).then((response) => {
                             console.log(91, "statusCode for createFile: ", response.status);
                             if (response.status === 200 || response.status=== 201) {
@@ -496,10 +496,7 @@
                             console.log(110, 'error in raising PR: ', e);
                         })
 
-
-                    }
-
-                    
+                    } 
 
                 }
 
