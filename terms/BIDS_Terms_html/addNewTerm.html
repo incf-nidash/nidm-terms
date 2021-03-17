@@ -135,7 +135,6 @@
                     
                     <h4>OPTIONAL: categorical variables</h4>
 
-
                     <div id="wrapper">
 
                         <br>
@@ -414,6 +413,9 @@
                             const owner = document.getElementById("userName").value;
 
                             const octokit = new Octokit({ auth: gitToken });
+                            // const owner = octokit.request(`GET /user`);
+                            // console.log(owner)
+
                             const repo = 'terms';
                             const fileName = document.getElementById("label").value;
 
@@ -469,7 +471,7 @@
                                         owner: user,
                                         repo: repo,
                                         path: pathToFile,
-                                        message: pathToFile + ' added',
+                                        message: fileName + ' added',
                                         content: content,
                                         branch: 'master'
                                     }).then((response) => {
@@ -480,9 +482,9 @@
                                 }).catch((e) => {
                                     console.log(93, e.message);
                                 });
-
                             }
 
+                            
                             async function createPullRequest(pathToFile, user) {
                                 var st = '';
                                 console.log(96, 'in createPR');
