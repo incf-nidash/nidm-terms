@@ -103,16 +103,14 @@
                     <h4>Description</h4>
                     <input id= "des" class="TermInput" type="text" name="description" placeholder = "REQUIRED: Term description" required>
                 
-
                     <h4>Comment</h4>
-                    <input id= "comment" class="TermInput" type="text" name="comment" placeholder = "RECOMMENDED: Additional comments">
+                    <input id= "comment" class="TermInput" type="text" name="comment" placeholder = "OPTIONAL: Additional comments">
                 
-
                     <h4>URL</h4>
-                    <input id="url" class="TermInput" type="text" name="url" placeholder = "RECOMMENDED: Term URL">
+                    <input id="url" class="TermInput" type="text" name="url" placeholder = "OPTIONAL: Term URL">
 
                     <h4>Unit</h4>
-                    <input id="unit" class="TermInput" type="text" name="unit" placeholder = "RECOMMENDED: Term unit">
+                    <input id="unit" class="TermInput" type="text" name="unit" placeholder = "OPTIONAL: Term unit">
 
                     
                     <label><h4>Value Type</h4></label>
@@ -326,6 +324,7 @@
                                 
                                 //assign inputted values to term properties
                                 dict[context["@context"]["label"]] = document.getElementById("label").value;
+                                dict['@type'] = context["@context"]["DataElement"]
                                 if(document.getElementById("des").value.length != 0){
                                     dict[context["@context"]["description"]] = document.getElementById("des").value;
                                 }

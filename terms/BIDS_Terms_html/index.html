@@ -365,7 +365,7 @@
 
 
 
-            fetch("https://raw.githubusercontent.com/nqueder/terms/master/terms/BIDS_Terms.jsonld")
+            fetch("https://raw.githubusercontent.com/NIDM-Terms/terms/master/terms/BIDS_Terms.jsonld")
             .then(function(resp){
                 return resp.json(); 
             })
@@ -447,19 +447,23 @@
                             console.log('got conditioning to work')}
                             //html += '<li>'  +  '<b>Comment</b>  ' + ':  '+ data.term[l].comment + '</li>';}
                         if ('sameAs' in data.terms[l]) {
-                            html += '<li>'  +  '<b>Same As</b>  ' + ':  '+ data.terms[l].sameAs + '</li>';}
+                            html += '<li>'  +  '<b>Same As</b>  ' + ':  '+  '<a href= "'+data.terms[l].sameAs+'" target="_blank">'  + data.terms[l].sameAs + '</a>' + '</li>';}
                         if ('wasDerivedFrom' in data.terms[l]) {
-                            html += '<li>'  +  '<b>Was Derived From</b>  ' + ':  '+ data.terms[l].wasDerivedFrom + '</li>';}
+                            html += '<li>'  +  '<b>Was Derived From</b>  ' + ':  ' +  '<a href= "'+data.terms[l].wasDerivedFrom+'" target="_blank">' + data.terms[l].wasDerivedFrom + '</a>' + '</li>';}
                         if ('candidateTerms' in data.terms[l]) {
                             html += '<li>'  +  '<b>Candidate Terms</b>  ' + ':  '+ data.terms[l].candidateTerms + '</li>';}
                         if ('supertypeCDEs' in data.terms[l]) {
-                            html += '<li>'  +  '<b>Supertype Common Data Elements</b>  ' + ':  '+ data.terms[l].supertypeCDEs + '</li>';}
+                            html += '<li>'  +  '<b>Supertype Common Data Elements</b>  ' + ':  '+  '<a href= "'+data.terms[l].supertypeCDEs+'" target="_blank">' + data.terms[l].supertypeCDEs + '</a>' + '</li>';}
                         if ('url' in data.terms[l]) {
-                            html += '<li>'  +  '<b>URL</b>  ' + ':  '+ data.terms[l].url + '</li>';}
+                            html += '<li>'  +  '<b>URL</b>  ' + ':  '+  '<a href= "'+data.terms[l].url+'" target="_blank">' + data.terms[l].url + '</a>' + '</li>';}
                         if ('associatedWith' in data.terms[l]) {
                             html += '<li>'  +  '<b>Associated With</b>  ' + '<ul>' + '<li>' + data.terms[l].associatedWith[0] + '</li>' + '<li>' + data.terms[l].associatedWith[1] + '</li>' + '</ul></li>' ;}
                         if ('ilxId' in data.terms[l]) {
                             html += '<li>'  +  '<b>Interlex</b>  ' + ':  '+  '<a href= "'+data.terms[l].ilxId+'" target="_blank">' + data.terms[l].ilxId + '</a>' + '</li>'}
+                        if ('valueType' in data.terms[l]) {
+                            html += '<li>'  +  '<b>Value Type</b>  ' + ':  '+ data.terms[l].valueType + '</li>';}
+                        if ('unitCode' in data.terms[l]) {
+                            html += '<li>'  +  '<b>Value Type</b>  ' + ':  '+ data.terms[l].unitCode + '</li>';}
                         
                         html += '</ul></li>';
                     
