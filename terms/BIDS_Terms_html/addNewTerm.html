@@ -218,8 +218,7 @@
                                 var html = '<br><br><hr><br><br><br><br>';
 
                                 html += '<center><div class="headerBrdr"> STEP 2: enter your Github API Key <br><br></div>';
-                                html += '<form class="inputs"><input class="TermInput" id = "userName" type="text"  placeholder="GitHub Username"></form>';
-                                html += '<form class="inputs"><input class="TermInput" id = "token" type="text"  placeholder="GitHub API Token"></form>';
+                                html += '<form class="inputs"><input class="TermInput" id = "token" type="text"  placeholder="GitHub API Token" required></form>';
                                 html += '<br><br><br>';
                                 html += '<button id= "pullRequest" class= "btn1" type = "button" > Send Pull Request </button>';
                                 html += '<br></p></div></center>';  
@@ -404,60 +403,109 @@
 
                     function sendPR (newTermJsonld){
 
-                        if(document.getElementById("userName").value.length == 0 || document.getElementById("token").value.length == 0){
-                                    alert('An in put is required for both fields in step 2')
+                        if(document.getElementById("token").value.length == 0){
+                                    alert('GitHub Token is required')
                         } 
                         else {
                         
                             const gitToken = document.getElementById("token").value;
-                            const owner = document.getElementById("userName").value;
 
                             const octokit = new Octokit({ auth: gitToken });
-                            // const owner = octokit.request(`GET /user`);
-                            // console.log(owner)
+                            // const info = octokit.request(`GET /user`);
+                            // console.log(info)
 
                             const repo = 'terms';
                             const fileName = document.getElementById("label").value;
-
+                            
+                            //GET user's github username
                             octokit.request(
-                                `GET /repos/{owner}/{repo}`, {
-                                    headers: {
-                                        'User-Agent': 'terms',
-                                        'accept': 'application/json'
-                                    },
-                                    owner: owner,
-                                    repo: repo
-                                }).then((res) => {
-                                console.log(47, 'success', owner, repo, newTermJsonld); // repo exists!
-                                // create File in repo: createFileInRepo(jsonObj, fileName, user)
-                                createFileInRepo(newTermJsonld, 'terms/BIDS_Terms/'+fileName+'.jsonld', owner);
+                                `GET /user`
+                            ).then((response) => {
+                                console.log(20, response)
+                                //call fork repo to check if the user has the repo forked
+                                //if repo is not found then fork it
+                                forkRepo(response.data.login)
                             }).catch((e) => {
-                                console.log(50, e.message);
-                                if (e.message === "Not Found") { // repo not present, so fork the repo
-                                    // fork the repo
-                                    octokit.request(
-                                        `POST /repos/{owner}/{repo}/forks`, {
-                                            headers: {
-                                                'Authorization': 'token ' + gitToken,
-                                            },
-                                            owner: owner,
-                                            repo: repo
-                                        }).then((response) => {
-                                        console.log(71, 'successfully forked: ', response.status);
-                                        if (response.status === 200 || response.status=== 201) {
-                                            createFileInRepo(newTermJsonld, 'terms/BIDS_Terms/'+fileName+'.jsonld', owner);
-                                        } else if (response.status === 202) {
-                                            setTimeout(createFileInRepo, 3000, newTermJsonld, 'terms/BIDS_Terms/'+fileName+'.jsonld', owner);
-                                        }
-                                        console.log(77, "post fork: ", response);
-                                    }).catch((e) => {
-                                        console.log(79, e.message);
-                                    });
-                                }
-                            });
+                                console.log(23, e.message);
+                            })
 
-                            //create a branch here
+                            //fork repo function
+                            async function forkRepo(owner){
+                                octokit.request(
+                                    `GET /repos/{owner}/{repo}`, {
+                                        headers: {
+                                            'User-Agent': 'terms',
+                                            'accept': 'application/json'
+                                        },
+                                        owner: owner,
+                                        repo: repo
+                                    }).then((res) => {
+                                    console.log(47, 'success', owner, repo, newTermJsonld); // repo exists!
+                                    //call function to get the master branch sha
+                                    getSha(owner)
+                                }).catch((e) => {
+                                    console.log(50, e.message);
+                                    if (e.message === "Not Found") { // repo not present, so fork the repo
+                                        // fork the repo
+                                        octokit.request(
+                                            `POST /repos/{owner}/{repo}/forks`, {
+                                                headers: {
+                                                    'Authorization': 'token ' + gitToken,
+                                                },
+                                                owner: 'NIDM-Terms',
+                                                repo: repo
+                                            }).then((response) => {
+                                            console.log(71, 'successfully forked: ', response.status);
+                                            if (response.status === 200 || response.status=== 201) {
+                                                //call function to get the master branch sha
+                                                getSha(owner)
+                                            } else if (response.status === 202) {
+                                                setTimeout(getSha, 3000, owner);
+                                            }
+                                            console.log(77, "post fork: ", response);
+                                        }).catch((e) => {
+                                            console.log(79, e.message);
+                                            reportAnIssue('BIDS Terms UI: an issue with forking NIDM-Terms repo');
+                                        });
+                                    }
+                                });
 
+                                //function to get sha hash of master branch
+                                async function getSha(user){
+                                    octokit.request(`GET /repos/{owner}/{repo}/branches/{branch}`, {
+                                        owner: user,
+                                        repo: repo,
+                                        branch: 'master'
+                                    }).then((r) => {
+                                        console.log(43, 'sha is: ', r.data.commit.sha)
+                                        //call function to create a branch
+                                        createNewBranch(r.data.commit.sha, user)
+                                    })
+                                    .catch((e) => {
+                                        console.log(55, e.message);
+                                        reportAnIssue('BIDS Terms UI: an issue with getting master branch hash');
+                                    })
+                                };
+                            }
+
+                            //function to create a new branch with the term name
+                            async function createNewBranch(sha,user){
+                                octokit.request(`POST /repos/{owner}/{repo}/git/refs`, {
+                                    owner: user,
+                                    repo: repo,
+                                    ref: 'refs/heads/'+'BIDS_Term_'+fileName,
+                                    sha: sha
+                                }).then((response) => {
+                                    console.log(72, 'successfully created a new branch: ', response.status);
+                                    //call function to comit file to the new branch
+                                    createFileInRepo(newTermJsonld, 'terms/BIDS_Terms/'+fileName+'.jsonld', user);
+                                }).catch((e) => {
+                                    console.log(67, e.message);
+                                    reportAnIssue('BIDS Terms UI: an issue with creating a new branch');
+                                });
+                            }
+
+                            //function to commit to the new branch
                             async function createFileInRepo(jsonTermObj, pathToFile, user) {
                                 console.log(57, jsonTermObj, pathToFile, user);
                                 // let content = Buffer.from(JSON.stringify(jsonTermObj, undefined, 2)).toString('base64');
@@ -471,20 +519,22 @@
                                         owner: user,
                                         repo: repo,
                                         path: pathToFile,
-                                        message: fileName + ' added',
+                                        message: 'New BIDS Term Added: '+fileName,
                                         content: content,
-                                        branch: 'master'
+                                        branch: 'BIDS_Term_'+fileName
                                     }).then((response) => {
                                     console.log(91, "statusCode for createFile: ", response.status);
                                     if (response.status === 200 || response.status=== 201) {
+                                        //call function to raise a pull request
                                         createPullRequest(pathToFile, user);
                                     }
                                 }).catch((e) => {
                                     console.log(93, e.message);
+                                    reportAnIssue('BIDS Terms UI: an issue with commiting a new term');
                                 });
                             }
 
-                            
+                            //function to raise a pull request
                             async function createPullRequest(pathToFile, user) {
                                 var st = '';
                                 console.log(96, 'in createPR');
@@ -493,22 +543,26 @@
                                         headers: {
                                             'Authorization': 'token ' + gitToken,
                                         },
-                                        owner: 'NIDM_Terms',
+                                        owner: 'NIDM-Terms',
                                         repo: repo,
-                                        title: 'New BIDS Term: ' + fileName,
+                                        title: 'New BIDS Term Added: ' + fileName,
                                         body: 'Edited or Added Terms:' + pathToFile,
-                                        head: user + ':master',
+                                        head: user + ':BIDS_Term_' + fileName,
                                         base: 'master'
                                     }).then(resp => {
                                     console.log(108, "StatusCode for Pull Request: ", resp.status);
                                     var st = '1';
+                                    //call confimation function
                                     submission(st)
                                 }).catch(e => {
                                     console.log(110, 'error in raising PR: ', e);
+                                    reportAnIssue('BIDS Terms UI: an issue with sending a pull request');
                                 })
 
                             } 
 
+
+                            //function to display confirmation to the pull request
                             async function submission(state){
                                 if(state == '1'){
 
@@ -537,6 +591,70 @@
                                     $('#rmv').append(html)
 
                                 }
+                            }
+
+                            //function to display an issue with the code and how to report it
+                            async function reportAnIssue(issue){
+
+                                $('#rmv').html("")
+
+                                var html = '<br><br><br>';
+
+                                html += '<center>'
+
+                                html += '<center><div class="headerBrdr"> Ops! Something went wrong.. <br><br></div>';
+                                
+                                html += '<div class="headerBrdr">';
+                                    
+                                html += '<form>';
+                                html += '<button id = "report" class= "subBtn" type = "button" > Report </button>';
+                                html += '</form>';
+
+                                html += '<br><br>';
+                                html += '</div>';
+                                html += '</center>';
+
+                                $('#rmv').append(html);
+
+                                document.getElementById("report").addEventListener("click", function(){ createGithubIssue(issue); })
+   
+                            }
+
+                            async function createGithubIssue(issue){
+                                octokit.request(`POST /repos/{owner}/{repo}/issues`, {
+                                owner: 'NIDM-Terms',
+                                repo: 'terms',
+                                title: issue,
+                                body: 'An issue occurred while submitting a new term: '+JSON.stringify(newTermJsonld)   
+                                }).then(l => {
+                                    console.log('issue was posted')
+                                    issueConfirm()
+                                }).catch(e => {
+                                    console.log(59, 'error in posting an issue: ', e);
+                                });
+                            }
+
+                            async function issueConfirm(){
+                                $('#rmv').html("")
+
+                                var html = '<br><br><br>';
+
+                                html += '<center>'
+
+                                html += '<center><div class="headerBrdr"> Thank you for reporting! <br><br></div>';
+                                html += '<center><div class="headerBrdr"><h5> A GitHub issue in the NIDM-Terms repository reporting the problem was created on your behalf </h5><br></div>';
+                                
+                                html += '<div class="headerBrdr">';
+                                    
+                                html += '<form>';
+                                html += '<a href= "https://github.com/NIDM-Terms/terms/issues" target = "_blank"> <button id = "viewPR" class= "subBtn" type = "button" > View GitHub Issue </button></a>';
+                                html += '</form>';
+
+                                html += '<br>';
+                                html += '</div>';
+                                html += '</center>';
+
+                                $('#rmv').append(html);
                             }
 
                         }
