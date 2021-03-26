@@ -59,6 +59,7 @@ def main(argv):
 
     # loop through OWL AnnotationProperties
     for so in g.subject_objects(predicate=RDF.type):
+
         # create empty document dictionary
         doc={}
         # add type as schema.org/DefinedTerm
@@ -66,14 +67,16 @@ def main(argv):
         #doc['@type'].append(context['@context']['DefinedTerm'])
         #store term as localpart of subject identifier
         url, fragment = urldefrag(so[0])
+        if fragment == "":
+            continue
         doc[context['@context']['candidateTerms']] = fragment
         #store namespace of subject identifier as provenance
-        doc[context['@context']['provenance']] = url
+        #doc[context['@context']['provenance']] = url
         # loop through tuples and store in JSON-LD document
         for tuples in g.predicate_objects(subject=so[0]):
             if tuples[0] == RDFS["label"]:
                 doc[context['@context']['label']] = tuples[1]
-            elif tuples[0] == DCT["description"]:
+            elif tuples[0] == OBO["IAO_0000115"]:
                 doc[context['@context']['description']] = tuples[1]
             elif tuples[0] == OWL["sameAs"]:
                 doc[context['@context']['sameAs']] = tuples[1]
@@ -86,7 +89,7 @@ def main(argv):
                     doc[context['@context']['comment']] = []
                     doc[context['@context']['comment']].append(str(tuples[1]))
             elif tuples[0] == RDFS["subClassOf"]:
-                doc[context['@context']['supertypeCDEs']] = tuples[1]
+                doc[context['@context']['supertypeCDEs']['@id']] = tuples[1]
             elif tuples[0] == RDFS["comment"]:
                 if context['@context']['comment'] in doc:
                     doc[context['@context']['comment']].append(str(tuples[1]))
