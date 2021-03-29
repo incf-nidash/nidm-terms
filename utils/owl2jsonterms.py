@@ -1,5 +1,6 @@
 
 import os,sys
+from os import system
 from argparse import ArgumentParser
 import pandas as pd
 from rdflib import Graph,util,Namespace, Literal,RDFS,RDF, URIRef
@@ -104,9 +105,43 @@ def main(argv):
             compacted = jsonld.compact(doc,CONTEXT)
         else:
             compacted = jsonld.compact(doc,args.context)
+
+        # this stuff added because pyld compaction function doesn't seem to replace some of the keys with
+        # the ones from the context
+        if "nidm:candidateTerms" in compacted.keys():
+            compacted['candidateTerms'] = \
+                compacted['nidm:candidateTerms']
+            del compacted['nidm:candidateTerms']
+        if "rdfs:label" in compacted.keys():
+            compacted['label'] = \
+                compacted['rdfs:label']
+            del compacted['rdfs:label']
+        if 'responseOptions' in compacted.keys():
+            compacted['responseOptions']['choices'] = \
+                compacted['responseOptions']['schema:itemListElement']
+            del compacted['responseOptions']['schema:itemListElement']
+            # for each item in the choices list
+            delete_indices = []
+            for index, entry in enumerate(compacted['responseOptions']['choices']):
+                # choices are list of dictionaries so for each dictionary
+                for entry_key in entry.keys():
+                    if entry_key == 'schema:value':
+                        compacted['responseOptions']['choices'].append({'value':
+                            compacted['responseOptions']['choices'][index]['schema:value']})
+                        delete_indices.append(index)
+            for index in sorted(delete_indices, reverse=True):
+                del compacted['responseOptions']['choices'][index]
+
+
         with open (join(args.output_dir,doc[context['@context']['candidateTerms']] +".jsonld"),'w') as outfile:
             json.dump(compacted,outfile,indent=2)
 
+    # Added code to now combine the separate json-ld files into a single file
+    output_dir = os.path.split(args.output_dir)[0]
+    cmd = "python " + join(sys.path[0],"combinebidsjsonld.py") + " -inputDir " + args.output_dir + " -outputDir " + \
+        join(output_dir,"NIDM_Terms.jsonld") + " -association \"NIDM\""
+    print(cmd)
+    system(cmd)
 
 
 

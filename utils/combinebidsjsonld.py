@@ -14,7 +14,10 @@ def main(argv):
     parser = ArgumentParser(description='This script fixes the single bids json file. producing properly formatted jsonld')
 
     parser.add_argument('-inputDir', dest='inputDir', required=True, help="single bids jsonld file")
-    parser.add_argument('-outputDir', dest='outputDir', required=True, help="output directory ")
+    parser.add_argument('-association', dest='association', required=False, default="BIDS", help="association"
+                        "string to identify which terminology terms are associated with. Valid choices are"
+                        "NIDM (default if parameter left out) or BIDS" )
+    parser.add_argument('-outputDir', dest='outputDir', required=True, help="output directory + filename")
 
     args = parser.parse_args()
 
@@ -114,9 +117,12 @@ def main(argv):
                 if key == 'isPartOf':
                     temp[context['@context']['isPartOf']['@id']] = value
 
+                # Added by DBK to account for different associations
+                if args.association is "BIDS":
+                    temp[context['@context']['associatedWith']] = ["BIDS"]
+                else:
+                    temp[context['@context']['associatedWith']] = [args.association]
 
-
-                temp[context['@context']['associatedWith']] = ["BIDS","NIDM"]
 
 
 
@@ -127,8 +133,8 @@ def main(argv):
 
     print(compacted)
 
-
-    with open (join(output,'BIDS_Terms.jsonld'),'w+') as outfile:
+    # modified by DBK so that output command line parameter contains filename to output
+    with open (join(output),'w+') as outfile:
         json.dump(compacted,outfile,indent=2)
 
 
