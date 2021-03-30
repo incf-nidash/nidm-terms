@@ -17,6 +17,9 @@ def main(argv):
     parser.add_argument('-association', dest='association', required=False, default="BIDS", help="association"
                         "string to identify which terminology terms are associated with. Valid choices are"
                         "NIDM (default if parameter left out) or BIDS" )
+    parser.add_argument('-jsonldFile', dest='jsonld', required=False, default=None, help =
+                        "If an existing single-file jsonld is provided then new terms will be added"
+                        "to it.")
     parser.add_argument('-outputDir', dest='outputDir', required=True, help="output directory + filename")
 
     args = parser.parse_args()
@@ -49,17 +52,22 @@ def main(argv):
     with open(context_file) as context_data:
         context = json.load(context_data)
 
+    # added by DBK to support adding to existing jsonld file
+    if args.jsonld == None:
+        #set a main dictionary
+        main_dict = {}
 
-    #set a main dictionary
-    main_dict = {}
-
-    #assing @context to the main dict
-    main_dict['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
-    main_dict['terms'] = []
+        #assing @context to the main dict
+        main_dict['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
+        main_dict['terms'] = []
+    else:
+        # load existing jsonld file
+        with open(args.jsonld) as fp:
+            main_dict = json.load(fp)
 
     for term in os.listdir(input):
 
-        if term == '.jsonld':
+        if (term == '.jsonld') or (os.path.splitext(term)[1] != ".jsonld"):
             continue
         else:
             #set path to the term
@@ -80,45 +88,45 @@ def main(argv):
 
                 if key == '@context':
                     continue
-                if key == '@type':
+                elif key == '@type':
                     temp['@type'] = value
-                if key == 'description':
+                elif key == 'description':
                     temp[context['@context']['description']] = value
-                if key == 'label':
+                elif key == 'label':
                     temp[context['@context']['label']] = value
-                if key == 'comment':
+                elif key == 'comment':
                     temp[context['@context']['comment']] = value
-                if key == 'sameAs':
+                elif key == 'sameAs':
                     temp[context['@context']['sameAs']['@id']] = value
-                if key == 'wasDerivedFrom':
+                elif key == 'wasDerivedFrom':
                     temp[context['@context']['wasDerivedFrom']['@id']] = value
-                if key == 'ilxId':
+                elif key == 'ilxId':
                     temp[context['@context']['ilxId']] = join('http://uri.interlex.org/'+value)
-                if key == 'candidateTerms':
+                elif key == 'candidateTerms':
                     temp[context['@context']['candidateTerms']] = value
-                if key == 'supertypeCDEs':
+                elif key == 'supertypeCDEs':
                     temp[context['@context']['supertypeCDEs']['@id']] = value
-                if key == 'subtypeCDEs':
+                elif key == 'subtypeCDEs':
                     temp[context['@context']['subtypeCDEs']['@id']] = value
-                if key == 'url':
+                elif key == 'url':
                     temp[context['@context']['url']['@id']] = value
-                if key == 'closeMatch':
+                elif key == 'closeMatch':
                     temp[context['@context']['closeMatch']] = value
-                if key == 'ontologyConceptID':
+                elif key == 'ontologyConceptID':
                     temp[context['@context']['ontologyConceptID']] = value
-                if key == 'relatedConcepts':
+                elif key == 'relatedConcepts':
                     temp[context['@context']['relatedConcepts']] = value
-                if key == 'derivative':
+                elif key == 'derivative':
                     temp[context['@context']['derivative']] = value
-                if key == 'citation':
+                elif key == 'citation':
                     temp[context['@context']['citation']] = value
-                if key == 'isAbout':
+                elif key == 'isAbout':
                     temp[context['@context']['isAbout']['@id']] = value
-                if key == 'isPartOf':
+                elif key == 'isPartOf':
                     temp[context['@context']['isPartOf']['@id']] = value
 
                 # Added by DBK to account for different associations
-                if args.association is "BIDS":
+                if args.association == "BIDS":
                     temp[context['@context']['associatedWith']] = ["BIDS"]
                 else:
                     temp[context['@context']['associatedWith']] = [args.association]
