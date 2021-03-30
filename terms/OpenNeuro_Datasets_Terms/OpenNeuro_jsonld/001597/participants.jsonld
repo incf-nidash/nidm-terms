@@ -1,0 +1,51 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "Experimental arm",
+      "sourceVariable": "group",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": " Group that trained movement sequences",
+            "value": "movement"
+          },
+          {
+            "name": "Group that trained cue sequences",
+            "value": "cue"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0108556",
+        "label": "participant group"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Self reported dominant hand",
+      "sourceVariable": "handedness",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Right Handed",
+            "value": "R"
+          },
+          {
+            "name": "Left Handed",
+            "value": "L"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0104886",
+        "label": "handedness assessment"
+      }
+    }
+  ]
+}

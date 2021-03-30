@@ -1,0 +1,63 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "(Self-reported) sex of participant",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "M"
+          },
+          {
+            "name": "female",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738439",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Which session was used for the validation set. For participants with two sessions, the other session was used for exploration.",
+      "sourceVariable": "validation_session",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "The first session was used for validation (if present, the second session was used for exploration)",
+            "value": "1"
+          },
+          {
+            "name": "The second session was used for validation (the first session was used for exploration)",
+            "value": "2"
+          },
+          {
+            "name": "The data was not used for the (validation) analyses",
+            "value": "n/a"
+          }
+        ],
+        "valueType": "xsd:float"
+      }
+    }
+  ]
+}

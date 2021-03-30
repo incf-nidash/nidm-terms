@@ -1,0 +1,90 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "age of the participant",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Air Conditioning - could create interference so noted here",
+      "sourceVariable": "Air_conditioning",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Air Conditioning was on - temperature at or below 25C",
+            "value": "on"
+          },
+          {
+            "name": "Air Conditioning was off - temperature at or above 25C",
+            "value": "off"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "Ethnicity",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Participant of Indian origin",
+            "value": "Indian"
+          },
+          {
+            "name": "Participant of non-Indian origin (Caucasian, etc...)",
+            "value": "Non_indian"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0103955",
+        "label": "ethnicity"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Sex of the participant",
+      "sourceVariable": "gender",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "M"
+          },
+          {
+            "name": "female",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738437",
+        "label": "gender"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Unique participant identifier",
+      "sourceVariable": "participant_id",
+      "associatedWith": "NIDM",
+      "label": "Participant identifier"
+    }
+  ]
+}

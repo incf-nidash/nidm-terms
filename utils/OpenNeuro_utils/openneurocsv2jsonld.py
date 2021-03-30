@@ -439,7 +439,7 @@ def jsonld_dict(df,context,args):
         #doc['@context'] = context_url
 
         #add type as schema.org/DataElement
-        doc['@type'] = context['@context']['DataElement']
+        doc['@type'] = context['@context']['PersonalDataElement']
         doc[context['@context']['sourceVariable']] = row['sourceVariable']
 
         ro_dict = responseOptions_parser(row,context)
@@ -629,7 +629,7 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                     print('FOUND NEW KEYS')
 
                     #add type as schema.org/DataElement
-                    doc['@type'] = context['@context']['DataElement']
+                    doc['@type'] = context['@context']['PersonalDataElement']
                     doc[context['@context']['sourceVariable']] = key
 
                     # loop through the data elements properties and change them to be consistent with cde_context.jsonld
@@ -710,7 +710,7 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                                 elif not k in sourceVariables:
 
                                     #add type as schema.org/DataElement
-                                    doc['@type'] = context['@context']['DataElement']
+                                    doc['@type'] = context['@context']['PersonalDataElement']
                                     doc[context['@context']['sourceVariable']] = str(k)
 
                                     #for each data element that is not in the master dictionary d access its properties
@@ -775,7 +775,7 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                             elif not kk in sourceVariables:
 
                                 #add type as schema.org/DataElement
-                                doc['@type'] = context['@context']['DataElement']
+                                doc['@type'] = context['@context']['PersonalDataElement']
                                 doc[context['@context']['sourceVariable']] = str(kk)
 
                                 for subkk in phenojson2[kk]:

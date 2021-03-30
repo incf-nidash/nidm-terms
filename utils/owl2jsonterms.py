@@ -1,5 +1,6 @@
 
 import os,sys
+from os import system
 from argparse import ArgumentParser
 import pandas as pd
 from rdflib import Graph,util,Namespace, Literal,RDFS,RDF, URIRef
@@ -59,6 +60,7 @@ def main(argv):
 
     # loop through OWL AnnotationProperties
     for so in g.subject_objects(predicate=RDF.type):
+
         # create empty document dictionary
         doc={}
         # add type as schema.org/DefinedTerm
@@ -66,14 +68,16 @@ def main(argv):
         #doc['@type'].append(context['@context']['DefinedTerm'])
         #store term as localpart of subject identifier
         url, fragment = urldefrag(so[0])
+        if fragment == "":
+            continue
         doc[context['@context']['candidateTerms']] = fragment
         #store namespace of subject identifier as provenance
-        doc[context['@context']['provenance']] = url
+        #doc[context['@context']['provenance']] = url
         # loop through tuples and store in JSON-LD document
         for tuples in g.predicate_objects(subject=so[0]):
             if tuples[0] == RDFS["label"]:
                 doc[context['@context']['label']] = tuples[1]
-            elif tuples[0] == DCT["description"]:
+            elif tuples[0] == OBO["IAO_0000115"]:
                 doc[context['@context']['description']] = tuples[1]
             elif tuples[0] == OWL["sameAs"]:
                 doc[context['@context']['sameAs']] = tuples[1]
@@ -86,7 +90,7 @@ def main(argv):
                     doc[context['@context']['comment']] = []
                     doc[context['@context']['comment']].append(str(tuples[1]))
             elif tuples[0] == RDFS["subClassOf"]:
-                doc[context['@context']['supertypeCDEs']] = tuples[1]
+                doc[context['@context']['supertypeCDEs']['@id']] = tuples[1]
             elif tuples[0] == RDFS["comment"]:
                 if context['@context']['comment'] in doc:
                     doc[context['@context']['comment']].append(str(tuples[1]))
@@ -101,9 +105,43 @@ def main(argv):
             compacted = jsonld.compact(doc,CONTEXT)
         else:
             compacted = jsonld.compact(doc,args.context)
+
+        # this stuff added because pyld compaction function doesn't seem to replace some of the keys with
+        # the ones from the context
+        if "nidm:candidateTerms" in compacted.keys():
+            compacted['candidateTerms'] = \
+                compacted['nidm:candidateTerms']
+            del compacted['nidm:candidateTerms']
+        if "rdfs:label" in compacted.keys():
+            compacted['label'] = \
+                compacted['rdfs:label']
+            del compacted['rdfs:label']
+        if 'responseOptions' in compacted.keys():
+            compacted['responseOptions']['choices'] = \
+                compacted['responseOptions']['schema:itemListElement']
+            del compacted['responseOptions']['schema:itemListElement']
+            # for each item in the choices list
+            delete_indices = []
+            for index, entry in enumerate(compacted['responseOptions']['choices']):
+                # choices are list of dictionaries so for each dictionary
+                for entry_key in entry.keys():
+                    if entry_key == 'schema:value':
+                        compacted['responseOptions']['choices'].append({'value':
+                            compacted['responseOptions']['choices'][index]['schema:value']})
+                        delete_indices.append(index)
+            for index in sorted(delete_indices, reverse=True):
+                del compacted['responseOptions']['choices'][index]
+
+
         with open (join(args.output_dir,doc[context['@context']['candidateTerms']] +".jsonld"),'w') as outfile:
             json.dump(compacted,outfile,indent=2)
 
+    # Added code to now combine the separate json-ld files into a single file
+    output_dir = os.path.split(args.output_dir)[0]
+    cmd = "python " + join(sys.path[0],"combinebidsjsonld.py") + " -inputDir " + args.output_dir + " -outputDir " + \
+        join(output_dir,"NIDM_Terms.jsonld") + " -association \"NIDM\""
+    print(cmd)
+    system(cmd)
 
 
 
