@@ -134,7 +134,7 @@ def main(argv):
     print(compacted)
 
     # modified by DBK so that output command line parameter contains filename to output
-    with open (join(output),'w+') as outfile:
+    with open (join(output),'a') as outfile:
         json.dump(compacted,outfile,indent=2)
 
 

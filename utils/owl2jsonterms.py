@@ -80,7 +80,7 @@ def main(argv):
             elif tuples[0] == OBO["IAO_0000115"]:
                 doc[context['@context']['description']] = tuples[1]
             elif tuples[0] == OWL["sameAs"]:
-                doc[context['@context']['sameAs']] = tuples[1]
+                doc[context['@context']['sameAs']['@id']] = tuples[1]
             elif tuples[0] == OWL["closeMatch"]:
                 doc[context['@context']['closeMatch']] = tuples[1]
             elif tuples[0] == OBO["IAO_0000116"]:
