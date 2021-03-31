@@ -47,7 +47,6 @@ def main(argv):
             print("ERROR! Can't open url: %s" %args.context)
             exit()
 
-
     # read in jsonld context
     with open(context_file) as context_data:
         context = json.load(context_data)
