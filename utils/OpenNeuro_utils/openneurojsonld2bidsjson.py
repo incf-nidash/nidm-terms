@@ -36,16 +36,16 @@ def save_sidecar(i,NIDM_dict,output_dir):
 def isabout_parser(part_dict,bids_dict,term):
 
 
-    if isinstance(part_dict[term]['isAbout'], dict):
+    if isinstance(part_dict['isAbout'], dict):
         bids_dict[term]['isAbout'] = {}
-        bids_dict[term]['isAbout']['url'] = part_dict[term]['isAbout']['@id']
-        bids_dict[term]['isAbout']['label'] = part_dict[term]['isAbout']['label']
+        bids_dict[term]['isAbout']['url'] = part_dict['isAbout']['@id']
+        bids_dict[term]['isAbout']['label'] = part_dict['isAbout']['label']
 
-    if isinstance(part_dict[term]['isAbout'], list):
+    if isinstance(part_dict['isAbout'], list):
         temp_list = []
 
 
-        for l in part_dict[term]['isAbout']:
+        for l in part_dict['isAbout']:
             temp_dict = {}
             for k, v in l.items():
                 if k == '@id':
@@ -74,32 +74,32 @@ def responseOptions_parser(jsonld_read, bids_dict, term):
 
     # Response Options has choices, unitcode, min, max, valueType
 
-    if 'unitCode' in jsonld_read[term]['responseOptions']:
-        bids_dict[term]['Units'] = jsonld_read[term]['responseOptions']['unitCode']
-    if 'minValue' in jsonld_read[term]['responseOptions']:
-        bids_dict[term]['MinValue'] = jsonld_read[term]['responseOptions']['minValue']
-    if 'maxValue' in jsonld_read[term]['responseOptions']:
-        bids_dict[term]['MaxValue'] = jsonld_read[term]['responseOptions']['maxValue']
-    if 'valueType' in jsonld_read[term]['responseOptions']:
-        bids_dict[term]['valueType'] = jsonld_read[term]['responseOptions']['valueType']
+    if 'unitCode' in jsonld_read['responseOptions']:
+        bids_dict[term]['Units'] = jsonld_read['responseOptions']['unitCode']
+    if 'minValue' in jsonld_read['responseOptions']:
+        bids_dict[term]['MinValue'] = jsonld_read['responseOptions']['minValue']
+    if 'maxValue' in jsonld_read['responseOptions']:
+        bids_dict[term]['MaxValue'] = jsonld_read['responseOptions']['maxValue']
+    if 'valueType' in jsonld_read['responseOptions']:
+        bids_dict[term]['valueType'] = jsonld_read['responseOptions']['valueType']
 
 
     # Open new dictionary
     levels_dict = {}
 
-    if 'choices' in jsonld_read[term]['responseOptions']:
+    if 'choices' in jsonld_read['responseOptions']:
 
-        if isinstance(jsonld_read[term]['responseOptions']['choices'], list):
+        if isinstance(jsonld_read['responseOptions']['choices'], list):
 
-            for d in jsonld_read[term]['responseOptions']['choices']:
+            for d in jsonld_read['responseOptions']['choices']:
 
                 levels_dict[d['value']] = d['name']
 
-        elif isinstance(jsonld_read[term]['responseOptions']['choices'], dict):
+        elif isinstance(jsonld_read['responseOptions']['choices'], dict):
 
-            for key, val in jsonld_read[term]['responseOptions']['choices'].items():
+            for key, val in jsonld_read['responseOptions']['choices'].items():
 
-                levels_dict[jsonld_read[term]['responseOptions']['choices']['value']] = jsonld_read[term]['responseOptions']['choices']['name']
+                levels_dict[jsonld_read['responseOptions']['choices']['value']] = jsonld_read['responseOptions']['choices']['name']
 
         bids_dict[term]['Levels'] = levels_dict
 
@@ -122,40 +122,41 @@ def update_json(part_dict):
 
     # open a new bids master dictionary
     bids_dict = {}
+    term = ''
 
 
-    # for each term in the jsonld dictionary
-    for term in part_dict:
+
+    #if part_dict['terms'] is a single dictionary
+    if isinstance(part_dict['terms'], dict):
+        term = part_dict['terms']['sourceVariable']
 
         # open a nested dictionary for that term
         bids_dict[term] = {}
 
         # parse through the keys and values of that term
-        for key, val in part_dict[term].items():
-            # exclude @context
-            if key == '@context':
-                continue
+        for key, val in part_dict['terms'].items():
+
             # exclude @type
             if key == '@type':
                 continue
             # update key description and add the appropriate value
             if key == 'description':
-                bids_dict[term]['Description'] = part_dict[term]['description']
+                bids_dict[term]['Description'] = part_dict['terms']['description']
             # update key label and add the appropriate value
             if key == 'label':
-                bids_dict[term]['LongName'] = part_dict[term]['label']
+                bids_dict[term]['LongName'] = part_dict['terms']['label']
             # update key levels and add the appropriate value
             if key == 'responseOptions':
-                responseOptions_parser(part_dict,bids_dict,term)
+                responseOptions_parser(part_dict['terms'],bids_dict,term)
             # update key schema:url and add the appropriate value
-            if key == 'schema:url':
-                bids_dict[term]['TermURL'] = part_dict[term]['schema:url']
+            if key == 'url':
+                bids_dict[term]['TermURL'] = part_dict['terms']['url']
             # update key derivative and add the appropriate value
             if key == 'derivative':
-                bids_dict[term]['Derivative'] = part_dict[term]['derivative']
+                bids_dict[term]['Derivative'] = part_dict['terms']['derivative']
             # add isAbout and its appropriate value
             if key == 'isAbout':
-                isabout_parser(part_dict,bids_dict,term)
+                isabout_parser(part_dict['terms'],bids_dict,term)
                 #if isinstance(bids_dict[term]['isAbout'], list):
                     #if part_dict[term]['isAbout'] == '@id':
                         #bids_dict[term]['isAbout']['url'] = part_dict[term]['isAbout']['@id']
@@ -164,19 +165,75 @@ def update_json(part_dict):
 
             # add isPartOF and its appropriate value
             if key == 'isPartOf':
-                bids_dict[term]['isPartOf'] = part_dict[term]['isPartOf']
+                bids_dict[term]['isPartOf'] = part_dict['terms']['isPartOf']
             # add valueType and its appropriate value
             if key == 'valueType':
-                bids_dict[term]['valueType'] = part_dict[term]['valueType']
+                bids_dict[term]['valueType'] = part_dict['terms']['valueType']
             # add source_variable and its appropriate value
-            if key == 'source_variable':
-                bids_dict[term]['source_variable'] = part_dict[term]['source_variable']
+            if key == 'sourceVariable':
+                bids_dict[term]['sourceVariable'] = part_dict['terms']['sourceVariable']
             # add allowable value and its appropriate value
             #if key == 'allowableValues':
                 #bids_dict[term]['allowableValues'] = part_dict[term]['allowableValues']
             # add associated with and its appropriate value
             if key == 'associatedWith':
-                bids_dict[term]['associatedWith'] = part_dict[term]['associatedWith']
+                bids_dict[term]['associatedWith'] = part_dict['terms']['associatedWith']
+
+
+    #if t is an array of dictionaries
+    if isinstance(part_dict['terms'], list):
+        # for each term in the jsonld dictionary
+        for t in part_dict['terms']:
+            term = t['sourceVariable']
+
+            # open a nested dictionary for that term
+            bids_dict[term] = {}
+
+            # parse through the keys and values of that term
+            for key, val in t.items():
+
+                # exclude @type
+                if key == '@type':
+                    continue
+                # update key description and add the appropriate value
+                if key == 'description':
+                    bids_dict[term]['Description'] = t['description']
+                # update key label and add the appropriate value
+                if key == 'label':
+                    bids_dict[term]['LongName'] = t['label']
+                # update key levels and add the appropriate value
+                if key == 'responseOptions':
+                    responseOptions_parser(t,bids_dict,term)
+                # update key schema:url and add the appropriate value
+                if key == 'url':
+                    bids_dict[term]['TermURL'] = t['url']
+                # update key derivative and add the appropriate value
+                if key == 'derivative':
+                    bids_dict[term]['Derivative'] = t['derivative']
+                # add isAbout and its appropriate value
+                if key == 'isAbout':
+                    isabout_parser(t,bids_dict,term)
+                    #if isinstance(bids_dict[term]['isAbout'], list):
+                        #if part_dict[term]['isAbout'] == '@id':
+                            #bids_dict[term]['isAbout']['url'] = part_dict[term]['isAbout']['@id']
+                        #if part_dict[term]['isAbout'] == '@id':
+                            #bids_dict[term]['isAbout']['label'] = part_dict[term]['isAbout']['label']
+
+                # add isPartOF and its appropriate value
+                if key == 'isPartOf':
+                    bids_dict[term]['isPartOf'] = t['isPartOf']
+                # add valueType and its appropriate value
+                if key == 'valueType':
+                    bids_dict[term]['valueType'] = t['valueType']
+                # add source_variable and its appropriate value
+                if key == 'sourceVariable':
+                    bids_dict[term]['sourceVariable'] = t['sourceVariable']
+                # add allowable value and its appropriate value
+                #if key == 'allowableValues':
+                    #bids_dict[term]['allowableValues'] = part_dict[term]['allowableValues']
+                # add associated with and its appropriate value
+                if key == 'associatedWith':
+                    bids_dict[term]['associatedWith'] = t['associatedWith']
 
 
     return bids_dict

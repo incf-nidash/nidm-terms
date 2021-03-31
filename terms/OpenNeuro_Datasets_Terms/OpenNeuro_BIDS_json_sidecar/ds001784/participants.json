@@ -1,10 +1,11 @@
 {
   "age": {
     "Description": "Age of participant in years (rounded to protect identities).",
+    "sourceVariable": "age",
     "associatedWith": "NIDM",
+    "LongName": "Age in years",
     "Units": "years",
     "valueType": "xsd:integer",
-    "LongName": "Age in years",
     "isAbout": {
       "url": "http://uri.interlex.org/ilx_0100400",
       "label": "age"
@@ -12,26 +13,29 @@
   },
   "behavior": {
     "Description": "Whether affective MSIT behavioral data is available for the participant.",
+    "sourceVariable": "behavior",
     "associatedWith": "NIDM",
-    "valueType": "xsd:integer",
-    "LongName": "Behavior availability"
+    "LongName": "Behavior availability",
+    "valueType": "xsd:integer"
   },
   "dbs_stim_freq": {
     "Description": "Frequency of participant's chronic deep brain stimulation.",
+    "sourceVariable": "dbs_stim_freq",
     "associatedWith": "NIDM",
+    "LongName": "DBS stimulation frequency",
     "Units": "hertz",
-    "valueType": "xsd:integer",
-    "LongName": "DBS stimulation frequency"
+    "valueType": "xsd:integer"
   },
   "dx": {
     "Description": "Primary diagnosis for participant.",
+    "sourceVariable": "dx",
     "associatedWith": "NIDM",
+    "LongName": "Psychiatric diagnosis",
     "valueType": "xsd:string",
     "Levels": {
       "MDD": "major depressive disorder",
       "OCD": "obsessive compulsive disorder"
     },
-    "LongName": "Psychiatric diagnosis",
     "isAbout": {
       "url": "http://uri.interlex.org/ilx_0497879",
       "label": "diagnosis, psychiatric"
@@ -39,19 +43,21 @@
   },
   "eeg": {
     "Description": "Whether task EEG data is available for the participant.",
+    "sourceVariable": "eeg",
     "associatedWith": "NIDM",
-    "valueType": "xsd:integer",
-    "LongName": "EEG availability"
+    "LongName": "EEG availability",
+    "valueType": "xsd:integer"
   },
   "gender": {
     "Description": "Participant's reported gender.",
+    "sourceVariable": "gender",
     "associatedWith": "NIDM",
+    "LongName": "Gender",
     "valueType": "xsd:string",
     "Levels": {
       "F": "female",
       "M": "male"
     },
-    "LongName": "Gender",
     "isAbout": {
       "url": "http://uri.interlex.org/ilx_0738437",
       "label": "gender"
@@ -59,9 +65,10 @@
   },
   "hypomania": {
     "Description": "Whether the participant ever experienced a hypomanic episode following DBS surgery.",
+    "sourceVariable": "hypomania",
     "associatedWith": "NIDM",
-    "valueType": "xsd:integer",
     "LongName": "Post-surgery hypomanic episode",
+    "valueType": "xsd:integer",
     "isAbout": [
       {
         "url": "http://cognitiveatlas.org/disorder/id/dso_3312/",
@@ -79,9 +86,10 @@
   },
   "madrs_bl": {
     "Description": "Summary score on the Montgomery-Asberg Depression Rating Scale (MADRS) immediately prior to surgery.",
+    "sourceVariable": "madrs_bl",
     "associatedWith": "NIDM",
-    "valueType": "xsd:integer",
     "LongName": "MADRS at baseline",
+    "valueType": "xsd:integer",
     "isAbout": {
       "url": "https://www.cognitiveatlas.org/disorder/id/dso_1470/",
       "label": "major depressive disorder"
@@ -89,9 +97,10 @@
   },
   "madrs_fu": {
     "Description": "Summary score on the Montgomery-Asberg Depression Rating Scale (MADRS) at follow-up visit (i.e. time of EEG data collection).",
+    "sourceVariable": "madrs_fu",
     "associatedWith": "NIDM",
-    "valueType": "xsd:integer",
     "LongName": "MADRS at follow-up",
+    "valueType": "xsd:integer",
     "isAbout": {
       "url": "https://www.cognitiveatlas.org/disorder/id/dso_1470/",
       "label": "major depressive disorder"
@@ -99,33 +108,38 @@
   },
   "mri": {
     "Description": "Whether an anatomical MRI scan is available for the participant.",
+    "sourceVariable": "mri",
     "associatedWith": "NIDM",
-    "valueType": "xsd:integer",
-    "LongName": "MRI availability"
+    "LongName": "MRI availability",
+    "valueType": "xsd:integer"
   },
   "responder": {
     "Description": "Whether the participant achieved clinical response at any point during his/her clinical trial; the criterion was a 50% drop in MADRS or a 35% drop in YBOCS. This may not have corresponded to the score at the time of study data collection.",
+    "sourceVariable": "responder",
     "associatedWith": "NIDM",
-    "valueType": "xsd:integer",
-    "LongName": "Responder to DBS treatment"
+    "LongName": "Responder to DBS treatment",
+    "valueType": "xsd:integer"
   },
   "rest": {
     "Description": "Whether resting state EEG data is available for the participant.",
+    "sourceVariable": "rest",
     "associatedWith": "NIDM",
-    "valueType": "xsd:integer",
-    "LongName": "Resting state EEG availability"
+    "LongName": "Resting state EEG availability",
+    "valueType": "xsd:integer"
   },
   "study_id": {
     "Description": "Anonymized participant identifier in larger DBS study.",
+    "sourceVariable": "study_id",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string",
-    "LongName": "Study ID number"
+    "LongName": "Study ID number",
+    "valueType": "xsd:string"
   },
   "ybocs_bl": {
     "Description": "Summary score on the Yale-Brown Obessive Compulsive Scale (Y-BOCS) immediately prior to surgery.",
+    "sourceVariable": "ybocs_bl",
     "associatedWith": "NIDM",
-    "valueType": "xsd:float",
     "LongName": "Y-BOCS at baseline",
+    "valueType": "xsd:float",
     "isAbout": {
       "url": "https://www.cognitiveatlas.org/disorder/id/dso_10933/",
       "label": "obsessive-compulsive disorder"
@@ -133,9 +147,10 @@
   },
   "ybocs_fu": {
     "Description": "Summary score on the Yale-Brown Obessive Compulsive Scale (Y-BOCS) at follow-up visit (i.e. time of EEG data collection).",
+    "sourceVariable": "ybocs_fu",
     "associatedWith": "NIDM",
-    "valueType": "xsd:float",
     "LongName": "Y-BOCS at follow-up",
+    "valueType": "xsd:float",
     "isAbout": {
       "url": "https://www.cognitiveatlas.org/disorder/id/dso_10933/",
       "label": "obsessive-compulsive disorder"
@@ -143,6 +158,7 @@
   },
   "participant_id": {
     "Description": "ID number assigned to participant (prefix sub-).",
+    "sourceVariable": "participant_id",
     "associatedWith": "NIDM",
     "LongName": "Participant ID number"
   }
