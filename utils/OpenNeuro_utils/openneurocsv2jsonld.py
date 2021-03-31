@@ -439,7 +439,7 @@ def jsonld_dict(df,context,args):
         #doc['@context'] = context_url
 
         #add type as schema.org/DataElement
-        doc['@type'] = context['@context']['DataElement']
+        doc['@type'] = context['@context']['PersonalDataElement']
         doc[context['@context']['sourceVariable']] = row['sourceVariable']
 
         ro_dict = responseOptions_parser(row,context)
@@ -535,12 +535,20 @@ def jsonld_dict(df,context,args):
     #obj_nm,obj_term = split_uri('http://uri.interlex.org/ilx_0381385')
 
 
-    # for loop added by NQ to access isAbout from the term list in the compacted file
-    # for term in compacted['terms']:
+    #added by NQ to access isAbout from the term list in the compacted file
 
-        # if "http://uri.interlex.org/ilx_0381385" in term.keys():
-        #     term['isAbout'] = term["http://uri.interlex.org/ilx_0381385"]
-        #     del term["http://uri.interlex.org/ilx_0381385"]
+    #check if compacted['terms] has a value of single dictionary or an array
+    if isinstance(compacted['terms'], dict):
+        for kk,vv in compacted['terms'].items():
+            if kk == 'http://uri.interlex.org/ilx_0381385':
+                compacted['terms']['isAbout'] = compacted['terms']['http://uri.interlex.org/ilx_0381385']
+                del compacted['terms']['http://uri.interlex.org/ilx_0381385']
+    elif isinstance(compacted['terms'], list):
+        for term in compacted['terms']:
+            for k, v in term.items():
+                if k == "http://uri.interlex.org/ilx_0381385":
+                    term['isAbout'] = v
+                    del term["http://uri.interlex.org/ilx_0381385"]
 
 
     return compacted
@@ -571,6 +579,22 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
     '''
 
 
+    #get all of the source variables in d in a list
+
+    #create an emty list for all existing source vriables
+    sourceVariables = []
+    temp = []
+    if isinstance(d['terms'], dict):
+        val = d['terms']['sourceVariable']
+        temp.extend(val)
+        string = ''.join(temp)
+        sourceVariables.append(string)
+    elif isinstance(d['terms'], list):
+        for term in d['terms']:
+            sourceVariables.append(term['sourceVariable'])
+
+
+
     # add ds to the beginning  of the dataset number to be able to access that original directory
     l = 'ds'+l
 
@@ -590,23 +614,26 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
         ## if the original dataset has a participants.json file
         elif os.path.exists(part_path):
             ## open the json file as a dictionary
-            with open (part_path) as dict:
-                part_json = json.load(dict)
+            with open (part_path) as di:
+                part_json = json.load(di)
+
             ## now check if the keys in teh original files are included in the new dictionary
             for key in part_json:
 
-                if key in d.keys():
+                if key in sourceVariables:
                     continue
 
                 ## if a new key is found in the original json file and not in the d add that key
-                elif not key in d.keys():
+                elif not key in sourceVariables:
+
+                    print('FOUND NEW KEYS')
 
                     #add type as schema.org/DataElement
-                    doc['@type'] = context['@context']['DataElement']
+                    doc['@type'] = context['@context']['PersonalDataElement']
                     doc[context['@context']['sourceVariable']] = key
 
                     # loop through the data elements properties and change them to be consistent with cde_context.jsonld
-                    # (https://github.com/nqueder/terms/blob/master/context/cde_context.jsonld)
+                    # (https://github.com/NIDM-Terms/terms/blob/master/context/cde_context.jsonld)
                     for subkey in part_json[key]:
 
                         if subkey == 'Description':
@@ -635,7 +662,11 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                     compacted = jsonld.compact(doc,args.context)
 
                     ## write that compacted file as a dictionary in the the master dictionary d
-                    d[key] = compacted
+                    del compacted['@context']
+                    if isinstance(d['terms'],dict):
+                        d['terms'] = [d['terms'],compacted]
+                    elif isinstance(d['terms'],list):
+                        d['terms'].append(compacted)
 
             # return updated master dictionary d
             return d
@@ -673,13 +704,13 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                             # check if each data element is in the master dictionary d
                             for k in phenojson1:
 
-                                if k in d.keys():
+                                if k in sourceVariables:
                                     continue
 
-                                elif not k in d.keys():
+                                elif not k in sourceVariables:
 
                                     #add type as schema.org/DataElement
-                                    doc['@type'] = context['@context']['DataElement']
+                                    doc['@type'] = context['@context']['PersonalDataElement']
                                     doc[context['@context']['sourceVariable']] = str(k)
 
                                     #for each data element that is not in the master dictionary d access its properties
@@ -712,7 +743,11 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                                     # compact file with doc and context
                                     compacted = jsonld.compact(doc,args.context)
                                     # add compacted file to the master dictionary d
-                                    d[k] = compacted
+                                    del compacted['@context']
+                                    if isinstance(d['terms'],dict):
+                                        d['terms'] = [d['terms'],compacted]
+                                    elif isinstance(d['terms'],list):
+                                        d['terms'].append(compacted)
 
                                 #return updated master dictionary d
                                 return d
@@ -734,13 +769,13 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                         # check if each data element is in the master dictionary d
                         for kk in phenojson2:
 
-                            if kk in d.keys():
+                            if kk in sourceVariables:
                                 continue
 
-                            elif not kk in d.keys():
+                            elif not kk in sourceVariables:
 
                                 #add type as schema.org/DataElement
-                                doc['@type'] = context['@context']['DataElement']
+                                doc['@type'] = context['@context']['PersonalDataElement']
                                 doc[context['@context']['sourceVariable']] = str(kk)
 
                                 for subkk in phenojson2[kk]:
@@ -771,7 +806,12 @@ def json_check(d,datasets_path,l,source,args,context,pathtophenodir):
                                 # compact file with doc and context
                                 compacted = jsonld.compact(doc,args.context)
                                 # add compacted file to the master dictionary d
-                                d[kk] = compacted
+                                del compacted['@context']
+
+                                if isinstance(d['terms'],dict):
+                                    d['terms'] = [d['terms'],compacted]
+                                elif isinstance(d['terms'],list):
+                                    d['terms'].append(compacted)
 
                             #return updated master dictionary d
                             return d
@@ -977,7 +1017,7 @@ def main(argv):
                                 if file.endswith('.tsv'):
                                     file_name = file[:-4]
                                     pathtotsv = os.path.join(root, file)
-                                    rtsv = pd.read_csv(pathtotsv, error_bad_lines=False)
+                                    rtsv = pd.read_csv(pathtotsv, error_bad_lines=False, engine='python')
                                     #extract terms from tsv files
                                     for col in rtsv.columns :
                                         #create a term list

@@ -1,0 +1,78 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "Experimental group",
+      "sourceVariable": "condition",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Vehicle",
+            "value": "veh"
+          },
+          {
+            "name": "Psilocybin 0.5 mg/kg",
+            "value": "psi05"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Date of recording",
+      "sourceVariable": "Experiment_Date",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "C57Bl/6J mice",
+      "sourceVariable": "gender",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Male",
+            "value": "m"
+          },
+          {
+            "name": "Female",
+            "value": "f"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738437",
+        "label": "gender"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Imaging session",
+      "sourceVariable": "session",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "animal weight in gram",
+      "sourceVariable": "weight",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0112616",
+        "label": "weight"
+      }
+    }
+  ]
+}

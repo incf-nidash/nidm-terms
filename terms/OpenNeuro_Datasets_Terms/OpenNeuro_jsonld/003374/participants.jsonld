@@ -1,0 +1,70 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "age of the participant at the time of recording",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "list of implanted macro electrodes",
+      "sourceVariable": "implanted_electrodes",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "clinical diagnosis of the patient with focal-epilepsy",
+      "sourceVariable": "pathology",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "sex of the participant as reported by the participant",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "M"
+          },
+          {
+            "name": "female",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738439",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "list of implanted macro electrodes that are in the seizure onset zone (SOZ)",
+      "sourceVariable": "SOZ_electrodes",
+      "associatedWith": "NIDM",
+      "label": "seizure onset zone electrodes",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    }
+  ]
+}
