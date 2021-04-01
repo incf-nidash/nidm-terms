@@ -1,6 +1,7 @@
 {
   "age": {
     "Description": "age of the participant",
+    "sourceVariable": "age",
     "associatedWith": "NIDM",
     "Units": "years",
     "valueType": "xsd:integer",
@@ -11,6 +12,7 @@
   },
   "feedback_type": {
     "Description": "Type of feedback visualisation of the bi-modal neurofeedback scores",
+    "sourceVariable": "feedback_type",
     "associatedWith": "NIDM",
     "valueType": "xsd:string",
     "Levels": {
@@ -20,6 +22,7 @@
   },
   "sex": {
     "Description": "sex of the participant",
+    "sourceVariable": "sex",
     "associatedWith": "NIDM",
     "valueType": "xsd:string",
     "Levels": {
@@ -27,12 +30,21 @@
       "F": "female"
     },
     "isAbout": {
-      "url": "http://uri.interlex.org/ilx_0112866",
+      "url": "http://uri.interlex.org/ilx_0738439",
       "label": "sex"
     }
   },
-  "participant_id": {
-    "Description": "anonymised participant IDs of XP2 dataset",
-    "associatedWith": "NIDM"
+  "bmi": {
+    "TermURL": "http://purl.bioontology.org/ontology/SNOMEDCT/60621009",
+    "sourceVariable": "bmi",
+    "associatedWith": "NIDM",
+    "LongName": "Body mass index"
+  },
+  "education": {
+    "Description": "Education level, self-rated by participant",
+    "TermURL": "http://purl.bioontology.org/ontology/SNOMEDCT/60621009",
+    "sourceVariable": "education",
+    "associatedWith": "NIDM",
+    "LongName": "Education level"
   }
 }
