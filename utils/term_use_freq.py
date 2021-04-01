@@ -68,34 +68,39 @@ def main(argv):
             with open(file) as dct:
                 json_tmp = json.load(dct)
 
-            # for each key (term) in jsonld file, check for isAbout property
-            for term in json_tmp.keys():
-                # expanded = jsonld.expand(json_tmp[term])
-                # for jsonld files with only a single term we have a simple dictionary where the term label isn't
-                # the highest-level key so we handle differently
-                if not isinstance(json_tmp[term], dict):
+            if type(json_tmp['terms']) is dict:
+                # for each key (term) in jsonld file, check for isAbout property
+                for term in json_tmp['terms'].keys():
+                    # expanded = jsonld.expand(json_tmp[term])
+                    # for jsonld files with only a single term we have a simple dictionary where the term label isn't
+                    # the highest-level key so we handle differently
                     if term == 'isAbout':
-                        # for each concept in isAbout property
-                        if isinstance(json_tmp['isAbout'], list):
-                            for isabout_entry in json_tmp['isAbout']:
+                        if isinstance(json_tmp['terms'][term], list):
+                            # if not a dictionary then a list of dictionaries
+                            for isabout_entry in json_tmp['terms'][term]['isAbout']:
                                 total_concept_count = add_to_dict(id, isabout_entry, isAbout_terms, total_concept_count)
-
+                        # else it's a dictionary with a single isAbout entry
                         else:
-                            total_concept_count = add_to_dict(id, json_tmp[term]['isAbout'], isAbout_terms,
-                                                          total_concept_count)
-
-                # check if "isAbout" tag exists in json_tmp
-                elif "isAbout" in json_tmp[term].keys():
-                    # for each concept in isAbout property
-                    if isinstance(json_tmp[term]['isAbout'],list):
-                        for isabout_entry in json_tmp[term]['isAbout']:
-                            total_concept_count = add_to_dict(id, isabout_entry, isAbout_terms, total_concept_count)
-
-                    else:
-                        total_concept_count = add_to_dict(id,json_tmp[term]['isAbout'],isAbout_terms,total_concept_count)
+                            total_concept_count = add_to_dict(id, json_tmp['terms'][term], isAbout_terms,
+                                                              total_concept_count)
 
 
+            elif type(json_tmp['terms']) is list:
+                for term in json_tmp['terms']:
+                    # expanded = jsonld.expand(json_tmp[term])
+                    # for jsonld files with only a single term we have a simple dictionary where the term label isn't
+                    # the highest-level key so we handle differently
+                    for property in term:
+                        if property == 'isAbout':
+                            # for each concept in isAbout property
+                            if isinstance(term[property], list):
+                                for isabout_entry in term[property]:
+                                    total_concept_count = add_to_dict(id, isabout_entry, isAbout_terms,
+                                                                      total_concept_count)
 
+                            else:
+                                total_concept_count = add_to_dict(id, term[property], isAbout_terms,
+                                                                  total_concept_count)
 
     # open markdown txt file
     md_file = open(args.outfile, "w")
