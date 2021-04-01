@@ -1,0 +1,65 @@
+{
+  "age": {
+    "Description": "Age of participant in years.",
+    "sourceVariable": "age",
+    "associatedWith": "NIDM",
+    "LongName": "Age in years",
+    "Units": "years",
+    "valueType": "xsd:integer",
+    "isAbout": {
+      "url": "http://uri.interlex.org/ilx_0100400",
+      "label": "age"
+    }
+  },
+  "exclude": {
+    "Description": "Whether participant was included in analysis.",
+    "sourceVariable": "exclude",
+    "associatedWith": "NIDM",
+    "LongName": "Exclude",
+    "valueType": "xsd:integer"
+  },
+  "exclude_reason": {
+    "Description": "Specific reason why participant was excluded from analysis.",
+    "sourceVariable": "exclude_reason",
+    "associatedWith": "NIDM",
+    "LongName": "Reason for exclusion",
+    "valueType": "xsd:string",
+    "Levels": {
+      "Misisng DICOMS": "Corrupted fMRI acquisition",
+      "No variability": "Showed no behavioral variability",
+      "Missing RT": "Missing responses for more than 20% of trials"
+    }
+  },
+  "gender": {
+    "Description": "Participant's reported gender.",
+    "sourceVariable": "gender",
+    "associatedWith": "NIDM",
+    "LongName": "Gender",
+    "valueType": "xsd:string",
+    "Levels": {
+      "F": "female",
+      "M": "male"
+    },
+    "isAbout": {
+      "url": "http://uri.interlex.org/ilx_0738437",
+      "label": "gender"
+    }
+  },
+  "scanner": {
+    "Description": "Type of Siemens scanner data used to collect data.",
+    "sourceVariable": "scanner",
+    "associatedWith": "NIDM",
+    "LongName": "MRI scanner",
+    "valueType": "xsd:string",
+    "Levels": {
+      "Trio": "Siemens MAGNETOM Trio 3T",
+      "Prisma": "Siemens MAGNETOM Prisma 3T"
+    }
+  },
+  "participant_id": {
+    "Description": "ID number assigned to participant (prefix sub-).",
+    "sourceVariable": "participant_id",
+    "associatedWith": "NIDM",
+    "LongName": "Participant ID number"
+  }
+}

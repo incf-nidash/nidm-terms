@@ -1,9 +1,10 @@
 {
   "date": {
     "Description": "Date given in DD.MM.YYYY format",
+    "sourceVariable": "date",
     "associatedWith": "NIDM",
-    "valueType": "xsd:string",
     "LongName": "Date of fMRI session",
+    "valueType": "xsd:string",
     "isAbout": {
       "url": "http://uri.interlex.org/ilx_0383109",
       "label": "date"
@@ -11,19 +12,23 @@
   },
   "duration": {
     "Description": "Time between the start of medetomidine administration and the experimental endpoint (for details, see paper)",
+    "sourceVariable": "duration",
     "associatedWith": "NIDM",
+    "LongName": "Duration of medetomidine anesthesia",
     "Units": "minutes",
-    "valueType": "xsd:integer",
-    "LongName": "Duration of medetomidine anesthesia"
+    "valueType": "xsd:integer"
   },
   "efs_runs": {
+    "sourceVariable": "efs_runs",
     "associatedWith": "NIDM",
-    "valueType": "xsd:integer",
-    "LongName": "Number of electrical forepaw stimulaiton (EFS) fMRI runs"
+    "LongName": "Number of electrical forepaw stimulaiton (EFS) fMRI runs",
+    "valueType": "xsd:integer"
   },
   "protocol": {
     "Description": "subcutaneous (SC) or intravenous (IV), with or without bolus",
+    "sourceVariable": "protocol",
     "associatedWith": "NIDM",
+    "LongName": "medetomidine administration protocol",
     "MinValue": "1",
     "MaxValue": "4",
     "valueType": "xsd:integer",
@@ -32,20 +37,21 @@
       "2": "IV with bolus",
       "3": "IV no bolus",
       "4": "IV lower dose"
-    },
-    "LongName": "medetomidine administration protocol"
+    }
   },
   "rs_runs": {
+    "sourceVariable": "rs_runs",
     "associatedWith": "NIDM",
-    "valueType": "xsd:integer",
-    "LongName": "Number of resting state (RS) fMRI runs"
+    "LongName": "Number of resting state (RS) fMRI runs",
+    "valueType": "xsd:integer"
   },
   "weight": {
     "Description": "Weight was measured right before the induction of anesthesia",
+    "sourceVariable": "weight",
     "associatedWith": "NIDM",
+    "LongName": "Body weight",
     "Units": "grams",
     "valueType": "xsd:integer",
-    "LongName": "Body weight",
     "isAbout": {
       "url": "http://uri.interlex.org/ilx_0112616",
       "label": "weight"
@@ -53,6 +59,7 @@
   },
   "participant_id": {
     "Description": "ID of the rat, from sub-01 to sub-24",
+    "sourceVariable": "participant_id",
     "associatedWith": "NIDM"
   }
 }
