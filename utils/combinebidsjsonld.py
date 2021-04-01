@@ -13,7 +13,7 @@ import requests
 def main(argv):
     parser = ArgumentParser(description='This script fixes the single bids json file. producing properly formatted jsonld')
 
-    parser.add_argument('-inputDir', dest='inputDir', required=True, help="single bids jsonld file")
+    parser.add_argument('-inputDir', dest='inputDir', required=True, help="individual bids jsonld files")
     parser.add_argument('-association', dest='association', required=False, default="BIDS", help="association"
                         "string to identify which terminology terms are associated with. Valid choices are"
                         "NIDM (default if parameter left out) or BIDS" )
@@ -29,6 +29,9 @@ def main(argv):
 
     #set output directory
     output = args.outputDir
+
+    #if jsonld is provided set state to 1 if it's not provided set state to 0
+    state = ''
 
     url = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
 
@@ -52,17 +55,19 @@ def main(argv):
         context = json.load(context_data)
 
     # added by DBK to support adding to existing jsonld file
-    if args.jsonld == None:
+    if args.jsonld is None:
         #set a main dictionary
         main_dict = {}
 
         #assing @context to the main dict
         main_dict['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
         main_dict['terms'] = []
+        state = 0
     else:
-        # load existing jsonld file
+    # load existing jsonld file
         with open(args.jsonld) as fp:
             main_dict = json.load(fp)
+        state = 1
 
     for term in os.listdir(input):
 
@@ -81,8 +86,6 @@ def main(argv):
 
             #remove @context and fix @type
             for key, value in term_dict.items():
-
-
 
 
                 if key == '@context':
@@ -140,12 +143,17 @@ def main(argv):
 
     print(compacted)
 
-    # modified by DBK so that output command line parameter contains filename to output
-    with open (join(output),'a') as outfile:
-        json.dump(compacted,outfile,indent=2)
 
+    ## Added my Nazek Queder
+    # if jsonld is provided modify and save in the same file else rewrite the file
+    if state == 1:
+        # modified by DBK so that output command line parameter contains filename to output
+        with open (join(jsonld),'a') as outfile:
+            json.dump(compacted,outfile,indent=2)
 
-
+    elif state == 0:
+        with open (join(output),'+w') as outfile:
+            json.dump(compacted,outfile,indent=2)
 
 
 
