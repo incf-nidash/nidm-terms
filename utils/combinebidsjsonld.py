@@ -7,7 +7,53 @@ import tempfile
 import urllib.request as ur
 import requests
 
+def responseOptions(temp,context,value):
 
+    #a new dictionary to add responseOptions properties to
+    resOp = {}
+
+    choice = {}
+
+    for k, v in value:
+
+        if k == 'valueType':
+            resOp[context['@context']['valueType']] = v
+        if k == 'datumType':
+            resOp[context['@context']['datumType']] = v
+        if k == 'unitCode':
+            resOp[context['@context']['unitCode']] = v
+        if k == 'minValue':
+            resOp[context['@context']['minValue']] = v
+        if k == 'maxValue':
+            resOp[context['@context']['maxValue']] = v
+        if k == 'allowableValues':
+            resOp[context['@context']['allowableValues']] = v
+        if k == 'choices':
+            ##parse choices object if it's a single dictionary or if it's an array
+            if isinstance(v,dict):
+                for choicesKey, choicesVal in v:
+                    if choicesKey == 'name':
+                        choice[context['@context']['name']] = choicesVal
+                    elif choicesKey == 'value':
+                        choice[context['@context']['value']] = choicesVal
+
+                resOp[context['@context']['choices']] = choice
+
+            elif isinstance(v,list):
+                for obj in v:
+                    for choicesK, choicesV in obj:
+                        if choicesK == 'name':
+                            choice[context['@context']['name']] = choicesV
+                        elif choicesK == 'value':
+                            choice[context['@context']['value']] = choicesV
+
+                        resOp[context['@context']['choices']] = choice
+
+                        choice = {}
+
+    temp[context['@context']['responseOptions']['@id']] = resOp
+
+    return temp
 
 
 def main(argv):
@@ -126,6 +172,10 @@ def main(argv):
                     temp[context['@context']['isAbout']['@id']] = value
                 elif key == 'isPartOf':
                     temp[context['@context']['isPartOf']['@id']] = value
+                elif key == 'responseOptions':
+                    temp[context['@context']['responseOptions']['@id']] = value
+                elif key == 'responseOptions':
+                    responseOptions(temp,context,value)
 
                 # Added by DBK to account for different associations
                 if args.association == "BIDS":

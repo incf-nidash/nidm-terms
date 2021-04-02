@@ -1,21 +1,49 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "(or OCCUP); Hollingshead Status - HEAD OF HOUSEHOLD",
   "label": "occupation",
-  "levels": "[' 9 ', ' Higher Executives, Proprietors of Large Businesses, Major Professionals', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9
-  ],
-  "maximumValue": 9,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Farm Laborers/Menial Service Workers, Welfare Recipients"
+      },
+      {
+        "name": "2",
+        "value": "Unskilled Workers"
+      },
+      {
+        "name": "3",
+        "value": "Machine Operators, Semi-Skilled Workers"
+      },
+      {
+        "name": "4",
+        "value": "Smaller Business Owners, Skilled Manual Workers, Craftsmen, Tenant Farmers"
+      },
+      {
+        "name": "5",
+        "value": "Clerical and Sales Workers, Small Farm and Business Owners"
+      },
+      {
+        "name": "6",
+        "value": "Technicians, Semi-Professionals and Small Business Owners"
+      },
+      {
+        "name": "7",
+        "value": "Smaller Business Owners, Farm Owners, Managers, Minor Professionals"
+      },
+      {
+        "name": "8",
+        "value": "Administrators, Lesser Professionals, Proprietors of Medium-Sized Businesses"
+      },
+      {
+        "name": "9",
+        "value": "Higher Executives, Proprietors of Large Businesses, Major Professionals"
+      }
+    ],
+    "maxValue": "9",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

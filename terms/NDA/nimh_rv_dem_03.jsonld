@@ -1,18 +1,45 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Current gender identity",
   "label": "nimh_rv_dem_03",
-  "levels": "[' 5', 'Different identity', [...]]",
-  "allowableValues": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5
-  ],
-  "maximumValue": 5,
-  "minimumValue": 0,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "0",
+        "value": "Male"
+      },
+      {
+        "name": "1",
+        "value": "Female"
+      },
+      {
+        "name": "2",
+        "value": "Trans male/Trans man"
+      },
+      {
+        "name": "3",
+        "value": "Trans female/Trans woman"
+      },
+      {
+        "name": "4",
+        "value": "Genderqueer or Gender non-conforming"
+      },
+      {
+        "name": "5",
+        "value": "Different identity"
+      },
+      {
+        "name": "7",
+        "value": "Refused"
+      },
+      {
+        "name": "8",
+        "value": "Don't Know"
+      }
+    ],
+    "maxValue": "5",
+    "minValue": "0",
+    "valueType": "xsd:integer"
+  }
 }

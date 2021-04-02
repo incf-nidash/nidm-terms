@@ -1,18 +1,41 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Do you consider yourself to be",
   "label": "baseline_b_005",
-  "levels": "[' -999', 'Missing', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    -888
-  ],
-  "maximumValue": 5,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "maxValue": "5",
+    "minValue": "1",
+    "valueType": "xsd:integer",
+	"choices": [
+      {
+        "name": "1",
+        "value": "Heterosexual or straight"
+      },
+      {
+        "name": "2",
+        "value": "Gay or Lesbian"
+      },
+      {
+        "name": "3",
+        "value": "Bisexual"
+      },
+      {
+        "name": "4",
+        "value": "Refused"
+      },
+      {
+        "name": "5",
+        "value": "Other"
+      },
+      {
+        "name": "-888",
+        "value": "Not Applicable"
+      },
+      {
+        "name": "-999",
+        "value": "Missing"
+      }
+	]
+  }
 }

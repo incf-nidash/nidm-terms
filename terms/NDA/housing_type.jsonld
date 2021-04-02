@@ -1,16 +1,29 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Type of Housing",
   "label": "housing_type",
-  "levels": "[' 4', 'Other', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4
-  ],
-  "maximumValue": 4,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Own"
+      },
+      {
+        "name": "2",
+        "value": "Rent"
+      },
+      {
+        "name": "3",
+        "value": "Section 8 or Public housing"
+      },
+      {
+        "name": "4",
+        "value": "Other"
+      }
+    ],
+    "maxValue": "4",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

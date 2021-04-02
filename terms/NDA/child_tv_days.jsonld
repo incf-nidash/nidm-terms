@@ -1,17 +1,33 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "How many days a week does your child watch TV? ",
   "label": "child_tv_days",
-  "levels": "[' 5', 'Every day', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5
-  ],
-  "maximumValue": 5,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Less than once a week"
+      },
+      {
+        "name": "2",
+        "value": "Once a week"
+      },
+      {
+        "name": "3",
+        "value": "About 2 or 3 days a week"
+      },
+      {
+        "name": "4",
+        "value": "About 4 or 5 days a week"
+      },
+      {
+        "name": "5",
+        "value": "Every day"
+      }
+    ],
+    "maxValue": "5",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

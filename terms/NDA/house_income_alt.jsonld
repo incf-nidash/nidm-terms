@@ -1,18 +1,37 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Household income (based on last year)",
   "label": "house_income_alt",
-  "levels": "[' 6', ' $150,000 or more\\r', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6
-  ],
-  "maximumValue": 6,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Less than $12,000"
+      },
+      {
+        "name": "2",
+        "value": "$12,000 to $34,999"
+      },
+      {
+        "name": "3",
+        "value": "$35,000 to $59,999"
+      },
+      {
+        "name": "4",
+        "value": "$60,000 to $89,999"
+      },
+      {
+        "name": "5",
+        "value": "$90,000 to $149,999"
+      },
+      {
+        "name": "6",
+        "value": "$150,000 or more"
+      }
+    ],
+    "maxValue": "6",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

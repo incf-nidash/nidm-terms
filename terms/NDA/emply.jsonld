@@ -1,16 +1,33 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "HEAD OF HOUSEHOLD Presently Employed",
   "label": "emply",
-  "levels": "[' 7 ', ' RETIRED', [...]]",
-  "allowableValues": [
-    "0",
-    "1",
-    "2",
-    "7"
-  ],
-  "maximumValue": 7,
-  "minimumValue": 0,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "0",
+        "value": "NO"
+      },
+      {
+        "name": "1",
+        "value": "YES - PART TIME"
+      },
+      {
+        "name": "2",
+        "value": "YES - FULL TIME"
+      },
+      {
+        "name": "7",
+        "value": "RETIRED"
+      }
+    ],
+    "valueType": "xsd:integer",
+    "allowableValues": [
+      "0",
+      "1",
+      "2",
+      "7"
+    ]
+  }
 }

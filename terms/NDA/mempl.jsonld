@@ -1,8 +1,23 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Monthly employment income",
   "label": "mempl",
-  "levels": "[' -3', 'DK', [...]]",
-  "valueType": "xsd:string"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "0",
+        "value": "No, 1"
+      },
+      {
+        "name": "-4",
+        "value": "Refused"
+      },
+      {
+        "name": "-3",
+        "value": "DK"
+      }
+    ],
+    "valueType": "xsd:string"
+  }
 }
