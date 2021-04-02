@@ -1,8 +1,13 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Age of father at the time of birth",
   "label": "preg_age_dad",
-  "levels": "[' 999', 'Unknown', [...]]",
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "valueType": "xsd:integer",
+    "allowableValues": [
+      "In years",
+      " 999=Unknown"
+    ]
+  }
 }

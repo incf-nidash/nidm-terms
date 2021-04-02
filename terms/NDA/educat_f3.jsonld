@@ -1,19 +1,41 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Dad current school type",
   "label": "educat_f3",
-  "levels": "[' 7', ' Graduate School', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7
-  ],
-  "maximumValue": 7,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "High School"
+      },
+      {
+        "name": "2",
+        "value": "G.E.D. Program"
+      },
+      {
+        "name": "3",
+        "value": "Community College (A.A.)"
+      },
+      {
+        "name": "4",
+        "value": "Vocational or Technical Program"
+      },
+      {
+        "name": "5",
+        "value": "Job Training Program"
+      },
+      {
+        "name": "6",
+        "value": "College (B.A. or B.S.)"
+      },
+      {
+        "name": "7",
+        "value": "Graduate School"
+      }
+    ],
+    "maxValue": "7",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

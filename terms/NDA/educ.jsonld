@@ -1,19 +1,41 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "HEAD OF HOUSEHOLD Education",
   "label": "educ",
-  "levels": "[' 7 ', ' Graduate Professional Training', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7
-  ],
-  "maximumValue": 7,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Less than 7th Grade"
+      },
+      {
+        "name": "2",
+        "value": "Jr. High School (9th Grade)"
+      },
+      {
+        "name": "3",
+        "value": "Some High School (10th or 11th Grade)"
+      },
+      {
+        "name": "4",
+        "value": "High School Graduate"
+      },
+      {
+        "name": "5",
+        "value": "Some College (at least 1 year)"
+      },
+      {
+        "name": "6",
+        "value": "Standard College Degree"
+      },
+      {
+        "name": "7",
+        "value": "Graduate Professional Training"
+      }
+    ],
+    "maxValue": "7",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

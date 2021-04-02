@@ -1,14 +1,29 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "handedness",
   "label": "handedness",
-  "levels": "[' B ', ' Both', [...]]",
-  "allowableValues": [
-    "R",
-    "L",
-    "B",
-    "999"
-  ],
-  "valueType": "xsd:string"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "R",
+        "value": "Right"
+      },
+      {
+        "name": "L",
+        "value": "Left"
+      },
+      {
+        "name": "B",
+        "value": "Both"
+      }
+    ],
+    "valueType": "xsd:string",
+    "allowableValues": [
+      "R",
+      "L",
+      "B",
+      "999"
+    ]
+  }
 }

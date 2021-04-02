@@ -1,16 +1,29 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "How often in the past 12 months could you not afford to eat balanced meals?",
   "label": "poverty_poormeals_frequency",
-  "levels": "[' 4', 'Often\\r', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4
-  ],
-  "maximumValue": 4,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Never"
+      },
+      {
+        "name": "2",
+        "value": "Rarely"
+      },
+      {
+        "name": "3",
+        "value": "Sometimes"
+      },
+      {
+        "name": "4",
+        "value": "Often"
+      }
+    ],
+    "maxValue": "4",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

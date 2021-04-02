@@ -1,15 +1,28 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "do you do volunteer work",
   "label": "volwork",
-  "levels": "[' -7', 'Refused', [...]]",
-  "allowableValues": [
-    "0",
-    "1",
-    "-7"
-  ],
-  "maximumValue": 1,
-  "minimumValue": 0,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "0",
+        "value": "No"
+      },
+      {
+        "name": "1",
+        "value": "Yes"
+      },
+      {
+        "name": "-7",
+        "value": "Refused"
+      }
+    ],
+    "valueType": "xsd:integer",
+    "allowableValues": [
+      "0",
+      "1",
+      "-7"
+    ]
+  }
 }

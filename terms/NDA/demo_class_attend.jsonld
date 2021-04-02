@@ -1,21 +1,45 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "How regularly did you attend classes in the past 6 months?",
   "label": "demo_class_attend",
-  "levels": "[' 9 ', ' Missing', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9
-  ],
-  "maximumValue": 9,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "All of the time"
+      },
+      {
+        "name": "2",
+        "value": "Most of the time"
+      },
+      {
+        "name": "3",
+        "value": "About half the time"
+      },
+      {
+        "name": "4",
+        "value": "Less than half of the time"
+      },
+      {
+        "name": "5",
+        "value": "N/A"
+      },
+      {
+        "name": "6",
+        "value": "Attended at all"
+      },
+      {
+        "name": "7",
+        "value": "Never attended"
+      },
+      {
+        "name": "9",
+        "value": "Missing"
+      }
+    ],
+    "maxValue": "9",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

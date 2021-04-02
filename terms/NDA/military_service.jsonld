@@ -1,14 +1,21 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Have you ever served in the U.S. Military? PX631301_Military_Service",
   "label": "military_service",
-  "levels": "['2', 'No', [...]]",
-  "allowableValues": [
-    "1",
-    "2"
-  ],
-  "maximumValue": 2,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Yes"
+      },
+      {
+        "name": "2",
+        "value": "No"
+      }
+    ],
+    "maxValue": "2",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }
