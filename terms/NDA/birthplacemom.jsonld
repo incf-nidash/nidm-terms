@@ -1,15 +1,25 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Birthplace of Mother",
   "label": "birthplacemom",
-  "levels": "[' 3', 'Mother born Outside USA or Mexico', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3
-  ],
-  "maximumValue": 3,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Mother born in USA"
+      },
+      {
+        "name": "2",
+        "value": "Mother born in Mexico"
+      },
+      {
+        "name": "3",
+        "value": "Mother born Outside USA or Mexico"
+      }
+    ],
+    "maxValue": "3",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

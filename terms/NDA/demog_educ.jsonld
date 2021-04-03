@@ -1,22 +1,53 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "What is your highest level of education?",
   "label": "demog_educ",
-  "levels": "[' 9 ', ' Doctoral degree', [...]]",
-  "allowableValues": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9
-  ],
-  "maximumValue": 9,
-  "minimumValue": 0,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "0",
+        "value": "No formal school"
+      },
+      {
+        "name": "1",
+        "value": "Grade school"
+      },
+      {
+        "name": "2",
+        "value": "Junior High"
+      },
+      {
+        "name": "3",
+        "value": "High School Diploma /GED"
+      },
+      {
+        "name": "4",
+        "value": "Associates Degree"
+      },
+      {
+        "name": "5",
+        "value": "Bachelors Degree"
+      },
+      {
+        "name": "6",
+        "value": "Masters Degree"
+      },
+      {
+        "name": "7",
+        "value": "1 \u2013 5 years"
+      },
+      {
+        "name": "8",
+        "value": "9 \u2013 11 years"
+      },
+      {
+        "name": "9",
+        "value": "Doctoral degree"
+      }
+    ],
+    "maxValue": "9",
+    "minValue": "0",
+    "valueType": "xsd:integer"
+  }
 }

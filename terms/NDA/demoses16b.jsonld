@@ -1,14 +1,21 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "From what other sources do you receive income?: Federal or State Aid",
   "label": "demoses16b",
-  "levels": "[' 1', ' Checked', [...]]",
-  "allowableValues": [
-    "0",
-    "1"
-  ],
-  "maximumValue": 1,
-  "minimumValue": 0,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "0",
+        "value": "Unchecked"
+      },
+      {
+        "name": "1",
+        "value": "Checked"
+      }
+    ],
+    "maxValue": "1",
+    "minValue": "0",
+    "valueType": "xsd:integer"
+  }
 }

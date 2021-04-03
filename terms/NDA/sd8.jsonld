@@ -1,19 +1,41 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "SD 8) In the past 12 months; how often did you do volunteer work for religious; charitable; political; health-related; or other organizations?  (please circle one)",
   "label": "sd8",
-  "levels": "[' 7', 'Never', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7
-  ],
-  "maximumValue": 7,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Several times a week"
+      },
+      {
+        "name": "2",
+        "value": "Every week"
+      },
+      {
+        "name": "3",
+        "value": "About once a month"
+      },
+      {
+        "name": "4",
+        "value": "Several times a year"
+      },
+      {
+        "name": "5",
+        "value": "About once or twice a year"
+      },
+      {
+        "name": "6",
+        "value": "Less than once a year"
+      },
+      {
+        "name": "7",
+        "value": "Never"
+      }
+    ],
+    "maxValue": "7",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

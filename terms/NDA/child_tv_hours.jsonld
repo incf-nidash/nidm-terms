@@ -1,17 +1,33 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "How many hours at a time does your child watch TV?",
   "label": "child_tv_hours",
-  "levels": "[' 5', '4 or more hours', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5
-  ],
-  "maximumValue": 5,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Less than a half hour"
+      },
+      {
+        "name": "2",
+        "value": "About half hour"
+      },
+      {
+        "name": "3",
+        "value": "About an hour"
+      },
+      {
+        "name": "4",
+        "value": "About 2 or 3 hours"
+      },
+      {
+        "name": "5",
+        "value": "4 or more hours"
+      }
+    ],
+    "maxValue": "5",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

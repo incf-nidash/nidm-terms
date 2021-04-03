@@ -1,14 +1,21 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Medicaid: Medicaid managed care",
   "label": "medcaidb",
-  "levels": "[' 1 ', ' Yes', [...]]",
-  "allowableValues": [
-    "0",
-    "1"
-  ],
-  "maximumValue": 1,
-  "minimumValue": 0,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "0",
+        "value": "No"
+      },
+      {
+        "name": "1",
+        "value": "Yes"
+      }
+    ],
+    "maxValue": "1",
+    "minValue": "0",
+    "valueType": "xsd:integer"
+  }
 }

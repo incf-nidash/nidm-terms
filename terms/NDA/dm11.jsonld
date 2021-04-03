@@ -1,18 +1,41 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Which of the following best describes where you have been living during the past 30 days ",
   "label": "dm11",
-  "levels": "['91 ', ' Some other place', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6
-  ],
-  "maximumValue": 91,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "In a house or apartment alone or with a spouse  friend  or children"
+      },
+      {
+        "name": "2",
+        "value": "In a house or apartment or boarding home where a mental health professional like a counselor or case manager visits regularly"
+      },
+      {
+        "name": "3",
+        "value": "In a treatment program or boarding home where a mental health professional like a counselor or case manager is there all or almost all of the time"
+      },
+      {
+        "name": "4",
+        "value": "In a hospital or nursing home"
+      },
+      {
+        "name": "5",
+        "value": "In a jail or prison"
+      },
+      {
+        "name": "6",
+        "value": "On the streets or in an emergency shelter for the homeless"
+      },
+      {
+        "name": "91",
+        "value": "Some other place"
+      }
+    ],
+    "maxValue": "6",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

@@ -1,18 +1,37 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "9. Childhood religious affiliation:",
   "label": "childhood_religion",
-  "levels": "[' 6', 'Other', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6
-  ],
-  "maximumValue": 6,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Catholic"
+      },
+      {
+        "name": "2",
+        "value": "Protestant"
+      },
+      {
+        "name": "3",
+        "value": "Jewish"
+      },
+      {
+        "name": "4",
+        "value": "Muslim"
+      },
+      {
+        "name": "5",
+        "value": "Not Affiliated"
+      },
+      {
+        "name": "6",
+        "value": "Other"
+      }
+    ],
+    "maxValue": "6",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

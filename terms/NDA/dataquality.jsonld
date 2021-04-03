@@ -1,18 +1,37 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Data quality",
   "label": "dataquality",
-  "levels": "[' 5', 'Data clean/locked', [...]]",
-  "allowableValues": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5
-  ],
-  "maximumValue": 5,
-  "minimumValue": 0,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "0",
+        "value": "No data (cancelled)"
+      },
+      {
+        "name": "1",
+        "value": "Data entered but only once, has missing data"
+      },
+      {
+        "name": "2",
+        "value": "Data entered but only once, no missing data"
+      },
+      {
+        "name": "3",
+        "value": "Double entered"
+      },
+      {
+        "name": "4",
+        "value": "Data frozen for cleaning"
+      },
+      {
+        "name": "5",
+        "value": "Data clean/locked"
+      }
+    ],
+    "maxValue": "5",
+    "minValue": "0",
+    "valueType": "xsd:integer"
+  }
 }

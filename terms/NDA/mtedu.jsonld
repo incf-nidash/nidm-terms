@@ -1,19 +1,41 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "subject's education",
   "label": "mtedu",
-  "levels": "[' 7', ' Decline', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7
-  ],
-  "maximumValue": 7,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "None"
+      },
+      {
+        "name": "2",
+        "value": "Elementary school"
+      },
+      {
+        "name": "3",
+        "value": "Middle school"
+      },
+      {
+        "name": "4",
+        "value": "High school"
+      },
+      {
+        "name": "5",
+        "value": "University"
+      },
+      {
+        "name": "6",
+        "value": "Graduate/Profession school"
+      },
+      {
+        "name": "7",
+        "value": "Decline"
+      }
+    ],
+    "maxValue": "7",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

@@ -1,17 +1,33 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "What is the highest level of education you have completed?",
   "label": "demo_education_mw",
-  "levels": "[' 5', 'Post-secondary school', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5
-  ],
-  "maximumValue": 5,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "No formal schooling"
+      },
+      {
+        "name": "2",
+        "value": "Standard 1-5"
+      },
+      {
+        "name": "3",
+        "value": "Standard 6-8"
+      },
+      {
+        "name": "4",
+        "value": "Secondary school"
+      },
+      {
+        "name": "5",
+        "value": "Post-secondary school"
+      }
+    ],
+    "maxValue": "5",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }
