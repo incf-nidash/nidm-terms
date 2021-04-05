@@ -145,6 +145,7 @@ def main(argv):
                     url, fragment = urldefrag(so[0])
                     compacted['label'] = fragment
 
+            compacted['associatedWith'] = "NIDM"
             with open (join(args.output_dir,compacted['label'].replace(" ","_").replace("/","_")
                                             +".jsonld"),'w') as outfile:
                 json.dump(compacted,outfile,indent=2)

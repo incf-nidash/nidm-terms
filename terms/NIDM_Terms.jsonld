@@ -442,22 +442,22 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Required if a value of Collimator Shape (0018,1700) is RECTANGULAR. Location of the left edge of the rectangular collimator with respect to pixels in the image given as column.",
+      "description": "Required if Collimator Shape (0018,1700) is RECTANGULAR. Location of the left edge of the rectangular collimator expressed as effective pixel column.",
       "candidateTerms": "dicom_00181702",
       "associatedWith": "NIDM",
       "label": "Collimator Left Vertical Edge"
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Echo Planar category of pulse-sequences.",
+      "description": "Echo Planar category of Pulse Sequences.",
       "candidateTerms": "dicom_00189018",
       "associatedWith": "NIDM",
       "label": "Echo Planar Pulse Sequence"
     },
     {
       "@type": [
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000051"
+        "nidm:NIDM_0000051",
+        "owl:NamedIndividual"
       ],
       "description": "Reference space defined as the average of 152 T1-weighted MRI scans, non-linearly transformed to to form a symmetric model in MNI152 linear space (cf. http://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin2009 for more details).",
       "candidateTerms": "NIDM_0000042",
@@ -1378,8 +1378,8 @@
     },
     {
       "@type": [
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000037"
+        "nidm:NIDM_0000037",
+        "owl:NamedIndividual"
       ],
       "description": "'Hemodynamic Response Function' basis that is the derivative with respect to time of the SPM's Canonical heamodynamic response function.",
       "candidateTerms": "SPM_0000006",
@@ -1558,7 +1558,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "The RT Structure Set on which the RT Plan is based..",
+      "description": "Sequence of one class/instance pair describing Structure Set containing structures that are used to calculate Dose-Volume Histograms (DVHs).",
       "candidateTerms": "dicom_300C0060",
       "associatedWith": "NIDM",
       "label": "Referenced Structure Set Sequence"
@@ -1593,7 +1593,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Filters used in the light source path.",
+      "description": "Filters used in the light source (excitation) path.",
       "candidateTerms": "dicom_00220017",
       "associatedWith": "NIDM",
       "label": "Light Path Filter Type Stack Code Sequence"
@@ -1857,7 +1857,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Frame number at which the motorized portion of the acquisition begins.",
+      "description": "Required if IVUS Acquisition (0018,3100) value is MOTOR_PULLBACK or GATED_PULLBACK.",
       "candidateTerms": "dicom_00183103",
       "associatedWith": "NIDM",
       "label": "IVUS Pullback Start Frame Number"
@@ -2422,10 +2422,10 @@
     },
     {
       "@type": "owl:Class",
-      "description": "Electroencephalography (EEG) is an electrophysiological acquisition method in which the electrical activity of the brain is measured using electrodes that are placed on the surface of the head.",
-      "candidateTerms": "Electroencephalography",
+      "description": "Encephalography is an acquisition modality in which the electrical activity or structure of the brain is measured using a variety of techniques.",
+      "candidateTerms": "Encephalography",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionModality",
       "label": "Electroencephalography"
     },
     {
@@ -2670,8 +2670,8 @@
     },
     {
       "@type": [
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "This test measures the ease with which a person can shift his or her perceptual set to conform to changing demands and suppress a habitual response in favor of an unusual one. The subject is assessed on his or her ability to read color names compared to the ability to read the color of ink that is not congruent with the color name of the printed words.",
       "candidateTerms": "StroopTest",
@@ -2859,8 +2859,8 @@
     },
     {
       "@type": [
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "The Letter Fluency test is used to evaluate the spontaneous production of words beginning with a given letter within a limited amount of time (60 seconds).",
       "candidateTerms": "LetterFluencyTest",
@@ -2930,8 +2930,8 @@
     },
     {
       "@type": [
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "description": "The Fagerstrom Test for Nicotine Dependence is an assessment instrument for assessing the intensity of physical addiction to nicotine resulting in an ordinal measure.",
       "candidateTerms": "FagerstromTestForNicotineDependence",
@@ -3365,7 +3365,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Beat length sorting has been applied.",
+      "description": "Heart beat duration sorting has been applied.",
       "candidateTerms": "dicom_00181080",
       "associatedWith": "NIDM",
       "label": "Beat Rejection Flag"
@@ -3588,7 +3588,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Nominal duration per individual frame, in msec.",
+      "description": "Nominal time per individual frame in msec.",
       "candidateTerms": "dicom_00181063",
       "associatedWith": "NIDM",
       "label": "Frame Time"
@@ -3735,8 +3735,8 @@
       "candidateTerms": "SPM_0000008",
       "associatedWith": "NIDM",
       "comment": [
-        "Range: Vector of positive floats.",
-        "Discussed at: https://github.com/incf-nidash/nidm/pull/214"
+        "Discussed at: https://github.com/incf-nidash/nidm/pull/214",
+        "Range: Vector of positive floats."
       ],
       "label": "deprecated noise FWHM In Vertices"
     },
@@ -4136,8 +4136,8 @@
     },
     {
       "@type": [
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "The Positive and Negative Syndrome Scale is an assessment instrument used for typological and dimensional assessment.",
       "candidateTerms": "PositiveAndNegativeSyndromeScale",
@@ -5800,8 +5800,8 @@
     },
     {
       "@type": [
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000080"
+        "nidm:NIDM_0000080",
+        "owl:NamedIndividual"
       ],
       "description": "A pair of voxels are 26-Connected if they share a face, edge or corner.",
       "candidateTerms": "NIDM_0000129",
@@ -5948,7 +5948,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Direction of Beam Limiting Device Rotation when viewing beam limiting device (collimator) from radiation source, for segment beginning at current Control Point.",
+      "description": "Direction of Beam Limiting Device Rotation when viewing beam limiting device (collimator) from radiation source, for segment following Control Point.",
       "candidateTerms": "dicom_300A0121",
       "associatedWith": "NIDM",
       "label": "Beam Limiting Device Rotation Direction"
@@ -6283,7 +6283,7 @@
       "description": "A file associated with a Map to provide header information (e.g. NIfTI header file)",
       "candidateTerms": "NIDM_0000053",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "ub2bL1736C35",
+      "supertypeCDEs": "ub2bL1726C35",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/289",
       "label": "Map Header"
     },
@@ -6430,8 +6430,8 @@
     },
     {
       "@type": [
-        "nidm:NIDM_0000064",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000064"
       ],
       "description": "A pair of pixels are 8-Connected if they share an edge or corner.",
       "candidateTerms": "NIDM_0000118",
@@ -6805,8 +6805,8 @@
     },
     {
       "@type": [
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000051"
+        "nidm:NIDM_0000051",
+        "owl:NamedIndividual"
       ],
       "description": "Reference space defined as the average of 152 T1-weighted MRI scans, linearly and non-linearly (6 iterations) transformed to form a symmetric model in Talairach space (cf. http://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin6)",
       "candidateTerms": "NIDM_0000047",
@@ -6913,7 +6913,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "The value(s) of the attribute identified by Selector Attribute (0072,0026). Required if Selector Attribute VR (0072,0050) is present and the value is DS. Some leniency in precision and format (including padding and scientific notation) will be required.",
+      "description": "The value(s) of the attribute identified by Selector Attribute (0072,0026).",
       "candidateTerms": "dicom_00720072",
       "associatedWith": "NIDM",
       "label": "Selector DS Value"
@@ -7030,8 +7030,8 @@
     },
     {
       "@type": [
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "Trails B is an assessement instrument in which the subject is asked to draw lines connecting circles with consecutively numbered and lettered circles.",
       "candidateTerms": "TrailsB",
@@ -7195,10 +7195,11 @@
       "label": "Block Type"
     },
     {
-      "@type": "owl:DatatypeProperty",
-      "description": "Element Number used to identify the Data Element within the reserved block. The value of this attribute represents the last two digits of the Data Element tag; i.e., the value of xx in (gggg,00xx) where gggg is the Private Group Reference (0008,0301).",
-      "candidateTerms": "dicom_00080308",
+      "@type": "owl:Class",
+      "description": "Additional Data Element, defined by an implementer, to communicate information that is not contained in Standard Data Elements. Private Data elements have odd Group Numbers.",
+      "candidateTerms": "dicom_xxxx0050",
       "associatedWith": "NIDM",
+      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0035",
       "label": "Private Data Element"
     },
     {
@@ -7405,7 +7406,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Average (or exact, depending upon context) of the nominal X-Ray tube currents in milliamperes for all frames. Required if present and consistent in the contributing SOP Instances. Required if Modality (0008,0060) is MG.",
+      "description": "Average of the nominal X-Ray tube currents in milliamperes for all frames.",
       "candidateTerms": "dicom_00189330",
       "associatedWith": "NIDM",
       "label": "X-Ray Tube Current in mA"
@@ -8096,7 +8097,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Nominal pass-through wavelength of light path filter in nm",
+      "description": "Nominal pass-through wavelength of light path filter(s) in nm",
       "candidateTerms": "dicom_00220001",
       "associatedWith": "NIDM",
       "label": "Light Path Filter Pass-Through Wavelength"
@@ -8314,7 +8315,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Contains the Data Element Tag of the parent sequence containing the attribute that was overridden. The value is limited in scope to the Treatment Session Beam Sequence (3008,0020) and all nested sequences therein.",
+      "description": "Contains the Data Element Tag of the parent sequence containing the attribute that was corrected. The value is limited in scope to the Treatment Session Beam Sequence (3008,0020) and all nested sequences therein.",
       "candidateTerms": "dicom_30080061",
       "associatedWith": "NIDM",
       "label": "Parameter Sequence Pointer"
@@ -8348,8 +8349,8 @@
       "associatedWith": "NIDM",
       "supertypeCDEs": "http://purl.obolibrary.org/obo/STATO_0000346",
       "comment": [
-        "Under gaussianity assumption this is equivalent to compound symmetry but not in general.",
-        "Under discussion at https://github.com/ISA-tools/stato/issues/28"
+        "Under discussion at https://github.com/ISA-tools/stato/issues/28",
+        "Under gaussianity assumption this is equivalent to compound symmetry but not in general."
       ],
       "label": "Exchangeable Error"
     },
@@ -8533,7 +8534,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Uniquely identifies a set of dimensions referenced within the containing SOP Instance.",
+      "description": "Uniquely identifies a set of dimensions referenced within the containing SOP Instance. In particular the dimension described by this sequence item is associated with this Dimension Organization UID.",
       "candidateTerms": "dicom_00209164",
       "associatedWith": "NIDM",
       "label": "Dimension Organization UID"
@@ -9071,7 +9072,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "A positive dimensionless floating point numeric factor equal to playback rate divided by acquisition rate.",
+      "description": "A positive unitless floating point numeric factor equal to playback rate divided by acquisition rate.",
       "candidateTerms": "dicom_00720330",
       "associatedWith": "NIDM",
       "label": "Cine Relative to Real-Time"
@@ -9193,7 +9194,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "A coded description of how this frame was derived.",
+      "description": "A coded description of how this ROI was derived.",
       "candidateTerms": "dicom_00089215",
       "associatedWith": "NIDM",
       "label": "Derivation Code Sequence"
@@ -9277,8 +9278,8 @@
       "candidateTerms": "NIDM_0000040",
       "associatedWith": "NIDM",
       "comment": [
-        "used in SPM99 to SPM8 (cf. http://imaging.mrc-cbu.cam.ac.uk/imaging/MniTalairach and spm8/spm_templates.man)",
-        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+        "used in SPM99 to SPM8 (cf. http://imaging.mrc-cbu.cam.ac.uk/imaging/MniTalairach and spm8/spm_templates.man)"
       ],
       "label": "Icbm Mni152 Linear Coordinate System"
     },
@@ -9668,8 +9669,8 @@
     },
     {
       "@type": [
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "description": "The Delay Visual Figural Learning Test (Delay SVFT) is an assessment instrument in which subjects are asked to reproduce geometric figures that have been presented to the subject previous to a delay period.",
       "candidateTerms": "DelayVisualFiguralLearningTest",
@@ -11346,7 +11347,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Parameter values for each of the X-Ray beams in the Acquisition Protocol Element. Each item in the sequence describes one X-Ray beam.",
+      "description": "Contains the attributes defining the x-ray information.",
       "candidateTerms": "dicom_00189325",
       "associatedWith": "NIDM",
       "label": "CT X-Ray Details Sequence"
@@ -12042,7 +12043,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "The width of the coincidence timing window, in nsec. The maximum time difference accepted between two single events.",
+      "description": "The width of the coincidence-timing window, in nanoseconds. The maximum time difference between two single events in two opposing detectors that will be accepted as a coincidence event.",
       "candidateTerms": "dicom_00541210",
       "associatedWith": "NIDM",
       "label": "Coincidence Window Width"
@@ -12288,7 +12289,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Institution or organization to which the identified individual is responsible or accountable.",
+      "description": "Coded identifier of Custodial Institution or Organization.",
       "candidateTerms": "dicom_00080082",
       "associatedWith": "NIDM",
       "label": "Institution Code Sequence"
@@ -12752,8 +12753,8 @@
     },
     {
       "@type": [
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "candidateTerms": "DelaySemanticVerbalLearningTest",
       "associatedWith": "NIDM",
@@ -13304,7 +13305,7 @@
       "@type": "owl:Class",
       "candidateTerms": "coded-score",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#score",
+      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#scale-item",
       "label": "coded-score"
     },
     {
@@ -13997,7 +13998,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Manufacturer defined code or description",
+      "description": "Manufacturer defined code or description of ultrasound transducer used.",
       "candidateTerms": "dicom_00185010",
       "associatedWith": "NIDM",
       "label": "Transducer Data"
@@ -14416,8 +14417,8 @@
     },
     {
       "@type": [
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "description": "The Clinical Global Impression scale(s) are assessment instruments that assign a rating number to the severity or improvement of the patient condition or to the efficacy of a given treatment at the time of assessment.",
       "candidateTerms": "ClinicalGlobalImpression",
@@ -14515,7 +14516,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "User-defined name identifying treatment machine to be used for treatment delivery.",
+      "description": "User-defined name identifying treatment machine used for treatment delivery.",
       "candidateTerms": "dicom_300A00B2",
       "associatedWith": "NIDM",
       "label": "Treatment Machine Name"
@@ -14640,7 +14641,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "R-R interval low limit for beat rejection, in ms. Required if Cardiac Synchronization Technique (0018,9037) equals PROSPECTIVE or RETROSPECTIVE.",
+      "description": "R-R interval low limit for beat rejection, in ms.",
       "candidateTerms": "dicom_00181081",
       "associatedWith": "NIDM",
       "label": "Low R-R Value"
@@ -14713,7 +14714,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Name of the Ethics Committee or Institutional Review Board (IRB) responsible for approval of the Clinical Trial.",
+      "description": "Name of the Ethics Committee or Institutional Review Board (IRB) or Institutional Animal Care and Use Committees (IACUC) responsible for approval of the Clinical Trial or research.",
       "candidateTerms": "dicom_00120081",
       "associatedWith": "NIDM",
       "label": "Clinical Trial Protocol Ethics Committee Name"
@@ -14887,15 +14888,15 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Name of the person observer identified.",
+      "description": "Person name value for this name-value Item.",
       "candidateTerms": "dicom_0040A123",
       "associatedWith": "NIDM",
       "label": "Person Name"
     },
     {
       "@type": [
-        "owl:NamedIndividual",
-        "nidm:AcquisitionMethod"
+        "nidm:AcquisitionMethod",
+        "owl:NamedIndividual"
       ],
       "description": "Contrast Enhanced Fast Field Echo, is a magnetic resonance imaging acquisition method that employs gradient echoes and a low-flip angle radio-frequency excitation of the sample magnetization along with a short repetition time.",
       "candidateTerms": "ContrastEnhancedFastFieldEcho",
@@ -14912,7 +14913,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Explanation of the Window Center and Width.",
+      "description": "Free form explanation of the meaning of the Window Center and Width. Multiple values correspond to multiple Window Center and Width values.",
       "candidateTerms": "dicom_00281055",
       "associatedWith": "NIDM",
       "label": "Window Center & Width Explanation"
@@ -15291,7 +15292,7 @@
       "description": "A [stato:design matrix](http://purl.obolibrary.org/obo/STATO_0000289), with additional neuroimaging attributes, including HRF and drift for first-level fMRI models",
       "candidateTerms": "NIDM_0000019",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "ub2bL1434C35",
+      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/274",
       "label": "Design Matrix"
     },
@@ -15366,8 +15367,8 @@
     },
     {
       "@type": [
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000051"
+        "nidm:NIDM_0000051",
+        "owl:NamedIndividual"
       ],
       "description": "Reference space defined as the average of 152 T1-weighted MRI scans, non-linearly transformed to form a symmetric model in MNI152 linear space using the N3 algorithm (cf. http://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin2009 for more details). This is the default for DARTEL toolbox in SPM12b (cf. spm12/spm_templates.man).",
       "candidateTerms": "NIDM_0000046",
@@ -15428,8 +15429,8 @@
     },
     {
       "@type": [
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "candidateTerms": "SocioeconomicScale",
       "associatedWith": "NIDM",
@@ -15951,8 +15952,8 @@
       "candidateTerms": "NIDM_0000157",
       "associatedWith": "NIDM",
       "comment": [
-        "Discussed at: https://github.com/incf-nidash/nidm/pull/214",
-        "Range: Vector of positive floats."
+        "Range: Vector of positive floats.",
+        "Discussed at: https://github.com/incf-nidash/nidm/pull/214"
       ],
       "label": "noise FWHM In Units"
     },
@@ -16316,7 +16317,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Nominal focal spot size in mm used to acquire the image or projection images. For devices with variable focal spot or multiple focal spots, small dimension followed by large dimension.",
+      "description": "Nominal focal spot size in mm used to acquire all frames.",
       "candidateTerms": "dicom_00181190",
       "associatedWith": "NIDM",
       "label": "Focal Spot(s)"
@@ -16337,15 +16338,15 @@
     },
     {
       "@type": [
-        "nidm:NIDM_0000075",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000075"
       ],
       "description": "Reference space defined as the stereotaxic average of 27 T1-weighted MRI scans of the same individual transformed into the Talairach stereotaxic space (cf. http://www.bic.mni.mcgill.ca/ServicesAtlases/Colin27Highres and http://neuro.debian.net/pkgs/mni-colin27-nifti.html). This is the default in SPM96 (cf. [MRC CBSU Wiki](http://imaging.mrc-cbu.cam.ac.uk/imaging/MniTalairach)).",
       "candidateTerms": "NIDM_0000009",
       "associatedWith": "NIDM",
       "comment": [
-        "used in SPM96 (cf. http://imaging.mrc-cbu.cam.ac.uk/imaging/MniTalairach)",
-        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+        "used in SPM96 (cf. http://imaging.mrc-cbu.cam.ac.uk/imaging/MniTalairach)"
       ],
       "label": "Colin27 Coordinate System"
     },
@@ -16961,8 +16962,8 @@
     },
     {
       "@type": [
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000064"
+        "nidm:NIDM_0000064",
+        "owl:NamedIndividual"
       ],
       "description": "A pair of pixels are 4-Connected if they share an edge.",
       "candidateTerms": "NIDM_0000117",
@@ -17671,15 +17672,15 @@
     },
     {
       "@type": [
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000051"
+        "nidm:NIDM_0000051",
+        "owl:NamedIndividual"
       ],
       "description": "Reference space defined as the average of 152 T1-weighted MRI scans, non-linearly transformed to MNI152 linear space using the N3 algorithm (cf. http://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin2009 for more details).",
       "candidateTerms": "NIDM_0000045",
       "associatedWith": "NIDM",
       "comment": [
-        "Used in DARTEL toolbox in SPM12b (cf. spm12b/spm_templates.man)",
-        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+        "Used in DARTEL toolbox in SPM12b (cf. spm12b/spm_templates.man)"
       ],
       "label": "Icbm Mni152 Non Linear2009c Asymmetric Coordinate System"
     },
@@ -18197,7 +18198,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Number of columns in the image.",
+      "description": "Number of columns in the image or frame.",
       "candidateTerms": "dicom_00280011",
       "associatedWith": "NIDM",
       "label": "Columns"
@@ -18502,10 +18503,11 @@
       "label": "Detector Information Sequence"
     },
     {
-      "@type": "owl:DatatypeProperty",
-      "description": "A data stream of the pixel samples that comprise the Image.",
-      "candidateTerms": "dicom_7FE00010",
+      "@type": "owl:Class",
+      "description": "Graphical data (e.g., images) of variable pixel-depth encoded in the Pixel Data, Float Pixel Data or Double Float Pixel Data Element.",
+      "candidateTerms": "dicom_xxxx0048",
       "associatedWith": "NIDM",
+      "supertypeCDEs": "http://purl.org/dc/terms/Image",
       "label": "Pixel Data"
     },
     {
@@ -18528,8 +18530,8 @@
       "candidateTerms": "NIDM_0000158",
       "associatedWith": "NIDM",
       "comment": [
-        "Range: Vector of positive floats.",
-        "Discussed at: https://github.com/incf-nidash/nidm/pull/214"
+        "Discussed at: https://github.com/incf-nidash/nidm/pull/214",
+        "Range: Vector of positive floats."
       ],
       "label": "noise FWHM In Vertices"
     },
@@ -19021,8 +19023,8 @@
     },
     {
       "@type": [
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000080"
+        "nidm:NIDM_0000080",
+        "owl:NamedIndividual"
       ],
       "description": "A pair of voxels are 18-Connected if they share a face or edge.",
       "candidateTerms": "NIDM_0000128",
@@ -19342,7 +19344,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Cardiac Signal Source.",
+      "description": "Source of cardiac synchronization signal.",
       "candidateTerms": "dicom_00189085",
       "associatedWith": "NIDM",
       "label": "Cardiac Signal Source"
@@ -19612,7 +19614,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Sequence of items describing the performed Ultrasound Protocol Stage(s).",
+      "description": "Sequence describing the performed Ultrasound Protocol Stage.",
       "candidateTerms": "dicom_0040000A",
       "associatedWith": "NIDM",
       "label": "Stage Code Sequence"
@@ -20210,8 +20212,8 @@
       "candidateTerms": "SPM_0000010",
       "associatedWith": "NIDM",
       "comment": [
-        "Discussed at https://github.com/incf-nidash/nidm/issues/310",
-        "Range: Vector of 1 positive integer and 3 positive floats."
+        "Range: Vector of 1 positive integer and 3 positive floats.",
+        "Discussed at https://github.com/incf-nidash/nidm/issues/310"
       ],
       "label": "search Volume Resels Geometry"
     },
@@ -20742,7 +20744,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Defines if a cardiac synchronization technique was applied during or after the acquisition.",
+      "description": "Cardiac synchronization technique applied during acquisition or processing.",
       "candidateTerms": "dicom_00189037",
       "associatedWith": "NIDM",
       "label": "Cardiac Synchronization Technique"
@@ -21544,7 +21546,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Two floating point numbers defining a value range for this degree of freedom.",
+      "description": "Interval of freedom for this degree of freedom. ",
       "candidateTerms": "dicom_006864A0",
       "associatedWith": "NIDM",
       "label": "Range of Freedom"
@@ -22893,8 +22895,8 @@
     },
     {
       "@type": [
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000037"
+        "nidm:NIDM_0000037",
+        "owl:NamedIndividual"
       ],
       "description": "'Hemodynamic Response Function' basis that is the derivative with respect to spatial dispersion of the SPM's Canonical heamodynamic response function.",
       "candidateTerms": "SPM_0000003",
@@ -23257,8 +23259,8 @@
     },
     {
       "@type": [
-        "nidm:NIDM_0000029",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000029"
       ],
       "description": "'Hemodynamic Response Function' which is a fixed difference of two gamma probability density functions - a standard positive function at normal lag, and a small, delayed, negated gamma probability density function, which attempts to model the late undershoot (definition adapted [FSL wiki](http://fsl.fmrib.ox.ac.uk/fsl/fsl4.0/feat5/detail.html))",
       "candidateTerms": "FSL_0000001",
@@ -23528,7 +23530,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Units of measurement for a Numeric Value (0040,A30A). Only a single Item shall be included in this Sequence.",
+      "description": "Units of Numeric Value (0040,A30A) in this name-value Item.",
       "candidateTerms": "dicom_004008EA",
       "associatedWith": "NIDM",
       "label": "Measurement Units Code Sequence"
@@ -23847,7 +23849,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "A number identifying the group from the Graphic Group Sequence (0070,0234) to which this Item belongs.",
+      "description": "A unique number identifying the Graphic Group, i.e., the combined graphic object.",
       "candidateTerms": "dicom_00700295",
       "associatedWith": "NIDM",
       "label": "Graphic Group ID"
@@ -25657,7 +25659,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Specifies the format of Blending Lookup Table Data (0028,1408) in this Sequence item.",
+      "description": "Specifies the format of Blending Lookup Table Data (0028,1408) in this Sequence item. The second value (first stored pixel value mapped) shall be zero.",
       "candidateTerms": "dicom_00281407",
       "associatedWith": "NIDM",
       "label": "Blending Lookup Table Descriptor"
@@ -26414,7 +26416,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Indicates whether the Encapsulated Document is Verified.",
+      "description": "Indicates whether this SR Document is Verified.",
       "candidateTerms": "dicom_0040A493",
       "associatedWith": "NIDM",
       "label": "Verification Flag"
@@ -27625,8 +27627,8 @@
       "associatedWith": "NIDM",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000081",
       "comment": [
-        "Discussed at https://github.com/incf-nidash/nidm/issues/284",
-        "Used in FSL and SPM un-registered data."
+        "Used in FSL and SPM un-registered data.",
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
       ],
       "label": "Subject Coordinate System"
     },
@@ -28452,8 +28454,8 @@
     },
     {
       "@type": [
-        "http://purl.org/ontology/prv/core#PropertyReification",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://purl.org/ontology/prv/core#PropertyReification"
       ],
       "candidateTerms": "NumberOfSubjectsReification",
       "associatedWith": "NIDM",
@@ -28524,7 +28526,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Time when fraction was delivered.",
+      "description": "Time when current fraction was delivered (begun), or Time last fraction was delivered (begun).",
       "candidateTerms": "dicom_30080251",
       "associatedWith": "NIDM",
       "label": "Treatment Time"
@@ -28791,7 +28793,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "Required if a value of Collimator Shape (0018,1700) is RECTANGULAR. Location of the right edge of the rectangular collimator with respect to pixels in the image given as column.",
+      "description": "Required if Collimator Shape (0018,1700) is RECTANGULAR. Location of the right edge of the rectangular collimator expressed as effective pixel column.",
       "candidateTerms": "dicom_00181704",
       "associatedWith": "NIDM",
       "label": "Collimator Right Vertical Edge"
@@ -29807,7 +29809,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "The floating point representation of Numeric Value (0040,A30A). Only a single value shall be present.",
+      "description": "The floating point representation of Numeric Value (0040,A30A) or a statistic.",
       "candidateTerms": "dicom_0040A161",
       "associatedWith": "NIDM",
       "label": "Floating Point Value"
@@ -29831,7 +29833,7 @@
       "description": "A map in which the set of elements (e.g., pixels, voxels, vertices, or faces) not selected by the 'Inference' activity is set to zero or NaN",
       "candidateTerms": "NIDM_0000025",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "ub2bL1499C35",
+      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052",
       "comment": "Discussed in the Neuroimaging terms spreadsheet and in https://github.com/incf-nidash/nidm/issues/256.",
       "label": "Excursion Set Map"
     },
@@ -29956,7 +29958,7 @@
       "description": "Ordered set of values corresponding to the discrete sampling of some process (e.g. brain MRI data measured on a regular 3D lattice; or brain cortical surface data measured irregularly over the cortex).",
       "candidateTerms": "NIDM_0000052",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "ub2bL1698C35",
+      "supertypeCDEs": "ub2bL1693C35",
       "comment": "Discussed in https://github.com/incf-nidash/nidm/pull/149",
       "label": "Map"
     },
@@ -30174,8 +30176,8 @@
       "candidateTerms": "NIDM_0000050",
       "associatedWith": "NIDM",
       "comment": [
-        "Used in SPM12b (cf. spm12b/spm_templates.man)",
-        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+        "Used in SPM12b (cf. spm12b/spm_templates.man)"
       ],
       "label": "Ixi549 Coordinate System"
     },
@@ -30392,7 +30394,7 @@
     },
     {
       "@type": "owl:DatatypeProperty",
-      "description": "The weighting factor of the data from the primary source in a multiple energy composition image. This factor incorporates the effects of the specific X-Ray source and kV value examination specific characteristics.",
+      "description": "The weighting factor of the data from this additional source in a multiple energy composition image. This factor incorporates the effects of the specific X-Ray source and kV value examination specific characteristics. Required if one Derivation Code Sequence (0008,9215) Item value is (113097, DCM, 'Multi-energy proportional weighting'). May be present otherwise.",
       "candidateTerms": "dicom_00189353",
       "associatedWith": "NIDM",
       "label": "Energy Weighting Factor"
