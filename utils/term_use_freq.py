@@ -19,6 +19,7 @@ INTERLEX_BASE_URL = "https://scicrunch.org/api/1/ilx/search/curie/ILX:"
 CONTEXT = "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld"
 INTERLEX_URI_FRAG = "http://uri.interlex.org"
 COGATLAS_URI_FRAG = "http://cognitiveatlas.org"
+COGATLAS_TASK_URI_FRAG = "http://cognitiveatlas.org/task/json/"
 
 def write_jsonld(doc,output_dir):
     """
@@ -50,6 +51,63 @@ def write_jsonld(doc,output_dir):
     except:
         print(doc)
 
+def get_cogatlas_task_properties(concept_url, concept_label, context):
+    """
+    Cogatlas tasks are a special case and need to be handled via URL
+    :param concept_url: url of task concept
+    :param context: nidm-terms concept document
+    :return: jsonld document with concept details
+    """
+
+    # set up jsonld document for selected properties
+    doc = {}
+    # add type as schema.org/DefinedTerm
+    doc['@type'] = context['@context']['Concept']
+
+    result = urlparse(concept_url)
+    try:
+        concept_id = result.path.split("trm_")[1]
+        # set up cogatlas task URL
+        task_url = COGATLAS_TASK_URI_FRAG + "trm_" + concept_id
+    except:
+        print("can't split on trm_ from cogatlas url: %s" %concept_url)
+        print("trying tsk_ prefix")
+        try:
+            concept_id = result.path.split("tsk_")[1]
+            # set up cogatlas task URL
+            task_url = COGATLAS_TASK_URI_FRAG + "tsk_" + concept_id
+        except:
+            print("can't split on tsk_ from cogatlas url: %s" %concept_url)
+            return
+
+
+    # use url.requests to get info about concept
+    with url.urlopen(task_url) as response:
+        concept_properties = json.loads(response.read())
+
+    for entry in concept_properties.keys():
+        if entry == 'name':
+            doc[context['@context']['label']] = concept_properties[entry]
+        elif entry == 'definition_text':
+            doc[context['@context']['description']] = concept_properties[entry]
+        elif entry == 'event_stamp':
+            doc[context['@context']['version']] = concept_properties[entry]
+
+
+    doc[context['@context']['url']['@id']] = concept_url
+
+    # DEBUG
+    if context['@context']['label'] not in list(doc.keys()):
+        print("get_cogatlas_task_properties")
+        print("no information found for url: %s" % concept_url)
+        print("adding basic information (URL, label)")
+        doc[context['@context']['label']] = concept_label
+        doc[context['@context']['url']['@id']] = concept_url
+    elif context['@context']['url'] not in list(doc.keys()):
+        doc[context['@context']['url']['@id']] = concept_url
+
+    return doc
+
 def get_cogatlas_properties(concept_id, context, cogatlas_concepts, cogatlas_disorders):
     """
     This function will return a json-ld document of selected properties from a cogatlas concept or disorder
@@ -66,7 +124,7 @@ def get_cogatlas_properties(concept_id, context, cogatlas_concepts, cogatlas_dis
 
     concept_found = False
     for entry in cogatlas_concepts.json:
-        if entry['name'] == concept_id['label']:
+        if entry['name'].lower() == concept_id['label'].lower():
             doc[context['@context']['label']] = entry['name']
             doc[context['@context']['description']] = entry['definition_text']
             doc[context['@context']['url']['@id']] = concept_id['@id']
@@ -77,12 +135,21 @@ def get_cogatlas_properties(concept_id, context, cogatlas_concepts, cogatlas_dis
             concept_found = True
     if not concept_found:
         for entry in cogatlas_disorders.json:
-            if entry['name'] == concept_id['label']:
+            if entry['name'].lower() == concept_id['label'].lower():
                 doc[context['@context']['label']] = entry['name']
                 doc[context['@context']['description']] = entry['definition']
                 doc[context['@context']['url']['@id']] = concept_id['@id']
                 doc[context['@context']['version']] = entry['event_stamp']
 
+    # Here we couldn't find this concept so we'll just store the label and url from our annotations
+    if context['@context']['label'] not in list(doc.keys()):
+        print("get_cogatlas_properties")
+        print("no information found for url: %s" % concept_id)
+        print("adding basic information (URL, label)")
+        doc[context['@context']['label']] = concept_id['label']
+        doc[context['@context']['url']['@id']] = concept_id['@id']
+    elif context['@context']['url'] not in list(doc.keys()):
+        doc[context['@context']['url']['@id']] = concept_id['@id']
 
 
     return doc
@@ -114,7 +181,7 @@ def get_interlex_concept_properties(concept_url,context):
     # set up jsonld document for selected properties
     doc = {}
     # add type as schema.org/DefinedTerm
-    doc['@type'] = []
+    doc['@type'] = context['@context']['Concept']
 
     # mappings of InterLex properties to NIDM-Term properties
     for key in concept_properties['data']:
@@ -133,6 +200,15 @@ def get_interlex_concept_properties(concept_url,context):
             for supertypes in concept_properties['data'][key]:
                 doc[context['@context']['supertypeCDEs']['@id']].append(concept_url[:concept_url.rfind('/')]
                             +"/"+supertypes['ilx'])
+
+    #     # Here we couldn't find this concept so we'll just store the label and url from our annotations
+    if context['@context']['label'] not in list(doc.keys()):
+        print("get_interlex_concept_properties")
+        print("no label found: %s" % concept_url)
+    elif context['@context']['url'] not in list(doc.keys()):
+        doc[context['@context']['url']['@id']] = concept_url
+
+
     return doc
 
 
@@ -237,9 +313,12 @@ def main(argv):
                                 if INTERLEX_URI_FRAG in isabout_entry['@id']:
                                     # for storing concept as json-ld file
                                     concept_jsonld = get_interlex_concept_properties(isabout_entry['@id'], context)
-                                elif COGATLAS_URI_FRAG in isabout_entry['@id']:
+                                elif (COGATLAS_URI_FRAG in isabout_entry['@id']) and ("task" not in isabout_entry['@id']):
                                     concept_jsonld = get_cogatlas_properties(isabout_entry,context,
                                             cogatlas_concepts,cogatlas_disorders)
+                                elif "task" in isabout_entry['@id']:
+                                    concept_jsonld = get_cogatlas_task_properties(isabout_entry,context)
+
                                 else:
                                     continue
                                 # write concept jsonld file
@@ -252,9 +331,13 @@ def main(argv):
                             if INTERLEX_URI_FRAG in json_tmp['terms'][term]:
                                 # for storing concept as json-ld file
                                 concept_jsonld = get_interlex_concept_properties(json_tmp['terms'][term]['@id'], context)
-                            elif COGATLAS_URI_FRAG in json_tmp['terms'][term]['@id']:
-                                concept_jsonld = get_cogatlas_properties(json_tmp['terms'][term], context,
+                            elif COGATLAS_URI_FRAG in json_tmp['terms'][term]['@id'] and \
+                                ("task" not in json_tmp['terms'][term]['@id']):
+                                concept_jsonld = get_cogatlas_properties(json_tmp['terms'][term],context,
                                                                          cogatlas_concepts, cogatlas_disorders)
+                            elif "task" in json_tmp['terms'][term]:
+                                concept_jsonld = get_cogatlas_task_properties(json_tmp['terms'][term], context)
+
                             else:
                                 continue
                             # write concept jsonld file
@@ -276,9 +359,14 @@ def main(argv):
                                     if INTERLEX_URI_FRAG in isabout_entry['@id']:
                                         # for storing concept as json-ld file
                                         concept_jsonld = get_interlex_concept_properties(isabout_entry['@id'], context)
-                                    elif COGATLAS_URI_FRAG in isabout_entry['@id']:
-                                        concept_jsonld = get_cogatlas_properties(isabout_entry,
-                                                context,cogatlas_concepts, cogatlas_disorders)
+                                    elif COGATLAS_URI_FRAG in isabout_entry['@id'] and \
+                                            ("task" not in isabout_entry['@id']):
+                                        concept_jsonld = get_cogatlas_properties(isabout_entry,context,
+                                                    cogatlas_concepts, cogatlas_disorders)
+                                    elif "task" in isabout_entry['@id']:
+                                        concept_jsonld = get_cogatlas_task_properties(isabout_entry['@id'],
+                                                    isabout_entry['label'],context)
+
                                     else:
                                         continue
                                     # write concept jsonld file
@@ -290,9 +378,13 @@ def main(argv):
                                 if INTERLEX_URI_FRAG in term[property]['@id']:
                                     # for storing concept as json-ld file
                                     concept_jsonld = get_interlex_concept_properties(term[property]['@id'], context)
-                                elif COGATLAS_URI_FRAG in term[property]['@id']:
-                                    concept_jsonld = get_cogatlas_properties(term[property], context,
-                                        cogatlas_concepts, cogatlas_disorders)
+                                elif COGATLAS_URI_FRAG in term[property]['@id'] and \
+                                            ("task" not in term[property]['@id']):
+                                    concept_jsonld = get_cogatlas_properties(term[property],
+                                        context,cogatlas_concepts, cogatlas_disorders)
+                                elif "task" in term[property]['@id']:
+                                    concept_jsonld = get_cogatlas_task_properties(term[property]['@id'],
+                                                term[property]['label'], context)
                                 else:
                                     continue
                                 # write concept jsonld file
