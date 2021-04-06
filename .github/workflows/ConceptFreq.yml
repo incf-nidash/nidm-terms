@@ -30,7 +30,6 @@ jobs:
         python utils/term_use_freq.py -jsonld terms/OpenNeuro_Datasets_Terms/OpenNeuro_jsonld/ -outfile terms/concept_freq.md
         
     - name: Commit changes
-      run: |
-        uses: EndBug/actions/labeler@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      uses: EndBug/actions/labeler@v2
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
