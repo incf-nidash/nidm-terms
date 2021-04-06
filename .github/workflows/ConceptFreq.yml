@@ -1,8 +1,6 @@
-## This workflow runs the following:
-# 1. term_use_freq.py to generate concepts markdown table
-# 2. combinebidsjsonld.py to recreate BIDS_Terms.jsonld
+## This workflow runs term_use_freq.py to generate concepts markdown table
 
-name: Run Python Scripts
+name: Generate Concepts Markdown Table
 on:
   push:
     branches: [ master ]
@@ -25,12 +23,14 @@ jobs:
     - name: Install packages
       run: |
         python -m pip install --upgrade pip setuptools
-        pip install glob2 pyld argparse requests
+        pip install glob2 pyld argparse 
         
     - name: Create md table
       run: |
         python utils/term_use_freq.py -jsonld terms/OpenNeuro_Datasets_Terms/OpenNeuro_jsonld/ -outfile terms/concept_freq.md
         
-    - name: Create single BIDS jsonld File
+    - name: Commit changes
       run: |
-        python utils/combinebidsjsonld.py -inputDir terms/BIDS_Terms/ -outputDir terms/BIDS_Terms.jsonld
+        uses: EndBug/add-and-commit@v7
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
