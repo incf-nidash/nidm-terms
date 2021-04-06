@@ -30,8 +30,9 @@ jobs:
         python utils/term_use_freq.py -jsonld terms/OpenNeuro_Datasets_Terms/OpenNeuro_jsonld/ -outfile terms/concept_freq.md
         
     - name: Commit changes
-      uses: actions/labeler@v2
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: pre-commit/action@v2.0.2
       with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        message: 'concept frequency table update'
-        add: '*.md'
+        token: ${{ secrets.GITHUB_TOKEN }}
