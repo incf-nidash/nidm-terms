@@ -28,9 +28,4 @@ jobs:
       run: |
         python utils/term_use_freq.py -jsonld terms/OpenNeuro_Datasets_Terms/OpenNeuro_jsonld/ -outfile terms/concept_freq.md
         
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - uses: pre-commit/action@v2.0.2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: stefanzweifel/git-auto-commit-action@v4
