@@ -104,6 +104,8 @@ def main(argv):
 
     # open markdown txt file
     md_file = open(args.outfile, "w")
+    ## Added by NQ to test GitHub Actions
+    print('opening output file in', args.outfile)
     # set up header of table
     md_file.write("| concept URL | label | use frequency (%) |\n")
     md_file.write("| ----------- | ----- | ----------------- |\n")
@@ -121,6 +123,10 @@ def main(argv):
     for key in res.keys():
         # add to markdown table file
         md_file.write("| %s | %s | %f |\n" %(key,res[key]['label'], res[key]['freq']))
+
+    ##Added by NQ to show that the code finished running
+    print('File has been successfully written in', args.outfile)
+
 
     md_file.close()
 
