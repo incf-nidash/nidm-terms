@@ -9,7 +9,6 @@ on:
     
 jobs:
   build:
-  
     runs-on: ubuntu-latest
 
     steps:
@@ -24,8 +23,13 @@ jobs:
         python -m pip install --upgrade pip setuptools
         pip install glob2 pyld argparse 
         
+    # Runs term_use_freq.py and updates the markdown table
     - name: Create md table
       run: |
         python utils/term_use_freq.py -jsonld terms/OpenNeuro_Datasets_Terms/OpenNeuro_jsonld/ -outfile terms/concept_freq.md
-        
+    
+    #commits the changes to the repository
     - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Updates to the concept frequency markdown table
+        
