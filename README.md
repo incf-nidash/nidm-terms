@@ -61,4 +61,3 @@ OpenNeuro Concept Query Demo: [![Binder](https://mybinder.org/badge_logo.svg)](h
 Currently we've mined the OpenNeuro database and annotated the datasets to include high-level concept annotations to improve search across datasets.  We've also formalized the terms used in the canonical BIDS specification.  Below are the frequencies of use of concepts for those annotations. 
 
 [Frequency Chart](https://github.com/NIDM-Terms/terms/blob/master/terms/concept_freq.md) 
-
