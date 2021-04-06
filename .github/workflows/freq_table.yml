@@ -21,8 +21,12 @@ jobs:
     - name: Install packages
       run: |
         python -m pip install --upgrade pip setuptools
-        pip install glob2 pyld argparse
+        pip install glob2 pyld argparse requests
         
     - name: Create md table
       run: |
         python utils/term_use_freq.py -jsonld terms/OpenNeuro_Datasets_Terms/OpenNeuro_jsonld/ -outfile terms/concept_freq.md
+        
+    - name: Create single BIDS jsonld File
+      run: |
+        python utils/combinebidsjsonld.py -inputDir terms/BIDS_Terms/ -outputDir terms/BIDS_Terms.jsonld
