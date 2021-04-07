@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip setuptools
-        pip install glob2 pyld argparse cognitiveatlas nidm
+        pip install glob2 pyld argparse cognitiveatlas git+git://github.com/incf-nidash/nidm-api.git
         
     # Runs term_use_freq.py and updates the markdown table
     - name: Create md table
