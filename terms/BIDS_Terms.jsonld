@@ -70,6 +70,8 @@
       "@type": "owl:DatatypeProperty",
       "description": "OPTIONAL. Onset of the event according to the sampling scheme of the recorded modality (i.e., referring to the raw data file that the events.tsv file accompanies).",
       "associatedWith": "BIDS",
+      "label": "sample",
+      "sameAs": "http://purl.org/nidash/nidm#ElectrodeImpedance"
     },
     {
       "@type": "owl:DatatypeProperty",
@@ -258,50 +260,26 @@
       "@type": "CommonDataElement",
       "description": "",
       "associatedWith": "BIDS",
-      "label": "StandardTemplateDeprecatedCoordSys",
+      "label": "MEGCoordSys",
       "responseOptions": {
         "choices": [
           {
-            "value": "fsaverage3"
+            "value": "CTF"
           },
           {
-            "value": "fsaverage4"
+            "value": "ElektaNeuromag"
           },
           {
-            "value": "fsaverage5"
+            "value": "4DBti"
           },
           {
-            "value": "fsaverage6"
+            "value": "KitYokogawa"
           },
           {
-            "value": "fsaveragesym"
+            "value": "ChietiItab"
           },
           {
-            "value": "UNCInfant0V21"
-          },
-          {
-            "value": "UNCInfant1V21"
-          },
-          {
-            "value": "UNCInfant2V21"
-          },
-          {
-            "value": "UNCInfant0V22"
-          },
-          {
-            "value": "UNCInfant1V22"
-          },
-          {
-            "value": "UNCInfant2V22"
-          },
-          {
-            "value": "UNCInfant0V23"
-          },
-          {
-            "value": "UNCInfant1V23"
-          },
-          {
-            "value": "UNCInfant2V23"
+            "value": "Other"
           }
         ]
       }
@@ -938,6 +916,11 @@
       "@type": "owl:DatatypeProperty",
       "description": "OPTIONAL. Free form description of stimulation parameters, such as frequency, shape etc. Specific onsets can be specified in the events.tsv file. Specific shapes can be described here in freeform text.",
       "associatedWith": "BIDS",
+      "supertypeCDEs": "http://purl.org/nidash/nidm#CalculatedParameter",
+      "label": "ElectricalStimulationParameters",
+      "sameAs": "http://purl.org/nidash/dicom#dicom_00189069",
+      "wasDerivedFrom": "http://purl.org/nidash/bids",
+      "ilxId": "http://uri.interlex.org/ilx_0739315"
     },
     {
       "@type": "owl:DatatypeProperty",
@@ -1328,6 +1311,10 @@
       "@type": "owl:DatatypeProperty",
       "description": "REQUIRED. General description of the reference scheme used and (when applicable) of location of the reference electrode in the raw recordings (e.g., left mastoid, bipolar, T01 for electrode with name T01, intracranial electrode on top of a grid, not included with data, upside down electrode). If different channels have a different reference, this field should have a general description and the channel specific reference should be defined in the channels.tsv file.",
       "associatedWith": "BIDS",
+      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "label": "iEEGReference",
+      "sameAs": "http://purl.org/nidash/nidm#NumberOfChannels"
+    },
     {
       "@type": "owl:DatatypeProperty",
       "description": "RECOMMENDED. Description of the location of the ground electrode (e.g., placed on right mastoid (M2)).",
@@ -1427,6 +1414,9 @@
       "@type": "owl:DatatypeProperty",
       "description": "RECOMMENDED. Number of SEEG channels",
       "associatedWith": "BIDS",
+      "supertypeCDEs": "http://purl.org/nidash/nidm#CalculatedParameter",
+      "label": "SEEGChannelCount",
+      "sameAs": "http://purl.org/nidash/nidm#NumberOfChannels"
     },
     {
       "@type": "owl:Class",
@@ -1770,6 +1760,11 @@
       "@type": "owl:AnnotationProperty",
       "description": "OPTIONAL. Text acknowledging contributions of individuals or institutions beyond those listed in Authors or Funding.",
       "associatedWith": "BIDS",
+      "supertypeCDEs": "http://purl.org/nidash/nidm#CalculatedParameter",
+      "label": "Acknowledgements",
+      "sameAs": "http://purl.org/nidash/nidm#NumberOfChannels",
+      "wasDerivedFrom": "http://purl.org/nidash/bids",
+      "ilxId": "http://uri.interlex.org/ilx_0739308"
     },
     {
       "@type": "owl:DatatypeProperty",
