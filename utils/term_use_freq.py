@@ -125,7 +125,7 @@ def main(argv):
         md_file.write("| %s | %s | %f |\n" %(key,res[key]['label'], res[key]['freq']))
 
     ##Added by NQ to show that the code finished running
-    print('File has been successfully written in', args.outfile)
+    print('File has been successfully written in', md_file)
 
 
     md_file.close()
