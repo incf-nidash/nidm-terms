@@ -26,7 +26,7 @@ jobs:
     # Runs term_use_freq.py and updates the markdown table
     - name: Create md table
       run: |
-        python utils/term_use_freq.py -jsonld terms/OpenNeuro_Datasets_Terms/OpenNeuro_jsonld/ -outfile terms/concept_freq.md
+        python utils/term_use_freq.py -jsonld terms/OpenNeuro_Datasets_Terms/OpenNeuro_jsonld/ -outfile terms/concept_freq.md -jsonld_output_dir terms/terms/NIDM_Concepts
     
     #commits the changes to the repository
     - uses: stefanzweifel/git-auto-commit-action@v4
