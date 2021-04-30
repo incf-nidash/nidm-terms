@@ -1,15 +1,25 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Currently a student",
   "label": "student",
-  "levels": "[' 2', 'Part time', [...]]",
-  "allowableValues": [
-    0,
-    1,
-    2
-  ],
-  "maximumValue": 2,
-  "minimumValue": 0,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "0",
+        "value": "No"
+      },
+      {
+        "name": "1",
+        "value": "Yes"
+      },
+      {
+        "name": "2",
+        "value": "Part time"
+      }
+    ],
+    "maxValue": "2",
+    "minValue": "0",
+    "valueType": "xsd:integer"
+  }
 }

@@ -1,20 +1,45 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "What was your best estimate of the total income of all family members from all sources, before taxes, in last year? PX011101_Annual_Family_Income",
   "label": "ann_family_inc",
-  "levels": "[' 7', 'Prefer not to answer', [...]]",
-  "allowableValues": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7
-  ],
-  "maximumValue": 7,
-  "minimumValue": 0,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "0",
+        "value": "Less than $10,000"
+      },
+      {
+        "name": "1",
+        "value": "$10,000- $19,999"
+      },
+      {
+        "name": "2",
+        "value": "$20,000- $39,999"
+      },
+      {
+        "name": "3",
+        "value": "$40,000-$59,999"
+      },
+      {
+        "name": "4",
+        "value": "$60,000-$99,999"
+      },
+      {
+        "name": "5",
+        "value": "$100,000+"
+      },
+      {
+        "name": "6",
+        "value": "Don\ufffdt know"
+      },
+      {
+        "name": "7",
+        "value": "Prefer not to answer"
+      }
+    ],
+    "maxValue": "7",
+    "minValue": "0",
+    "valueType": "xsd:integer"
+  }
 }

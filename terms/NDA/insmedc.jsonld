@@ -1,14 +1,16 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Medicaire",
   "label": "insmedc",
-  "levels": "[' 1 ', ' Checked', [...]]",
-  "allowableValues": [
-    "0",
-    "1"
-  ],
-  "maximumValue": 1,
-  "minimumValue": 0,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "maxValue": "1",
+    "minValue": "0",
+    "valueType": "xsd:integer",
+    "allowableValues": [
+      "0 = Not Checked",
+      " 1 = Checked",
+      " "
+    ]
+  }
 }

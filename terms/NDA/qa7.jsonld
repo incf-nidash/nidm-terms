@@ -1,17 +1,33 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "What language do you usually speak at home?",
   "label": "qa7",
-  "levels": "[' 5', 'Both English and some other language', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5
-  ],
-  "maximumValue": 5,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "English"
+      },
+      {
+        "name": "2",
+        "value": "Spanish"
+      },
+      {
+        "name": "3",
+        "value": "Other"
+      },
+      {
+        "name": "4",
+        "value": "Both English and Spanish"
+      },
+      {
+        "name": "5",
+        "value": "Both English and some other language"
+      }
+    ],
+    "maxValue": "5",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

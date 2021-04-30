@@ -1,0 +1,109 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant age (years)",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant gender",
+      "sourceVariable": "gender",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Female",
+            "value": "F"
+          },
+          {
+            "name": "Male",
+            "value": "M"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738437",
+        "label": "gender"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant group label",
+      "sourceVariable": "group",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "students",
+            "value": "student"
+          },
+          {
+            "name": "experts",
+            "value": "expert"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0108556",
+        "label": "participant group"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant is missing scans",
+      "sourceVariable": "missing_scans",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Incomplete dataset",
+            "value": "y"
+          },
+          {
+            "name": "Complete dataset",
+            "value": "n"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "MRI scanner assignment (fixed for participant)",
+      "sourceVariable": "scanner",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Siemens MAGNETOM Prisma",
+            "value": "prisma"
+          },
+          {
+            "name": "Siemens MAGNETOM Skyra",
+            "value": "skyra"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Unique participant label",
+      "sourceVariable": "participant_id",
+      "associatedWith": "NIDM"
+    }
+  ]
+}

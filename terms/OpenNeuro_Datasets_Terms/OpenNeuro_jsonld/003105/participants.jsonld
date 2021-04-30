@@ -1,0 +1,53 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "Gestational age of the fetus",
+      "sourceVariable": "Gestational age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "Weeks",
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Type of fetal pathology",
+      "sourceVariable": "Pathology",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Spina bifida myelomeningocele or myeloschisis fetus",
+            "value": "Spina Bifida"
+          },
+          {
+            "name": "Fetus with no apparent neurodevelopmental malformation",
+            "value": "Neurotypical"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Training or testing sample",
+      "sourceVariable": "Training/Testing",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Dataset with completely annotated brain labels",
+            "value": "Training"
+          },
+          {
+            "name": "Dataset with NO distributed annotated brain labels",
+            "value": "Testing"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    }
+  ]
+}

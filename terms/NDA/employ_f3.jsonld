@@ -1,15 +1,25 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Father unemployment type",
   "label": "employ_f3",
-  "levels": "[' 3', 'On temporary leave of absence', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3
-  ],
-  "maximumValue": 3,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Unable to work"
+      },
+      {
+        "name": "2",
+        "value": "Looking for employment"
+      },
+      {
+        "name": "3",
+        "value": "On temporary leave of absence"
+      }
+    ],
+    "maxValue": "3",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

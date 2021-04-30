@@ -1,20 +1,45 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Do you have any physical health conditions?",
   "label": "demo_health_condition",
-  "levels": "[' 8', 'Other', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8
-  ],
-  "maximumValue": 8,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "No physical health conditions"
+      },
+      {
+        "name": "2",
+        "value": "High blood pressure"
+      },
+      {
+        "name": "3",
+        "value": "Diabetes"
+      },
+      {
+        "name": "4",
+        "value": "Heart problems"
+      },
+      {
+        "name": "5",
+        "value": "Cancer"
+      },
+      {
+        "name": "6",
+        "value": "Arthritis"
+      },
+      {
+        "name": "7",
+        "value": "HIV/AIDS"
+      },
+      {
+        "name": "8",
+        "value": "Other"
+      }
+    ],
+    "maxValue": "8",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

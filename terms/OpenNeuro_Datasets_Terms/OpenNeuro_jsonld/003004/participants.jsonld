@@ -1,0 +1,101 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant age (years)",
+      "sourceVariable": "Age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant gender",
+      "sourceVariable": "Gender",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Female",
+            "value": "F"
+          },
+          {
+            "name": "Male",
+            "value": "M"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738437",
+        "label": "gender"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant group label",
+      "sourceVariable": "Group",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": {
+          "name": "Normal subject",
+          "value": "normal"
+        },
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0108556",
+        "label": "participant group"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant Handedness",
+      "sourceVariable": "Handedness",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Data not recorded",
+            "value": "NA"
+          },
+          {
+            "name": "Left Hand Dominant",
+            "value": "L"
+          },
+          {
+            "name": "Right Hand Dominant",
+            "value": "R"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0104886",
+        "label": "handedness assessment"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Year of Birth",
+      "sourceVariable": "YOB",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Unique participant label",
+      "sourceVariable": "participant_id",
+      "associatedWith": "NIDM"
+    }
+  ]
+}

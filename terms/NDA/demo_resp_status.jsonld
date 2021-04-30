@@ -1,24 +1,61 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "respondent's marital status",
   "label": "demo_resp_status",
-  "levels": "[' 12', ' Engaged', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12
-  ],
-  "maximumValue": 12,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Married"
+      },
+      {
+        "name": "2",
+        "value": "Remarried"
+      },
+      {
+        "name": "3",
+        "value": "Live with partner (not married)"
+      },
+      {
+        "name": "4",
+        "value": "Separated"
+      },
+      {
+        "name": "5",
+        "value": "Divorced"
+      },
+      {
+        "name": "6",
+        "value": "Single (never married)"
+      },
+      {
+        "name": "7",
+        "value": "Widowed"
+      },
+      {
+        "name": "8",
+        "value": "Married or Living Together"
+      },
+      {
+        "name": "9",
+        "value": "Missing/Not Applicable"
+      },
+      {
+        "name": "10",
+        "value": "Other"
+      },
+      {
+        "name": "11",
+        "value": "Refused to answer"
+      },
+      {
+        "name": "12",
+        "value": "Engaged"
+      }
+    ],
+    "maxValue": "12",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

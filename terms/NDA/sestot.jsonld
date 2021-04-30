@@ -1,17 +1,33 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Socio-Economic Status (SES)",
   "label": "sestot",
-  "levels": "['5 ', ' SES score of 55 to 66', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5
-  ],
-  "maximumValue": 5,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "SES score of 08 to 19"
+      },
+      {
+        "name": "2",
+        "value": "SES score of 20 to 29"
+      },
+      {
+        "name": "3",
+        "value": "SES score of 30 to 39"
+      },
+      {
+        "name": "4",
+        "value": "SES score of 40 to 54"
+      },
+      {
+        "name": "5",
+        "value": "SES score of 55 to 66"
+      }
+    ],
+    "maxValue": "5",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

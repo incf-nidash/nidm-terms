@@ -1,14 +1,28 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Transgender",
   "label": "demo_sex_tgender",
-  "levels": "['1', 'Yes', [...]]",
-  "allowableValues": [
-    "0",
-    "1"
-  ],
-  "maximumValue": 1,
-  "minimumValue": 0,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "0",
+        "value": "No"
+      },
+      {
+        "name": "1",
+        "value": "Yes"
+      },
+      {
+        "name": "2",
+        "value": "Maybe"
+      }
+    ],
+    "valueType": "xsd:integer",
+    "allowableValues": [
+      "0",
+      "1",
+      "2"
+    ]
+  }
 }

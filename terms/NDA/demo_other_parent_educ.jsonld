@@ -1,21 +1,49 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Reporting parent: What is the highest level of education your child's other parent has achieved? (i.e. child's father or mother)",
   "label": "demo_other_parent_educ",
-  "levels": "[' 8 ', ' Other Advanced degree', [...]]",
-  "allowableValues": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8
-  ],
-  "maximumValue": 8,
-  "minimumValue": 0,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "0",
+        "value": "8th Grade or Less"
+      },
+      {
+        "name": "1",
+        "value": "Some High School"
+      },
+      {
+        "name": "2",
+        "value": "Finished High School"
+      },
+      {
+        "name": "3",
+        "value": "Completed GED"
+      },
+      {
+        "name": "4",
+        "value": "Vocation/Trade/Business School"
+      },
+      {
+        "name": "5",
+        "value": "Some College or 2 year degree"
+      },
+      {
+        "name": "6",
+        "value": "Finished 4 year degree"
+      },
+      {
+        "name": "7",
+        "value": "Master's degree or equivalent"
+      },
+      {
+        "name": "8",
+        "value": "Other Advanced degree"
+      }
+    ],
+    "maxValue": "8",
+    "minValue": "0",
+    "valueType": "xsd:integer"
+  }
 }

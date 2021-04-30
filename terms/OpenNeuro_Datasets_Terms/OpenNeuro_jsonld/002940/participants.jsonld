@@ -1,0 +1,108 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "A unitless measure of response accuracy calculated by subtracting BX false alarm rate from the accuracy rate on AX trials",
+      "sourceVariable": "Dpost",
+      "associatedWith": "NIDM",
+      "label": "dprime on the DPX task after the season",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "A unitless measure of response accuracy calculated by subtracting BX false alarm rate from the accuracy rate on AX trials",
+      "sourceVariable": "Dpre",
+      "associatedWith": "NIDM",
+      "label": "dprime on the DPX task before the season",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "group",
+      "associatedWith": "NIDM",
+      "label": "Sport",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Soccer",
+            "value": "1"
+          },
+          {
+            "name": "Cross Country",
+            "value": "2"
+          },
+          {
+            "name": "Golf",
+            "value": "3"
+          }
+        ],
+        "maxValue": "3",
+        "minValue": "1",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0108556",
+        "label": "participant group"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Number of head-to ball impacts from observation by research study team members",
+      "sourceVariable": "impacts",
+      "associatedWith": "NIDM",
+      "label": "head-to-ball impacts",
+      "responseOptions": {
+        "unitCode": "impacts",
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "A measure of accuracy (%) reprsenting a balance of interference between AY and BX trials; +PBI ~ proactive control / -PBI ~ reactive control.",
+      "sourceVariable": "PBIpost",
+      "associatedWith": "NIDM",
+      "label": "proactive behavior index on the DPX task after the season",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "A measure of accuracy (%) reprsenting a balance of interference between AY and BX trials; +PBI ~ proactive control / -PBI ~ reactive control.",
+      "sourceVariable": "PBIpre",
+      "associatedWith": "NIDM",
+      "label": "proactive behavior index on the DPX task before the season",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "From self-report by athletes",
+      "sourceVariable": "SRC",
+      "associatedWith": "NIDM",
+      "label": "Sport related concussions",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "No",
+            "value": "0"
+          },
+          {
+            "name": "Yes",
+            "value": "1"
+          }
+        ],
+        "maxValue": "1",
+        "minValue": "0",
+        "unitCode": "impacts",
+        "valueType": "xsd:integer"
+      }
+    }
+  ]
+}

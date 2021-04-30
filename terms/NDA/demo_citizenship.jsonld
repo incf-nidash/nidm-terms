@@ -1,16 +1,29 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Citizenship status",
   "label": "demo_citizenship",
-  "levels": "[' 4', 'Temporary resident (work/study)', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4
-  ],
-  "maximumValue": 4,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "US (Canadian) citizen"
+      },
+      {
+        "name": "2",
+        "value": "Permanent resident"
+      },
+      {
+        "name": "3",
+        "value": "Refugee"
+      },
+      {
+        "name": "4",
+        "value": "Temporary resident (work/study)"
+      }
+    ],
+    "maxValue": "4",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

@@ -1,22 +1,53 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Primary method of payment",
   "label": "paymentmethod",
-  "levels": "[' 10 ', ' NK', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10
-  ],
-  "maximumValue": 10,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Medicare"
+      },
+      {
+        "name": "2",
+        "value": "Medicaid"
+      },
+      {
+        "name": "3",
+        "value": "Veteran's Program/Other Gov't Aid"
+      },
+      {
+        "name": "4",
+        "value": "Insurance: Indemnity"
+      },
+      {
+        "name": "5",
+        "value": "Insurance: Managed Care"
+      },
+      {
+        "name": "6",
+        "value": "Self-pay"
+      },
+      {
+        "name": "7",
+        "value": "Free"
+      },
+      {
+        "name": "8",
+        "value": "Other"
+      },
+      {
+        "name": "9",
+        "value": "Managed Medicaid/Medicare"
+      },
+      {
+        "name": "10",
+        "value": "NK"
+      }
+    ],
+    "maxValue": "10",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }

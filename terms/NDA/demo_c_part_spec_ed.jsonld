@@ -1,15 +1,25 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "DefinedTerm",
+  "@type": "CommonDataElement",
   "description": "Has participant ever received Special Education Services?",
   "label": "demo_c_part_spec_ed",
-  "levels": "[' 3', ' Don?t know', [...]]",
-  "allowableValues": [
-    1,
-    2,
-    3
-  ],
-  "maximumValue": 3,
-  "minimumValue": 1,
-  "valueType": "xsd:int"
+  "responseOptions": {
+    "choices": [
+      {
+        "name": "1",
+        "value": "Yes"
+      },
+      {
+        "name": "2",
+        "value": "No"
+      },
+      {
+        "name": "3",
+        "value": "Don\ufffdt know"
+      }
+    ],
+    "maxValue": "3",
+    "minValue": "1",
+    "valueType": "xsd:integer"
+  }
 }
