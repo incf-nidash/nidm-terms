@@ -1,0 +1,695 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "age category in 5-year bins from 15 to 45 and then a 15-year bin from 46-60 (variable categorised to preserve anonymization)",
+      "sourceVariable": "ageCategory_y",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Beck Anxiety Inventory, score at 1-year follow-up",
+      "sourceVariable": "bai_1y",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+          "label": "anxiety"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+          "label": "anxiety disorder"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Beck Anxiety Inventory, score after second treatment (crossover)",
+      "sourceVariable": "bai_crossover",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+          "label": "anxiety"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+          "label": "anxiety disorder"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Beck Anxiety Inventory, score after first treatment",
+      "sourceVariable": "bai_post",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+          "label": "anxiety"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+          "label": "anxiety disorder"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Beck Anxiety Inventory, score before treatment",
+      "sourceVariable": "bai_pre",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+          "label": "anxiety"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+          "label": "anxiety disorder"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Clinical Global Impression-Improvement scale, rating at 1-year follow-up",
+      "sourceVariable": "cgii_1y",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Very much worse",
+            "value": "-3"
+          },
+          {
+            "name": "Much worse",
+            "value": "-2"
+          },
+          {
+            "name": "Minimally worse",
+            "value": "-1"
+          },
+          {
+            "name": "No change",
+            "value": "0"
+          },
+          {
+            "name": "Minimally Improved",
+            "value": "1"
+          },
+          {
+            "name": "Much Improved",
+            "value": "2"
+          },
+          {
+            "name": "Very Much Improved",
+            "value": "3"
+          }
+        ],
+        "maxValue": "3",
+        "minValue": "-3",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0125072",
+        "label": "clinical global impression (cgi)"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Clinical Global Impression-Improvement scale, rating after treatment",
+      "sourceVariable": "cgii_post",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Very much worse",
+            "value": "-3"
+          },
+          {
+            "name": "Much worse",
+            "value": "-2"
+          },
+          {
+            "name": "Minimally worse",
+            "value": "-1"
+          },
+          {
+            "name": "No change",
+            "value": "0"
+          },
+          {
+            "name": "Minimally Improved",
+            "value": "1"
+          },
+          {
+            "name": "Much Improved",
+            "value": "2"
+          },
+          {
+            "name": "Very Much Improved",
+            "value": "3"
+          }
+        ],
+        "maxValue": "3",
+        "minValue": "-3",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0125072",
+        "label": "clinical global impression (cgi)"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "patient or healthy comparison participant",
+      "sourceVariable": "group",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0108556",
+        "label": "participant group"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Liebowitz Social Anxiety Scale - self-report version, score at 1-year follow-up",
+      "sourceVariable": "lsassr_1y",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+          "label": "anxiety"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+          "label": "anxiety disorder"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Liebowitz Social Anxiety Scale - self-report version, score after second treatment (crossover)",
+      "sourceVariable": "lsassr_crossover",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+          "label": "anxiety"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+          "label": "anxiety disorder"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Liebowitz Social Anxiety Scale - self-report version, score after first treatment",
+      "sourceVariable": "lsassr_post",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+          "label": "anxiety"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+          "label": "anxiety disorder"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Liebowitz Social Anxiety Scale - self-report version, score before treatment",
+      "sourceVariable": "lsassr_pre",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_5022ef7599294/",
+          "label": "anxiety"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_2030/",
+          "label": "anxiety disorder"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Montgomery-\u00e2\u0089\u0088sberg Depression Rating Scale, self-rated, score at 1-year follow-up",
+      "sourceVariable": "madrss_1y",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "https://www.cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Montgomery-\u00e2\u0089\u0088sberg Depression Rating Scale, self-rated, score after second treatment (crossover)",
+      "sourceVariable": "madrss_crossover",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "https://www.cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Montgomery-\u00e2\u0089\u0088sberg Depression Rating Scale, self-rated, score after first treatment",
+      "sourceVariable": "madrss_post",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "https://www.cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Montgomery-\u00e2\u0089\u0088sberg Depression Rating Scale, self-rated, score before treatment",
+      "sourceVariable": "madrss_pre",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "https://www.cognitiveatlas.org/disorder/id/dso_1470/",
+        "label": "major depressive disorder"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Quality of Life Inventory, score at 1-year follow-up",
+      "sourceVariable": "qoli_1y",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Quality of Life Inventory, score after second treatment (crossover)",
+      "sourceVariable": "qoli_crossover",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Quality of Life Inventory, score after first treatment",
+      "sourceVariable": "qoli_post",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Quality of Life Inventory, score before treatment",
+      "sourceVariable": "qoli_pre",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "duration of social anxiety disorder (calculated by subtracting age at onset from age at scanning)",
+      "sourceVariable": "sadDuration_y",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Diagnosis of social anxiety disorder as detemined by the Structured Clinical Interview for DSM-5 Disorders (SCID) at 1-year follow-up",
+      "sourceVariable": "scid_sad_diagnosis_1y",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "yes",
+            "value": "1"
+          },
+          {
+            "name": "no",
+            "value": "0"
+          }
+        ],
+        "maxValue": "1",
+        "minValue": "0",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_11257/",
+        "label": "social phobia"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "scid_sad_diagnosis_post",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "yes",
+            "value": "1"
+          },
+          {
+            "name": "no",
+            "value": "0"
+          }
+        ],
+        "maxValue": "1",
+        "minValue": "0",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/disorder/id/dso_11257/",
+        "label": "social phobia"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "male/female",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738439",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Social Interaction and Anxiety Scale, score at 1-year follow-up",
+      "sourceVariable": "sias_1y",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Social Interaction and Anxiety Scale, score after first treatment",
+      "sourceVariable": "sias_crossover",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Social Interaction and Anxiety Scale, score after second treatment (crossover)",
+      "sourceVariable": "sias_post",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Social Interaction and Anxiety Scale, score before treatment",
+      "sourceVariable": "sias_pre",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Social Phobia Scale, score at 1-year follow-up",
+      "sourceVariable": "sps_1y",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Social Phobia Scale, score after first treatment",
+      "sourceVariable": "sps_crossover",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Social Phobia Scale, score after second treatment (crossover)",
+      "sourceVariable": "sps_post",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Social Phobia Scale, score before treatment",
+      "sourceVariable": "sps_pre",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Social Phobia Screening Questionnaire, total score at 1-year follow-up",
+      "sourceVariable": "spsq_1y",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Social Phobia Screening Questionnaire, total score after second treatment (crossover)",
+      "sourceVariable": "spsq_crossover",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Social Phobia Screening Questionnaire, total score after first treatment",
+      "sourceVariable": "spsq_post",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Social Phobia Screening Questionnaire, total score before treatment",
+      "sourceVariable": "spsq_pre",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Subjective Units of Distress Scale, distress, at 1-year follow-up",
+      "sourceVariable": "sud_anticipatory_distress_1y",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Subjective Units of Distress Scale, distress, score after first treatment",
+      "sourceVariable": "sud_anticipatory_distress_post",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Subjective Units of Distress Scale, distress, score before treatment",
+      "sourceVariable": "sud_anticipatory_distress_pre",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Subjective Units of Distress Scale, fear, score at 1-year follow-up",
+      "sourceVariable": "sud_anticipatory_fear_1y",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Subjective Units of Distress Scale, fear, score after first treatment",
+      "sourceVariable": "sud_anticipatory_fear_post",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Subjective Units of Distress Scale, fear, score before treatment",
+      "sourceVariable": "sud_anticipatory_fear_pre",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_5022ef7599294/",
+        "label": "anxiety"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "type of psychotherapy administered first",
+      "sourceVariable": "treatment",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Attention Bias Modification",
+            "value": "ABM"
+          },
+          {
+            "name": "Cognitive Behavior Therapy",
+            "value": "CBT"
+          },
+          {
+            "name": "No psychotherapy (healthy comparison participant)",
+            "value": "NA"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "subject ID",
+      "sourceVariable": "subID",
+      "associatedWith": "NIDM"
+    }
+  ]
+}

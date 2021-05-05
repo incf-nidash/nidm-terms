@@ -1,0 +1,198 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "Age of participant in years",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "Years, with one quantile precision",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "url": "http://purl.bioontology.org/ontology/SNOMEDCT/60621009",
+      "sourceVariable": "BMI",
+      "associatedWith": "NIDM",
+      "label": "Body mass index (rounded to nearest integer",
+      "responseOptions": {
+        "unitCode": "kilograms per squared meters",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0263111",
+        "label": "waist (physical examination)"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "University category",
+      "sourceVariable": "education_category",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Enrolled at an academic university",
+            "value": "academic"
+          },
+          {
+            "name": "Enrolled at a university of applied sciences",
+            "value": "applied"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Whether someone is left-handed, right-handed, or ambidextrous",
+      "sourceVariable": "handedness",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Left-handed",
+            "value": "left"
+          },
+          {
+            "name": "Right-handed",
+            "value": "right"
+          },
+          {
+            "name": "Ambidextrous",
+            "value": "ambidextrous"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0104886",
+        "label": "handedness assessment"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Score on the Agreeableness scale of the NEO-FFI",
+      "sourceVariable": "NEO_A",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "Sum of individual items",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/trait/id/trt_d0UlwWsGh6zUg/",
+        "label": "Agreeableness"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Score on the Conscientiousness scale of the NEO-FFI",
+      "sourceVariable": "NEO_C",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "Sum of individual items",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/trait/id/trt_p81w92xKZ2fyl/",
+        "label": "Conscientiousness"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Score on the Extraversion scale of the NEO-FFI",
+      "sourceVariable": "NEO_E",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "Sum of individual items",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/trait/id/trt_8qMThTvgNstWp/",
+        "label": "Extraversion"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Score on the Neuroticism scale of the NEO-FFI",
+      "sourceVariable": "NEO_N",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "Sum of individual items",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/trait/id/trt_VdTXG97NL4gnP/",
+        "label": "Neuroticism"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Score on the Openness scale of the NEO-FFI",
+      "sourceVariable": "NEO_O",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "Sum of individual items",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/trait/id/trt_htFsRDr1yFWjp/",
+        "label": "Openness to experience"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Score on Raven's Progressive Matrices test (duration: 30 min)",
+      "sourceVariable": "raven_score",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "Sum of completed sets",
+        "valueType": "xsd:float"
+      },
+      "isAbout": [
+        {
+          "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0aec1/",
+          "label": "reasoning"
+        },
+        {
+          "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a666/",
+          "label": "intelligence"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "M"
+          },
+          {
+            "name": "female",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738439",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Self-reported religious affiliation",
+      "sourceVariable": "religious",
+      "associatedWith": "NIDM"
+    }
+  ]
+}

@@ -2520,7 +2520,7 @@ bids:stim_file rdf:type owl:DatatypeProperty ;
 
             obo:IAO_0000136 prov:Location, nidm:AuxiliaryFile, nidm:StimulusPresentationFile ;
 
-             obo:IAO_0000116 "To be discussed"^^xsd:string .
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
 
@@ -2534,7 +2534,7 @@ bids:StartTime rdf:type owl:DatatypeProperty ;
 
             sio:SIO_000221 "s"^^xsd:string ;
 
-           obo:IAO_0000136 sio:SIO_000418 ;
+            obo:IAO_0000136 sio:SIO_000418 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2562,10 +2562,213 @@ bids:respiratory rdf:type owl:DatatypeProperty ;
 
             dct:description "continuous breathing measurement"^^xsd:string ;
 
-           obo:IAO_0000136 nidm:Acquisition, nidm:AcquisitionMethod ;
+            obo:IAO_0000136 nidm:Acquisition, nidm:AcquisitionMethod ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
+
+
+###  http://purl.org/nidash/bids#sub
+
+bids:sub rdf:type owl:DatatypeProperty ;
+
+            rdfs:label "sub"^^xsd:string ;
+ 
+            dct:description "Sub is a datatype property, which takes a value that identifies a person or animal participating in the study."^^xsd:string ;
+
+	    obo:IAO_0000136 bids:Subject ; 
+
+	    obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#ses
+
+bids:ses rdf:type owl:DatatypeProperty ;
+
+            rdfs:label "ses"^^xsd:string ;
+
+            dct:description "Ses is a datatype property, which takes a value that identifies a logical grouping of neuroimaging and behavioral data consistent across subjects."^^xsd:string ;
+
+	    rdfs:comment "Session can (but doesn't have to) be synonymous to a visit in a longitudinal study. In general, subjects will stay in the scanner during one session. However, for example, if a subject has to leave the scanner room and then be re-positioned on the scanner bed, the set of MRI acquisitions will still be considered as a session and match sessions acquired in other subjects. Similarly, in situations where different data types are obtained over several visits (for example fMRI on one day followed by DWI the day after) those can be grouped in one session. Defining multiple sessions is appropriate when several identical or similar data acquisitions are planned and performed on all -or most- subjects, often in the case of some intervention between sessions (e.g., training)."^^xsd:string ;
+
+            obo:IAO_0000136 bids:Session ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#task
+
+bids:task rdf:type owl:DatatypeProperty ;
+
+            rdfs:label "task"^^xsd:string ;
+
+            dct:description "Task is a datatype property, which takes a value that identifies a set of structured activities performed by the participant."^^xsd:string ;
+
+	    rdfs:comment "Tasks are usually accompanied by stimuli and responses, and can greatly vary in complexity. For the purpose of this specification we consider the so-called resting state a task. In the context of brain scanning, a task is always tied to one data acquisition. Therefore, even if during one acquisition the subject performed multiple conceptually different behaviors (with different sets of instructions) they will be considered one (combined) task."^^xsd:string ;
+
+            obo:IAO_0000136 bids:Task ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#acq
+
+bids:acq rdf:type owl:DatatypeProperty ;
+
+            rdfs:label "acq"^^xsd:string ;
+
+            dct:description "Acq is a datatype property, which takes a value that identifies data files as being acquired with the same scanning parameters"^^xsd:string ;
+
+	    rdfs:comment "Note that in the description of run, the BIDS specification says that: Run is a synonym of a data acquisition.  This is true in the sense that runs with the same acq value were acquired with the same acquisition parameters"^^xsd:string ;
+
+            obo:IAO_0000136 bids:Acquisition ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#ce
+
+bids:ce rdf:type owl:DatatypeProperty ;
+
+            rdfs:label "ce"^^xsd:string ;
+
+            dct:description "Ce is a datatype property, which takes a value that distinguishes between runs that used different contrast agents."^^xsd:string ;
+
+            obo:IAO_0000136 bids:ContrastEnhancingAgent ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#rec
+
+bids:rec rdf:type owl:DatatypeProperty ;
+
+            rdfs:label "rec"^^xsd:string ;
+
+            dct:description "Rec is a datatype property, which takes a value that identifies a data file as being related to a specific reconstruction algorithm or method."^^xsd:string ;
+
+            obo:IAO_0000136 bids:Reconstruction ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#dir
+
+bids:dir rdf:type owl:DatatypeProperty ;
+
+            rdfs:label "dir"^^xsd:string ;
+
+            dct:description "Dir is a datatype property, which takes a value that identifies the phase-encoding application direction for a data file."^^xsd:string ;
+
+            obo:IAO_0000136 bids:PhaseEncodingDirection ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#run
+
+bids:run rdf:type owl:DatatypeProperty ;
+
+            rdfs:label "run"^^xsd:string ;
+
+            dct:description "Run is a datatype property, which takes a value that is used to distinguish between multiple acquisitions using the same acquisition parameters."^^xsd:string ;
+
+            obo:IAO_0000136 bids:Run ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#mod
+
+bids:mod rdf:type owl:DatatypeProperty ;
+
+            rdfs:label "mod"^^xsd:string ;
+
+            dct:description "Mod is a datatype property, which takes a value that is used to identify the modality for defacing masks between multiple acquisitions using the same acquisition parameters."^^xsd:string ;
+
+            obo:IAO_0000136 bids:CorrespondingModality ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#echo
+
+bids:echo rdf:type owl:DatatypeProperty ;
+
+            rdfs:label "echo"^^xsd:string ;
+
+            dct:description "Echo is a datatype property, which takes a value that is used to identify the echo number since the standard requires that multi-echo data is split into one echo per file."^^xsd:string ;
+
+            obo:IAO_0000136 bids:Echo ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#recording
+
+bids:recording rdf:type owl:DatatypeProperty ;
+
+            rdfs:label "recording"^^xsd:string ;
+
+            dct:description "Recording is a datatype property, which takes a value that is used to identify between multiple continuous recording files."^^xsd:string ;
+
+            obo:IAO_0000136 bids:Recording ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#proc
+
+bids:proc rdf:type owl:DatatypeProperty ;
+
+            rdfs:label "proc"^^xsd:string ;
+
+            dct:description "Proc is a datatype property, which takes a value that is used to identify the variant of a file that was the result of a particular processing performed on the device."^^xsd:string ;
+
+	    rdfs:comment "This is analagous to Reconstruction used for MRI data."^^xsd:string ;
+
+            obo:IAO_0000136 bids:Processed ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#space
+
+bids:space rdf:type owl:DatatypeProperty ;
+
+            rdfs:label "space"^^xsd:string ;
+
+            dct:description "Space is a datatype property, which is used to indicate the way in which electrode positions are interpreted."^^xsd:string ;
+
+            obo:IAO_0000136 bids:Space ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#split
+
+bids:split rdf:type owl:DatatypeProperty ;
+
+            rdfs:label "split"^^xsd:string ;
+
+            dct:description "Split is a datatype property, which is used to identify cases in which data files are split into multiple parts due to their size."^^xsd:string ;
+
+            obo:IAO_0000136 bids:Split ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
 ################################################################
@@ -2574,88 +2777,269 @@ bids:respiratory rdf:type owl:DatatypeProperty ;
 #
 #################################################################
 
-###  http://purl.org/nidash/bids#T1weighted
+###  http://purl.org/nidash/bids#BIDSDataType
 
-bids:T1weighted rdf:type owl:Class ;
+bids:BIDSDataType rdf:type owl:Class ;
 
-            rdfs:label "T1 weighted"^^xsd:string ;
+            rdfs:label "BIDS Data Type"^^xsd:string ;
 
-            dct:description "T1w"^^xsd:string ;
+            dct:description "BIDS Data Type is a name that is one of the restricted set of terms used to denote the type of data the folder contains."^^xsd:string ;
 
-            owl:sameAs nidm:T1Weighted ;
-
-            rdfs:subClassOf nidm:ImageContrastType ;
-
-	    rdfs:comment "This relation to nidm:T1Weighted is proposed and would make this term a child of nidm:ImageContrastType"^^xsd:string ;
+	    rdfs:comment "Note that BIDS Data Types are a mixture of nidm:ImageContrastType (e.g. anat, func), nidm:ImageUsageType (e.g. dwi) and nidm:AcquisitionModality."^^xsd:string ;
+	    
+	    rdfs:subClassOf sio:SIO_000116 ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
 
-###  http://purl.org/nidash/bids#T2weighted
+###  http://purl.org/nidash/bids#anat
 
-bids:T2weighted rdf:type owl:Class ;
+bids:anat rdf:type owl:Class ;
 
-            rdfs:label "T2 weighted"^^xsd:string ;
+            rdfs:label "anat"^^xsd:string ;
 
-            dct:description "T2w"^^xsd:string ;
+            dct:description "The name of the folder that contains the scan types that are designated as being related to anatomy."^^xsd:string ;
 
-	    rdfs:comment "This relation to nidm:T2Weighted is proposed and would make this term a child of nidm:imageContrastType"^^xsd:string ;
+            obo:IAO_0000136 nidm:Anatomical ;
 
-            owl:sameAs nidm:T2Weighted;
-
-            rdfs:subClassOf nidm:ImageContrastType ;
+            rdfs:subClassOf bids:BIDSDataType ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
 
-###  http://purl.org/nidash/bids#T2Star
+###  http://purl.org/nidash/bids#func
 
-bids:T2Star rdf:type owl:Class ;
+bids:func rdf:type owl:Class ;
 
-            rdfs:label "T2*"^^xsd:string ;
+            rdfs:label "func"^^xsd:string ;
 
-            dct:description "T2star"^^xsd:string ;
+            dct:description "The name of the folder that contains the scan types that are designated as being related to the function of the system under study."^^xsd:string ;
 
-            owl:sameAs nidm:T2StarWeighted ;
+            obo:IAO_0000136 nidm:Functional ;
 
-            rdfs:subClassOf nidm:ImageContrastType ;
-
-            rdfs:comment "The relation here is has only proposed status and would make this a child term to nidm:ImageContrastType"^^xsd:string ;
+            rdfs:subClassOf bids:BIDSDataType ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
 
+###  http://purl.org/nidash/bids#dwi
 
-###  http://purl.org/nidash/bids#Protondensity
+bids:dwi rdf:type owl:Class ;
 
-bids:Protondensity rdf:type owl:Class ;
+            rdfs:label "dwi"^^xsd:string ;
 
-            rdfs:label "Proton density"^^xsd:string ;
+            dct:description "The name of the folder that contains the scan types that are designated as being related to diffusion-weighted imaging in which the relative apparent diffusion coefficients of the species under study results in the image contrast."^^xsd:string ;
 
-            dct:description "PD"^^xsd:string ;
+            obo:IAO_0000136 nidm:DiffusionWeighted ;
 
-            owl:sameAs nidm:ProtonDensityWeighted ;
-
-            rdfs:subClassOf nidm:ImageContrastType ;
-
-            rdfs:comment "The relation here is has only proposed status and would make this a child term  to nidm:ImageContrastType"^^xsd:string ;
+            rdfs:subClassOf bids:BIDSDataType ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
 
-###  http://purl.org/nidash/bids#CombinedPDT2
+###  http://purl.org/nidash/bids#fmap
 
-bids:CombinedPDT2 rdf:type owl:Class ;
+bids:fmap rdf:type owl:Class ;
 
-            rdfs:label "Combined PD/T2"^^xsd:string ;
+            rdfs:label "fmap"^^xsd:string ;
 
-            dct:description "PDT2"^^xsd:string ;
+            dct:description "The name of the folder that contains the scan types that are designated as being related to field inhomogeneity mapping."^^xsd:string ;
 
-            rdfs:subClassOf nidm:ImageContrastType ;
+            obo:IAO_0000136 nidm:Phase ;
+
+            rdfs:subClassOf bids:BIDSDataType ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#meg
+
+bids:meg rdf:type owl:Class ;
+
+            rdfs:label "meg"^^xsd:string ;
+
+            dct:description "The name of the folder that contains the scan types that are designated as being related to magnetoencephalography."^^xsd:string ;
+
+            obo:IAO_0000136 nidm:Magnetoencephalography ;
+
+            rdfs:subClassOf bids:BIDSDataType ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#eeg
+
+bids:eeg rdf:type owl:Class ;
+
+            rdfs:label "eeg"^^xsd:string ;
+
+            dct:description "The name of the folder that contains the scan types that are designated as being related to electroencephalography."^^xsd:string ;
+
+            obo:IAO_0000136 nidm:Electroencephalography ;
+
+            rdfs:subClassOf bids:BIDSDataType ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#ieeg
+
+bids:ieeg rdf:type owl:Class ;
+
+            rdfs:label "ieeg"^^xsd:string ;
+
+            dct:description "The name of the folder that contains the scan types that are designated as being related to intracranial electroencephalography."^^xsd:string ;
+
+            obo:IAO_0000136 nidm:Electroencephalography ;
+
+            rdfs:subClassOf bids:BIDSDataType ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#BIDSFolder
+
+bids:BIDSFolder rdf:type owl:Class ;
+
+            rdfs:label "BIDS Folder"^^xsd:string ;
+
+            dct:description "BIDS Folder is a name that is one of the restricted set of terms used to denote the type of data the folder contains."^^xsd:string ;
+
+	    rdfs:comment "Note that BIDS Folder currently refers only to the code and derivatives folder names."^^xsd:string ;
+	    
+	    rdfs:subClassOf sio:SIO_000116 ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#code
+
+bids:code rdf:type owl:Class ;
+
+            rdfs:label "code"^^xsd:string ;
+
+            dct:description "The name of the folder that contains the software used in the processing or analysis of the data within the directory tree."^^xsd:string ;
+
+            obo:IAO_0000136 sio:SIO_000097 ;
+
+            rdfs:subClassOf bids:BIDSFolder ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#derivatives
+
+bids:derivatives rdf:type owl:Class ;
+
+            rdfs:label "derivatives"^^xsd:string ;
+
+            dct:description "The name of the folder that contains files that were generated by applying processing or analys software to some or all of the data contained in this data collection."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSFolder ;
+
+	    rdfs:comments "Examples include correlation maps, brain masks, and contrast maps."^^xsd:string ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+bids:BIDSSuffix rdf:type owl:Class ;
+
+            rdfs:label "BIDS Suffix"^^xsd:string ;
+
+            dct:description "BIDS Suffix  is a name that is one of the restricted set of terms used to embed the nidm:AcquisitionMethod into the file path."^^xsd:string ;
+
+	    rdfs:comment "The Suffix is the last metadata item before the extension."^^xsd:string ;
+	    
+	    rdfs:subClassOf sio:SIO_000116 ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#T1w
+
+bids:T1w rdf:type owl:Class ;
+
+            rdfs:label "T1w"^^xsd:string ;
+
+            dct:description "T1w is a suffix name that denotes that the file contains spin-lattice relaxation weighted data."^^xsd:string ;
+
+            obo:IAO_0000136 nidm:T1Weighted ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#T2w
+
+bids:T2w rdf:type owl:Class ;
+
+            rdfs:label "T2w"^^xsd:string ;
+
+            dct:description "T2w is a suffix name that denotes that the file contains spin-spin relaxation weighted data."^^xsd:string ;
+
+            obo:IAO_0000136 nidm:T2Weighted ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#T2star
+
+bids:T2star rdf:type owl:Class ;
+
+            rdfs:label "T2star"^^xsd:string ;
+
+            dct:description "T2star is a suffix name that denotes that the file contains T2-star-weighted data."^^xsd:string ;
+
+            obo:IAO_0000136 nidm:T2StarWeighted ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#PD
+
+bids:PD rdf:type owl:Class ;
+
+            rdfs:label "PD"^^xsd:string ;
+
+            dct:description "PD is a suffix name that denotes that the file contains proton-density-weighted data."^^xsd:string ;
+
+            obo:IAO_0000136 nidm:ProtonDensityWeighted ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#PDT2
+
+bids:PDT2 rdf:type owl:Class ;
+
+            rdfs:label "PDT2"^^xsd:string ;
+
+            dct:description "PDT2 is a suffix name that denotes that the file contains data that has both proton-density and T2-weighted contrast."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2667,11 +3051,11 @@ bids:FLAIR rdf:type owl:Class ;
 
             rdfs:label "FLAIR"^^xsd:string ;
 
-            dct:description "FLAIR"^^xsd:string ;
+            dct:description "FLAIR is a suffix name that denotes that the file contains data that has been collected using a fluid attenuated inversion recovery pulse sequence."^^xsd:string ;
 
-            owl:sameAs nidm:FluidAttenuatedInversionRecovery ;
+            obo:IAO_0000136 nidm:FluidAttenuatedInversionRecovery ;
 
-            rdfs:subClassOf nidm:AcquisitionMethod ;
+            rdfs:subClassOf bids:BIDSSuffix ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
@@ -2683,163 +3067,546 @@ bids:FLASH rdf:type owl:Class ;
 
             rdfs:label "FLASH"^^xsd:string ;
 
-            dct:description "FLASH"^^xsd:string ;
+            dct:description "FLASH is a suffix name that denotes that the file contains data that has been collected using a flash low-angle shot (FLASH) pulse sequence."^^xsd:string ;
 
-            owl:sameAs nidm:FastLowAngleShot ;
+            obo:IAO_0000136 nidm:FastLowAngleShot ;
 
-            rdfs:subClassOf nidm:AcquisitionMethod ;
-
-            obo:IAO_0000116 "To be discussed"^^xsd:string .
-
-
-
-###  http://purl.org/nidash/bids#Angiography
-
-bids:Angiography rdf:type owl:Class ;
-
-            rdfs:label "Angiography"^^xsd:string ;
-
-            dct:description "angio"^^xsd:string ;
-
-            owl:sameAs nidm:Angiography ;
-
-            rdfs:subClassOf nidm:AcquisitionMethod ;
+            rdfs:subClassOf bids:BIDSSuffix ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
 
-###  http://purl.org/nidash/bids#BOLD
+###  http://purl.org/nidash/bids#angio
 
-bids:BOLD rdf:type owl:Class ;
+bids:angio rdf:type owl:Class ;
 
-            rdfs:label "BOLD"^^xsd:string ;
+            rdfs:label "angio"^^xsd:string ;
 
-            dct:description "bold"^^xsd:string ;
+            dct:description "angio is a suffix name that denotes that the file contains angiography data."^^xsd:string ;
 
-            owl:sameAs nidm:BloodOxygenLevelDependent ;
+            obo:IAO_0000136 nidm:Angiography ;
 
-            rdfs:subClassOf nidm:ImageContrastType ;
-
-            obo:IAO_0000116 "To be discussed"^^xsd:string .
-
-
-
-###  http://purl.org/nidash/bids#CBV
-
-bids:CBV rdf:type owl:Class ;
-
-            rdfs:label "CBV"^^xsd:string ;
-
-            dct:description "cbv"^^xsd:string ;
-
-            owl:sameAs nidm:CerebralBloodVolume ;
-
-            rdfs:subClassOf nidm:CalculatedParameter ;
+            rdfs:subClassOf bids:BIDSSuffix ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
 
-#################################################################
-#
-#    Individuals
-#
-#################################################################
-###  http://purl.org/nidash/bids#T1Rhomap
+###  http://purl.org/nidash/bids#bold
 
-bids:T1Rhomap rdf:type owl:NamedIndividual, nidm:ParameterEstimateMap .
+bids:bold rdf:type owl:Class ;
+
+            rdfs:label "bold"^^xsd:string ;
+
+            dct:description "bold is a suffix name that denotes that the file contains data in which the Blood Oxygen-Level Dependent effect provides the image contrast."^^xsd:string ;
+
+            obo:IAO_0000136 nidm:BloodOxygenLevelDependent ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#cbv
+
+bids:cbv rdf:type owl:Class ;
+
+            rdfs:label "cbv"^^xsd:string ;
+
+            dct:description "cbv is a suffix name that denotes that the file contains data relating to the Cerebral Blood Volume (CBV)."^^xsd:string ;
+
+            obo:IAO_0000136 nidm:CerebralBloodVolume ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#T1rho
+
+bids:T1rho rdf:type owl:Class ;
+
+            rdfs:label "T1rho"^^xsd:string ;
+
+            dct:description "T1rho is a suffix name that denotes that the file contains T1rho-weighted data."^^xsd:string ;
+
+            obo:IAO_0000136 nidm:T1rho ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
 
 ###  http://purl.org/nidash/bids#T1map
 
-bids:T1map rdf:type owl:NamedIndividual, nidm:ParameterEstimateMap .
+bids:T1map rdf:type owl:Class ;
+
+            rdfs:label "T1map"^^xsd:string ;
+
+            dct:description "T1map is a suffix name that denotes that the file contains a calculated map of T1-values for the imaged region."^^xsd:string ;
+
+            obo:IAO_0000136 nidm:NIDM_0000061 ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
 
 ###  http://purl.org/nidash/bids#T2map
 
-bids:T2map rdf:type owl:NamedIndividual, nidm:ParameterEstimateMap .
+bids:T2map rdf:type owl:Class ;
+
+            rdfs:label "T2map"^^xsd:string ;
+
+            dct:description "T1map is a suffix name that denotes that the file contains a calculated map of T2-values for the imaged region."^^xsd:string ;
+
+            obo:IAO_0000136 nidm:NIDM_0000061 ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
+###  http://purl.org/nidash/bids#PDmap
 
-###  http://purl.org/nidash/bids#Protondensitymap
+bids:PDmap rdf:type owl:Class ;
 
-bids:Protondensitymap rdf:type owl:NamedIndividual, nidm:ParameterEstimateMap .
+            rdfs:label "PDmap"^^xsd:string ;
 
+            dct:description "PDmap is a suffix name that denotes that the file contains a calculated map of proton-density values for the imaged region."^^xsd:string ;
 
+            obo:IAO_0000136 nidm:NIDM_0000061 ;
 
-###  http://purl.org/nidash/bids#InplaneT1
-
-bids:InplaneT1 rdf:type owl:NamedIndividual, nidm:AcquisitionObject .
-
-
-
-###  http://purl.org/nidash/bids#InplaneT2
-
-bids:InplaneT2 rdf:type owl:NamedIndividual, nidm:AcquisitionObject .
-
-
-
-bids:T1Rhomap rdfs:label "T1 Rho map"^^xsd:string ;
-
-            dct:description "T1 rho"^^xsd:string ;
-
- 	    rdfs:comment "This is related to nidm:0000052, which is nidm:Map, in NIDM-Results, but is unrelated to nidm:ContrastMap since the contrast in that case is related to fMRI condition contrasts, rather than an NMR physics-related concept.  It is related to nidm:ParameterEstimateMap from NIDM-Results in the sense that calculation of a parameter map from a set of images in which the contrast is changed by modifying an acquisition parameter related to a parameter of interest (in this case T1 rho), is an estimate of a parameter resulting from the fitting of image data on a pixel-by-pixel basis."^^xsd:string ;
+            rdfs:subClassOf bids:BIDSSuffix ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
 
-bids:T1map rdfs:label "T1 map"^^xsd:string ;
+###  http://purl.org/nidash/bids#inplaneT1
 
-            dct:description "T1 map"^^xsd:string ;
+bids:inplaneT1 rdf:type owl:Class ;
 
-	    rdfs:comment "This is related to nidm:0000052, which is nidm:Map, in NIDM-Results, but is unrelated to nidm:ContrastMap since the contrast in that case is related to fMRI condition contrasts, rather than an NMR physics-related concept.  It is related to nidm:ParameterEstimateMap from NIDM-Results in the sense that calculation of a parameter map from a set of images in which the contrast is changed by modifying an acquisition parameter related to a parameter of interest (in this case T1), is an estimate of a parameter resulting from the fitting of image data on a pixel-by-pixel basis."^^xsd:string ;
+            rdfs:label "inplaneT1"^^xsd:string ;
 
-            obo:IAO_0000116 "To be discussed"^^xsd:string .
+            dct:description "inplaneT1 is a suffix name that denotes that the file contains a calculated map of proton-density values for the imaged region."^^xsd:string ;
 
-
-
-bids:T2map rdfs:label "T2 map"^^xsd:string ;
-
-            dct:description "T2 map"^^xsd:string ;
-
-	    rdfs:comment "This is related to nidm:0000052, which is nidm:Map, in NIDM-Results, but is unrelated to nidm:ContrastMap since the contrast in that case is related to fMRI condition contrasts, rather than an NMR physics-related concept.  It is related to nidm:ParameterEstimateMap from NIDM-Results in the sense that calculation of a parameter map from a set of images in which the contrast is changed by modifying an acquisition parameter related to a parameter of interest (in this case T2), is an estimate of a parameter resulting from the fitting of image data on a pixel-by-pixel basis."^^xsd:string ;
+            rdfs:subClassOf bids:BIDSSuffix ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
 
-###  http://purl.org/nidash/bids#Protondensitymap
+###  http://purl.org/nidash/bids#inplaneT2
 
-bids:Protondensitymap rdfs:label "Proton density map"^^xsd:string ;
+bids:inplaneT2 rdf:type owl:Class ;
 
-            dct:description "PDmap"^^xsd:string ;
+            rdfs:label "inplaneT2"^^xsd:string ;
 
-	    rdfs:comment "This is related to nidm:0000052, which is nidm:Map from NIDM-Results, but is unrelated to nidm:ContrastMap since the contrast in that case is related to fMRI condition contrasts, rather than an NMR physics-related concept.  It is related to nidm:ParameterEstimateMap from NIDM-Results in the sense that calculation of a parameter map from a set of images in which the contrast is changed by modifying an acquisition parameter related to a parameter of interest (in this case proton density), is an estimate of a parameter resulting from the fitting of image data on a pixel-by-pixel basis."^^xsd:string ;
+            dct:description "inplaneT2 is a suffix name that denotes that the file contains a calculated map of proton-density values for the imaged region."^^xsd:string ;
 
-            obo:IAO_0000116 "To be discussed"^^xsd:string .
-
-
-
-###  http://purl.org/nidash/bids#InplaneT1
-
-bids:InplaneT1 rdfs:label "Inplane T1"^^xsd:string ;
-
-            dct:description "T1-weighted anatomical image matched to functional acquisition"^^xsd:string ;
+            rdfs:subClassOf bids:BIDSSuffix ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
 
-###  http://purl.org/nidash/bids#InplaneT2
+###  http://purl.org/nidash/bids#defacemask
 
-bids:InplaneT2 rdfs:label "Inplane T2"^^xsd:string ;
+bids:defacemask rdf:type owl:Class ;
 
-            dct:description "T2-weighted anatomical image matched to functional acquisition"^^xsd:string ;
+            rdfs:label "defacemask"^^xsd:string ;
+
+            dct:description "deface is a suffix name that denotes that the file contains a a mask volume used in by the defacing algorithm."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
 
             obo:IAO_0000116 "To be discussed"^^xsd:string .
 
 
+
+###  http://purl.org/nidash/bids#sbref
+
+bids:sbref rdf:type owl:Class ;
+
+            rdfs:label "sbref"^^xsd:string ;
+
+            dct:description "sbref is a suffix name that denotes that the file contains single-band reference scans used in multiband imaging."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#phasediff
+
+bids:phasediff rdf:type owl:Class ;
+
+            rdfs:label "phasediff"^^xsd:string ;
+
+            dct:description "phasediff is a suffix name that denotes that the file contains phase difference information, used in processing field maps."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#fieldmap
+
+bids:fieldmap rdf:type owl:Class ;
+
+            rdfs:label "fieldmap"^^xsd:string ;
+
+            dct:description "fieldmap is a suffix name that denotes that the file contains field map data that has been generated on the MRI scanner."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#magnitude
+
+bids:magnitude rdf:type owl:Class ;
+
+            rdfs:label "magnitude"^^xsd:string ;
+
+            dct:description "magnitude is a suffix name that denotes that the file contains a volume containing magnitude data used in the processing of field maps."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#magnitude1
+
+bids:magnitude1 rdf:type owl:Class ;
+
+            rdfs:label "magnitude1"^^xsd:string ;
+
+            dct:description "magnitude1 is a suffix name that denotes that the file contains a volume containing the first magnitude data file (if more than one is acquired) used in the processing of field maps."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#magnitude2
+
+bids:magnitude2 rdf:type owl:Class ;
+
+            rdfs:label "magnitude2"^^xsd:string ;
+
+            dct:description "magnitude2 is a suffix name that denotes that the file contains a volume containing the second acquired magnitude data file (if more than one is acquired) used in the processing of field maps."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#phase1
+
+bids:phase1 rdf:type owl:Class ;
+
+            rdfs:label "phase1"^^xsd:string ;
+
+            dct:description "phase1 is a suffix name that denotes that the file contains phase information used in processing field maps."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+	    rdfs:comment "Used when, instead of a precomputed phase difference map, two separate phase maps are stored by the MRI scanner."^^xsd:string ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#phase2
+
+bids:phase2 rdf:type owl:Class ;
+
+            rdfs:label "phase2"^^xsd:string ;
+
+            dct:description "phase2 is a suffix name that denotes that the file contains phase information used in processing field maps."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+	    rdfs:comment "Used when, instead of a precomputed phase difference map, two separate phase maps are stored by the MRI scanner."^^xsd:string ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#epi
+
+bids:epi rdf:type owl:Class ;
+
+            rdfs:label "epi"^^xsd:string ;
+
+            dct:description "epi is a suffix name that denotes that the file contains inhomogeneity/deformation information used in processing field maps, which was acquired using the phase-encoding polarity (PEpolar) technique."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#events
+
+bids:events rdf:type owl:Class ;
+
+            rdfs:label "events"^^xsd:string ;
+
+            dct:description "events is a suffix name that denotes that the file contains a listing of the events used in the experimental protocol and their timing."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+	    obo:IAO_0000136 nidm:StimulusPresentationFile ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#stim
+
+bids:stim rdf:type owl:Class ;
+
+            rdfs:label "stim"^^xsd:string ;
+
+            dct:description "stim is a suffix name that denotes that the file contains signals relating to the stimulus."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSSuffix ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#BIDSEntity
+
+bids:BIDSEntity rdf:type owl:Class ;
+
+            rdfs:label "BIDS Entity"^^xsd:string ;
+
+            dct:description "BIDS Entity is a name that is one of the restricted set of terms used to encode metadata into a filename."^^xsd:string ;
+
+	    rdfs:comment "Note that a BIDS Entity is a key-value pair that is to be used in an order defined in the BIDS Specfication and is separated from the value by a dash. The "^^xsd:string ;
+	    
+	    rdfs:subClassOf sio:SIO_000116 ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#Subject
+
+bids:Subject rdf:type owl:Class ;
+
+            rdfs:label "Subject"^^xsd:string ;
+
+            dct:description "Subject is a BIDS entity name that refers to a person or animal participating in the study."^^xsd:string ;
+
+	    rdfs:comment "Used interchangeably with term Participant."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSEntity ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#Session
+
+bids:Session rdf:type owl:Class ;
+
+            rdfs:label "Session"^^xsd:string ;
+
+            dct:description "Session is a BIDS entity name that refers to a logical grouping of neuroimaging and behavioral data consistent across subjects."^^xsd:string ;
+
+	    rdfs:comment "Session can (but doesn't have to) be synonymous to a visit in a longitudinal study. In general, subjects will stay in the scanner during one session. However, for example, if a subject has to leave the scanner room and then be re-positioned on the scanner bed, the set of MRI acquisitions will still be considered as a session and match sessions acquired in other subjects. Similarly, in situations where different data types are obtained over several visits (for example fMRI on one day followed by DWI the day after) those can be grouped in one session. Defining multiple sessions is appropriate when several identical or similar data acquisitions are planned and performed on all -or most- subjects, often in the case of some intervention between sessions (e.g., training)."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSEntity ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#Task
+
+bids:Task rdf:type owl:Class ;
+
+            rdfs:label "Task"^^xsd:string ;
+
+            dct:description "Task is a BIDS entity name that refers to a set of structured activities performed by the participant."^^xsd:string ;
+
+	    rdfs:comment "Tasks are usually accompanied by stimuli and responses, and can greatly vary in complexity. For the purpose of this specification we consider the so-called resting state a task. In the context of brain scanning, a task is always tied to one data acquisition. Therefore, even if during one acquisition the subject performed multiple conceptually different behaviors (with different sets of instructions) they will be considered one (combined) task."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSEntity ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#Acquisition
+
+bids:Acquisition rdf:type owl:Class ;
+
+            rdfs:label "Acquisition"^^xsd:string ;
+
+            dct:description "Acquisition is a BIDS entity name that identifies data files as being acquired with the same scanning parameters"^^xsd:string ;
+
+	    rdfs:comment "Note that in the description of run, the BIDS specification says that: Run is a synonym of a data acquisition.  This is true in the sense that runs with the same acq value were acquired with the same acquisition parameters"^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSEntity ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#ContrastEnhancingAgent
+
+bids:ContrastEnhancingAgent rdf:type owl:Class ;
+
+            rdfs:label "Contrast Enhancing Agent"^^xsd:string ;
+
+            dct:description "Contrast Enhancing Agent is a BIDS entity name that is used to distinguish between runs that used different contrast agents."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSEntity ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+
+###  http://purl.org/nidash/bids#Reconstruction
+
+bids:Reconstruction rdf:type owl:Class ;
+
+            rdfs:label "Reconstruction"^^xsd:string ;
+
+            dct:description "Reconstruction is a BIDS entity name that identifies a data file as being related to a specific reconstruction algorithm or method."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSEntity ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#PhaseEncodingDirection
+
+bids:PhaseEncodingDirection rdf:type owl:Class ;
+
+            rdfs:label "Phase-Encoding Direction"^^xsd:string ;
+
+            dct:description "Phase-Encoding Direction is a BIDS entity name that identifies the phase-encoding application direction for a data file."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSEntity ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#Run
+
+bids:Run rdf:type owl:Class ;
+
+            rdfs:label "Run"^^xsd:string ;
+
+            dct:description "Run is a BIDS entity name that is used to identify between multiple acquisitions using the same acquisition parameters."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSEntity ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#CorrespondingModality
+
+bids:CorrespondingModality rdf:type owl:Class ;
+
+            rdfs:label "Corresponding Modality"^^xsd:string ;
+
+            dct:description "Corresponding Modality is a BIDS entity name that is used to identify the modality for defacing masksbetween multiple acquisitions using the same acquisition parameters."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSEntity ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#Echo
+
+bids:Echo rdf:type owl:Class ;
+
+            rdfs:label "Echo"^^xsd:string ;
+
+            dct:description "Echo is a BIDS entity name that is used to identify the echo number since the standard requires that multi-echo data is split into one echo per file."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSEntity ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#Recording
+
+bids:Recording rdf:type owl:Class ;
+
+            rdfs:label "Recording"^^xsd:string ;
+
+            dct:description "Recording is a BIDS entity name that is used to identify between multiple continuous recording files."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSEntity ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#Processed
+
+bids:Processed rdf:type owl:Class ;
+
+            rdfs:label "Processed"^^xsd:string ;
+
+            dct:description "Processed is a BIDS entity name that is used to identify the variant of a file that was the result of a particular processing performed on the device."^^xsd:string ;
+
+	    rdfs:comment "This is analagous to Reconstruction used for MRI data."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSEntity ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#Space
+
+bids:Space rdf:type owl:Class ;
+
+            rdfs:label "Space"^^xsd:string ;
+
+            dct:description "Space is a BIDS entity name that is used to indicate the way in which electrode positions are interpreted."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSEntity ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .
+
+
+
+###  http://purl.org/nidash/bids#Split
+
+bids:Split rdf:type owl:Class ;
+
+            rdfs:label "Split"^^xsd:string ;
+
+            dct:description "Split is a BIDS entity name that is used to identify cases in which data files are split into multiple parts due to their size."^^xsd:string ;
+
+            rdfs:subClassOf bids:BIDSEntity ;
+
+            obo:IAO_0000116 "To be discussed"^^xsd:string .

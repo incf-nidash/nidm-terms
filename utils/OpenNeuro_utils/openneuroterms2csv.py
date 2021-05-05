@@ -490,7 +490,6 @@ def phenotype_parser(i,path):
                                         tuple1 = list(zip(term_list,lower_term_list,d_s,pheno,partOf_list,isAbout_list,concept_list,jsonterm,jsonlongname,jsonlevels,jsonunits,termurl,termMin, termMax, termDer))
                                         df_tuple.extend(tuple1)
 
-
                     #look for tsv files in phenotype directory
                     for file in files:
                         if file.endswith('.tsv'):

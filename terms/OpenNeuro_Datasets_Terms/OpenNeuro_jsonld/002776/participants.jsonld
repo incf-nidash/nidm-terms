@@ -1,0 +1,72 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "age of the participant",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "assigned group",
+      "sourceVariable": "group",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "group1",
+            "value": "1"
+          },
+          {
+            "name": "group2",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0108556",
+        "label": "participant group"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "M"
+          },
+          {
+            "name": "female",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738439",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "assigned participant-id",
+      "sourceVariable": "participant_id",
+      "associatedWith": "NIDM"
+    }
+  ]
+}

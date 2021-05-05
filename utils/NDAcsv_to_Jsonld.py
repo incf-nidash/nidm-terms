@@ -173,17 +173,174 @@ def parseNotes(df_row,doc,context):
                         #assign text to an appropriate property
                         doc[context['@context']['unitLabel']] = string
 
+def rangeParser(row,doc,resDoc,context):
+
+    row = row['ValueRange']
+
+
+    if not pd.isnull(row):
+        print("\tFound NDA_ValueRange")
+
+
+        split_at_colon = row.split('::')
+
+
+        if len(split_at_colon) > 1:
+
+
+            split_at_semi_after_colon = split_at_colon[1].split(';')
+
+            if len (split_at_semi_after_colon) > 1:
+                resDoc[context['@context']['minValue']] = split_at_colon[0].rstrip().lstrip()
+                resDoc[context['@context']['maxValue']] = split_at_semi_after_colon[0].rstrip().lstrip()
+
+                doc[context['@context']['responseOptions']['@id']] = resDoc
+                return doc
+
+            elif len(split_at_semi_after_colon) == 1:
+                resDoc[context['@context']['minValue']] = split_at_colon[0].rstrip().lstrip()
+                resDoc[context['@context']['maxValue']] = split_at_colon[1].rstrip().lstrip()
+
+                doc[context['@context']['responseOptions']['@id']] = resDoc
+                return doc
+
+
+
+        elif len(split_at_colon) == 1:
+            split_at_semicolon = row.split(';')
+
+            #check if the value of the string is numerical value
+            for item in split_at_semicolon:
+                for c in item:
+                    if c.isdigit() is True and len(split_at_semicolon) == 2:
+                        ##set min and max values
+                        resDoc[context['@context']['minValue']] = split_at_semicolon[0].rstrip().lstrip()
+                        resDoc[context['@context']['maxValue']] = split_at_semicolon[1].rstrip().lstrip()
+
+                        doc[context['@context']['responseOptions']['@id']] = resDoc
+                        return doc
+
+
+                    else:
+                        #set list of strings to allowable values
+                        resDoc[context['@context']['allowableValues']] = split_at_semicolon
+                        doc[context['@context']['responseOptions']['@id']] = resDoc
+
+                        return doc
+
+
+
+
+
+
+
+def choicesParser(row, doc, resDoc,context):
+
+    row = row['Notes']
+
+    allowableValues = []
+
+    choices = []
+
+    choice = {}
+
+    if not pd.isnull(row):
+        print("\tFound NDA_Notes")
+
+        split_at_semicolon = row.split(';')
+
+        if len(split_at_semicolon) > 1:
+
+            for item in split_at_semicolon:
+                item.rstrip()
+                item.lstrip()
+
+                split_at_equal = item.split('=')
+
+                if len(split_at_equal) == 1:
+                    resDoc[context['@context']['allowableValues']] = split_at_semicolon
+                    doc[context['@context']['responseOptions']['@id']] = resDoc
+                    return doc
+
+                elif len(split_at_equal) > 1:
+
+                    choice[context['@context']['name']] = split_at_equal[0].rstrip().lstrip()
+                    choice[context['@context']['value']] = split_at_equal[1].rstrip().lstrip()
+
+                    choices.append(choice)
+                    choice = {}
+
+        elif len(split_at_semicolon) == 1:
+
+            split_at_single_equal = split_at_semicolon[0].split('=')
+
+            if len(split_at_single_equal) > 1:
+
+                choice[context['@context']['name']] = split_at_single_equal[0].rstrip().lstrip()
+                choice[context['@context']['value']] = split_at_single_equal[1].rstrip().lstrip()
+
+                resDoc[context['@context']['choices']] = choice
+                doc[context['@context']['responseOptions']['@id']] = resDoc
+
+            elif len(split_at_single_equal) == 1:
+                doc[context['@context']['comment']] = split_at_single_equal[0]
+                return doc
+
+
+
+        ##Add an if statement to test if choices has a single dict or and array and assign to response options
+        if len(choices) == 0:
+            return doc
+        elif len(choices) == 1:
+            resDoc[context['@context']['choices']] = choices[0]
+            doc[context['@context']['responseOptions']['@id']] = resDoc
+        elif len(choices) > 1:
+            resDoc[context['@context']['choices']] = choices
+            doc[context['@context']['responseOptions']['@id']] = resDoc
+
+        return doc
+
+
+
+
+
+def resOptions(row,doc,context):
+
+    resDoc = {}
+
+    #get element's dataType
+    if not pd.isnull(row['DataType']):
+        print("\tFound NDA_DataType")
+
+        if str(row['DataType']) == 'Integer':
+            resDoc[context['@context']['valueType']] = "xsd:integer"
+        elif str(row['DataType']) == 'String':
+            resDoc[context['@context']['valueType']] = "xsd:string"
+        elif str(row['DataType']) == 'Date':
+            resDoc[context['@context']['valueType']] = "xsd:date"
+        elif str(row['DataType']) == 'Float':
+            resDoc[context['@context']['valueType']] = "xsd:decimal"
+
+
+    choicesParser(row,doc,resDoc,context)
+
+    rangeParser(row,doc,resDoc,context)
+
+    if bool(resDoc) is False:
+        return doc
+    elif bool(resDoc) is True:
+        doc[context['@context']['responseOptions']['@id']] = resDoc
+        return doc
 
 
 
 def main(argv):
-    parser = ArgumentParser(description='This program will load in a custom Excel spreadsheet and create separate'
-                                        'JSON files for each term in Column D, description in Column E, URL in'
-                                        'Column F, and will add (as placeholder) columns A and B as isAbout.'
-                                        'See https://docs.google.com/spreadsheets/d/1_hUJQRcMDIzWYTsVLDEoipTGrFHytXEaVBlrheVRlJA/edit')
+    parser = ArgumentParser(description='This program will load in an NDA data dictionary as an Excel spreadsheet and create separate'
+                                        'JSONLD files for each term. It will also create a single jsonld file that combines all of the terms.')
 
     parser.add_argument('-csv', dest='csv_file', required=True, help="Path to csv file to convert")
-    parser.add_argument('-out', dest='output_dir', required=True, help="Output directory to save JSON files")
+    parser.add_argument('-outOne', dest='output_dir1', required=True, help="Output directory to save the individual JSONLD files")
+    parser.add_argument('-outTwo', dest='output_dir2', required=True, help="Output directory to save the single JSONLD file")
     args = parser.parse_args()
 
     #open CSV file and load into
@@ -212,61 +369,57 @@ def main(argv):
     with open(context_file) as context_data:
         context = json.load(context_data)
 
+
    # starting a new python dictionary
     doc = {}
     # loop through all rows and grab info if exists
     for (i,row) in df.iterrows():
-        print("starting iteration...")
-        print("processing term: %s" %row['ElementName'])
+
+        #skip subjectkey ElementName
+        if row['ElementName'] == 'subjectkey':
+            continue
+        else:
+
+            print("starting iteration...")
+            print("processing term: %s" %row['ElementName'])
 
 
+            # add type as schema.org/DefinedTerm
+            doc['@type'] = context['@context']['CommonDataElement']
+            doc[context['@context']['label']] = row['ElementName']
 
-        # add type as schema.org/DefinedTerm
-        doc['@type'] = context['@context']['DefinedTerm']
-        doc[context['@context']['label']] = row['ElementName']
-
-        if not pd.isnull(row['ElementDescription']):
+            if not pd.isnull(row['ElementDescription']):
                 print("\tFound NDA_Definition")
                 doc[context['@context']['description']] = str(row['ElementDescription'])
-        else:
-            continue
-        if not pd.isnull(row['DataType']):
-                print("\tFound NDA_Definition")
-                if str(row['DataType']) == 'Integer':
-                    doc[context['@context']['valueType']] = "xsd:int"
-                elif str(row['DataType']) == 'String':
-                    doc[context['@context']['valueType']] = "xsd:string"
-                elif str(row['DataType']) == 'Date':
-                    doc[context['@context']['valueType']] = "xsd:date"
-                elif str(row['DataType']) == 'Float':
-                    doc[context['@context']['valueType']] = "xsd:decimal"
-                elif str(row['DataType']) == 'GUID':
-                    doc[context['@context']['valueType']] = "xsd:string"
+
+
+            resOptions(row,doc,context)
 
 
 
 
-        parseRV(row,doc,context)
 
-        #parseNotes(row,doc,context)
+            #parseRV(row,doc,context)
 
-
-        # placeholder for additional properties that need to be included in CDEs
-        # doc[context['@context']["unitCode"]] = 'undefined'
-        # doc[context['@context']["unitLabel"]] = 'undefined'
-        # doc[context['@context']["provenance"]] = 'undefined'
-        # doc[context['@context']["ontologyConceptID"]] = 'undefined'
-        # doc[context['@context']["subtypeCDEs"]] = 'undefined'
-        # doc[context['@context']["supertypeCDEs"]] = 'undefined'
+            #parseNotes(row,doc,context)
 
 
-       # write JSON file out
-        compacted = jsonld.compact(doc,url)
-        with open (join(args.output_dir,row['ElementName'].replace("/","_")+".jsonld"),'w+') as outfile:
-            json.dump(compacted,outfile,indent=2)
+            # placeholder for additional properties that need to be included in CDEs
+            # doc[context['@context']["unitCode"]] = 'undefined'
+            # doc[context['@context']["unitLabel"]] = 'undefined'
+            # doc[context['@context']["provenance"]] = 'undefined'
+            # doc[context['@context']["ontologyConceptID"]] = 'undefined'
+            # doc[context['@context']["subtypeCDEs"]] = 'undefined'
+            # doc[context['@context']["supertypeCDEs"]] = 'undefined'
 
-        print("size of dict: %d" %sys.getsizeof(doc))
-        doc.clear()
+
+           # write JSON file out
+            compacted = jsonld.compact(doc,url)
+            with open (join(args.output_dir1,row['ElementName'].replace("/","_")+".jsonld"),'w+') as outfile:
+                json.dump(compacted,outfile,indent=2)
+
+            print("size of dict: %d" %sys.getsizeof(doc))
+            doc.clear()
 
 
 

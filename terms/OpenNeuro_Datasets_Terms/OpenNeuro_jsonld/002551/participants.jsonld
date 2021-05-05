@@ -1,0 +1,86 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "Breathing condition",
+      "sourceVariable": "breathing",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": {
+          "name": "Free-breathing",
+          "value": "f"
+        },
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0487479",
+        "label": "work of breathing"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Radio-frequency coil system",
+      "sourceVariable": "coil",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": {
+          "name": "Bruker Cryoprobe",
+          "value": "Cryo"
+        },
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Field strength of the MRI system",
+      "sourceVariable": "field",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "C57Bl/6J mice",
+      "sourceVariable": "gender",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Male",
+            "value": "m"
+          },
+          {
+            "name": "Female",
+            "value": "f"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738437",
+        "label": "gender"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Sedation protocol",
+      "sourceVariable": "sedation",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": {
+          "name": "Awake (no sedation)",
+          "value": "Awake"
+        },
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "dataset identification",
+      "sourceVariable": "dataset",
+      "associatedWith": "NIDM"
+    }
+  ]
+}
