@@ -12,8 +12,8 @@ import urllib.request as url
 from urllib.parse import urlparse
 import tempfile
 from cognitiveatlas.api import get_concept, get_disorder
-from nidm.experiment.Utils import fuzzy_match_terms_from_cogatlas_json
-from rapidfuzz import fuzz
+#from nidm.experiment.Utils import fuzzy_match_terms_from_cogatlas_json
+#from rapidfuzz import fuzz
 
 INTERLEX_BASE_URL = "https://scicrunch.org/api/1/ilx/search/curie/ILX:"
 CONTEXT = "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld"
@@ -29,6 +29,7 @@ def write_jsonld(doc,output_dir):
     :return:
     """
 
+    label = ''
 
     # save JSON-LD file
     compacted = jsonld.compact(doc, CONTEXT)
@@ -44,12 +45,23 @@ def write_jsonld(doc,output_dir):
 
     if 'label' not in compacted:
         print(compacted)
+    ## Added by nqueder
+    # exclude any spaces or commas in the term's label and assign it to be the file's name
+    else:
+        label = compacted['label']
+        label = label.replace(" ","")
+        label = label.replace(",","")
+        label = label.replace("(","")
+        label = label.replace(")","")
+        print(label)
+
     try:
         #print("writing output jsonld file: %s" %compacted['label'])
-        with open(join(output_dir,compacted['label'] + '.jsonld'), 'w') as outfile:
+        with open(join(output_dir,label + '.jsonld'), 'w') as outfile:
             json.dump(compacted, outfile, indent=2)
     except:
         print(doc)
+
 
 def get_cogatlas_task_properties(concept_url, concept_label, context):
     """
