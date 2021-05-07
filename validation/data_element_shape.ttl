@@ -13,7 +13,6 @@ nidm:PersonalDataElementShape a sh:NodeShape ;
 
 	sh:property [ sh:datatype rdfs:langString ;
             sh:maxCount 1 ;
-            sh:minCount 1 ;
             sh:path dct:description ],
 
         [ sh:datatype xsd:string ;
@@ -48,7 +47,7 @@ nidm:CommonDataElementShape a sh:NodeShape ;
     sh:closed true ;
 	sh:ignoredProperties ( rdfs:type ) ;
 
-	sh:property [ sh:datatype rdfs:langString ;
+	sh:property [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path dct:description ],
@@ -61,10 +60,13 @@ nidm:CommonDataElementShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:path schema:url ] ,
 
-        [ sh:datatype rdfs:langString ;
+        [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:minCount 1;
             sh:path rdfs:label ] ,
+
+        [ sh:datatype xsd:string ;
+            sh:path schema:version ],
 
         [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
@@ -81,11 +83,11 @@ nidm:CommonDataElementShape a sh:NodeShape ;
 
     sh:targetClass nidm:CommonDataElement .
 
-nidm:ConceptsShape a sh:NodeShape ;
+nidm:ConceptShape a sh:NodeShape ;
     sh:closed true ;
-	sh:ignoredProperties ( rdfs:type ) ;
+    sh:ignoredProperties ( rdfs:type ) ;
 
-	sh:property [ sh:datatype rdfs:langString ;
+	sh:property [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path dct:description ],
@@ -98,7 +100,7 @@ nidm:ConceptsShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:path schema:url ] ,
 
-        [ sh:datatype rdfs:langString ;
+        [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:path rdfs:label ] ,
 
@@ -106,13 +108,19 @@ nidm:ConceptsShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:path interlex:ilx_0383246 ] ,
 
+        [ sh:datatype xsd:string ;
+            sh:path schema:version ],
+
+        [ sh:nodeKind sh:IRI ;
+            sh:path interlex:ilx_0770184 ] ,
+
         [ sh:node nidm:IsAboutShape ;
             sh:path interlex:ilx_0381385 ],
 
-        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype rdfs:langString ] ) ;
+        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
     		sh:path interlex:ilx_0739289 ] ;
 
-    sh:targetClass nidm:Concepts .
+    sh:targetClass nidm:Concept .
 
 nidm:IsAboutShape a sh:NodeShape ;
     sh:closed true ;
@@ -131,6 +139,7 @@ reproschema:ResponseOptionsShape a sh:NodeShape ;
             sh:path reproschema:multipleChoice ],
 
         [ sh:nodeKind sh:IRI ;
+          sh:minCount 1 ;
             sh:path reproschema:valueType ],
 
         [ sh:datatype xsd:integer ;

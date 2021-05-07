@@ -21,18 +21,11 @@
 			"@id": "http://www.w3.org/2002/07/owl#",
 			"@prefix": true
 		},
-		"schema": {
-			"@id": "http://schema.org/",
-			"@prefix": true
-		},
 		"prov": {
 			"@id": "http://www.w3.org/ns/prov#",
 			"@prefix": true
 		},
-		"rs": {
-			"@id": "https://schema.repronim.org/",
-			"@prefix": true
-		},
+		"reproschema": "http://schema.repronim.org/",
 		"comment": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
 		"sourceVariable": "http://uri.interlex.org/ilx_0383246",
 		"label": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
@@ -47,15 +40,27 @@
 		},
 		"closeMatch": "https://www.w3.org/TR/2009/REC-skos-reference-20090818#closeMatch",
 		"url": {
-			"@id": "http://schema.org/url"
+			"@id": "http://schema.org/url",
+			"@type": "@id"
 		},
 		"DataElement": "http://purl.org/nidash/nidm#DataElement",
 		"PersonalDataElement": "http://purl.org/nidash/nidm#PersonalDataElement",
 		"CommonDataElement": "http://purl.org/nidash/nidm#CommonDataElement",
 		"Concept": "http://purl.org/nidash/nidm#Concept",
 		"candidateTerms": "http://purl.org/nidash/nidm#candidateTerms",
-		"unitCode": "http://schema.org/unitCode",
-		"valueType": "http://uri.interlex.org/ilx_0382583",
+		"valueType": {
+            "@id": "reproschema:valueType",
+            "@type": "@id",
+            "@container": "@set"
+        },
+		"unitCode": {
+			"@id": "schema:unitCode",
+			"@container": "@set"
+		},
+		"unitOptions": {
+			"@id": "reproschema:unitOptions",
+			"@container": "@set"
+		},
 		"datumType": "http://purl.obolibrary.org/obo/IAO_0000109",
 		"measureOf": "http://uri.interlex.org/ilx_0381389",
 		"minValue": "http://schema.org/minValue",
@@ -69,16 +74,22 @@
 			"@id": "http://uri.interlex.org/ilx_0770183"
 		},
 		"supertypeCDEs": {
-			"@id": "http://uri.interlex.org/ilx_0770184"
+			"@id": "http://uri.interlex.org/ilx_0770184",
+			"@type": "@id",
+			"@container": "@set"
 		},
 		"relatedConcepts": "http://uri.interlex.org/ilx_0770185",
-		"choices": "http://schema.org/itemListElement",
+		"choices": {
+			"@id": "reproschema:choices"
+		},
 		"derivative": "http://uri.interlex.org/ilx_0739337",
 		"citation": "http://schema.org/citation",
 		"associatedWith": "http://uri.interlex.org/ilx_0739289",
 		"responseOptions": {
-			"@id": "https://schema.repronim.org/responseOptions"
-		},
+            "@id": "reproschema:responseOptions",
+            "@container": "@set",
+            "@type": "@id"
+        },
 		"name": "http://schema.org/name",
 		"value": "http://schema.org/value",
 		"ilxId": "https://scicrunch.org/nidm-terms",
@@ -92,6 +103,6 @@
 				"@graph"
 			]
 		},
-		"version" : "https://schema.org/version"
+		"version" : "http://schema.org/version"
 	}
 }
