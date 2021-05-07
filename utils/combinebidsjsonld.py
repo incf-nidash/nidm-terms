@@ -190,9 +190,7 @@ def main(argv):
 
     compacted = jsonld.compact(main_dict,'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld')
 
-
-    print(compacted)
-
+    print('single jsonld file has been successfully created in', args.outputDir)
 
     ## Added my Nazek Queder
     # if jsonld is provided modify and save in the same file else rewrite the file

@@ -145,9 +145,19 @@ def main(argv):
                     url, fragment = urldefrag(so[0])
                     compacted['label'] = fragment
 
+            ##Added by nqueder
+            # prevent the file name from having spaces and/or commas
+            label = compacted['label']
+            label = label.replace(" ","")
+            label = label.replace(",","")
+            label = label.replace("(","")
+            label = label.replace(")","")
+            label = label.replace("/","")
+            label = label.replace("'","")
+            print(label)
+
             compacted['associatedWith'] = "NIDM"
-            with open (join(args.output_dir,compacted['label'].replace(" ","_").replace("/","_")
-                                            +".jsonld"),'w') as outfile:
+            with open (join(args.output_dir,label+".jsonld"),'w') as outfile:
                 json.dump(compacted,outfile,indent=2)
 
     # Added code to now combine the separate json-ld files into a single file
