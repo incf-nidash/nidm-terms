@@ -13,7 +13,7 @@
       "description": "Tool used to export results produced by a neuroimaging software (SPM, FSL, AFNI...) into a NIDM-Results archive.",
       "candidateTerms": "NIDM_0000165",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#SoftwareAgent",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#SoftwareAgent",
       "label": "NIDM-Results Exporter"
     },
     {
@@ -21,7 +21,7 @@
       "description": "Set of gamma probability density functions.",
       "candidateTerms": "NIDM_0000030",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000036",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
       "label": "Gamma Basis Set"
     },
@@ -65,7 +65,7 @@
       "description": "A pulse sequence is a collection of commands sent to the magnetic resonance imaging or nuclear magnetic resonance hardware to control the excitation of the subject or sample and the acquisition of data.",
       "candidateTerms": "PulseSequence",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "Pulse Sequence"
     },
     {
@@ -100,7 +100,7 @@
       "@type": "owl:Class",
       "candidateTerms": "test-instrument",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
       "label": "test-instrument"
     },
     {
@@ -129,7 +129,7 @@
       "description": "A File is an ordered string of zero or more bytes, where the first byte is at the beginning of the file and the last byte at the end of the File. Files are identified by a unique File ID and may by written, read and/or deleted.",
       "candidateTerms": "dicom_xxxx0070",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000602",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000602",
       "label": "File",
       "sameAs": "http://semanticscience.org/resource/SIO_000396"
     },
@@ -222,7 +222,7 @@
       "description": "The field within a Data Element that contains the Value(s) of that Data Element.",
       "candidateTerms": "dicom_xxxx0060",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "Value Field"
     },
     {
@@ -300,7 +300,7 @@
       "description": "The criterion used to characterize two voxels as 'connected'. In three dimensions voxels that are connected can share a voxel face (6-connected), face or edge (18-connectec), or face, edge, or corner (26-connected).",
       "candidateTerms": "NIDM_0000080",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000012",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000012",
       "label": "Voxel Connectivity Criterion"
     },
     {
@@ -442,7 +442,7 @@
       "description": "Parameter estimated as constant over a entire set of elements considered (e.g. those in the analysis mask).",
       "candidateTerms": "NIDM_0000072",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000071",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000071",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/194",
       "label": "Constant Parameter"
     },
@@ -451,7 +451,7 @@
       "description": "A 'Drift Model' in which the drifts are modeled by a Discrete Cosine Transform basis added to regression model",
       "candidateTerms": "SPM_0000002",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000087",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000087",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/298",
       "label": "Discrete Cosine Transform basis Drift Model"
     },
@@ -625,7 +625,7 @@
       "description": "A registry of DICOM Data Elements that assigns a unique tag, a name, value characteristics, and semantics to each Data Element. Data Element A unit of information as defined by a single entry in the data dictionary.",
       "candidateTerms": "dicom_xxxx0006",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000090",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000090",
       "label": "Data Dictionary"
     },
     {
@@ -640,7 +640,7 @@
       "description": "The process of testing the joint significance of multiple effects to infer that some (not necessarily all) of the respective effects are real (i.e. their null hypotheses are false). If there are K effects considered, the 'partial Conjunction Degree' u is the number non-null effects allowed as part of partial conjunction null hypothesis; if the partial conjunction null is rejected, it may be inferred that u+1 or more effects are real. The case of u=K-1 corresponds to proper \"'Conjunction Inference'\", while the case of u=0 corresponds to \"global null\" conjunction test. See [Friston et al. (2005). Conjunction revisited. NeuroImage, 25(3), 661-7.](http://dx.doi.org/10.1016/j.neuroimage.2005.01.013).",
       "candidateTerms": "SPM_0000005",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000049",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000049",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/294",
       "label": "Partial Conjunction Inference"
     },
@@ -739,7 +739,7 @@
       "description": "Matlab m file for the export of SPM results to NIDM-Results. Source available at: http://www.fil.ion.ucl.ac.uk/spm/download/toolbox/NIDM/spm_nidm.zip/.",
       "candidateTerms": "NIDM_0000168",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000165",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000165",
       "label": "spm_results_nidm"
     },
     {
@@ -782,7 +782,7 @@
       "description": "Steady State Free Precession is a magnetic resonance imaging acquisition method that uses the steady state magnetization, low flip angle gradient recalled echoes and short repetition times to form images.",
       "candidateTerms": "SteadyStateFreePrecession",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Steady State Free Precession"
     },
     {
@@ -797,7 +797,7 @@
       "description": "A task is an activity that is performed by a subject to elucidate some aspect of human behavior or underlying process.",
       "candidateTerms": "Task",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Activity",
       "label": "Task"
     },
     {
@@ -890,7 +890,7 @@
       "description": "An Information Object Definition that represents parts of several entities in the DICOM Application Model. Such an IOD includes Attributes that are not inherent in the Real-World Object that the IOD represents but rather are inherent in related Real-World Objects. Derived image an image in which the pixel data was constructed from pixel data of one or more other images (source images).",
       "candidateTerms": "dicom_xxxx0018",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000136",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000136",
       "label": "Composite IOD"
     },
     {
@@ -1046,7 +1046,7 @@
       "description": "A numerical value that establishes a lower bound on cluster-sizes and can be specified by the user in terms of FWER-corrected p-value, uncorrected p-value or minimum cluster size in voxels",
       "candidateTerms": "NIDM_0000026",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000162",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000162",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/pull/273",
       "label": "Extent Threshold"
     },
@@ -1097,7 +1097,7 @@
       "description": "Reference space corresponding to the subject brain (no spatial normalization applied).",
       "candidateTerms": "NIDM_0000077",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000081",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000081",
       "comment": [
         "Used in FSL and SPM un-registered data.",
         "Discussed at https://github.com/incf-nidash/nidm/issues/284"
@@ -1144,7 +1144,7 @@
       "description": "A sequential component of a protocol, consisting of all the parameters necessary to perform that component of the protocol.",
       "candidateTerms": "dicom_xxxx0026",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000091",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000091",
       "label": "Protocol Element"
     },
     {
@@ -1179,7 +1179,7 @@
       "@type": "owl:Class",
       "candidateTerms": "neuropsychological-instrument",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#psychological-instrument",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#psychological-instrument",
       "label": "neuropsychological-instrument"
     },
     {
@@ -1187,7 +1187,7 @@
       "description": "A [stato:design matrix](http://purl.obolibrary.org/obo/STATO_0000289), with additional neuroimaging attributes, including HRF and drift for first-level fMRI models",
       "candidateTerms": "NIDM_0000019",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "ub2bL1434C35",
+      "http://uri.interlex.org/ilx_0770184": "ub2bL1434C35",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/274",
       "label": "Design Matrix"
     },
@@ -1364,7 +1364,7 @@
       "@type": "owl:Class",
       "candidateTerms": "experimental-psychology-instrument",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#psychological-instrument",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#psychological-instrument",
       "label": "experimental-psychology-instrument"
     },
     {
@@ -1404,7 +1404,7 @@
       "description": "Proton density weighted is a image contrast type in magnetic resonance imaging in which differences in voxel intensity reflect underlying differences in the number of protons in those voxels.",
       "candidateTerms": "ProtonDensityWeighted",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageContrastType",
       "label": "Proton Density Weighted"
     },
     {
@@ -1466,7 +1466,7 @@
       "@type": "owl:Class",
       "candidateTerms": "behavioural-instrument",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
       "label": "behavioural-instrument"
     },
     {
@@ -1474,7 +1474,7 @@
       "description": "Pulsed arterial spin labeling (pCASL)is a magnetic resonance imaging acquisition method that inverts the magnetization of flowing spins in a slab of tissue below the imaging slice to measure perfusion.",
       "candidateTerms": "PulsedArterialSpinLabeling",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ArterialSpinLabeling",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ArterialSpinLabeling",
       "label": "Pulsed Arterial Spin Labeling"
     },
     {
@@ -1566,7 +1566,7 @@
       "description": "Intracellular Electrophysiology Recording is an activity in which electrical measurements of the interior cell environment are made.",
       "candidateTerms": "IntracellularElectrophysiologyRecording",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ElectrophysiologyRecording",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ElectrophysiologyRecording",
       "label": "Intracellular Electrophysiology Recording"
     },
     {
@@ -1574,7 +1574,7 @@
       "description": "Electromyography (EMG) is an electrophysiological acquisition method in which the electrical activity of the muscles is measured using either surface or inserted electrodes.",
       "candidateTerms": "Electromyography",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Electromyography"
     },
     {
@@ -1588,7 +1588,7 @@
       "@type": "owl:Class",
       "candidateTerms": "coded-variable",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#instrument-variable",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#instrument-variable",
       "label": "coded-variable"
     },
     {
@@ -1729,7 +1729,7 @@
       "description": "Re-use \"two tailed test\" from STATO",
       "candidateTerms": "NIDM_0000079",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "label": "Two Tailed Test",
       "sameAs": "http://purl.obolibrary.org/obo/STATO_0000287"
     },
@@ -1906,7 +1906,7 @@
       "description": "Linear attenuation coefficient is an image contrast type in which differences in voxel intensity reflect differences in the density and atomic number of the sample.",
       "candidateTerms": "LinearAttenuationCoefficient",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageContrastType",
       "label": "Linear Attenuation Coefficient"
     },
     {
@@ -2119,7 +2119,7 @@
       "description": "A component of a Value Field. A Value Field may consist of one or more of these components.",
       "candidateTerms": "dicom_xxxx0059",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000015",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000015",
       "label": "Value"
     },
     {
@@ -2148,7 +2148,7 @@
       "description": "A current clamp is an intracellular electrophysiology acquisition method in which current is injected into a cell and the voltage generated by the cell is recorded.",
       "candidateTerms": "CurrentClamp",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Current Clamp"
     },
     {
@@ -2226,7 +2226,7 @@
       "description": " Inside-out spiral is a k-space traversal scheme in which the path along which magnetic resonance imaging k-space data is acquired is in the shape of a spiral and the data at the center of k-space is acquired first.",
       "candidateTerms": "Inside-outSpiral",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#k-spaceTraversalScheme",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#k-spaceTraversalScheme",
       "label": "Inside-out Spiral"
     },
     {
@@ -2255,7 +2255,7 @@
       "description": "A subject is a role for an agent (either living or non-living) which is characterized by being the object of study in an acquisition activity.",
       "candidateTerms": "Subject",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Role",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Role",
       "label": "Subject"
     },
     {
@@ -2312,7 +2312,7 @@
       "description": "A data acquisition device is a device that collects a packet or stream of analog or digital information from an entity.",
       "candidateTerms": "DataAcquisitionDevice",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000956",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000956",
       "label": "Data Acquisition Device"
     },
     {
@@ -2320,7 +2320,7 @@
       "description": "Electrocardiography (ECG) is an electrophysiological acquisition method in which electrodes placed on the skin measure the electrical activity of the heart.",
       "candidateTerms": "Electrocardiography",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Electrocardiography"
     },
     {
@@ -2427,7 +2427,7 @@
       "description": "Diffusion tensor is an image usage type that denotes that the acquisition object collected can be used to construct the diffusion tensor of the imaged tissue.",
       "candidateTerms": "DiffusionTensor",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageUsageType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageUsageType",
       "label": "Diffusion Tensor"
     },
     {
@@ -2442,7 +2442,7 @@
       "description": "Quantitative susceptibility mapping is a magentic resonance imaging image-usage type in which differences in voxel intensity reflect quantitative differences magnetic susceptibilty of the underlying sample.",
       "candidateTerms": "QuantitativeSusceptibilityMapping",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageUsageType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageUsageType",
       "label": "Quantitative Susceptibility Mapping"
     },
     {
@@ -2795,7 +2795,7 @@
       "description": "An acquisition object is an entity that is gathered from a subject during an acquisition activity.",
       "candidateTerms": "AcquisitionObject",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "label": "Acquisition Object"
     },
     {
@@ -2803,7 +2803,7 @@
       "description": "Electrooculography (EOG) is an electrophysiological acquisition method in which the resting potential between the cornea of the eye and Bruch's membrance is measured.",
       "candidateTerms": "Electrooculography",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Electrooculography"
     },
     {
@@ -3049,7 +3049,7 @@
       "description": "'Hemodynamic Response Function' which is a gamma probability density function.",
       "candidateTerms": "NIDM_0000031",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000035",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000035",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
       "label": "Gamma HRF"
     },
@@ -3086,7 +3086,7 @@
       "description": "An Information Object Definition (IOD) that represents a single entity in the DICOM Application Model. Such an IOD includes Attributes that are only inherent in the Real-World Object that the IOD represents.",
       "candidateTerms": "dicom_xxxx0025",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000136",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000136",
       "label": "Normalized IOD"
     },
     {
@@ -3159,7 +3159,7 @@
       "description": "The container for a single Pixel Sample Value that may include unused bits. The size of a Pixel Cell shall be specified by the Bits Allocated (0028, 0100) Data Element.",
       "candidateTerms": "dicom_xxxx0047",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000015",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000015",
       "label": "Pixel Cell"
     },
     {
@@ -3264,7 +3264,7 @@
       "description": "A File-set is a collection of DICOM Files (and possibly non-DICOM Files) that share a common naming space within which File IDs are unique.",
       "candidateTerms": "dicom_xxxx0074",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "File-set"
     },
     {
@@ -3279,7 +3279,7 @@
       "description": "Angiography is an acquisition method that visualizes the venus and arterial systems of the body.",
       "candidateTerms": "Angiography",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "comment": "Angiography is a general term for a method that exists in several image-based modalities such as magnetic resonance imaging.",
       "label": "Angiography"
     },
@@ -3360,7 +3360,7 @@
       "description": "A behavioral instrument is a instrument usage type that signifies that the type of data to be collected by the instrument is behaviorally-related data.",
       "candidateTerms": "BehavioralInstrument",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#InstrumentUsageType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#InstrumentUsageType",
       "label": "Behavioral Instrument"
     },
     {
@@ -3552,7 +3552,7 @@
       "description": "A receive coil is a data acquisition device used in nuclear magnetic resonance and magnetic resonance imaging to receive the signal from the sample. ",
       "candidateTerms": "ReceiveCoil",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
       "label": "Receive Coil"
     },
     {
@@ -3652,7 +3652,7 @@
       "description": "Phase is a calculated parameter that measures the number of periods accumulated by a variable during an evolution duration.",
       "candidateTerms": "Phase",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#CalculatedParameter",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#CalculatedParameter",
       "comment": "In MRI the acquired signal is in the form of a magnitude and phase that are then combined to form an image. In some applications, such as susceptibility-weighted imaging, the phase map is used to enhance the final image.",
       "label": "Phase"
     },
@@ -3745,7 +3745,7 @@
       "description": "T2 star weighted is an image contrast type in which differences in voxel intensity reflect differences in the spin-spin relaxation time  of the probe as well as the field inhomogeneities in the underlying sample.",
       "candidateTerms": "T2StarWeighted",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageContrastType",
       "label": "T2 Star Weighted"
     },
     {
@@ -3788,7 +3788,7 @@
       "description": "A 'Binary Map' representing the exact set of elements (e.g., pixels, voxels, vertices, and faces) in which an activity was performed (e.g. the mask map generated by the model parameter estimation activity represents the exact set of voxels in which the mass univariate model was estimated) and/or restraining the space in which an activity was performed (e.g. the mask map used by 'Inference')",
       "candidateTerms": "NIDM_0000054",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000004",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000004",
       "comment": "Discussed at: https://github.com/incf-nidash/nidm/pull/258 and https://github.com/incf-nidash/nidm/issues/155",
       "label": "Mask Map"
     },
@@ -3867,7 +3867,7 @@
       "description": "Arterial spin labeling is a magnetic resonance imaging acquisition method that measures perfusion using the flow of saturated blood into a predefined area by comparing the image intensity obtained in the slice with and without the saturation pulse.",
       "candidateTerms": "ArterialSpinLabeling",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Arterial Spin Labeling"
     },
     {
@@ -3973,7 +3973,7 @@
       "description": "A structured description of a service that is supported by cooperating DICOM Applications using specific DICOM Commands acting on a specific class of Information Object.",
       "candidateTerms": "dicom_xxxx0013",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000136",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000136",
       "label": "Service Class"
     },
     {
@@ -3995,7 +3995,7 @@
       "description": "The criterion used to characterize two voxels, pixels or vertices as 'connected'.",
       "candidateTerms": "NIDM_0000012",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Discussed in https://github.com/incf-nidash/nidm/pull/201",
       "label": "Connectivity Criterion"
     },
@@ -4046,7 +4046,7 @@
       "description": "An Application Entity that creates the DICOMDIR File (see Section 8.6) and zero or more DICOM Files.",
       "candidateTerms": "dicom_xxxx0075",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Agent",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Agent",
       "label": "File-set Creator"
     },
     {
@@ -4166,7 +4166,7 @@
       "description": "Voltage clamp is an intracellular electrophysiological acquisition method in in which the cell membrane potential is fixed to a set value and the ionic current that crosses the cell membrane at that potential is measured.",
       "candidateTerms": "VoltageClamp",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Voltage Clamp"
     },
     {
@@ -4174,7 +4174,7 @@
       "description": "An acquisition modality is a description of the general type of experiment that was used to gather data from a subject.",
       "candidateTerms": "AcquisitionModality",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionObjectQuality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionObjectQuality",
       "label": "Acquisition Modality"
     },
     {
@@ -4425,7 +4425,7 @@
       "description": "Statistical 'Inference' is a process of drawing conclusions following data analysis using statistical methods (statistical tests) and evaluating whether to reject or accept null hypothesis. (definition from STATO).",
       "candidateTerms": "NIDM_0000049",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Activity",
       "label": "Inference",
       "sameAs": "http://purl.obolibrary.org/obo/STATO_0000299"
     },
@@ -4483,7 +4483,7 @@
       "description": "Parameter whose estimation at a given element does not depend on any other element.",
       "candidateTerms": "NIDM_0000073",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000071",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000071",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/194",
       "label": "Independent Parameter"
     },
@@ -4519,7 +4519,7 @@
       "@type": "owl:Class",
       "candidateTerms": "NIDM_0000024",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.obolibrary.org/obo/STATO_0000346",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.obolibrary.org/obo/STATO_0000346",
       "comment": [
         "Under discussion at https://github.com/ISA-tools/stato/issues/28",
         "Under gaussianity assumption this is equivalent to compound symmetry but not in general."
@@ -4642,7 +4642,7 @@
       "@type": "owl:Class",
       "candidateTerms": "experimental-psychology-test",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#psychological-test",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#psychological-test",
       "label": "experimental-psychology-test"
     },
     {
@@ -4663,14 +4663,14 @@
       "@type": "owl:Class",
       "candidateTerms": "raw-score",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#numerical-score",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#numerical-score",
       "label": "raw-score"
     },
     {
       "@type": "owl:Class",
       "candidateTerms": "neuroclinical-test",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#test-based-assessment",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#test-based-assessment",
       "label": "neuroclinical-test"
     },
     {
@@ -4720,7 +4720,7 @@
       "description": "A positron emission tomography scanner is a data-acquisition device that collects gamma rays emitted by a subject who is administered a positron-emitting radioactive substance and creates an image by calculating the originating position of the gamma rays.",
       "candidateTerms": "PositronEmissionTomographyScanner",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageAcquisitionDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageAcquisitionDevice",
       "label": "Positron Emission Tomography Scanner"
     },
     {
@@ -4791,7 +4791,7 @@
       "description": "A current amplifier is a device that increases the electrical current amplitude of an input electrical signal by a fixed amount, while keeping the voltage constant.",
       "candidateTerms": "CurrentAmplifier",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#DataProcessingDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#DataProcessingDevice",
       "label": "Current Amplifier"
     },
     {
@@ -4827,7 +4827,7 @@
       "description": "Voltage amplifier is an device that produces a higher output voltage than was input into the device.",
       "candidateTerms": "VoltageAmplifier",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#DataProcessingDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#DataProcessingDevice",
       "label": "Voltage Amplifier"
     },
     {
@@ -4842,7 +4842,7 @@
       "description": "Positron emission tomography is an acquisition modality in which a positron-emitting radioactive tracer is introduced into the subject and the gamma rays emitted after a positron-electron collision are detected and their originating position calculated.",
       "candidateTerms": "PositronEmissionTomography",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionModality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionModality",
       "label": "Positron Emission Tomography"
     },
     {
@@ -4850,7 +4850,7 @@
       "description": "A numerical value that establishes a bound on a set of statistic values and can be specified by the user in terms of FWER-corrected p-value, uncorrected p-value, FDR-corrected q-value or statistic value",
       "candidateTerms": "NIDM_0000162",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "label": "Threshold"
     },
     {
@@ -4928,7 +4928,7 @@
       "description": "An auxiliary file is an information-bearing object that is either used to inform the execution of an experiment or that is generated during the execution of the experiment.",
       "candidateTerms": "AuxiliaryFile",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000396",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000396",
       "comment": "An example of a file that informs the execution of an experiment is a b-vector file in diffusion-weighted MR imaging.  An example of a file that is generated during the execution of the experiment is a stimulus response file in functional MR imaging)",
       "label": "AuxiliaryFile"
     },
@@ -5035,7 +5035,7 @@
       "description": "A unique identifier for an Attribute of an Information Object composed of an ordered pair of numbers (a Group Number followed by an Element number). Cine run A set of temporally related frames acquired at constant or variable frame rates. This term incorporates the general class of serialography. Note: A Cine run is typically encoded as a multi-frame image.",
       "candidateTerms": "dicom_xxxx0016",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0065",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0065",
       "label": "Attribute tag"
     },
     {
@@ -5078,7 +5078,7 @@
       "description": "A form of byte ordering where multiple byte binary values are encoded with the most significant byte encoded first, and the remaining bytes encoded in decreasing order of significance.",
       "candidateTerms": "dicom_xxxx0032",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000612",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000612",
       "label": "Big Endian"
     },
     {
@@ -5114,7 +5114,7 @@
       "description": "An event-related design is a fMRI design comprised of discrete events of stimulus and/or behavior.",
       "candidateTerms": "NIDM_0000153",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000155",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000155",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/299",
       "label": "Event-Related Design"
     },
@@ -5123,7 +5123,7 @@
       "description": "Continuous arterial spin labeling is a magnetic resonance imaging acquisition method that uses continuous irradiation to invert the magnetization of flowing spins to measure perfusion.",
       "candidateTerms": "ContinuousArterialSpinLabeling",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ArterialSpinLabeling",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ArterialSpinLabeling",
       "label": "Continuous Arterial Spin Labeling"
     },
     {
@@ -5152,7 +5152,7 @@
       "description": "An entity with spatial attributes (e.g., dimensions, units, and voxel-to-world mapping) that provides context to a 'Map' (e.g., a 'Statistic Map', a 'Contrast Map'...).",
       "candidateTerms": "NIDM_0000016",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Under discussion at https://github.com/incf-nidash/nidm/issues/290",
       "label": "Coordinate Space"
     },
@@ -5176,7 +5176,7 @@
       "description": "A set of logically related Attributes that are likely to vary together. May be used in Multi-frame IODs to describe parameters that change on a per frame basis.",
       "candidateTerms": "dicom_xxxx0021",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "Functional Group"
     },
     {
@@ -5233,7 +5233,7 @@
       "description": "Information about the input Data, including scaling applied to the data before parameter estimation..",
       "candidateTerms": "NIDM_0000169",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Discussed at ...",
       "label": "Data"
     },
@@ -5333,7 +5333,7 @@
       "description": "A p-value reported without correction for multiple testing.",
       "candidateTerms": "NIDM_0000160",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Discussed in [Neuroimaging terms spreadsheet](https://docs.google.com/spreadsheets/d/16pC2cDsdxlzv2CzlNMtStqt5-xHwDEsU6MjZVxWhrE4/edit?usp=sharing)",
       "label": "P-Value Uncorrected"
     },
@@ -5362,7 +5362,7 @@
       "@type": "owl:Class",
       "candidateTerms": "NIDM_0000015",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Discussed in https://github.com/incf-nidash/nidm/pull/144 and https://github.com/incf-nidash/nidm/pull/172",
       "label": "Coordinate",
       "sameAs": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C44465"
@@ -5385,7 +5385,7 @@
       "@type": "owl:Class",
       "candidateTerms": "standardized-score",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#numerical-score",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#numerical-score",
       "label": "standardized-score"
     },
     {
@@ -5414,7 +5414,7 @@
       "description": "An acquisition device operator is a role of an agent who/that controls the device that collects the acquisition object.",
       "candidateTerms": "AcquisitionDeviceOperator",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Role",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Role",
       "comment": "The use of who/that indicates that the agent performing this role can either be a person or another device.",
       "label": "Acquisition Device Operator"
     },
@@ -5451,7 +5451,7 @@
       "description": "A research assistant is a role for a person who participates in laboratory- and study-related activities, but who is not leading the project in any fashion.",
       "candidateTerms": "ResearchAssistant",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Role",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Role",
       "label": "Research Assistant"
     },
     {
@@ -5574,7 +5574,7 @@
       "description": "A map whose value at each element (e.g., pixel, voxel, vertex, or face) is a [statistic](http://purl.obolibrary.org/obo/STATO_0000039).",
       "candidateTerms": "NIDM_0000076",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000052",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/255",
       "label": "Statistic Map"
     },
@@ -5669,7 +5669,7 @@
       "description": "Distortion correction is a description of the usage of a given acquisition object, indicating that the purpose of the object is to provide information used to correct distortions in a set of images.",
       "candidateTerms": "DistortionCorrection",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageUsageType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageUsageType",
       "label": "DistortionCorrection"
     },
     {
@@ -5817,7 +5817,7 @@
       "description": "Echo planar is a k-space traversal scheme  used to acquire the k-space data in magnetic resonance imaging in which the entirety of k-space is continuously traversed for each repetition of the pulse sequence.",
       "candidateTerms": "EchoPlanar",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#k-spaceTraversalScheme",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#k-spaceTraversalScheme",
       "label": "Echo Planar"
     },
     {
@@ -5832,7 +5832,7 @@
       "description": "A set of Attributes within an Information Entity or Normalized IOD that are logically related to each other.",
       "candidateTerms": "dicom_xxxx0023",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "Module"
     },
     {
@@ -6044,7 +6044,7 @@
       "description": "An protocol is a specified plan that contains information necessary to acquire the desired data during a session and the acquisition device parameters that are to be used in that acquisition.",
       "candidateTerms": "Protocol",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#SpecifiedPlan",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#SpecifiedPlan",
       "label": "Protocol"
     },
     {
@@ -6073,7 +6073,7 @@
       "description": "X-ray Computed tomography is an acquisition modality in which an x-ray beam is scanned across a subject and the resulting data is reconstructed into two-dimensional slices or a three-dimensional volume in which the contrast is generated by the differential absorption of x-rays.",
       "candidateTerms": "X-rayComputedTomographyAcquisitionDevice",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageAcquisitionDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageAcquisitionDevice",
       "label": "X-ray Computed Tomography Acquisition Device"
     },
     {
@@ -6189,7 +6189,7 @@
       "description": "Instrument Usage Type is an acquisition object quality that denotes to what purpose the acquired object will be employed.",
       "candidateTerms": "InstrumentUsageType",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionObjectQuality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionObjectQuality",
       "comment": "Common instrument usage types are behavioral, clinical, and demographics, i.e., the instrument is used to record those types of data.",
       "label": "Instrument Usage Type"
     },
@@ -6198,7 +6198,7 @@
       "description": "A stimulus generator is a device that can deliver a current or voltage waveform that is used to stimulate a sample, cell, or body part.",
       "candidateTerms": "StimulusGenerator",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000956",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000956",
       "label": "Stimulus Generator"
     },
     {
@@ -6317,7 +6317,7 @@
       "description": "An acquisition method is a specific form of a procedure that was used to gather data from a subject.",
       "candidateTerms": "AcquisitionMethod",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionObjectQuality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionObjectQuality",
       "label": "Acquisition Method"
     },
     {
@@ -6353,7 +6353,7 @@
       "description": "A data processing device is a device that manipulates a data packet, stream, or file by performing an operation on the data.",
       "candidateTerms": "DataProcessingDevice",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000956",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000956",
       "label": "Data Processing Device"
     },
     {
@@ -6423,7 +6423,7 @@
       "description": "Parameter whose estimation at a given element depends on a local neighborhood of elements",
       "candidateTerms": "NIDM_0000074",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000071",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000071",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/194",
       "label": "Regularized Parameter"
     },
@@ -6452,7 +6452,7 @@
       "@type": "owl:Class",
       "candidateTerms": "numerical-variable-assessment",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#variable-assessment",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#variable-assessment",
       "label": "numerical-variable-assessment"
     },
     {
@@ -6567,7 +6567,7 @@
       "description": "Exchanged information consisting of a structured set of Attribute values directly or indirectly related to Information Objects. The value of each Attribute in a Data Set is expressed as a Data Element. A collection of Data Elements ordered by increasing Data Element Tag number that is an encoding of the values of Attributes of a real world object.",
       "candidateTerms": "dicom_xxxx0038",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "Data Set"
     },
     {
@@ -6684,7 +6684,7 @@
       "description": "'Hemodynamic Response Function' which is a gaussian kernel.",
       "candidateTerms": "NIDM_0000110",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000035",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000035",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
       "label": "Gaussian HRF"
     },
@@ -6772,7 +6772,7 @@
       "@type": "owl:Class",
       "candidateTerms": "NIDM_0000036",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
       "label": "Convolution Basis Set"
     },
@@ -6816,7 +6816,7 @@
       "description": "A numerical value that establishes a lower bound on statistic values and can be specified by the user in terms of FWER-corrected p-value, uncorrected p-value or minimum statistic value.",
       "candidateTerms": "NIDM_0000034",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000162",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000162",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/280",
       "label": "Height Threshold"
     },
@@ -6911,7 +6911,7 @@
       "description": "Data processing is an activity in which data is tranformed from its initial state at acquisition to a different state more amenable to analysis.",
       "candidateTerms": "DataProcessing",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Activity",
       "label": "Data Processing"
     },
     {
@@ -6953,14 +6953,14 @@
       "description": "T2 weighted is an image contrast type in which differences in voxel intensity reflect differences in the spin-spin relaxation time  of the probe in the underlying sample.",
       "candidateTerms": "T2Weighted",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageContrastType",
       "label": "T2 Weighted"
     },
     {
       "@type": "owl:Class",
       "candidateTerms": "quantitative-scale-item",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#scale-item",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#scale-item",
       "label": "quantitative-scale-item"
     },
     {
@@ -7129,7 +7129,7 @@
       "description": "An acquisition object quality is an quality that describes an essential feature of an object that is gathered from a subject during an acquisition activity.",
       "candidateTerms": "AcquisitionObjectQuality",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.obolibrary.org/obo/PATO_0000001",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.obolibrary.org/obo/PATO_0000001",
       "label": "Acquisition Object Quality"
     },
     {
@@ -7158,7 +7158,7 @@
       "description": "A centre of gravity of the cluster, equivalent to the concept of Centre Of Gravity for a object with distributed mass, where intensity substitutes for mass in this case. The 'Coordinate' of the centre of gravity is the weighted average of the cluster element (e.g., pixels, voxels, vertices, or faces) 'Coordinate's, where the weighting factors are the cluster element intensities. (definition adapted from http://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Cluster)",
       "candidateTerms": "NIDM_0000140",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/pull/257",
       "label": "Cluster Center Of Gravity"
     },
@@ -7201,7 +7201,7 @@
       "description": "An instrument administrator is the role of an agent who/that either provides the instrument or collects the responses of the subject to the contents of the instrument.",
       "candidateTerms": "InstrumentAdministrator",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Role",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Role",
       "comment": "The instrument administrator could either be a computer-based system or a person, hence the use of who/that. Common catagories of instruments are behavioral, clinical, or demographic instruments.",
       "label": "Instrument Administrator"
     },
@@ -7322,7 +7322,7 @@
       "@type": "owl:Class",
       "candidateTerms": "questionnaire",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
       "label": "questionnaire"
     },
     {
@@ -7365,7 +7365,7 @@
       "description": "Encephalography is an acquisition modality in which the electrical activity or structure of the brain is measured using a variety of techniques.",
       "candidateTerms": "Encephalography",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionModality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionModality",
       "label": "Electroencephalography"
     },
     {
@@ -7421,7 +7421,7 @@
       "description": "A map whose value at each element (e.g., pixel, voxel, vertex, or face) is a [residual mean square](http://purl.obolibrary.org/obo/STATO_0000375).",
       "candidateTerms": "NIDM_0000066",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000052",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/255.",
       "label": "Residual Mean Squares Map"
     },
@@ -7437,7 +7437,7 @@
       "description": "A high-pass filter is a device that removes or attenuates signal components below a selected frequency value from an electrical signal.",
       "candidateTerms": "HighPassFilter",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#SignalFilter",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#SignalFilter",
       "label": "High-Pass Filter"
     },
     {
@@ -7445,7 +7445,7 @@
       "description": "Dynamic sysceptibility contrast is a magnetic resonance imaging acquisition method in which T2*-weighted images are acquired sequentially after a contrast agent has been injected in order to quantify metrics related to blood volume and flow.",
       "candidateTerms": "DynamicSusceptibilityContrast",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Dynamic Susceptibility Contrast"
     },
     {
@@ -7453,7 +7453,7 @@
       "description": "A map whose value at each element (e.g., pixel, voxel, vertex, or face) is the mean over all observations of that element in the input maps (after any scaling of those input maps)",
       "candidateTerms": "NIDM_0000033",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000052",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/288",
       "label": "Grand Mean Map"
     },
@@ -7469,7 +7469,7 @@
       "description": "A cluster of map elements (e.g., pixels, voxels, vertices, and faces) that were selected by the 'Inference' activity and are contiguous according to the cluster 'Connectivity Criterion'.",
       "candidateTerms": "NIDM_0000070",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.obolibrary.org/obo/OBI_0000251",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.obolibrary.org/obo/OBI_0000251",
       "label": "Supra-Threshold Cluster"
     },
     {
@@ -7477,7 +7477,7 @@
       "description": "Susceptibility weighted imaging is a magentic resonance imaging image-usage type in which differences in voxel intensity reflect differences in magnetic susceptibilty of the underlying sample, but are not caculated values.",
       "candidateTerms": "SusceptibilityWeightedImaging",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageUsageType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageUsageType",
       "label": "Susceptibility Weighted Imaging"
     },
     {
@@ -7492,7 +7492,7 @@
       "description": "A series is an activity in which data of a single type is acquired such that one acquisition takes place during the same temporal epoch.",
       "candidateTerms": "Series",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#Acquisition",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#Acquisition",
       "comment": "During a MRI session, for example, T1-weighted and resting-state data were acquired.  Both the T1-weighted and resting state data are Acquisition Objects and the activity during which they were acquired is the Session. The Series is the activity that led to the production of each Acquisition Object.",
       "label": "Series"
     },
@@ -7529,7 +7529,7 @@
       "description": "The k-space traversal scheme is an acquisition object quality that describes, in a magnetic resonance imaging acquisition, the path in k-space along which the signal is acquired.",
       "candidateTerms": "k-spaceTraversalScheme",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionObjectQuality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionObjectQuality",
       "label": "k-space Traversal Scheme"
     },
     {
@@ -7565,7 +7565,7 @@
       "description": "A b-value file is an auxiliary file, used in a diffusion-weighted magnetic resonance imaging acquisition activity, that contains the b-values used to control the diffusion-sensitization weighting.",
       "candidateTerms": "b-ValueFile",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AuxiliaryFile",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AuxiliaryFile",
       "label": "b-value File"
     },
     {
@@ -7591,7 +7591,7 @@
       "description": "An Entity-Relationship diagram used to model the relationships between Real-World Objects that are within the area of interest of the DICOM Standard.",
       "candidateTerms": "dicom_xxxx0019",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000510",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000510",
       "label": "DICOM application model"
     },
     {
@@ -7669,7 +7669,7 @@
       "description": "Graphical data (e.g., images) of variable pixel-depth encoded in the Pixel Data, Float Pixel Data or Double Float Pixel Data Element.",
       "candidateTerms": "dicom_xxxx0048",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/dc/terms/Image",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/dc/terms/Image",
       "label": "Pixel Data"
     },
     {
@@ -7740,7 +7740,7 @@
       "description": "Cerebral Blood Volume (CBV) is a calculated parameter that characterizes the blood volume in the brain.",
       "candidateTerms": "CerebralBloodVolume",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#CalculatedParameter",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#CalculatedParameter",
       "comment": "This calculated parameter is usually displayed as a map that displays the CBV in quantitative or relative units.",
       "label": "Cerebral Blood Volume"
     },
@@ -7763,7 +7763,7 @@
       "description": "An abstraction of a real information entity (e.g., CT Image, Structured Report, etc.) that is acted upon by one or more DICOM Commands. Note: This term is primarily used in PS3.1, with a few references in PS3.3. It is an informal term corresponding to a formal term that is introduced in PS3.3. In all other parts of the DICOM Standard this formal term is known as an Information Object Definition.",
       "candidateTerms": "dicom_xxxx0009",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "label": "Information Object",
       "sameAs": "http://semanticscience.org/resource/SIO_000015"
     },
@@ -7849,7 +7849,7 @@
       "description": "Nuclear magnetic resonance spectroscopic imaging is an acquisition modality in which radiofrequency electromagnetic radiation is used to excite nuclei of the sample or subject, the characteristics of the detected signal are used to generate intensity contrast over a restricted (usually grid-like) area, and the resulting signal is displayed as a spectrum for each one of the spatially-resolved areas.",
       "candidateTerms": "NuclearMagneticResonanceSpectroscopicImaging",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionModality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionModality",
       "label": "Nuclear Magnetic Resonance Spectroscopic Imaging"
     },
     {
@@ -7959,7 +7959,7 @@
       "description": "Electrocorticography (ECoG) is an electrophysiological acquisition method in which the electrical activity of the brain is measured using electrodes that are placed directly on the cortical surface of the brain.",
       "candidateTerms": "Electrocorticography",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Electrocorticography"
     },
     {
@@ -8114,7 +8114,7 @@
       "description": "The result of encoding a Data Set using the DICOM encoding scheme (Data Element Numbers and representations as specified by the Data Dictionary).",
       "candidateTerms": "dicom_xxxx0008",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "Data Stream"
     },
     {
@@ -8294,7 +8294,7 @@
       "description": "A co-investigator is a role for a person that shares responsibility for the oversight and performance of an investigation activity.",
       "candidateTerms": "CoInvestigator",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Role",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Role",
       "label": "Co-Investigator"
     },
     {
@@ -8344,7 +8344,7 @@
       "description": "A multi-electrode array is a data acquisition device that records more than one concurrent electrical signal from subject or sample.",
       "candidateTerms": "MultielectrodeArray",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
       "label": "Multi-electrode Array"
     },
     {
@@ -8380,7 +8380,7 @@
       "description": "Outside-inSpiral is a k-space traversal scheme in which the path, along which magnetic resonance imaging k-space data is acquired, is spiral and the data further away from the center of k-space is acquired first.",
       "candidateTerms": "Outside-inSpiral",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#k-spaceTraversalScheme",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#k-spaceTraversalScheme",
       "label": "Outside-in Spiral"
     },
     {
@@ -8409,7 +8409,7 @@
       "description": "Multi-unit recording is an extracellular electrophysiological acquisition method in which an acquisition object is gathered using multiple recording devices.",
       "candidateTerms": "MultiUnitReccording",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Multi-unit Recording"
     },
     {
@@ -8578,7 +8578,7 @@
       "description": "Magnitude is a calculated parameter that measures the number of periods accumulated by a variable during an evolution duration.",
       "candidateTerms": "Magnitude",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#CalculatedParameter",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#CalculatedParameter",
       "comment": "In MRI the acquired signal is in the form of a magnitude and phase that are then combined to form an image. In some applications, such as susceptibility-weighted imaging, the phase map is used to enhance the final image.",
       "label": "Magnitude"
     },
@@ -8643,7 +8643,7 @@
       "description": "An encoding of a parameter of a command that conveys this parameters value.",
       "candidateTerms": "dicom_xxxx0003",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000612",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000612",
       "label": "Command Element"
     },
     {
@@ -8658,7 +8658,7 @@
       "description": "An Application Entity that accesses one or more files in a File-set.",
       "candidateTerms": "dicom_xxxx0076",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Agent",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Agent",
       "label": "File-set Reader"
     },
     {
@@ -8763,7 +8763,7 @@
       "description": "A map whose value at each element (e.g., pixel, voxel, vertex, or face) denotes cluster membership within the excursion set. Each cluster is denoted by a different integer and all members of the same cluster have the same value.",
       "candidateTerms": "NIDM_0000008",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000052",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/282",
       "label": "Cluster Labels Map"
     },
@@ -8884,7 +8884,7 @@
       "description": "A finite set of different characters that is considered to be complete for a given purpose and is specified independently of their encoding (also referred to as a character set).",
       "candidateTerms": "dicom_xxxx0033",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000612",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000612",
       "label": "Character Repertoire"
     },
     {
@@ -8914,7 +8914,7 @@
       "description": "Cartesian is a k-space traversal scheme in MRI in which the path of the data acquisition follows a straight line parallel to one axis of the defined k-space and perpendicular to the other k=space axis.",
       "candidateTerms": "Cartesian",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#k-spaceTraversalScheme",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#k-spaceTraversalScheme",
       "label": "Cartesian"
     },
     {
@@ -8922,7 +8922,7 @@
       "description": "The field within a Data Element that contains the length of the Value Field of the Data Element.",
       "candidateTerms": "dicom_xxxx0061",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000366",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000366",
       "comment": "The description is ambiguous. Does this refer to the (abstract) field or to the actual Value Length value?  We interpret as the latter. ",
       "label": "Value Length"
     },
@@ -8951,7 +8951,7 @@
       "@type": "owl:Class",
       "candidateTerms": "coded-variable-assessment",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#variable-assessment",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#variable-assessment",
       "label": "coded-variable-assessment"
     },
     {
@@ -8959,7 +8959,7 @@
       "description": "Intracranial Electroencephalography (iEEG) is an electrophysiological acquisition method in which the electrical activity of the brain is measured using electrodes that are placed directly on the surface of the brain.",
       "candidateTerms": "IntracranialElectroencephalography",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Intracranial Electroencephalography"
     },
     {
@@ -8988,7 +8988,7 @@
       "description": "Fluid Attenuated Inversion Recovery, which is often known by its acronym, FLAIR, is a magnetic resonance imaging acquisition method in which images are acquired after an initial magnetization inversion pulse is applied and a delay duration that is selected such that the signal from bulk fluid such as cerebral spinal fluid or fluid in lesions is nulled.",
       "candidateTerms": "FluidAttenuatedInversionRecovery",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Fluid Attenuated Inversion Recovery"
     },
     {
@@ -9185,7 +9185,7 @@
       "description": "The field potential is an extracellular electrophysiology acquisition method in which an electrode is used to measure the voltage that is generated by synaptic activity (in neural tissue).",
       "candidateTerms": "FieldPotential",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Field Potential"
     },
     {
@@ -9227,7 +9227,7 @@
       "@type": "owl:Class",
       "candidateTerms": "NIDM_0000048",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.obolibrary.org/obo/STATO_0000346",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.obolibrary.org/obo/STATO_0000346",
       "comment": "Under discussion at https://github.com/ISA-tools/stato/issues/28",
       "label": "Independent Error"
     },
@@ -9354,7 +9354,7 @@
       "@type": "owl:Class",
       "candidateTerms": "composite-instrument",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
       "label": "composite-instrument"
     },
     {
@@ -9404,7 +9404,7 @@
       "description": "Sharp electrode is intracellular electrophysiological acquisition method used for measuring the potential of the intracellular environment with minimal disturbance of that environment, in which a pipette, filled with electrolyte and with a very small opening, is inserted into the cell and the potential measured.",
       "candidateTerms": "SharpElectrode",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Sharp Electrode"
     },
     {
@@ -9475,7 +9475,7 @@
       "description": "A Calculated Parameter is a variable that is the result of the processing of a set of measurements.",
       "candidateTerms": "CalculatedParameter",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000367",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000367",
       "comment": "Note that this is similar to, but distinct from a dependent variable, which is a variable that changes in response to changes in a system.  The T2 value would be an example of a dependent variable since changing the echo time allows for calculation of the T2.  Cerebral Blood Flow (CBV) is an example of a Calculated Parameter since it is measure by taking a series of images after the injection of a contrast agent; however the experimenter is not actually changing any independent variable to see a change in the CBV and therefore it is a Calculated Parameter rather than a dependent variable.",
       "label": "Calculated Parameter"
     },
@@ -9505,7 +9505,7 @@
       "description": "Perfusion is a description of the usage of a given acquisition object, indicating that the purpose of the object is to provide information on the blood flow of the object on which the acquisition was performed.",
       "candidateTerms": "Perfusion",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageUsageType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageUsageType",
       "label": "Perfusion"
     },
     {
@@ -9772,7 +9772,7 @@
       "description": "Model specification is an activity in which the model designer creates the model that describes an experiment",
       "candidateTerms": "ModelSpecification",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Activity",
       "label": "Model Specification"
     },
     {
@@ -9888,7 +9888,7 @@
       "@type": "owl:Class",
       "candidateTerms": "SoftwareAgent",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Agent",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Agent",
       "label": "SoftwareAgent"
     },
     {
@@ -9903,14 +9903,14 @@
       "description": "T1 weighted is an image contrast type in which differences in voxel intensity reflect differences in the spin-lattice relaxation time of the probe in the underlying sample.",
       "candidateTerms": "T1Weighted",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageContrastType",
       "label": "T1 Weighted"
     },
     {
       "@type": "owl:Class",
       "candidateTerms": "psychophysical-instrument",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#experimental-psychology-instrument",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#experimental-psychology-instrument",
       "label": "psychophysical-instrument"
     },
     {
@@ -9992,7 +9992,7 @@
       "description": "The process of exporting results created by a neuroimaging software (SPM, FSL, AFNI...) into a NIDM-Results archive.",
       "candidateTerms": "NIDM_0000166",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Activity",
       "label": "NIDM-Results Export"
     },
     {
@@ -10007,7 +10007,7 @@
       "description": "Probability distribution estimated empirically on the data without assumptions on the shape of the probability distribution.",
       "candidateTerms": "NIDM_0000058",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000022",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000022",
       "label": "deprecated Non Parametric Distribution"
     },
     {
@@ -10099,7 +10099,7 @@
       "description": "A form of byte ordering where multiple byte binary values are encoded with the least significant byte encoded first; and the remaining bytes encoded in increasing order of significance.",
       "candidateTerms": "dicom_xxxx0045",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000612",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000612",
       "label": "Little Endian"
     },
     {
@@ -10177,7 +10177,7 @@
       "description": "A single-photon emission computed tomography (SPECT)scanner is an acquisition device that collects gamma-rays emitted by a subject in a series of two-dimensional images around the patient, enabling a three-dimensional volume to be reconstructed using a tomographic reconstruction method.",
       "candidateTerms": "SinglePhotonEmissionComputedTomographyScanner",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageAcquisitionDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageAcquisitionDevice",
       "label": "Single Photon Emission Computed Tomography Scanner"
     },
     {
@@ -10255,7 +10255,7 @@
       "description": "Reference space on which real-world positions are expressed (cf. [Nifti-1 FAQ question 14](http://nifti.nimh.nih.gov/nifti-1/documentation/faq#Q14) and [Understanding affines on nipy](http://nipy.org/nipy/stable/devel/code_discussions/understanding_affines.html)\n). A world coordinate system can be represented by an image obtained by registering an initial set of images, using a given normalization algorithm to match a target template.",
       "candidateTerms": "NIDM_0000081",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
       "label": "World Coordinate System"
     },
@@ -10341,7 +10341,7 @@
       "description": "Specifies the data type and format of the Value(s) contained in the Value Field of a Data Element. (VR)",
       "candidateTerms": "dicom_xxxx0063",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000179",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000179",
       "label": "Value Representation"
     },
     {
@@ -10475,7 +10475,7 @@
       "description": "A map whose value at each element (e.g., pixel, voxel, vertex, or face) is a [model parameter estimate](http://purl.obolibrary.org/obo/STATO_0000144).",
       "candidateTerms": "NIDM_0000061",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000052",
       "comment": "Discussed in https://github.com/incf-nidash/nidm/issues/255 and https://github.com/incf-nidash/nidm/issues/141 (see also https://github.com/ISA-tools/stato/issues/18)",
       "label": "Parameter Estimate Map"
     },
@@ -10625,7 +10625,7 @@
       "description": "A Data Set contained within a Data Element of another Data Set. Data Sets can be nested recursively. Only Data Elements with Value Representation Sequence of Items may, themselves, contain Data Sets.",
       "candidateTerms": "dicom_xxxx0046",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "Nested Data Set"
     },
     {
@@ -10710,7 +10710,7 @@
       "description": "Parallel imaging is an acquisition method used in magnetic resonance imaging to acquire the k-space data in which multiple coils are employed and the signals from each coil are disambiguated using the coil sensitivity profile.",
       "candidateTerms": "ParallelImaging",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Parallel Imaging"
     },
     {
@@ -10753,7 +10753,7 @@
       "description": "Single-unit recording is an extracellular electrophysiological acquisition method, in which a thin electrode is introduced into the extracellular space of a sample or subject and the action potential from a single neuron is recorded.",
       "candidateTerms": "SingleUnitReccording",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Single-unit Recording"
     },
     {
@@ -10847,7 +10847,7 @@
       "@type": "owl:Class",
       "candidateTerms": "psychological-interview",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#questionnaire-based-assessment",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#questionnaire-based-assessment",
       "label": "psychological-interview"
     },
     {
@@ -10855,7 +10855,7 @@
       "description": "Amperometry is an extracellular acquisition method in electrophysiology in which an electrode is brought near a cell to detect the release of ions by vesicles.",
       "candidateTerms": "Amperometry",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Amperometry"
     },
     {
@@ -10946,7 +10946,7 @@
       "description": "An electrode is a data acquisition device that consists of a conductor that is used to record an electrical signal from subject or sample.",
       "candidateTerms": "Electrode",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
       "label": "Electrode"
     },
     {
@@ -10982,7 +10982,7 @@
       "description": "A Value Representation for Data Elements that contain a sequence of Data Sets. Sequence of Items allows for Nested Data Sets. (The Value Representation is denoted SQ.)",
       "candidateTerms": "dicom_xxxx0054",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "Sequence of Items"
     },
     {
@@ -11060,7 +11060,7 @@
       "description": "Magnetic Resonance Imaging is an acquisition modality in which radiofrequency electromagnetic radiation is used to excite nuclei of the sample or subject and the characteristics of the detected signal are used to generate intensity contrast between different tissue types or structures.",
       "candidateTerms": "MagneticResonanceImaging",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionModality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionModality",
       "label": "Magnetic Resonance Imaging"
     },
     {
@@ -11135,7 +11135,7 @@
       "description": "Ordered set of values corresponding to the discrete sampling of some process (e.g. brain MRI data measured on a regular 3D lattice; or brain cortical surface data measured irregularly over the cortex).",
       "candidateTerms": "NIDM_0000052",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Discussed in https://github.com/incf-nidash/nidm/pull/149",
       "label": "Map"
     },
@@ -11249,7 +11249,7 @@
       "description": "A string of characters that uniquely identifies a wide variety of items; guaranteeing uniqueness across multiple countries, sites, vendors and equipment. (The acronym is UID)",
       "candidateTerms": "dicom_xxxx0058",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000115",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000115",
       "label": "Unique Identifier"
     },
     {
@@ -11263,7 +11263,7 @@
       "@type": "owl:Class",
       "candidateTerms": "corrected-score",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#numerical-score",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#numerical-score",
       "label": "corrected-score"
     },
     {
@@ -11426,7 +11426,7 @@
       "description": "Maximum intensity projection is an image contrast type in which differences in voxel intensity reflect differences in the maximum value of the collection of that voxel and its surrounding neighbors.",
       "candidateTerms": "MaximumIntensityProjection",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageContrastType",
       "label": "Maximum Intensity Projection"
     },
     {
@@ -11554,7 +11554,7 @@
       "description": "A respiration rate monitor is a data acquisition device that records the number of breaths taken by a subject in a given period of time.",
       "candidateTerms": "RespirationRateMonitor",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
       "label": "Respiration Rate Monitor"
     },
     {
@@ -11597,7 +11597,7 @@
       "description": "A bandpass filter is a device that modifies or removes certain signal components outside a selected frequency range from an electrical signal.",
       "candidateTerms": "BandpassFilter",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#SignalFilter",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#SignalFilter",
       "label": "Bandpass Filter"
     },
     {
@@ -11626,7 +11626,7 @@
       "description": "A b-vector file is an auxiliary file, used in a diffusion-weighted magnetic resonance imaging acquisition activity, that contains the direction vectors used to control the direction of the diffusion-sensitization weighting.",
       "candidateTerms": "b-VectorFile",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AuxiliaryFile",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AuxiliaryFile",
       "label": "b-vector File"
     },
     {
@@ -11697,7 +11697,7 @@
       "description": "An image acquisition device is a data acquisition device that has an image as its primary output.",
       "candidateTerms": "ImageAcquisitionDevice",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
       "label": "Image Acquisition Device"
     },
     {
@@ -11754,7 +11754,7 @@
       "description": "An informed consent instrument is a instrument usage type that provides the subject with information regarding the study during which data will be collected from the subject and is used to collect the subjects consent to being a part of that study.",
       "candidateTerms": "InformedConsentInstrument",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#InstrumentUsageType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#InstrumentUsageType",
       "label": "Informed Consent Instrument"
     },
     {
@@ -12005,7 +12005,7 @@
       "description": "A map whose value at each element (e.g., pixel, voxel, vertex, or face) is a [contrast estimate](http://purl.obolibrary.org/obo/STATO_0000384).",
       "candidateTerms": "NIDM_0000002",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000052",
       "comment": "Discussed in https://github.com/incf-nidash/nidm/issues/255",
       "label": "Contrast Map"
     },
@@ -12057,7 +12057,7 @@
       "description": "Simultaneous multislice is an acquisition method in magnetic resonance imaging used to acquire the k-space in which data from multiple slices are acquired at the same time and the coil sensitivity profiles are used to separate the data from each slice.",
       "candidateTerms": "SimultaneousMultislice",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Simultaneous Multislice"
     },
     {
@@ -12115,7 +12115,7 @@
       "description": "A value associated with an individual pixel. An individual pixel consists of one or more Pixel Sample Values (e.g., color images).",
       "candidateTerms": "dicom_xxxx0049",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000070",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000070",
       "label": "Pixel Sample Value"
     },
     {
@@ -12293,7 +12293,7 @@
       "description": "Parent of all reference spaces except \"Subject\".",
       "candidateTerms": "NIDM_0000075",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000081",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000081",
       "comment": [
         "This is meant to be used for retrospective export when exact template is unknown.",
         "Discussed at https://github.com/incf-nidash/nidm/issues/284"
@@ -12354,7 +12354,7 @@
       "description": "T1 Rho weighted is an image contrast type in which the transvers magnetization is locked into the transverse plane and therefore differences in voxel intensity reflect differences in interactions of the transverse magnetization of the probe molecule with the lattice (rather than the spin-lattice relaxation time) in the underlying sample.",
       "candidateTerms": "T1RhoWeighted",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageContrastType",
       "label": "T1 Rho Weighted"
     },
     {
@@ -12362,7 +12362,7 @@
       "description": "Abstraction on the data model, developed for a specific application/use-case/task at hand,  that specifies the components and relations necessary for use by these applications. The same object model can be reused by multiple applications (e.g., meta-analysis, Neurovault).",
       "candidateTerms": "NIDM_0000057",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/pull/137",
       "label": "NIDM Object Model"
     },
@@ -12420,7 +12420,7 @@
       "description": "A reconstructed acquisition object is an acquisition object that has undergone an image reconstruction activity resulting in a matrix of values that when viewed form an image.",
       "candidateTerms": "ReconstructedAcquisitionObject",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionObject",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionObject",
       "label": "Reconstructed Acquisition Object"
     },
     {
@@ -12533,7 +12533,7 @@
       "description": "Electrophysiology Recording is an acquisition modality in which electrical signals are recorded from one or more electrodes inserted into living tissue.",
       "candidateTerms": "ElectrophysiologyRecording",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionModality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionModality",
       "label": "Electrophysiology Recording"
     },
     {
@@ -12797,7 +12797,7 @@
       "description": "The result of encoding a set of DICOM Command Elements using the DICOM encoding scheme.",
       "candidateTerms": "dicom_xxxx0004",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000612",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000612",
       "label": "Command Stream"
     },
     {
@@ -12819,7 +12819,7 @@
       "description": "A group is a collection of subjects or objects formed by the assignment of membership through the selection of one or more common characteristics.",
       "candidateTerms": "Group",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "Group"
     },
     {
@@ -13068,7 +13068,7 @@
       "description": "The Value of a Data Element is an Enumerated Value when the value of the element must be one of an explicitly specified set of standard values, and these values shall not be extended by implementers.",
       "candidateTerms": "dicom_xxxx0041",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000366",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000366",
       "label": "Enumerated Value"
     },
     {
@@ -13090,7 +13090,7 @@
       "description": "A formal description of an Information Object, which includes a description of its purpose and the Attributes it possesses. It does not include values for these attributes. Note This term is only used in PS3.1. It is an informal term corresponding to a formal term that is introduced in PS3.4. This formal term is known as a Service-Object Pair Class or more commonly as a SOP Class.",
       "candidateTerms": "dicom_xxxx0010",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000136",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000136",
       "label": "Information Object Class"
     },
     {
@@ -13112,7 +13112,7 @@
       "description": "That portion of information defined by a Composite IOD that is related to one specific class of Real-World Object. There is a one-to-one correspondence between Information Entities and entities in the DICOM Application Model. Information object definition (IOD) a data abstraction of a class of similar Real-World Objects that defines the nature and Attributes relevant to the class of Real-World Objects represented.",
       "candidateTerms": "dicom_xxxx0022",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000015",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000015",
       "label": "Information entity"
     },
     {
@@ -13176,7 +13176,7 @@
       "description": "Image that contains multiple two-dimensional pixel planes.",
       "candidateTerms": "dicom_xxxx0024",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/dc/terms/Image",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/dc/terms/Image",
       "label": "Multi-frame Image"
     },
     {
@@ -13226,7 +13226,7 @@
       "description": "A unique and mandatory DICOM File within a File-set that contains the Media Storage Directory SOP Class. This File is given a single component File ID, DICOMDIR.",
       "candidateTerms": "dicom_xxxx0069",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0068",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0068",
       "label": "DICOMDIR File"
     },
     {
@@ -13248,7 +13248,7 @@
       "description": "A transmit coil is a data device used in nuclear magnetic resonance and magnetic resonance imaging to apply the stimulating energy to the sample. ",
       "candidateTerms": "TransmitCoil",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000956",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000956",
       "label": "Transmit Coil"
     },
     {
@@ -13291,7 +13291,7 @@
       "description": "the process of performing a [obo:model parameter estimation](http://purl.obolibrary.org/obo/STATO_0000119) at each element (e.g., pixel, voxel, vertex, or face) of a map",
       "candidateTerms": "NIDM_0000056",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Activity",
       "comment": "Discussed at: https://github.com/incf-nidash/nidm/issues/141",
       "label": "Model Parameter Estimation"
     },
@@ -13426,7 +13426,7 @@
       "@type": "owl:Class",
       "candidateTerms": "test-based-assessment",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#instrument-based-assessment",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#instrument-based-assessment",
       "label": "test-based-assessment"
     },
     {
@@ -13441,7 +13441,7 @@
       "description": "A representation of an occurrence of an real-world entity, which includes values for the Attributes of the Information Object Class to which the entity belongs. Note This term is only used in PS3.1. It is an informal term corresponding to a formal term that is introduced in PS3.4. This formal term is known as a Service-Object Pair Instance or more commonly as a SOP Instance.",
       "candidateTerms": "dicom_xxxx0011",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000396",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000396",
       "label": "Information Object Instance"
     },
     {
@@ -13518,7 +13518,7 @@
       "@type": "owl:Class",
       "candidateTerms": "numerical-score",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#score",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#score",
       "label": "numerical-score"
     },
     {
@@ -13785,7 +13785,7 @@
       "description": "Python library for the export of feat folders (generated by FSL) to NIDM-Results. Source available at: https://github.com/incf-nidash/nidm-results_fsl/.",
       "candidateTerms": "NIDM_0000167",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000165",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000165",
       "label": "nidmfsl"
     },
     {
@@ -13864,7 +13864,7 @@
       "description": "A map element (e.g., pixel, voxel, vertex, or face) which is a local maximum in the supra-threshold cluster and complies with the 'Peak definition criteria'.",
       "candidateTerms": "NIDM_0000062",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/283",
       "label": "Peak"
     },
@@ -13880,7 +13880,7 @@
       "description": "A file associated with a Map to provide header information (e.g. NIfTI header file)",
       "candidateTerms": "NIDM_0000053",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "ub2bL1721C35",
+      "http://uri.interlex.org/ilx_0770184": "ub2bL1721C35",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/289",
       "label": "Map Header"
     },
@@ -13889,7 +13889,7 @@
       "description": "A magnetic resonance imaging scanner is a data acquisition device that uses radiofrequency electromagnetic radiation to excite nuclei of a sample or subject and uses the characteristics of the detected signal are used to generate intensity contrast between different tissue types or structures.",
       "candidateTerms": "MagneticResonanceImagingScanner",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageAcquisitionDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageAcquisitionDevice",
       "label": "Magnetic Resonance Imaging Scanner"
     },
     {
@@ -14072,7 +14072,7 @@
       "description": "'Hemodynamic Response Function' basis that can on its own be used to represent the idealised 'Hemodynamic Response Function'.",
       "candidateTerms": "NIDM_0000035",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000036",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
       "label": "Hemodynamic Response Function"
     },
@@ -14130,7 +14130,7 @@
       "description": "A unique identifier for an element of information composed of an ordered pair of numbers (a Group Number followed by an Element Number), which is used to identify Attributes and corresponding Data Elements.",
       "candidateTerms": "dicom_xxxx0065",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0058",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0058",
       "label": "Tag"
     },
     {
@@ -14138,7 +14138,7 @@
       "description": "A 'Binary Map' used by an activity that changed the voxels displayed, but did not alter the space in which the activity was performed (e.g. at the level of 'Inference', this mask is called \"contrast masking\" in both FSL & SPM and does not alter voxel-wise corrected p-values)",
       "candidateTerms": "NIDM_0000020",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000004",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000004",
       "comment": "Discussed at: https://github.com/incf-nidash/nidm/pull/258 and https://github.com/incf-nidash/nidm/pull/157",
       "label": "Display Mask Map"
     },
@@ -14189,7 +14189,7 @@
       "description": "Single-photon emission computed tomography (SPECT)is an acquisition modality in which a gamma-ray-emitting radioisotope is introduced into the subject and the gamma rays emitted are detected in a series of two-dimensional images around the patient, enabling a three-dimensional volume to be reconstructed using a tomographic reconstruction method.",
       "candidateTerms": "SinglePhotonEmissionComputedTomography",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionModality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionModality",
       "label": "Single Photon Emission Computed Tomography"
     },
     {
@@ -14239,7 +14239,7 @@
       "description": "The File Meta Information includes identifying information on the encapsulated Data Set. It is a mandatory header at the beginning of every DICOM File.",
       "candidateTerms": "dicom_xxxx0073",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "File Meta Information"
     },
     {
@@ -14261,7 +14261,7 @@
       "description": " A DICOM Media Storage Application Profile that requires a Secure File-set.",
       "candidateTerms": "dicom_xxxx0085",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "Secure Media Storage Application Profile"
     },
     {
@@ -14367,7 +14367,7 @@
       "description": "A signal filter is a device that modifies or removes certain components of an electrical signal.",
       "candidateTerms": "SignalFilter",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000956",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000956",
       "label": "Signal Filter"
     },
     {
@@ -14383,7 +14383,7 @@
       "description": "Reference space defined by the dissected brain used for the Talairach and Tournoux atlas (cf. http://www.talairach.org/about.html)",
       "candidateTerms": "NIDM_0000078",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000075",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000075",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
       "label": "Talairach Coordinate System"
     },
@@ -14427,7 +14427,7 @@
       "description": "A signal generator is a device that supplies an electrical voltage signal of a specified amplitude and shape.",
       "candidateTerms": "SignalGenerator",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000956",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000956",
       "label": "Signal Generator"
     },
     {
@@ -14449,7 +14449,7 @@
       "description": "A formal statement that describes a specific product implementation that uses the DICOM Standard. It specifies the Service Classes, Information Objects, and Communication Protocols supported by the implementation.",
       "candidateTerms": "dicom_xxxx0005",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000136",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000136",
       "label": "Conformance Statement"
     },
     {
@@ -14574,7 +14574,7 @@
       "description": "Diffusion weighted is an image contrast type in which differences in voxel intensity are based on the brownian-motion behavior of the species that generates the detected signal from that voxel.",
       "candidateTerms": "DiffusionWeighted",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageContrastType",
       "label": "Diffusion Weighted"
     },
     {
@@ -14582,7 +14582,7 @@
       "description": "A model used to compensate for low frequency baseline drifts when analyzing functional MRI data at the subject level.",
       "candidateTerms": "NIDM_0000087",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/298",
       "label": "Drift Model"
     },
@@ -14707,7 +14707,7 @@
       "@type": "owl:Class",
       "candidateTerms": "main-variable",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#instrument-variable",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#instrument-variable",
       "label": "main-variable"
     },
     {
@@ -14778,7 +14778,7 @@
       "description": "A string of one to eight characters of a defined character set.",
       "candidateTerms": "dicom_xxxx0072",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000115",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000115",
       "label": "File ID Component"
     },
     {
@@ -14827,7 +14827,7 @@
       "@type": "owl:Class",
       "candidateTerms": "behavioural-test",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#test-based-assessment",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#test-based-assessment",
       "label": "behavioural-test"
     },
     {
@@ -14863,7 +14863,7 @@
       "description": "A data unit of the Message Exchange Protocol exchanged between two cooperating DICOM Applications. A Message is composed of a Command Stream followed by an optional Data Stream.",
       "candidateTerms": "dicom_xxxx0012",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000602",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000602",
       "label": "Message"
     },
     {
@@ -15091,7 +15091,7 @@
       "description": "Probability distribution estimated empirically on the data assuming only symmetry of the probability distribution.",
       "candidateTerms": "NIDM_0000059",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.obolibrary.org/obo/STATO_0000117",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.obolibrary.org/obo/STATO_0000117",
       "label": "Non Parametric Symmetric Distribution"
     },
     {
@@ -15202,7 +15202,7 @@
       "description": "A 'Drift Model' in which the drifts are modeled by a Legendre orthogonal polynomial basis added to the regression model",
       "candidateTerms": "LegendrePolynomialDriftModel",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000087",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000087",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/298",
       "label": "AFNI's Legendre Polinomial Drift Model"
     },
@@ -15322,7 +15322,7 @@
       "description": "A map in which the set of elements (e.g., pixels, voxels, vertices, or faces) not selected by the 'Inference' activity is set to zero or NaN",
       "candidateTerms": "NIDM_0000025",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000052",
       "comment": "Discussed in the Neuroimaging terms spreadsheet and in https://github.com/incf-nidash/nidm/issues/256.",
       "label": "Excursion Set Map"
     },
@@ -15400,7 +15400,7 @@
       "description": "A low-pass filter is a device that removes or attenuates signal components above a selected frequency value from an electrical signal.",
       "candidateTerms": "LowPassFilter",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#SignalFilter",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#SignalFilter",
       "label": "Low-Pass Filter"
     },
     {
@@ -15607,7 +15607,7 @@
       "description": "A normal distribution is a continuous probability distribution described by a probability distribution function described here: http://mathworld.wolfram.com/NormalDistribution.html (Definition from STATO).",
       "candidateTerms": "NIDM_0000032",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000022",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000022",
       "label": "deprecated Gaussian Distribution",
       "sameAs": "http://purl.obolibrary.org/obo/STATO_0000227"
     },
@@ -15665,7 +15665,7 @@
       "description": "Set of criterion specified a priori to define the 'Peak's reported after 'Inference' (e.g. maximum number of 'Peak's within a cluster, minimum distance between 'Peak's).",
       "candidateTerms": "NIDM_0000063",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "label": "Peak Definition Criteria"
     },
     {
@@ -15680,7 +15680,7 @@
       "description": "A performed plan is a plan that is actually implemented during an acquisition activity.",
       "candidateTerms": "PerformedPlan",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Plan",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Plan",
       "label": "Performed Plan"
     },
     {
@@ -15722,7 +15722,7 @@
       "@type": "owl:Class",
       "candidateTerms": "secondary-variable",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#instrument-variable",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#instrument-variable",
       "label": "secondary-variable"
     },
     {
@@ -15737,7 +15737,7 @@
       "description": "A Nuclear magnetic resonance device is an data acquisition device in which radiofrequency electromagnetic radiation is used to excite nuclei of the sample or subject, the characteristics of the detected signal are used to infer information regarding the chemical or physical environment of the sample.",
       "candidateTerms": "NuclearMagneticResonanceDevice",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
       "comment": "This is a generic term that may be applied to a magnetic resonance imaging scanner, but is most often used for devices used for nuclear magnetic resonance spectroscopy based experiments.",
       "label": "Nuclear Magnetic Resonance Device"
     },
@@ -15763,7 +15763,7 @@
       "description": "'Hemodynamic Response Function' which is a difference of two gamma probability density functions.",
       "candidateTerms": "NIDM_0000029",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000035",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000035",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
       "label": "Gamma Difference HRF"
     },
@@ -15856,7 +15856,7 @@
       "description": "A DICOM File is a File with a content formatted according to the requirements of this Part of the DICOM Standard. In particular such files shall contain, the File Meta Information and a properly formatted Data Set.",
       "candidateTerms": "dicom_xxxx0068",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0070",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0070",
       "label": "DICOM File"
     },
     {
@@ -15864,7 +15864,7 @@
       "description": "The Value of a Data Element is a Defined Term when the Value of the element may be one of an explicitly specified set of standard values, and these values may be extended by implementers.",
       "candidateTerms": "dicom_xxxx0039",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000651",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000651",
       "label": "Defined Term"
     },
     {
@@ -15879,7 +15879,7 @@
       "description": "Patch clamp is an intracellular electrophysiological acquisiiton method in which a micropipette tip is brought near a cell and scution applied drawing a section of cell membrane into the tip in order that ion movement or the intracellular environment can be studied.",
       "candidateTerms": "PatchClamp",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Patch Clamp"
     },
     {
@@ -15901,7 +15901,7 @@
       "description": "A stimulus presentation file is an auxiliary files that contains the presentation timing and/or location of the experimental stimulus (e.g., words, pictures) that are shown to the subject in a task-based assessment activity.",
       "candidateTerms": "StimulusPresentationFile",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AuxiliaryFile",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AuxiliaryFile",
       "label": "Stimulus Presentation File"
     },
     {
@@ -16091,7 +16091,7 @@
       "description": "The DICOM File Service specifies a minimum abstract view of files to be provided by the Media Format Layer. Constraining access to the content of files by the Application Entities through such a DICOM File Service boundary ensures Media Format and Physical Media independence.",
       "candidateTerms": "dicom_xxxx0067",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000090",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000090",
       "label": "DICOM File Service"
     },
     {
@@ -16155,7 +16155,7 @@
       "description": "Nuclear magnetic resonance spectroscopy is an acquisition modality in which radiofrequency electromagnetic radiation is used to excite nuclei of the sample or subject, the characteristics of the detected signal are used to generate signal intensity contrast over an entire selected volume, and the resulting signal is displayed as a signal spectrum rather than as matrix meant to be a representation of the underlying object.",
       "candidateTerms": "NuclearMagneticResonanceSpectroscopy",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionModality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionModality",
       "comment": "The volume of interest may be selected either by the natural extent of the excited volume (e.g., surface coils) or by selecting for excitation, a thick slab through the use of magnetic field gradients.",
       "label": "Nuclear Magnetic Resonance Spectroscopy"
     },
@@ -16171,7 +16171,7 @@
       "description": "An electroencephalography (EEG) acquisition device is a device that measures the electrical activity of the brain and consists of a set of electrodes placed on the surface of the head and a recording device that collects the signal from each electrode.",
       "candidateTerms": "ElectroencephalographyAcquisitionDevice",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
       "label": "Electroencephalography Acquisition Device"
     },
     {
@@ -16298,7 +16298,7 @@
       "description": "A clinical research coordinator is a role for a person who performs an activity during which clinical data is acquired from study participants.",
       "candidateTerms": "ClinicalResearchCoordinator",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Role",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Role",
       "label": "Clinical Research Coordinator"
     },
     {
@@ -16327,7 +16327,7 @@
       "description": "Item used to mark the end of a Sequence of Items of Undefined Length. This Item is the last Item in a Sequence of Items of Undefined Length.",
       "candidateTerms": "dicom_xxxx0053",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0043",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0043",
       "label": "Sequence Delimitation Item"
     },
     {
@@ -16360,7 +16360,7 @@
       "description": "Tool used to process neuroimaging data.",
       "candidateTerms": "NIDM_0000164",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#SoftwareAgent",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#SoftwareAgent",
       "label": "Neuroimaging Analysis Software"
     },
     {
@@ -16693,7 +16693,7 @@
       "description": "A model designer is a role for an agent who creates the model that describes an experiment",
       "candidateTerms": "ModelDesigner",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Role",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Role",
       "label": "Model Designer"
     },
     {
@@ -16739,7 +16739,7 @@
       "description": "Specialization is the replacement of the Type, value range and/or description of an Attribute in a general Module of an IOD, by its Type, value range and/or description defined in a modality-specific Module of an IOD. Note: The same Attribute may be present in multiple Modules in the same IOD but not specified to be specialized.",
       "candidateTerms": "dicom_xxxx0028",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Activity",
       "label": "Specialization"
     },
     {
@@ -16768,7 +16768,7 @@
       "description": "Dynamic contrast enhanced is a magnetic resonance imaging acquisition method in which T1-weighted images are acquired both before and then sequentially after a contrast agent has been injected in order to quantify metrics related to the permeability of the blood-brain barrier.",
       "candidateTerms": "DynamicContrastEnhanced",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Dynamic Contrast Enhanced"
     },
     {
@@ -16853,7 +16853,7 @@
       "description": "A Data Element that is unsupported beginning with Version 3.0 of this standard. Implementations may continue to support Retired Data Elements for the purpose of backward compatibility with versions prior to V3.0, but this is not a requirement of this version of the standard.",
       "candidateTerms": "dicom_xxxx0052",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0035",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0035",
       "label": "Retired Data Element"
     },
     {
@@ -16889,7 +16889,7 @@
       "description": "Probability distribution used to model the error.",
       "candidateTerms": "NIDM_0000022",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "label": "deprecated Error Distribution"
     },
     {
@@ -16939,7 +16939,7 @@
       "description": "A request to operate on information across a network.",
       "candidateTerms": "dicom_xxxx0002",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000091",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000091",
       "label": "Command"
     },
     {
@@ -16960,7 +16960,7 @@
       "@type": "owl:Class",
       "candidateTerms": "psychological-test",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#test-based-assessment",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#test-based-assessment",
       "label": "psychological-test"
     },
     {
@@ -17004,7 +17004,7 @@
       "description": "A heart rate monitor is a data acquisition device that records the number of heart beats in a given period of time of a subject.",
       "candidateTerms": "HeartRateMonitor",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
       "label": "Heart Rate Monitor"
     },
     {
@@ -17012,7 +17012,7 @@
       "description": "Extracellular Electrophysiology Recording is an acquisition modality in which one or more electrodes are inserted into living tissue and the electrical signals from adjacent cells are recorded.",
       "candidateTerms": "ExtracellularElectrophysiologyRecording",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ElectrophysiologyRecording",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ElectrophysiologyRecording",
       "label": "Extracellular Electrophysiology Recording"
     },
     {
@@ -17107,7 +17107,7 @@
       "description": "An auxiliary file collection is a grouping that contains the URI's of files that are necessary for the execution of the experiment or the processing of the data.",
       "candidateTerms": "AuxiliaryFileCollection",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "comment": "An example of an auxiliary file collection is the b-value and b-vector files in diffusion-weighted MR imaging.",
       "label": "Auxiliary File Collection"
     },
@@ -17179,7 +17179,7 @@
       "description": "MNI 305 coordinate system or any coordinate system derived from MNI 305.",
       "candidateTerms": "NIDM_0000051",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000075",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000075",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
       "label": "MNI Coordinate System"
     },
@@ -17202,7 +17202,7 @@
       "description": "Blood Oxygen Level Dependent Weighted is an image contrast type in which differences in voxel intensity are based on magnetic susceptibility differences between oxygenated and de-oxygenated blood.",
       "candidateTerms": "BloodOxygenLevelDependentWeighted",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageContrastType",
       "comment": "This term is a special case of nidm:SusceptibilityWeighted, in which the image contrast is primarily due to differences in magnetic susceptibility of oxygenated versus de-oxygenated blood. Susceptibility weighting can have numerous causes, such as differences in tissue iron content.",
       "label": "Blood Oxygen Level Dependent Weighted"
     },
@@ -17218,7 +17218,7 @@
       "description": "A description of the conditions present during data acquisition.",
       "candidateTerms": "dicom_xxxx0014",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000136",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000136",
       "label": "Acquisition Context"
     },
     {
@@ -17262,7 +17262,7 @@
       "description": "The DICOM File Format provides a means to encapsulate in a File the Data Set representing a SOP Instance related to a DICOM Information Object.",
       "candidateTerms": "dicom_xxxx0078",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000090",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000090",
       "label": "DICOM File Format"
     },
     {
@@ -17270,7 +17270,7 @@
       "description": "Localization is a description of the usage of a given acquisition object, indicating that the purpose of the object is to provide information on the placement and orientation of the imaged object in space.",
       "candidateTerms": "Localization",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageUsageType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageUsageType",
       "label": "Localization"
     },
     {
@@ -17285,7 +17285,7 @@
       "description": "Model used to describe the random variation of the error term as part of parameter estimation, including specification of the error probability distribution, its variance and dependence both spatially and across observations.",
       "candidateTerms": "NIDM_0000023",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "label": "Error Model"
     },
     {
@@ -17410,7 +17410,7 @@
       "description": "Custom (unknown) reference space selected by the user",
       "candidateTerms": "NIDM_0000017",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000075",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000075",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
       "label": "Custom Coordinate System"
     },
@@ -17440,7 +17440,7 @@
       "description": "The first number in the ordered pair of numbers that makes up a Data Element Tag.",
       "candidateTerms": "dicom_xxxx0042",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000115",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000115",
       "label": "Group Number"
     },
     {
@@ -17455,7 +17455,7 @@
       "description": "A session object is an entity that represents one or more acquisitions that take place during the same temporal epoch (session).",
       "candidateTerms": "SessionObject",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "ub1bL2114C31",
+      "http://uri.interlex.org/ilx_0770184": "ub1bL2114C31",
       "label": "Session Object"
     },
     {
@@ -17477,7 +17477,7 @@
       "description": "A unit of information as defined by a single entry in the data dictionary. An encoded Information Object Definition (IOD) Attribute that is composed of, at a minimum, three fields: a Data Element Tag, a Value Length, and a Value Field. For some specific Transfer Syntaxes, a Data Element also contains a VR Field where the Value Representation of that Data Element is specified explicitly.",
       "candidateTerms": "dicom_xxxx0035",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000651",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000651",
       "label": "Data Element"
     },
     {
@@ -17534,7 +17534,7 @@
       "description": "Data structures and associated policies that organize the bit streams defined by the Physical Media format into data file structures and associated file directories.",
       "candidateTerms": "dicom_xxxx0079",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000090",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000090",
       "label": "Media Format"
     },
     {
@@ -17611,7 +17611,7 @@
       "@type": "owl:Class",
       "candidateTerms": "mono-domain-instrument",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
       "label": "mono-domain-instrument"
     },
     {
@@ -17639,7 +17639,7 @@
       "@type": "owl:Class",
       "candidateTerms": "score-with-unit-of-measure",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#numerical-score",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#numerical-score",
       "label": "score-with-unit-of-measure"
     },
     {
@@ -17791,7 +17791,7 @@
       "description": "A demographics instrument is a instrument usage type that signifies that the type of data to be collected by the instrument is demographics-related data.",
       "candidateTerms": "DemographicsInstrument",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#InstrumentUsageType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#InstrumentUsageType",
       "comment": "Common demographics information are variables such as age, handedness, phenotypic sex, ethnicity, and race.",
       "label": "Demographics Instrument"
     },
@@ -17855,7 +17855,7 @@
       "description": "Used to specify whether an Attribute of an Information Object Definition or an Attribute of a SOP Class Definition is mandatory, mandatory only under certain conditions, or optional. This translates to whether a Data Element of a Data Set is mandatory, mandatory only under certain conditions, or optional.",
       "candidateTerms": "dicom_xxxx0037",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000179",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000179",
       "label": "Data Element Type"
     },
     {
@@ -18003,7 +18003,7 @@
       "description": "Resting state is an image usage type that indicates that no specific task was performed during the data acquisition.",
       "candidateTerms": "RestingState",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#Functional",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#Functional",
       "label": "Resting State"
     },
     {
@@ -18115,7 +18115,7 @@
       "@type": "owl:Class",
       "candidateTerms": "BLOCK",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000036",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
       "label": "BLOCK"
     },
@@ -18130,7 +18130,7 @@
       "@type": "owl:Class",
       "candidateTerms": "score-without-unit-of-measure",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#numerical-score",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#numerical-score",
       "label": "score-without-unit-of-measure"
     },
     {
@@ -18144,7 +18144,7 @@
       "@type": "owl:Class",
       "candidateTerms": "dicom_xxxx0031",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000612",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000612",
       "label": "Basic Offset Table"
     },
     {
@@ -18200,7 +18200,7 @@
       "description": "A stimulus response file is an auxiliary file that contains the recorded response of the subject to an experimental stimulus the course of a task-based assessment activity.",
       "candidateTerms": "StimulusResponseFile",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AuxiliaryFile",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AuxiliaryFile",
       "label": "Stimulus Response File"
     },
     {
@@ -18347,7 +18347,7 @@
       "description": "Image data reconstruction is an activity in which raw data is transformed into a matrix of values that represent the spatial distribution of intensity based on some image contrast type.",
       "candidateTerms": "ImageDataReconstruction",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Activity",
       "label": "Image Data Reconstruction"
     },
     {
@@ -18384,7 +18384,7 @@
       "description": "A Data Element defined in the DICOM Standard, and therefore listed in the DICOM Data Element Dictionary in PS3.6.",
       "candidateTerms": "dicom_xxxx0055",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0035",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0035",
       "label": "Standard Data Element"
     },
     {
@@ -18533,7 +18533,7 @@
       "description": "A collection of elements related by one or more criteria.",
       "candidateTerms": "NIDM_0000006",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "label": "deprecated Cluster"
     },
     {
@@ -18576,7 +18576,7 @@
       "description": "The criterion used to characterize two pixels as 'connected'. In two dimensions voxels that are connected can share an edge (4-connected) or, edge or corner (8-connected).",
       "candidateTerms": "NIDM_0000064",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000012",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000012",
       "label": "Pixel Connectivity Criterion"
     },
     {
@@ -18611,7 +18611,7 @@
       "description": "A 'Mask Map' representing the set of elements (e.g., pixels, voxels, vertices, or faces) in which the 'Inference' was performed",
       "candidateTerms": "NIDM_0000068",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000054",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000054",
       "comment": "Discussed at: https://github.com/incf-nidash/nidm/pull/258",
       "label": "Search Space Mask Map"
     },
@@ -18634,7 +18634,7 @@
       "description": "Acquisition usage type is an acquisition object quality that denotes to what purpose the acquired object will be employed.",
       "candidateTerms": "AcquisitionUsageType",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionObjectQuality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionObjectQuality",
       "comment": "This is used for a non-imaging based acquisition modality.",
       "label": "Acquisition Usage Type"
     },
@@ -18889,7 +18889,7 @@
       "description": "Susceptibility weighted is a magentic resonance imaging image-contrast type in which differences in voxel intensity reflect differences in magnetic susceptibilty of the underlying sample.",
       "candidateTerms": "SusceptibilityWeighted",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageContrastType",
       "label": "Susceptibility Weighted"
     },
     {
@@ -18918,7 +18918,7 @@
       "description": "A File-set in which all DICOM Files are Secure DICOM Files.",
       "candidateTerms": "dicom_xxxx0084",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0074",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0074",
       "label": "Secure File-set"
     },
     {
@@ -19023,7 +19023,7 @@
       "description": "A stimulus response file is an auxiliary file that contains the recorded response of the subject to an experimental stimulus the course of a task-based assessment activity.",
       "candidateTerms": "Structural",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageUsageType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageUsageType",
       "label": "Structural"
     },
     {
@@ -19038,7 +19038,7 @@
       "description": "A map whose value at each element (e.g., pixel, voxel, vertex, or face) location is the number of resels per voxel.",
       "candidateTerms": "NIDM_0000144",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000052",
       "label": "Resels Per Voxel Map"
     },
     {
@@ -19081,7 +19081,7 @@
       "description": "Rectilinear is a k-space traversal scheme in magnetic resonance imaging in which the path in k-space over which the data is acquired is linear and aligned perpendicular to either the phase-encoding or frequency-encoding direction.",
       "candidateTerms": "Rectilinear",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#k-spaceTraversalScheme",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#k-spaceTraversalScheme",
       "label": "Rectilinear"
     },
     {
@@ -19140,7 +19140,7 @@
       "@type": "owl:Class",
       "candidateTerms": "dicom_xxxx0027",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0026",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0026",
       "label": "Reconstruction Protocol Element"
     },
     {
@@ -19197,7 +19197,7 @@
       "description": "An Entity-Relationship diagram that is used to model the relationships between the Information Object Definitions representing classes of Real-World Objects defined by the DICOM Application Model.",
       "candidateTerms": "dicom_xxxx0020",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000510",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000510",
       "label": "DICOM Information Model"
     },
     {
@@ -19233,7 +19233,7 @@
       "description": "Set of Finite impulse response (FIR) filters, with FIR the convolution kernel is represented as a set of discrete fixed-width \"impulses\" (definition adapted from [FSL wiki](http://fsl.fmrib.ox.ac.uk/fsl/fsl4.0/feat5/detail.html))",
       "candidateTerms": "NIDM_0000028",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000036",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
       "label": "Finite Impulse Response Basis Set"
     },
@@ -19242,7 +19242,7 @@
       "description": "A raw acquisition object is an acquisition object that has not yet undergone any further processing steps such asthe image reconstruction process.",
       "candidateTerms": "RawAcquisitionObject",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionObject",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionObject",
       "label": "Raw Acquisition Object"
     },
     {
@@ -19320,7 +19320,7 @@
       "description": "Image Usage Type is an acquisition object quality that denotes to what purpose the acquired object will be employed.",
       "candidateTerms": "ImageUsageType",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionUsageType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionUsageType",
       "comment": "Common image usage types in magnetic resonance imaging are anatomical and functional",
       "label": "Image Usage Type"
     },
@@ -19371,7 +19371,7 @@
       "description": "A set of Sine waves of differing frequencies (definition adapted from [FSL wiki](http://fsl.fmrib.ox.ac.uk/fsl/fsl4.0/feat5/detail.html)).",
       "candidateTerms": "NIDM_0000151",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000036",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
       "label": "Sine Basis Set"
     },
@@ -19498,7 +19498,7 @@
       "@type": "owl:Class",
       "candidateTerms": "behavioural-interview",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#questionnaire-based-assessment",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#questionnaire-based-assessment",
       "label": "behavioural-interview"
     },
     {
@@ -19640,7 +19640,7 @@
       "description": "An magnetoencephalography (MEG) acquisition device is a device that measures magnetic signals generated by the electrical activity of the brain and consists of a set of magnetometers placed near the surface of the head and a recording device that collects the signal from each electrode.",
       "candidateTerms": "MagnetoencephalographyAcquisitionDevice",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
       "label": "Magnetoencephalography Acquisition Device"
     },
     {
@@ -19711,7 +19711,7 @@
       "description": "A specified plan is a plan that describes how the acquisition activity is to be carried out.",
       "candidateTerms": "SpecifiedPlan",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Plan",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Plan",
       "comment": "Note that this is related to nidm:PerformedPlan, which is the plan that is actually carried out.",
       "label": "Specified Plan"
     },
@@ -19796,7 +19796,7 @@
       "@type": "owl:Class",
       "candidateTerms": "neuropsychological-test",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#psychological-test",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#psychological-test",
       "label": "neuropsychological-test"
     },
     {
@@ -19839,7 +19839,7 @@
       "description": "Task based is an image usage type indicating that a specific task was performed during the data acquisition.",
       "candidateTerms": "TaskBased",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#Functional",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#Functional",
       "label": "Task Based"
     },
     {
@@ -19854,7 +19854,7 @@
       "description": "A mixed design is a fMRI design comprised of both epochs & discrete events of stimulus and/or behavior.",
       "candidateTerms": "NIDM_0000154",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000155",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000155",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/299",
       "label": "Mixed Design"
     },
@@ -19863,7 +19863,7 @@
       "description": "Presentation software is a software agent that provides the stimulus to the subject during a functional imaging (MRI, MEG, EEG) or behavioral data acquisition activity.",
       "candidateTerms": "PresentationSoftware",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#SoftwareAgent",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#SoftwareAgent",
       "label": "Presentation Software"
     },
     {
@@ -19940,7 +19940,7 @@
       "@type": "owl:Class",
       "candidateTerms": "multi-domains-instrument",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
       "label": "multi-domains-instrument"
     },
     {
@@ -20014,7 +20014,7 @@
       "description": "A piece of material with recording capabilities for streams of bits. Characteristics of a Physical Media include form factor, mechanical characteristics, recording properties and rules for recording and organizing bit streams in accessible structures.",
       "candidateTerms": "dicom_xxxx0082",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000596",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000596",
       "label": "Physical Media"
     },
     {
@@ -20022,7 +20022,7 @@
       "description": "Pseudo-continuous arterial spin labeling (pCASL)is a magnetic resonance imaging acquisition method that uses a long series of short RF-pulses and strong slice-selection gradients to invert the magnetization of flowing spins from a thin slice to measure perfusion.",
       "candidateTerms": "PseudoContinuousArterialSpinLabeling",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ArterialSpinLabeling",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ArterialSpinLabeling",
       "label": "Pseudo Continuous Arterial Spin Labeling"
     },
     {
@@ -20041,7 +20041,7 @@
       "description": "'Hemodynamic Response Function' basis which is the derivative of an 'Hemodynamic Response Function'.",
       "candidateTerms": "NIDM_0000037",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000036",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
       "label": "Hemodynamic Response Function Derivative"
     },
@@ -20114,7 +20114,7 @@
       "description": "DICOM Media Storage Services define a set of operations with media that facilitate storage to and retrieval from the media of DICOM SOP Instances.",
       "candidateTerms": "dicom_xxxx0081",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "Media Storage Services"
     },
     {
@@ -20122,7 +20122,7 @@
       "description": "A DICOM tag collection is a group of identifiers and their values that are stored in the headers of DICOM-formatted acquisition objects and that record the acquisition and reconstruction parameters for that acquisition object.",
       "candidateTerms": "DICOMTagCollection",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "DICOM Tag Collection"
     },
     {
@@ -20195,7 +20195,7 @@
       "description": "Gender is a social entity that identifies which of either male or female that a person identifies as, which may be different from biological sex.",
       "candidateTerms": "Gender",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000009",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000009",
       "label": "Gender"
     },
     {
@@ -20260,7 +20260,7 @@
       "description": "An attenuator is a device that reduces the amplitude of an input signal by a fixed amount while keeping the timecourse of the signal essentially unchanged.",
       "candidateTerms": "Attenuator",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#DataProcessingDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#DataProcessingDevice",
       "label": "Attenuator"
     },
     {
@@ -20366,7 +20366,7 @@
       "description": "A map whose value at each element (e.g., pixel, voxel, vertex, or face) is a [standard error of a contrast estimate](http://purl.obolibrary.org/obo/STATO_0000385).",
       "candidateTerms": "NIDM_0000013",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000052",
       "comment": "Discussed in https://github.com/incf-nidash/nidm/issues/255.",
       "label": "Contrast Standard Error Map"
     },
@@ -20409,7 +20409,7 @@
       "@type": "owl:Class",
       "candidateTerms": "NIDM_0000060",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Re-use \"one tailed test\" from STATO.",
       "label": "One Tailed Test",
       "sameAs": "http://purl.obolibrary.org/obo/STATO_0000286"
@@ -20418,7 +20418,7 @@
       "@type": "owl:Class",
       "candidateTerms": "sub-instrument",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
       "label": "sub-instrument"
     },
     {
@@ -20634,7 +20634,7 @@
       "description": "Stereoelectroencephalography (SEEG) is an electrophysiological acquisition method in which the electrical activity of the brain is measured with stereotactically-implanted electrodes, usually to localize an epileptogenic zone.",
       "candidateTerms": "Stereoelectroencephalography",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "label": "Stereoelectroencephalography"
     },
     {
@@ -20740,7 +20740,7 @@
       "description": "Used to mark the end of an Item of Undefined Length in a Sequence of Items. This is the last Data Element in an Item of Undefined Length.",
       "candidateTerms": "dicom_xxxx0044",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0035",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0035",
       "label": "Item Delimitation Data Element"
     },
     {
@@ -20902,7 +20902,7 @@
       "description": "The field where the Value Representation of a Data Element is stored in the encoding of a Data Element structure with explicit VR.",
       "candidateTerms": "dicom_xxxx0064",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "Value Representation Field"
     },
     {
@@ -21026,7 +21026,7 @@
       "description": "The second number in the ordered pair of numbers that makes up a Data Element Tag.",
       "candidateTerms": "dicom_xxxx0040",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000115",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000115",
       "label": "Element Number"
     },
     {
@@ -21138,7 +21138,7 @@
       "@type": "owl:Class",
       "candidateTerms": "NIDM_0000003",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.obolibrary.org/obo/STATO_0000346",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.obolibrary.org/obo/STATO_0000346",
       "comment": "Under discussion at https://github.com/ISA-tools/stato/issues/28",
       "label": "deprecated Arbitrarily Correlated Error"
     },
@@ -21224,14 +21224,14 @@
       "description": "A principal investigator is a role for a person who leads an activity during which data is acquired with a specific scientific purpose.",
       "candidateTerms": "PrincipalInvestigator",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Role",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Role",
       "label": "Principal Investigator"
     },
     {
       "@type": "owl:Class",
       "candidateTerms": "numerical-variable",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#instrument-variable",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#instrument-variable",
       "label": "numerical-variable"
     },
     {
@@ -21247,7 +21247,7 @@
       "description": "A 'Drift Model' in which the drifts are modeled with a Gaussian-weighted running line smoother, fit to and subtracted from the data and each column of the 'Design Matrix'.",
       "candidateTerms": "FSL_0000002",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000087",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000087",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/298",
       "label": "Gaussian Running Line Drift Model"
     },
@@ -21367,7 +21367,7 @@
       "description": "Customised set of basis functions.",
       "candidateTerms": "NIDM_0000067",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000036",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
       "label": "Custom Basis Set"
     },
@@ -21390,7 +21390,7 @@
       "description": "Flow weighted is an image contrast type in which differences in voxel intensity are based on the bulk motion behavior of the species that generates the detected signal from that voxel.",
       "candidateTerms": "FlowWeighted",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageContrastType",
       "label": "Flow Weighted"
     },
     {
@@ -21521,7 +21521,7 @@
       "description": "Attribute that (usually) includes the string 'Code Sequence' in the Attribute Name and has a VR of SQ (Sequence of Items). Its purpose is to encode concepts using code values and optional text meanings from coding schemes. Section 8.1 through Section 8.8 specify the Attributes of which the Sequence Items (Attribute Sets) of Code Sequence Attributes are constructed.",
       "candidateTerms": "dicom_xxxx0017",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000614",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000614",
       "label": "Code Sequence Attribute"
     },
     {
@@ -21578,7 +21578,7 @@
       "description": " A sequential component of a storage protocol, such as sending a series of images to a PACS or an archive or a processing workstation.",
       "candidateTerms": "dicom_xxxx0029",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0026",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0026",
       "label": "Storage Protocol Element"
     },
     {
@@ -21586,7 +21586,7 @@
       "description": "Files are identified by a File ID that is unique within the context of the File-set they belong to. A set of ordered File ID Components (up to a maximum of eight) forms a File ID.",
       "candidateTerms": "dicom_xxxx0071",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000115",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000115",
       "label": "File ID"
     },
     {
@@ -21601,7 +21601,7 @@
       "description": "The process of performing a [obo:contrast estimation](http://purl.obolibrary.org/obo/STATO_0000383) at each element (e.g., pixel, voxel, vertex, or face) of a map",
       "candidateTerms": "NIDM_0000001",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Activity",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/276 and https://github.com/ISA-tools/stato/issues/23",
       "label": "Contrast Estimation"
     },
@@ -21624,7 +21624,7 @@
       "description": " Specifies the number of Values contained in the Value Field of a Data Element. (VM)",
       "candidateTerms": "dicom_xxxx0062",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000366",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000366",
       "label": "Value Multiplicity"
     },
     {
@@ -21696,7 +21696,7 @@
       "@type": "owl:Class",
       "candidateTerms": "neuroclinical-instrument",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
       "label": "neuroclinical-instrument"
     },
     {
@@ -21934,7 +21934,7 @@
       "description": "Map-wise dependence structure of a parameter in the 'Error Model' (i.e. variance or dependence parameter). For example, whether a temporal autocorrelation parameter is estimated at each element separately, estimated using data in a local neighbourhood, or estimated using all elements in the map.",
       "candidateTerms": "NIDM_0000071",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/194",
       "label": "Error Parameter Map-Wise Dependence"
     },
@@ -21999,7 +21999,7 @@
       "description": "A sequential component of an acquisition protocol, that contains the SCANNING PARAMETERS necessary to perform a single SCAN. In the case of CT this would correspond to tube voltage, tube current, rotation time, spatial location, etc. and an Acquisition Protocol Element also corresponds to an XR-25 PROTOCOL ELEMENT.",
       "candidateTerms": "dicom_xxxx0015",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0026",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0026",
       "label": "Acquisition Protocol Element"
     },
     {
@@ -22077,7 +22077,7 @@
       "description": "Standard Data Elements within a particular range of Group Numbers where elements that have identical Element Numbers have the same meaning within each Group (and the same VR, VM, and Data Element Type). Repeating Groups shall only exist for Curves and Overlay Planes (Group Numbers (50xx,eeee) and (60xx,eeee), respectively) and are a remnant of versions of this standard prior to V3.0.",
       "candidateTerms": "dicom_xxxx0051",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000115",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000115",
       "label": "Repeating Group"
     },
     {
@@ -22092,7 +22092,7 @@
       "description": "Functional is a description of the usage of a given acquisition object, indicating that the purpose of the object is to provide information on the biological function of some aspect of the object on which the acquisition was performed.",
       "candidateTerms": "Functional",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageUsageType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageUsageType",
       "label": "Functional"
     },
     {
@@ -22187,7 +22187,7 @@
       "description": "An fMRI design type is the type of stimulus presentation used in the data acquisition; one of block-based design, event-related design or mixed design.",
       "candidateTerms": "NIDM_0000155",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionObjectQuality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionObjectQuality",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/299",
       "label": "fMRI Design Type"
     },
@@ -22217,7 +22217,7 @@
       "description": "Cerebral Blood Flow (CBF) is a calculated parameter that characterizes the blood volume in the brain.",
       "candidateTerms": "CerebralBloodFlow",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#CalculatedParameter",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#CalculatedParameter",
       "comment": "This calculated parameter is usually displayed as a map that displays the CBF in quantitative or relative units.",
       "label": "Cerebral Blood Flow"
     },
@@ -22226,7 +22226,7 @@
       "description": "A set of encoding rules that allow Application Entities to unambiguously negotiate the encoding techniques (e.g., Data Element structure, byte ordering, compression) they are able to support, thereby allowing these Application Entities to communicate. (This is for both Standard and Private).",
       "candidateTerms": "dicom_xxxx0056",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000651",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000651",
       "label": "Transfer Syntax"
     },
     {
@@ -22248,7 +22248,7 @@
       "description": "A unique identifier for a Data Element composed of an ordered pair of numbers (a Group Number followed by an Element Number).",
       "candidateTerms": "dicom_xxxx0036",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0065",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0065",
       "label": "Data Element Tag"
     },
     {
@@ -22333,7 +22333,7 @@
       "description": "'NIDM Object Model' representing the results of a mass univariate neuroimaging study and targeting the application of meta-analysis. The  specification is available at: http://nidm.nidash.org/specs/nidm-results.html",
       "candidateTerms": "NIDM_0000027",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000057",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000057",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/pull/137",
       "label": "NIDM-Results"
     },
@@ -22493,7 +22493,7 @@
       "@type": "owl:Class",
       "candidateTerms": "psychophysical-test",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#experimental-psychology-test",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#experimental-psychology-test",
       "label": "psychophysical-test"
     },
     {
@@ -22578,7 +22578,7 @@
       "description": "An Application Entity that accesses Files, creates additional Files, or deletes existing Files in a File-set. A File-set Updater makes the appropriate alterations to the DICOMDIR file reflecting the additions or deletions.",
       "candidateTerms": "dicom_xxxx0077",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Agent",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Agent",
       "label": "File-set Updater"
     },
     {
@@ -22701,7 +22701,7 @@
       "description": "Statistically testing for the joint significance of multiple effects, with emphasis on rejecting all (instead of one or more) of the respective null hypotheses.",
       "candidateTerms": "NIDM_0000011",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000049",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000049",
       "comment": "Term discussed in https://github.com/incf-nidash/nidm/pull/134",
       "label": "Conjunction Inference"
     },
@@ -22766,7 +22766,7 @@
       "description": "A component of the Value of a Data Element that is of Value Representation Sequence of Items.",
       "candidateTerms": "dicom_xxxx0043",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000651",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000651",
       "label": "Item"
     },
     {
@@ -22808,7 +22808,7 @@
       "@type": "owl:Class",
       "candidateTerms": "neuroclinical-interview",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#questionnaire-based-assessment",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#questionnaire-based-assessment",
       "label": "neuroclinical-interview"
     },
     {
@@ -22907,7 +22907,7 @@
       "description": "A stimulus isolatator is a device that can deliver a current or voltage waveform that is used to stimulate a sample, cell, or body part, but is isolated from electrical ground, which both decreases the stimulus artifact in the acquired signal and increases the safety for the user.",
       "candidateTerms": "StimulusIsolator",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000956",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000956",
       "label": "Stimulus Isolator"
     },
     {
@@ -22950,7 +22950,7 @@
       "description": "Poisson distribution is a probability distribution used to model the number of events occurring within a given time interval. It is defined by a real number (\u03bb) and an integer k representing the number of events and a function. The expected value of a Poisson-distributed random variable is equal to \u03bb and so is its variance. (Definition from STATO).",
       "candidateTerms": "NIDM_0000065",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000022",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000022",
       "label": "deprecated Poisson Distribution",
       "sameAs": "http://purl.obolibrary.org/obo/STATO_0000051"
     },
@@ -23076,7 +23076,7 @@
       "@type": "owl:Class",
       "candidateTerms": "bi-coded-scale-item",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#quantitative-scale-item",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#quantitative-scale-item",
       "label": "bi-coded-scale-item"
     },
     {
@@ -23091,7 +23091,7 @@
       "description": "Magnetoencephalography (MEG) is an acquisition modality in which the magnetic fields, resulting from electrical activity in the brain, are detected and used to elucidate the time course of brain electrical activity.",
       "candidateTerms": "Magnetoencephalography",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionModality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionModality",
       "label": "Magnetoencephalography"
     },
     {
@@ -23450,7 +23450,7 @@
       "description": "A map whose value at each element (e.g., pixel, voxel, vertex, or face) is the extra sum of squares divided by the 'effect Degrees of Freedom' (i.e. the numerator of an F-statistic).",
       "candidateTerms": "NIDM_0000163",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000052",
       "comment": "Discussed in https://github.com/incf-nidash/nidm/issues/235",
       "label": "Contrast Explained Mean Square Map"
     },
@@ -23494,7 +23494,7 @@
       "description": "A string of characters identifying a controlled concept, including Defined Terms and Enumerated Values when represented as character strings. The scope of the controlled concept is limited to the attribute for which the string provides the value; i.e., the attribute defines the allowed set of values for the Code String, and a particular string may have different meanings in different attributes. A Code String is formally an arbitrary code representing a semantic concept; however, English language words (using the constrained character set of the CS Value Representation) are often used as codes for the semantics of those words.",
       "candidateTerms": "dicom_xxxx0034",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000651",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000651",
       "label": "Code String:"
     },
     {
@@ -23565,7 +23565,7 @@
       "@type": "owl:Class",
       "candidateTerms": "qualitative-scale-item",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#scale-item",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#scale-item",
       "label": "qualitative-scale-item"
     },
     {
@@ -23723,7 +23723,7 @@
       "description": "A map whose value at each element (e.g., pixel, voxel, vertex, or face) is a contrast variance (i.e. the square of a [standard error of a contrast estimate](http://purl.obolibrary.org/obo/STATO_0000385))",
       "candidateTerms": "NIDM_0000135",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000052",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/287",
       "label": "Contrast Variance Map"
     },
@@ -23793,7 +23793,7 @@
       "@type": "owl:Class",
       "candidateTerms": "coded-score",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#score",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#score",
       "label": "coded-score"
     },
     {
@@ -23913,7 +23913,7 @@
       "description": "Resting is an activity in which a subject does not perform a specific task.",
       "candidateTerms": "Resting",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Activity",
       "label": "Resting"
     },
     {
@@ -23928,7 +23928,7 @@
       "description": "Image Contrast Type is an acquisition object quality that denotes the physical properties on which differences in image intensity, in an image, are based.",
       "candidateTerms": "ImageContrastType",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionObjectQuality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionObjectQuality",
       "label": "Image Contrast Type"
     },
     {
@@ -23950,7 +23950,7 @@
       "description": "A map in which all values are 0, 1 or NaN. Usually, selected elements (e.g., pixels, voxels, vertices, or faces) have a value of 1 and excluded elements (i.e. the background) have a value of 0 or NaN",
       "candidateTerms": "NIDM_0000004",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000052",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/pull/258",
       "label": "Binary Map"
     },
@@ -23987,7 +23987,7 @@
       "description": "An acquisition is an activty in which data about a subject is gathered.",
       "candidateTerms": "Acquisition",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Activity",
       "label": "Acquisition"
     },
     {
@@ -24002,7 +24002,7 @@
       "description": "An alphanumeric identifier issued by the unique device identification system established by the FDA to label and identify devices through distribution and use. See http://www.fda.gov/udi.",
       "candidateTerms": "dicom_xxxx0030",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0058",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0058",
       "label": "Unique Device Identifier"
     },
     {
@@ -24051,7 +24051,7 @@
       "@type": "owl:Class",
       "candidateTerms": "questionnaire-based-assessment",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#instrument-based-assessment",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#instrument-based-assessment",
       "label": "questionnaire-based-assessment"
     },
     {
@@ -24115,7 +24115,7 @@
       "description": "A session is an activity during which data, potentially of different types, is acquired from a subject by an experimenter during a single unbroken time period.",
       "candidateTerms": "Session",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Activity",
       "comment": "During a MRI session, for example, T1-weighted and resting-state data were acquired.  Both the T1-weighted and resting state data are Acquisition Objects and the time period during which they were acquired is the Session.",
       "label": "Session"
     },
@@ -24131,7 +24131,7 @@
       "description": "The ability to specify an unknown length for a Data Element Value (of Value Representation SQ, UN, OW, or OB) or Item. Data Elements and Items of Undefined Length are delimited with Sequence Delimitation Items and Item Delimiter Data Elements, respectively.",
       "candidateTerms": "dicom_xxxx0057",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000614",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000614",
       "comment": "The given description is ambiguous, in that it describes Undefined Length both as an ability to specify and as a condition.  We are choosing to interpret this as an attribute.",
       "label": "Undefined Length"
     },
@@ -24274,7 +24274,7 @@
       "description": "Noise measurement is an acquisition usage type that denotes that the acquisition object collected has been used to measure the intrinsic noise level of the acquisition hardware.",
       "candidateTerms": "NoiseMeasurement",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionUsageType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionUsageType",
       "comment": "This type is also called 'Empty' in Magnetoencepholography, since the acquisition activity is undertaken with no subject or sample present.",
       "label": "Noise Measurement"
     },
@@ -24304,7 +24304,7 @@
       "description": "A Media Storage Application Profile defines a selection of choices at the various layers of the DICOM Media Storage Model that are applicable to a specific need or context in which the media interchange is intended to be performed.",
       "candidateTerms": "dicom_xxxx0066",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Collection",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Collection",
       "label": "Application Profile"
     },
     {
@@ -24410,7 +24410,7 @@
       "description": "A Linear (order 1) spline, providing an estimate that is continuous over time (in contrast to a FIR basis, which is discontinuous between each time bin). This is called TENT in AFNI's 3dDeconvolve program.",
       "candidateTerms": "NIDM_0000150",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000036",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
       "label": "Linear Spline Basis Set"
     },
@@ -24608,7 +24608,7 @@
       "description": "A processeded acquisition object is an acquisition object that has undergone an image reconstruction activity resulting in a matrix of values that when viewed form an image.",
       "candidateTerms": "ProcessedAcquisitionObject",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionObject",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionObject",
       "label": "Processed Acquisition Object"
     },
     {
@@ -24651,7 +24651,7 @@
       "description": "Anatomical is a description of the usage of a given acquisition object, indicating that the purpose of the object is to provide information on the anatomy of the object on which the acquisition was performed.",
       "candidateTerms": "Anatomical",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#ImageUsageType",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#ImageUsageType",
       "label": "Anatomical"
     },
     {
@@ -24715,7 +24715,7 @@
       "description": "Set of Fourier basis.",
       "candidateTerms": "NIDM_0000069",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000036",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
       "label": "Fourier Basis Set"
     },
@@ -24724,7 +24724,7 @@
       "description": "Scaling applied to the data before parameter estimation, including specification of the 'target Intensity'.",
       "candidateTerms": "NIDM_0000018",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/285",
       "label": "deprecated Data Scaling"
     },
@@ -24775,7 +24775,7 @@
       "description": "The 'Binomial Distribution' is a discrete probability distribution which describes the probability of k successes in n draws with replacement from a finite population of size N. The 'Binomial Distribution' is frequently used to model the number of successes in a sample of size n drawn with replacement from a population of size N. The 'Binomial Distribution' gives the discrete probability distribution of obtaining exactly n successes out of N Bernoulli trials (where the result of each Bernoulli trial is true with probability p and false with probability q=1-p ) notation: B(n,p) The mean is N*p The variance is N*p*q. (Definition from STATO).",
       "candidateTerms": "NIDM_0000005",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000022",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000022",
       "label": "deprecated Binomial Distribution",
       "sameAs": "http://purl.obolibrary.org/obo/STATO_0000276"
     },
@@ -24973,7 +24973,7 @@
       "description": "An eye tracking device is a device that consists of hardware that follows the motion of a subjects eye so that allows the determination of either the location of the subject's gaze or of relative eye motion.",
       "candidateTerms": "EyeTrackingDevice",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#DataAcquisitionDevice",
       "label": "Eye Tracking Device"
     },
     {
@@ -25057,7 +25057,7 @@
       "@type": "owl:Class",
       "candidateTerms": "psychological-instrument",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+      "http://uri.interlex.org/ilx_0770184": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
       "label": "psychological-instrument"
     },
     {
@@ -25093,7 +25093,7 @@
       "description": "A block-based design is a fMRI design comprised of epochs of stimulus and/or behavior.",
       "candidateTerms": "NIDM_0000152",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000155",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#NIDM_0000155",
       "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/299",
       "label": "Block-Based Design"
     },
@@ -25204,7 +25204,7 @@
       "description": "A project is a coordinated set of activities designed to generate data acquisition objects, with the ultimate goal of discovery or hypothesis testing.",
       "candidateTerms": "Project",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Activity",
       "label": "Project"
     },
     {
@@ -25274,7 +25274,7 @@
       "description": "X-ray Computed tomography is an acquisition modality in which an x-ray beam is scanned across a subject and the resulting data is reconstructed into two-dimensional slices or a three-dimensional volume in which the contrast is generated by the differential absorption of x-rays.",
       "candidateTerms": "X-rayComputedTomography",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionModality",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/nidm#AcquisitionModality",
       "label": "X-ray Computed Tomography"
     },
     {
@@ -25293,7 +25293,7 @@
       "description": "Set of criterion specified a priori to define the clusters reported after 'Inference' (e.g. pixel or voxel 'Connectivity Criterion').",
       "candidateTerms": "NIDM_0000007",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "http://uri.interlex.org/ilx_0770184": "http://www.w3.org/ns/prov#Entity",
       "label": "Cluster Definition Criteria"
     },
     {
@@ -25308,7 +25308,7 @@
       "description": "A DICOM File that is encapsulated with the Cryptographic Message Syntax specified in RFC2630.",
       "candidateTerms": "dicom_xxxx0083",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0070",
+      "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/dicom#dicom_xxxx0070",
       "label": "Secure DICOM File"
     },
     {
@@ -25344,7 +25344,7 @@
       "description": "The DICOM Media Storage Model pertains to the data structures used at different layers to achieve interoperability through media interchange.",
       "candidateTerms": "dicom_xxxx0080",
       "associatedWith": "NIDM",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000510",
+      "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000510",
       "label": "Media Storage Model"
     },
     {
