@@ -1,0 +1,52 @@
+## This workflow runs term_use_freq.py to generate the following:
+# 1. BIDS_Terms.jsonld
+# 2. NIDM_Terms.jsonld
+# 3. NDA_Terms.jsonld
+# 4. NIDM_concepts.jsonld
+
+name: Generate Single JSONLD File
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: '*'
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+        
+    - name: Install packages
+      run: |
+        python -m pip install --upgrade pip setuptools
+        pip install glob2 pyld argparse requests
+        
+    # Runs combinebidsjsonld.py and updates the single jsonld files
+    - name: Generate a single BIDS Terms file
+      run: |
+        python utils/combinebidsjsonld.py -inputDir terms/BIDS_Terms/ -outputDir terms/BIDS_Terms.jsonld
+        
+    - name: Generate a single NDA Terms file
+      run: |
+        python utils/combinebidsjsonld.py -inputDir terms/NDA_Terms/ -outputDir terms/NDA_Terms.jsonld -association NDA
+        
+        
+    - name: Generate a single NIDM Terms file
+      run: |
+        python utils/combinebidsjsonld.py -inputDir terms/NIDM_Terms/ -outputDir terms/NIDM_Terms.jsonld -association NIDM
+        
+    - name: Generate a single NIDM concepts file
+      run: |
+        python utils/combinebidsjsonld.py -inputDir terms/NIDM_Concepts/ -outputDir terms/NIDM_Concepts.jsonld -association NIDM
+
+    
+    #commits the changes to the repository
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Terms Updates
