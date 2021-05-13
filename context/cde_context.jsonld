@@ -35,9 +35,6 @@
 			"@container": "@list"
 		},
 		"isPartOf": "http://uri.interlex.org/ilx_0112785",
-		"sameAs": {
-			"@id": "https://www.w3.org/TR/2009/REC-skos-reference-20090818#sameAs"
-		},
 		"closeMatch": "https://www.w3.org/TR/2009/REC-skos-reference-20090818#closeMatch",
 		"url": {
 			"@id": "http://schema.org/url",
@@ -67,24 +64,33 @@
 		"maxValue": "http://schema.org/maxValue",
 		"allowableValues": "http://uri.interlex.org/ilx_0770181",
 		"wasDerivedFrom": {
-			"@id": "http://www.w3.org/ns/prov#wasDerivedFrom"
+			"@id": "http://www.w3.org/ns/prov#wasDerivedFrom",
+			"@container": "@set",
+			"@type": "@id"
 		},
 		"ontologyConceptID": "http://uri.interlex.org/ilx_0770186",
 		"subtypeCDEs": {
-			"@id": "http://uri.interlex.org/ilx_0770183"
+			"@id": "http://uri.interlex.org/ilx_0770183",
+			"@container": "@set"
 		},
 		"supertypeCDEs": {
 			"@id": "http://uri.interlex.org/ilx_0770184",
 			"@type": "@id",
 			"@container": "@set"
 		},
-		"relatedConcepts": "http://uri.interlex.org/ilx_0770185",
+		"relatedConcepts": {
+			"@id": "http://uri.interlex.org/ilx_0770185",
+			"@container": "@set"
+		},
 		"choices": {
 			"@id": "reproschema:choices"
 		},
 		"derivative": "http://uri.interlex.org/ilx_0739337",
 		"citation": "http://schema.org/citation",
-		"associatedWith": "http://uri.interlex.org/ilx_0739289",
+		"associatedWith": {
+			"@id": "http://uri.interlex.org/ilx_0739289",
+			"@container": "@set"
+		},
 		"responseOptions": {
             "@id": "reproschema:responseOptions",
             "@container": "@set",
@@ -95,7 +101,8 @@
 		"ilxId": "https://scicrunch.org/nidm-terms",
 		"bids": "http://nidash.org/bids#",
 		"sameAs": {
-			"@id": "http://www.w3.org/2002/07/owl#sameAs"
+			"@id": "http://www.w3.org/2002/07/owl#sameAs",
+			"@type": "@id"
 		},
 		"terms": {
 			"@id": "http://www.w3.org/ns/prov#hasMember",
