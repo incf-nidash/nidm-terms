@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "The value of the Private Creator Data Element value used to reserve the block of Private Data Elements whose characteristics are described in this Item. Private blocks are identified by their Private Creator Data Element value, rather than their numeric block number, since instances may be modified and numeric block numbers reassigned but the Private Creator Data Element value, which is required to be unique within a Group of Private Data Elements, will be preserved.",
   "candidateTerms": "dicom_00080302",
-  "label": "Private Creator Reference",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Private Creator Reference"
 }

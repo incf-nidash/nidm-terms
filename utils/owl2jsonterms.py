@@ -1,7 +1,7 @@
 
 import os,sys
 from os import system
-from os.path import isfile
+from os.path import isfile,basename
 from argparse import ArgumentParser
 import pandas as pd
 from rdflib import Graph,util,Namespace, Literal,RDFS,RDF, URIRef
@@ -21,6 +21,22 @@ NIDM = Namespace("http://purl.org/nidash/nidm#")
 SKOS = Namespace("https://www.w3.org/TR/2009/REC-skos-reference-20090818#")
 OBO = Namespace("http://purl.obolibrary.org/obo/")
 DCT = Namespace("http://purl.org/dc/terms/")
+
+# additional 'associatedWith' mappings from imports to strings
+ASSOCIATED_WITH={
+    "bids_import.ttl" : "BIDS",
+    "crypto_import.ttl": "CRYPTO",
+    "dc_import.ttl" : "DC",
+    "dicom_import.ttl" : "DICOM",
+    "iao_import.ttl" : "IAO",
+    "nfo_import.ttl" : "NFO",
+    "obi_import.ttl" : "OBI",
+    "ontoneurolog_instruments_import.ttl" : "ONTONEUROLOG",
+    "pato_import.ttl" : "PATO",
+    "prov-o" : "PROV",
+    "prv_import.ttl" : "PRV",
+    "sio_import.ttl" : "SIO"
+}
 
 
 def main(argv):
@@ -68,6 +84,15 @@ def main(argv):
             doc={}
             # add type as schema.org/DefinedTerm
             doc['@type'] = []
+            doc['@type'].append(NIDM+'CommonDataElement')
+
+            # add associated with property
+            doc[context['@context']['associatedWith']] = []
+            doc[context['@context']['associatedWith']].append('NIDM')
+            # if we have an additional 'associatedWith' string to add from a known import
+            # add it
+            if basename(file).rstrip(",") in ASSOCIATED_WITH.keys():
+                doc[context['@context']['associatedWith']].append(ASSOCIATED_WITH[basename(file).rstrip(",")])
             #doc['@type'].append(context['@context']['DefinedTerm'])
             #store term as localpart of subject identifier
             url, fragment = urldefrag(so[0])
@@ -156,7 +181,7 @@ def main(argv):
             label = label.replace("'","")
             print(label)
 
-            compacted['associatedWith'] = "NIDM"
+            #compacted['associatedWith'] = "NIDM"
             with open (join(args.output_dir,label+".jsonld"),'w') as outfile:
                 json.dump(compacted,outfile,indent=2)
 
@@ -165,11 +190,11 @@ def main(argv):
     # if a single-file jsonld file already exists than add these terms to it else create a new one
     if isfile(join(output_dir,"NIDM_Terms.jsonld")):
         cmd = "python " + join(sys.path[0],"combinebidsjsonld.py") + " -inputDir " + args.output_dir + " -outputDir " + \
-            join(output_dir,"NIDM_Terms.jsonld") + " -association \"NIDM\"" + " -jsonld " + \
+            join(output_dir,"NIDM_Terms.jsonld") + " -jsonld " + \
             join(output_dir, "NIDM_Terms.jsonld")
     else:
         cmd = "python " + join(sys.path[0], "combinebidsjsonld.py") + " -inputDir " + args.output_dir + " -outputDir " + \
-              join(output_dir, "NIDM_Terms.jsonld") + " -association \"NIDM\""
+              join(output_dir, "NIDM_Terms.jsonld")"
 
     print(cmd)
     system(cmd)

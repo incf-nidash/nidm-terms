@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "Sequence that specifies the timing of the Bolus Cut-off technique and possibly its (scientific) description. Only a single Item shall be included in this Sequence. Required if ASL Bolus Cut-off Flag (0018,925C) is YES.",
   "candidateTerms": "dicom_0018925D",
-  "label": "ASL Bolus Cut-off Timing Sequence",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "ASL Bolus Cut-off Timing Sequence"
 }

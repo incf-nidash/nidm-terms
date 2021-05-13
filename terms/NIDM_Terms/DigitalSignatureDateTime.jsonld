@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "The date and time the Digital Signature was created. The time shall include an offset (i.e., time zone indication) from Coordinated Universal Time. This is not a certified timestamp, and hence is not completely verifiable. An application can compare this date and time with those of other signatures and the validity date of the certificate to gain confidence in the veracity of this date and time.",
   "candidateTerms": "dicom_04000105",
-  "label": "Digital Signature DateTime",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Digital Signature DateTime"
 }

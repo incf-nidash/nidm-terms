@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "Laterality of body part (eye) examined. Laterality (0020,0060) is a Series level Attribute and must be the same for all Measurements in the Series, hence it must be absent if multiple instances from different eyes are encoded.",
   "candidateTerms": "dicom_00240113",
-  "label": "Measurement Laterality",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Measurement Laterality"
 }

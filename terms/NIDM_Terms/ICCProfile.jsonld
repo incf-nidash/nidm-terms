@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "An ICC Profile encoding the transformation of device-dependent color stored pixel values into PCS-Values. The profile applies only to Pixel Data (7FE0,0010) at the same level of the Data Set and not to any icons nested within sequences, which may or may not have their own ICC profile specified.",
   "candidateTerms": "dicom_00282000",
-  "label": "ICC Profile",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "ICC Profile"
 }

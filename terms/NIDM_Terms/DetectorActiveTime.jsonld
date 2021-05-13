@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "Time in mSec that the detector is active during acquisition of this image. This activation window overlaps the time of the X-Ray exposure as defined by Exposure Time (0018,1150) and Detector Activation Offset From Exposure (0018,7016).",
   "candidateTerms": "dicom_00187014",
-  "label": "Detector Active Time",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Detector Active Time"
 }

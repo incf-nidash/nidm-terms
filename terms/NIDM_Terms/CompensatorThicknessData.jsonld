@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "A data stream of the pixel samples that comprise the compensator, expressed as thicknesses (in mm). The order of pixels encoded is left to right, top to bottom, i.e., the upper left pixel is encoded first followed by the remainder of the first row, followed by the first pixel of the 2nd row, then the remainder of the 2nd row and so on) when viewed from the radiation source.",
   "candidateTerms": "dicom_300A00EC",
-  "label": "Compensator Thickness Data",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Compensator Thickness Data"
 }

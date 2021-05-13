@@ -1,9 +1,12 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "Binary flag defining whether the data was scaled (true for scaled). Specifically, \"grand mean scaling\" refers to multiplication of every voxel in every scan by a common (or session-specific) value.",
   "candidateTerms": "NIDM_0000096",
+  "associatedWith": "NIDM",
   "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/285",
-  "label": "grand Mean Scaling",
-  "associatedWith": "NIDM"
+  "label": "grand Mean Scaling"
 }

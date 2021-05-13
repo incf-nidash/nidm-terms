@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "Anatomically oriented transverse location where this acquisition ends. This represents the nominal end location. Due to overscan, tissue may be irradiated beyond this location. In a Defined Procedure Protocol, this represents the intended end location. The operator may or may not select a location that exactly matches this anatomical location. In a Performed Procedure Protocol, this value may have been copied from the Defined Procedure Protocol and may not represent the exact anatomical location selected by the operator. Only a single item is permitted in the sequence.",
   "candidateTerms": "dicom_00189932",
-  "label": "Acquisition End Location Sequence",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Acquisition End Location Sequence"
 }

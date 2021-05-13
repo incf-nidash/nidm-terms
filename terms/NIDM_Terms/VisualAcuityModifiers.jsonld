@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "The first value is a positive or negative integer numeric value such as +1, +2, +3, 0, -1, -2, or -3 used to indicate that the patient missed letters on the line referenced, or saw additional letters on the next smaller line. The second value is a positive or negative integer numeric value such as +1, +2, +3, 0, -1, -2, or -3, which in combination with the first value indicates that the patient both saw additional letters on the next smaller line and missed letters on the line referenced. When the modifier values are zero, the values are not typically displayed to the user. ",
   "candidateTerms": "dicom_00460135",
-  "label": "Visual Acuity Modifiers",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Visual Acuity Modifiers"
 }
