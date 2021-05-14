@@ -1,12 +1,15 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-  "description": "Term used to indicate the sub-category of the general class being described. Example: if the prov:Entity is an electrode, the bids:type could be disk or needle. This is a generalization of the way the term is used within the BIDS specification.",
-  "label": "type",
-  "associatedWith": [
-    "BIDS",
-    "NIDM"
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
   ],
-  "sameAs": "http://purl.org/nidash/nidm#NumberOfChannels",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod"
+  "candidateTerms": "description",
+  "associatedWith": [
+    "NIDM",
+    "BIDS"
+  ],
+  "comment": "To be discussed",
+  "label": "type",
+  "sameAs": "http://purl.org/dc/terms/description"
 }

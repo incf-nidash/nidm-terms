@@ -188,13 +188,13 @@ def main(argv):
     # Added code to now combine the separate json-ld files into a single file
     output_dir = os.path.split(args.output_dir)[0]
     # if a single-file jsonld file already exists than add these terms to it else create a new one
-    if isfile(join(output_dir,"NIDM_Terms.jsonld")):
+    if isfile(join(output_dir,basename(args.output_dir) + ".jsonld")):
         cmd = "python " + join(sys.path[0],"combinebidsjsonld.py") + " -inputDir " + args.output_dir + " -outputDir " + \
-            join(output_dir,"NIDM_Terms.jsonld") + " -jsonld " + \
-            join(output_dir, "NIDM_Terms.jsonld")
+            join(output_dir,basename(args.output_dir) + ".jsonld") + " -jsonld " + \
+            join(output_dir, basename(args.output_dir) + ".jsonld")
     else:
         cmd = "python " + join(sys.path[0], "combinebidsjsonld.py") + " -inputDir " + args.output_dir + " -outputDir " + \
-              join(output_dir, "NIDM_Terms.jsonld")"
+              join(output_dir, basename(args.output_dir) + ".jsonld")
 
     print(cmd)
     system(cmd)

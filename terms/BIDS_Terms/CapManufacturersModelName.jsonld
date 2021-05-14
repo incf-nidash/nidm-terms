@@ -1,15 +1,17 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-  "description": "OPTIONAL. Manufacturer's designation of the EEG cap model (e.g., M10)",
-  "comment": "Instead of a specific term, could use the DICOM tag ManufacturerModelName and use it as a object property for the prov:Entity cap.",
-  "label": "CapManufacturersModelName",
-  "associatedWith": [
-    "BIDS",
-    "NIDM"
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
   ],
-  "sameAs": "http://purl.org/nidash/dicom#dicom_00180021",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
-  "wasDerivedFrom": "http://purl.org/nidash/bids",
-  "ilxId": "ilx_0739350"
+  "candidateTerms": "CapManufacturersModelName",
+  "associatedWith": [
+    "NIDM",
+    "BIDS"
+  ],
+  "comment": [
+    "Instead of a specific term, could use the DICOM tag ManufacturerModelName and use it as a object property for the prov:Entity cap.",
+    "To be discussed"
+  ],
+  "label": "CapManufacturersModelName"
 }

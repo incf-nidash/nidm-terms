@@ -1,13 +1,15 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-  "description": "RECOMMENDED. Duration (in seconds) of volume acquisition. Corresponds to DICOM Tag 0018,9073 Acquisition Duration. This field is REQUIRED for sequences that are described with the VolumeTiming field and that not have the SliceTiming field set to allowed for accurate calculation of acquisition time. This field is mutually exclusive with RepetitionTime.",
-  "label": "AcquisitionDuration",
-  "associatedWith": [
-    "BIDS",
-    "NIDM"
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
   ],
-  "sameAs": "http://purl.org/nidash/dicom#dicom_00189073",
-  "wasDerivedFrom": "http://purl.org/nidash/bids",
-  "ilxId": "ilx_0100259"
+  "candidateTerms": "AcquisitionDuration",
+  "associatedWith": [
+    "NIDM",
+    "BIDS"
+  ],
+  "comment": "To be discussed",
+  "label": "AcquisitionDuration",
+  "sameAs": "http://purl.org/nidash/dicom#dicom_00189073"
 }
