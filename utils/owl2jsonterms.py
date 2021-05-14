@@ -105,7 +105,7 @@ def main(argv):
             for tuples in g.predicate_objects(subject=so[0]):
                 if tuples[0] == RDFS["label"]:
                     doc[context['@context']['label']] = tuples[1]
-                elif tuples[0] == OBO["IAO_0000115"]:
+                elif (tuples[0] == OBO["IAO_0000115"]) or (tuples[0] == DCT["description"]) :
                     doc[context['@context']['description']] = tuples[1]
                 elif tuples[0] == OWL["sameAs"]:
                     doc[context['@context']['sameAs']['@id']] = tuples[1]
