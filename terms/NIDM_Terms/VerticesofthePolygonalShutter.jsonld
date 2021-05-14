@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "Required if Shutter Shape (0018,1600) is POLYGONAL. Multiple Values where the first set of two values are: row of the origin vertex/column of the origin vertex Two or more pairs of values follow and are the row and column coordinates of the other vertices of the polygon shutter. Polygon shutters are implicitly closed from the last vertex to the origin vertex and all edges shall be non-intersecting except at the vertices.",
   "candidateTerms": "dicom_00181620",
-  "label": "Vertices of the Polygonal Shutter",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Vertices of the Polygonal Shutter"
 }

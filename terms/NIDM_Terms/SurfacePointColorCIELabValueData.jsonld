@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "Contains a vector of color triplets to assign colors to each point. The number of triplets shall be equal to the value of Number Of Surface Points (0066,0015) in the Points Macro. The units are PCS-Values, and the value is encoded as CIELab. Each triplet shall correspond to the respective point in the Point Coordinates Data (0066,0016).",
   "candidateTerms": "dicom_00800007",
-  "label": "Surface Point Color CIELab Value Data",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Surface Point Color CIELab Value Data"
 }

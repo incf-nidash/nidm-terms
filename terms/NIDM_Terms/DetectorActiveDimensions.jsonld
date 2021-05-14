@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "Dimensions in mm of the active area. If Detector Active Shape (0018,7024) is: RECTANGLE: row dimension followed by column. ROUND: diameter. HEXAGONAL: diameter of a circumscribed circle. This may be different from the Field of View Dimensions (0018,1149), and should not be assumed to describe the stored image.",
   "candidateTerms": "dicom_00187026",
-  "label": "Detector Active Dimension(s)",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Detector Active Dimension(s)"
 }

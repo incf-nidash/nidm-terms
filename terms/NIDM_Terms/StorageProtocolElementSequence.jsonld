@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "Parameter values for each storage protocol element in the Protocol. The output instances of the referenced Acquisition or Reconstruction Protocol Elements are stored to the location specified in the Output Information Sequence. The performing system might not support the requested storage protocol or not be configured for the desired destination. Whether to report failure of one or more of the storage protocol elements as a failure of the protocol is at the discretion of the performing system. The performing system may, additionally or as a fallback, be configured to store output objects to a default destination or retain them locally.",
   "candidateTerms": "dicom_00189936",
-  "label": "Storage Protocol Element Sequence",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Storage Protocol Element Sequence"
 }

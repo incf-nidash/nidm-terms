@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
-  "description": "A coded description of how this dose was derived from other RT Dose and/or RT Plan objects.",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
+  "description": "A coded description of how this image was derived. More than one Item indicates that successive derivation steps have been applied.",
   "candidateTerms": "dicom_00089215",
-  "label": "Derivation Code Sequence",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Derivation Code Sequence"
 }

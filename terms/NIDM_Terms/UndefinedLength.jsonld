@@ -1,10 +1,16 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:Class",
+  "@type": [
+    "CommonDataElement",
+    "owl:Class"
+  ],
   "description": "The ability to specify an unknown length for a Data Element Value (of Value Representation SQ, UN, OW, or OB) or Item. Data Elements and Items of Undefined Length are delimited with Sequence Delimitation Items and Item Delimiter Data Elements, respectively.",
   "candidateTerms": "dicom_xxxx0057",
-  "supertypeCDEs": "http://semanticscience.org/resource/SIO_000614",
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "http://uri.interlex.org/ilx_0770184": "http://semanticscience.org/resource/SIO_000614",
   "comment": "The given description is ambiguous, in that it describes Undefined Length both as an ability to specify and as a condition.  We are choosing to interpret this as an attribute.",
-  "label": "Undefined Length",
-  "associatedWith": "NIDM"
+  "label": "Undefined Length"
 }

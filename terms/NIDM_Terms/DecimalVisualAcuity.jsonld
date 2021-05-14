@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "A patients visual acuity specified in decimal. The value is derived from two values in a fraction where the numerator of the fraction is the nominal distance to the chart that the patient is reading. The denominator represents the line of smallest optotypes of which the patient can see more than half. Typical examples: reference standard is 1, severe vision loss is 0.1.",
   "candidateTerms": "dicom_00460137",
-  "label": "Decimal Visual Acuity",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Decimal Visual Acuity"
 }

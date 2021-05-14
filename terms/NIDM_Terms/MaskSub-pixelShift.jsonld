@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "A pair of floating point numbers specifying the fractional vertical [adjacent row spacing] and horizontal [adjacent column spacing] pixel shift applied to the mask before subtracting it from the region of the frame numbers specified by Pixel Shift Frame Range (0028,9506) of this Pixel Shift Sequence (0028,9501) Item. The region is specified by the polygon defined by the Vertices of the Region (0028,9503) attribute. The pixels on the line of the polygon belong to the region. If no pixel shift has to be applied a pair of zero attribute values (0.0/0.0) should be specified.",
   "candidateTerms": "dicom_00286114",
-  "label": "Mask Sub-pixel Shift",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Mask Sub-pixel Shift"
 }

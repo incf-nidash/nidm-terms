@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
-  "description": "Contains the Data Element Tag of the parent sequence containing the attribute that was corrected. The value is limited in scope to the Treatment Session Beam Sequence (3008,0020) and all nested sequences therein.",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
+  "description": "Contains the Data Element Tag of the parent sequence containing the attribute that was overridden. The value is limited in scope to the Treatment Session Beam Sequence (3008,0020) and all nested sequences therein.",
   "candidateTerms": "dicom_30080061",
-  "label": "Parameter Sequence Pointer",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Parameter Sequence Pointer"
 }

@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "Time of end of administration. The actual ending time of radiopharmaceutical administration to the patient for imaging purposes, using the same time base as Series Time (0008,0031). The use of this Attribute is deprecated in favor of Radiopharmaceutical Stop DateTime (0018,1079). The use of a time alone can cause confusion when the procedure spans midnight.",
   "candidateTerms": "dicom_00181073",
-  "label": "Radiopharmaceutical Stop Time",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Radiopharmaceutical Stop Time"
 }

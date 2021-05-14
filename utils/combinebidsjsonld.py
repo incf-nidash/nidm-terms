@@ -176,12 +176,14 @@ def main(argv):
                     temp[context['@context']['responseOptions']['@id']] = value
                 elif key == 'responseOptions':
                     responseOptions(temp,context,value)
+                elif key == 'associatedWith':
+                    temp[context['@context']['associatedWith']] = value
 
                 # Added by DBK to account for different associations
-                if args.association == "BIDS":
-                    temp[context['@context']['associatedWith']] = ["BIDS"]
-                else:
-                    temp[context['@context']['associatedWith']] = [args.association]
+                #if args.association == "BIDS":
+                #    temp[context['@context']['associatedWith']] = ["BIDS"]
+                #else:
+                #    temp[context['@context']['associatedWith']] = [args.association]
 
 
 
@@ -196,7 +198,7 @@ def main(argv):
     # if jsonld is provided modify and save in the same file else rewrite the file
     if state == 1:
         # modified by DBK so that output command line parameter contains filename to output
-        with open (join(jsonld),'a') as outfile:
+        with open (join(args.jsonld),'a') as outfile:
             json.dump(compacted,outfile,indent=2)
 
     elif state == 0:

@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "Offset of the first byte (of the Item Data Element) of the next Directory Record of the same Directory Entity. This Offset is an unsigned integer representing a number of bytes starting with the first byte of the File Meta-information. A zero offset shall be used to mean that there is no other Directory Record in this Directory Entity. This Offset may be used to keep an inactive Record (0004,1410) chained with the next Directory Record of the same Directory Entity. This offset includes the File Preamble and the DICM Prefix.",
   "candidateTerms": "dicom_00041400",
-  "label": "Offset of the Next Directory Record",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Offset of the Next Directory Record"
 }

@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "The SOP Instance UID of the single composite SOP Instance of which the Concatenation is a part. All SOP Instances of a concatenation shall use the same value for this attribute. May be used to reference the entire instance rather than individual instances of the concatenation, which may be transient (e.g., from a presentation state).",
   "candidateTerms": "dicom_00200242",
-  "label": "SOP Instance UID of Concatenation Source",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "SOP Instance UID of Concatenation Source"
 }

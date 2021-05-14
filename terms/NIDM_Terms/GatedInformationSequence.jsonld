@@ -1,8 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "owl:DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "Sequence of Items that describe R-R intervals. Each gated interval is defined by an upper and lower range of heart beat durations. The number of items shall be equal to Number of R-R Intervals (0054,0061). The first item corresponds to frames with value of 1 in the R-R Interval Vector (0054,0060), the second item with value 2, etc.",
   "candidateTerms": "dicom_00540062",
-  "label": "Gated Information Sequence",
-  "associatedWith": "NIDM"
+  "associatedWith": [
+    "NIDM",
+    "DICOM"
+  ],
+  "label": "Gated Information Sequence"
 }
