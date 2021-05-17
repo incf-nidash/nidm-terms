@@ -6,6 +6,9 @@
 @prefix reproschema: <http://schema.repronim.org/> .
 @prefix rdfs: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix interlex: <http://uri.interlex.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix ilxId: <https://scicrunch.org/> .
 
 nidm:PersonalDataElementShape a sh:NodeShape ;
     sh:closed true ;
@@ -37,6 +40,12 @@ nidm:PersonalDataElementShape a sh:NodeShape ;
 
         [ sh:node nidm:IsAboutShape ;
             sh:path interlex:ilx_0381385 ],
+
+        [ sh:nodeKind sh:IRI ;
+    		sh:path owl:sameAs ] ,
+
+        [ sh:nodeKind sh:IRI ;
+    		sh:path prov:wasDerivedFrom ] ,
 
         [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype rdfs:langString ] ) ;
     		sh:path interlex:ilx_0739289 ] ;
@@ -78,8 +87,18 @@ nidm:CommonDataElementShape a sh:NodeShape ;
         [ sh:node nidm:IsAboutShape ;
             sh:path interlex:ilx_0381385 ],
 
-        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype rdfs:langString ] ) ;
-    		sh:path interlex:ilx_0739289 ] ;
+        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
+    		sh:path interlex:ilx_0739289 ] ,
+
+        [ sh:nodeKind sh:IRI ;
+    		sh:path owl:sameAs ] ,
+
+        [ sh:datatype xsd:string ;
+          sh:pattern "ilx_[0-9]" ;
+    		sh:path ilxId:nidm-terms ] ,
+
+        [ sh:nodeKind sh:IRI ;
+    		sh:path prov:wasDerivedFrom ] ;
 
     sh:targetClass nidm:CommonDataElement .
 
@@ -118,7 +137,13 @@ nidm:ConceptShape a sh:NodeShape ;
             sh:path interlex:ilx_0381385 ],
 
         [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
-    		sh:path interlex:ilx_0739289 ] ;
+    		sh:path interlex:ilx_0739289 ] ,
+
+        [ sh:nodeKind sh:IRI ;
+    		sh:path owl:sameAs ] ,
+
+        [ sh:nodeKind sh:IRI ;
+    		sh:path prov:wasDerivedFrom ] ;
 
     sh:targetClass nidm:Concept .
 
