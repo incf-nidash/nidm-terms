@@ -61,9 +61,6 @@ def main(argv):
 
     parser.add_argument('-input', dest='input', required=True, nargs='+', help="space separate list of directories to "
                                             "find jsonld files to combine")
-    parser.add_argument('-association', dest='association', required=False, default="BIDS", help="association"
-                        "string to identify which terminology terms are associated with. Valid choices are"
-                        "NIDM (default if parameter left out) or BIDS" )
     parser.add_argument('-type', dest='type', nargs='+', required=False, default=None, help="optional types to add to each"
                                                 "term as a space separated list of urls "
                                             "( e.g. http://purl.org/nidash/nidm#PersonalDataElement or "
