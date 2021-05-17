@@ -1,13 +1,16 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty",
-  "description": "REQUIRED. Name of the dataset.",
-  "comment": "To be discussed",
-  "label": "Name",
-  "associatedWith": [
-    "BIDS",
-    "NIDM"
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
   ],
-  "sameAs": "http://purl.org/nidash/nidm#T2Weighted",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType"
+  "description": "Term used to label a prov:Entity. This is a generalization of the way the term is used within the BIDS specification.",
+  "candidateTerms": "name",
+  "associatedWith": [
+    "NIDM",
+    "BIDS"
+  ],
+  "comment": "To be discussed",
+  "label": "name",
+  "sameAs": "http://www.w3.org/2000/01/rdf-schema#label"
 }

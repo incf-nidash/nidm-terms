@@ -1,20 +1,16 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
   "@type": [
-    "http://www.w3.org/2002/07/owl#NamedIndividual",
-    "http://purl.org/nidash/nidm#ParameterEstimateMap"
+    "CommonDataElement",
+    "owl:Class"
   ],
-  "description": "T1 map",
-  "comment": [
-    "This is related to nidm:0000052, which is nidm:Map, in NIDM-Results, but is unrelated to nidm:ContrastMap since the contrast in that case is related to fMRI condition contrasts, rather than an NMR physics-related concept.  It is related to nidm:ParameterEstimateMap from NIDM-Results in the sense that calculation of a parameter map from a set of images in which the contrast is changed by modifying an acquisition parameter related to a parameter of interest (in this case T1), is an estimate of a parameter resulting from the fitting of image data on a pixel-by-pixel basis.",
-    "To be discussed"
-  ],
-  "label": "T1 map",
+  "description": "T1map is a suffix name that denotes that the file contains a calculated map of T1-values for the imaged region.",
+  "candidateTerms": "T1map",
   "associatedWith": [
-    "BIDS",
-    "NIDM"
+    "NIDM",
+    "BIDS"
   ],
-  "sameAs": "http://purl.org/nidash/nidm#Phase",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
-  "url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html"
+  "http://uri.interlex.org/ilx_0770184": "http://purl.org/nidash/bids#BIDSSuffix",
+  "comment": "To be discussed",
+  "label": "T1map"
 }

@@ -1,19 +1,18 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "RECOMMENDED. can be used if all electrodes are of the same manufacturer (e.g., AD-TECH, DIXI). If electrodes of different manufacturers are used, please use the corresponding table in the _electrodes.tsv file.",
+  "candidateTerms": "ElectrodeManufacturer",
+  "associatedWith": [
+    "NIDM",
+    "BIDS"
+  ],
   "comment": [
     "Note that this term does not exist in the EEG specifications.",
     "To be discussed"
   ],
-  "label": "ElectrodeManufacturer",
-  "associatedWith": [
-    "BIDS",
-    "NIDM"
-  ],
-  "sameAs": "http://purl.org/nidash/nidm#ProtonDensityWeighted",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
-  "url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html",
-  "provenance": "http://purl.org/nidash/bids",
-  "ilx_id": "ilx_0739314"
+  "label": "ElectrodeManufacturer"
 }

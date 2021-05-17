@@ -1,13 +1,16 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "RECOMMENDED. Number of SEEG channels",
+  "candidateTerms": "SEEGChannelCount",
+  "associatedWith": [
+    "NIDM",
+    "BIDS"
+  ],
   "comment": "To be discussed",
   "label": "SEEGChannelCount",
-  "associatedWith": [
-    "BIDS",
-    "NIDM"
-  ],
-  "sameAs": "http://purl.org/nidash/nidm#NumberOfChannels",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#CalculatedParameter"
+  "sameAs": "http://purl.org/nidash/nidm#NumberOfChannels"
 }

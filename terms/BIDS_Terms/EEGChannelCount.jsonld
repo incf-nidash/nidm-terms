@@ -1,16 +1,16 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-  "description": "RECOMMENDED. Number of EEG channels included in the recording (e.g., 128).",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
+  "description": "RECOMMENDED. Number of EEG channels recorded simultaneously (e.g. 21)",
+  "candidateTerms": "EEGChannelCount",
+  "associatedWith": [
+    "NIDM",
+    "BIDS"
+  ],
   "comment": "To be discussed",
   "label": "EEGChannelCount",
-  "associatedWith": [
-    "BIDS",
-    "NIDM"
-  ],
-  "sameAs": "http://purl.org/nidash/nidm#NumberOfChannels",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#CalculatedParameter",
-  "provenance": "http://purl.org/nidash/bids",
-  "sameAs": "http://purl.org/nidash/nidm#NumberOfChannels",
-  "ilx_id": "ilx_0739324"
+  "sameAs": "http://purl.org/nidash/nidm#NumberOfChannels"
 }

@@ -17,7 +17,7 @@ import urllib.request as ur
 from urllib.parse import urldefrag
 
 import datalad.api as dl
-from shutil import copyfile
+from shutil import copyfile, rmtree
 
 
 def main(argv):
@@ -58,6 +58,10 @@ def main(argv):
     bids_datasets = [ x for x in os.listdir(args.sidecar_dir) if isdir(join(args.sidecar_dir,x)) ]
     # for each dataset
     for ds in bids_datasets:
+        # check if we already have a nidm file created.  If so, skip this dataset
+        if isfile(join(args.nidm_dir,ds,"nidm.ttl")):
+            logger.info("NIDM file already exists for dataset: %s" %ds)
+            continue
         # search recursively in ds looking for json files.  Path should be same as found within the dataset in
         # datalad so it'll be a simple copy.
         json_files = glob2.glob(join(args.sidecar_dir,ds,'**',"*.json"))
@@ -71,41 +75,72 @@ def main(argv):
         # replacing with datalad api
         #cmd = ["datalad", "get", "-r", ds]
         try:
-        	dl.get(path=join(args.datalad_dir,ds),recursive=True)
+        	dl.Dataset(join(args.datalad_dir,ds)).get(recursive=True,jobs=1)
         	logger.info("Running datalad get command on dataset: %s" %join(args.datalad_dir,ds))
         	#ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
         except:
                 logger.error("Datalad returned error: %s for dataset %s." %(sys.exc_info()[0], ds))
-                continue
+                logger.info("Trying AWS S3 for dataset: %s" %ds)
+                # set up aws command
+                cmd = "aws s3 sync --no-sign-request s3://openneuro.org/" + ds + " " + join(args.datalad_dir,ds)
+                # execute command
+                logger.info(cmd)
+                system(cmd)
+                # check if aws command downloaded something
+                if not isdir(join(args.datalad_dir,ds)):
+                    logger.error("Couldn't get dataset from AWS either...")
+                    continue
 
         # now copy each of the json_files into the datalad dataset
         for file in json_files:
             # changing copy to use copyfile from shutil
             #cmd = ["cp",join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds)]
-            if not isdir(join(args.datalad_dir,ds)):
-                 os.mkdir(join(args.datalad_dir,ds))
-            logger.info("Copying file: source=%s, dest=%s" %(join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds)))
-            copyfile(join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds,file))
+            #if not isdir(join(args.datalad_dir,file[file.find('ds'):])):
+            #     os.mkdir(join(args.datalad_dir,ds))
+            logger.info("Copying file: source=%s, dest=%s" %(file,join(args.datalad_dir,file[file.find('ds'):])))
+            copyfile(file,join(args.datalad_dir,file[file.find('ds'):]))
             #ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
 
         # make sure it's there
         if not isfile(join(args.datalad_dir,ds,file)):
-            logger.error("ERROR: copy of file %s to %s didn't complete successfully!" %(join(args.sidecar_dir,ds,file),join(args.datalad_dir,ds)))
+            logger.error("ERROR: copy of file %s to %s didn't complete successfully!" %(file,join(args.datalad_dir,file[file.find('ds'):])))
 
         # now run bidsmri2nidm
+        # check if output directory exists, if not create it
+        if not isdir(join(args.nidm_dir,ds)):
+            os.mkdir(join(args.nidm_dir,ds))
         if args.nidm_dir is not None:
-            cmd = ["bidsmri2nidm","-d",join(args.datalad_dir,ds),"-o",join(args.nidm_dir,ds,"nidm.ttl"),"-bidsignore","-no_concepts"]
+            try:
+                #cmd = ["bidsmri2nidm","-d",join(args.datalad_dir,ds),"-o",join(args.nidm_dir,ds,"nidm.ttl"),"-bidsignore","-no_concepts"]
+                cmd = "bidsmri2nidm -d "+ join(args.datalad_dir,ds) + " -o " + join(args.nidm_dir,ds,"nidm.ttl") + " -bidsignore -no_concepts"
+            except:
+                logger.error("bidsmri2nidm generated error %s with command: %s" %(sys.exc_info()[0], cmd))
+                continue
         else:
-            cmd = ["bidsmri2nidm", "-d", join(args.datalad_dir, ds), "-o", join(args.datalad_dir, ds, "nidm.ttl"),
-                   "-bidsignore","-no_concepts"]
+            #cmd = ["bidsmri2nidm", "-d", join(args.datalad_dir, ds), "-o", join(args.datalad_dir, ds, "nidm.ttl"),
+            #       "-bidsignore","-no_concepts"]
+            try:
+                cmd = "bidsmri2nidm -d "+ join(args.datalad_dir,ds) + " -o " + join(args.datalad_dir,ds,"nidm.ttl") + " -bidsignore -no_concepts"
+            except:
+                logger.error("bidsmri2nidm generated error %s with command: %s" %(sys.exc_info()[0], cmd))
+                continue
         logger.info("Running command: %s" % cmd)
-        ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
+        #ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
+        system(cmd)
 
         # now remove the datalad dataset to save space
         # replacing with datalad api call
         #cmd = ["datalad", "uninstall", "-r", join(args.datalad_dir, ds)]
-        dl.uninstall(path=join(args.datalad_dir,ds),recursive=True)
-        logger.info("Running datalad uninstall command on dataset: %s" %join(args.datalad_dir,ds))
+        try:
+            dl.Dataset(join(args.datalad_dir,ds)).uninstall(recursive=True)
+            logger.info("Running datalad uninstall command on dataset: %s" %join(args.datalad_dir,ds))
+        except:
+                logger.error("Datalad returned error: %s for uninstalling dataset %s." %(sys.exc_info()[0], ds))
+                logger.info("Checking if dataset was downloaded from AWS...")
+                if isdir(join(args.datalad_dir,ds)):
+                    rmtree(join(args.datalad_dir,ds))
+                else:
+                    continue
         #ret = subprocess.run(cmd, stdout=subprocess.PIPE, text=True)
 
 

@@ -1,18 +1,18 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "OPTIONAL. Manufacturer of the EEG cap (e.g. EasyCap)",
-  "comment": [
-    "To be discussed",
-    "Instead of a specific term, could use the DICOM tag Manufacturer and use it as a object property for the prov:Entity cap."
-  ],
-  "label": "CapManufacturer",
+  "candidateTerms": "CapManufacturer",
   "associatedWith": [
-    "BIDS",
-    "NIDM"
+    "NIDM",
+    "BIDS"
   ],
-  "sameAs": "http://purl.org/nidash/nidm#T2StarWeighted",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
-  "provenance": "http://purl.org/nidash/bids",
-  "ilx_id": "ilx_0739351"
+  "comment": [
+    "Instead of a specific term, could use the DICOM tag Manufacturer and use it as a object property for the prov:Entity cap.",
+    "To be discussed"
+  ],
+  "label": "CapManufacturer"
 }

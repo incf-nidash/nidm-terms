@@ -1,0 +1,79 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "age of the participant",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "membership of participant",
+      "sourceVariable": "group",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": {
+          "name": "actively playing soccer for at least 10 years",
+          "value": "soccer"
+        },
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0108556",
+        "label": "participant group"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "sex of the participant",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "M"
+          },
+          {
+            "name": "female",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738439",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "soccer experience",
+      "sourceVariable": "soccer_exp",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "standardized video task in soccer",
+      "sourceVariable": "svt",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "ratings of four UEFA A licensed soccer coaches - [0-5]",
+        "valueType": "xsd:float"
+      }
+    }
+  ]
+}

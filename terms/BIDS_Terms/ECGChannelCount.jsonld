@@ -1,14 +1,16 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "RECOMMENDED. Number of ECG channels.",
+  "candidateTerms": "ECGChannelCount",
+  "associatedWith": [
+    "NIDM",
+    "BIDS"
+  ],
   "comment": "To be discussed",
   "label": "ECGChannelCount",
-  "associatedWith": [
-    "BIDS",
-    "NIDM"
-  ],
-  "provenance": "http://purl.org/nidash/bids",
-  "sameAs": "http://purl.org/nidash/nidm#NumberOfChannels",
-  "ilx_id": "ilx_0739326"
+  "sameAs": "http://purl.org/nidash/nidm#NumberOfChannels"
 }

@@ -1,13 +1,16 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "RECOMMENDED. The parallel imaging (e.g, GRAPPA) factor. Use the denominator of the fraction of k-space encoded for each slice. For example, 2 means half of k-space is encoded. Corresponds to DICOM Tag 0018, 9069 Parallel Reduction Factor In-plane.",
+  "candidateTerms": "ParallelReductionFactorInPlane",
+  "associatedWith": [
+    "NIDM",
+    "BIDS"
+  ],
   "comment": "To be discussed",
   "label": "ParallelReductionFactorInPlane",
-  "associatedWith": [
-    "BIDS",
-    "NIDM"
-  ],
-  "sameAs": "http://purl.org/nidash/dicom#dicom_00189069",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#CalculatedParameter"
+  "sameAs": "http://purl.org/nidash/dicom#dicom_00189069"
 }

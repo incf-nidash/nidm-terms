@@ -1,0 +1,270 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "1 point for items 1-3 if the item score is 2 or higher1 point for items 4-6 if the item score is 3 or higher",
+      "sourceVariable": "asrs_exclusionscore",
+      "associatedWith": "NIDM",
+      "derivative": true,
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_0060041/",
+          "label": "autism spectrum disorder"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_12849/",
+          "label": "autistic disorder"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "If ASRS_EXCLUSIONSCORE is 4 or higher then ASRS_FLAG 1 else ASRS_FLAG 0",
+      "sourceVariable": "asrs_flag",
+      "associatedWith": "NIDM",
+      "derivative": true,
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_0060041/",
+          "label": "autism spectrum disorder"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_12849/",
+          "label": "autistic disorder"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Sum of item 1 to 6",
+      "sourceVariable": "asrs_score",
+      "associatedWith": "NIDM",
+      "derivative": true,
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_0060041/",
+          "label": "autism spectrum disorder"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_12849/",
+          "label": "autistic disorder"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "4. When you have a task that requires a lot of thought, how often do you avoid or delay getting started\"",
+      "sourceVariable": "aviodstart",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Never",
+            "value": "0"
+          },
+          {
+            "name": "Often",
+            "value": "3"
+          },
+          {
+            "name": "Very Often",
+            "value": "4"
+          },
+          {
+            "name": "Rarely",
+            "value": "1"
+          },
+          {
+            "name": "Sometimes",
+            "value": "2"
+          }
+        ],
+        "maxValue": "4",
+        "minValue": "0",
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "5. How often do you fidget or squirm with your hands or feet when you have to sit down for a long time\"",
+      "sourceVariable": "fidget",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Never",
+            "value": "0"
+          },
+          {
+            "name": "Often",
+            "value": "3"
+          },
+          {
+            "name": "Very Often",
+            "value": "4"
+          },
+          {
+            "name": "Rarely",
+            "value": "1"
+          },
+          {
+            "name": "Sometimes",
+            "value": "2"
+          }
+        ],
+        "maxValue": "4",
+        "minValue": "0",
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "1. How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done\"",
+      "sourceVariable": "finaldetail",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Never",
+            "value": "0"
+          },
+          {
+            "name": "Often",
+            "value": "3"
+          },
+          {
+            "name": "Very Often",
+            "value": "4"
+          },
+          {
+            "name": "Rarely",
+            "value": "1"
+          },
+          {
+            "name": "Sometimes",
+            "value": "2"
+          }
+        ],
+        "maxValue": "4",
+        "minValue": "0",
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "2. How often do you have difficulty getting things in order when you have to do a task that requires organization\"",
+      "sourceVariable": "organize",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Never",
+            "value": "0"
+          },
+          {
+            "name": "Often",
+            "value": "3"
+          },
+          {
+            "name": "Very Often",
+            "value": "4"
+          },
+          {
+            "name": "Rarely",
+            "value": "1"
+          },
+          {
+            "name": "Sometimes",
+            "value": "2"
+          }
+        ],
+        "maxValue": "4",
+        "minValue": "0",
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "6. How often do you feel overly active and compelled to do things, like you were driven by a motor\"",
+      "sourceVariable": "overactive",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Never",
+            "value": "0"
+          },
+          {
+            "name": "Often",
+            "value": "3"
+          },
+          {
+            "name": "Very Often",
+            "value": "4"
+          },
+          {
+            "name": "Rarely",
+            "value": "1"
+          },
+          {
+            "name": "Sometimes",
+            "value": "2"
+          }
+        ],
+        "maxValue": "4",
+        "minValue": "0",
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "3. How often do you have problems remembering appointments or obligations\"",
+      "sourceVariable": "remappointment",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Never",
+            "value": "0"
+          },
+          {
+            "name": "Often",
+            "value": "3"
+          },
+          {
+            "name": "Very Often",
+            "value": "4"
+          },
+          {
+            "name": "Rarely",
+            "value": "1"
+          },
+          {
+            "name": "Sometimes",
+            "value": "2"
+          }
+        ],
+        "maxValue": "4",
+        "minValue": "0",
+        "valueType": "xsd:integer"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Adult Self-Report Scale-V1.1 Screener",
+      "url": "http://www.cognitiveatlas.org/task/id/trm_55a6a79b55c8b",
+      "sourceVariable": "MeasurementToolMetadata",
+      "associatedWith": "NIDM"
+    }
+  ]
+}

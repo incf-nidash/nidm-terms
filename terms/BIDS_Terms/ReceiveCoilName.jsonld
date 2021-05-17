@@ -1,13 +1,16 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "RECOMMENDED. Information describing the receiver coil. Corresponds to DICOM Tag 0018, 1250 Receive Coil Name, although not all vendors populate that DICOM Tag, in which case this field can be derived from an appropriate private DICOM field",
+  "candidateTerms": "ReceiveCoilName",
+  "associatedWith": [
+    "NIDM",
+    "BIDS"
+  ],
   "comment": "To be discussed",
   "label": "ReceiveCoilName",
-  "associatedWith": [
-    "BIDS",
-    "NIDM"
-  ],
-  "sameAs": "http://purl.org/nidash/dicom#dicom_00181250",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod"
+  "sameAs": "http://purl.org/nidash/dicom#dicom_00181250"
 }

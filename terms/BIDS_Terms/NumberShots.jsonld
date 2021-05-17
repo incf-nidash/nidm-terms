@@ -1,13 +1,15 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-  "description": "RECOMMENDED. The number of RF excitations need to reconstruct a slice or volume. Please mind that this is not the same as Echo Train Length which denotes the number of lines of k-space collected after an excitation.",
-  "comment": "To be discussed",
-  "label": "NumberShots",
-  "associatedWith": [
-    "BIDS",
-    "NIDM"
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
   ],
-  "sameAs": "http://purl.org/nidash/dicom#dicom_00180080",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType"
+  "description": "RECOMMENDED. The number of RF excitations need to reconstruct a slice or volume. Please mind that this is not the same as Echo Train Length which denotes the number of lines of k-space collected after an excitation.",
+  "candidateTerms": "NumberShots",
+  "associatedWith": [
+    "NIDM",
+    "BIDS"
+  ],
+  "comment": "To be discussed",
+  "label": "NumberShots"
 }

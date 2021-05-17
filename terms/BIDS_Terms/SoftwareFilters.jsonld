@@ -1,14 +1,15 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-  "description": "REQUIRED. List of temporal and/or spatial software filters applied, or ideally key:value pairs of pre-applied software filters and their parameter values: e.g., {SSS: {frame: head, badlimit: 7}}, {SpatialCompensation: {GradientOrder: Order of the gradient compensation}}. Write n/a if no software filters applied.",
-  "comment": "To be discussed",
-  "label": "SoftwareFilters",
-  "associatedWith": [
-    "BIDS",
-    "NIDM"
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
   ],
-  "sameAs": "http://purl.org/nidash/dicom#dicom_00081090",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
-  "url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html"
+  "description": "REQUIRED. List of temporal and/or spatial software filters applied, or ideally key:value pairs of pre-applied software filters and their parameter values: e.g., {SSS: {frame: head, badlimit: 7}}, {SpatialCompensation: {GradientOrder: Order of the gradient compensation}}. Write n/a if no software filters applied.",
+  "candidateTerms": "SoftwareFilters",
+  "associatedWith": [
+    "NIDM",
+    "BIDS"
+  ],
+  "comment": "To be discussed",
+  "label": "SoftwareFilters"
 }

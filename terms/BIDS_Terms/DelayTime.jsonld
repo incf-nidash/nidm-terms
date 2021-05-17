@@ -1,16 +1,15 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-  "description": "RECOMMENDED. User specified time (in seconds) to delay the acquisition of data for the following volume. If the field is not present it is assumed to be set to zero. Corresponds to Siemens CSA header field lDelayTimeInTR. This field is REQUIRED for sparse sequences using the RepetitionTime field that do not have the SliceTiming field set to allowed for accurate calculation of acquisition time. This field is mutually exclusive with VolumeTiming.",
-  "comment": "To be discussed",
-  "label": "DelayTime",
-  "associatedWith": [
-    "BIDS",
-    "NIDM"
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
   ],
-  "sameAs": "http://purl.org/nidash/nidm#BloodOxygenLevelDependent",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
-  "url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html",
-  "provenance": "http://purl.org/nidash/bids",
-  "ilx_id": "ilx_0739338"
+  "description": "RECOMMENDED. User specified time (in seconds) to delay the acquisition of data for the following volume. If the field is not present it is assumed to be set to zero. Corresponds to Siemens CSA header field lDelayTimeInTR. This field is REQUIRED for sparse sequences using the RepetitionTime field that do not have the SliceTiming field set to allowed for accurate calculation of acquisition time. This field is mutually exclusive with VolumeTiming.",
+  "candidateTerms": "DelayTime",
+  "associatedWith": [
+    "NIDM",
+    "BIDS"
+  ],
+  "comment": "To be discussed",
+  "label": "DelayTime"
 }

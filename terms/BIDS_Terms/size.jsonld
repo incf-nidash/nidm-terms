@@ -1,17 +1,18 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "REQUIRED. Surface area of the electrode, in mm^2.",
-  "comment": [
-    "To be discussed",
-    "The description for this term is specific to electrodes."
-  ],
-  "label": "size",
+  "candidateTerms": "size",
   "associatedWith": [
-    "BIDS",
-    "NIDM"
+    "NIDM",
+    "BIDS"
   ],
-  "sameAs": "http://purl.org/nidash/dicom#dicom_00180080",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
-  "url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html"
+  "comment": [
+    "The description for this term is specific to electrodes.",
+    "To be discussed"
+  ],
+  "label": "size"
 }

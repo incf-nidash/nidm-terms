@@ -1,46 +1,115 @@
 {
-   "@version": 1.1,
-   "@context": {
-    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "comment": "http://www.w3.org/2000/01/rdf-schema#comment",
-    "sourceVariable": "http://uri.interlex.org/ilx_0383246",
-    "label": "rdfs:label",
-    "schema": "http://schema.org/",
-    "description": "http://purl.org/dc/terms/description",
-	"isAbout": {
-
-	      "@id": "http://uri.interlex.org/ilx_0381385",
-	      "@container": "@list"
-	},
-    "isPartOf": "http://uri.interlex.org/ilx_0112785",
-    "sameAs" : "https://www.w3.org/TR/2009/REC-skos-reference-20090818#sameAs",
-    "closeMatch" : "https://www.w3.org/TR/2009/REC-skos-reference-20090818#closeMatch",
-    "url": {
-      "@id": "http://schema.org/url",
-      "@type": "@id"
-    },
-    "DataElement": "http://purl.org/nidash/nidm#DataElement",
-    "candidateTerms": "http://purl.org/nidash/nidm#candidateTerms",
-    "unitCode": "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#unitCode",
-    "valueType": "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#valueType",
-    "datumType": "http://www.ontobee.org/ontology/STATO?iri=http://purl.obolibrary.org/obo/IAO_0000109",
-    "measureOf": "http://uri.interlex.org/ilx_0381389",
-    "minValue": "https://schema.org/minValue",
-    "maxValue": "https://schema.org/maxValue",
-    "allowableValues": "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#allowableValues",
-    "provenance": "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#provenance",
-    "ontologyConceptID": "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#ontologyConceptID",
-    "subtypeCDEs": "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#subtypeCDEs",
-    "supertypeCDEs": "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#supertypeCDEs",
-    "relatedConcepts": "https://docs.google.com/spreadsheets/d/1dZ48F8JKsD2IHp7oeC6xa_FvnFwaEBGEOn0V850OWJU/edit#gid=632728597#relatedConcepts",
-    "choices" : "https://schema.org/itemListElement",
-    "derivative" : "https://github.com/NIDM-Terms/terms/blob/master/terms/BIDS_Terms/Derivative.jsonld",
-    "citation" : "https://github.com/NIDM-Terms/terms/blob/master/terms/BIDS_Terms/ReferencesAndLinks.jsonld",
-	"associatedWith" : "http://uri.interlex.org/ilx_0739289",
-	"responseOptions": {"@id":"https://github.com/ReproNim/reproschema/blob/master/terms/responseOptions"},
-	"name": "http://schema.org/name",
-	"value": "http://schema.org/value",
-	"ilx_id" : "http://uri.interlex.org/"
+	"@context": {
+		"@version": 1.1,
+		"rdfs": {
+			"@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+			"@prefix": true
+		},
+		"xsd": {
+			"@id": "http://www.w3.org/2001/XMLSchema#",
+			"@prefix": true
+		},
+		"nidm": {
+			"@id": "http://purl.org/nidash/nidm#",
+			"@prefix": true
+		},
+		"skos": {
+			"@id": "https://www.w3.org/TR/2009/REC-skos-reference-20090818#",
+			"@prefix": true
+		},
+		"owl": {
+			"@id": "http://www.w3.org/2002/07/owl#",
+			"@prefix": true
+		},
+		"prov": {
+			"@id": "http://www.w3.org/ns/prov#",
+			"@prefix": true
+		},
+		"reproschema": "http://schema.repronim.org/",
+		"comment": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+		"sourceVariable": "http://uri.interlex.org/ilx_0383246",
+		"label": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+		"description": "http://purl.org/dc/terms/description",
+		"isAbout": {
+			"@id": "http://uri.interlex.org/ilx_0381385",
+			"@container": "@list"
+		},
+		"isPartOf": "http://uri.interlex.org/ilx_0112785",
+		"closeMatch": "https://www.w3.org/TR/2009/REC-skos-reference-20090818#closeMatch",
+		"url": {
+			"@id": "http://schema.org/url",
+			"@type": "@id"
+		},
+		"DataElement": "http://purl.org/nidash/nidm#DataElement",
+		"PersonalDataElement": "http://purl.org/nidash/nidm#PersonalDataElement",
+		"CommonDataElement": "http://purl.org/nidash/nidm#CommonDataElement",
+		"Concept": "http://purl.org/nidash/nidm#Concept",
+		"candidateTerms": "http://purl.org/nidash/nidm#candidateTerms",
+		"valueType": {
+            "@id": "reproschema:valueType",
+            "@type": "@id",
+            "@container": "@set"
+        },
+		"unitCode": {
+			"@id": "schema:unitCode",
+			"@container": "@set"
+		},
+		"unitOptions": {
+			"@id": "reproschema:unitOptions",
+			"@container": "@set"
+		},
+		"datumType": "http://purl.obolibrary.org/obo/IAO_0000109",
+		"measureOf": "http://uri.interlex.org/ilx_0381389",
+		"minValue": "http://schema.org/minValue",
+		"maxValue": "http://schema.org/maxValue",
+		"allowableValues": "http://uri.interlex.org/ilx_0770181",
+		"wasDerivedFrom": {
+			"@id": "http://www.w3.org/ns/prov#wasDerivedFrom",
+			"@container": "@set",
+			"@type": "@id"
+		},
+		"ontologyConceptID": "http://uri.interlex.org/ilx_0770186",
+		"subtypeCDEs": {
+			"@id": "http://uri.interlex.org/ilx_0770183",
+			"@container": "@set"
+		},
+		"supertypeCDEs": {
+			"@id": "http://uri.interlex.org/ilx_0770184",
+			"@type": "@id",
+			"@container": "@set"
+		},
+		"relatedConcepts": {
+			"@id": "http://uri.interlex.org/ilx_0770185",
+			"@container": "@set"
+		},
+		"choices": {
+			"@id": "reproschema:choices"
+		},
+		"derivative": "http://uri.interlex.org/ilx_0739337",
+		"citation": "http://schema.org/citation",
+		"associatedWith": {
+			"@id": "http://uri.interlex.org/ilx_0739289",
+			"@container": "@set"
+		},
+		"responseOptions": {
+            "@id": "reproschema:responseOptions",
+            "@container": "@set",
+            "@type": "@id"
+        },
+		"name": "http://schema.org/name",
+		"value": "http://schema.org/value",
+		"ilxId": "https://scicrunch.org/nidm-terms",
+		"bids": "http://nidash.org/bids#",
+		"sameAs": {
+			"@id": "http://www.w3.org/2002/07/owl#sameAs",
+			"@type": "@id"
+		},
+		"terms": {
+			"@id": "http://www.w3.org/ns/prov#hasMember",
+			"@container": [
+				"@graph"
+			]
+		},
+		"version" : "http://schema.org/version"
 	}
 }

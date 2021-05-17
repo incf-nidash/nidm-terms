@@ -1,0 +1,35 @@
+## This workflow runs term_use_freq.py to generate concepts markdown table
+
+name: Generate Concepts Markdown Table
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: '*'
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip setuptools
+        pip install glob2 pyld argparse cognitiveatlas pynidm
+        
+    # Runs term_use_freq.py and updates the markdown table
+    - name: Create md table
+      run: |
+        python utils/term_use_freq.py -jsonld terms/OpenNeuro_Datasets_Terms/OpenNeuro_jsonld/ -outfile terms/concept_freq.md -jsonld_output_dir terms/terms/NIDM_Concepts
+    
+    #commits the changes to the repository
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Updates to the concept frequency markdown table
+        

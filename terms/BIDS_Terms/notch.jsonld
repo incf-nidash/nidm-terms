@@ -1,17 +1,18 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "OPTIONAL. Frequencies used for the notch filter applied to the channel, in Hz. If no notch filter applied, use n/a.",
+  "candidateTerms": "notch",
+  "associatedWith": [
+    "NIDM",
+    "BIDS"
+  ],
   "comment": [
     "To be discussed",
     "The DICOM term is the center frequency of notch filter, in Hz."
   ],
-  "label": "notch",
-  "associatedWith": [
-    "BIDS",
-    "NIDM"
-  ],
-  "sameAs": "http://purl.org/nidash/dicom#dicom_0018101A",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
-  "url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html"
+  "label": "notch"
 }

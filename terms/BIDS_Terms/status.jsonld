@@ -1,17 +1,18 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+  "@type": [
+    "CommonDataElement",
+    "owl:DatatypeProperty"
+  ],
   "description": "OPTIONAL. Data quality observed on the channel (good/bad). A channel is considered bad if its data quality is compromised by excessive noise. Description of noise type SHOULD be provided in [status_description].",
-  "comment": [
-    "This should be attached to a nidm:AcquisitionObject.",
-    "To be discussed"
-  ],
-  "label": "status",
+  "candidateTerms": "status",
   "associatedWith": [
-    "BIDS",
-    "NIDM"
+    "NIDM",
+    "BIDS"
   ],
-  "sameAs": "http://purl.org/nidash/nidm#Magnetoencephalography",
-  "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
-  "url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html"
+  "comment": [
+    "To be discussed",
+    "This should be attached to a nidm:AcquisitionObject."
+  ],
+  "label": "status"
 }

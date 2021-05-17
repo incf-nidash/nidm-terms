@@ -1,0 +1,103 @@
+{
+  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "terms": [
+    {
+      "@type": "PersonalDataElement",
+      "description": "age of the participant",
+      "sourceVariable": "age",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "unitCode": "years",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "channel to which participants were instructed to attend to",
+      "sourceVariable": "attended_ch",
+      "associatedWith": "NIDM",
+      "label": "attended channel",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "participants were instructed to attend to the left story",
+            "value": "left"
+          },
+          {
+            "name": "participants were instructed to attend to the right story",
+            "value": "right"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "order in which conditions were presented",
+      "sourceVariable": "cond_order",
+      "associatedWith": "NIDM",
+      "label": "condition order",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "omnidirectional, beamforming, omnidirectional, beamforming",
+            "value": "OBOB"
+          },
+          {
+            "name": "beamforming, omnidirectional, beamforming, omnidirectional",
+            "value": "BOBO"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "sex of the participant",
+      "sourceVariable": "gender",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "M"
+          },
+          {
+            "name": "female",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738437",
+        "label": "gender"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "whether participants were included or excluded for analysis",
+      "sourceVariable": "incl",
+      "associatedWith": "NIDM",
+      "label": "Included/Excluded",
+      "responseOptions": {
+        "choices": {
+          "name": "participants were excluded for analysis",
+          "value": "incl"
+        },
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "unique participant identifier",
+      "sourceVariable": "participant_id",
+      "associatedWith": "NIDM",
+      "label": "participant identifier"
+    }
+  ]
+}
