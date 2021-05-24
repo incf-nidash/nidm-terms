@@ -30,20 +30,24 @@ jobs:
     # Runs combinebidsjsonld.py and updates the single jsonld files
     - name: Generate a single BIDS Terms file
       run: |
-        python utils/combinebidsjsonld.py -inputDir terms/BIDS_Terms/ -outputDir terms/BIDS_Terms.jsonld
+        python utils/combinejsonld.py -input terms/BIDS_Terms/ -output terms/BIDS_Terms.jsonld -type http://purl.org/nidash/nidm#CommonDataElement
         
     - name: Generate a single NDA Terms file
       run: |
-        python utils/combinebidsjsonld.py -inputDir terms/NDA_Terms/ -outputDir terms/NDA_Terms.jsonld -association NDA
+        python utils/combinejsonld.py -input terms/NDA_Terms/ -output terms/NDA_Terms.jsonld -type http://purl.org/nidash/nidm#CommonDataElement
         
         
     - name: Generate a single NIDM Terms file
       run: |
-        python utils/combinebidsjsonld.py -inputDir terms/NIDM_Terms/ -outputDir terms/NIDM_Terms.jsonld -association NIDM
+        python utils/combinejsonld.py -input terms/NIDM_Terms/ -output terms/NIDM_Terms.jsonld -type http://purl.org/nidash/nidm#CommonDataElement
         
     - name: Generate a single NIDM concepts file
       run: |
-        python utils/combinebidsjsonld.py -inputDir terms/NIDM_Concepts/ -outputDir terms/NIDM_Concepts.jsonld -association NIDM
+        python utils/combinejsonld.py -input terms/NIDM_Concepts/ -output terms/NIDM_Concepts.jsonld -type http://purl.org/nidash/nidm#Concept
+        
+    - name: Generate a single CONP DATS Terms file
+      run: |
+        python utils/combinejsonld.py -input terms/CONP_DATS_Terms terms/CONP_DATS_Terms/formats terms/CONP_DATS_Terms/isAbout terms/CONP_DATS_Terms/keywords terms/CONP_DATS_Terms/licenses terms/CONP_DATS_Terms/privacy terms/CONP_DATS_Terms/types -output terms/CONP_DATS.jsonld -type http://purl.org/nidash/nidm#Concept
 
     
     #commits the changes to the repository
