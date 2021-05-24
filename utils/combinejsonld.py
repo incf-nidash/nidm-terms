@@ -151,8 +151,8 @@ def main(argv):
                                     temp['@type'] = []
                                     temp['@type'].append(eachtype)
 
-                        if isinstance(temp['@type'],list):
-                            temp['@type'].append(value)
+                        if isinstance(value,list):
+                            value.append(value)
                         else:
                             temp['@type'] = value
                     elif key == 'description':
