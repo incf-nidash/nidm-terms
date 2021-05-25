@@ -1,4 +1,4 @@
-name: Generate Single JSONLD File
+name: OWL to Jsonld
 on:
   push:
     branches: [ master ]
@@ -19,7 +19,7 @@ jobs:
     - name: Install packages
       run: |
         python -m pip install --upgrade pip setuptools
-        pip install glob2 pyld argparse requests pandas
+        pip install glob2 pyld argparse requests pandas rdflib
         
     # Runs combinebidsjsonld.py and updates the single jsonld files
     - name: OWL to josnld
