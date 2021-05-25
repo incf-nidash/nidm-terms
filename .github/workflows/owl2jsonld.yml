@@ -22,28 +22,11 @@ jobs:
         pip install glob2 pyld argparse requests
         
     # Runs combinebidsjsonld.py and updates the single jsonld files
-    - name: Generate a single BIDS Terms file
+    - name: Generate terms, OWL to josnld
       run: |
-        python utils/combinejsonld.py -input terms/BIDS_Terms/ -output terms/BIDS_Terms.jsonld 
-        
-    - name: Generate a single NDA Terms file
-      run: |
-        python utils/combinejsonld.py -input terms/NDA_Terms/ -output terms/NDA_Terms.jsonld 
-        
-        
-    - name: Generate a single NIDM Terms file
-      run: |
-        python utils/combinejsonld.py -input terms/NIDM_Terms/ -output terms/NIDM_Terms.jsonld 
-        
-    - name: Generate a single NIDM concepts file
-      run: |
-        python utils/combinejsonld.py -input terms/NIDM_Concepts/ -output terms/NIDM_Concepts.jsonld 
-        
-    - name: Generate a single CONP DATS Terms file
-      run: |
-        python utils/combinejsonld.py -input terms/CONP_DATS_Terms terms/CONP_DATS_Terms/formats terms/CONP_DATS_Terms/isAbout terms/CONP_DATS_Terms/keywords terms/CONP_DATS_Terms/licenses terms/CONP_DATS_Terms/privacy terms/CONP_DATS_Terms/types -output terms/CONP_DATS.jsonld -type http://purl.org/nidash/nidm#CommonDataElement
+        python utils/owl2jsonterms.py -owl incf-nidash/nidm-specs/blob/master/nidm/nidm-results/terms/nidm-results.owl -out terms/NIDM_Terms.jsonld 
     
-  #commits the changes to the repository
-  - uses: stefanzweifel/git-auto-commit-action@v4
-    with:
-      commit_message: Terms Updates
+    #commits the changes to the repository
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Terms Updates
