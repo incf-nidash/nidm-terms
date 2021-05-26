@@ -24,7 +24,7 @@ jobs:
     # Runs combinebidsjsonld.py and updates the single jsonld files
     - name: OWL to josnld
       run: |
-        python utils/owl2jsonterms.py -owl ../../incf-nidash/nidm-specs/blob/master/nidm/nidm-results/terms/nidm-results.owl -out terms/NIDM_Terms.jsonld 
+        python utils/owl2jsonterms.py -owl https://github.com/incf-nidash/nidm-specs/blob/master/nidm/nidm-results/terms/nidm-results.owl -out terms/NIDM_Terms.jsonld 
     
     #commits the changes to the repository
     - uses: stefanzweifel/git-auto-commit-action@v4
