@@ -41,6 +41,9 @@ nidm:PersonalDataElementShape a sh:NodeShape ;
         [ sh:node nidm:IsAboutShape ;
             sh:path interlex:ilx_0381385 ],
 
+        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
+    		sh:path nidm:candidateTerms ] ,
+
         [ sh:nodeKind sh:IRI ;
     		sh:path owl:sameAs ] ,
 
@@ -90,6 +93,9 @@ nidm:CommonDataElementShape a sh:NodeShape ;
         [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
     		sh:path interlex:ilx_0739289 ] ,
 
+        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
+    		sh:path nidm:candidateTerms ] ,
+
         [ sh:nodeKind sh:IRI ;
     		sh:path owl:sameAs ] ,
 
@@ -138,6 +144,9 @@ nidm:ConceptShape a sh:NodeShape ;
 
         [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
     		sh:path interlex:ilx_0739289 ] ,
+
+        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
+    		sh:path nidm:candidateTerms ] ,
 
         [ sh:nodeKind sh:IRI ;
     		sh:path owl:sameAs ] ,
