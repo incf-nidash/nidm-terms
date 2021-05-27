@@ -101,19 +101,27 @@ def main(argv):
         context = json.load(context_data)
 
     # added by DBK to support adding to existing jsonld file
-    if not isfile(output):
-        #set a main dictionary
-        main_dict = {}
+    # if not isfile(output):
+    #     #set a main dictionary
+    #     main_dict = {}
+    #
+    #     #assing @context to the main dict
+    #     main_dict['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
+    #     main_dict['terms'] = []
+    #     #state = 0
+    # else:
+    # # load existing jsonld file
+    #     with open(output) as fp:
+    #         main_dict = json.load(fp)
+    #     #state = 1
 
-        #assing @context to the main dict
-        main_dict['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
-        main_dict['terms'] = []
-        #state = 0
-    else:
-    # load existing jsonld file
-        with open(output) as fp:
-            main_dict = json.load(fp)
-        #state = 1
+
+    #set a main dictionary
+    main_dict = {}
+
+    #assing @context to the main dict
+    main_dict['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
+    main_dict['terms'] = []
 
 
     for input in args.input:
@@ -152,13 +160,15 @@ def main(argv):
                                     temp['@type'].append(eachtype)
 
                         if isinstance(value,list):
-                            value.append(value)
+                            temp['@type'] = value
                         else:
                             temp['@type'] = value
                     elif key == 'description':
                         temp[context['@context']['description']] = value
                     elif key == 'label':
                         temp[context['@context']['label']] = value
+                    elif key == 'sourceVariable':
+                        temp[context['@context']['sourceVariable']] = value
                     elif key == 'comment':
                         temp[context['@context']['comment']] = value
                     elif key == 'sameAs':
@@ -209,6 +219,20 @@ def main(argv):
 
     compacted = jsonld.compact(main_dict,'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld')
 
+
+    # #Added by Nqueder
+    for d in compacted['terms']:
+        if 'http://schema.org/url' in d:
+            d['url'] = d['http://schema.org/url']
+            del d['http://schema.org/url']
+        if 'http://uri.interlex.org/ilx_0770184' in d:
+            d['supertypeCDEs'] = d['http://uri.interlex.org/ilx_0770184']
+            del d['http://uri.interlex.org/ilx_0770184']
+        if 'owl:sameAs' in d:
+            d['sameAs'] = d['owl:sameAs']
+            del d['owl:sameAs']
+
+
     print('single jsonld file has been successfully created in', output)
 
     ## Added my Nazek Queder
@@ -220,7 +244,7 @@ def main(argv):
     #        json.dump(compacted,outfile,indent=2)
 
     #elif state == 0:
-    with open (join(output),'+w') as outfile:
+    with open (join(output),'w+') as outfile:
         json.dump(compacted,outfile,indent=2)
 
 
