@@ -1,38 +1,122 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "@type": "nidm:TermsCollection",
   "terms": [
     {
       "@type": "PersonalDataElement",
-      "description": "Attitude toward math subtest raw score",
-      "sourceVariable": "TOMA-2_Attitudes_Raw",
+      "sourceVariable": "age_ses-T1",
       "associatedWith": "NIDM",
-      "label": "TOMA-2 Attitude Toward Math Raw Score",
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d09947/",
-        "label": "attitude"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Attitude toward math subtest standard score",
-      "sourceVariable": "TOMA-2_Attitudes_StS",
-      "associatedWith": "NIDM",
-      "label": "TOMA-2 Attitude Toward Math Standard Score",
+      "label": "Age at session 1",
       "responseOptions": {
-        "valueType": "xsd:string"
+        "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d09947/",
-        "label": "attitude"
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Test of Mathematical Abilities- second edition (TOMA-2)",
-      "citation": "Brown, V., McEntire, E., & Cronin, M. E. (1994). Test of mathematical abilities (2nd ed.). Austin, TX: Pro-ed.",
-      "url": "http://college.cengage.com/education/salvia/assessment/10e/resources/salvia_test_mathematical_abilities.pdf",
-      "sourceVariable": "MeasurementToolMetadata",
-      "associatedWith": "NIDM"
+      "sourceVariable": "age_ses-T2",
+      "associatedWith": "NIDM",
+      "label": "Age at session 2",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Left or Right-Handed",
+      "sourceVariable": "handedness",
+      "associatedWith": "NIDM",
+      "label": "Participant handedness",
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0104886",
+        "label": "handedness assessment"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Sex of participants",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "label": "Sex",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "1"
+          },
+          {
+            "name": "female",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738439",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Shifted date of aquistion of Syllogisms_run-01. Dates were shifted -365 to 0 days across subjects to protect privacy",
+      "sourceVariable": "Syllogisms_run-01_date",
+      "associatedWith": "NIDM",
+      "label": "Shifted date of aquistion of Syllogisms_run-01",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Shifted date of aquistion of Syllogisms_run-02. Dates were shifted -365 to 0 days across subjects to protect privacy",
+      "sourceVariable": "Syllogisms_run-02_date",
+      "associatedWith": "NIDM",
+      "label": "Shifted date of aquistion of Syllogisms_run-02",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Shifted date of aquistion of T1w image",
+      "sourceVariable": "T1w_date",
+      "associatedWith": "NIDM",
+      "label": "Shifted date of aquistion of T1w image",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Shifted date of aquistion of Transitive_run-01. Dates were shifted -365 to 0 days across subjects to protect privacy",
+      "sourceVariable": "Transitive_run-01_date",
+      "associatedWith": "NIDM",
+      "label": "Shifted date of aquistion of Transitive_run-01",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Shifted date of aquistion of Transitive_run-02. Dates were shifted -365 to 0 days across subjects to protect privacy",
+      "sourceVariable": "Transitive_run-02_date",
+      "associatedWith": "NIDM",
+      "label": "Shifted date of aquistion of Transitive_run-02",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
     }
   ]
 }

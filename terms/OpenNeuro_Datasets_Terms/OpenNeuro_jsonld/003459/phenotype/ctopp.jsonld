@@ -1,41 +1,110 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "@type": "nidm:TermsCollection",
   "terms": [
     {
       "@type": "PersonalDataElement",
-      "description": "Phonemic awareness composite score",
-      "sourceVariable": "CTOPP_PhonAw",
+      "description": "Shifted aquisition date of acq-a images. Dates were randomly shifted -365 to 0 days and back 200 years across subjects to protect privacy.",
+      "sourceVariable": "a_date",
       "associatedWith": "NIDM",
-      "label": "CTOPP Phonemic Awareness Composite Score",
+      "label": "Shifted aquisition date of acq-a images",
       "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "https://www.cognitiveatlas.org/concept/json/trm_5240fddc2e43e/",
-        "label": "phonological awareness"
+        "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Rapid naming composite score",
-      "sourceVariable": "CTOPP_RapNam",
+      "description": "Shifted aquisition date of acq-b images. Dates were randomly shifted -365 to 0 days and back 200 years across subjects to protect privacy.",
+      "sourceVariable": "b_date",
       "associatedWith": "NIDM",
-      "label": "CTOPP Rapid Naming Composite Score",
+      "label": "Shifted aquisition date of acq-b images",
       "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "https://www.cognitiveatlas.org/concept/json/trm_52b5f1ef4f9cc/",
-        "label": "phonological processing"
+        "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Comprehensive Test of Phonological Processing (CTOPP)",
-      "citation": "Wagner, R. K., Torgesen, J. K., & Rashotte, C. A. (1999). Comprehensive test of phonological processing. Austin, TX: PRO-ED",
-      "url": "http://alpha.fdu.edu/psychology/comprehensive_test_of_phonologic.htm",
-      "sourceVariable": "MeasurementToolMetadata",
-      "associatedWith": "NIDM"
+      "description": "Shifted date of birth. Dates were randomly shifted -365 to 0 days and back 200 years across subjects to protect privacy.",
+      "sourceVariable": "birthdate_shifted",
+      "associatedWith": "NIDM",
+      "label": "Shifted date of birth",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Shifted aquisition date of acq-c images. Dates were randomly shifted -365 to 0 days and back 200 years across subjects to protect privacy.",
+      "sourceVariable": "c_date",
+      "associatedWith": "NIDM",
+      "label": "Shifted aquisition date of acq-c images",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "First aquired language",
+      "sourceVariable": "first_lang",
+      "associatedWith": "NIDM",
+      "label": "First Language",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b7f4/",
+        "label": "language acquisition"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Left or Right-Handed",
+      "sourceVariable": "handedness",
+      "associatedWith": "NIDM",
+      "label": "Participant handedness",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0104886",
+        "label": "handedness assessment"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Sex of participant",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "label": "Sex",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "1"
+          },
+          {
+            "name": "female",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738439",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Total completed years of education",
+      "sourceVariable": "yrs_education",
+      "associatedWith": "NIDM",
+      "label": "Years of Education",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
     }
   ]
 }

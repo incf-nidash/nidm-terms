@@ -1,141 +1,150 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "@type": "nidm:TermsCollection",
   "terms": [
     {
       "@type": "PersonalDataElement",
-      "description": "Phonemic decoding efficiency subtest raw score",
-      "sourceVariable": "TOWRE_PDE_Raw",
+      "description": "Age of participant at standardized testing visit",
+      "sourceVariable": "age",
       "associatedWith": "NIDM",
-      "label": "TOWRE Phonemic Decoding Efficiency Raw Score",
+      "label": "Age of participant",
       "responseOptions": {
-        "valueType": "xsd:integer"
+        "valueType": "xsd:float"
       },
-      "isAbout": [
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0ac87/",
-          "label": "phonological encoding"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b76e/",
-          "label": "grapheme"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_52b5f1ef4f9cc/",
-          "label": "phonological processing"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b802/",
-          "label": "language processing"
-        }
-      ]
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Phonemic decoding efficiency subtest standard score",
-      "sourceVariable": "TOWRE_PDE_StS",
+      "description": "How would you describe your child's ethnicity? Hispanic or Latino , Not Hispanic or Latino",
+      "sourceVariable": "ethnicity",
       "associatedWith": "NIDM",
-      "label": "TOWRE Phonemic Decoding Efficiency Standard Score",
+      "label": "Participant ethnicity",
       "responseOptions": {
-        "valueType": "xsd:integer"
+        "choices": [
+          {
+            "name": "Hispanic or Latino",
+            "value": "1"
+          },
+          {
+            "name": "Not Hispanic or Latino",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
+        "valueType": "xsd:float"
       },
-      "isAbout": [
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0ac87/",
-          "label": "phonological encoding"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b76e/",
-          "label": "grapheme"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_52b5f1ef4f9cc/",
-          "label": "phonological processing"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b802/",
-          "label": "language processing"
-        }
-      ]
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0103955",
+        "label": "ethnicity"
+      }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Sight word efficiency subtest raw score",
-      "sourceVariable": "TOWRE_SWE_Raw",
+      "description": "Left or Right-Handed",
+      "sourceVariable": "handedness",
       "associatedWith": "NIDM",
-      "label": "TOWRE Sight Word Efficiency Raw Score",
+      "label": "Participant handedness",
       "responseOptions": {
+        "choices": [
+          {
+            "name": "Left",
+            "value": "1"
+          },
+          {
+            "name": "Right",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
         "valueType": "xsd:integer"
       },
-      "isAbout": [
-        {
-          "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0aeb6/",
-          "label": "reading"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b802/",
-          "label": "language processing"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b58f/",
-          "label": "word recognition"
-        }
-      ]
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0104886",
+        "label": "handedness assessment"
+      }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Sight word efficiency subtest standard score",
-      "sourceVariable": "TOWRE_SWE_StS",
+      "description": "How would you describe your child's race? Please select all that apply.",
+      "sourceVariable": "race",
       "associatedWith": "NIDM",
-      "label": "TOWRE Sight Word Efficiency Standard Score",
+      "label": "Participant race",
       "responseOptions": {
-        "valueType": "xsd:integer"
+        "choices": [
+          {
+            "name": "American Indian or Alaskan",
+            "value": "1"
+          },
+          {
+            "name": "Asian",
+            "value": "2"
+          },
+          {
+            "name": "Black or African American",
+            "value": "3"
+          },
+          {
+            "name": "Hawaiian or Pacific Islander",
+            "value": "4"
+          },
+          {
+            "name": "White",
+            "value": "5"
+          },
+          {
+            "name": "Other",
+            "value": "6"
+          }
+        ],
+        "maxValue": "6",
+        "minValue": "1",
+        "valueType": "xsd:float"
       },
-      "isAbout": [
-        {
-          "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0aeb6/",
-          "label": "reading"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b802/",
-          "label": "language processing"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b58f/",
-          "label": "word recognition"
-        }
-      ]
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0109596",
+        "label": "race assessment"
+      }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Total word reading efficiency standard score",
-      "sourceVariable": "TOWRE_Total_StS",
+      "description": "Sex of participants",
+      "sourceVariable": "sex",
       "associatedWith": "NIDM",
-      "label": "TOWRE Total Standard Score",
+      "label": "Sex",
       "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "1"
+          },
+          {
+            "name": "female",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
         "valueType": "xsd:integer"
       },
-      "isAbout": [
-        {
-          "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0aeb6/",
-          "label": "reading"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b802/",
-          "label": "language processing"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b58f/",
-          "label": "word recognition"
-        }
-      ]
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738439",
+        "label": "sex"
+      }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Test of Word Reading Efficiency (TOWRE)",
-      "citation": "Torgesen, J. K., Wagner, R. K., & Rashotte, C. A. (1999). TOWRE: test of word reading efficiency. Text: The Psychological Corporation.",
-      "url": "http://www.cognitiveatlas.org/task/Test_of_Word_Reading_Efficiency",
-      "sourceVariable": "MeasurementToolMetadata",
-      "associatedWith": "NIDM"
+      "description": "Date of birth randomly shifted from 0 to -375 days and year changed to 18-- to maintain anonymity. Shift amount is consistant within subjects but random accross subjects",
+      "sourceVariable": "shifted_birthdate",
+      "associatedWith": "NIDM",
+      "label": "Shifted date of birth",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
     }
   ]
 }

@@ -1,95 +1,215 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "@type": "nidm:TermsCollection",
   "terms": [
     {
       "@type": "PersonalDataElement",
-      "description": "Blending words subtest raw score",
-      "sourceVariable": "CTOPP_BW_Raw",
+      "description": "Previous ADHD Diagnosis as reported by parent/guardian at ses-T1",
+      "sourceVariable": "ADHD_diagnosis",
       "associatedWith": "NIDM",
-      "label": "CTOPP Blending Words Raw Score",
+      "label": "ADHD Diagnosis",
       "responseOptions": {
-        "valueType": "xsd:float"
+        "choices": [
+          {
+            "name": "no",
+            "value": "0"
+          },
+          {
+            "name": "yes",
+            "value": "1"
+          }
+        ],
+        "maxValue": "1",
+        "minValue": "0",
+        "valueType": "xsd:integer"
       },
       "isAbout": [
         {
-          "@id": "https://www.cognitiveatlas.org/concept/json/trm_5240fddc2e43e/",
-          "label": "phonological awareness"
+          "@id": "http://cognitiveatlas.org/concept/json/trm_523c7c13bc55f/",
+          "label": "hyperactivity"
         },
         {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_558c74156b7ee/",
-          "label": "phonological assembly"
+          "@id": "http://cognitiveatlas.org/concept/json/trm_50070dce14554/",
+          "label": "impulsivity"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d09902/",
+          "label": "attention"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_1094/",
+          "label": "attention deficit hyperactivity disorder"
         }
       ]
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Blending words subtest standardized score",
-      "sourceVariable": "CTOPP_BW_StS",
+      "description": "Prescribed medication taken for ADHD at ses-T1",
+      "sourceVariable": "ADHD_medication",
       "associatedWith": "NIDM",
-      "label": "CTOPP Blending Words Standard Score",
-      "isAbout": [
-        {
-          "@id": "https://www.cognitiveatlas.org/concept/json/trm_5240fddc2e43e/",
-          "label": "phonological awareness"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_558c74156b7ee/",
-          "label": "phonological assembly"
-        }
-      ]
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Elision subtest raw score",
-      "sourceVariable": "CTOPP_EL_Raw",
-      "associatedWith": "NIDM",
-      "label": "CTOPP Elision Raw Score",
-      "isAbout": [
-        {
-          "@id": "https://www.cognitiveatlas.org/concept/json/trm_5240fddc2e43e/",
-          "label": "phonological awareness"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_558c74156b7ee/",
-          "label": "phonological assembly"
-        }
-      ]
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Elision subtest standardized score",
-      "sourceVariable": "CTOPP_EL_StS",
-      "associatedWith": "NIDM",
-      "label": "CTOPP Elision Standard Score",
-      "isAbout": [
-        {
-          "@id": "https://www.cognitiveatlas.org/concept/json/trm_5240fddc2e43e/",
-          "label": "phonological awareness"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_558c74156b7ee/",
-          "label": "phonological assembly"
-        }
-      ]
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Phonemic awareness composite score",
-      "sourceVariable": "CTOPP_PhonAwareness_Comp",
-      "associatedWith": "NIDM",
-      "label": "CTOPP Phonemic Awareness Composite Score",
-      "isAbout": {
-        "@id": "https://www.cognitiveatlas.org/concept/json/trm_5240fddc2e43e/",
-        "label": "phonological awareness"
+      "label": "ADHD Medication",
+      "responseOptions": {
+        "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Comprehensive Test of Phonological Processing (CTOPP)",
-      "citation": "Wagner, R. K., Torgesen, J. K., & Rashotte, C. A. (1999). Comprehensive test of phonological processing. Austin, TX: PRO-ED",
-      "url": "http://alpha.fdu.edu/psychology/comprehensive_test_of_phonologic.htm",
-      "sourceVariable": "MeasurementToolMetadata",
-      "associatedWith": "NIDM"
+      "description": "Age in years at ses-T1",
+      "sourceVariable": "age_ses-T1",
+      "associatedWith": "NIDM",
+      "label": "Age - Session T1",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Age in years at ses-T2",
+      "sourceVariable": "age_ses-T2",
+      "associatedWith": "NIDM",
+      "label": "Age - Session T2",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant handedness as reported by parent/guardian",
+      "sourceVariable": "handedness",
+      "associatedWith": "NIDM",
+      "label": "Handedness",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Left",
+            "value": "1"
+          },
+          {
+            "name": "Right",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0104886",
+        "label": "handedness assessment"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "label": "Sex",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "1"
+          },
+          {
+            "name": "female",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738439",
+        "label": "sex"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "date and time of ses-T1_task-SLD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "SLD_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-SLD datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "date and time of ses-T1_task-SLI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "SLI_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-SLI datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "date and time of ses-T1_task-SSD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "SSD_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-SSD datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "date and time of ses-T1_task-SSI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "SSI_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-SSI datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "date and time of ses-T1_task-VLD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "VLD_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-VLD datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "date and time of ses-T1_task-VLI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "VLI_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-VLI datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "date and time of ses-T1_task-VSD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "VSD_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-VSD datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "date and time of ses-T1_task-VSI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "VSI_datetime",
+      "associatedWith": "NIDM",
+      "label": "task-VSI datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
     }
   ]
 }

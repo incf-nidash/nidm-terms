@@ -1,66 +1,93 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "@type": "nidm:TermsCollection",
   "terms": [
     {
       "@type": "PersonalDataElement",
-      "description": "Persistent pursuit of goals",
-      "sourceVariable": "BAS_drive",
+      "description": "Participant age",
+      "sourceVariable": "age",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "unitCode": "summed Likert scores",
+        "unitCode": "Years",
         "valueType": "xsd:integer"
       },
       "isAbout": {
-        "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d09877/",
-        "label": "appetitive motivation"
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Desire for new rewards",
-      "sourceVariable": "BAS_fun_seeking",
+      "description": "Highest educational degree obtained",
+      "sourceVariable": "education_degree",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "unitCode": "summed Likert scores",
-        "valueType": "xsd:integer"
+        "choices": [
+          {
+            "name": "Bachelor's degree",
+            "value": "Bachelors"
+          },
+          {
+            "name": "Master's degree",
+            "value": "Masters"
+          },
+          {
+            "name": "Some Professional degree",
+            "value": "Professional"
+          },
+          {
+            "name": "Ph.D.",
+            "value": "Doctorate"
+          }
+        ],
+        "valueType": "xsd:string"
       },
       "isAbout": {
-        "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d09877/",
-        "label": "appetitive motivation"
+        "@id": "http://uri.interlex.org/ilx_0325823",
+        "label": "education (wechsler test of adult reading)"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Positive response to reward",
-      "sourceVariable": "BAS_reward_responsiveness",
+      "description": "Number of total years of education",
+      "sourceVariable": "education_years",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "unitCode": "summed Likert scores",
-        "valueType": "xsd:integer"
+        "unitCode": "Years",
+        "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d09877/",
-        "label": "appetitive motivation"
+        "@id": "http://uri.interlex.org/ilx_0325823",
+        "label": "education (wechsler test of adult reading)"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Sensitivity to negative events / anxiety",
-      "sourceVariable": "BIS",
+      "description": "Participant gender",
+      "sourceVariable": "gender",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "unitCode": "summed Likert scores",
-        "valueType": "xsd:integer"
+        "choices": [
+          {
+            "name": "Male",
+            "value": "M"
+          },
+          {
+            "name": "Female",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
       },
       "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/json/trm_4b7c27094a093/",
-        "label": "behavioral inhibition (temperament)"
+        "@id": "http://uri.interlex.org/ilx_0738437",
+        "label": "gender"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Behavioral Approach System / Behavioral Inhibition System scales",
-      "url": "http://www.cognitiveatlas.org/term/id/trm_56a9137d9dce1",
+      "description": "Demographic information",
+      "url": "N/A",
       "sourceVariable": "MeasurementToolMetadata",
       "associatedWith": "NIDM"
     }

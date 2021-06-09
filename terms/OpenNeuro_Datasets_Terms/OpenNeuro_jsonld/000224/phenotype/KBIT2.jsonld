@@ -1,52 +1,93 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "@type": "nidm:TermsCollection",
   "terms": [
     {
       "@type": "PersonalDataElement",
-      "description": "Total IQ score",
-      "sourceVariable": "KBIT2_IQ",
+      "description": "Participant age",
+      "sourceVariable": "age",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "unitCode": "summed Likert scores",
+        "unitCode": "Years",
         "valueType": "xsd:integer"
       },
       "isAbout": {
-        "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a666/",
-        "label": "intelligence"
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "nonverbal IQ score",
-      "sourceVariable": "KBIT2_nonverbal_standard",
+      "description": "Highest educational degree obtained",
+      "sourceVariable": "education_degree",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "unitCode": "summed Likert scores",
-        "valueType": "xsd:integer"
+        "choices": [
+          {
+            "name": "Bachelor's degree",
+            "value": "Bachelors"
+          },
+          {
+            "name": "Master's degree",
+            "value": "Masters"
+          },
+          {
+            "name": "Some Professional degree",
+            "value": "Professional"
+          },
+          {
+            "name": "Ph.D.",
+            "value": "Doctorate"
+          }
+        ],
+        "valueType": "xsd:string"
       },
       "isAbout": {
-        "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a666/",
-        "label": "intelligence"
+        "@id": "http://uri.interlex.org/ilx_0325823",
+        "label": "education (wechsler test of adult reading)"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "verbal IQ score",
-      "sourceVariable": "KBIT2_verbal_standard",
+      "description": "Number of total years of education",
+      "sourceVariable": "education_years",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "unitCode": "summed Likert scores",
-        "valueType": "xsd:integer"
+        "unitCode": "Years",
+        "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a666/",
-        "label": "intelligence"
+        "@id": "http://uri.interlex.org/ilx_0325823",
+        "label": "education (wechsler test of adult reading)"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Kaufman Brief Intelligence Test, Second Edition",
-      "url": "http://www.cognitiveatlas.org/term/id/trm_529ce6ecb35f8",
+      "description": "Participant gender",
+      "sourceVariable": "gender",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "Male",
+            "value": "M"
+          },
+          {
+            "name": "Female",
+            "value": "F"
+          }
+        ],
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738437",
+        "label": "gender"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Demographic information",
+      "url": "N/A",
       "sourceVariable": "MeasurementToolMetadata",
       "associatedWith": "NIDM"
     }

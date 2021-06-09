@@ -1,235 +1,192 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "@type": "nidm:TermsCollection",
   "terms": [
     {
       "@type": "PersonalDataElement",
-      "description": "1. Have you ever had a head injury or concussion\"",
-      "sourceVariable": "tbi1",
+      "sourceVariable": "age",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:float"
+        "valueType": "xsd:integer"
       },
       "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0111921",
-        "label": "traumatic brain injury"
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "2. Did you ever get knocked out or lose consciousness as a result of a head injury\"",
-      "sourceVariable": "tbi2",
+      "sourceVariable": "bart",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
         "valueType": "xsd:float"
       },
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0111921",
-        "label": "traumatic brain injury"
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b642/",
+          "label": "risk aversion"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_5534111a8bc96/",
+          "label": "punishment processing"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_557b48a224b95/",
+          "label": "loss anticipation"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/id/trm_567982752ff4a/",
+          "label": "decision under uncertainty"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_557b4a913f8cc/",
+          "label": "risk processing"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b64e/",
+          "label": "risk seeking"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "bht",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "3. Did you ever experience any symptoms immediately after a head injury\"",
-      "sourceVariable": "tbi3",
+      "sourceVariable": "diagnosis",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0111921",
-        "label": "traumatic brain injury"
+        "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "4. Did you receive any kind of medical attention/treatment for a head injury\"",
-      "sourceVariable": "tbi4",
+      "sourceVariable": "dwi",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
         "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0111921",
-        "label": "traumatic brain injury"
+        "@id": "http://uri.interlex.org/ilx_0103242",
+        "label": "diffusion-weighted magnetic resonance imaging"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "a. Age at first head injury in years",
-      "sourceVariable": "tbifirst",
+      "sourceVariable": "gender",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "maxValue": 99.0,
-        "minValue": 0.0,
-        "valueType": "xsd:float"
+        "valueType": "xsd:string"
       },
       "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0111921",
-        "label": "traumatic brain injury"
+        "@id": "http://uri.interlex.org/ilx_0738437",
+        "label": "gender"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "c. Record the number of head injuries reported",
-      "sourceVariable": "tbinumber",
+      "sourceVariable": "ghost_NoGhost",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "maxValue": 99.0,
-        "minValue": 0.0,
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0111921",
-        "label": "traumatic brain injury"
+        "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "d. Rating of most severe head injury from above",
-      "sourceVariable": "tbirating",
+      "sourceVariable": "pamenc",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "Head injury with LOC/coma lasting 6 hours or more",
-            "value": "8"
-          },
-          {
-            "name": "Mild head injury with LOC for between 2-30 minutes.... lasting !7 days to 2 months",
-            "value": "6"
-          },
-          {
-            "name": "Mild head injury/concussion with brief loss of consciousness",
-            "value": "3"
-          },
-          {
-            "name": "Mild head injury with LOC for between 2-30 minutes.... lasting 1-24 hours",
-            "value": "4"
-          },
-          {
-            "name": "Mild head injury/concussion with no loss of consciousness",
-            "value": "2"
-          },
-          {
-            "name": "Mild head injury with LOC for between 2-30 minutes.... lasting 1-7 days",
-            "value": "5"
-          },
-          {
-            "name": "Mild head injury with LOC for between 30 minutes-5 hours",
-            "value": "7"
-          },
-          {
-            "name": "No Head Injury",
-            "value": "1"
-          }
-        ],
-        "maxValue": "8",
-        "minValue": "1",
         "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0111921",
-        "label": "traumatic brain injury"
+        "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a1f4/",
+        "label": "episodic memory"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "b. Age at most recent head injury in years",
-      "sourceVariable": "tbirecent",
+      "sourceVariable": "pamret",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "maxValue": 99.0,
-        "minValue": 0.0,
         "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0111921",
-        "label": "traumatic brain injury"
+        "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a1f4/",
+        "label": "episodic memory"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "e. Source of inofrmation",
-      "sourceVariable": "tbisource",
+      "sourceVariable": "rest",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "Both subject & Parent",
-            "value": "3"
-          },
-          {
-            "name": "Subject only",
-            "value": "1"
-          },
-          {
-            "name": "Parent only",
-            "value": "2"
-          }
-        ],
-        "maxValue": "3",
-        "minValue": "1",
         "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0111921",
-        "label": "traumatic brain injury"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Traumatic Brain Injury Screener",
-      "url": "",
-      "sourceVariable": "MeasurementToolMetadata",
-      "associatedWith": "NIDM"
+      "sourceVariable": "ScannerSerialNumber",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "scap",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b1e0/",
+          "label": "spatial working memory"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_551f0f822d95e/",
+          "label": "limited capacity"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "stopsignal",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": [
+        {
+          "@id": "http://uri.interlex.org/ilx_0292391",
+          "label": "ssrt (stop signal reaction time)"
+        },
+        {
+          "@id": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0af66/",
+          "label": "response inhibition"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "T1w",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "taskswitch",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
     }
   ]
 }

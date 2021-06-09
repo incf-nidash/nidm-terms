@@ -1,207 +1,354 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "@type": "nidm:TermsCollection",
   "terms": [
     {
       "@type": "PersonalDataElement",
-      "description": "Blending words subtest raw score",
-      "sourceVariable": "CTOPP_BW_Raw",
+      "description": "Age in years at ses-T1",
+      "sourceVariable": "age_ses-T1",
       "associatedWith": "NIDM",
-      "label": "CTOPP Blending Words Raw Score",
+      "label": "Age at session 1",
       "responseOptions": {
-        "valueType": "xsd:integer"
-      },
-      "isAbout": [
-        {
-          "@id": "https://www.cognitiveatlas.org/concept/json/trm_5240fddc2e43e/",
-          "label": "phonological awareness"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_558c74156b7ee/",
-          "label": "phonological assembly"
-        }
-      ]
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Blending words subtest standardized score",
-      "sourceVariable": "CTOPP_BW_StS",
-      "associatedWith": "NIDM",
-      "label": "CTOPP Blending Words Standard Score",
-      "responseOptions": {
-        "valueType": "xsd:integer"
-      },
-      "isAbout": [
-        {
-          "@id": "https://www.cognitiveatlas.org/concept/json/trm_5240fddc2e43e/",
-          "label": "phonological awareness"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_558c74156b7ee/",
-          "label": "phonological assembly"
-        }
-      ]
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Elision subtest raw score",
-      "sourceVariable": "CTOPP_EL_Raw",
-      "associatedWith": "NIDM",
-      "label": "CTOPP Elision Raw Score",
-      "responseOptions": {
-        "valueType": "xsd:integer"
-      },
-      "isAbout": [
-        {
-          "@id": "https://www.cognitiveatlas.org/concept/json/trm_5240fddc2e43e/",
-          "label": "phonological awareness"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_558c74156b7ee/",
-          "label": "phonological assembly"
-        }
-      ]
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Elision subtest standardized score",
-      "sourceVariable": "CTOPP_EL_StS",
-      "associatedWith": "NIDM",
-      "label": "CTOPP Elision Standard Score",
-      "responseOptions": {
-        "valueType": "xsd:integer"
-      },
-      "isAbout": [
-        {
-          "@id": "https://www.cognitiveatlas.org/concept/json/trm_5240fddc2e43e/",
-          "label": "phonological awareness"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_558c74156b7ee/",
-          "label": "phonological assembly"
-        }
-      ]
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Phonemic awareness composite score",
-      "sourceVariable": "CTOPP_PhonAwareness_Comp",
-      "associatedWith": "NIDM",
-      "label": "CTOPP Phonemic Awareness Composite Score",
-      "responseOptions": {
-        "valueType": "xsd:integer"
+        "unitCode": "years",
+        "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "https://www.cognitiveatlas.org/concept/json/trm_5240fddc2e43e/",
-        "label": "phonological awareness"
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Rapid naming composite score",
-      "sourceVariable": "CTOPP_RapidNaming_Comp",
+      "description": "Age in years at ses-T2",
+      "sourceVariable": "age_ses-T2",
       "associatedWith": "NIDM",
-      "label": "CTOPP Rapid Naming Composite Score",
+      "label": "Age at session 2",
       "responseOptions": {
-        "valueType": "xsd:integer"
+        "unitCode": "years",
+        "valueType": "xsd:float"
       },
-      "isAbout": [
-        {
-          "@id": "https://www.cognitiveatlas.org/concept/json/trm_52b5f1ef4f9cc/",
-          "label": "phonological processing"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a9dc/",
-          "label": "naming"
-        }
-      ]
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Rapid digit naming subtest raw score",
-      "sourceVariable": "CTOPP_RD_Raw",
+      "description": "Left or Right-Handed",
+      "sourceVariable": "handedness",
       "associatedWith": "NIDM",
-      "label": "CTOPP Rapid Digit Naming Raw Score",
+      "label": "Participant handedness",
       "responseOptions": {
+        "choices": [
+          {
+            "name": "Left",
+            "value": "1"
+          },
+          {
+            "name": "Right",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
         "valueType": "xsd:integer"
       },
-      "isAbout": [
-        {
-          "@id": "https://www.cognitiveatlas.org/concept/json/trm_52b5f1ef4f9cc/",
-          "label": "phonological processing"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a9dc/",
-          "label": "naming"
-        }
-      ]
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0104886",
+        "label": "handedness assessment"
+      }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Rapid digit naming subtest standardized score",
-      "sourceVariable": "CTOPP_RD_StS",
+      "description": "Participant has data for session T1 multiplication task run 01",
+      "sourceVariable": "ses-T1_task-Mult_run-01",
       "associatedWith": "NIDM",
-      "label": "CTOPP Rapid Digit Naming Standard Score",
       "responseOptions": {
-        "valueType": "xsd:integer"
-      },
-      "isAbout": [
-        {
-          "@id": "https://www.cognitiveatlas.org/concept/json/trm_52b5f1ef4f9cc/",
-          "label": "phonological processing"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a9dc/",
-          "label": "naming"
-        }
-      ]
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Rapid letter naming subtest raw score",
-      "sourceVariable": "CTOPP_RL_Raw",
+      "description": "Participant has data for session T1 multiplication task run 02",
+      "sourceVariable": "ses-T1_task-Mult_run-02",
       "associatedWith": "NIDM",
-      "label": "CTOPP Rapid Letter Naming Raw Score",
       "responseOptions": {
-        "valueType": "xsd:integer"
-      },
-      "isAbout": [
-        {
-          "@id": "https://www.cognitiveatlas.org/concept/json/trm_52b5f1ef4f9cc/",
-          "label": "phonological processing"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a9dc/",
-          "label": "naming"
-        }
-      ]
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Rapid letter naming subtest standardized score",
-      "sourceVariable": "CTOPP_RL_StS",
+      "description": "Participant has data for session T1 numerosity task run 01",
+      "sourceVariable": "ses-T1_task-Num_run-01",
       "associatedWith": "NIDM",
-      "label": "CTOPP Rapid Letter Naming Standard Score",
       "responseOptions": {
-        "valueType": "xsd:integer"
-      },
-      "isAbout": [
-        {
-          "@id": "https://www.cognitiveatlas.org/concept/json/trm_52b5f1ef4f9cc/",
-          "label": "phonological processing"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a9dc/",
-          "label": "naming"
-        }
-      ]
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Comprehensive Test of Phonological Processing (CTOPP)",
-      "citation": "Wagner, R. K., Torgesen, J. K., & Rashotte, C. A. (1999). Comprehensive test of phonological processing. Austin, TX: PRO-ED",
-      "url": "http://alpha.fdu.edu/psychology/comprehensive_test_of_phonologic.htm",
-      "sourceVariable": "MeasurementToolMetadata",
-      "associatedWith": "NIDM"
+      "description": "Participant has data for session T1 numerosity task run 02",
+      "sourceVariable": "ses-T1_task-Num_run-02",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant has data for session T1 rhyming task",
+      "sourceVariable": "ses-T1_task-Rhyming",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant has data for session T1 multiplication task run 01",
+      "sourceVariable": "ses-T1_task-Sub_run-01",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant has data for session T1 multiplication task run 02",
+      "sourceVariable": "ses-T1_task-Sub_run-02",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant has data for session T2 multiplication task run 01",
+      "sourceVariable": "ses-T2_task-Mult_run-01",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant has data for session T2 multiplication task run 02",
+      "sourceVariable": "ses-T2_task-Mult_run-02",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant has data for session T2 numerosity task run 01",
+      "sourceVariable": "ses-T2_task-Num_run-01",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant has data for session T2 numerosity task run 02",
+      "sourceVariable": "ses-T2_task-Num_run-02",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant has data for session T2 rhyming task",
+      "sourceVariable": "ses-T2_task-Rhyming",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant has data for session T2 multiplication task run 01",
+      "sourceVariable": "ses-T2_task-Sub_run-01",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Participant has data for session T2 multiplication task run 02",
+      "sourceVariable": "ses-T2_task-Sub_run-02",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "has data",
+            "value": "yes"
+          },
+          {
+            "name": "does not have data",
+            "value": "no"
+          }
+        ],
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Sex of participants",
+      "sourceVariable": "sex",
+      "associatedWith": "NIDM",
+      "label": "Sex",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "1"
+          },
+          {
+            "name": "female",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738439",
+        "label": "sex"
+      }
     }
   ]
 }

@@ -1,279 +1,110 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "@type": "nidm:TermsCollection",
   "terms": [
     {
       "@type": "PersonalDataElement",
-      "description": "Arithmetic Subtest Score",
-      "sourceVariable": "WISC_Arith",
+      "description": "Shifted aquisition date of acq-a images. Dates were randomly shifted -365 to 0 days and back 200 years across subjects to protect privacy.",
+      "sourceVariable": "a_date",
       "associatedWith": "NIDM",
-      "label": "WISC Arithmetic Subtest Score",
+      "label": "Shifted aquisition date of acq-a images",
       "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
+        "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Block Design Subtest Score",
-      "sourceVariable": "WISC_BlkDes",
+      "description": "Shifted aquisition date of acq-b images. Dates were randomly shifted -365 to 0 days and back 200 years across subjects to protect privacy.",
+      "sourceVariable": "b_date",
       "associatedWith": "NIDM",
-      "label": "WISC Block Design Subtest Score",
+      "label": "Shifted aquisition date of acq-b images",
       "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
+        "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Coding Subtest Score",
-      "sourceVariable": "WISC_Coding",
+      "description": "Shifted date of birth. Dates were randomly shifted -365 to 0 days and back 200 years across subjects to protect privacy.",
+      "sourceVariable": "birthdate_shifted",
       "associatedWith": "NIDM",
-      "label": "WISC Coding Subtest Score",
+      "label": "Shifted date of birth",
       "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
+        "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Comprehension Subtest Score",
-      "sourceVariable": "WISC_Comp",
+      "description": "Shifted aquisition date of acq-c images. Dates were randomly shifted -365 to 0 days and back 200 years across subjects to protect privacy.",
+      "sourceVariable": "c_date",
       "associatedWith": "NIDM",
-      "label": "WISC Comprehension Subtest Score",
+      "label": "Shifted aquisition date of acq-c images",
       "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
+        "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Digit Span Subtest Score",
-      "sourceVariable": "WISC_DigSp",
+      "description": "First aquired language",
+      "sourceVariable": "first_lang",
       "associatedWith": "NIDM",
-      "label": "WISC Digit Span Subtest Score",
+      "label": "First Language",
       "responseOptions": {
-        "valueType": "xsd:float"
+        "valueType": "xsd:string"
       },
       "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
+        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b7f4/",
+        "label": "language acquisition"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Freedom from Distractibility Index",
-      "sourceVariable": "WISC_FDI",
+      "description": "Left or Right-Handed",
+      "sourceVariable": "handedness",
       "associatedWith": "NIDM",
-      "label": "WISC Freedom from Distractibility Index",
+      "label": "Participant handedness",
       "responseOptions": {
-        "valueType": "xsd:float"
+        "valueType": "xsd:string"
       },
       "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
+        "@id": "http://uri.interlex.org/ilx_0104886",
+        "label": "handedness assessment"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Full Scale IQ Score",
-      "sourceVariable": "WISC_FSIQ",
+      "description": "Sex of participant",
+      "sourceVariable": "sex",
       "associatedWith": "NIDM",
-      "label": "WISC Full Scale IQ Score",
+      "label": "Sex",
       "responseOptions": {
-        "valueType": "xsd:float"
+        "choices": [
+          {
+            "name": "male",
+            "value": "1"
+          },
+          {
+            "name": "female",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
+        "valueType": "xsd:integer"
       },
       "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
+        "@id": "http://uri.interlex.org/ilx_0738439",
+        "label": "sex"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Information Subtest Score",
-      "sourceVariable": "WISC_Info",
+      "description": "Total completed years of education",
+      "sourceVariable": "yrs_education",
       "associatedWith": "NIDM",
-      "label": "WISC Information Subtest Score",
+      "label": "Years of Education",
       "responseOptions": {
         "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
       }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Object Assembly Subtest Score",
-      "sourceVariable": "WISC_ObjAss",
-      "associatedWith": "NIDM",
-      "label": "WISC Object Assembly Subtest Score",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Picture Arrangement Subtest Score",
-      "sourceVariable": "WISC_PicArr",
-      "associatedWith": "NIDM",
-      "label": "WISC Picture Arrangement Subtest Score",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Picture Completion Subtest Score",
-      "sourceVariable": "WISC_PicComp",
-      "associatedWith": "NIDM",
-      "label": "WISC Picture Completion Subtest Score",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Performance IQ Score",
-      "sourceVariable": "WISC_PIQ",
-      "associatedWith": "NIDM",
-      "label": "WISC Performance IQ Score",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Perceptual Organization Index",
-      "sourceVariable": "WISC_POI",
-      "associatedWith": "NIDM",
-      "label": "WISC Perceptual Organization Index",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Processing Speed Index",
-      "sourceVariable": "WISC_PSI",
-      "associatedWith": "NIDM",
-      "label": "WISC Processing Speed Index",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Similarities Subtest Score",
-      "sourceVariable": "WISC_Sim",
-      "associatedWith": "NIDM",
-      "label": "WISC Similarities Subtest Score",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Symbol Search Subtest Score",
-      "sourceVariable": "WISC_SSrch",
-      "associatedWith": "NIDM",
-      "label": "WISC Symbol Search Subtest Score",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Verbal Comprehension Index",
-      "sourceVariable": "WISC_VCI",
-      "associatedWith": "NIDM",
-      "label": "WISC Verbal Comprehension Index",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Verbal IQ Score",
-      "sourceVariable": "WISC_VIQ",
-      "associatedWith": "NIDM",
-      "label": "WISC Verbal IQ Score",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Vocabulary Subtest Score",
-      "sourceVariable": "WISC_Vocab",
-      "associatedWith": "NIDM",
-      "label": "WISC Vocabulary Subtest Score",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a666/",
-        "label": "intelligence"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Wechsler Intelligence Scale for Children (WISC-III)",
-      "citation": "Wechsler, D. (1991). Wechsler intelligence scale for children \u2013 third edition. San Antonio, TX: Harcourt, Brace & Company.",
-      "url": "http://concordspedpac.org/WISC_III.html",
-      "sourceVariable": "MeasurementToolMetadata",
-      "associatedWith": "NIDM"
     }
   ]
 }

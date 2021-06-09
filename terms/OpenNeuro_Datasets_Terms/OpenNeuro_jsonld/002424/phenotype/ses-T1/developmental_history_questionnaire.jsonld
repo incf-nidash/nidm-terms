@@ -1,25 +1,27 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "@type": "nidm:TermsCollection",
   "terms": [
     {
       "@type": "PersonalDataElement",
-      "description": "Family: Any history of attention deficit disorder",
-      "sourceVariable": "family_history_ADD",
+      "description": "Previous ADHD Diagnosis as reported by parent/guardian at ses-T1",
+      "sourceVariable": "ADHD_diagnosis",
       "associatedWith": "NIDM",
-      "label": "Family history of attention deficit disorder",
+      "label": "ADHD Diagnosis",
       "responseOptions": {
         "choices": [
           {
-            "name": "Yes",
-            "value": "1"
+            "name": "no",
+            "value": "0"
           },
           {
-            "name": "No",
-            "value": "2"
+            "name": "yes",
+            "value": "1"
           }
         ],
-        "maxValue": "2",
-        "minValue": "1"
+        "maxValue": "1",
+        "minValue": "0",
+        "valueType": "xsd:integer"
       },
       "isAbout": [
         {
@@ -31,8 +33,8 @@
           "label": "impulsivity"
         },
         {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a54b/",
-          "label": "inattention"
+          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d09902/",
+          "label": "attention"
         },
         {
           "@id": "http://cognitiveatlas.org/disorder/id/dso_1094/",
@@ -42,479 +44,22 @@
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Family: Any history of behavioral problems",
-      "sourceVariable": "family_history_behavioral_problems",
+      "description": "Prescribed medication taken for ADHD at ses-T1",
+      "sourceVariable": "ADHD_medication",
       "associatedWith": "NIDM",
-      "label": "Family history of behavioral problems",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Family: Any history of learning problems",
-      "sourceVariable": "family_history_learning_problems",
-      "associatedWith": "NIDM",
-      "label": "Family history of learning problems",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
-        "label": "learning disability"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Family: Any history of neurological problems",
-      "sourceVariable": "family_history_neurological_problems",
-      "associatedWith": "NIDM",
-      "label": "Family history of neurological problems",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Father's age within indicated five year increment to protect subject identification",
-      "sourceVariable": "father_age",
-      "associatedWith": "NIDM",
-      "label": "Father's age",
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0140202",
-        "label": "demo_living (demographics)"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Father: Any history of behavioral problems",
-      "sourceVariable": "father_behavioral_problems",
-      "associatedWith": "NIDM",
-      "label": "Father's behavioral problems",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Father: Any history of drug or alcohol abuse",
-      "sourceVariable": "father_drug_alcohol_abuse",
-      "associatedWith": "NIDM",
-      "label": "Father's drug or alcohol abuse",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      },
-      "isAbout": [
-        {
-          "@id": "http://cognitiveatlas.org/disorder/id/dso_1574/",
-          "label": "alcohol abuse"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/disorder/id/dso_302/",
-          "label": "substance abuse"
-        }
-      ]
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Father: Any history of emotional problems",
-      "sourceVariable": "father_emotional_problems",
-      "associatedWith": "NIDM",
-      "label": "Father's emotional problems",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      },
-      "isAbout": [
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_59d184d09066b/",
-          "label": "arousal (emotion)"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a17f/",
-          "label": "emotion"
-        }
-      ]
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Father's highest grade/degree completed",
-      "sourceVariable": "father_highest_grade",
-      "associatedWith": "NIDM",
-      "label": "Father's highest grade",
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0104128",
-        "label": "father's education"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Father: Any history of learning problems",
-      "sourceVariable": "father_learning_problems",
-      "associatedWith": "NIDM",
-      "label": "Father's learning problems",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1",
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
-        "label": "learning disability"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Father: Any history of medical problems",
-      "sourceVariable": "father_medical_problems",
-      "associatedWith": "NIDM",
-      "label": "Father's medical problems",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "First two digits (major and sub-major group) of ISCO-08 occupation code based on free response answer",
-      "sourceVariable": "father_occupation",
-      "associatedWith": "NIDM",
-      "label": "Father's occupation",
-      "responseOptions": {
-        "valueType": "xsd:string"
-      },
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0104131",
-        "label": "fatigability"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Father: Any history of speech problems",
-      "sourceVariable": "father_speech_problems",
-      "associatedWith": "NIDM",
-      "label": "Father's speech problems",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_92/",
-        "label": "speech disorder"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Does your child have an Individualized Education Plan or a 504 Plan?",
-      "sourceVariable": "individual_education_plan/504_plan",
-      "associatedWith": "NIDM",
-      "label": "Individual Education Plan or 504 Plan",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1",
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "How does your child prefer to learn? Selected: Watching demonstrations",
-      "sourceVariable": "learning_preference_demonstrations",
-      "associatedWith": "NIDM",
-      "label": "Learning preference: Watching demonstrations",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a7bb/",
-        "label": "learning"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "How does your child prefer to learn? Selected: Participating in discussions",
-      "sourceVariable": "learning_preference_discussions",
-      "associatedWith": "NIDM",
-      "label": "Learning preference: Participating in discussions",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1",
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a7bb/",
-        "label": "learning"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "How does your child prefer to learn? Listed answer",
-      "sourceVariable": "learning_preference_other",
-      "associatedWith": "NIDM",
-      "label": "Learning preference: Other",
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a7bb/",
-        "label": "learning"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "How does your child prefer to learn? Selected: Interaction with peers",
-      "sourceVariable": "learning_preference_peer-interactions",
-      "associatedWith": "NIDM",
-      "label": "Learning preference: Interaction with peers",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1",
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a7bb/",
-        "label": "learning"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "How does your child prefer to learn? Selected: Listening in class to teacher.",
-      "sourceVariable": "learning_preference_teacher",
-      "associatedWith": "NIDM",
-      "label": "Learning preference: Listening to teacher",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a7bb/",
-        "label": "learning"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "How does your child prefer to learn? Selected: Viewing visual information provided in class.",
-      "sourceVariable": "learning_preference_visual",
-      "associatedWith": "NIDM",
-      "label": "Learning preference: Viewing visual information",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1",
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a7bb/",
-        "label": "learning"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Child lives with:",
-      "sourceVariable": "lives_with",
-      "associatedWith": "NIDM",
-      "label": "Lives with",
+      "label": "ADHD Medication",
       "responseOptions": {
         "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "sourceVariable": "math_disability_diagnosis",
+      "description": "Age in years at ses-T1",
+      "sourceVariable": "age_ses-T1",
       "associatedWith": "NIDM",
-      "label": "Math disability testing diagnosis",
+      "label": "Age - Session T1",
       "responseOptions": {
-        "valueType": "xsd:string"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
-        "label": "learning disability"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Has your child ever been tested for a Math Disability?",
-      "sourceVariable": "math_disability_tested",
-      "associatedWith": "NIDM",
-      "label": "Tested for math disability",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
-        "label": "learning disability"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Mother's age within indicated five year increment to protect subject identification",
-      "sourceVariable": "mother_age",
-      "associatedWith": "NIDM",
-      "label": "Mother's age",
-      "responseOptions": {
-        "valueType": "xsd:string"
+        "valueType": "xsd:float"
       },
       "isAbout": {
         "@id": "http://uri.interlex.org/ilx_0100400",
@@ -523,198 +68,32 @@
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Mother: Any history of behavioral problems",
-      "sourceVariable": "mother_behavioral_problems",
+      "description": "Age in years at ses-T2",
+      "sourceVariable": "age_ses-T2",
       "associatedWith": "NIDM",
-      "label": "Mother's behavioral problems",
+      "label": "Age - Session T2",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Mother: Any history of drug or alcohol abuse",
-      "sourceVariable": "mother_drug_alcohol_abuse",
-      "associatedWith": "NIDM",
-      "label": "Mother's drug or alcohol abuse",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1",
-        "valueType": "xsd:float"
-      },
-      "isAbout": [
-        {
-          "@id": "http://cognitiveatlas.org/disorder/id/dso_1574/",
-          "label": "alcohol abuse"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/disorder/id/dso_302/",
-          "label": "substance abuse"
-        }
-      ]
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Mother: Any history of emotional problems",
-      "sourceVariable": "mother_emotional_problems",
-      "associatedWith": "NIDM",
-      "label": "Mother's emotional problems",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      },
-      "isAbout": [
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_59d184d09066b/",
-          "label": "arousal (emotion)"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a17f/",
-          "label": "emotion"
-        }
-      ]
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Mother's highest grade/degree completed",
-      "sourceVariable": "mother_highest_grade",
-      "associatedWith": "NIDM",
-      "label": "Mother's highest grade",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No High School",
-            "value": "1"
-          },
-          {
-            "name": "High School",
-            "value": "2"
-          },
-          {
-            "name": "Some College",
-            "value": "3"
-          },
-          {
-            "name": "Bachelor's Degree",
-            "value": "4"
-          },
-          {
-            "name": "Graduate Degree",
-            "value": "5"
-          }
-        ],
-        "maxValue": "5",
-        "minValue": "1",
         "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0140821",
-        "label": "demo_momemploy (demographics short form)"
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Mother: Any history of learning problems",
-      "sourceVariable": "mother_learning_problems",
+      "description": "Participant handedness as reported by parent/guardian",
+      "sourceVariable": "handedness",
       "associatedWith": "NIDM",
-      "label": "Mother's learning problems",
+      "label": "Handedness",
       "responseOptions": {
         "choices": [
           {
-            "name": "Yes",
+            "name": "Left",
             "value": "1"
           },
           {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
-        "label": "learning disability"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Mother: Any history of medical problems",
-      "sourceVariable": "mother_medical_problems",
-      "associatedWith": "NIDM",
-      "label": "Mother's medical problems",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1",
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "First two digits (major and sub-major group) of ISCO-08 occupation code based on free response answer",
-      "sourceVariable": "mother_occupation",
-      "associatedWith": "NIDM",
-      "label": "Mother's occupation",
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0107886",
-        "label": "occupation"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Mother: Any history of speech problems",
-      "sourceVariable": "mother_speech_problems",
-      "associatedWith": "NIDM",
-      "label": "Mother's speech problems",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
+            "name": "Right",
             "value": "2"
           }
         ],
@@ -723,306 +102,114 @@
         "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_92/",
-        "label": "speech disorder"
+        "@id": "http://uri.interlex.org/ilx_0104886",
+        "label": "handedness assessment"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "If no [regular_classroom], please specify:",
-      "sourceVariable": "other_classroom_type",
+      "sourceVariable": "sex",
       "associatedWith": "NIDM",
-      "label": "Other classroom type"
+      "label": "Sex",
+      "responseOptions": {
+        "choices": [
+          {
+            "name": "male",
+            "value": "1"
+          },
+          {
+            "name": "female",
+            "value": "2"
+          }
+        ],
+        "maxValue": "2",
+        "minValue": "1",
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738439",
+        "label": "sex"
+      }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Primary language spoken at home:",
-      "sourceVariable": "primary_language",
+      "description": "date and time of ses-T1_task-SLD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "SLD_datetime",
       "associatedWith": "NIDM",
-      "label": "Primary language",
+      "label": "task-SLD datetime",
       "responseOptions": {
         "valueType": "xsd:string"
-      },
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0108614",
-        "label": "patients primary language code sequence"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "sourceVariable": "reading_disability_diagnosis",
+      "description": "date and time of ses-T1_task-SLI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "SLI_datetime",
       "associatedWith": "NIDM",
-      "label": "Reading disability testing diagnosis",
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_13365/",
-        "label": "reading disorder"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Has your child ever been tested for a Reading Disability?",
-      "sourceVariable": "reading_disability_tested",
-      "associatedWith": "NIDM",
-      "label": "Tested for reading disability",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_13365/",
-        "label": "reading disorder"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Is your child in a regular classroom?",
-      "sourceVariable": "regular_classroom",
-      "associatedWith": "NIDM",
-      "label": "Regular classroom",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "My child/children attend(s):",
-      "sourceVariable": "school_type",
-      "associatedWith": "NIDM",
-      "label": "School type"
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Has your child repeated or skipped any grades?",
-      "sourceVariable": "skipped_grades",
-      "associatedWith": "NIDM",
-      "label": "Skipped or repeated grades",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1",
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "If yes [skipped_grades], please specify:",
-      "sourceVariable": "skipped_grades_other",
-      "associatedWith": "NIDM",
-      "label": "Specific skipped or repeated grades"
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Does your child have speech delays/problems? (ie: stutters, difficult to understand?)",
-      "sourceVariable": "speech_delay",
-      "associatedWith": "NIDM",
-      "label": "Speech delay",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_92/",
-        "label": "speech disorder"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "If yes [speech_delay], please explain",
-      "sourceVariable": "speech_delay_explanation",
-      "associatedWith": "NIDM",
-      "label": "Speech delay explanation",
+      "label": "task-SLI datetime",
       "responseOptions": {
         "valueType": "xsd:string"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_92/",
-        "label": "speech disorder"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Was speech/language therapy ever necessary?",
-      "sourceVariable": "speech_language_therapy",
+      "description": "date and time of ses-T1_task-SSD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "SSD_datetime",
       "associatedWith": "NIDM",
-      "label": "Speech language therapy",
+      "label": "task-SSD datetime",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_92/",
-        "label": "speech disorder"
+        "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Does your child struggle with math?",
-      "sourceVariable": "struggle_math",
+      "description": "date and time of ses-T1_task-SSI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "SSI_datetime",
       "associatedWith": "NIDM",
-      "label": "Math struggles",
+      "label": "task-SSI datetime",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
-        "label": "learning disability"
+        "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Does your child struggle with reading?",
-      "sourceVariable": "struggle_reading",
+      "description": "date and time of ses-T1_task-VLD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "VLD_datetime",
       "associatedWith": "NIDM",
-      "label": "Reading struggles",
+      "label": "task-VLD datetime",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1",
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
-        "label": "learning disability"
+        "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "If yes [struggle_reading], please describe the nature of their difficulty:",
-      "sourceVariable": "struggle_reading_explanation",
+      "description": "date and time of ses-T1_task-VLI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "VLI_datetime",
       "associatedWith": "NIDM",
-      "label": "Reading struggles explanation",
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
-        "label": "learning disability"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Is or has your child received remediation/tutoring for math issues?",
-      "sourceVariable": "tutoring_math",
-      "associatedWith": "NIDM",
-      "label": "Math tutoring",
+      "label": "task-VLI datetime",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1",
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
-        "label": "learning disability"
+        "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Is or has your child received remediation/tutoring for reading issues?",
-      "sourceVariable": "tutoring_reading",
+      "description": "date and time of ses-T1_task-VSD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "VSD_datetime",
       "associatedWith": "NIDM",
-      "label": "Reading tutoring",
+      "label": "task-VSD datetime",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "Yes",
-            "value": "1"
-          },
-          {
-            "name": "No",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1"
-      },
-      "isAbout": {
-        "@id": "http://cognitiveatlas.org/disorder/id/dso_8927/",
-        "label": "learning disability"
+        "valueType": "xsd:string"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Questions about subject and family history given prior to first study visit",
-      "sourceVariable": "MeasurementToolMetadata",
+      "description": "date and time of ses-T1_task-VSI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
+      "sourceVariable": "VSI_datetime",
       "associatedWith": "NIDM",
-      "label": "Medical and Developmental History Questionnaire"
+      "label": "task-VSI datetime",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
     }
   ]
 }

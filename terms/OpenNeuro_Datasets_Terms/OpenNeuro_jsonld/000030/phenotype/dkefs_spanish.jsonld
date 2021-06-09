@@ -1,49 +1,128 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "@type": "nidm:TermsCollection",
   "terms": [
     {
       "@type": "PersonalDataElement",
-      "sourceVariable": "dkefss_c",
+      "sourceVariable": "age",
       "associatedWith": "NIDM",
-      "derivative": true,
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "bart",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b642/",
+          "label": "risk aversion"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_5534111a8bc96/",
+          "label": "punishment processing"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_557b48a224b95/",
+          "label": "loss anticipation"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/id/trm_567982752ff4a/",
+          "label": "decision under uncertainty"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_557b4a913f8cc/",
+          "label": "risk processing"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b64e/",
+          "label": "risk seeking"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "bht",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "diagnosis",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "dwi",
+      "associatedWith": "NIDM",
       "responseOptions": {
         "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0102340",
-        "label": "cognitive function"
+        "@id": "http://uri.interlex.org/ilx_0103242",
+        "label": "diffusion-weighted magnetic resonance imaging"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "sourceVariable": "dkefss_e",
+      "sourceVariable": "gender",
       "associatedWith": "NIDM",
-      "derivative": true,
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738437",
+        "label": "gender"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "ghost_NoGhost",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "pamenc",
+      "associatedWith": "NIDM",
       "responseOptions": {
         "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0102340",
-        "label": "cognitive function"
+        "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a1f4/",
+        "label": "episodic memory"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "sourceVariable": "dkefss_stotal",
+      "sourceVariable": "pamret",
       "associatedWith": "NIDM",
-      "derivative": true,
       "responseOptions": {
         "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0102340",
-        "label": "cognitive function"
+        "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a1f4/",
+        "label": "episodic memory"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "LETTER M: Fourth Interval (46-60 seconds)",
-      "sourceVariable": "m_four",
+      "sourceVariable": "rest",
       "associatedWith": "NIDM",
       "responseOptions": {
         "valueType": "xsd:float"
@@ -51,8 +130,7 @@
     },
     {
       "@type": "PersonalDataElement",
-      "description": "LETTER M: First Interval (1-15 seconds)",
-      "sourceVariable": "m_one",
+      "sourceVariable": "ScannerSerialNumber",
       "associatedWith": "NIDM",
       "responseOptions": {
         "valueType": "xsd:float"
@@ -60,8 +138,43 @@
     },
     {
       "@type": "PersonalDataElement",
-      "description": "LETTER M: Third Interval (31-45 seconds)",
-      "sourceVariable": "m_three",
+      "sourceVariable": "scap",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b1e0/",
+          "label": "spatial working memory"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_551f0f822d95e/",
+          "label": "limited capacity"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "stopsignal",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": [
+        {
+          "@id": "http://uri.interlex.org/ilx_0292391",
+          "label": "ssrt (stop signal reaction time)"
+        },
+        {
+          "@id": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0af66/",
+          "label": "response inhibition"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "T1w",
       "associatedWith": "NIDM",
       "responseOptions": {
         "valueType": "xsd:float"
@@ -69,196 +182,11 @@
     },
     {
       "@type": "PersonalDataElement",
-      "description": "LETTER M: Second Interval (16-30 seconds)",
-      "sourceVariable": "m_two",
+      "sourceVariable": "taskswitch",
       "associatedWith": "NIDM",
       "responseOptions": {
         "valueType": "xsd:float"
       }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "TOTAL REPETITION ERRORS: M",
-      "sourceVariable": "mrep",
-      "associatedWith": "NIDM",
-      "derivative": true,
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "TOTAL SET-LOSS ERRORS: M",
-      "sourceVariable": "msle",
-      "associatedWith": "NIDM",
-      "derivative": true,
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "sourceVariable": "mtotalwords",
-      "associatedWith": "NIDM",
-      "derivative": true,
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "LETTER P: Fourth Interval (46-60 seconds)",
-      "sourceVariable": "p_four",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "LETTER P: First Interval (1-15 seconds)",
-      "sourceVariable": "p_one",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "LETTER P: Third Interval (31-45 seconds)",
-      "sourceVariable": "p_three",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "LETTER P: Second Interval (16-30 seconds)",
-      "sourceVariable": "p_two",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "TOTAL REPETITION ERRORS: P",
-      "sourceVariable": "prep",
-      "associatedWith": "NIDM",
-      "derivative": true,
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "TOTAL SET-LOSS ERRORS: P",
-      "sourceVariable": "psle",
-      "associatedWith": "NIDM",
-      "derivative": true,
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "sourceVariable": "ptotalwords",
-      "associatedWith": "NIDM",
-      "derivative": true,
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "LETTER R: Fourth Interval (46-60 seconds)",
-      "sourceVariable": "r_four",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "LETTER R: First Interval (1-15 seconds)",
-      "sourceVariable": "r_one",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "LETTER R: Third Interval (31-45 seconds)",
-      "sourceVariable": "r_three",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "LETTER R: Second Interval (16-30 seconds)",
-      "sourceVariable": "r_two",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "TOTAL REPETITION ERRORS: R",
-      "sourceVariable": "rrep",
-      "associatedWith": "NIDM",
-      "derivative": true,
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "TOTAL SET-LOSS ERRORS: R",
-      "sourceVariable": "rsle",
-      "associatedWith": "NIDM",
-      "derivative": true,
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "sourceVariable": "rtotalwords",
-      "associatedWith": "NIDM",
-      "derivative": true,
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "sourceVariable": "spantotalrep",
-      "associatedWith": "NIDM",
-      "derivative": true,
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "sourceVariable": "spantotalsle",
-      "associatedWith": "NIDM",
-      "derivative": true,
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "D-KEFS Verbal Fluency Test (Spanish)",
-      "url": "",
-      "sourceVariable": "MeasurementToolMetadata",
-      "associatedWith": "NIDM"
     }
   ]
 }

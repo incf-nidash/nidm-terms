@@ -1,204 +1,64 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+  "@type": "nidm:TermsCollection",
   "terms": [
     {
       "@type": "PersonalDataElement",
-      "description": "BMI calculated using formula based on pounds",
-      "sourceVariable": "bmi",
+      "sourceVariable": "age",
       "associatedWith": "NIDM",
-      "derivative": true,
+      "responseOptions": {
+        "valueType": "xsd:integer"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0100400",
+        "label": "age"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "bart",
+      "associatedWith": "NIDM",
       "responseOptions": {
         "valueType": "xsd:float"
       },
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0263110",
-        "label": "bmi (physical examination)"
-      }
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b642/",
+          "label": "risk aversion"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_5534111a8bc96/",
+          "label": "punishment processing"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_557b48a224b95/",
+          "label": "loss anticipation"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/id/trm_567982752ff4a/",
+          "label": "decision under uncertainty"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_557b4a913f8cc/",
+          "label": "risk processing"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b64e/",
+          "label": "risk seeking"
+        }
+      ]
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Height in inches",
-      "sourceVariable": "ht",
+      "sourceVariable": "bht",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "maxValue": 90.0,
-        "minValue": 1.0,
         "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0104922",
-        "label": "height"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "1. Height: FEET",
-      "sourceVariable": "ht_ft",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "maxValue": 9.0,
-        "minValue": 1.0,
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0104922",
-        "label": "height"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "1. Height: INCH",
-      "sourceVariable": "ht_in",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "maxValue": 11.0,
-        "minValue": 0.0,
-        "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0104922",
-        "label": "height"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Sum of Items 1-21 for Total Health Score.",
-      "sourceVariable": "la2khealth_score",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "1. Heart or Artery disease including heart attack, stroke, aneurysm, arteriosclerosis, chest pain, rheumatic, fever or heart murmur\"",
-      "sourceVariable": "la2khealth1",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "10. Asthma, emphysema, tuberculosis, pleurisy or other diseases of the lungs\"",
-      "sourceVariable": "la2khealth10",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "11. Paralysis, epilepsy, M.S. or other neuromuscular disorder\"",
-      "sourceVariable": "la2khealth11",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "12. Bleeding or blood disorders\"",
-      "sourceVariable": "la2khealth12",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "13. Are you now pregnant\"",
-      "sourceVariable": "la2khealth13",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "14. Any other medical condition that has not been disclosed above\"",
-      "sourceVariable": "la2khealth14",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "14s. If so, describe in detail here.",
-      "sourceVariable": "la2khealth14s",
+      "sourceVariable": "diagnosis",
       "associatedWith": "NIDM",
       "responseOptions": {
         "valueType": "xsd:string"
@@ -206,358 +66,127 @@
     },
     {
       "@type": "PersonalDataElement",
-      "description": "15. Have you smoked in the last 2 year\"",
-      "sourceVariable": "la2khealth15",
+      "sourceVariable": "dwi",
       "associatedWith": "NIDM",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "16. Are you still smoking\"",
-      "sourceVariable": "la2khealth16",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "17. Are you taking any medication (except antibiotics or contraceptives)that require a prescription by a physician\"",
-      "sourceVariable": "la2khealth17",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "18. Have you gained or lose more than 20 pounds in the last year\"",
-      "sourceVariable": "la2khealth18",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Weight Gain (Lbs.)",
-      "sourceVariable": "la2khealth18_gain",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Weight Loss (Lbs.)",
-      "sourceVariable": "la2khealth18_lost",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "valueType": "xsd:float"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "19. Are you actively at work at least 20 hours per week\"",
-      "sourceVariable": "la2khealth19",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "2. Hypertension\"",
-      "sourceVariable": "la2khealth2",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "20. Have you been admitted to a hospital or had surgery in the past five(5) years\"",
-      "sourceVariable": "la2khealth20",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "21. Have you been told that it may be necessary to be admitted to the hospital or have surgery in the future\"",
-      "sourceVariable": "la2khealth21",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "3. Cancer, tumor or other malignancy\"",
-      "sourceVariable": "la2khealth3",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "4. Diseases of the kidney, liver, gall bladder, pancreas, or male/female organs including venereal disease\"",
-      "sourceVariable": "la2khealth4",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "5. Arthritis, back pain, rheumatic fever or musculoskeletal/joint problems\"",
-      "sourceVariable": "la2khealth5",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "6. AIDS, AIDS-related complex or other immune deficiency disorders, infections or chronic infection problems\"",
-      "sourceVariable": "la2khealth6",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "7. Alcohol or substance abuse, mental/nervous disorders\"",
-      "sourceVariable": "la2khealth7",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "8. Ulcer, colitis, difficulty swallowing, stomach problems, hernia or rectal problems\"",
-      "sourceVariable": "la2khealth8",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "9. Diabetes, cystic fibrosis, albumin or sugar in the urine or other endocrine problems\"",
-      "sourceVariable": "la2khealth9",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "No",
-            "value": "0"
-          },
-          {
-            "name": "Yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "1. Weight (Pound)",
-      "sourceVariable": "wt",
-      "associatedWith": "NIDM",
-      "responseOptions": {
-        "maxValue": 450.0,
-        "minValue": 0.0,
         "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0112616",
-        "label": "weight"
+        "@id": "http://uri.interlex.org/ilx_0103242",
+        "label": "diffusion-weighted magnetic resonance imaging"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Health Questionnaire",
-      "url": "",
-      "sourceVariable": "MeasurementToolMetadata",
-      "associatedWith": "NIDM"
+      "sourceVariable": "gender",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      },
+      "isAbout": {
+        "@id": "http://uri.interlex.org/ilx_0738437",
+        "label": "gender"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "ghost_NoGhost",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:string"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "pamenc",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a1f4/",
+        "label": "episodic memory"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "pamret",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a1f4/",
+        "label": "episodic memory"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "rest",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "ScannerSerialNumber",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "scap",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b1e0/",
+          "label": "spatial working memory"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_551f0f822d95e/",
+          "label": "limited capacity"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "stopsignal",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      },
+      "isAbout": [
+        {
+          "@id": "http://uri.interlex.org/ilx_0292391",
+          "label": "ssrt (stop signal reaction time)"
+        },
+        {
+          "@id": "https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0af66/",
+          "label": "response inhibition"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "T1w",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "sourceVariable": "taskswitch",
+      "associatedWith": "NIDM",
+      "responseOptions": {
+        "valueType": "xsd:float"
+      }
     }
   ]
 }
