@@ -1,26 +1,38 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "nidm:TermsCollection",
   "terms": [
     {
       "@type": "PersonalDataElement",
-      "description": "Previous ADHD Diagnosis as reported by parent/guardian at ses-T1",
-      "sourceVariable": "ADHD_diagnosis",
+      "description": "Hyperactivity and impulsivity raw subscore",
+      "sourceVariable": "ADHD_HI_Raw",
       "associatedWith": "NIDM",
-      "label": "ADHD Diagnosis",
+      "label": "ADHD Hyperactivity and Impulsivity Raw",
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_523c7c13bc55f/",
+          "label": "hyperactivity"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_50070dce14554/",
+          "label": "impulsivity"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d09902/",
+          "label": "attention"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_1094/",
+          "label": "attention deficit hyperactivity disorder"
+        }
+      ]
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Inattention raw subscore",
+      "sourceVariable": "ADHD_IA_Raw",
+      "associatedWith": "NIDM",
+      "label": "ADHD Inattention Raw",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "no",
-            "value": "0"
-          },
-          {
-            "name": "yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
         "valueType": "xsd:integer"
       },
       "isAbout": [
@@ -44,172 +56,189 @@
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Prescribed medication taken for ADHD at ses-T1",
-      "sourceVariable": "ADHD_medication",
+      "description": "Total ADHD raw score",
+      "sourceVariable": "ADHD_Total_Raw",
       "associatedWith": "NIDM",
-      "label": "ADHD Medication",
-      "responseOptions": {
-        "valueType": "xsd:string"
-      }
+      "label": "ADHD Total Raw",
+      "isAbout": [
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_523c7c13bc55f/",
+          "label": "hyperactivity"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_50070dce14554/",
+          "label": "impulsivity"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d09902/",
+          "label": "attention"
+        },
+        {
+          "@id": "http://cognitiveatlas.org/disorder/id/dso_1094/",
+          "label": "attention deficit hyperactivity disorder"
+        }
+      ]
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Age in years at ses-T1",
-      "sourceVariable": "age_ses-T1",
+      "description": "Fails to give close attention to details or makes careless mistakes in schoolwork.",
+      "sourceVariable": "Q1",
       "associatedWith": "NIDM",
-      "label": "Age - Session T1",
+      "label": "Question 1",
       "responseOptions": {
         "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0100400",
-        "label": "age"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Age in years at ses-T2",
-      "sourceVariable": "age_ses-T2",
+      "description": "Is on the go or acts as if driven by a motor.",
+      "sourceVariable": "Q10",
       "associatedWith": "NIDM",
-      "label": "Age - Session T2",
+      "label": "Question 10"
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Avoids tasks (e.g. schoowork, homework) that require sustained mental effort.",
+      "sourceVariable": "Q11",
+      "associatedWith": "NIDM",
+      "label": "Question 11",
       "responseOptions": {
         "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0100400",
-        "label": "age"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Participant handedness as reported by parent/guardian",
-      "sourceVariable": "handedness",
+      "description": "Talks excessively.",
+      "sourceVariable": "Q12",
       "associatedWith": "NIDM",
-      "label": "Handedness",
+      "label": "Question 12"
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Loses things necessary for tasks or activities.",
+      "sourceVariable": "Q13",
+      "associatedWith": "NIDM",
+      "label": "Question 13",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "Left",
-            "value": "1"
-          },
-          {
-            "name": "Right",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1",
         "valueType": "xsd:float"
-      },
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0104886",
-        "label": "handedness assessment"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "sourceVariable": "sex",
+      "description": "Blurts out answers before questions have been completed.",
+      "sourceVariable": "Q14",
       "associatedWith": "NIDM",
-      "label": "Sex",
+      "label": "Question 14"
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Is easily distracted.",
+      "sourceVariable": "Q15",
+      "associatedWith": "NIDM",
+      "label": "Question 15",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "male",
-            "value": "1"
-          },
-          {
-            "name": "female",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1",
-        "valueType": "xsd:integer"
-      },
-      "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0738439",
-        "label": "sex"
+        "valueType": "xsd:float"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-SLD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "SLD_datetime",
+      "description": "Has difficulty awaiting turn.",
+      "sourceVariable": "Q16",
       "associatedWith": "NIDM",
-      "label": "task-SLD datetime",
+      "label": "Question 16"
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Is forgetful in daily activities.",
+      "sourceVariable": "Q17",
+      "associatedWith": "NIDM",
+      "label": "Question 17",
       "responseOptions": {
-        "valueType": "xsd:string"
+        "valueType": "xsd:float"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-SLI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "SLI_datetime",
+      "description": "Interrupts or intrudes on others.",
+      "sourceVariable": "Q18",
       "associatedWith": "NIDM",
-      "label": "task-SLI datetime",
+      "label": "Question 18"
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Fidgets with hands or feet or squirms in seat.",
+      "sourceVariable": "Q2",
+      "associatedWith": "NIDM",
+      "label": "Question 2",
       "responseOptions": {
-        "valueType": "xsd:string"
+        "valueType": "xsd:float"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-SSD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "SSD_datetime",
+      "description": "Has difficulty sustaining attention in tasks or play activities.",
+      "sourceVariable": "Q3",
       "associatedWith": "NIDM",
-      "label": "task-SSD datetime",
+      "label": "Question 3"
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Leaves seat in classroom or in other situations in which remaining seated is expected.",
+      "sourceVariable": "Q4",
+      "associatedWith": "NIDM",
+      "label": "Question 4",
       "responseOptions": {
-        "valueType": "xsd:string"
+        "valueType": "xsd:float"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-SSI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "SSI_datetime",
+      "description": "Does not seem to listen when spoken to directly.",
+      "sourceVariable": "Q5",
       "associatedWith": "NIDM",
-      "label": "task-SSI datetime",
+      "label": "Question 5"
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Runs about or climbs excessively in situations in which it is inappropriate.",
+      "sourceVariable": "Q6",
+      "associatedWith": "NIDM",
+      "label": "Question 6",
       "responseOptions": {
-        "valueType": "xsd:string"
+        "valueType": "xsd:float"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-VLD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "VLD_datetime",
+      "description": "Does not follow through on instructions and fails to finish work.",
+      "sourceVariable": "Q7",
       "associatedWith": "NIDM",
-      "label": "task-VLD datetime",
+      "label": "Question 7"
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Has difficulty playing or engaging in leisure activities quietly.",
+      "sourceVariable": "Q8",
+      "associatedWith": "NIDM",
+      "label": "Question 8",
       "responseOptions": {
-        "valueType": "xsd:string"
+        "valueType": "xsd:float"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-VLI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "VLI_datetime",
+      "description": "Has difficulty organizing tasks and activities.",
+      "sourceVariable": "Q9",
       "associatedWith": "NIDM",
-      "label": "task-VLI datetime",
-      "responseOptions": {
-        "valueType": "xsd:string"
-      }
+      "label": "Question 9"
     },
     {
       "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-VSD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "VSD_datetime",
-      "associatedWith": "NIDM",
-      "label": "task-VSD datetime",
-      "responseOptions": {
-        "valueType": "xsd:string"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-VSI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "VSI_datetime",
-      "associatedWith": "NIDM",
-      "label": "task-VSI datetime",
-      "responseOptions": {
-        "valueType": "xsd:string"
-      }
+      "description": "ADHD Rating Scale-IV: Home Version ",
+      "citation": "DuPaul, G. J., Power, T. J., Anastopoulos, A. D., & Reid, R. (1998). ADHD Rating Scale-IV: Checklists, norms, and clinical interpretation. New York: Guilford. ",
+      "url": "http://journals.sagepub.com/doi/abs/10.1177/0734282905285792#articleCitationDownloadContainer",
+      "sourceVariable": "MeasurementToolMetadata",
+      "associatedWith": "NIDM"
     }
   ]
 }

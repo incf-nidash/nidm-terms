@@ -1,215 +1,99 @@
 {
   "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": "nidm:TermsCollection",
   "terms": [
     {
       "@type": "PersonalDataElement",
-      "description": "Previous ADHD Diagnosis as reported by parent/guardian at ses-T1",
-      "sourceVariable": "ADHD_diagnosis",
+      "description": "Commission errors raw score",
+      "sourceVariable": "CPT_Commissions_Raw",
       "associatedWith": "NIDM",
-      "label": "ADHD Diagnosis",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "no",
-            "value": "0"
-          },
-          {
-            "name": "yes",
-            "value": "1"
-          }
-        ],
-        "maxValue": "1",
-        "minValue": "0",
-        "valueType": "xsd:integer"
-      },
-      "isAbout": [
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_523c7c13bc55f/",
-          "label": "hyperactivity"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_50070dce14554/",
-          "label": "impulsivity"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/concept/json/trm_4a3fd79d09902/",
-          "label": "attention"
-        },
-        {
-          "@id": "http://cognitiveatlas.org/disorder/id/dso_1094/",
-          "label": "attention deficit hyperactivity disorder"
-        }
-      ]
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "Prescribed medication taken for ADHD at ses-T1",
-      "sourceVariable": "ADHD_medication",
-      "associatedWith": "NIDM",
-      "label": "ADHD Medication",
-      "responseOptions": {
-        "valueType": "xsd:string"
+      "label": "CPT Commission Errors Raw Score",
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b5ef/",
+        "label": "attentional focusing"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Age in years at ses-T1",
-      "sourceVariable": "age_ses-T1",
+      "description": "Commission errors T-score",
+      "sourceVariable": "CPT_Commissions_T-Score",
       "associatedWith": "NIDM",
-      "label": "Age - Session T1",
+      "label": "CPT Commission Errors T-Score",
       "responseOptions": {
         "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0100400",
-        "label": "age"
+        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b5ef/",
+        "label": "attentional focusing"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Age in years at ses-T2",
-      "sourceVariable": "age_ses-T2",
+      "description": "Clinical confidence index",
+      "sourceVariable": "CPT_ConfidenceIndex",
       "associatedWith": "NIDM",
-      "label": "Age - Session T2",
+      "label": "CPT Clinical Confidence Index",
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b5ef/",
+        "label": "attentional focusing"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Reaction time raw score",
+      "sourceVariable": "CPT_HitRT_Raw",
+      "associatedWith": "NIDM",
+      "label": "CPT Hit Reaction Time Raw Score",
       "responseOptions": {
         "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0100400",
-        "label": "age"
+        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b5ef/",
+        "label": "attentional focusing"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "Participant handedness as reported by parent/guardian",
-      "sourceVariable": "handedness",
+      "description": "Reaction time T-score",
+      "sourceVariable": "CPT_HitRT_T-Score",
       "associatedWith": "NIDM",
-      "label": "Handedness",
+      "label": "CPT Hit Reaction Time T-Score",
+      "isAbout": {
+        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b5ef/",
+        "label": "attentional focusing"
+      }
+    },
+    {
+      "@type": "PersonalDataElement",
+      "description": "Omission errors raw score",
+      "sourceVariable": "CPT_Omissions_Raw",
+      "associatedWith": "NIDM",
+      "label": "CPT Ommission Errors Raw Score",
       "responseOptions": {
-        "choices": [
-          {
-            "name": "Left",
-            "value": "1"
-          },
-          {
-            "name": "Right",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1",
         "valueType": "xsd:float"
       },
       "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0104886",
-        "label": "handedness assessment"
+        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b5ef/",
+        "label": "attentional focusing"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "sourceVariable": "sex",
+      "description": "Omission errors T-score",
+      "sourceVariable": "CPT_Omissions_T-Score",
       "associatedWith": "NIDM",
-      "label": "Sex",
-      "responseOptions": {
-        "choices": [
-          {
-            "name": "male",
-            "value": "1"
-          },
-          {
-            "name": "female",
-            "value": "2"
-          }
-        ],
-        "maxValue": "2",
-        "minValue": "1",
-        "valueType": "xsd:integer"
-      },
+      "label": "CPT Omission Errors T-Score",
       "isAbout": {
-        "@id": "http://uri.interlex.org/ilx_0738439",
-        "label": "sex"
+        "@id": "http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b5ef/",
+        "label": "attentional focusing"
       }
     },
     {
       "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-SLD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "SLD_datetime",
-      "associatedWith": "NIDM",
-      "label": "task-SLD datetime",
-      "responseOptions": {
-        "valueType": "xsd:string"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-SLI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "SLI_datetime",
-      "associatedWith": "NIDM",
-      "label": "task-SLI datetime",
-      "responseOptions": {
-        "valueType": "xsd:string"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-SSD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "SSD_datetime",
-      "associatedWith": "NIDM",
-      "label": "task-SSD datetime",
-      "responseOptions": {
-        "valueType": "xsd:string"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-SSI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "SSI_datetime",
-      "associatedWith": "NIDM",
-      "label": "task-SSI datetime",
-      "responseOptions": {
-        "valueType": "xsd:string"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-VLD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "VLD_datetime",
-      "associatedWith": "NIDM",
-      "label": "task-VLD datetime",
-      "responseOptions": {
-        "valueType": "xsd:string"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-VLI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "VLI_datetime",
-      "associatedWith": "NIDM",
-      "label": "task-VLI datetime",
-      "responseOptions": {
-        "valueType": "xsd:string"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-VSD, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "VSD_datetime",
-      "associatedWith": "NIDM",
-      "label": "task-VSD datetime",
-      "responseOptions": {
-        "valueType": "xsd:string"
-      }
-    },
-    {
-      "@type": "PersonalDataElement",
-      "description": "date and time of ses-T1_task-VSI, dates have been randomly shifted -365 to 0 days per subject to preserve anonymity, years shifted to 18XX to make date shifting transparent.",
-      "sourceVariable": "VSI_datetime",
-      "associatedWith": "NIDM",
-      "label": "task-VSI datetime",
-      "responseOptions": {
-        "valueType": "xsd:string"
-      }
+      "description": "Conners\u2019 Continuous Performance Test II (CPT-II)",
+      "citation": "Conners, C. K. & MHS Staff (Eds.) (2000). Conners\u2019 Continuous Performance Test II: Computer Program for Windows Technical Guide and Software Manual. North Tonwanda, NY: Mutli-Health Systems.",
+      "url": "https://www.statisticssolutions.com/conners-continuous-performance-test-ii-cpt-ii/",
+      "sourceVariable": "MeasurementToolMetadata",
+      "associatedWith": "NIDM"
     }
   ]
 }
