@@ -121,6 +121,7 @@ def main(argv):
 
     #assing @context to the main dict
     main_dict['@context'] = 'https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld'
+    main_dict['@type'] = 'nidm:TermsCollection'
     main_dict['terms'] = []
 
 
