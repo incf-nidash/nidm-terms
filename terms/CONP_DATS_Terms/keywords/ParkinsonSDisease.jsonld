@@ -1,12 +1,18 @@
 {
     "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-    "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+    ],
     "label": "Parkinson's disease",
     "associatedWith": [
+        "CONP",
         "DATS"
     ],
     "sameAs": "http://uri.interlex.org/base/ilx_0764151",
     "ontologyConceptID": "SNOMEDCT:49049000",
-    "allowableValues": ["Parkinson disease"],
-    "valueType": "xsd:string"
+    "responseOptions": {
+        "valueType": "xsd:string",
+        "allowableValues": "Parkinson disease"
+    }
 }

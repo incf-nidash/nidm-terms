@@ -1,10 +1,19 @@
 {
     "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-    "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+    ],
     "label": "CSF protein levels",
     "associatedWith": [
+        "CONP",
         "DATS"
     ],
-    "isAbout": ["http://purl.obolibrary.org/obo/HP_0025456"],
-    "valueType": "xsd:string"
+    "isAbout": {
+        "@id": "http://purl.obolibrary.org/obo/HP_0025456",
+        "label": "Abnormal CSF protein level"
+    },
+    "responseOptions": {
+        "valueType": "xsd:string"
+    }
 }
