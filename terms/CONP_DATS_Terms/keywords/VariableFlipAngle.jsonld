@@ -1,11 +1,17 @@
 {
     "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-    "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+    ],
     "label": "variable flip angle",
     "associatedWith": [
+        "CONP",
         "DATS"
     ],
     "closeMatch": "http://uri.interlex.org/base/ilx_0112256",
-    "allowableValues": ["VFA"],
-    "valueType": "xsd:string"
+    "responseOptions": {
+        "valueType": "xsd:string",
+        "allowableValues": "VFA"
+    }
 }

@@ -1,10 +1,19 @@
 {
     "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-    "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+    ],
     "label": "processed fMRI",
     "associatedWith": [
+        "CONP",
         "DATS"
     ],
-    "isAbout": ["http://uri.interlex.org/base/ilx_0506130"],
-    "valueType": "xsd:string"
+    "isAbout": {
+        "@id": "http://uri.interlex.org/base/ilx_0506130",
+        "label": "fMRI"
+    },
+    "responseOptions": {
+        "valueType": "xsd:string"
+    }
 }

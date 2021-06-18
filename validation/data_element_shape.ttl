@@ -41,6 +41,9 @@ nidm:PersonalDataElementShape a sh:NodeShape ;
         [ sh:node nidm:IsAboutShape ;
             sh:path interlex:ilx_0381385 ],
 
+        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
+    		sh:path nidm:candidateTerms ] ,
+
         [ sh:nodeKind sh:IRI ;
     		sh:path owl:sameAs ] ,
 
@@ -89,6 +92,9 @@ nidm:CommonDataElementShape a sh:NodeShape ;
 
         [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
     		sh:path interlex:ilx_0739289 ] ,
+
+        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
+    		sh:path nidm:candidateTerms ] ,
 
         [ sh:nodeKind sh:IRI ;
     		sh:path owl:sameAs ] ,
@@ -139,6 +145,9 @@ nidm:ConceptShape a sh:NodeShape ;
         [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
     		sh:path interlex:ilx_0739289 ] ,
 
+        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
+    		sh:path nidm:candidateTerms ] ,
+
         [ sh:nodeKind sh:IRI ;
     		sh:path owl:sameAs ] ,
 
@@ -188,3 +197,14 @@ reproschema:ResponseOptionsShape a sh:NodeShape ;
         [ sh:node reproschema:ChoicesShape ;
             sh:path reproschema:choices ] ;
     sh:targetClass reproschema:ResponseOption .
+
+reproschema:ChoicesShape a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdfs:type ) ;
+    sh:property [ sh:or ( [ sh:nodeKind sh:IRI ] [ sh:node reproschema:MediaObjectShape ] ) ;
+            sh:path schema:image ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype xsd:integer ]) ;
+            sh:path schema:name ],
+        [ sh:or ( [ sh:datatype xsd:integer ] [ sh:nodeKind sh:IRI ] [ sh:datatype schema:Boolean ] [ sh:datatype schema:StructuredValue ] [ sh:datatype xsd:string ] ) ;
+            sh:path reproschema:value ] ;
+    sh:targetClass reproschema:Choice .

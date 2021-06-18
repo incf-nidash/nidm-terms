@@ -90,6 +90,14 @@
 | http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b1d5/ | spatial memory | 3.724928 |
 | http://cognitiveatlas.org/concept/json/trm_4a3fd79d09b79/ | behavioral inhibition | 3.438395 |
 | http://uri.interlex.org/ilx_0263110 | bmi (physical examination) | 3.438395 |
+| http://uri.interlex.org/ilx_0281611 | self report of psychopathy | 3.438395 |
+| http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a7bb/ | learning | 3.438395 |
+| http://uri.interlex.org/ilx_0110360 | scale for the assessment of positive symptoms | 3.438395 |
+| http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b083/ | semantic memory | 3.438395 |
+| http://uri.interlex.org/ilx_0109596 | race assessment | 3.151862 |
+| http://cognitiveatlas.org/concept/json/trm_4a3fd79d0ac87/ | phonological encoding | 3.151862 |
+| http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b76e/ | grapheme | 3.151862 |
+| http://cognitiveatlas.org/concept/json/trm_52b5f1ef4f9cc/ | phonological processing | 3.151862 |
 | http://uri.interlex.org/ilx_0383109 | date | 2.865330 |
 | http://uri.interlex.org/ilx_0103955 | ethnicity | 2.865330 |
 | http://cognitiveatlas.org/concept/json/trm_4a3fd79d09877/ | appetitive motivation | 2.865330 |
@@ -105,18 +113,20 @@
 | http://cognitiveatlas.org/disorder/id/dso_0050742/ | nicotine dependence | 2.005731 |
 | http://cognitiveatlas.org/concept/json/trm_4a3fd79d09b04/ | auditory working memory | 2.005731 |
 | http://uri.interlex.org/ilx_0108606 | patients birth date | 1.719198 |
-| http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b58f/ | word recognition | 1.719198 |
 | https://www.cognitiveatlas.org/disorder/id/dso_14320/ | generalized anxiety disorder | 1.719198 |
+| http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b58f/ | word recognition | 1.719198 |
 | http://cognitiveatlas.org/battery/id/tco_50f483e0a6bf9/ | NIH Toolbox Cognition Battery | 1.719198 |
-| http://cognitiveatlas.org/task/id/tsk_4a57abb949d09/ | Positive and Negative Affect Scale | 1.432665 |
+| http://cognitiveatlas.org/task/id/trm_56abebfe9aaa3/ | Zuckerman Sensation Seeking Scale | 1.432665 |
 | https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d09902/ | attention | 1.432665 |
 | https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0aec1/ | reasoning | 1.432665 |
 | http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b3ef/ | traumatic memory | 1.432665 |
-| http://cognitiveatlas.org/task/id/trm_56abebfe9aaa3/ | Zuckerman Sensation Seeking Scale | 1.432665 |
-| http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b642/ | risk aversion | 1.146132 |
-| http://cognitiveatlas.org/concept/id/trm_557b48a224b95/ | loss anticipation | 1.146132 |
-| http://cognitiveatlas.org/concept/id/trm_5534111a8bc96/ | punishment processing | 1.146132 |
+| http://cognitiveatlas.org/task/id/tsk_4a57abb949d09/ | Positive and Negative Affect Scale | 1.432665 |
+| http://cognitiveatlas.org/concept/json/trm_557b4b3a6a34d/ | visual form recognition | 1.146132 |
+| http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a20c/ | error detection | 1.146132 |
+| http://uri.interlex.org/ilx_0487086 | temperament | 1.146132 |
 | http://cognitiveatlas.org/trait/id/trt_qo72x5nn9WYWK/ | Self-directedness | 1.146132 |
+| https://www.cognitiveatlas.org/trait/id/trt_d0UlwWsGh6zUg/ | Agreeableness | 1.146132 |
+| https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0b67d/ | empathy | 1.146132 |
 | http://uri.interlex.org/ilx_0106984 | mini mental state examination | 1.146132 |
 | https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a891/ | memory | 1.146132 |
 | https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a769/ | language | 1.146132 |
@@ -162,24 +172,43 @@
 | http://uri.interlex.org/ilx_0110369 | scanning sequence | 0.573066 |
 | http://uri.interlex.org/ilx_0110376 | schaffer collaterals | 0.573066 |
 | http://uri.interlex.org/ilx_0110373 | scattered spatiotemporal region | 0.573066 |
-| http://uri.interlex.org/ilx_0103677 | education assessment | 0.573066 |
-| http://cognitiveatlas.org/concept/json/trm_4a3fd79d0aeb6/ | reading | 0.573066 |
-| http://uri.interlex.org/ilx_0497879 | diagnosis, psychiatric | 0.573066 |
-| https://www.cognitiveatlas.org/disorder/id/dso_10933/ | obsessive-compulsive disorder | 0.573066 |
-| http://uri.interlex.org/ilx_0112866 | sex | 0.573066 |
+| http://uri.interlex.org/ilx_0104605 | genotype | 0.573066 |
+| http://uri.interlex.org/ilx_0111572 | temperature | 0.573066 |
 | https://www.cognitiveatlas.org/concept/json/trm_523f5ee64102c/ | agreeableness | 0.573066 |
 | https://www.cognitiveatlas.org/trait/id/trt_8qMThTvgNstWp/ | Extraversion | 0.573066 |
 | https://www.cognitiveatlas.org/trait/id/trt_VdTXG97NL4gnP/ | Neuroticism | 0.573066 |
 | https://www.cognitiveatlas.org/trait/id/trt_htFsRDr1yFWjp/ | Openness to experience | 0.573066 |
+| http://uri.interlex.org/ilx_0110666 | sleep | 0.573066 |
 | http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b44c/ | verbal fluency | 0.573066 |
 | https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a1f4/ | episodic memory | 0.573066 |
 | https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0a04f/ | declarative memory | 0.573066 |
+| http://uri.interlex.org/ilx_0160509 | bodyfat (eating disorder demographics) | 0.573066 |
+| http://uri.interlex.org/ilx_0112866 | sex | 0.573066 |
+| http://uri.interlex.org/ilx_0101549 | caffeine | 0.573066 |
+| http://uri.interlex.org/ilx_0109921 | repetition time | 0.573066 |
+| http://cognitiveatlas.org/concept/json/trm_529d0d62290de/ | loneliness | 0.573066 |
+| http://uri.interlex.org/ilx_0304720 | the penn state worry questionnaire | 0.573066 |
+| http://cognitiveatlas.org/disorder/id/dso_9505/ | cannabis abuse | 0.573066 |
+| http://cognitiveatlas.org/disorder/id/dso_1849/ | cannabis dependence | 0.573066 |
+| https://www.cognitiveatlas.org/trait/id/trt_9HVimkCRCl5g0/ | Cooperativeness | 0.573066 |
+| https://www.cognitiveatlas.org/trait/id/trt_Fz33idFA1UwJY/ | Novelty seeking | 0.573066 |
+| http://uri.interlex.org/ilx_0497879 | diagnosis, psychiatric | 0.573066 |
+| https://www.cognitiveatlas.org/disorder/id/dso_10933/ | obsessive-compulsive disorder | 0.573066 |
+| http://cognitiveatlas.org/concept/id/trm_4a3fd79d0b65a/ | emotion perception | 0.573066 |
+| http://cognitiveatlas.org/concept/id/trm_50070dce14554/ | impulsivity | 0.573066 |
+| http://cognitiveatlas.org/concept/json/trm_4a3fd79d0aeb6/ | reading | 0.573066 |
+| http://uri.interlex.org/ilx_0125072 | clinical global impression (cgi) | 0.573066 |
+| http://cognitiveatlas.org/disorder/id/dso_11257/ | social phobia | 0.573066 |
+| http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b67d/ | empathy | 0.573066 |
+| http://uri.interlex.org/ilx_0104131 | fatigability | 0.573066 |
+| http://uri.interlex.org/ilx_0486029 | personality assessment | 0.573066 |
+| http://cognitiveatlas.org/concept/json/trm_52583e083c9ab/ | appetite | 0.573066 |
+| http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a375/ | fluid intelligence | 0.573066 |
 | http://uri.interlex.org/ilx_0107886 | occupation | 0.573066 |
 | http://uri.interlex.org/ilx_0140201 | father_age (demographics) | 0.573066 |
 | http://uri.interlex.org/ilx_0104129 | father's occupation | 0.573066 |
 | http://uri.interlex.org/ilx_0140820 | mother_education (demographics short form) | 0.573066 |
 | http://uri.interlex.org/ilx_0108613 | patients primary language code modifier sequence | 0.573066 |
-| http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a375/ | fluid intelligence | 0.573066 |
 | http://uri.interlex.org/ilx_0110361 | scalloped | 0.573066 |
 | http://uri.interlex.org/ilx_0110363 | scan arc | 0.573066 |
 | http://uri.interlex.org/ilx_0110365 | scan velocity | 0.573066 |
@@ -192,40 +221,6 @@
 | http://uri.interlex.org/ilx_0110375 | scene recognition task | 0.573066 |
 | http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a7bb/ | learning | 0.573066 |
 | http://cognitiveatlas.org/concept/json/trm_4a3fd79d0a769/ | language | 0.573066 |
-| http://uri.interlex.org/ilx_0104607 | gentian violet | 0.286533 |
-| http://cognitiveatlas.org/concept/id/trm_4b6525253c63f/ | reward processing | 0.286533 |
-| http://cognitiveatlas.org/concept/id/trm_GfkAJLeHghfmp/ | motivational salience | 0.286533 |
-| http://cognitiveatlas.org/concept/json/trm_4a3fd79d09849/ | anticipation | 0.286533 |
-| http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b689/ | fear | 0.286533 |
-| http://cognitiveatlas.org/concept/json/trm_4a3fd79d0b3fa/ | uncertainty | 0.286533 |
-| https://www.cognitiveatlas.org/disorder/id/dso_1574/ | alcohol abuse | 0.286533 |
-| https://www.cognitiveatlas.org/disorder/id/dso_0050741/ | alcohol dependence | 0.286533 |
-| http://cognitiveatlas.org/disorder/id/dso_1307/ | dementia | 0.286533 |
-| http://uri.interlex.org/ilx_0140289 | handedness (demographics) | 0.286533 |
-| http://uri.interlex.org/ilx_0104915 | heart rate | 0.286533 |
-| https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0b5a7/ | working memory | 0.286533 |
-| https://www.cognitiveatlas.org/disorder/id/dso_8670/ | eating disorder | 0.286533 |
-| http://uri.interlex.org/ilx_0306532 | traumatic brain injury | 0.286533 |
-| http://uri.interlex.org/ilx_0112501 | vision | 0.286533 |
-| http://uri.interlex.org/ilx_0383114 | source acquisition beam number | 0.286533 |
-| http://uri.interlex.org/ilx_0383111 | fixation device roll angle | 0.286533 |
-| http://uri.interlex.org/ilx_0383110 | cassette orientation | 0.286533 |
-| https://www.cognitiveatlas.org/disorder/id/dso_10938/ | paranoid personality disorder | 0.286533 |
-| http://uri.interlex.org/ilx_0103597 | duration | 0.286533 |
-| http://uri.interlex.org/ilx_0263111 | waist (physical examination) | 0.286533 |
-| http://uri.interlex.org/ilx_0104606 | gentamicin | 0.286533 |
-| http://uri.interlex.org/ilx_0263114 | arith_temperature_ct (physical examination) | 0.286533 |
-| http://uri.interlex.org/ilx_0263112 | rec_cr (physical examination) | 0.286533 |
-| http://cognitiveatlas.org/disorder/id/dso_0060166/ | bipolar ll disorder | 0.286533 |
-| http://uri.interlex.org/ilx_0148913 | mania (diagnosis) | 0.286533 |
-| http://uri.interlex.org/ilx_0383113 | ophthalmic axial length measurement modified | 0.286533 |
-| https://www.cognitiveatlas.org/trait/id/trt_DQG5f2BDzXbpd/ | Persistence | 0.286533 |
-| http://uri.interlex.org/ilx_0109972 | response to | 0.286533 |
-| http://uri.interlex.org/ilx_0103242 | diffusion-weighted magnetic resonance imaging | 0.286533 |
-| http://uri.interlex.org/ilx_0383112 | preliminary flag | 0.286533 |
-| https://www.cognitiveatlas.org/concept/id/trm_4a3fd79d0aabc/ | olfaction | 0.286533 |
-| https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0ab7c/ | perception | 0.286533 |
-| https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0a9dc/ | naming | 0.286533 |
 | http://uri.interlex.org/ilx_0100981 | attention deficit-hyperactivity disorder | 0.286533 |
 | http://uri.interlex.org/ilx_0100982 | attention networks test | 0.286533 |
 | http://uri.interlex.org/ilx_0100983 | attentional blink task | 0.286533 |
@@ -242,8 +237,12 @@
 | http://uri.interlex.org/ilx_0100994 | auditory areas of aba 2009 | 0.286533 |
 | http://uri.interlex.org/ilx_0100995 | auditory attention | 0.286533 |
 | http://uri.interlex.org/ilx_0100996 | auditory cortex | 0.286533 |
-| http://uri.interlex.org/ilx_0263113 | phex_q42_cr (physical examination) | 0.286533 |
+| http://uri.interlex.org/ilx_0104915 | heart rate | 0.286533 |
 | http://uri.interlex.org/ilx_0105504 | insomnia | 0.286533 |
+| http://uri.interlex.org/ilx_0263111 | waist (physical examination) | 0.286533 |
+| http://uri.interlex.org/ilx_0109972 | response to | 0.286533 |
+| http://uri.interlex.org/ilx_0263114 | arith_temperature_ct (physical examination) | 0.286533 |
+| http://uri.interlex.org/ilx_0383112 | preliminary flag | 0.286533 |
 | http://cognitiveatlas.org/concept/id/trm_4a3fd79d0a9dc/ | naming | 0.286533 |
 | https://www.cognitiveatlas.org/concept/id/trm_56a2a4dbdf127/ | motor praxis | 0.286533 |
 | https://www.cognitiveatlas.org/concept/json/trm_4a3fd79d0b95b/ | recall | 0.286533 |
@@ -350,26 +349,3 @@
 | http://uri.interlex.org/ilx_0486050 | phencyclidine abuse | 0.286533 |
 | http://uri.interlex.org/ilx_0486051 | phagocyte bactericidal dysfunction | 0.286533 |
 | http://uri.interlex.org/ilx_0486052 | phenacetin | 0.286533 |
-| http://cognitiveatlas.org/concept/json/trm_4a3fd79d0aa47/ | novelty detection | 0.286533 |
-| http://uri.interlex.org/ilx_0497880 | sl-25 | 0.286533 |
-| http://uri.interlex.org/ilx_0497881 | nsc-102816 | 0.286533 |
-| http://uri.interlex.org/ilx_0497882 | clinic activities | 0.286533 |
-| http://uri.interlex.org/ilx_0497883 | aminopterin, disodium salt | 0.286533 |
-| http://uri.interlex.org/ilx_0497884 | bisalax | 0.286533 |
-| http://uri.interlex.org/ilx_0497885 | chlornitromycin | 0.286533 |
-| http://uri.interlex.org/ilx_0497886 | cytonal | 0.286533 |
-| http://uri.interlex.org/ilx_0497887 | aneurysm, anterior communicating artery | 0.286533 |
-| http://uri.interlex.org/ilx_0497889 | rubeomycin a | 0.286533 |
-| http://uri.interlex.org/ilx_0497890 | brij-58 | 0.286533 |
-| http://uri.interlex.org/ilx_0497891 | cephalexin, (6r-(6alpha,7beta))-isomer | 0.286533 |
-| http://uri.interlex.org/ilx_0497892 | estrumate | 0.286533 |
-| http://uri.interlex.org/ilx_0497893 | cost-effectiveness analysis | 0.286533 |
-| http://uri.interlex.org/ilx_0497894 | p-chlorophenoxyisobutyrate | 0.286533 |
-| http://uri.interlex.org/ilx_0497895 | microcytotoxicity test | 0.286533 |
-| http://uri.interlex.org/ilx_0497896 | celospor | 0.286533 |
-| http://uri.interlex.org/ilx_0497898 | cysteamine tosylate | 0.286533 |
-| http://uri.interlex.org/ilx_0497899 | periactin | 0.286533 |
-| http://uri.interlex.org/ilx_0497900 | cyanidanol-3 | 0.286533 |
-| http://uri.interlex.org/ilx_0497901 | cyclophosphamide, (r)-isomer | 0.286533 |
-| http://uri.interlex.org/ilx_0497902 | spiroctan | 0.286533 |
-| http://uri.interlex.org/ilx_0106536 | marital status assessment | 0.286533 |

@@ -1,11 +1,17 @@
 {
     "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-    "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+    ],
     "label": "connectomes",
     "associatedWith": [
+        "CONP",
         "DATS"
     ],
-    "ontologyConceptID": "http://purl.bioontology.org/ontology/MESH/D063132",
-    "allowableValues": ["connectome"],
-    "valueType": "xsd:string"
+    "ontologyConceptID": "http://id.nlm.nih.gov/mesh/D063132",
+    "responseOptions": {
+        "valueType": "xsd:string",
+        "allowableValues": "connectome"
+    }
 }
