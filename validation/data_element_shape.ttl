@@ -50,7 +50,10 @@ nidm:PersonalDataElementShape a sh:NodeShape ;
         [ sh:nodeKind sh:IRI ;
     		sh:path prov:wasDerivedFrom ] ,
 
-        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype rdfs:langString ] ) ;
+        [ sh:nodeKind sh:IRI ;
+            sh:path interlex:ilx_0770184 ] ,
+
+        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
     		sh:path interlex:ilx_0739289 ] ;
 
     sh:targetClass nidm:PersonalDataElement .
@@ -104,7 +107,10 @@ nidm:CommonDataElementShape a sh:NodeShape ;
     		sh:path ilxId:nidm-terms ] ,
 
         [ sh:nodeKind sh:IRI ;
-    		sh:path prov:wasDerivedFrom ] ;
+    		sh:path prov:wasDerivedFrom ] ,
+
+        [ sh:nodeKind sh:IRI ;
+            sh:path interlex:ilx_0770184 ] ;
 
     sh:targetClass nidm:CommonDataElement .
 
@@ -155,6 +161,14 @@ nidm:ConceptShape a sh:NodeShape ;
     		sh:path prov:wasDerivedFrom ] ;
 
     sh:targetClass nidm:Concept .
+
+nidm:TermsCollectionShape a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdfs:type ) ;
+
+	sh:property [ sh:node nidm:PersonalDataElementShape ;
+            sh:path prov:hasMember ] ;
+    sh:targetClass nidm:TermsCollection .
 
 nidm:IsAboutShape a sh:NodeShape ;
     sh:closed true ;
