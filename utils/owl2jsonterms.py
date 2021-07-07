@@ -87,12 +87,12 @@ def main(argv):
             doc['@type'].append(NIDM+'CommonDataElement')
 
             # add associated with property
-            doc[context['@context']['associatedWith']] = []
-            doc[context['@context']['associatedWith']].append('NIDM')
+            doc[context['@context']['associatedWith']['@id']] = []
+            doc[context['@context']['associatedWith']['@id']].append('NIDM')
             # if we have an additional 'associatedWith' string to add from a known import
             # add it
             if basename(file).rstrip(",") in ASSOCIATED_WITH.keys():
-                doc[context['@context']['associatedWith']].append(ASSOCIATED_WITH[basename(file).rstrip(",")])
+                doc[context['@context']['associatedWith']['@id']].append(ASSOCIATED_WITH[basename(file).rstrip(",")])
             #doc['@type'].append(context['@context']['DefinedTerm'])
             #store term as localpart of subject identifier
             url, fragment = urldefrag(so[0])
@@ -189,11 +189,11 @@ def main(argv):
     output_dir = os.path.split(args.output_dir)[0]
     # if a single-file jsonld file already exists than add these terms to it else create a new one
     if isfile(join(output_dir,basename(args.output_dir) + ".jsonld")):
-        cmd = "python " + join(sys.path[0],"combinebidsjsonld.py") + " -inputDir " + args.output_dir + " -outputDir " + \
+        cmd = "python " + join(sys.path[0],"combinejsonld.py") + " -inputDir " + args.output_dir + " -outputDir " + \
             join(output_dir,basename(args.output_dir) + ".jsonld") + " -jsonld " + \
             join(output_dir, basename(args.output_dir) + ".jsonld")
     else:
-        cmd = "python " + join(sys.path[0], "combinebidsjsonld.py") + " -inputDir " + args.output_dir + " -outputDir " + \
+        cmd = "python " + join(sys.path[0], "combinejsonld.py") + " -inputDir " + args.output_dir + " -outputDir " + \
               join(output_dir, basename(args.output_dir) + ".jsonld")
 
     print(cmd)
