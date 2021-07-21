@@ -614,6 +614,9 @@
             {
               "value": "UNCInfant2V23"
             }
+          ],
+          "valueType": [
+            "xsd:string"
           ]
         }
       ],
@@ -873,7 +876,8 @@
         "BIDS"
       ],
       "comment": "Used interchangeably with term Participant.",
-      "label": "Subject"
+      "label": "Subject",
+      "supertypeCDEs": "http://purl.org/nidash/bids#BIDSEntity"
     },
     {
       "@type": [
@@ -1144,7 +1148,8 @@
         "NIDM",
         "BIDS"
       ],
-      "label": "cbv"
+      "label": "cbv",
+      "supertypeCDEs": "http://purl.org/nidash/bids#BIDSSuffix"
     },
     {
       "@type": [
@@ -1234,7 +1239,8 @@
         "NIDM",
         "BIDS"
       ],
-      "label": "angio"
+      "label": "angio",
+      "supertypeCDEs": "http://purl.org/nidash/bids#BIDSSuffix"
     },
     {
       "@type": [
@@ -1622,7 +1628,8 @@
         "BIDS"
       ],
       "comment": "Note that a BIDS Entity is a key-value pair that is to be used in an order defined in the BIDS Specfication and is separated from the value by a dash. The ",
-      "label": "BIDS Entity"
+      "label": "BIDS Entity",
+      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000116"
     },
     {
       "@type": [
@@ -2253,7 +2260,8 @@
         "BIDS"
       ],
       "comment": "The Suffix is the last metadata item before the extension.",
-      "label": "BIDS Suffix"
+      "label": "BIDS Suffix",
+      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000116"
     },
     {
       "@type": [
@@ -2459,7 +2467,8 @@
         "BIDS"
       ],
       "comment": "Note that BIDS Data Types are a mixture of nidm:ImageContrastType (e.g. anat, func), nidm:ImageUsageType (e.g. dwi) and nidm:AcquisitionModality.",
-      "label": "BIDS Data Type"
+      "label": "BIDS Data Type",
+      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000116"
     },
     {
       "@type": [
@@ -2500,7 +2509,8 @@
         "BIDS"
       ],
       "comment": "Session can (but doesn't have to) be synonymous to a visit in a longitudinal study. In general, subjects will stay in the scanner during one session. However, for example, if a subject has to leave the scanner room and then be re-positioned on the scanner bed, the set of MRI acquisitions will still be considered as a session and match sessions acquired in other subjects. Similarly, in situations where different data types are obtained over several visits (for example fMRI on one day followed by DWI the day after) those can be grouped in one session. Defining multiple sessions is appropriate when several identical or similar data acquisitions are planned and performed on all -or most- subjects, often in the case of some intervention between sessions (e.g., training).",
-      "label": "Session"
+      "label": "Session",
+      "supertypeCDEs": "http://purl.org/nidash/bids#BIDSEntity"
     },
     {
       "@type": [
@@ -2779,25 +2789,8 @@
       "description": "",
       "responseOptions": [
         {
-          "choices": [
-            {
-              "value": "CTF"
-            },
-            {
-              "value": "ElektaNeuromag"
-            },
-            {
-              "value": "4DBti"
-            },
-            {
-              "value": "KitYokogawa"
-            },
-            {
-              "value": "ChietiItab"
-            },
-            {
-              "value": "Other"
-            }
+          "valueType": [
+            "xsd:string"
           ]
         }
       ],
@@ -3044,7 +3037,8 @@
         "NIDM",
         "BIDS"
       ],
-      "label": "anat"
+      "label": "anat",
+      "supertypeCDEs": "http://purl.org/nidash/bids#BIDSDataType"
     },
     {
       "@type": [
@@ -3122,7 +3116,8 @@
         "NIDM",
         "BIDS"
       ],
-      "label": "stim"
+      "label": "stim",
+      "supertypeCDEs": "http://purl.org/nidash/bids#BIDSSuffix"
     },
     {
       "@type": [
@@ -3164,7 +3159,8 @@
         "BIDS"
       ],
       "comment": "Note that BIDS Folder currently refers only to the code and derivatives folder names.",
-      "label": "BIDS Folder"
+      "label": "BIDS Folder",
+      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000116"
     },
     {
       "@type": [
@@ -3314,7 +3310,8 @@
         "BIDS"
       ],
       "comment": "Note that in the description of run, the BIDS specification says that: Run is a synonym of a data acquisition.  This is true in the sense that runs with the same acq value were acquired with the same acquisition parameters",
-      "label": "Acquisition"
+      "label": "Acquisition",
+      "supertypeCDEs": "http://purl.org/nidash/bids#BIDSEntity"
     },
     {
       "@type": [
