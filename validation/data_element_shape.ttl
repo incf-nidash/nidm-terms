@@ -14,19 +14,18 @@ nidm:PersonalDataElementShape a sh:NodeShape ;
     sh:closed true ;
 	sh:ignoredProperties ( rdfs:type ) ;
 
-	sh:property [ sh:datatype rdfs:langString ;
+	sh:property [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:path dct:description ],
 
         [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
             sh:path rdfs:comment ] ,
 
         [ sh:nodeKind sh:IRI ;
             sh:maxCount 1 ;
             sh:path schema:url ] ,
 
-        [ sh:datatype rdfs:langString ;
+        [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:path rdfs:label ] ,
 
@@ -68,7 +67,6 @@ nidm:CommonDataElementShape a sh:NodeShape ;
             sh:path dct:description ],
 
         [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
             sh:path rdfs:comment ] ,
 
         [ sh:nodeKind sh:IRI ;
@@ -124,7 +122,6 @@ nidm:ConceptShape a sh:NodeShape ;
             sh:path dct:description ],
 
         [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
             sh:path rdfs:comment ] ,
 
         [ sh:nodeKind sh:IRI ;
@@ -202,7 +199,7 @@ reproschema:ResponseOptionsShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:path reproschema:datumType ],
 
-        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype rdfs:langString ] ) ;
+        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
             sh:path schema:unitCode ],
 
         [ sh:node reproschema:UnitOptionsShape ;
