@@ -26,7 +26,11 @@
 			"@prefix": true
 		},
 		"reproschema": "http://schema.repronim.org/",
-		"comment": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+		"schema": "http://schema.org/",
+		"comment": {
+			"@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+			"@container": "@set"
+		},
 		"sourceVariable": "http://uri.interlex.org/ilx_0383246",
 		"label": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
 		"description": "http://purl.org/dc/terms/description",
@@ -96,7 +100,10 @@
             "@container": "@set"
         },
 		"name": "http://schema.org/name",
-		"value": "http://schema.org/value",
+		"value": {
+			"@id": "http://schema.org/value",
+			"@type": "xsd:string"
+		},
 		"ilxId": "https://scicrunch.org/nidm-terms",
 		"bids": "http://nidash.org/bids#",
 		"sameAs": {
