@@ -112,19 +112,19 @@ def main(argv):
                 elif tuples[0] == OWL["closeMatch"]:
                     doc[context['@context']['closeMatch']] = tuples[1]
                 elif tuples[0] == OBO["IAO_0000116"]:
-                    if context['@context']['comment'] in doc:
-                        doc[context['@context']['comment']].append(tuples[1])
+                    if context['@context']['comment']['@id'] in doc:
+                        doc[context['@context']['comment']['@id']].append(tuples[1])
                     else:
-                        doc[context['@context']['comment']] = []
-                        doc[context['@context']['comment']].append(str(tuples[1]))
+                        doc[context['@context']['comment']['@id']] = []
+                        doc[context['@context']['comment']['@id']].append(str(tuples[1]))
                 elif tuples[0] == RDFS["subClassOf"]:
                     doc[context['@context']['supertypeCDEs']['@id']] = tuples[1]
                 elif tuples[0] == RDFS["comment"]:
-                    if context['@context']['comment'] in doc:
-                        doc[context['@context']['comment']].append(str(tuples[1]))
+                    if context['@context']['comment']['@id'] in doc:
+                        doc[context['@context']['comment']['@id']].append(str(tuples[1]))
                     else:
-                        doc[context['@context']['comment']] = []
-                        doc[context['@context']['comment']].append(str(tuples[1]))
+                        doc[context['@context']['comment']['@id']] = []
+                        doc[context['@context']['comment']['@id']].append(str(tuples[1]))
                 elif tuples[0] == RDF["type"]:
                     doc['@type'].append(str(tuples[1]))
 
