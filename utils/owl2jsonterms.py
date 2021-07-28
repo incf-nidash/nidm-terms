@@ -140,6 +140,10 @@ def main(argv):
                 compacted['candidateTerms'] = \
                     compacted['nidm:candidateTerms']
                 del compacted['nidm:candidateTerms']
+            if "http://uri.interlex.org/ilx_0770184" in compacted.keys():
+                compacted['supertypeCDEs'] = \
+                    compacted['http://uri.interlex.org/ilx_0770184']
+                del compacted['http://uri.interlex.org/ilx_0770184']
             if "rdfs:label" in compacted.keys():
                 compacted['label'] = \
                     compacted['rdfs:label']

@@ -1,10 +1,19 @@
 {
     "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-    "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+    ],
     "label": "MRI reconstruction",
     "associatedWith": [
+        "CONP",
         "DATS"
     ],
-    "isAbout": ["http://purl.bioontology.org/ontology/SNOMEDCT/113091000"],
-    "valueType": "xsd:string"
+    "isAbout": {
+        "@id": "http://purl.bioontology.org/ontology/SNOMEDCT/113091000",
+        "label": "Magnetic resonance imaging"
+    },
+    "responseOptions": {
+        "valueType": "xsd:string"
+    }
 }

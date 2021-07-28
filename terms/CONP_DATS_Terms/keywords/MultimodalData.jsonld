@@ -1,10 +1,19 @@
 {
     "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-    "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+    ],
     "label": "multimodal data",
     "associatedWith": [
+        "CONP",
         "DATS"
     ],
-    "isAbout": ["http://purl.bioontology.org/ontology/MESH/D064847"],
-    "valueType": "xsd:string"
+    "isAbout": {
+        "@id": "http://id.nlm.nih.gov/mesh/D064847",
+        "label": "Multimodal Imaging"
+    },
+    "responseOptions": {
+        "valueType": "xsd:string"
+    }
 }

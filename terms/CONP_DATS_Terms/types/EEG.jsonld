@@ -1,11 +1,17 @@
 {
     "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-    "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+    ],
     "label": "EEG",
     "associatedWith": [
+        "CONP",
         "DATS"
     ],
     "closeMatch": "http://purl.bioontology.org/ontology/SNOMEDCT/54550000",
-    "allowableValues": ["electroencephalogram"],
-    "valueType": "xsd:string"
+    "responseOptions": {
+        "valueType": "xsd:string",
+        "allowableValues": "electroencephalogram"
+    }
 }

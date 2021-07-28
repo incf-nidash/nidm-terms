@@ -1,10 +1,19 @@
 {
     "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-    "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+    ],
     "label": "big data",
     "associatedWith": [
+        "CONP",
         "DATS"
     ],
-    "isAbout": ["https://dbpedia.org/page/Big_data"],
-    "valueType": "xsd:string"
+    "isAbout": {
+        "@id": "https://dbpedia.org/page/Big_data",
+        "label": "Big data"
+    },
+    "responseOptions": {
+        "valueType": "xsd:string"
+    }
 }
