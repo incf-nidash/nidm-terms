@@ -232,6 +232,9 @@ def main(argv):
         if 'owl:sameAs' in d:
             d['sameAs'] = d['owl:sameAs']
             del d['owl:sameAs']
+        if 'prov:wasDerivedFrom' in d:
+            d['wasDerivedFrom'] = d['prov:wasDerivedFrom']
+            del d['prov:wasDerivedFrom']
 
 
     print('single jsonld file has been successfully created in', output)
