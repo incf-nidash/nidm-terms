@@ -132,7 +132,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Tasks are usually accompanied by stimuli and responses, and can greatly vary in complexity. For the purpose of this specification we consider the so-called resting state a task. In the context of brain scanning, a task is always tied to one data acquisition. Therefore, even if during one acquisition the subject performed multiple conceptually different behaviors (with different sets of instructions) they will be considered one (combined) task.",
+      "comment": [
+        "Tasks are usually accompanied by stimuli and responses, and can greatly vary in complexity. For the purpose of this specification we consider the so-called resting state a task. In the context of brain scanning, a task is always tied to one data acquisition. Therefore, even if during one acquisition the subject performed multiple conceptually different behaviors (with different sets of instructions) they will be considered one (combined) task."
+      ],
       "label": "Task",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSEntity"
     },
@@ -201,7 +203,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Note that this term does not exist in the EEG specifications.",
+      "comment": [
+        "Note that this term does not exist in the EEG specifications."
+      ],
       "label": "ElectrodeManufacturer"
     },
     {
@@ -549,7 +553,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Note that this term does not exist in the EEG specifications.",
+      "comment": [
+        "Note that this term does not exist in the EEG specifications."
+      ],
       "label": "ElectrodeManufacturersModelName"
     },
     {
@@ -727,7 +733,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Note that the NIDM-E term is more general and applies to both hardware and software filters.",
+      "comment": [
+        "Note that the NIDM-E term is more general and applies to both hardware and software filters."
+      ],
       "label": "software_filters",
       "sameAs": "http://purl.org/nidash/nidm#AppliedFilters"
     },
@@ -781,7 +789,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "The DICOM term is the center frequency of notch filter, in Hz.",
+      "comment": [
+        "The DICOM term is the center frequency of notch filter, in Hz."
+      ],
       "label": "notch"
     },
     {
@@ -834,7 +844,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "The DICOM term is the nominal 3dB point of lower frequency of pass band, in Hz.",
+      "comment": [
+        "The DICOM term is the nominal 3dB point of lower frequency of pass band, in Hz."
+      ],
       "label": "high_cutoff"
     },
     {
@@ -875,7 +887,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Used interchangeably with term Participant.",
+      "comment": [
+        "Used interchangeably with term Participant."
+      ],
       "label": "Subject",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSEntity"
     },
@@ -1052,7 +1066,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Instead of a specific term, could use the DICOM tag Manufacturer and use it as a object property for the prov:Entity cap.",
+      "comment": [
+        "Instead of a specific term, could use the DICOM tag Manufacturer and use it as a object property for the prov:Entity cap."
+      ],
       "label": "CapManufacturer"
     },
     {
@@ -1066,7 +1082,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Used when, instead of a precomputed phase difference map, two separate phase maps are stored by the MRI scanner.",
+      "comment": [
+        "Used when, instead of a precomputed phase difference map, two separate phase maps are stored by the MRI scanner."
+      ],
       "label": "phase2",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSSuffix"
     },
@@ -1181,7 +1199,9 @@
       "@type": "owl:Class",
       "description": "T1w",
       "candidateTerms": "T1weighted",
-      "comment": "This relation to nidm:T1Weighted is proposed and would make this term a child of nidm:ImageContrastType",
+      "comment": [
+        "This relation to nidm:T1Weighted is proposed and would make this term a child of nidm:ImageContrastType"
+      ],
       "label": "T1 weighted",
       "prov:wasDerivedFrom": "http://purl.org/nidash/bids",
       "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
@@ -1225,7 +1245,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "This should be attached to a nidm:AcquisitionObject.",
+      "comment": [
+        "This should be attached to a nidm:AcquisitionObject."
+      ],
       "label": "status"
     },
     {
@@ -1266,7 +1288,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "The DICOM term also uses the same units as the BIDS version.",
+      "comment": [
+        "The DICOM term also uses the same units as the BIDS version."
+      ],
       "label": "sampling_frequency",
       "sameAs": "http://purl.org/nidash/dicom#dicom_003A001A"
     },
@@ -1335,7 +1359,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "This term should be more specific so that it is clear that it refers to a file. Could also use nidm:AcquisitionObject resulting from a nidm:Acquisition activity where the label is Empty Room.",
+      "comment": [
+        "This term should be more specific so that it is clear that it refers to a file. Could also use nidm:AcquisitionObject resulting from a nidm:Acquisition activity where the label is Empty Room."
+      ],
       "label": "AssociatedEmptyRoom"
     },
     {
@@ -1354,12 +1380,12 @@
     {
       "@type": "owl:DatatypeProperty",
       "description": "",
+      "schema:url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html",
       "associatedWith": [
         "BIDS",
         "NIDM"
       ],
       "label": "Intracranial Electroencephalography",
-      "url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html",
       "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
       "sameAs": "http://purl.org/nidash/dicom#dicom_00081090"
     },
@@ -1490,7 +1516,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "The description for this term is specific to electrodes.",
+      "comment": [
+        "The description for this term is specific to electrodes."
+      ],
       "label": "size"
     },
     {
@@ -1544,7 +1572,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "The DICOM term is the nominal 3dB point of upper frequency of pass band, in Hz.",
+      "comment": [
+        "The DICOM term is the nominal 3dB point of upper frequency of pass band, in Hz."
+      ],
       "label": "low_cutoff"
     },
     {
@@ -1627,7 +1657,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Note that a BIDS Entity is a key-value pair that is to be used in an order defined in the BIDS Specfication and is separated from the value by a dash. The ",
+      "comment": [
+        "Note that a BIDS Entity is a key-value pair that is to be used in an order defined in the BIDS Specfication and is separated from the value by a dash. The "
+      ],
       "label": "BIDS Entity",
       "supertypeCDEs": "http://semanticscience.org/resource/SIO_000116"
     },
@@ -1701,13 +1733,15 @@
     {
       "@type": "owl:Class",
       "description": "PD",
+      "schema:url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html",
       "associatedWith": [
         "BIDS",
         "NIDM"
       ],
-      "comment": "The relation here is has only proposed status and would make this a child term  to nidm:ImageContrastType",
+      "comment": [
+        "The relation here is has only proposed status and would make this a child term  to nidm:ImageContrastType"
+      ],
       "label": "Proton density",
-      "url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html",
       "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
       "sameAs": "http://purl.org/nidash/nidm#ProtonDensityWeighted"
     },
@@ -1728,13 +1762,13 @@
     {
       "@type": "owl:AnnotationProperty",
       "description": "Derivatives are outputs of common processing pipelines, capturing data and meta-data sufficient for a researcher to understand and (critically) reuse those outputs in subsequent processing. Standardizing derivatives is motivated by use cases where formalized machine-readable access to processed data enables higher level processing.",
+      "schema:url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html",
       "associatedWith": [
         "BIDS",
         "NIDM"
       ],
       "label": "Derivative",
       "ilxId": "http://uri.interlex.org/ilx_0739337",
-      "url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html",
       "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
       "sameAs": "http://purl.org/nidash/dicom#dicom_00180080"
     },
@@ -1977,7 +2011,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "This is analagous to Reconstruction used for MRI data.",
+      "comment": [
+        "This is analagous to Reconstruction used for MRI data."
+      ],
       "label": "Processed",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSEntity"
     },
@@ -2006,7 +2042,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Note that in the description of run, the BIDS specification says that: Run is a synonym of a data acquisition.  This is true in the sense that runs with the same acq value were acquired with the same acquisition parameters",
+      "comment": [
+        "Note that in the description of run, the BIDS specification says that: Run is a synonym of a data acquisition.  This is true in the sense that runs with the same acq value were acquired with the same acquisition parameters"
+      ],
       "label": "acq"
     },
     {
@@ -2020,7 +2058,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Used when, instead of a precomputed phase difference map, two separate phase maps are stored by the MRI scanner.",
+      "comment": [
+        "Used when, instead of a precomputed phase difference map, two separate phase maps are stored by the MRI scanner."
+      ],
       "label": "phase1",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSSuffix"
     },
@@ -2093,7 +2133,9 @@
       "@type": "owl:Class",
       "description": "T2w",
       "candidateTerms": "T2weighted",
-      "comment": "This relation to nidm:T2Weighted is proposed and would make this term a child of nidm:imageContrastType",
+      "comment": [
+        "This relation to nidm:T2Weighted is proposed and would make this term a child of nidm:imageContrastType"
+      ],
       "label": "T2 weighted",
       "prov:wasDerivedFrom": "http://purl.org/nidash/bids",
       "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
@@ -2191,7 +2233,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "This is a specific usage (hardware) of nidm:AppliedFilter that covers both hard- and software filters.",
+      "comment": [
+        "This is a specific usage (hardware) of nidm:AppliedFilter that covers both hard- and software filters."
+      ],
       "label": "HardwareFilters"
     },
     {
@@ -2259,7 +2303,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "The Suffix is the last metadata item before the extension.",
+      "comment": [
+        "The Suffix is the last metadata item before the extension."
+      ],
       "label": "BIDS Suffix",
       "supertypeCDEs": "http://semanticscience.org/resource/SIO_000116"
     },
@@ -2372,6 +2418,7 @@
     {
       "@type": "owl:Class",
       "description": "PDT2",
+      "schema:url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html",
       "associatedWith": [
         "BIDS",
         "NIDM"
@@ -2379,7 +2426,6 @@
       "label": "Combined PD/T2",
       "prov:wasDerivedFrom": "http://purl.org/nidash/bids",
       "ilxId": "http://uri.interlex.org/ilx_0739343",
-      "url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html",
       "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
       "sameAs": "http://purl.org/nidash/nidm#Magnetoencephalography"
     },
@@ -2394,7 +2440,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Session can (but doesn't have to) be synonymous to a visit in a longitudinal study. In general, subjects will stay in the scanner during one session. However, for example, if a subject has to leave the scanner room and then be re-positioned on the scanner bed, the set of MRI acquisitions will still be considered as a session and match sessions acquired in other subjects. Similarly, in situations where different data types are obtained over several visits (for example fMRI on one day followed by DWI the day after) those can be grouped in one session. Defining multiple sessions is appropriate when several identical or similar data acquisitions are planned and performed on all -or most- subjects, often in the case of some intervention between sessions (e.g., training).",
+      "comment": [
+        "Session can (but doesn't have to) be synonymous to a visit in a longitudinal study. In general, subjects will stay in the scanner during one session. However, for example, if a subject has to leave the scanner room and then be re-positioned on the scanner bed, the set of MRI acquisitions will still be considered as a session and match sessions acquired in other subjects. Similarly, in situations where different data types are obtained over several visits (for example fMRI on one day followed by DWI the day after) those can be grouped in one session. Defining multiple sessions is appropriate when several identical or similar data acquisitions are planned and performed on all -or most- subjects, often in the case of some intervention between sessions (e.g., training)."
+      ],
       "label": "ses"
     },
     {
@@ -2466,7 +2514,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Note that BIDS Data Types are a mixture of nidm:ImageContrastType (e.g. anat, func), nidm:ImageUsageType (e.g. dwi) and nidm:AcquisitionModality.",
+      "comment": [
+        "Note that BIDS Data Types are a mixture of nidm:ImageContrastType (e.g. anat, func), nidm:ImageUsageType (e.g. dwi) and nidm:AcquisitionModality."
+      ],
       "label": "BIDS Data Type",
       "supertypeCDEs": "http://semanticscience.org/resource/SIO_000116"
     },
@@ -2508,7 +2558,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Session can (but doesn't have to) be synonymous to a visit in a longitudinal study. In general, subjects will stay in the scanner during one session. However, for example, if a subject has to leave the scanner room and then be re-positioned on the scanner bed, the set of MRI acquisitions will still be considered as a session and match sessions acquired in other subjects. Similarly, in situations where different data types are obtained over several visits (for example fMRI on one day followed by DWI the day after) those can be grouped in one session. Defining multiple sessions is appropriate when several identical or similar data acquisitions are planned and performed on all -or most- subjects, often in the case of some intervention between sessions (e.g., training).",
+      "comment": [
+        "Session can (but doesn't have to) be synonymous to a visit in a longitudinal study. In general, subjects will stay in the scanner during one session. However, for example, if a subject has to leave the scanner room and then be re-positioned on the scanner bed, the set of MRI acquisitions will still be considered as a session and match sessions acquired in other subjects. Similarly, in situations where different data types are obtained over several visits (for example fMRI on one day followed by DWI the day after) those can be grouped in one session. Defining multiple sessions is appropriate when several identical or similar data acquisitions are planned and performed on all -or most- subjects, often in the case of some intervention between sessions (e.g., training)."
+      ],
       "label": "Session",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSEntity"
     },
@@ -2615,7 +2667,9 @@
         "BIDS",
         "NIDM"
       ],
-      "comment": "This is related to nidm:0000052, which is nidm:Map, in NIDM-Results, but is unrelated to nidm:ContrastMap since the contrast in that case is related to fMRI condition contrasts, rather than an NMR physics-related concept.  It is related to nidm:ParameterEstimateMap from NIDM-Results in the sense that calculation of a parameter map from a set of images in which the contrast is changed by modifying an acquisition parameter related to a parameter of interest (in this case T1 rho), is an estimate of a parameter resulting from the fitting of image data on a pixel-by-pixel basis.",
+      "comment": [
+        "This is related to nidm:0000052, which is nidm:Map, in NIDM-Results, but is unrelated to nidm:ContrastMap since the contrast in that case is related to fMRI condition contrasts, rather than an NMR physics-related concept.  It is related to nidm:ParameterEstimateMap from NIDM-Results in the sense that calculation of a parameter map from a set of images in which the contrast is changed by modifying an acquisition parameter related to a parameter of interest (in this case T1 rho), is an estimate of a parameter resulting from the fitting of image data on a pixel-by-pixel basis."
+      ],
       "label": "T1 Rho map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
       "sameAs": "http://purl.org/nidash/dicom#dicom_00180080"
@@ -2686,7 +2740,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "This is analagous to Reconstruction used for MRI data.",
+      "comment": [
+        "This is analagous to Reconstruction used for MRI data."
+      ],
       "label": "proc"
     },
     {
@@ -2754,7 +2810,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Instead of a specific term, could use the DICOM tag ManufacturerModelName and use it as a object property for the prov:Entity cap.",
+      "comment": [
+        "Instead of a specific term, could use the DICOM tag ManufacturerModelName and use it as a object property for the prov:Entity cap."
+      ],
       "label": "CapManufacturersModelName"
     },
     {
@@ -2835,12 +2893,12 @@
     {
       "@type": "owl:DatatypeProperty",
       "description": "",
+      "schema:url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html",
       "associatedWith": [
         "BIDS",
         "NIDM"
       ],
       "label": "Magnetoencephalography",
-      "url": "https://bids-specification.readthedocs.io/en/common-derivatives/05-derivatives/01-introduction.html",
       "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
       "sameAs": "http://purl.org/nidash/nidm#Magnetoencephalography"
     },
@@ -3178,7 +3236,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Note that BIDS Folder currently refers only to the code and derivatives folder names.",
+      "comment": [
+        "Note that BIDS Folder currently refers only to the code and derivatives folder names."
+      ],
       "label": "BIDS Folder",
       "supertypeCDEs": "http://semanticscience.org/resource/SIO_000116"
     },
@@ -3232,7 +3292,9 @@
         "BIDS",
         "NIDM"
       ],
-      "comment": "This is related to nidm:0000052, which is nidm:Map from NIDM-Results, but is unrelated to nidm:ContrastMap since the contrast in that case is related to fMRI condition contrasts, rather than an NMR physics-related concept.  It is related to nidm:ParameterEstimateMap from NIDM-Results in the sense that calculation of a parameter map from a set of images in which the contrast is changed by modifying an acquisition parameter related to a parameter of interest (in this case proton density), is an estimate of a parameter resulting from the fitting of image data on a pixel-by-pixel basis.",
+      "comment": [
+        "This is related to nidm:0000052, which is nidm:Map from NIDM-Results, but is unrelated to nidm:ContrastMap since the contrast in that case is related to fMRI condition contrasts, rather than an NMR physics-related concept.  It is related to nidm:ParameterEstimateMap from NIDM-Results in the sense that calculation of a parameter map from a set of images in which the contrast is changed by modifying an acquisition parameter related to a parameter of interest (in this case proton density), is an estimate of a parameter resulting from the fitting of image data on a pixel-by-pixel basis."
+      ],
       "label": "Proton density map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod",
       "sameAs": "http://purl.org/nidash/nidm#NumberOfChannels"
@@ -3329,7 +3391,9 @@
         "NIDM",
         "BIDS"
       ],
-      "comment": "Note that in the description of run, the BIDS specification says that: Run is a synonym of a data acquisition.  This is true in the sense that runs with the same acq value were acquired with the same acquisition parameters",
+      "comment": [
+        "Note that in the description of run, the BIDS specification says that: Run is a synonym of a data acquisition.  This is true in the sense that runs with the same acq value were acquired with the same acquisition parameters"
+      ],
       "label": "Acquisition",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSEntity"
     },

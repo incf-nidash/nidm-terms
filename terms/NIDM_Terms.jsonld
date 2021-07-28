@@ -25,7 +25,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "This calculated parameter is usually displayed as a map that displays the CBV in quantitative or relative units.",
+      "comment": [
+        "This calculated parameter is usually displayed as a map that displays the CBV in quantitative or relative units."
+      ],
       "label": "Cerebral Blood Volume",
       "supertypeCDEs": "http://purl.org/nidash/nidm#CalculatedParameter"
     },
@@ -53,7 +55,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "SPM's Canonical HRF"
     },
     {
@@ -120,8 +124,8 @@
         "NIDM"
       ],
       "comment": [
-        "Used in SPM12b (cf. spm12b/spm_templates.man)",
-        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+        "Used in SPM12b (cf. spm12b/spm_templates.man)"
       ],
       "label": "Ixi549 Coordinate System"
     },
@@ -187,7 +191,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "End is when an activity is deemed to have ended. An end may refer to an entity, known as trigger, that terminated the activity.",
+      "comment": [
+        "End is when an activity is deemed to have ended. An end may refer to an entity, known as trigger, that terminated the activity."
+      ],
       "label": "wasEndedBy"
     },
     {
@@ -304,7 +310,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Common instrument usage types are behavioral, clinical, and demographics, i.e., the instrument is used to record those types of data.",
+      "comment": [
+        "Common instrument usage types are behavioral, clinical, and demographics, i.e., the instrument is used to record those types of data."
+      ],
       "label": "Instrument Usage Type",
       "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionObjectQuality"
     },
@@ -474,7 +482,9 @@
         "NIDM",
         "PRV"
       ],
-      "comment": "Relates to the property of the \"shortcut relation\" (its predicate).",
+      "comment": [
+        "Relates to the property of the \"shortcut relation\" (its predicate)."
+      ],
       "label": "has shortcut"
     },
     {
@@ -500,7 +510,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Note that this is related to nidm:PerformedPlan, which is the plan that is actually carried out.",
+      "comment": [
+        "Note that this is related to nidm:PerformedPlan, which is the plan that is actually carried out."
+      ],
       "label": "Specified Plan",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Plan"
     },
@@ -814,8 +826,7 @@
         "NIDM"
       ],
       "label": "deprecated Gaussian Distribution",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000022",
-      "sameAs": "http://purl.obolibrary.org/obo/STATO_0000227"
+      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000022"
     },
     {
       "@type": [
@@ -1282,7 +1293,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/pull/137",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/pull/137"
+      ],
       "label": "NIDM-Results",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000057"
     },
@@ -1478,7 +1491,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/289",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/289"
+      ],
       "label": "has Map Header"
     },
     {
@@ -1706,7 +1721,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Units of measurement for a Numeric Value (0040,A30A). Only a single Item shall be included in this Sequence.",
+      "description": "Units of Numeric Value (0040,A30A) in this name-value Item.",
       "candidateTerms": "dicom_004008EA",
       "associatedWith": [
         "NIDM",
@@ -2192,11 +2207,11 @@
         "PROV"
       ],
       "comment": [
-        "ActivityInfluence provides additional descriptions of an Activity's binary influence upon any other kind of resource. Instances of ActivityInfluence use the prov:activity property to cite the influencing Activity.",
-        "It is not recommended that the type ActivityInfluence be asserted without also asserting one of its more specific subclasses."
+        "It is not recommended that the type ActivityInfluence be asserted without also asserting one of its more specific subclasses.",
+        "ActivityInfluence provides additional descriptions of an Activity's binary influence upon any other kind of resource. Instances of ActivityInfluence use the prov:activity property to cite the influencing Activity."
       ],
       "label": "ActivityInfluence",
-      "supertypeCDEs": "ub1bL50C33"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#Influence"
     },
     {
       "@type": [
@@ -2702,7 +2717,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/293",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/293"
+      ],
       "label": "has Maximum Intensity Projection"
     },
     {
@@ -2806,7 +2823,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "This role is meant as the parent term for all types agents from which Acquisition Objects are acquired.  This term is based on the STATO term http://purl.obolibrary.org/obo/OBI_0000097, Participant Under Investigation Role.  STATO also has the term Specimen, which can be a Participant, but is not necessarily, since the Specimen itself may not be the thing under investigation, ie, it may be a constituent of the Specimen that the what is actually under investigation.",
+      "comment": [
+        "This role is meant as the parent term for all types agents from which Acquisition Objects are acquired.  This term is based on the STATO term http://purl.obolibrary.org/obo/OBI_0000097, Participant Under Investigation Role.  STATO also has the term Specimen, which can be a Participant, but is not necessarily, since the Specimen itself may not be the thing under investigation, ie, it may be a constituent of the Specimen that the what is actually under investigation."
+      ],
       "label": "Study Participant",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Role"
     },
@@ -2937,7 +2956,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/280",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/280"
+      ],
       "label": "Height Threshold",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000162"
     },
@@ -2990,9 +3011,10 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Under discussion at https://github.com/ISA-tools/stato/issues/38",
-      "label": "q Value FDR",
-      "sameAs": "http://purl.obolibrary.org/obo/OBI_0001442"
+      "comment": [
+        "Under discussion at https://github.com/ISA-tools/stato/issues/38"
+      ],
+      "label": "q Value FDR"
     },
     {
       "@type": [
@@ -3030,7 +3052,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Range is currently string but should be limited to {'nidm:pValueFWER' not found'nidm:pValueFDR' not found'nidm:pValueUncorrected';'nidm:statistic'}?",
+      "comment": [
+        "Range is currently string but should be limited to {'nidm:pValueFWER' not found'nidm:pValueFDR' not found'nidm:pValueUncorrected';'nidm:statistic'}?"
+      ],
       "label": "deprecated user Specified Threshold Type"
     },
     {
@@ -3069,7 +3093,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "has HRF Basis"
     },
     {
@@ -3199,7 +3225,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/276 and https://github.com/ISA-tools/stato/issues/23",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/276 and https://github.com/ISA-tools/stato/issues/23"
+      ],
       "label": "Contrast Estimation",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Activity"
     },
@@ -3239,9 +3267,11 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An instance of prov:End provides additional descriptions about the binary prov:wasEndedBy relation from some ended prov:Activity to an prov:Entity that ended it. For example, :ball_game prov:wasEndedBy :buzzer; prov:qualifiedEnd [ a prov:End; prov:entity :buzzer; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ].",
+      "comment": [
+        "An instance of prov:End provides additional descriptions about the binary prov:wasEndedBy relation from some ended prov:Activity to an prov:Entity that ended it. For example, :ball_game prov:wasEndedBy :buzzer; prov:qualifiedEnd [ a prov:End; prov:entity :buzzer; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ]."
+      ],
       "label": "End",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#EntityInfluence"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#InstantaneousEvent"
     },
     {
       "@type": [
@@ -3434,8 +3464,8 @@
         "NIDM"
       ],
       "comment": [
-        "Discussed at: https://github.com/incf-nidash/nidm/pull/214",
-        "Range: Vector of positive floats."
+        "Range: Vector of positive floats.",
+        "Discussed at: https://github.com/incf-nidash/nidm/pull/214"
       ],
       "label": "noise FWHM In Units"
     },
@@ -3462,7 +3492,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "A common example is a person.",
+      "comment": [
+        "A common example is a person."
+      ],
       "label": "In Vivo",
       "supertypeCDEs": "http://purl.obolibrary.org/obo/PATO_0001995"
     },
@@ -3699,7 +3731,7 @@
         "DICOM"
       ],
       "label": "Item Delimitation Data Element",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000651"
+      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0035"
     },
     {
       "@type": [
@@ -3972,7 +4004,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/288",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/288"
+      ],
       "label": "Grand Mean Map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052"
     },
@@ -4011,7 +4045,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "Convolution Basis Set",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
@@ -4193,9 +4229,10 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Under discussion at https://github.com/ISA-tools/stato/issues/38",
-      "label": "p Value",
-      "sameAs": "http://purl.obolibrary.org/obo/OBI_0000175"
+      "comment": [
+        "Under discussion at https://github.com/ISA-tools/stato/issues/38"
+      ],
+      "label": "p Value"
     },
     {
       "@type": [
@@ -4415,7 +4452,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "The _optional_ Usage involved in an Entity's Derivation.",
+      "comment": [
+        "The _optional_ Usage involved in an Entity's Derivation."
+      ],
       "label": "hadUsage"
     },
     {
@@ -4447,15 +4486,16 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:DatatypeProperty"
+        "owl:Class"
       ],
-      "description": "Element Number used to identify the Data Element within the reserved block. The value of this attribute represents the last two digits of the Data Element tag; i.e., the value of xx in (gggg,00xx) where gggg is the Private Group Reference (0008,0301).",
-      "candidateTerms": "dicom_00080308",
+      "description": "Additional Data Element, defined by an implementer, to communicate information that is not contained in Standard Data Elements. Private Data elements have odd Group Numbers.",
+      "candidateTerms": "dicom_xxxx0050",
       "associatedWith": [
         "NIDM",
         "DICOM"
       ],
-      "label": "Private Data Element"
+      "label": "Private Data Element",
+      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0035"
     },
     {
       "@type": [
@@ -4609,7 +4649,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/287",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/287"
+      ],
       "label": "Contrast Variance Map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052"
     },
@@ -4676,7 +4718,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Common demographics information are variables such as age, handedness, phenotypic sex, ethnicity, and race.",
+      "comment": [
+        "Common demographics information are variables such as age, handedness, phenotypic sex, ethnicity, and race."
+      ],
       "label": "Demographics Instrument",
       "supertypeCDEs": "http://purl.org/nidash/nidm#InstrumentUsageType"
     },
@@ -4703,8 +4747,7 @@
         "NIDM"
       ],
       "label": "deprecated Poisson Distribution",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000022",
-      "sameAs": "http://purl.obolibrary.org/obo/STATO_0000051"
+      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000022"
     },
     {
       "@type": [
@@ -4989,7 +5032,7 @@
         "ONTONEUROLOG"
       ],
       "label": "bi-coded-scale-item",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#quantitative-scale-item"
+      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#qualitative-scale-item"
     },
     {
       "@type": [
@@ -5014,7 +5057,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/pull/214 and https://github.com/incf-nidash/nidm/issues/275",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/pull/214 and https://github.com/incf-nidash/nidm/issues/275"
+      ],
       "label": "noise Roughness In Voxels"
     },
     {
@@ -5185,7 +5230,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "SPM's Temporal Derivative"
     },
     {
@@ -5198,7 +5245,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An instance of prov:Quotation provides additional descriptions about the binary prov:wasQuotedFrom relation from some taken prov:Entity from an earlier, larger prov:Entity. For example, :here_is_looking_at_you_kid prov:wasQuotedFrom :casablanca_script; prov:qualifiedQuotation [ a prov:Quotation; prov:entity :casablanca_script; :foo :bar ].",
+      "comment": [
+        "An instance of prov:Quotation provides additional descriptions about the binary prov:wasQuotedFrom relation from some taken prov:Entity from an earlier, larger prov:Entity. For example, :here_is_looking_at_you_kid prov:wasQuotedFrom :casablanca_script; prov:qualifiedQuotation [ a prov:Quotation; prov:entity :casablanca_script; :foo :bar ]."
+      ],
       "label": "Quotation",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Derivation"
     },
@@ -5387,19 +5436,6 @@
     },
     {
       "@type": [
-        "nidm:AcquisitionMethod",
-        "owl:NamedIndividual"
-      ],
-      "description": "Contrast Enhanced Fast Field Echo, is a magnetic resonance imaging acquisition method that employs gradient echoes and a low-flip angle radio-frequency excitation of the sample magnetization along with a short repetition time.",
-      "candidateTerms": "ContrastEnhancedFastFieldEcho",
-      "associatedWith": [
-        "NIDM"
-      ],
-      "comment": "Note that CE-FFE is the Philips name for their implementation of this pulse sequence.  GE calls their implementation Spoiled Gradient Echo (SPGR) and Philips calls theirs Fast Low Angle Shot (FLASH)",
-      "label": "Contrast Enhanced Fast Field Echo"
-    },
-    {
-      "@type": [
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
@@ -5495,13 +5531,14 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
-      "description": "",
       "candidateTerms": "qualifiedPrimarySource",
       "associatedWith": [
         "NIDM",
         "PROV"
       ],
-      "comment": "If this Entity prov:hadPrimarySource Entity :e, then it can qualify how using prov:qualifiedPrimarySource [ a prov:PrimarySource; prov:entity :e; :foo :bar ].",
+      "comment": [
+        "If this Entity prov:hadPrimarySource Entity :e, then it can qualify how using prov:qualifiedPrimarySource [ a prov:PrimarySource; prov:entity :e; :foo :bar ]."
+      ],
       "label": "qualifiedPrimarySource"
     },
     {
@@ -5906,8 +5943,7 @@
         "NIDM",
         "DICOM"
       ],
-      "label": "Attribute",
-      "sameAs": "http://semanticscience.org/resource/SIO_000614"
+      "label": "Attribute"
     },
     {
       "@type": [
@@ -5992,7 +6028,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Required if a value of Collimator Shape (0018,1700) is RECTANGULAR. Location of the right edge of the rectangular collimator with respect to pixels in the image given as column.",
+      "description": "Required if Collimator Shape (0018,1700) is RECTANGULAR. Location of the right edge of the rectangular collimator expressed as effective pixel column.",
       "candidateTerms": "dicom_00181704",
       "associatedWith": [
         "NIDM",
@@ -6049,7 +6085,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/293",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/293"
+      ],
       "label": "with Estimation Method"
     },
     {
@@ -6075,7 +6113,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+      ],
       "label": "MNI Coordinate System",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000075"
     },
@@ -6115,7 +6155,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/298",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/298"
+      ],
       "label": "Legendre Polynomial Order"
     },
     {
@@ -6461,7 +6503,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Direction of Table Top Eccentric Rotation when viewing table from above, for segment following Control Point.",
+      "description": "Direction of Table Top Eccentric Rotation when viewing table from above, for segment beginning at current Control Point.",
       "candidateTerms": "dicom_300A0126",
       "associatedWith": [
         "NIDM",
@@ -6566,7 +6608,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/pull/257",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/pull/257"
+      ],
       "label": "Cluster Center Of Gravity",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
@@ -6606,7 +6650,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/275",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/275"
+      ],
       "label": "search Volume In Resels"
     },
     {
@@ -6672,7 +6718,9 @@
         "NIDM",
         "DICOM"
       ],
-      "comment": "The given description is ambiguous, in that it describes Undefined Length both as an ability to specify and as a condition.  We are choosing to interpret this as an attribute.",
+      "comment": [
+        "The given description is ambiguous, in that it describes Undefined Length both as an ability to specify and as a condition.  We are choosing to interpret this as an attribute."
+      ],
       "label": "Undefined Length",
       "supertypeCDEs": "http://semanticscience.org/resource/SIO_000614"
     },
@@ -6714,7 +6762,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+      ],
       "label": "in World Coordinate System"
     },
     {
@@ -6752,7 +6802,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Under discussion at: https://github.com/incf-nidash/nidm/pull/270",
+      "comment": [
+        "Under discussion at: https://github.com/incf-nidash/nidm/pull/270"
+      ],
       "label": "coordinate Vector In Voxels"
     },
     {
@@ -6760,7 +6812,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Cylinder value in diopters",
+      "description": "Cylinder value in diopters.",
       "candidateTerms": "dicom_00220008",
       "associatedWith": [
         "NIDM",
@@ -6786,7 +6838,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Filters used in the light source (excitation) path.",
+      "description": "Filters used in the light source path.",
       "candidateTerms": "dicom_00220017",
       "associatedWith": [
         "NIDM",
@@ -7103,7 +7155,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/295",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/295"
+      ],
       "label": "number Of Dimensions"
     },
     {
@@ -7155,7 +7209,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An instance of prov:Usage provides additional descriptions about the binary prov:used relation from some prov:Activity to an prov:Entity that it used. For example, :keynote prov:used :podium; prov:qualifiedUsage [ a prov:Usage; prov:entity :podium; :foo :bar ].",
+      "comment": [
+        "An instance of prov:Usage provides additional descriptions about the binary prov:used relation from some prov:Activity to an prov:Entity that it used. For example, :keynote prov:used :podium; prov:qualifiedUsage [ a prov:Usage; prov:entity :podium; :foo :bar ]."
+      ],
       "label": "Usage",
       "supertypeCDEs": "http://www.w3.org/ns/prov#EntityInfluence"
     },
@@ -7271,7 +7327,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "If this Entity prov:wasQuotedFrom Entity :e, then it can qualify how using prov:qualifiedQuotation [ a prov:Quotation;  prov:entity :e; :foo :bar ].",
+      "comment": [
+        "If this Entity prov:wasQuotedFrom Entity :e, then it can qualify how using prov:qualifiedQuotation [ a prov:Quotation;  prov:entity :e; :foo :bar ]."
+      ],
       "label": "qualifiedQuotation"
     },
     {
@@ -7284,7 +7342,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/194",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/194"
+      ],
       "label": "Constant Parameter",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000071"
     },
@@ -7345,7 +7405,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "This is the Value component of a Name/Value pair when the Concept implied by Concept Name Code Sequence (0040,A043) is a Person Name. The role of the person could be specified in Concept Name Code Sequence (0040,A043).",
+      "description": "Name of the person observer identified.",
       "candidateTerms": "dicom_0040A123",
       "associatedWith": [
         "NIDM",
@@ -7389,7 +7449,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous.",
+      "comment": [
+        "An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous."
+      ],
       "label": "InstantaneousEvent"
     },
     {
@@ -7454,7 +7516,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "Gamma HRF",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000035"
     },
@@ -7724,7 +7788,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Identifies the hanging protocol that was used in the creation of this structured display.",
+      "description": "Short descriptor that identifies the Hanging Protocol.",
       "candidateTerms": "dicom_00720002",
       "associatedWith": [
         "NIDM",
@@ -7872,7 +7936,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "GRASS is the name given to this sequence by GE, FISP is the acronym used by Siemens.",
+      "comment": [
+        "GRASS is the name given to this sequence by GE, FISP is the acronym used by Siemens."
+      ],
       "label": "Gradient Recalled Acquisition in Steady State",
       "supertypeCDEs": "http://purl.org/nidash/nidm#SteadyStateFreePrecession"
     },
@@ -8285,7 +8351,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Identification of the most recent person to significantly modify the content of this SOP Instance.",
+      "description": "Identification of the person who created the content.",
       "candidateTerms": "dicom_00700086",
       "associatedWith": [
         "NIDM",
@@ -8303,7 +8369,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Note that SPGR is the GE name for their implementation of this pulse sequence.  Siemens calls their implementation Fast Low Angle Shot (FLASH) and Philips calls theirs Contrast Enhanced Fast Field Echo (T1-FFE)",
+      "comment": [
+        "Note that SPGR is the GE name for their implementation of this pulse sequence.  Siemens calls their implementation Fast Low Angle Shot (FLASH) and Philips calls theirs Contrast Enhanced Fast Field Echo (T1-FFE)"
+      ],
       "label": "Spoiled Gradient Recalled Echo",
       "supertypeCDEs": "http://purl.org/nidash/nidm#GradientRecalledEcho"
     },
@@ -8317,7 +8385,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/299",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/299"
+      ],
       "label": "Event-Related Design",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000155"
     },
@@ -8344,7 +8414,9 @@
         "NIDM",
         "PRV"
       ],
-      "comment": "Relates to the property of the reification class,  which relates to the predicate of the \"shortcut relation\". So \nthat the specific property reification can be \"verified\" (the property of the prv:shortcut relation and this one associated by the \nreferred shortcut property should be equal).",
+      "comment": [
+        "Relates to the property of the reification class,  which relates to the predicate of the \"shortcut relation\". So \nthat the specific property reification can be \"verified\" (the property of the prv:shortcut relation and this one associated by the \nreferred shortcut property should be equal)."
+      ],
       "label": "has shortcut property"
     },
     {
@@ -8435,7 +8507,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "Subproperties of prov:influencer are used to cite the object of an unqualified PROV-O triple whose predicate is a subproperty of prov:wasInfluencedBy (e.g. prov:used, prov:wasGeneratedBy). prov:influencer is used much like rdf:object is used.",
+      "comment": [
+        "Subproperties of prov:influencer are used to cite the object of an unqualified PROV-O triple whose predicate is a subproperty of prov:wasInfluencedBy (e.g. prov:used, prov:wasGeneratedBy). prov:influencer is used much like rdf:object is used."
+      ],
       "label": "influencer"
     },
     {
@@ -8532,8 +8606,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "The Simpson Angus Rating Scale is an assessment instrument used to evaluate the presence and severity of parkinsonian symptomatology and focuses on rigidity rather than bradykinesia.",
       "candidateTerms": "SimpsonAngusRatingScale",
@@ -8638,7 +8712,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Required if Multi-frame Image. Contains the Data Element Tag of the attribute that is used as the Frame increment in Multi-frame image pixel data (see ).",
+      "description": "Contains the Data Element Tag of the attribute that is used as the frame increment in Multi-frame pixel data.",
       "candidateTerms": "dicom_00280009",
       "associatedWith": [
         "NIDM",
@@ -8788,8 +8862,7 @@
         "DICOM"
       ],
       "label": "File",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000602",
-      "sameAs": "http://semanticscience.org/resource/SIO_000396"
+      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000602"
     },
     {
       "@type": [
@@ -9046,7 +9119,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "Hemodynamic Response Function Derivative",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036"
     },
@@ -9060,9 +9135,11 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An instance of prov:Invalidation provides additional descriptions about the binary prov:wasInvalidatedBy relation from an invalidated prov:Entity to the prov:Activity that invalidated it. For example, :uncracked_egg prov:wasInvalidatedBy :baking; prov:qualifiedInvalidation [ a prov:Invalidation; prov:activity :baking; :foo :bar ].",
+      "comment": [
+        "An instance of prov:Invalidation provides additional descriptions about the binary prov:wasInvalidatedBy relation from an invalidated prov:Entity to the prov:Activity that invalidated it. For example, :uncracked_egg prov:wasInvalidatedBy :baking; prov:qualifiedInvalidation [ a prov:Invalidation; prov:activity :baking; :foo :bar ]."
+      ],
       "label": "Invalidation",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#InstantaneousEvent"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#ActivityInfluence"
     },
     {
       "@type": [
@@ -9127,8 +9204,8 @@
         "NIDM"
       ],
       "comment": [
-        "Range: Vector of 1 positive integer and 3 positive floats.",
-        "Discussed at https://github.com/incf-nidash/nidm/issues/310"
+        "Discussed at https://github.com/incf-nidash/nidm/issues/310",
+        "Range: Vector of 1 positive integer and 3 positive floats."
       ],
       "label": "search Volume Resels Geometry"
     },
@@ -9168,7 +9245,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "Hemodynamic Response Function",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036"
     },
@@ -9474,8 +9553,8 @@
         "NIDM"
       ],
       "comment": [
-        "Range: Vector of positive floats.",
-        "Discussed at: https://github.com/incf-nidash/nidm/pull/214"
+        "Discussed at: https://github.com/incf-nidash/nidm/pull/214",
+        "Range: Vector of positive floats."
       ],
       "label": "deprecated noise FWHM In Voxels"
     },
@@ -9580,7 +9659,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Note that FLASH is the Siemens name for their implementation of this pulse sequence.  GE calls their implementation Spoiled Gradient Echo (SPGR) and Philips calls theirs Contrast Enhanced or T1 Fast Field Echo (T1-FFE)",
+      "comment": [
+        "Note that FLASH is the Siemens name for their implementation of this pulse sequence.  GE calls their implementation Spoiled Gradient Echo (SPGR) and Philips calls theirs Contrast Enhanced or T1 Fast Field Echo (T1-FFE)"
+      ],
       "label": "Fast Low Angle Shot",
       "supertypeCDEs": "http://purl.org/nidash/nidm#SpoiledGradientRecalledEcho"
     },
@@ -9691,8 +9772,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "description": "The Letter Fluency test is used to evaluate the spontaneous production of words beginning with a given letter within a limited amount of time (60 seconds).",
       "candidateTerms": "LetterFluencyTest",
@@ -9891,7 +9972,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at: https://github.com/incf-nidash/nidm/issues/141",
+      "comment": [
+        "Discussed at: https://github.com/incf-nidash/nidm/issues/141"
+      ],
       "label": "Model Parameter Estimation",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Activity"
     },
@@ -9976,7 +10059,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Number of columns in the image or frame.",
+      "description": "Number of columns in the image.",
       "candidateTerms": "dicom_00280011",
       "associatedWith": [
         "NIDM",
@@ -10039,15 +10122,17 @@
     {
       "@type": [
         "CommonDataElement",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "description": "The Category Fluency test is an assessment instrument in which subjects are asked to produce as many words belonging to three specific categories (e.g., animals, fruits and vegetables) in a given period of time and thereby provides a measure of the integrity of the subjects brain lexical system.",
       "candidateTerms": "CategoryFluencyTest",
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "This test is also know as: Category Instances, Category Naming, Semantic Fluency",
+      "comment": [
+        "This test is also know as: Category Instances, Category Naming, Semantic Fluency"
+      ],
       "label": "Category Fluency Test"
     },
     {
@@ -10164,7 +10249,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "The time at which an InstantaneousEvent occurred, in the form of xsd:dateTime.",
+      "comment": [
+        "The time at which an InstantaneousEvent occurred, in the form of xsd:dateTime."
+      ],
       "label": "atTime"
     },
     {
@@ -10224,7 +10311,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Motion characteristic of delivered Beam.",
+      "description": "Motion characteristic of Beam. ",
       "candidateTerms": "dicom_300A00C4",
       "associatedWith": [
         "NIDM",
@@ -10267,10 +10354,11 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Re-use \"one tailed test\" from STATO.",
+      "comment": [
+        "Re-use \"one tailed test\" from STATO."
+      ],
       "label": "One Tailed Test",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
-      "sameAs": "http://purl.obolibrary.org/obo/STATO_0000286"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
     {
       "@type": [
@@ -10309,7 +10397,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An activity a2 is dependent on or informed by another activity a1, by way of some unspecified entity that is generated by a1 and used by a2.",
+      "comment": [
+        "An activity a2 is dependent on or informed by another activity a1, by way of some unspecified entity that is generated by a1 and used by a2."
+      ],
       "label": "wasInformedBy"
     },
     {
@@ -10580,7 +10670,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Under discussion at https://github.com/incf-nidash/nidm/issues/290",
+      "comment": [
+        "Under discussion at https://github.com/incf-nidash/nidm/issues/290"
+      ],
       "label": "Coordinate Space",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
@@ -10659,7 +10751,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/293",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/293"
+      ],
       "label": "statistic Type"
     },
     {
@@ -10685,7 +10779,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "The instrument administrator could either be a computer-based system or a person, hence the use of who/that. Common catagories of instruments are behavioral, clinical, or demographic instruments.",
+      "comment": [
+        "The instrument administrator could either be a computer-based system or a person, hence the use of who/that. Common catagories of instruments are behavioral, clinical, or demographic instruments."
+      ],
       "label": "Instrument Administrator",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Role"
     },
@@ -10746,7 +10842,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "The floating point representation of Numeric Value (0040,A30A). Only a single value shall be present.",
+      "description": "The floating point representation of Numeric Value (0040,A30A) or a statistic.",
       "candidateTerms": "dicom_0040A161",
       "associatedWith": [
         "NIDM",
@@ -10830,8 +10926,8 @@
         "NIDM"
       ],
       "comment": [
-        "Discussed at: https://github.com/incf-nidash/nidm/pull/214",
-        "Range: Vector of positive floats."
+        "Range: Vector of positive floats.",
+        "Discussed at: https://github.com/incf-nidash/nidm/pull/214"
       ],
       "label": "deprecated noise FWHM In Units"
     },
@@ -11031,16 +11127,6 @@
       "label": "R Wave Pointer"
     },
     {
-      "@type": "owl:Class",
-      "description": "A subject is a role for an agent (either living or non-living) which is characterized by being the object of study in an acquisition activity.",
-      "candidateTerms": "Subject",
-      "associatedWith": [
-        "NIDM"
-      ],
-      "label": "Subject",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Role"
-    },
-    {
       "@type": [
         "CommonDataElement",
         "owl:DatatypeProperty"
@@ -11123,7 +11209,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Required if a value of Collimator Shape (0018,1700) is RECTANGULAR. Location of the lower edge of the rectangular collimator with respect to pixels in the image given as row.",
+      "description": "Required if Collimator Shape (0018,1700) is RECTANGULAR. Location of the lower edge of the rectangular collimator expressed as effective pixel row.",
       "candidateTerms": "dicom_00181708",
       "associatedWith": [
         "NIDM",
@@ -11437,7 +11523,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "If this Activity prov:generated Entity :e, then it can qualify how it performed the Generation using prov:qualifiedGeneration [ a prov:Generation;  prov:entity :e; :foo :bar ].",
+      "comment": [
+        "If this Activity prov:generated Entity :e, then it can qualify how it performed the Generation using prov:qualifiedGeneration [ a prov:Generation;  prov:entity :e; :foo :bar ]."
+      ],
       "label": "qualifiedGeneration"
     },
     {
@@ -11515,7 +11603,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "The _optional_ Generation involved in an Entity's Derivation.",
+      "comment": [
+        "The _optional_ Generation involved in an Entity's Derivation."
+      ],
       "label": "hadGeneration"
     },
     {
@@ -11593,7 +11683,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/299",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/299"
+      ],
       "label": "had fMRI Design"
     },
     {
@@ -11618,7 +11710,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Note that this is similar to, but distinct from a dependent variable, which is a variable that changes in response to changes in a system.  The T2 value would be an example of a dependent variable since changing the echo time allows for calculation of the T2.  Cerebral Blood Flow (CBV) is an example of a Calculated Parameter since it is measure by taking a series of images after the injection of a contrast agent; however the experimenter is not actually changing any independent variable to see a change in the CBV and therefore it is a Calculated Parameter rather than a dependent variable.",
+      "comment": [
+        "Note that this is similar to, but distinct from a dependent variable, which is a variable that changes in response to changes in a system.  The T2 value would be an example of a dependent variable since changing the echo time allows for calculation of the T2.  Cerebral Blood Flow (CBV) is an example of a Calculated Parameter since it is measure by taking a series of images after the injection of a contrast agent; however the experimenter is not actually changing any independent variable to see a change in the CBV and therefore it is a Calculated Parameter rather than a dependent variable."
+      ],
       "label": "Calculated Parameter",
       "supertypeCDEs": "http://semanticscience.org/resource/SIO_000367"
     },
@@ -11814,7 +11908,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/pull/137",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/pull/137"
+      ],
       "label": "version"
     },
     {
@@ -12256,7 +12352,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "Gaussian HRF",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000035"
     },
@@ -12484,7 +12582,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Sequence of items describing the performed Ultrasound Protocol Stage(s).",
+      "description": "Sequence describing the performed Ultrasound Protocol Stage.",
       "candidateTerms": "dicom_0040000A",
       "associatedWith": [
         "NIDM",
@@ -12516,8 +12614,8 @@
         "PROV"
       ],
       "comment": [
-        "It is not recommended that the type AgentInfluence be asserted without also asserting one of its more specific subclasses.",
-        "AgentInfluence provides additional descriptions of an Agent's binary influence upon any other kind of resource. Instances of AgentInfluence use the prov:agent property to cite the influencing Agent."
+        "AgentInfluence provides additional descriptions of an Agent's binary influence upon any other kind of resource. Instances of AgentInfluence use the prov:agent property to cite the influencing Agent.",
+        "It is not recommended that the type AgentInfluence be asserted without also asserting one of its more specific subclasses."
       ],
       "label": "AgentInfluence",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Influence"
@@ -12655,8 +12753,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "Trails B is an assessement instrument in which the subject is asked to draw lines connecting circles with consecutively numbered and lettered circles.",
       "candidateTerms": "TrailsB",
@@ -12903,8 +13001,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000051"
+        "nidm:NIDM_0000051",
+        "owl:NamedIndividual"
       ],
       "description": "Reference space which is the average of 152 T1-weighted MRI scans, linearly transformed onto the MNI 305 reference space (definition adapted from: http://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152Lin). This is the default in SPM99 to SPM8 (cf. [MRC CBSU Wiki](http://imaging.mrc-cbu.cam.ac.uk/imaging/MniTalairach) and spm8/spm_templates.man.",
       "candidateTerms": "NIDM_0000040",
@@ -12993,8 +13091,8 @@
         "NIDM"
       ],
       "comment": [
-        "Range: Vector of positive floats.",
-        "Discussed at: https://github.com/incf-nidash/nidm/pull/214"
+        "Discussed at: https://github.com/incf-nidash/nidm/pull/214",
+        "Range: Vector of positive floats."
       ],
       "label": "deprecated noise FWHM In Vertices"
     },
@@ -13048,8 +13146,8 @@
         "PROV"
       ],
       "comment": [
-        "This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>.",
-        "Because prov:wasInfluencedBy is a broad relation, its more specific subproperties (e.g. prov:wasInformedBy, prov:actedOnBehalfOf, prov:wasEndedBy, etc.) should be used when applicable."
+        "Because prov:wasInfluencedBy is a broad relation, its more specific subproperties (e.g. prov:wasInformedBy, prov:actedOnBehalfOf, prov:wasEndedBy, etc.) should be used when applicable.",
+        "This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>."
       ],
       "label": "wasInfluencedBy"
     },
@@ -13064,7 +13162,9 @@
         "NIDM",
         "DICOM"
       ],
-      "comment": "The description is ambiguous. Does this refer to the (abstract) field or to the actual Value Length value?  We interpret as the latter. ",
+      "comment": [
+        "The description is ambiguous. Does this refer to the (abstract) field or to the actual Value Length value?  We interpret as the latter. "
+      ],
       "label": "Value Length",
       "supertypeCDEs": "http://semanticscience.org/resource/SIO_000366"
     },
@@ -13445,9 +13545,11 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed in the Neuroimaging terms spreadsheet and in https://github.com/incf-nidash/nidm/issues/256.",
+      "comment": [
+        "Discussed in the Neuroimaging terms spreadsheet and in https://github.com/incf-nidash/nidm/issues/256."
+      ],
       "label": "Excursion Set Map",
-      "supertypeCDEs": "ub3bL1499C35"
+      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052"
     },
     {
       "@type": [
@@ -13484,7 +13586,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].",
+      "comment": [
+        "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ]."
+      ],
       "label": "qualifiedAttribution"
     },
     {
@@ -13627,7 +13731,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "This is used for a non-imaging based acquisition modality.",
+      "comment": [
+        "This is used for a non-imaging based acquisition modality."
+      ],
       "label": "Acquisition Usage Type",
       "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionObjectQuality"
     },
@@ -13706,7 +13812,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "FIESTA is the name given to this sequence by GE, True FISP is the acronym used by Siemens.",
+      "comment": [
+        "FIESTA is the name given to this sequence by GE, True FISP is the acronym used by Siemens."
+      ],
       "label": "True Fast Imaging With Steady State",
       "supertypeCDEs": "http://purl.org/nidash/nidm#SteadyStateFreePrecession"
     },
@@ -14035,7 +14143,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed in https://github.com/incf-nidash/nidm/pull/201",
+      "comment": [
+        "Discussed in https://github.com/incf-nidash/nidm/pull/201"
+      ],
       "label": "Connectivity Criterion",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
@@ -14122,7 +14232,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Refractive state of the imaged eye at the time of acquisition.",
+      "description": "The refractive state of the imaged eye at the time of acquisition.",
       "candidateTerms": "dicom_0022001B",
       "associatedWith": [
         "NIDM",
@@ -14166,7 +14276,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "This calculated parameter is usually displayed as a map that displays the CBF in quantitative or relative units.",
+      "comment": [
+        "This calculated parameter is usually displayed as a map that displays the CBF in quantitative or relative units."
+      ],
       "label": "Cerebral Blood Flow",
       "supertypeCDEs": "http://purl.org/nidash/nidm#CalculatedParameter"
     },
@@ -14376,7 +14488,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed in [Neuroimaging terms spreadsheet](https://docs.google.com/spreadsheets/d/16pC2cDsdxlzv2CzlNMtStqt5-xHwDEsU6MjZVxWhrE4/edit?usp=sharing)",
+      "comment": [
+        "Discussed in [Neuroimaging terms spreadsheet](https://docs.google.com/spreadsheets/d/16pC2cDsdxlzv2CzlNMtStqt5-xHwDEsU6MjZVxWhrE4/edit?usp=sharing)"
+      ],
       "label": "P-Value Uncorrected",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
@@ -14598,7 +14712,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/291",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/291"
+      ],
       "label": "feat Version"
     },
     {
@@ -14788,7 +14904,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Average of the nominal X-Ray tube currents in milliamperes for all frames.",
+      "description": "Average (or exact, depending upon context) of the nominal X-Ray tube currents in milliamperes for all frames. Required if present and consistent in the contributing SOP Instances. Required if Modality (0008,0060) is MG.",
       "candidateTerms": "dicom_00189330",
       "associatedWith": [
         "NIDM",
@@ -14858,7 +14974,9 @@
         "NIDM",
         "PRV"
       ],
-      "comment": "Relates to the property of the reification class, which relates to the subject of the \"shortcut relation\".",
+      "comment": [
+        "Relates to the property of the reification class, which relates to the subject of the \"shortcut relation\"."
+      ],
       "label": "has subject property"
     },
     {
@@ -15146,9 +15264,10 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed in https://github.com/incf-nidash/nidm/pull/81",
-      "label": "has Alternative Hypothesis",
-      "sameAs": "http://purl.obolibrary.org/obo/STATO_0000208"
+      "comment": [
+        "Discussed in https://github.com/incf-nidash/nidm/pull/81"
+      ],
+      "label": "has Alternative Hypothesis"
     },
     {
       "@type": [
@@ -15205,8 +15324,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "nidm:NIDM_0000080",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000080"
       ],
       "description": "A pair of voxels are 26-Connected if they share a face, edge or corner.",
       "candidateTerms": "NIDM_0000129",
@@ -15771,8 +15890,7 @@
         "NIDM"
       ],
       "label": "deprecated Binomial Distribution",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000022",
-      "sameAs": "http://purl.obolibrary.org/obo/STATO_0000276"
+      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000022"
     },
     {
       "@type": [
@@ -15981,8 +16099,8 @@
         "PROV"
       ],
       "comment": [
-        "It is not recommended that the type EntityInfluence be asserted without also asserting one of its more specific subclasses.",
-        "EntityInfluence provides additional descriptions of an Entity's binary influence upon any other kind of resource. Instances of EntityInfluence use the prov:entity property to cite the influencing Entity."
+        "EntityInfluence provides additional descriptions of an Entity's binary influence upon any other kind of resource. Instances of EntityInfluence use the prov:entity property to cite the influencing Entity.",
+        "It is not recommended that the type EntityInfluence be asserted without also asserting one of its more specific subclasses."
       ],
       "label": "EntityInfluence",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Influence"
@@ -16036,7 +16154,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed in https://github.com/incf-nidash/nidm/issues/329",
+      "comment": [
+        "Discussed in https://github.com/incf-nidash/nidm/issues/329"
+      ],
       "label": "equivalent Threshold"
     },
     {
@@ -16075,7 +16195,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "To be discussed",
+      "comment": [
+        "To be discussed"
+      ],
       "label": "Hollow Electrode Solution"
     },
     {
@@ -16257,7 +16379,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/275",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/275"
+      ],
       "label": "resel Size In Voxels"
     },
     {
@@ -16492,7 +16616,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "PROV-O does not define all property inverses. The directionalities defined in PROV-O should be given preference over those not defined. However, if users wish to name the inverse of a PROV-O property, the local name given by prov:inverse should be used.",
+      "comment": [
+        "PROV-O does not define all property inverses. The directionalities defined in PROV-O should be given preference over those not defined. However, if users wish to name the inverse of a PROV-O property, the local name given by prov:inverse should be used."
+      ],
       "label": "inverse"
     },
     {
@@ -16505,7 +16631,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/194",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/194"
+      ],
       "label": "Error Parameter Map-Wise Dependence",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
@@ -16545,7 +16673,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "Classify prov-o terms into six components according to prov-dm, including 'agents-responsibility', 'alternate', 'annotations', 'collections', 'derivations', and 'entities-activities'. This classification is used so that readers of prov-o specification can find its correspondence with the prov-dm specification.",
+      "comment": [
+        "Classify prov-o terms into six components according to prov-dm, including 'agents-responsibility', 'alternate', 'annotations', 'collections', 'derivations', and 'entities-activities'. This classification is used so that readers of prov-o specification can find its correspondence with the prov-dm specification."
+      ],
       "label": "component"
     },
     {
@@ -16623,7 +16753,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "The position that this OWL term should be listed within documentation. The scope of the documentation (e.g., among all terms, among terms within a prov:category, among properties applying to a particular class, etc.) is unspecified.",
+      "comment": [
+        "The position that this OWL term should be listed within documentation. The scope of the documentation (e.g., among all terms, among terms within a prov:category, among properties applying to a particular class, etc.) is unspecified."
+      ],
       "label": "order"
     },
     {
@@ -16668,15 +16800,17 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000051"
+        "nidm:NIDM_0000051",
+        "owl:NamedIndividual"
       ],
       "description": "Reference space defined as the average of 152 T1-weighted MRI scans in high-resolution, non-linearly transformed to MNI152 linear space (cf. http://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin2009 for more details).",
       "candidateTerms": "NIDM_0000043",
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+      ],
       "label": "Icbm Mni152 Non Linear2009b Asymmetric Coordinate System"
     },
     {
@@ -16832,7 +16966,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "The _optional_ Plan adopted by an Agent in Association with some Activity. Plan specifications are out of the scope of this specification.",
+      "comment": [
+        "The _optional_ Plan adopted by an Agent in Association with some Activity. Plan specifications are out of the scope of this specification."
+      ],
       "label": "hadPlan"
     },
     {
@@ -17495,15 +17631,17 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "The Delay Visual Figural Learning Test (Delay SVFT) is an assessment instrument in which subjects are asked to reproduce geometric figures that have been presented to the subject previous to a delay period.",
       "candidateTerms": "DelayVisualFiguralLearningTest",
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "The Delay SVFT is performed after an initial performance of the Visual Figural Learning Test and a delay period of specified duration.",
+      "comment": [
+        "The Delay SVFT is performed after an initial performance of the Visual Figural Learning Test and a delay period of specified duration."
+      ],
       "label": "Delay Visual Figural Learning Test"
     },
     {
@@ -17555,7 +17693,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "To be discussed",
+      "comment": [
+        "To be discussed"
+      ],
       "label": "had Image Contrast Type"
     },
     {
@@ -17894,7 +18034,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "The volume of interest may be selected either by the natural extent of the excited volume (e.g., surface coils) or by selecting for excitation, a thick slab through the use of magnetic field gradients.",
+      "comment": [
+        "The volume of interest may be selected either by the natural extent of the excited volume (e.g., surface coils) or by selecting for excitation, a thick slab through the use of magnetic field gradients."
+      ],
       "label": "Nuclear Magnetic Resonance Spectroscopy",
       "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionModality"
     },
@@ -17960,7 +18102,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/310",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/310"
+      ],
       "label": "smallest Significant Cluster Size In Vertices FWE 05"
     },
     {
@@ -18303,7 +18447,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Free form explanation of the meaning of the Window Center and Width. Multiple values correspond to multiple Window Center and Width values.",
+      "description": "Explanation of the Window Center and Width.",
       "candidateTerms": "dicom_00281055",
       "associatedWith": [
         "NIDM",
@@ -18373,7 +18517,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/194",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/194"
+      ],
       "label": "Regularized Parameter",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000071"
     },
@@ -18413,14 +18559,16 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "To be discussed",
+      "comment": [
+        "To be discussed"
+      ],
       "label": "had Image Usage Type"
     },
     {
       "@type": [
         "CommonDataElement",
-        "nidm:NIDM_0000031",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000031"
       ],
       "description": "'Hemodynamic Response Function' which is a fixed gamma probability density function. This is the default in FSL.",
       "candidateTerms": "FSL_0000006",
@@ -18465,9 +18613,11 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed in https://github.com/incf-nidash/nidm/pull/149",
+      "comment": [
+        "Discussed in https://github.com/incf-nidash/nidm/pull/149"
+      ],
       "label": "Map",
-      "supertypeCDEs": "ub3bL1693C35"
+      "supertypeCDEs": "ub3bL1703C35"
     },
     {
       "@type": [
@@ -18507,14 +18657,6 @@
         "DICOM"
       ],
       "label": "Track Sequence"
-    },
-    {
-      "@type": "owl:Class",
-      "candidateTerms": "In_vitro_subject",
-      "associatedWith": [
-        "NIDM"
-      ],
-      "label": "In-vitro Subject"
     },
     {
       "@type": [
@@ -18784,7 +18926,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Note that FFE is the Philips name for their implementation of the gradient recalled echo pulse sequence.",
+      "comment": [
+        "Note that FFE is the Philips name for their implementation of the gradient recalled echo pulse sequence."
+      ],
       "label": "Fast Field Echo",
       "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod"
     },
@@ -18864,8 +19008,8 @@
         "NIDM"
       ],
       "comment": [
-        "Range: Vector of positive floats.",
-        "Discussed at: https://github.com/incf-nidash/nidm/pull/214"
+        "Discussed at: https://github.com/incf-nidash/nidm/pull/214",
+        "Range: Vector of positive floats."
       ],
       "label": "noise FWHM In Vertices"
     },
@@ -18905,7 +19049,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An instance of prov:Association provides additional descriptions about the binary prov:wasAssociatedWith relation from an prov:Activity to some prov:Agent that had some responsiblity for it. For example, :baking prov:wasAssociatedWith :baker; prov:qualifiedAssociation [ a prov:Association; prov:agent :baker; :foo :bar ].",
+      "comment": [
+        "An instance of prov:Association provides additional descriptions about the binary prov:wasAssociatedWith relation from an prov:Activity to some prov:Agent that had some responsiblity for it. For example, :baking prov:wasAssociatedWith :baker; prov:qualifiedAssociation [ a prov:Association; prov:agent :baker; :foo :bar ]."
+      ],
       "label": "Association",
       "supertypeCDEs": "http://www.w3.org/ns/prov#AgentInfluence"
     },
@@ -19287,7 +19433,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/pull/258",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/pull/258"
+      ],
       "label": "Binary Map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052"
     },
@@ -19335,7 +19483,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "The name of the institution that is responsible for coordinating the protocols for the clinical trial.",
+      "description": "The name of the institution that is responsible for coordinating the medical imaging data for the clinical trial or research.",
       "candidateTerms": "dicom_00120060",
       "associatedWith": [
         "NIDM",
@@ -19445,7 +19593,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at ...",
+      "comment": [
+        "Discussed at ..."
+      ],
       "label": "Data",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
@@ -19498,16 +19648,10 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "Start is when an activity is deemed to have started. A start may refer to an entity, known as trigger, that initiated the activity.",
-      "label": "wasStartedBy"
-    },
-    {
-      "@type": "owl:Class",
-      "candidateTerms": "Phantom_experimental_subject",
-      "associatedWith": [
-        "NIDM"
+      "comment": [
+        "Start is when an activity is deemed to have started. A start may refer to an entity, known as trigger, that initiated the activity."
       ],
-      "label": "Phantom Experimental Subject"
+      "label": "wasStartedBy"
     },
     {
       "@type": [
@@ -19520,8 +19664,8 @@
         "NIDM"
       ],
       "comment": [
-        "Discussed at: https://github.com/incf-nidash/nidm/pull/214",
-        "Range: Vector of positive floats."
+        "Range: Vector of positive floats.",
+        "Discussed at: https://github.com/incf-nidash/nidm/pull/214"
       ],
       "label": "noise FWHM In Voxels"
     },
@@ -19742,10 +19886,11 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed in https://github.com/incf-nidash/nidm/pull/144 and https://github.com/incf-nidash/nidm/pull/172",
+      "comment": [
+        "Discussed in https://github.com/incf-nidash/nidm/pull/144 and https://github.com/incf-nidash/nidm/pull/172"
+      ],
       "label": "Coordinate",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
-      "sameAs": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C44465"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
     {
       "@type": [
@@ -19991,7 +20136,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "This type is also called 'Empty' in Magnetoencepholography, since the acquisition activity is undertaken with no study participant present.",
+      "comment": [
+        "This type is also called 'Empty' in Magnetoencepholography, since the acquisition activity is undertaken with no study participant present."
+      ],
       "label": "Noise Measurement",
       "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionUsageType"
     },
@@ -20082,7 +20229,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/194",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/194"
+      ],
       "label": "variance Map-Wise Dependence"
     },
     {
@@ -20206,8 +20355,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "description": "The Fagerstrom Test for Nicotine Dependence is an assessment instrument for assessing the intensity of physical addiction to nicotine resulting in an ordinal measure.",
       "candidateTerms": "FagerstromTestForNicotineDependence",
@@ -20330,7 +20479,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "To be discussed",
+      "comment": [
+        "To be discussed"
+      ],
       "label": "Cell Type"
     },
     {
@@ -20694,7 +20845,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/298",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/298"
+      ],
       "label": "drift Cutoff Period"
     },
     {
@@ -20810,16 +20963,10 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "To be discussed",
-      "label": "Bath Solution"
-    },
-    {
-      "@type": "owl:AnnotationProperty",
-      "candidateTerms": "type",
-      "associatedWith": [
-        "NIDM"
+      "comment": [
+        "To be discussed"
       ],
-      "label": "type"
+      "label": "Bath Solution"
     },
     {
       "@type": [
@@ -21116,7 +21263,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An instance of prov:Generation provides additional descriptions about the binary prov:wasGeneratedBy relation from a generated prov:Entity to the prov:Activity that generated it. For example, :cake prov:wasGeneratedBy :baking; prov:qualifiedGeneration [ a prov:Generation; prov:activity :baking; :foo :bar ].",
+      "comment": [
+        "An instance of prov:Generation provides additional descriptions about the binary prov:wasGeneratedBy relation from a generated prov:Entity to the prov:Activity that generated it. For example, :cake prov:wasGeneratedBy :baking; prov:qualifiedGeneration [ a prov:Generation; prov:activity :baking; :foo :bar ]."
+      ],
       "label": "Generation",
       "supertypeCDEs": "http://www.w3.org/ns/prov#InstantaneousEvent"
     },
@@ -21245,7 +21394,9 @@
         "NIDM",
         "PRV"
       ],
-      "comment": "The class, which describes the relations of a property reification. That means, its \"shortcut relation\", its \nreification class, and the properties that are relating to the subject and object of the \"shortcut relation\".",
+      "comment": [
+        "The class, which describes the relations of a property reification. That means, its \"shortcut relation\", its \nreification class, and the properties that are relating to the subject and object of the \"shortcut relation\"."
+      ],
       "label": "Property Reification"
     },
     {
@@ -21453,7 +21604,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "An example of a file that informs the execution of an experiment is a b-vector file in diffusion-weighted MR imaging.  An example of a file that is generated during the execution of the experiment is a stimulus response file in functional MR imaging)",
+      "comment": [
+        "An example of a file that informs the execution of an experiment is a b-vector file in diffusion-weighted MR imaging.  An example of a file that is generated during the execution of the experiment is a stimulus response file in functional MR imaging)"
+      ],
       "label": "AuxiliaryFile",
       "supertypeCDEs": "http://semanticscience.org/resource/SIO_000396"
     },
@@ -21725,7 +21878,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Under discussion at https://github.com/incf-nidash/nidm/issues/277",
+      "comment": [
+        "Under discussion at https://github.com/incf-nidash/nidm/issues/277"
+      ],
       "label": "error Degrees Of Freedom"
     },
     {
@@ -21777,7 +21932,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+      ],
       "label": "World Coordinate System",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
@@ -21934,7 +22091,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/310",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/310"
+      ],
       "label": "smallest Significant Cluster Size In Voxels FDR 05"
     },
     {
@@ -22038,7 +22197,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "There exist no prescriptive requirement on the nature of plans, their representation, the actions or steps they consist of, or their intended goals. Since plans may evolve over time, it may become necessary to track their provenance, so plans themselves are entities. Representing the plan explicitly in the provenance can be useful for various tasks: for example, to validate the execution as represented in the provenance record, to manage expectation failures, or to provide explanations.",
+      "comment": [
+        "There exist no prescriptive requirement on the nature of plans, their representation, the actions or steps they consist of, or their intended goals. Since plans may evolve over time, it may become necessary to track their provenance, so plans themselves are entities. Representing the plan explicitly in the provenance can be useful for various tasks: for example, to validate the execution as represented in the provenance record, to manage expectation failures, or to provide explanations."
+      ],
       "label": "Plan",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
@@ -22173,8 +22334,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "nidm:NIDM_0000080",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000080"
       ],
       "description": "A pair of voxels are 6-Connected if they share a face.",
       "candidateTerms": "NIDM_0000130",
@@ -22336,7 +22497,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "A common example is a tissue sample.",
+      "comment": [
+        "A common example is a tissue sample."
+      ],
       "label": "Ex Vivo",
       "supertypeCDEs": "http://purl.obolibrary.org/obo/PATO_0001995"
     },
@@ -22389,7 +22552,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/298",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/298"
+      ],
       "label": "Discrete Cosine Transform basis Drift Model",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000087"
     },
@@ -22416,7 +22581,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An instance of prov:Delegation provides additional descriptions about the binary prov:actedOnBehalfOf relation from a performing prov:Agent to some prov:Agent for whom it was performed. For example, :mixing prov:wasAssociatedWith :toddler . :toddler prov:actedOnBehalfOf :mother; prov:qualifiedDelegation [ a prov:Delegation; prov:entity :mother; :foo :bar ].",
+      "comment": [
+        "An instance of prov:Delegation provides additional descriptions about the binary prov:actedOnBehalfOf relation from a performing prov:Agent to some prov:Agent for whom it was performed. For example, :mixing prov:wasAssociatedWith :toddler . :toddler prov:actedOnBehalfOf :mother; prov:qualifiedDelegation [ a prov:Delegation; prov:entity :mother; :foo :bar ]."
+      ],
       "label": "Delegation",
       "supertypeCDEs": "http://www.w3.org/ns/prov#AgentInfluence"
     },
@@ -22599,7 +22766,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "The time at which an entity was invalidated (i.e., no longer usable).",
+      "comment": [
+        "The time at which an entity was invalidated (i.e., no longer usable)."
+      ],
       "label": "invalidatedAtTime"
     },
     {
@@ -22733,14 +22902,6 @@
       "label": "Studies Containing Other Referenced Instances Sequence"
     },
     {
-      "@type": "owl:Class",
-      "candidateTerms": "Ex_vivo_subject",
-      "associatedWith": [
-        "NIDM"
-      ],
-      "label": "Ex-vivo Subject"
-    },
-    {
       "@type": [
         "CommonDataElement",
         "owl:DatatypeProperty"
@@ -22808,15 +22969,17 @@
     {
       "@type": [
         "CommonDataElement",
-        "nidm:NIDM_0000051",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000051"
       ],
       "description": "Reference space defined as the average of 452 T1-weighted MRIs of normal young adult brains after affine and 5 order polynomial non-linear warping to the MNI 305 space (cf. http://www.loni.usc.edu/ICBM/Downloads/Downloads_452T1.shtml and http://imaging.mrc-cbu.cam.ac.uk/imaging/MniTalairach)",
       "candidateTerms": "NIDM_0000039",
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+      ],
       "label": "Icbm452 Warp5 Coordinate System"
     },
     {
@@ -23169,7 +23332,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "A reference to the principal section of the PROV-DM document that describes this concept.",
+      "comment": [
+        "A reference to the principal section of the PROV-DM document that describes this concept."
+      ],
       "label": "dm"
     },
     {
@@ -23183,7 +23348,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Which scale is this? There are three scales: Severity, Improvement, and Efficacy",
+      "comment": [
+        "Which scale is this? There are three scales: Severity, Improvement, and Efficacy"
+      ],
       "label": "Clinical Global Impression"
     },
     {
@@ -23222,7 +23389,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/310",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/310"
+      ],
       "label": "smallest Significant Cluster Size In Vertices FDR 05"
     },
     {
@@ -23235,7 +23404,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "FIESTA is the name given to this sequence by GE, True FISP is the acronym used by Siemens.",
+      "comment": [
+        "FIESTA is the name given to this sequence by GE, True FISP is the acronym used by Siemens."
+      ],
       "label": "Fast Imaging Employing Steady State Acquisition",
       "supertypeCDEs": "http://purl.org/nidash/nidm#SteadyStateFreePrecession"
     },
@@ -23333,8 +23504,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "A method of estimating verbal IQ in patients based upon their ability to read and correctly pronounce irregular words that do not necessarily follow common or intuitive rules of phonography and orthography.",
       "candidateTerms": "NorthAmericanAdultReadingTest",
@@ -23639,7 +23810,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/285",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/285"
+      ],
       "label": "grand Mean Scaling"
     },
     {
@@ -23899,7 +24072,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "Gamma Difference HRF",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000035"
     },
@@ -23938,7 +24113,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "BLOCK",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036"
     },
@@ -24004,7 +24181,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/298",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/298"
+      ],
       "label": "AFNI's Legendre Polinomial Drift Model",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000087"
     },
@@ -24206,8 +24385,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "description": "The Wisconsin Card Sorting Test is an assessment instrument in which a subject is asked to place cards under one of the four stimulus cards that he or she believes would be a correct strategy, while receiving feedback from the test administrator as to whether the last card was placed correctly or not (though the changes the sorting strategy throughout the test).",
       "candidateTerms": "WisconsinCardSortingTest",
@@ -24342,7 +24521,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Under discussion at https://github.com/ISA-tools/stato/issues/28",
+      "comment": [
+        "Under discussion at https://github.com/ISA-tools/stato/issues/28"
+      ],
       "label": "Independent Error",
       "supertypeCDEs": "http://purl.obolibrary.org/obo/STATO_0000346"
     },
@@ -24395,7 +24576,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "The time at which an activity started. See also prov:endedAtTime.",
+      "comment": [
+        "The time at which an activity started. See also prov:endedAtTime."
+      ],
       "label": "startedAtTime"
     },
     {
@@ -24409,7 +24592,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281 and discussed in https://github.com/incf-nidash/nidm/pull/248",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281 and discussed in https://github.com/incf-nidash/nidm/pull/248"
+      ],
       "label": "AFNI's Gamma HRF"
     },
     {
@@ -24422,7 +24607,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "The time at which an activity ended. See also prov:startedAtTime.",
+      "comment": [
+        "The time at which an activity ended. See also prov:startedAtTime."
+      ],
       "label": "endedAtTime"
     },
     {
@@ -24538,7 +24725,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/310",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/310"
+      ],
       "label": "smallest Significant Cluster Size In Voxels FWE 05"
     },
     {
@@ -24954,7 +25143,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "Gamma Basis Set",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036"
     },
@@ -25033,7 +25224,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An instance of prov:Attribution provides additional descriptions about the binary prov:wasAttributedTo relation from an prov:Entity to some prov:Agent that had some responsible for it. For example, :cake prov:wasAttributedTo :baker; prov:qualifiedAttribution [ a prov:Attribution; prov:entity :baker; :foo :bar ].",
+      "comment": [
+        "An instance of prov:Attribution provides additional descriptions about the binary prov:wasAttributedTo relation from an prov:Entity to some prov:Agent that had some responsible for it. For example, :cake prov:wasAttributedTo :baker; prov:qualifiedAttribution [ a prov:Attribution; prov:entity :baker; :foo :bar ]."
+      ],
       "label": "Attribution",
       "supertypeCDEs": "http://www.w3.org/ns/prov#AgentInfluence"
     },
@@ -25333,7 +25526,9 @@
         "NIDM",
         "PRV"
       ],
-      "comment": "Relates to the property of the reification class, which relates to the object of the \"shortcut relation\".",
+      "comment": [
+        "Relates to the property of the reification class, which relates to the object of the \"shortcut relation\"."
+      ],
       "label": "has object property"
     },
     {
@@ -25788,7 +25983,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "The use of who/that indicates that the agent performing this role can either be a person or another device.",
+      "comment": [
+        "The use of who/that indicates that the agent performing this role can either be a person or another device."
+      ],
       "label": "Acquisition Device Operator",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Role"
     },
@@ -25807,8 +26004,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "description": "The Positive and Negative Syndrome Scale is an assessment instrument used for typological and dimensional assessment.",
       "candidateTerms": "PositiveAndNegativeSyndromeScale",
@@ -26163,7 +26360,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "Sine Basis Set",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036"
     },
@@ -26477,7 +26676,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "If this Entity prov:wasDerivedFrom Entity :e, then it can qualify how it was derived using prov:qualifiedDerivation [ a prov:Derivation;  prov:entity :e; :foo :bar ].",
+      "comment": [
+        "If this Entity prov:wasDerivedFrom Entity :e, then it can qualify how it was derived using prov:qualifiedDerivation [ a prov:Derivation;  prov:entity :e; :foo :bar ]."
+      ],
       "label": "qualifiedDerivation"
     },
     {
@@ -26760,7 +26961,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Contains the Data Element Tag of the parent sequence containing the attribute that was overridden. The value is limited in scope to the Treatment Session Beam Sequence (3008,0020) and all nested sequences therein.",
+      "description": "Contains the Data Element Tag of the parent sequence containing the attribute that was corrected. The value is limited in scope to the Treatment Session Beam Sequence (3008,0020) and all nested sequences therein.",
       "candidateTerms": "dicom_30080061",
       "associatedWith": [
         "NIDM",
@@ -26849,8 +27050,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000064"
+        "nidm:NIDM_0000064",
+        "owl:NamedIndividual"
       ],
       "description": "A pair of pixels are 8-Connected if they share an edge or corner.",
       "candidateTerms": "NIDM_0000118",
@@ -27025,7 +27226,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/283",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/283"
+      ],
       "label": "Peak",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
@@ -27156,7 +27359,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed in https://github.com/incf-nidash/nidm/issues/255.",
+      "comment": [
+        "Discussed in https://github.com/incf-nidash/nidm/issues/255."
+      ],
       "label": "Contrast Standard Error Map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052"
     },
@@ -27301,8 +27506,8 @@
         "PROV"
       ],
       "comment": [
-        "An instance of prov:Influence provides additional descriptions about the binary prov:wasInfluencedBy relation from some influenced Activity, Entity, or Agent to the influencing Activity, Entity, or Agent. For example, :stomach_ache prov:wasInfluencedBy :spoon; prov:qualifiedInfluence [ a prov:Influence; prov:entity :spoon; :foo :bar ] . Because prov:Influence is a broad relation, the more specific relations (Communication, Delegation, End, etc.) should be used when applicable.",
-        "Because prov:Influence is a broad relation, its most specific subclasses (e.g. prov:Communication, prov:Delegation, prov:End, prov:Revision, etc.) should be used when applicable."
+        "Because prov:Influence is a broad relation, its most specific subclasses (e.g. prov:Communication, prov:Delegation, prov:End, prov:Revision, etc.) should be used when applicable.",
+        "An instance of prov:Influence provides additional descriptions about the binary prov:wasInfluencedBy relation from some influenced Activity, Entity, or Agent to the influencing Activity, Entity, or Agent. For example, :stomach_ache prov:wasInfluencedBy :spoon; prov:qualifiedInfluence [ a prov:Influence; prov:entity :spoon; :foo :bar ] . Because prov:Influence is a broad relation, the more specific relations (Communication, Delegation, End, etc.) should be used when applicable."
       ],
       "label": "Influence"
     },
@@ -27459,7 +27664,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Context: volumeInVoxels nidm_0025. Range: Positivefloat not found.",
+      "comment": [
+        "Context: volumeInVoxels nidm_0025. Range: Positivefloat not found."
+      ],
       "label": "search Volume In Units"
     },
     {
@@ -27600,7 +27807,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/295",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/295"
+      ],
       "label": "voxel Size"
     },
     {
@@ -27990,8 +28199,8 @@
         "PROV"
       ],
       "comment": [
-        "The Location of any resource.",
-        "This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>."
+        "This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>.",
+        "The Location of any resource."
       ],
       "label": "atLocation"
     },
@@ -28213,7 +28422,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "If this Entity prov:wasRevisionOf Entity :e, then it can qualify how it was revised using prov:qualifiedRevision [ a prov:Revision;  prov:entity :e; :foo :bar ].",
+      "comment": [
+        "If this Entity prov:wasRevisionOf Entity :e, then it can qualify how it was revised using prov:qualifiedRevision [ a prov:Revision;  prov:entity :e; :foo :bar ]."
+      ],
       "label": "qualifiedRevision"
     },
     {
@@ -28265,7 +28476,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/255.",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/255."
+      ],
       "label": "Residual Mean Squares Map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052"
     },
@@ -28449,7 +28662,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "Attribution is the ascribing of an entity to an agent.",
+      "comment": [
+        "Attribution is the ascribing of an entity to an agent."
+      ],
       "label": "wasAttributedTo"
     },
     {
@@ -28937,15 +29152,17 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000051"
+        "nidm:NIDM_0000051",
+        "owl:NamedIndividual"
       ],
       "description": "Reference space defined as the average of 305 T1-weighted MRI scans, linearly transformed to Talairach space (cf. http://www.bic.mni.mcgill.ca/ServicesAtlases/MNI305 for more details)",
       "candidateTerms": "NIDM_0000055",
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+      ],
       "label": "Mni305 Coordinate System"
     },
     {
@@ -29372,7 +29589,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Under discussion at: https://github.com/incf-nidash/nidm/pull/270 and https://github.com/incf-nidash/nidm/issues/145",
+      "comment": [
+        "Under discussion at: https://github.com/incf-nidash/nidm/pull/270 and https://github.com/incf-nidash/nidm/issues/145"
+      ],
       "label": "coordinate Vector"
     },
     {
@@ -29586,15 +29805,17 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000051"
+        "nidm:NIDM_0000051",
+        "owl:NamedIndividual"
       ],
       "description": "Reference space defined as the average of 152 T1-weighted MRI scans, non-linearly transformed to MNI152 linear space (cf. http://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin2009 for more details).",
       "candidateTerms": "NIDM_0000041",
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+      ],
       "label": "Icbm Mni152 Non Linear2009a Asymmetric Coordinate System"
     },
     {
@@ -29659,7 +29880,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "Note that there are kinds of bundles (e.g. handwritten letters, audio recordings, etc.) that are not expressed in PROV-O, but can be still be described by PROV-O.",
+      "comment": [
+        "Note that there are kinds of bundles (e.g. handwritten letters, audio recordings, etc.) that are not expressed in PROV-O, but can be still be described by PROV-O."
+      ],
       "label": "Bundle",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
@@ -29912,15 +30135,17 @@
     {
       "@type": [
         "CommonDataElement",
-        "nidm:NIDM_0000029",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000029"
       ],
       "description": "'Hemodynamic Response Function' which is a fixed difference of two gamma probability density functions - a standard positive function at normal lag, and a small, delayed, negated gamma probability density function, which attempts to model the late undershoot (definition adapted [FSL wiki](http://fsl.fmrib.ox.ac.uk/fsl/fsl4.0/feat5/detail.html))",
       "candidateTerms": "FSL_0000001",
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "FSL's Gamma Difference HRF"
     },
     {
@@ -29985,7 +30210,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "A reference to the principal section of the PROV-DM document that describes this concept.",
+      "comment": [
+        "A reference to the principal section of the PROV-DM document that describes this concept."
+      ],
       "label": "n"
     },
     {
@@ -30324,7 +30551,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Common image usage types in magnetic resonance imaging are anatomical and functional",
+      "comment": [
+        "Common image usage types in magnetic resonance imaging are anatomical and functional"
+      ],
       "label": "Image Usage Type",
       "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionUsageType"
     },
@@ -30667,14 +30896,6 @@
       "label": "Acquisition Termination Condition"
     },
     {
-      "@type": "owl:Class",
-      "candidateTerms": "In_vivo_subject",
-      "associatedWith": [
-        "NIDM"
-      ],
-      "label": "In-vivo Subject"
-    },
-    {
       "@type": [
         "CommonDataElement",
         "owl:DatatypeProperty"
@@ -30723,7 +30944,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Term discussed in https://github.com/incf-nidash/nidm/pull/134",
+      "comment": [
+        "Term discussed in https://github.com/incf-nidash/nidm/pull/134"
+      ],
       "label": "Conjunction Inference",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000049"
     },
@@ -30750,7 +30973,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "If this Activity prov:used Entity :e, then it can qualify how it used it using prov:qualifiedUsage [ a prov:Usage; prov:entity :e; :foo :bar ].",
+      "comment": [
+        "If this Activity prov:used Entity :e, then it can qualify how it used it using prov:qualifiedUsage [ a prov:Usage; prov:entity :e; :foo :bar ]."
+      ],
       "label": "qualifiedUsage"
     },
     {
@@ -30763,7 +30988,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/292",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/292"
+      ],
       "label": "number Of Supra-Threshold Clusters"
     },
     {
@@ -30810,7 +31037,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Duration of the image acquisition in seconds.",
+      "description": "The time in seconds needed for the compete acquisition.",
       "candidateTerms": "dicom_00189073",
       "associatedWith": [
         "NIDM",
@@ -31005,7 +31232,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Rate of administration in milliliters/sec.",
+      "description": "Rate(s) of injection(s) in milliliters/sec",
       "candidateTerms": "dicom_00181046",
       "associatedWith": [
         "NIDM",
@@ -31089,7 +31316,9 @@
         "NIDM",
         "CRYPTO"
       ],
-      "comment": "SHA stands for Secure Hash Algorithm. Hash algorithms compute a fixed-length digital representation (known as a message digest) of an input data sequence (the message) of any length.",
+      "comment": [
+        "SHA stands for Secure Hash Algorithm. Hash algorithms compute a fixed-length digital representation (known as a message digest) of an input data sequence (the message) of any length."
+      ],
       "label": "sha512"
     },
     {
@@ -31498,8 +31727,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "The Barnes akathisia scale is an assessment instrument used to assess the severity of drug-induced feelings of restlessness.",
       "candidateTerms": "BarnesAkathisiaScale",
@@ -31518,7 +31747,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed in https://github.com/incf-nidash/nidm/issues/255 and https://github.com/incf-nidash/nidm/issues/141 (see also https://github.com/ISA-tools/stato/issues/18)",
+      "comment": [
+        "Discussed in https://github.com/incf-nidash/nidm/issues/255 and https://github.com/incf-nidash/nidm/issues/141 (see also https://github.com/ISA-tools/stato/issues/18)"
+      ],
       "label": "Parameter Estimate Map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052"
     },
@@ -31644,7 +31875,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Nominal time per individual frame in msec.",
+      "description": "Nominal duration per individual frame, in msec.",
       "candidateTerms": "dicom_00181063",
       "associatedWith": [
         "NIDM",
@@ -31816,7 +32047,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "During a MRI session, for example, T1-weighted and resting-state data were acquired.  Both the T1-weighted and resting state data are Acquisition Objects and the activity during which they were acquired is the Session. The Series is the activity that led to the production of each Acquisition Object.",
+      "comment": [
+        "During a MRI session, for example, T1-weighted and resting-state data were acquired.  Both the T1-weighted and resting state data are Acquisition Objects and the activity during which they were acquired is the Session. The Series is the activity that led to the production of each Acquisition Object."
+      ],
       "label": "Series",
       "supertypeCDEs": "http://purl.org/nidash/nidm#Acquisition"
     },
@@ -31890,7 +32123,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Location of the Bottom Right Hand Corner (BRHC) of the bounding box in which Unformatted Text Value (0070,0006) is to be displayed, in Bounding Box Annotation Units (0070,0003), given as column/row. Column is the horizontal offset and row is the vertical offset.",
+      "description": "Recommended location of the Bottom Right Hand Corner (BRHC) of the bounding box in which Unformatted Text Value (0070,0006) is to be displayed, as fractions of the specified presentation view width and height. Each value shall be within the range 0.0 to 1.0.",
       "candidateTerms": "dicom_00700011",
       "associatedWith": [
         "NIDM",
@@ -31960,7 +32193,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+      ],
       "label": "Talairach Coordinate System",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000075"
     },
@@ -32026,7 +32261,9 @@
         "NIDM",
         "PRV"
       ],
-      "comment": "Relates to the reification class, which can be related to the object and subject property to be able to associate the \nobject and subject of the \"shortcut relation\". The reification class should provide detailed descriptions of the relationship that is \ndescribed in a simple form by the \"shortcut relation\".",
+      "comment": [
+        "Relates to the reification class, which can be related to the object and subject property to be able to associate the \nobject and subject of the \"shortcut relation\". The reification class should provide detailed descriptions of the relationship that is \ndescribed in a simple form by the \"shortcut relation\"."
+      ],
       "label": "has reification class"
     },
     {
@@ -32052,7 +32289,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "This annotation property links a subproperty of prov:wasInfluencedBy with the subclass of prov:Influence and the qualifying property that are used to qualify it. \n\nExample annotation:\n\n    prov:wasGeneratedBy prov:qualifiedForm prov:qualifiedGeneration, prov:Generation .\n\nThen this unqualified assertion:\n\n    :entity1 prov:wasGeneratedBy :activity1 .\n\ncan be qualified by adding:\n\n   :entity1 prov:qualifiedGeneration :entity1Gen .\n   :entity1Gen \n       a prov:Generation, prov:Influence;\n       prov:activity :activity1;\n       :customValue 1337 .\n\nNote how the value of the unqualified influence (prov:wasGeneratedBy :activity1) is mirrored as the value of the prov:activity (or prov:entity, or prov:agent) property on the influence class.",
+      "comment": [
+        "This annotation property links a subproperty of prov:wasInfluencedBy with the subclass of prov:Influence and the qualifying property that are used to qualify it. \n\nExample annotation:\n\n    prov:wasGeneratedBy prov:qualifiedForm prov:qualifiedGeneration, prov:Generation .\n\nThen this unqualified assertion:\n\n    :entity1 prov:wasGeneratedBy :activity1 .\n\ncan be qualified by adding:\n\n   :entity1 prov:qualifiedGeneration :entity1Gen .\n   :entity1Gen \n       a prov:Generation, prov:Influence;\n       prov:activity :activity1;\n       :customValue 1337 .\n\nNote how the value of the unqualified influence (prov:wasGeneratedBy :activity1) is mirrored as the value of the prov:activity (or prov:entity, or prov:agent) property on the influence class."
+      ],
       "label": "qualifiedForm"
     },
     {
@@ -32210,8 +32449,8 @@
         "NIDM"
       ],
       "comment": [
-        "Used in DARTEL toolbox in SPM12b (cf. spm12b/spm_templates.man)",
-        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+        "Used in DARTEL toolbox in SPM12b (cf. spm12b/spm_templates.man)"
       ],
       "label": "Icbm Mni152 Non Linear2009c Asymmetric Coordinate System"
     },
@@ -32225,7 +32464,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "When the prov-o term does not have a definition drawn from prov-dm, and the prov-o editor provides one.",
+      "comment": [
+        "When the prov-o term does not have a definition drawn from prov-dm, and the prov-o editor provides one."
+      ],
       "label": "editorsDefinition"
     },
     {
@@ -32264,7 +32505,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/299",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/299"
+      ],
       "label": "Block-Based Design",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000155"
     },
@@ -32318,7 +32561,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "SPM's Dispersion Derivative"
     },
     {
@@ -32370,7 +32615,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Under discussion at https://github.com/ISA-tools/stato/issues/38",
+      "comment": [
+        "Under discussion at https://github.com/ISA-tools/stato/issues/38"
+      ],
       "label": "p Value Uncorrected"
     },
     {
@@ -32539,7 +32786,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/288, naming previously discussed at: https://github.com/incf-nidash/nidm/issues/70",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/288, naming previously discussed at: https://github.com/incf-nidash/nidm/issues/70"
+      ],
       "label": "masked Median"
     },
     {
@@ -32664,7 +32913,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "The x, y, and z coordinates of the upper left hand corner (center of the first voxel transmitted) of the frame, in mm. In the case of CT images with an Acquisition Type (0018,9302) of CONSTANT_ANGLE the image plane is defined to pass through the data collection center and be normal to the central ray of the diverging X-Ray beam.",
+      "description": "The x, y, and z coordinates of the upper left hand corner (center of the first voxel transmitted) of the image, in mm.",
       "candidateTerms": "dicom_00200032",
       "associatedWith": [
         "NIDM",
@@ -32850,7 +33099,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed in https://github.com/incf-nidash/nidm/issues/235",
+      "comment": [
+        "Discussed in https://github.com/incf-nidash/nidm/issues/235"
+      ],
       "label": "Contrast Explained Mean Square Map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052"
     },
@@ -32928,7 +33179,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "Finite Impulse Response Basis Set",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036"
     },
@@ -33005,7 +33258,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/298",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/298"
+      ],
       "label": "Gaussian Running Line Drift Model",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000087"
     },
@@ -33201,7 +33456,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "The time at which an entity was completely created and is available for use.",
+      "comment": [
+        "The time at which an entity was completely created and is available for use."
+      ],
       "label": "generatedAtTime"
     },
     {
@@ -33280,8 +33537,8 @@
         "PROV"
       ],
       "comment": [
-        "An instance of prov:Derivation provides additional descriptions about the binary prov:wasDerivedFrom relation from some derived prov:Entity to another prov:Entity from which it was derived. For example, :chewed_bubble_gum prov:wasDerivedFrom :unwrapped_bubble_gum; prov:qualifiedDerivation [ a prov:Derivation; prov:entity :unwrapped_bubble_gum; :foo :bar ].",
-        "The more specific forms of prov:Derivation (i.e., prov:Revision, prov:Quotation, prov:PrimarySource) should be asserted if they apply."
+        "The more specific forms of prov:Derivation (i.e., prov:Revision, prov:Quotation, prov:PrimarySource) should be asserted if they apply.",
+        "An instance of prov:Derivation provides additional descriptions about the binary prov:wasDerivedFrom relation from some derived prov:Entity to another prov:Entity from which it was derived. For example, :chewed_bubble_gum prov:wasDerivedFrom :unwrapped_bubble_gum; prov:qualifiedDerivation [ a prov:Derivation; prov:entity :unwrapped_bubble_gum; :foo :bar ]."
       ],
       "label": "Derivation",
       "supertypeCDEs": "http://www.w3.org/ns/prov#EntityInfluence"
@@ -33439,7 +33696,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/294",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/294"
+      ],
       "label": "Partial Conjunction Inference",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000049"
     },
@@ -33620,7 +33879,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Specifies the format of Blending Lookup Table Data (0028,1408) in this Sequence item.",
+      "description": "Specifies the format of Blending Lookup Table Data (0028,1408) in this Sequence item. The second value (first stored pixel value mapped) shall be zero.",
       "candidateTerms": "dicom_00281407",
       "associatedWith": [
         "NIDM",
@@ -33664,7 +33923,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An instance of prov:Communication provides additional descriptions about the binary prov:wasInformedBy relation from an informed prov:Activity to the prov:Activity that informed it. For example, :you_jumping_off_bridge prov:wasInformedBy :everyone_else_jumping_off_bridge; prov:qualifiedCommunication [ a prov:Communication; prov:activity :everyone_else_jumping_off_bridge; :foo :bar ].",
+      "comment": [
+        "An instance of prov:Communication provides additional descriptions about the binary prov:wasInformedBy relation from an informed prov:Activity to the prov:Activity that informed it. For example, :you_jumping_off_bridge prov:wasInformedBy :everyone_else_jumping_off_bridge; prov:qualifiedCommunication [ a prov:Communication; prov:activity :everyone_else_jumping_off_bridge; :foo :bar ]."
+      ],
       "label": "Communication",
       "supertypeCDEs": "http://www.w3.org/ns/prov#ActivityInfluence"
     },
@@ -33983,15 +34244,17 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "owl:DatatypeProperty"
+        "owl:DatatypeProperty",
+        "owl:NamedIndividual"
       ],
       "description": "Number of subjects in the group.",
       "candidateTerms": "NIDM_0000171",
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Linked with http://purl.obolibrary.org/obo/STATO_0000088 to be discussed.",
+      "comment": [
+        "Linked with http://purl.obolibrary.org/obo/STATO_0000088 to be discussed."
+      ],
       "label": "number Of Subjects"
     },
     {
@@ -34227,8 +34490,7 @@
         "DICOM"
       ],
       "label": "Information Object",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
-      "sameAs": "http://semanticscience.org/resource/SIO_000015"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
     {
       "@type": [
@@ -34358,8 +34620,8 @@
         "PROV"
       ],
       "comment": [
-        "The _optional_ Activity of an Influence, which used, generated, invalidated, or was the responsibility of some Entity. This property is _not_ used by ActivityInfluence (use prov:activity instead).",
-        "This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>."
+        "This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>.",
+        "The _optional_ Activity of an Influence, which used, generated, invalidated, or was the responsibility of some Entity. This property is _not_ used by ActivityInfluence (use prov:activity instead)."
       ],
       "label": "hadActivity"
     },
@@ -34711,7 +34973,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "In MRI the acquired signal is in the form of a magnitude and phase that are then combined to form an image. In some applications, such as susceptibility-weighted imaging, the phase map is used to enhance the final image.",
+      "comment": [
+        "In MRI the acquired signal is in the form of a magnitude and phase that are then combined to form an image. In some applications, such as susceptibility-weighted imaging, the phase map is used to enhance the final image."
+      ],
       "label": "Phase",
       "supertypeCDEs": "http://purl.org/nidash/nidm#CalculatedParameter"
     },
@@ -34895,7 +35159,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Angiography is a general term for a method that exists in several image-based modalities such as magnetic resonance imaging.",
+      "comment": [
+        "Angiography is a general term for a method that exists in several image-based modalities such as magnetic resonance imaging."
+      ],
       "label": "Angiography",
       "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod"
     },
@@ -34948,7 +35214,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/299",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/299"
+      ],
       "label": "fMRI Design Type",
       "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionObjectQuality"
     },
@@ -34975,7 +35243,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "If this Agent prov:actedOnBehalfOf Agent :ag, then it can qualify how with prov:qualifiedResponsibility [ a prov:Responsibility;  prov:agent :ag; :foo :bar ].",
+      "comment": [
+        "If this Agent prov:actedOnBehalfOf Agent :ag, then it can qualify how with prov:qualifiedResponsibility [ a prov:Responsibility;  prov:agent :ag; :foo :bar ]."
+      ],
       "label": "qualifiedDelegation"
     },
     {
@@ -35026,7 +35296,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Under discussion at https://github.com/ISA-tools/stato/issues/28",
+      "comment": [
+        "Under discussion at https://github.com/ISA-tools/stato/issues/28"
+      ],
       "label": "deprecated Arbitrarily Correlated Error",
       "supertypeCDEs": "http://purl.obolibrary.org/obo/STATO_0000346"
     },
@@ -35131,7 +35403,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at: https://github.com/incf-nidash/nidm/pull/258 and https://github.com/incf-nidash/nidm/pull/157",
+      "comment": [
+        "Discussed at: https://github.com/incf-nidash/nidm/pull/258 and https://github.com/incf-nidash/nidm/pull/157"
+      ],
       "label": "Display Mask Map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000004"
     },
@@ -35159,7 +35433,7 @@
         "ONTONEUROLOG"
       ],
       "label": "coded-score",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#score"
+      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#scale-item"
     },
     {
       "@type": [
@@ -35379,7 +35653,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An instance of prov:PrimarySource provides additional descriptions about the binary prov:hadPrimarySource relation from some secondary prov:Entity to an earlier, primary prov:Entity. For example, :blog prov:hadPrimarySource :newsArticle; prov:qualifiedPrimarySource [ a prov:PrimarySource; prov:entity :newsArticle; :foo :bar ] .",
+      "comment": [
+        "An instance of prov:PrimarySource provides additional descriptions about the binary prov:hadPrimarySource relation from some secondary prov:Entity to an earlier, primary prov:Entity. For example, :blog prov:hadPrimarySource :newsArticle; prov:qualifiedPrimarySource [ a prov:PrimarySource; prov:entity :newsArticle; :foo :bar ] ."
+      ],
       "label": "PrimarySource",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Derivation"
     },
@@ -35522,7 +35798,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/299",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/299"
+      ],
       "label": "Mixed Design",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000155"
     },
@@ -35653,7 +35931,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "During a MRI session, for example, T1-weighted and resting-state data were acquired.  Both the T1-weighted and resting state data are Acquisition Objects and the time period during which they were acquired is the Session.",
+      "comment": [
+        "During a MRI session, for example, T1-weighted and resting-state data were acquired.  Both the T1-weighted and resting state data are Acquisition Objects and the time period during which they were acquired is the Session."
+      ],
       "label": "Session",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Activity"
     },
@@ -35706,7 +35986,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "If this Activity prov:wasEndedBy Entity :e1, then it can qualify how it was ended using prov:qualifiedEnd [ a prov:End;  prov:entity :e1; :foo :bar ].",
+      "comment": [
+        "If this Activity prov:wasEndedBy Entity :e1, then it can qualify how it was ended using prov:qualifiedEnd [ a prov:End;  prov:entity :e1; :foo :bar ]."
+      ],
       "label": "qualifiedEnd"
     },
     {
@@ -35732,7 +36014,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "Fourier Basis Set",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036"
     },
@@ -35955,7 +36239,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "A note by the OWL development team about how this term expresses the PROV-DM concept, or how it should be used in context of semantic web or linked data.",
+      "comment": [
+        "A note by the OWL development team about how this term expresses the PROV-DM concept, or how it should be used in context of semantic web or linked data."
+      ],
       "label": "editorialNote"
     },
     {
@@ -35976,7 +36262,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Dose Rate to be set on treatment machine for segment beginning at current control point (e.g., MU/min).",
+      "description": "Dose Rate set on treatment machine for segment beginning at current control point (Meterset/min).",
       "candidateTerms": "dicom_300A0115",
       "associatedWith": [
         "NIDM",
@@ -36190,7 +36476,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An entity is derived from an original entity by copying, or 'quoting', some or all of it.",
+      "comment": [
+        "An entity is derived from an original entity by copying, or 'quoting', some or all of it."
+      ],
       "label": "wasQuotedFrom"
     },
     {
@@ -36489,7 +36777,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/282",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/282"
+      ],
       "label": "Cluster Labels Map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052"
     },
@@ -36529,7 +36819,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/298",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/298"
+      ],
       "label": "Drift Model",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
@@ -36596,8 +36888,7 @@
         "NIDM"
       ],
       "label": "Two Tailed Test",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
-      "sameAs": "http://purl.obolibrary.org/obo/STATO_0000287"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
     {
       "@type": [
@@ -36693,15 +36984,17 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000037"
+        "nidm:NIDM_0000037",
+        "owl:NamedIndividual"
       ],
       "description": "'Hemodynamic Response Function' basis that is the derivative with respect to time of the FSL's Gamma Difference heamodynamic response function.",
       "candidateTerms": "FSL_0000003",
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "FSL's Temporal Derivative"
     },
     {
@@ -37286,7 +37579,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "FSE is also known as turbo spin echo",
+      "comment": [
+        "FSE is also known as turbo spin echo"
+      ],
       "label": "Fast Spin Echo",
       "supertypeCDEs": "http://purl.org/nidash/nidm#SpinEcho"
     },
@@ -37365,7 +37660,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "This is a generic term that may be applied to a magnetic resonance imaging scanner, but is most often used for devices used for nuclear magnetic resonance spectroscopy based experiments.",
+      "comment": [
+        "This is a generic term that may be applied to a magnetic resonance imaging scanner, but is most often used for devices used for nuclear magnetic resonance spectroscopy based experiments."
+      ],
       "label": "Nuclear Magnetic Resonance Device",
       "supertypeCDEs": "http://purl.org/nidash/nidm#DataAcquisitionDevice"
     },
@@ -37431,9 +37728,10 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Under discussion at https://github.com/ISA-tools/stato/issues/38",
-      "label": "p Value FWER",
-      "sameAs": "This definition is from OBI. Please update this note if the definition is modified."
+      "comment": [
+        "Under discussion at https://github.com/ISA-tools/stato/issues/38"
+      ],
+      "label": "p Value FWER"
     },
     {
       "@type": [
@@ -37771,7 +38069,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "Classify prov-o terms into three categories, including 'starting-point', 'qualifed', and 'extended'. This classification is used by the prov-o html document to gently introduce prov-o terms to its users. ",
+      "comment": [
+        "Classify prov-o terms into three categories, including 'starting-point', 'qualifed', and 'extended'. This classification is used by the prov-o html document to gently introduce prov-o terms to its users. "
+      ],
       "label": "category"
     },
     {
@@ -37784,9 +38084,11 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/289",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/289"
+      ],
       "label": "Map Header",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
+      "supertypeCDEs": "ub3bL1731C35"
     },
     {
       "@type": [
@@ -37954,7 +38256,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/pull/137",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/pull/137"
+      ],
       "label": "NIDM Object Model",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
@@ -38213,9 +38517,11 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/274",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/274"
+      ],
       "label": "Design Matrix",
-      "supertypeCDEs": "ub3bL1424C35"
+      "supertypeCDEs": "ub3bL1434C35"
     },
     {
       "@type": [
@@ -38240,7 +38546,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/255",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/255"
+      ],
       "label": "Statistic Map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052"
     },
@@ -38254,16 +38562,10 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/282",
-      "label": "has Cluster Labels Map"
-    },
-    {
-      "@type": "owl:AnnotationProperty",
-      "candidateTerms": "synonym",
-      "associatedWith": [
-        "NIDM"
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/282"
       ],
-      "label": "synonym"
+      "label": "has Cluster Labels Map"
     },
     {
       "@type": [
@@ -38348,7 +38650,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Interval of freedom for this degree of freedom. ",
+      "description": "Two floating point numbers defining a value range for this degree of freedom.",
       "candidateTerms": "dicom_006864A0",
       "associatedWith": [
         "NIDM",
@@ -38397,8 +38699,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000080"
+        "nidm:NIDM_0000080",
+        "owl:NamedIndividual"
       ],
       "description": "A pair of voxels are 18-Connected if they share a face or edge.",
       "candidateTerms": "NIDM_0000128",
@@ -38794,7 +39096,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "In MRI the acquired signal is in the form of a magnitude and phase that are then combined to form an image. In some applications, such as susceptibility-weighted imaging, the phase map is used to enhance the final image.",
+      "comment": [
+        "In MRI the acquired signal is in the form of a magnitude and phase that are then combined to form an image. In some applications, such as susceptibility-weighted imaging, the phase map is used to enhance the final image."
+      ],
       "label": "Magnitude",
       "supertypeCDEs": "http://purl.org/nidash/nidm#CalculatedParameter"
     },
@@ -38866,8 +39170,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "candidateTerms": "SocioeconomicScale",
       "associatedWith": [
@@ -39041,7 +39345,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "If this Activity prov:wasInformedBy Activity :a, then it can qualify how it was influenced using prov:qualifiedCommunication [ a prov:Communication;  prov:activity :a; :foo :bar ].",
+      "comment": [
+        "If this Activity prov:wasInformedBy Activity :a, then it can qualify how it was influenced using prov:qualifiedCommunication [ a prov:Communication;  prov:activity :a; :foo :bar ]."
+      ],
       "label": "qualifiedCommunication"
     },
     {
@@ -39158,7 +39464,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at: https://github.com/incf-nidash/nidm/pull/258 and https://github.com/incf-nidash/nidm/issues/155",
+      "comment": [
+        "Discussed at: https://github.com/incf-nidash/nidm/pull/258 and https://github.com/incf-nidash/nidm/issues/155"
+      ],
       "label": "Mask Map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000004"
     },
@@ -39172,7 +39480,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An object property to express the accountability of an agent towards another agent. The subordinate agent acted on behalf of the responsible agent in an actual activity. ",
+      "comment": [
+        "An object property to express the accountability of an agent towards another agent. The subordinate agent acted on behalf of the responsible agent in an actual activity. "
+      ],
       "label": "actedOnBehalfOf"
     },
     {
@@ -39334,15 +39644,17 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000051"
+        "nidm:NIDM_0000051",
+        "owl:NamedIndividual"
       ],
       "description": "Reference space defined as the average of 152 T1-weighted MRI scans, non-linearly transformed to to form a symmetric model in MNI152 linear space (cf. http://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin2009 for more details).",
       "candidateTerms": "NIDM_0000042",
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+      ],
       "label": "Icbm Mni152 Non Linear2009a Symmetric Coordinate System"
     },
     {
@@ -39394,7 +39706,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "If this Activity prov:wasAssociatedWith Agent :ag, then it can qualify the Association using prov:qualifiedAssociation [ a prov:Association;  prov:agent :ag; :foo :bar ].",
+      "comment": [
+        "If this Activity prov:wasAssociatedWith Agent :ag, then it can qualify the Association using prov:qualifiedAssociation [ a prov:Association;  prov:agent :ag; :foo :bar ]."
+      ],
       "label": "qualifiedAssociation"
     },
     {
@@ -39523,7 +39837,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "An instance of prov:Start provides additional descriptions about the binary prov:wasStartedBy relation from some started prov:Activity to an prov:Entity that started it. For example, :foot_race prov:wasStartedBy :bang; prov:qualifiedStart [ a prov:Start; prov:entity :bang; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ] .",
+      "comment": [
+        "An instance of prov:Start provides additional descriptions about the binary prov:wasStartedBy relation from some started prov:Activity to an prov:Entity that started it. For example, :foot_race prov:wasStartedBy :bang; prov:qualifiedStart [ a prov:Start; prov:entity :bang; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ] ."
+      ],
       "label": "Start",
       "supertypeCDEs": "http://www.w3.org/ns/prov#EntityInfluence"
     },
@@ -39577,8 +39893,8 @@
         "NIDM"
       ],
       "comment": [
-        "This is meant to be used for retrospective export when exact template is unknown.",
-        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+        "This is meant to be used for retrospective export when exact template is unknown."
       ],
       "label": "Standardized Coordinate System",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000081"
@@ -39866,7 +40182,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+      ],
       "label": "Icbm Mni152 Non Linear2009c Symmetric Coordinate System"
     },
     {
@@ -39879,7 +40197,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at: https://github.com/incf-nidash/nidm/issues/146",
+      "comment": [
+        "Discussed at: https://github.com/incf-nidash/nidm/issues/146"
+      ],
       "label": "dimensions In Voxels"
     },
     {
@@ -40361,7 +40681,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "Linear Spline Basis Set",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036"
     },
@@ -40388,7 +40710,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "GRASS is the name given to this sequence by GE, FISP is the acronym used by Siemens.",
+      "comment": [
+        "GRASS is the name given to this sequence by GE, FISP is the acronym used by Siemens."
+      ],
       "label": "Fast Imaging With Steady State",
       "supertypeCDEs": "http://purl.org/nidash/nidm#SteadyStateFreePrecession"
     },
@@ -40481,7 +40805,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "Because prov:qualifiedInfluence is a broad relation, the more specific relations (qualifiedCommunication, qualifiedDelegation, qualifiedEnd, etc.) should be used when applicable.",
+      "comment": [
+        "Because prov:qualifiedInfluence is a broad relation, the more specific relations (qualifiedCommunication, qualifiedDelegation, qualifiedEnd, etc.) should be used when applicable."
+      ],
       "label": "qualifiedInfluence"
     },
     {
@@ -40767,7 +41093,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "A revision is a derivation that revises an entity into a revised version.",
+      "comment": [
+        "A revision is a derivation that revises an entity into a revised version."
+      ],
       "label": "wasRevisionOf"
     },
     {
@@ -40812,8 +41140,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "description": "This test measures the ease with which a person can shift his or her perceptual set to conform to changing demands and suppress a habitual response in favor of an unusual one. The subject is assessed on his or her ability to read color names compared to the ability to read the color of ink that is not congruent with the color name of the printed words.",
       "candidateTerms": "StroopTest",
@@ -40827,7 +41155,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Beat length sorting has been applied.",
+      "description": "Heart beat duration sorting has been applied.",
       "candidateTerms": "dicom_00181080",
       "associatedWith": [
         "NIDM",
@@ -41038,7 +41366,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "Classes and properties used to qualify relationships are annotated with prov:unqualifiedForm to indicate the property used to assert an unqualified provenance relation.",
+      "comment": [
+        "Classes and properties used to qualify relationships are annotated with prov:unqualifiedForm to indicate the property used to assert an unqualified provenance relation."
+      ],
       "label": "unqualifiedForm"
     },
     {
@@ -41129,7 +41459,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Under discussion at https://github.com/incf-nidash/nidm/issues/277",
+      "comment": [
+        "Under discussion at https://github.com/incf-nidash/nidm/issues/277"
+      ],
       "label": "effect Degrees Of Freedom"
     },
     {
@@ -41456,7 +41788,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at: https://github.com/incf-nidash/nidm/pull/258",
+      "comment": [
+        "Discussed at: https://github.com/incf-nidash/nidm/pull/258"
+      ],
       "label": "Search Space Mask Map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000054"
     },
@@ -41587,7 +41921,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "This term is a special case of nidm:SusceptibilityWeighted, in which the image contrast is primarily due to differences in magnetic susceptibility of oxygenated versus de-oxygenated blood. Susceptibility weighting can have numerous causes, such as differences in tissue iron content.",
+      "comment": [
+        "This term is a special case of nidm:SusceptibilityWeighted, in which the image contrast is primarily due to differences in magnetic susceptibility of oxygenated versus de-oxygenated blood. Susceptibility weighting can have numerous causes, such as differences in tissue iron content."
+      ],
       "label": "Blood Oxygen Level Dependent Weighted",
       "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType"
     },
@@ -41720,8 +42056,8 @@
         "NIDM"
       ],
       "comment": [
-        "used in SPM96 (cf. http://imaging.mrc-cbu.cam.ac.uk/imaging/MniTalairach)",
-        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+        "used in SPM96 (cf. http://imaging.mrc-cbu.cam.ac.uk/imaging/MniTalairach)"
       ],
       "label": "Colin27 Coordinate System"
     },
@@ -41839,7 +42175,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/291",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/291"
+      ],
       "label": "software Version"
     },
     {
@@ -41878,7 +42216,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "To be discussed",
+      "comment": [
+        "To be discussed"
+      ],
       "label": "Number Of Channels"
     },
     {
@@ -41930,7 +42270,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/pull/271",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/pull/271"
+      ],
       "label": "cluster Label Id"
     },
     {
@@ -42449,7 +42791,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/298",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/298"
+      ],
       "label": "SPM's Drift Cut-off Period"
     },
     {
@@ -42592,7 +42936,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/194",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/194"
+      ],
       "label": "Independent Parameter",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000071"
     },
@@ -42631,7 +42977,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/281",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/281"
+      ],
       "label": "Custom Basis Set",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000036"
     },
@@ -42839,7 +43187,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Range: Matrix of float.",
+      "comment": [
+        "Range: Matrix of float."
+      ],
       "label": "voxel To World Mapping"
     },
     {
@@ -43047,7 +43397,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/285",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/285"
+      ],
       "label": "target Intensity"
     },
     {
@@ -43100,7 +43452,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable.",
+      "comment": [
+        "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable."
+      ],
       "label": "wasDerivedFrom"
     },
     {
@@ -43437,7 +43791,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed in https://github.com/incf-nidash/nidm/issues/255",
+      "comment": [
+        "Discussed in https://github.com/incf-nidash/nidm/issues/255"
+      ],
       "label": "Contrast Map",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052"
     },
@@ -43673,7 +44029,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/194",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/194"
+      ],
       "label": "dependence Map-Wise Dependence"
     },
     {
@@ -43751,7 +44109,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "To be discussed",
+      "comment": [
+        "To be discussed"
+      ],
       "label": "Electrode Impedance"
     },
     {
@@ -43783,8 +44143,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://purl.org/ontology/prv/core#PropertyReification"
+        "http://purl.org/ontology/prv/core#PropertyReification",
+        "owl:NamedIndividual"
       ],
       "candidateTerms": "NumberOfSubjectsReification",
       "associatedWith": [
@@ -44004,7 +44364,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Specifies the number of contrast frames to average together before performing the mask operation.",
+      "description": "Specified the number of contrast frames to average together before performing the mask operation.",
       "candidateTerms": "dicom_00286112",
       "associatedWith": [
         "NIDM",
@@ -44243,7 +44603,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Under discussion at https://github.com/incf-nidash/nidm/pull/258",
+      "comment": [
+        "Under discussion at https://github.com/incf-nidash/nidm/pull/258"
+      ],
       "label": "is User Defined"
     },
     {
@@ -44436,7 +44798,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+      ],
       "label": "Custom Coordinate System",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000075"
     },
@@ -44450,7 +44814,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "A common example is a sample consisting of perfused cells.",
+      "comment": [
+        "A common example is a sample consisting of perfused cells."
+      ],
       "label": "In Vitro",
       "supertypeCDEs": "http://purl.obolibrary.org/obo/PATO_0001995"
     },
@@ -44485,7 +44851,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "User-defined name identifying treatment machine used for treatment delivery.",
+      "description": "User-defined name identifying treatment machine to be used for treatment delivery.",
       "candidateTerms": "dicom_300A00B2",
       "associatedWith": [
         "NIDM",
@@ -44712,8 +45078,8 @@
         "NIDM"
       ],
       "comment": [
-        "Discussed at https://github.com/incf-nidash/nidm/issues/284",
-        "Used in FSL and SPM un-registered data."
+        "Used in FSL and SPM un-registered data.",
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
       ],
       "label": "Subject Coordinate System",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000081"
@@ -44805,7 +45171,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/pull/273",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/pull/273"
+      ],
       "label": "Extent Threshold",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000162"
     },
@@ -45120,7 +45488,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/299",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/299"
+      ],
       "label": "regressor Names"
     },
     {
@@ -45204,6 +45574,21 @@
     {
       "@type": [
         "CommonDataElement",
+        "owl:AnnotationProperty"
+      ],
+      "candidateTerms": "constraints",
+      "associatedWith": [
+        "NIDM",
+        "PROV"
+      ],
+      "comment": [
+        "A reference to the principal section of the PROV-CONSTRAINTS document that describes this concept."
+      ],
+      "label": "constraints"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
         "owl:Class"
       ],
       "description": "A DICOM File is a File with a content formatted according to the requirements of this Part of the DICOM Standard. In particular such files shall contain, the File Meta Information and a properly formatted Data Set.",
@@ -45252,8 +45637,7 @@
         "NIDM"
       ],
       "label": "Inference",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
-      "sameAs": "http://purl.obolibrary.org/obo/STATO_0000299"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity"
     },
     {
       "@type": [
@@ -45330,7 +45714,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "If this Entity prov:wasInvalidatedBy Activity :a, then it can qualify how it was invalidated using prov:qualifiedInvalidation [ a prov:Invalidation;  prov:activity :a; :foo :bar ].",
+      "comment": [
+        "If this Entity prov:wasInvalidatedBy Activity :a, then it can qualify how it was invalidated using prov:qualifiedInvalidation [ a prov:Invalidation;  prov:activity :a; :foo :bar ]."
+      ],
       "label": "qualifiedInvalidation"
     },
     {
@@ -45447,7 +45833,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Note that T1 FFE is the Philips name for their implementation of this pulse sequence.  GE calls their implementation Spoiled Gradient Echo (SPGR) and Siemens calls theirs Fast Low Angle Shot (FLASH)",
+      "comment": [
+        "Note that T1 FFE is the Philips name for their implementation of this pulse sequence.  GE calls their implementation Spoiled Gradient Echo (SPGR) and Siemens calls theirs Fast Low Angle Shot (FLASH)"
+      ],
       "label": "T1 Fast Field Echo",
       "supertypeCDEs": "http://purl.org/nidash/nidm#SpoiledGradientRecalledEcho"
     },
@@ -45487,7 +45875,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/294",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/294"
+      ],
       "label": "partial Conjunction Degree"
     },
     {
@@ -45668,7 +46058,9 @@
         "NIDM",
         "PROV"
       ],
-      "comment": "If this Activity prov:wasStartedBy Entity :e1, then it can qualify how it was started using prov:qualifiedStart [ a prov:Start;  prov:entity :e1; :foo :bar ].",
+      "comment": [
+        "If this Activity prov:wasStartedBy Entity :e1, then it can qualify how it was started using prov:qualifiedStart [ a prov:Start;  prov:entity :e1; :foo :bar ]."
+      ],
       "label": "qualifiedStart"
     },
     {
@@ -45681,22 +46073,26 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/285",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/285"
+      ],
       "label": "deprecated Data Scaling",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
     },
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000051"
+        "nidm:NIDM_0000051",
+        "owl:NamedIndividual"
       ],
       "description": "Reference space defined as the average of 152 T1-weighted MRI scans in high-resolution, non-linearly transformed to form a symmetric model in MNI152 linear space (cf. http://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin2009 for more details).",
       "candidateTerms": "NIDM_0000044",
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+      ],
       "label": "Icbm Mni152 Non Linear2009b Symmetric Coordinate System"
     },
     {
@@ -45761,7 +46157,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/298",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/298"
+      ],
       "label": "has Drift Model"
     },
     {
@@ -45852,7 +46250,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/294",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/294"
+      ],
       "label": "deprecated partial Conjunction Degree"
     },
     {
@@ -45930,7 +46330,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/130",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/130"
+      ],
       "label": "random Field Stationarity"
     },
     {
@@ -46216,7 +46618,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "An example of an auxiliary file collection is the b-value and b-vector files in diffusion-weighted MR imaging.",
+      "comment": [
+        "An example of an auxiliary file collection is the b-value and b-vector files in diffusion-weighted MR imaging."
+      ],
       "label": "Auxiliary File Collection",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Collection"
     },
@@ -46868,7 +47272,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+      "comment": [
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+      ],
       "label": "Icbm452 Air Coordinate System"
     },
     {
@@ -47167,7 +47573,9 @@
       "associatedWith": [
         "NIDM"
       ],
-      "comment": "Under discussion at https://github.com/incf-nidash/nidm/pull/137",
+      "comment": [
+        "Under discussion at https://github.com/incf-nidash/nidm/pull/137"
+      ],
       "label": "object Model"
     },
     {
@@ -47318,7 +47726,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Cardiac Signal Source.",
+      "description": "Source of cardiac synchronization signal.",
       "candidateTerms": "dicom_00189085",
       "associatedWith": [
         "NIDM",
