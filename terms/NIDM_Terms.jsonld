@@ -985,6 +985,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "",
       "candidateTerms": "invalidatedAtTime",
       "associatedWith": [
         "NIDM",
@@ -1000,6 +1001,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "score-without-unit-of-measure",
       "associatedWith": [
         "NIDM",
@@ -1208,6 +1210,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "mono-domain-instrument",
       "associatedWith": [
         "NIDM",
@@ -1325,6 +1328,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "wasQuotedFrom",
       "associatedWith": [
         "NIDM",
@@ -1613,6 +1617,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Location",
       "associatedWith": [
         "NIDM",
@@ -1714,8 +1719,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "nidm:NIDM_0000037",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000037"
       ],
       "description": "'Hemodynamic Response Function' basis that is the derivative with respect to time of the FSL's Gamma Difference heamodynamic response function.",
       "candidateTerms": "FSL_0000003",
@@ -1745,6 +1750,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "shortcut",
       "associatedWith": [
         "NIDM",
@@ -1864,6 +1870,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "assessment-instrument",
       "associatedWith": [
         "NIDM",
@@ -1900,8 +1907,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "The Letter Fluency test is used to evaluate the spontaneous production of words beginning with a given letter within a limited amount of time (60 seconds).",
       "candidateTerms": "LetterFluencyTest",
@@ -2191,7 +2198,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Required if Collimator Shape (0018,1700) is RECTANGULAR. Location of the lower edge of the rectangular collimator expressed as effective pixel row.",
+      "description": "Required if a value of Collimator Shape (0018,1700) is RECTANGULAR. Location of the lower edge of the rectangular collimator with respect to pixels in the image given as row.",
       "candidateTerms": "dicom_00181708",
       "associatedWith": [
         "NIDM",
@@ -2909,7 +2916,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Name of the person observer identified.",
+      "description": "This is the Value component of a Name/Value pair when the Concept implied by Concept Name Code Sequence (0040,A043) is a Person Name. The role of the person could be specified in Concept Name Code Sequence (0040,A043).",
       "candidateTerms": "dicom_0040A123",
       "associatedWith": [
         "NIDM",
@@ -3201,6 +3208,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "wasMemberOf",
       "associatedWith": [
         "NIDM"
@@ -3388,7 +3396,8 @@
         "DICOM"
       ],
       "label": "Information Object",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "sameAs": "http://semanticscience.org/resource/SIO_000015"
     },
     {
       "@type": [
@@ -3984,6 +3993,7 @@
         "http://purl.org/ontology/prv/core#PropertyReification",
         "owl:NamedIndividual"
       ],
+      "description": "",
       "candidateTerms": "NumberOfSubjectsReification",
       "associatedWith": [
         "NIDM"
@@ -4398,6 +4408,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "instrument-based-assessment",
       "associatedWith": [
         "NIDM",
@@ -4774,7 +4785,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "The time in seconds needed for the compete acquisition.",
+      "description": "Duration of the image acquisition in seconds.",
       "candidateTerms": "dicom_00189073",
       "associatedWith": [
         "NIDM",
@@ -5010,7 +5021,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Beam Limiting Device angle, i.e., orientation of IEC BEAM LIMITING DEVICE coordinate system with respect to IEC GANTRY coordinate system (degrees).",
+      "description": "Beam Limiting Device (collimator) angle, i.e., orientation of IEC BEAM LIMITING DEVICE coordinate system with respect to IEC GANTRY coordinate system (degrees).",
       "candidateTerms": "dicom_300A0120",
       "associatedWith": [
         "NIDM",
@@ -5049,6 +5060,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "bi-coded-scale-item",
       "associatedWith": [
         "NIDM",
@@ -5127,6 +5139,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "PropertyReification",
       "associatedWith": [
         "NIDM",
@@ -5205,8 +5218,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000029"
+        "nidm:NIDM_0000029",
+        "owl:NamedIndividual"
       ],
       "description": "'Hemodynamic Response Function' which is a fixed difference of two gamma probability density functions - a standard positive function at normal lag, and a small, delayed, negated gamma probability density function, which attempts to model the late undershoot (definition adapted [FSL wiki](http://fsl.fmrib.ox.ac.uk/fsl/fsl4.0/feat5/detail.html))",
       "candidateTerms": "FSL_0000001",
@@ -5320,8 +5333,8 @@
         "NIDM"
       ],
       "comment": [
-        "Used in FSL and SPM un-registered data.",
-        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284",
+        "Used in FSL and SPM un-registered data."
       ],
       "label": "Subject Coordinate System",
       "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000081"
@@ -5552,6 +5565,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "PrimarySource",
       "associatedWith": [
         "NIDM",
@@ -5647,6 +5661,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "qualifiedGeneration",
       "associatedWith": [
         "NIDM",
@@ -5889,6 +5904,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "coded-variable",
       "associatedWith": [
         "NIDM",
@@ -5957,6 +5973,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "actedOnBehalfOf",
       "associatedWith": [
         "NIDM",
@@ -6009,8 +6026,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000051"
+        "nidm:NIDM_0000051",
+        "owl:NamedIndividual"
       ],
       "description": "Reference space defined by the average of the 549 subjects from the IXI dataset linearly transformed to the ICBM MNI 452 (cf. spm12/spm\\_templates.man and http://biomedic.doc.ic.ac.uk/brain-development/index.php?n=Main.Datasets). This is the default in SPM12 (cf. spm12/spm_templates.man).",
       "candidateTerms": "NIDM_0000050",
@@ -6056,6 +6073,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "alternateOf",
       "associatedWith": [
         "NIDM",
@@ -6188,6 +6206,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "inverse",
       "associatedWith": [
         "NIDM",
@@ -6450,6 +6469,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "wasInformedBy",
       "associatedWith": [
         "NIDM",
@@ -6471,7 +6491,8 @@
         "NIDM"
       ],
       "label": "Two Tailed Test",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "sameAs": "http://purl.obolibrary.org/obo/STATO_0000287"
     },
     {
       "@type": [
@@ -6755,6 +6776,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Influence",
       "associatedWith": [
         "NIDM",
@@ -7283,6 +7305,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Quotation",
       "associatedWith": [
         "NIDM",
@@ -7364,14 +7387,15 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "EntityInfluence",
       "associatedWith": [
         "NIDM",
         "PROV"
       ],
       "comment": [
-        "EntityInfluence provides additional descriptions of an Entity's binary influence upon any other kind of resource. Instances of EntityInfluence use the prov:entity property to cite the influencing Entity.",
-        "It is not recommended that the type EntityInfluence be asserted without also asserting one of its more specific subclasses."
+        "It is not recommended that the type EntityInfluence be asserted without also asserting one of its more specific subclasses.",
+        "EntityInfluence provides additional descriptions of an Entity's binary influence upon any other kind of resource. Instances of EntityInfluence use the prov:entity property to cite the influencing Entity."
       ],
       "label": "EntityInfluence",
       "supertypeCDEs": "http://www.w3.org/ns/prov#Influence"
@@ -7672,9 +7696,10 @@
     {
       "@type": [
         "CommonDataElement",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
+      "description": "",
       "candidateTerms": "DelaySemanticVerbalLearningTest",
       "associatedWith": [
         "NIDM"
@@ -8011,8 +8036,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "description": "The Delay Visual Figural Learning Test (Delay SVFT) is an assessment instrument in which subjects are asked to reproduce geometric figures that have been presented to the subject previous to a delay period.",
       "candidateTerms": "DelayVisualFiguralLearningTest",
@@ -8187,6 +8212,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "NIDM_0000003",
       "associatedWith": [
         "NIDM"
@@ -8371,8 +8397,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "The Premorbid Adjustment Scale (PAS) is an assessment instrument that evaluates the degree of achievement of developmental goals at each of several periods of a subject's life before the onset of schizophrenia.",
       "candidateTerms": "PremorbidAdjustment",
@@ -8489,6 +8515,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "numerical-variable",
       "associatedWith": [
         "NIDM",
@@ -8569,6 +8596,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "file-release",
       "associatedWith": [
         "NIDM",
@@ -8592,8 +8620,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:ObjectProperty",
-        "owl:DatatypeProperty"
+        "owl:DatatypeProperty",
+        "owl:ObjectProperty"
       ],
       "description": "Property that associates a 'World Coordinate System' to the 'Coordinate Space'.",
       "candidateTerms": "NIDM_0000105",
@@ -8769,6 +8797,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "hadRole",
       "associatedWith": [
         "NIDM"
@@ -9003,6 +9032,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "behavioural-test",
       "associatedWith": [
         "NIDM",
@@ -9198,6 +9228,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "experimental-psychology-instrument",
       "associatedWith": [
         "NIDM",
@@ -9406,7 +9437,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Uniquely identifies a set of dimensions referenced within the containing SOP Instance.",
+      "description": "Uniquely identifies a set of dimensions referenced within the containing SOP Instance. In particular the dimension described by this sequence item is associated with this Dimension Organization UID.",
       "candidateTerms": "dicom_00209164",
       "associatedWith": [
         "NIDM",
@@ -9536,7 +9567,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Additional offset of first sample of channel to be used in aligning multiple channels for presentation or analysis, in seconds.",
+      "description": "The offset in seconds from the beginning of the channel waveform data to the first sample to be used for presentation. Value may be negative.",
       "candidateTerms": "dicom_003A0218",
       "associatedWith": [
         "NIDM",
@@ -9998,6 +10029,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "",
       "candidateTerms": "atTime",
       "associatedWith": [
         "NIDM",
@@ -10013,6 +10045,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "wasEndedBy",
       "associatedWith": [
         "NIDM",
@@ -10614,6 +10647,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "wasCreatedBy",
       "associatedWith": [
         "NIDM"
@@ -10639,6 +10673,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "wasInvalidatedBy",
       "associatedWith": [
         "NIDM",
@@ -11079,8 +11114,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "The Finger Tapping Test is an assessment instrument in which a subject is asked to press a button as many times as possible in a set duration, the results of which can be used to assess motor efficiency and motor function.",
       "candidateTerms": "FingerTappingTest",
@@ -11133,6 +11168,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "neuropsychological-test",
       "associatedWith": [
         "NIDM",
@@ -11198,6 +11234,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "sameAs",
       "associatedWith": [
         "NIDM"
@@ -11326,6 +11363,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "neuroclinical-test",
       "associatedWith": [
         "NIDM",
@@ -11696,6 +11734,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "corrected-score",
       "associatedWith": [
         "NIDM",
@@ -11762,6 +11801,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "instrument-variable",
       "associatedWith": [
         "NIDM",
@@ -11878,7 +11918,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "A positive dimensionless floating point numeric factor equal to playback rate divided by acquisition rate.",
+      "description": "A positive unitless floating point numeric factor equal to playback rate divided by acquisition rate.",
       "candidateTerms": "dicom_00720330",
       "associatedWith": [
         "NIDM",
@@ -12041,8 +12081,8 @@
         "NIDM"
       ],
       "comment": [
-        "Discussed at https://github.com/incf-nidash/nidm/issues/284",
-        "Used in FSL (cf. http://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases)"
+        "Used in FSL (cf. http://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases)",
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
       ],
       "label": "Icbm Mni152 Non Linear6th Generation Coordinate System"
     },
@@ -12133,13 +12173,13 @@
         "CommonDataElement",
         "owl:Class"
       ],
-      "description": "Encephalography is an acquisition modality in which the electrical activity or structure of the brain is measured using a variety of techniques.",
-      "candidateTerms": "Encephalography",
+      "description": "Electroencephalography (EEG) is an electrophysiological acquisition method in which the electrical activity of the brain is measured using electrodes that are placed on the surface of the head.",
+      "candidateTerms": "Electroencephalography",
       "associatedWith": [
         "NIDM"
       ],
       "label": "Electroencephalography",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionModality"
+      "supertypeCDEs": "http://purl.org/nidash/nidm#AcquisitionMethod"
     },
     {
       "@type": [
@@ -12198,6 +12238,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "",
       "candidateTerms": "generatedAtTime",
       "associatedWith": [
         "NIDM",
@@ -12424,6 +12465,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "wasStartedBy",
       "associatedWith": [
         "NIDM",
@@ -12439,6 +12481,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "BLOCK",
       "associatedWith": [
         "NIDM"
@@ -12520,6 +12563,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "",
       "candidateTerms": "hadNumericalValue",
       "associatedWith": [
         "NIDM"
@@ -12555,8 +12599,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "nidm:NIDM_0000051",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000051"
       ],
       "description": "Reference space defined as the average of 305 T1-weighted MRI scans, linearly transformed to Talairach space (cf. http://www.bic.mni.mcgill.ca/ServicesAtlases/MNI305 for more details)",
       "candidateTerms": "NIDM_0000055",
@@ -13051,7 +13095,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "User-defined name identifying treatment machine to be used for treatment delivery.",
+      "description": "User-defined name identifying treatment machine used for treatment delivery.",
       "candidateTerms": "dicom_300A00B2",
       "associatedWith": [
         "NIDM",
@@ -13221,7 +13265,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Nominal wavelength of the illuminator in nm.",
+      "description": "Wavelength of the illuminator in nm.",
       "candidateTerms": "dicom_00220055",
       "associatedWith": [
         "NIDM",
@@ -13234,6 +13278,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "behavioural-instrument",
       "associatedWith": [
         "NIDM",
@@ -14217,6 +14262,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Organization",
       "associatedWith": [
         "NIDM",
@@ -14940,6 +14986,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "influenced",
       "associatedWith": [
         "NIDM",
@@ -14952,6 +14999,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "psychological-interview",
       "associatedWith": [
         "NIDM",
@@ -15082,6 +15130,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "order",
       "associatedWith": [
         "NIDM",
@@ -15177,6 +15226,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Activity",
       "associatedWith": [
         "NIDM"
@@ -15344,6 +15394,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "used",
       "associatedWith": [
         "NIDM"
@@ -15753,7 +15804,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Identification of the person who created the content.",
+      "description": "Identification of the most recent person to significantly modify the content of this SOP Instance.",
       "candidateTerms": "dicom_00700086",
       "associatedWith": [
         "NIDM",
@@ -16204,6 +16255,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "",
       "candidateTerms": "startedAtTime",
       "associatedWith": [
         "NIDM",
@@ -16297,6 +16349,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Derivation",
       "associatedWith": [
         "NIDM",
@@ -16497,6 +16550,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "NIDM_0000048",
       "associatedWith": [
         "NIDM"
@@ -16564,6 +16618,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "category",
       "associatedWith": [
         "NIDM",
@@ -16660,6 +16715,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "unqualifiedForm",
       "associatedWith": [
         "NIDM",
@@ -16727,6 +16783,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "test-based-assessment",
       "associatedWith": [
         "NIDM",
@@ -16845,6 +16902,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "dicom_xxxx0031",
       "associatedWith": [
         "NIDM",
@@ -16949,6 +17007,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Delegation",
       "associatedWith": [
         "NIDM",
@@ -17296,6 +17355,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "qualifiedRevision",
       "associatedWith": [
         "NIDM",
@@ -17496,6 +17556,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "scale-item",
       "associatedWith": [
         "NIDM",
@@ -17545,16 +17606,15 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:Class"
+        "owl:DatatypeProperty"
       ],
-      "description": "An alphanumeric identifier issued by the unique device identification system established by the FDA to label and identify devices through distribution and use. See http://www.fda.gov/udi.",
-      "candidateTerms": "dicom_xxxx0030",
+      "description": "The entire Human Readable Form of the UDI as defined by the Issuing Agency.",
+      "candidateTerms": "dicom_00181009",
       "associatedWith": [
         "NIDM",
         "DICOM"
       ],
-      "label": "Unique Device Identifier",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0058"
+      "label": "Unique Device Identifier"
     },
     {
       "@type": [
@@ -17587,6 +17647,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "isDefinedBy",
       "associatedWith": [
         "NIDM"
@@ -17624,6 +17685,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "n",
       "associatedWith": [
         "NIDM",
@@ -17717,6 +17779,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "dm",
       "associatedWith": [
         "NIDM",
@@ -17753,8 +17816,8 @@
         "NIDM"
       ],
       "comment": [
-        "Discussed at https://github.com/incf-nidash/nidm/issues/284",
-        "Used in DARTEL toolbox in SPM12b (cf. spm12b/spm_templates.man)"
+        "Used in DARTEL toolbox in SPM12b (cf. spm12b/spm_templates.man)",
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
       ],
       "label": "Icbm Mni152 Non Linear2009c Asymmetric Coordinate System"
     },
@@ -17789,6 +17852,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "hadUsage",
       "associatedWith": [
         "NIDM",
@@ -17815,8 +17879,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "A Continuous Performance Test is an assessment instrument that measures sustained and selective attention by having the subject perform a task continuously for a given duration of time.",
       "candidateTerms": "ContinuousPerformanceTest",
@@ -17854,8 +17918,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "The Facial Emotion Discrimination Test is an assessment instrument in which subjects are shown pairs of facial images and the asked to determine whether the emotion conveyed by the faces are the same or different.",
       "candidateTerms": "FacialEmotionDiscriminationTest",
@@ -17908,6 +17972,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Bundle",
       "associatedWith": [
         "NIDM",
@@ -18002,7 +18067,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Time when fraction was delivered.",
+      "description": "Time when current fraction was delivered (begun), or Time last fraction was delivered (begun).",
       "candidateTerms": "dicom_30080251",
       "associatedWith": [
         "NIDM",
@@ -18119,6 +18184,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "editorialNote",
       "associatedWith": [
         "NIDM",
@@ -18134,7 +18200,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Nominal pass-through wavelength of light path filter(s) in nm",
+      "description": "Nominal pass-through wavelength of light path filter in nm",
       "candidateTerms": "dicom_00220001",
       "associatedWith": [
         "NIDM",
@@ -18546,6 +18612,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "variable-assessment",
       "associatedWith": [
         "NIDM",
@@ -18556,8 +18623,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "description": "Trails B is an assessement instrument in which the subject is asked to draw lines connecting circles with consecutively numbered and lettered circles.",
       "candidateTerms": "TrailsB",
@@ -18623,6 +18690,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "qualifiedCommunication",
       "associatedWith": [
         "NIDM",
@@ -18781,6 +18849,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "label",
       "associatedWith": [
         "NIDM",
@@ -18987,8 +19056,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000080"
+        "nidm:NIDM_0000080",
+        "owl:NamedIndividual"
       ],
       "description": "A pair of voxels are 6-Connected if they share a face.",
       "candidateTerms": "NIDM_0000130",
@@ -19093,6 +19162,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Class",
       "associatedWith": [
         "NIDM"
@@ -19366,6 +19436,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "influencer",
       "associatedWith": [
         "NIDM",
@@ -19379,9 +19450,10 @@
     {
       "@type": [
         "CommonDataElement",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
+      "description": "",
       "candidateTerms": "SpatialMemorySpanTest",
       "associatedWith": [
         "NIDM"
@@ -19445,6 +19517,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "",
       "candidateTerms": "endedAtTime",
       "associatedWith": [
         "NIDM",
@@ -19974,6 +20047,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "SoftwareAgent",
       "associatedWith": [
         "NIDM"
@@ -20209,6 +20283,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "psychological-instrument",
       "associatedWith": [
         "NIDM",
@@ -20700,8 +20775,8 @@
         "NIDM"
       ],
       "comment": [
-        "Discussed at https://github.com/incf-nidash/nidm/issues/310",
-        "Range: Vector of 1 positive integer and 3 positive floats."
+        "Range: Vector of 1 positive integer and 3 positive floats.",
+        "Discussed at https://github.com/incf-nidash/nidm/issues/310"
       ],
       "label": "search Volume Resels Geometry"
     },
@@ -21343,6 +21418,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Invalidation",
       "associatedWith": [
         "NIDM",
@@ -21352,7 +21428,7 @@
         "An instance of prov:Invalidation provides additional descriptions about the binary prov:wasInvalidatedBy relation from an invalidated prov:Entity to the prov:Activity that invalidated it. For example, :uncracked_egg prov:wasInvalidatedBy :baking; prov:qualifiedInvalidation [ a prov:Invalidation; prov:activity :baking; :foo :bar ]."
       ],
       "label": "Invalidation",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#ActivityInfluence"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#InstantaneousEvent"
     },
     {
       "@type": [
@@ -21385,7 +21461,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Parameter values for each of the X-Ray beams in the Acquisition Protocol Element. Each item in the sequence describes one X-Ray beam.",
+      "description": "Contains the attributes defining the x-ray information.",
       "candidateTerms": "dicom_00189325",
       "associatedWith": [
         "NIDM",
@@ -21595,6 +21671,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "hadForSubinstrument",
       "associatedWith": [
         "NIDM"
@@ -21729,6 +21806,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "quantitative-scale-item",
       "associatedWith": [
         "NIDM",
@@ -21833,6 +21911,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "",
       "candidateTerms": "NIDM_0000114",
       "associatedWith": [
         "NIDM"
@@ -21840,7 +21919,8 @@
       "comment": [
         "Under discussion at https://github.com/ISA-tools/stato/issues/38"
       ],
-      "label": "p Value"
+      "label": "p Value",
+      "sameAs": "http://purl.obolibrary.org/obo/OBI_0000175"
     },
     {
       "@type": [
@@ -21914,6 +21994,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "wasAttributedTo",
       "associatedWith": [
         "NIDM",
@@ -22698,6 +22779,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "wasGeneratedBy",
       "associatedWith": [
         "NIDM",
@@ -22734,8 +22816,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "The Symbol Digit Association Test is an assessment instrument in which the subject is asked to match a presented number with the associated symbol from rows of symbols and digits using a table that displays a pairing of each symbol with a corresponding number.",
       "candidateTerms": "SymbolDigitAssociationTest",
@@ -22945,9 +23027,10 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
+      "description": "",
       "candidateTerms": "SocioeconomicScale",
       "associatedWith": [
         "NIDM"
@@ -23011,6 +23094,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "qualitative-scale-item",
       "associatedWith": [
         "NIDM",
@@ -23362,6 +23446,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "qualifiedUsage",
       "associatedWith": [
         "NIDM",
@@ -23860,8 +23945,8 @@
         "NIDM"
       ],
       "comment": [
-        "Range: Vector of positive floats.",
-        "Discussed at: https://github.com/incf-nidash/nidm/pull/214"
+        "Discussed at: https://github.com/incf-nidash/nidm/pull/214",
+        "Range: Vector of positive floats."
       ],
       "label": "noise FWHM In Voxels"
     },
@@ -23948,7 +24033,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Nominal duration per individual frame, in msec.",
+      "description": "Nominal time per individual frame in msec.",
       "candidateTerms": "dicom_00181063",
       "associatedWith": [
         "NIDM",
@@ -24159,6 +24244,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "neuroclinical-interview",
       "associatedWith": [
         "NIDM",
@@ -24315,6 +24401,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "hadActivity",
       "associatedWith": [
         "NIDM",
@@ -24357,7 +24444,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Echo Planar category of pulse-sequences.",
+      "description": "Echo Planar category of Pulse Sequences.",
       "candidateTerms": "dicom_00189018",
       "associatedWith": [
         "NIDM",
@@ -24461,6 +24548,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "qualifiedAttribution",
       "associatedWith": [
         "NIDM",
@@ -24513,8 +24601,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:DatatypeProperty",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "owl:DatatypeProperty"
       ],
       "description": "Number of subjects in the group.",
       "candidateTerms": "NIDM_0000171",
@@ -24571,7 +24659,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Specified the number of contrast frames to average together before performing the mask operation.",
+      "description": "Specifies the number of contrast frames to average together before performing the mask operation.",
       "candidateTerms": "dicom_00286112",
       "associatedWith": [
         "NIDM",
@@ -24623,6 +24711,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "component",
       "associatedWith": [
         "NIDM",
@@ -24651,6 +24740,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "subject_property",
       "associatedWith": [
         "NIDM",
@@ -24705,7 +24795,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Units of Numeric Value (0040,A30A) in this name-value Item.",
+      "description": "Units of measurement for a Numeric Value (0040,A30A). Only a single Item shall be included in this Sequence.",
       "candidateTerms": "dicom_004008EA",
       "associatedWith": [
         "NIDM",
@@ -24716,9 +24806,10 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
+      "description": "",
       "candidateTerms": "EdinburghHandnessTest",
       "associatedWith": [
         "NIDM"
@@ -24782,6 +24873,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "questionnaire-based-assessment",
       "associatedWith": [
         "NIDM",
@@ -24939,7 +25031,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Axis value in degrees",
+      "description": "Axis value in degrees.",
       "candidateTerms": "dicom_00220009",
       "associatedWith": [
         "NIDM",
@@ -25330,8 +25422,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "description": "The Barnes akathisia scale is an assessment instrument used to assess the severity of drug-induced feelings of restlessness.",
       "candidateTerms": "BarnesAkathisiaScale",
@@ -25965,6 +26057,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "experimental-psychology-test",
       "associatedWith": [
         "NIDM",
@@ -26017,6 +26110,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Collection",
       "associatedWith": [
         "NIDM"
@@ -26393,6 +26487,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "atLocation",
       "associatedWith": [
         "NIDM",
@@ -26556,6 +26651,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "comment",
       "associatedWith": [
         "NIDM"
@@ -26915,13 +27011,14 @@
       "comment": [
         "Under discussion at https://github.com/ISA-tools/stato/issues/38"
       ],
-      "label": "q Value FDR"
+      "label": "q Value FDR",
+      "sameAs": "http://purl.obolibrary.org/obo/OBI_0001442"
     },
     {
       "@type": [
         "CommonDataElement",
-        "nidm:NIDM_0000075",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000075"
       ],
       "description": "Reference space defined as the stereotaxic average of 27 T1-weighted MRI scans of the same individual transformed into the Talairach stereotaxic space (cf. http://www.bic.mni.mcgill.ca/ServicesAtlases/Colin27Highres and http://neuro.debian.net/pkgs/mni-colin27-nifti.html). This is the default in SPM96 (cf. [MRC CBSU Wiki](http://imaging.mrc-cbu.cam.ac.uk/imaging/MniTalairach)).",
       "candidateTerms": "NIDM_0000009",
@@ -26929,8 +27026,8 @@
         "NIDM"
       ],
       "comment": [
-        "Discussed at https://github.com/incf-nidash/nidm/issues/284",
-        "used in SPM96 (cf. http://imaging.mrc-cbu.cam.ac.uk/imaging/MniTalairach)"
+        "used in SPM96 (cf. http://imaging.mrc-cbu.cam.ac.uk/imaging/MniTalairach)",
+        "Discussed at https://github.com/incf-nidash/nidm/issues/284"
       ],
       "label": "Colin27 Coordinate System"
     },
@@ -27045,7 +27142,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Number of columns in the image.",
+      "description": "Number of columns in the image or frame.",
       "candidateTerms": "dicom_00280011",
       "associatedWith": [
         "NIDM",
@@ -27363,6 +27460,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "hadGeneration",
       "associatedWith": [
         "NIDM",
@@ -27573,6 +27671,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "qualifiedDelegation",
       "associatedWith": [
         "NIDM",
@@ -27601,7 +27700,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Motion characteristic of Beam. ",
+      "description": "Motion characteristic of delivered Beam.",
       "candidateTerms": "dicom_300A00C4",
       "associatedWith": [
         "NIDM",
@@ -27848,6 +27947,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "sub-instrument",
       "associatedWith": [
         "NIDM",
@@ -28043,7 +28143,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "The RT Structure Set on which the RT Plan is based..",
+      "description": "Sequence of one class/instance pair describing Structure Set containing structures that are used to calculate Dose-Volume Histograms (DVHs).",
       "candidateTerms": "dicom_300C0060",
       "associatedWith": [
         "NIDM",
@@ -28461,6 +28561,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "qualifiedForm",
       "associatedWith": [
         "NIDM",
@@ -28543,6 +28644,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "shortcut_property",
       "associatedWith": [
         "NIDM",
@@ -28621,8 +28723,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "nidm:NIDM_0000051",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000051"
       ],
       "description": "Reference space defined as the average of 152 T1-weighted MRI scans, non-linearly transformed to to form a symmetric model in MNI152 linear space (cf. http://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin2009 for more details).",
       "candidateTerms": "NIDM_0000042",
@@ -29249,6 +29351,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "wasMeasuredBy",
       "associatedWith": [
         "NIDM"
@@ -29273,6 +29376,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "test-instrument",
       "associatedWith": [
         "NIDM",
@@ -29299,6 +29403,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "wasDerivedFrom",
       "associatedWith": [
         "NIDM",
@@ -29432,6 +29537,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "AgentInfluence",
       "associatedWith": [
         "NIDM",
@@ -29501,6 +29607,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Association",
       "associatedWith": [
         "NIDM",
@@ -29556,6 +29663,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "defaultLanguage",
       "associatedWith": [
         "NIDM",
@@ -29633,6 +29741,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "NIDM_0000097",
       "associatedWith": [
         "NIDM"
@@ -29640,7 +29749,8 @@
       "comment": [
         "Discussed in https://github.com/incf-nidash/nidm/pull/81"
       ],
-      "label": "has Alternative Hypothesis"
+      "label": "has Alternative Hypothesis",
+      "sameAs": "http://purl.obolibrary.org/obo/STATO_0000208"
     },
     {
       "@type": [
@@ -29898,7 +30008,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Source of cardiac synchronization signal.",
+      "description": "Cardiac Signal Source.",
       "candidateTerms": "dicom_00189085",
       "associatedWith": [
         "NIDM",
@@ -30018,6 +30128,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "standardized-score",
       "associatedWith": [
         "NIDM",
@@ -30141,6 +30252,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "coded-variable-assessment",
       "associatedWith": [
         "NIDM",
@@ -30310,6 +30422,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "InstantaneousEvent",
       "associatedWith": [
         "NIDM",
@@ -30351,6 +30464,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Generation",
       "associatedWith": [
         "NIDM",
@@ -30360,7 +30474,7 @@
         "An instance of prov:Generation provides additional descriptions about the binary prov:wasGeneratedBy relation from a generated prov:Entity to the prov:Activity that generated it. For example, :cake prov:wasGeneratedBy :baking; prov:qualifiedGeneration [ a prov:Generation; prov:activity :baking; :foo :bar ]."
       ],
       "label": "Generation",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#InstantaneousEvent"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#ActivityInfluence"
     },
     {
       "@type": [
@@ -30393,6 +30507,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "hadForProperPart",
       "associatedWith": [
         "NIDM"
@@ -31173,16 +31288,15 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:Class"
+        "owl:DatatypeProperty"
       ],
-      "description": "Additional Data Element, defined by an implementer, to communicate information that is not contained in Standard Data Elements. Private Data elements have odd Group Numbers.",
-      "candidateTerms": "dicom_xxxx0050",
+      "description": "Element Number used to identify the Data Element within the reserved block. The value of this attribute represents the last two digits of the Data Element tag; i.e., the value of xx in (gggg,00xx) where gggg is the Private Group Reference (0008,0301).",
+      "candidateTerms": "dicom_00080308",
       "associatedWith": [
         "NIDM",
         "DICOM"
       ],
-      "label": "Private Data Element",
-      "supertypeCDEs": "http://purl.org/nidash/dicom#dicom_xxxx0035"
+      "label": "Private Data Element"
     },
     {
       "@type": [
@@ -31209,7 +31323,8 @@
         "DICOM"
       ],
       "label": "File",
-      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000602"
+      "supertypeCDEs": "http://semanticscience.org/resource/SIO_000602",
+      "sameAs": "http://semanticscience.org/resource/SIO_000396"
     },
     {
       "@type": [
@@ -31413,6 +31528,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "qualifiedInfluence",
       "associatedWith": [
         "NIDM",
@@ -31462,13 +31578,15 @@
       "comment": [
         "Under discussion at https://github.com/ISA-tools/stato/issues/38"
       ],
-      "label": "p Value FWER"
+      "label": "p Value FWER",
+      "sameAs": "This definition is from OBI. Please update this note if the definition is modified."
     },
     {
       "@type": [
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "wasScaleOf",
       "associatedWith": [
         "NIDM"
@@ -31597,6 +31715,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "score",
       "associatedWith": [
         "NIDM",
@@ -31846,7 +31965,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Recommended location of the Bottom Right Hand Corner (BRHC) of the bounding box in which Unformatted Text Value (0070,0006) is to be displayed, as fractions of the specified presentation view width and height. Each value shall be within the range 0.0 to 1.0.",
+      "description": "Location of the Bottom Right Hand Corner (BRHC) of the bounding box in which Unformatted Text Value (0070,0006) is to be displayed, in Bounding Box Annotation Units (0070,0003), given as column/row. Column is the horizontal offset and row is the vertical offset.",
       "candidateTerms": "dicom_00700011",
       "associatedWith": [
         "NIDM",
@@ -32030,6 +32149,7 @@
         "owl:ObjectProperty",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "wasRevisionOf",
       "associatedWith": [
         "NIDM",
@@ -32188,6 +32308,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "neuroclinical-instrument",
       "associatedWith": [
         "NIDM",
@@ -32331,7 +32452,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "The weighting factor of the data from this additional source in a multiple energy composition image. This factor incorporates the effects of the specific X-Ray source and kV value examination specific characteristics. Required if one Derivation Code Sequence (0008,9215) Item value is (113097, DCM, 'Multi-energy proportional weighting'). May be present otherwise.",
+      "description": "The weighting factor of the data from the primary source in a multiple energy composition image. This factor incorporates the effects of the specific X-Ray source and kV value examination specific characteristics.",
       "candidateTerms": "dicom_00189353",
       "associatedWith": [
         "NIDM",
@@ -32591,6 +32712,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Plan",
       "associatedWith": [
         "NIDM",
@@ -32633,13 +32755,14 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "coded-score",
       "associatedWith": [
         "NIDM",
         "ONTONEUROLOG"
       ],
       "label": "coded-score",
-      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#scale-item"
+      "supertypeCDEs": "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#score"
     },
     {
       "@type": [
@@ -32727,6 +32850,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "isPartOf",
       "associatedWith": [
         "NIDM"
@@ -32862,7 +32986,8 @@
         "NIDM"
       ],
       "label": "deprecated Gaussian Distribution",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000022"
+      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000022",
+      "sameAs": "http://purl.obolibrary.org/obo/STATO_0000227"
     },
     {
       "@type": [
@@ -33303,6 +33428,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Entity",
       "associatedWith": [
         "NIDM"
@@ -33590,6 +33716,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "object_property",
       "associatedWith": [
         "NIDM",
@@ -34013,6 +34140,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "hadForVariable",
       "associatedWith": [
         "NIDM"
@@ -34063,6 +34191,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "hadForScale",
       "associatedWith": [
         "NIDM"
@@ -34841,6 +34970,7 @@
         "CommonDataElement",
         "http://www.w3.org/2000/01/rdf-schema#Datatype"
       ],
+      "description": "",
       "candidateTerms": "date",
       "associatedWith": [
         "NIDM",
@@ -34890,8 +35020,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "nidm:NIDM_0000051",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000051"
       ],
       "description": "Reference space defined as the average of 152 T1-weighted MRI scans in high-resolution, non-linearly transformed to MNI152 linear space (cf. http://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin2009 for more details).",
       "candidateTerms": "NIDM_0000043",
@@ -34934,6 +35064,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Communication",
       "associatedWith": [
         "NIDM",
@@ -35015,8 +35146,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "The Wisconsin Card Sorting Test is an assessment instrument in which a subject is asked to place cards under one of the four stimulus cards that he or she believes would be a correct strategy, while receiving feedback from the test administrator as to whether the last card was placed correctly or not (though the changes the sorting strategy throughout the test).",
       "candidateTerms": "WisconsinCardSortingTest",
@@ -35225,6 +35356,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "generated",
       "associatedWith": [
         "NIDM",
@@ -35302,6 +35434,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "NIDM_0000036",
       "associatedWith": [
         "NIDM"
@@ -35580,6 +35713,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Agent",
       "associatedWith": [
         "NIDM"
@@ -35738,6 +35872,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "End",
       "associatedWith": [
         "NIDM",
@@ -35747,7 +35882,7 @@
         "An instance of prov:End provides additional descriptions about the binary prov:wasEndedBy relation from some ended prov:Activity to an prov:Entity that ended it. For example, :ball_game prov:wasEndedBy :buzzer; prov:qualifiedEnd [ a prov:End; prov:entity :buzzer; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ]."
       ],
       "label": "End",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#InstantaneousEvent"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#EntityInfluence"
     },
     {
       "@type": [
@@ -35848,6 +35983,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "hasAcronym",
       "associatedWith": [
         "NIDM"
@@ -35859,6 +35995,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "numerical-score",
       "associatedWith": [
         "NIDM",
@@ -35885,6 +36022,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "dicom_xxxx0027",
       "associatedWith": [
         "NIDM",
@@ -36238,6 +36376,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "main-variable",
       "associatedWith": [
         "NIDM",
@@ -36481,6 +36620,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "qualifiedAssociation",
       "associatedWith": [
         "NIDM",
@@ -36494,8 +36634,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
       ],
       "description": "Using a pen, in the Maze Solving test, subjects attempt to find their way out of a maze by tracing a path while trying to avoid making mistakes, such as tracing to a dead end.",
       "candidateTerms": "MazeSolvingTest",
@@ -36599,6 +36739,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "todo",
       "associatedWith": [
         "NIDM",
@@ -36884,6 +37025,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "editorsDefinition",
       "associatedWith": [
         "NIDM",
@@ -37043,6 +37185,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "behavioural-interview",
       "associatedWith": [
         "NIDM",
@@ -37376,7 +37519,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Contains the Data Element Tag of the attribute that is used as the frame increment in Multi-frame pixel data.",
+      "description": "Required if Multi-frame Image. Contains the Data Element Tag of the attribute that is used as the Frame increment in Multi-frame image pixel data (see ).",
       "candidateTerms": "dicom_00280009",
       "associatedWith": [
         "NIDM",
@@ -37413,8 +37556,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "nidm:NIDM_0000031",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000031"
       ],
       "description": "'Hemodynamic Response Function' which is a fixed gamma probability density function. This is the default in AFNI (-GAM option to 3ddeconvolve, or implied via afni_proc.py).",
       "candidateTerms": "GammaHRF",
@@ -37431,6 +37574,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Start",
       "associatedWith": [
         "NIDM",
@@ -37675,6 +37819,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "invalidated",
       "associatedWith": [
         "NIDM",
@@ -37936,8 +38081,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000051"
+        "nidm:NIDM_0000051",
+        "owl:NamedIndividual"
       ],
       "description": "Reference space defined as the average of 452 T1-weighted MRIs of normal young adult brains after 12 parameter AIR linear transform to the MNI 305 space (cf. http://www.loni.usc.edu/ICBM/Downloads/Downloads_452T1.shtml and http://imaging.mrc-cbu.cam.ac.uk/imaging/MniTalairach)",
       "candidateTerms": "NIDM_0000038",
@@ -38305,6 +38450,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Attribution",
       "associatedWith": [
         "NIDM",
@@ -38651,7 +38797,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "The name of the institution that is responsible for coordinating the medical imaging data for the clinical trial or research.",
+      "description": "The name of the institution that is responsible for coordinating the protocols for the clinical trial.",
       "candidateTerms": "dicom_00120060",
       "associatedWith": [
         "NIDM",
@@ -39086,6 +39232,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "qualifiedQuotation",
       "associatedWith": [
         "NIDM",
@@ -39635,6 +39782,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Thing",
       "associatedWith": [
         "NIDM",
@@ -39728,6 +39876,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "aq",
       "associatedWith": [
         "NIDM",
@@ -40036,14 +40185,14 @@
         "Discussed in the Neuroimaging terms spreadsheet and in https://github.com/incf-nidash/nidm/issues/256."
       ],
       "label": "Excursion Set Map",
-      "supertypeCDEs": "http://purl.org/nidash/nidm#NIDM_0000052"
+      "supertypeCDEs": "ub3bL1499C35"
     },
     {
       "@type": [
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Specifies the format of Blending Lookup Table Data (0028,1408) in this Sequence item. The second value (first stored pixel value mapped) shall be zero.",
+      "description": "Specifies the format of Blending Lookup Table Data (0028,1408) in this Sequence item.",
       "candidateTerms": "dicom_00281407",
       "associatedWith": [
         "NIDM",
@@ -40111,6 +40260,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "scale",
       "associatedWith": [
         "NIDM",
@@ -40214,13 +40364,14 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "NIDM_0000024",
       "associatedWith": [
         "NIDM"
       ],
       "comment": [
-        "Under gaussianity assumption this is equivalent to compound symmetry but not in general.",
-        "Under discussion at https://github.com/ISA-tools/stato/issues/28"
+        "Under discussion at https://github.com/ISA-tools/stato/issues/28",
+        "Under gaussianity assumption this is equivalent to compound symmetry but not in general."
       ],
       "label": "Exchangeable Error",
       "supertypeCDEs": "http://purl.obolibrary.org/obo/STATO_0000346"
@@ -40269,7 +40420,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Contains the sequence item index (monotonically increasing from 1) of the overridden attributes within its parent sequence. The value is limited in scope to the Treatment Session Beam Sequence (3008,0020) and all nested sequences therein.",
+      "description": "Contains the sequence item index (starting at 1) of the corrected attribute within its parent sequence.",
       "candidateTerms": "dicom_30080063",
       "associatedWith": [
         "NIDM",
@@ -40373,6 +40524,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "hadPrimarySource",
       "associatedWith": [
         "NIDM",
@@ -40437,6 +40589,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "versionInfo",
       "associatedWith": [
         "NIDM",
@@ -40514,7 +40667,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Indicates whether the Encapsulated Document is Verified.",
+      "description": "Indicates whether this SR Document is Verified.",
       "candidateTerms": "dicom_0040A493",
       "associatedWith": [
         "NIDM",
@@ -40527,7 +40680,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Unique identifier for the Study",
+      "description": "The unique identifier for the Study provided for this Requested Procedure.",
       "candidateTerms": "dicom_0020000D",
       "associatedWith": [
         "NIDM",
@@ -40551,8 +40704,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "nidm:NIDM_0000064",
-        "owl:NamedIndividual"
+        "owl:NamedIndividual",
+        "nidm:NIDM_0000064"
       ],
       "description": "A pair of pixels are 8-Connected if they share an edge or corner.",
       "candidateTerms": "NIDM_0000118",
@@ -40579,6 +40732,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "maxCardinality",
       "associatedWith": [
         "NIDM",
@@ -40813,6 +40967,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "qualifiedInvalidation",
       "associatedWith": [
         "NIDM",
@@ -41029,6 +41184,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "wasInfluencedBy",
       "associatedWith": [
         "NIDM",
@@ -41188,7 +41344,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "The floating point representation of Numeric Value (0040,A30A) or a statistic.",
+      "description": "The floating point representation of Numeric Value (0040,A30A). Only a single value shall be present.",
       "candidateTerms": "dicom_0040A161",
       "associatedWith": [
         "NIDM",
@@ -41272,8 +41428,8 @@
         "NIDM"
       ],
       "comment": [
-        "Discussed at: https://github.com/incf-nidash/nidm/pull/214",
-        "Range: Vector of positive floats."
+        "Range: Vector of positive floats.",
+        "Discussed at: https://github.com/incf-nidash/nidm/pull/214"
       ],
       "label": "noise FWHM In Vertices"
     },
@@ -41454,6 +41610,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "multi-domains-instrument",
       "associatedWith": [
         "NIDM",
@@ -41493,6 +41650,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Role",
       "associatedWith": [
         "NIDM"
@@ -41545,6 +41703,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "raw-score",
       "associatedWith": [
         "NIDM",
@@ -41574,6 +41733,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "qualifiedDerivation",
       "associatedWith": [
         "NIDM",
@@ -41802,6 +41962,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "NIDM_0000015",
       "associatedWith": [
         "NIDM"
@@ -41810,7 +41971,8 @@
         "Discussed in https://github.com/incf-nidash/nidm/pull/144 and https://github.com/incf-nidash/nidm/pull/172"
       ],
       "label": "Coordinate",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "sameAs": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C44465"
     },
     {
       "@type": [
@@ -42158,6 +42320,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Usage",
       "associatedWith": [
         "NIDM",
@@ -42167,7 +42330,7 @@
         "An instance of prov:Usage provides additional descriptions about the binary prov:used relation from some prov:Activity to an prov:Entity that it used. For example, :keynote prov:used :podium; prov:qualifiedUsage [ a prov:Usage; prov:entity :podium; :foo :bar ]."
       ],
       "label": "Usage",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#EntityInfluence"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#InstantaneousEvent"
     },
     {
       "@type": [
@@ -42359,6 +42522,7 @@
         "owl:AnnotationProperty",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "specializationOf",
       "associatedWith": [
         "NIDM",
@@ -42423,6 +42587,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "constraints",
       "associatedWith": [
         "NIDM",
@@ -42451,6 +42616,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "qualifiedStart",
       "associatedWith": [
         "NIDM",
@@ -42531,7 +42697,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Direction of Beam Limiting Device Rotation when viewing beam limiting device (collimator) from radiation source, for segment following Control Point.",
+      "description": "Direction of Beam Limiting Device Rotation when viewing beam limiting device (collimator) from radiation source, for segment beginning at current Control Point.",
       "candidateTerms": "dicom_300A0121",
       "associatedWith": [
         "NIDM",
@@ -42860,6 +43026,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "sharesDefinitionWith",
       "associatedWith": [
         "NIDM",
@@ -42941,6 +43108,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "wasAssociatedWith",
       "associatedWith": [
         "NIDM"
@@ -43045,7 +43213,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "A coded description of how this image was derived. More than one Item indicates that successive derivation steps have been applied.",
+      "description": "A coded description of how this dose was derived from other RT Dose and/or RT Plan objects.",
       "candidateTerms": "dicom_00089215",
       "associatedWith": [
         "NIDM",
@@ -43235,6 +43403,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "secondary-variable",
       "associatedWith": [
         "NIDM",
@@ -43246,8 +43415,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument"
+        "http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument",
+        "owl:NamedIndividual"
       ],
       "description": "This test measures the ease with which a person can shift his or her perceptual set to conform to changing demands and suppress a habitual response in favor of an unusual one. The subject is assessed on his or her ability to read color names compared to the ability to read the color of ink that is not congruent with the color name of the printed words.",
       "candidateTerms": "StroopTest",
@@ -43558,7 +43727,7 @@
         "Discussed in https://github.com/incf-nidash/nidm/pull/149"
       ],
       "label": "Map",
-      "supertypeCDEs": "ub3bL1703C35"
+      "supertypeCDEs": "ub3bL1688C35"
     },
     {
       "@type": [
@@ -43846,6 +44015,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "note",
       "associatedWith": [
         "NIDM",
@@ -43884,6 +44054,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "psychological-test",
       "associatedWith": [
         "NIDM",
@@ -44202,6 +44373,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "definition",
       "associatedWith": [
         "NIDM",
@@ -44253,6 +44425,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "NIDM_0000113",
       "associatedWith": [
         "NIDM"
@@ -44293,7 +44466,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Filters used in the light source path.",
+      "description": "Filters used in the light source (excitation) path.",
       "candidateTerms": "dicom_00220017",
       "associatedWith": [
         "NIDM",
@@ -44345,6 +44518,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "reification_class",
       "associatedWith": [
         "NIDM",
@@ -44451,6 +44625,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Property",
       "associatedWith": [
         "NIDM",
@@ -44942,6 +45117,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "seeAlso",
       "associatedWith": [
         "NIDM"
@@ -45069,6 +45245,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "hadPlan",
       "associatedWith": [
         "NIDM",
@@ -45108,8 +45285,8 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "nidm:NIDM_0000051"
+        "nidm:NIDM_0000051",
+        "owl:NamedIndividual"
       ],
       "description": "Reference space defined as the average of 452 T1-weighted MRIs of normal young adult brains after affine and 5 order polynomial non-linear warping to the MNI 305 space (cf. http://www.loni.usc.edu/ICBM/Downloads/Downloads_452T1.shtml and http://imaging.mrc-cbu.cam.ac.uk/imaging/MniTalairach)",
       "candidateTerms": "NIDM_0000039",
@@ -45124,9 +45301,10 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:NamedIndividual",
-        "owl:Class"
+        "owl:Class",
+        "owl:NamedIndividual"
       ],
+      "description": "",
       "candidateTerms": "EmptyCollection",
       "associatedWith": [
         "NIDM",
@@ -45179,6 +45357,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "psychophysical-instrument",
       "associatedWith": [
         "NIDM",
@@ -45244,6 +45423,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "ActivityInfluence",
       "associatedWith": [
         "NIDM",
@@ -45254,7 +45434,7 @@
         "ActivityInfluence provides additional descriptions of an Activity's binary influence upon any other kind of resource. Instances of ActivityInfluence use the prov:activity property to cite the influencing Activity."
       ],
       "label": "ActivityInfluence",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Influence"
+      "supertypeCDEs": "ub1bL50C33"
     },
     {
       "@type": [
@@ -45287,6 +45467,7 @@
         "CommonDataElement",
         "owl:AnnotationProperty"
       ],
+      "description": "",
       "candidateTerms": "revision",
       "associatedWith": [
         "NIDM",
@@ -45299,6 +45480,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "composite-instrument",
       "associatedWith": [
         "NIDM",
@@ -45351,6 +45533,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "qualifiedEnd",
       "associatedWith": [
         "NIDM",
@@ -45411,7 +45594,8 @@
         "NIDM"
       ],
       "label": "Inference",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#Activity",
+      "sameAs": "http://purl.obolibrary.org/obo/STATO_0000299"
     },
     {
       "@type": [
@@ -45564,7 +45748,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Identification number of the beam.",
+      "description": "Identification number of the Beam. The value of Beam Number (300A,00C0) shall be unique within the RT Plan in which it is created.",
       "candidateTerms": "dicom_300A00C0",
       "associatedWith": [
         "NIDM",
@@ -45655,6 +45839,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "psychophysical-test",
       "associatedWith": [
         "NIDM",
@@ -45787,6 +45972,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "questionnaire",
       "associatedWith": [
         "NIDM",
@@ -46010,7 +46196,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "User-defined name for delivered Beam.",
+      "description": "User-defined name for Beam.",
       "candidateTerms": "dicom_300A00C2",
       "associatedWith": [
         "NIDM",
@@ -46389,6 +46575,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "score-with-unit-of-measure",
       "associatedWith": [
         "NIDM",
@@ -46415,6 +46602,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "Person",
       "associatedWith": [
         "NIDM",
@@ -46545,6 +46733,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "neuropsychological-instrument",
       "associatedWith": [
         "NIDM",
@@ -46701,7 +46890,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Nominal focal spot size in mm used to acquire the image or projection images. For devices with variable focal spot or multiple focal spots, small dimension followed by large dimension.",
+      "description": "Nominal focal spot size in mm used to acquire all frames.",
       "candidateTerms": "dicom_00181190",
       "associatedWith": [
         "NIDM",
@@ -46796,6 +46985,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "numerical-variable-assessment",
       "associatedWith": [
         "NIDM",
@@ -47006,7 +47196,7 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Coded identifier of Custodial Institution or Organization.",
+      "description": "Institution or organization to which the identified individual is responsible or accountable.",
       "candidateTerms": "dicom_00080082",
       "associatedWith": [
         "NIDM",
@@ -47268,6 +47458,7 @@
         "CommonDataElement",
         "owl:Class"
       ],
+      "description": "",
       "candidateTerms": "NIDM_0000060",
       "associatedWith": [
         "NIDM"
@@ -47276,7 +47467,8 @@
         "Re-use \"one tailed test\" from STATO."
       ],
       "label": "One Tailed Test",
-      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity"
+      "supertypeCDEs": "http://www.w3.org/ns/prov#Entity",
+      "sameAs": "http://purl.obolibrary.org/obo/STATO_0000286"
     },
     {
       "@type": [
@@ -47422,7 +47614,8 @@
         "NIDM",
         "DICOM"
       ],
-      "label": "Attribute"
+      "label": "Attribute",
+      "sameAs": "http://semanticscience.org/resource/SIO_000614"
     },
     {
       "@type": [
@@ -47705,6 +47898,7 @@
         "CommonDataElement",
         "owl:ObjectProperty"
       ],
+      "description": "",
       "candidateTerms": "hadMember",
       "associatedWith": [
         "NIDM"
