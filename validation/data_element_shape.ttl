@@ -14,19 +14,27 @@ nidm:PersonalDataElementShape a sh:NodeShape ;
     sh:closed true ;
 	sh:ignoredProperties ( rdfs:type ) ;
 
-	sh:property [ sh:datatype rdfs:langString ;
+	sh:property [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:path dct:description ],
 
         [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
             sh:path rdfs:comment ] ,
 
         [ sh:nodeKind sh:IRI ;
             sh:maxCount 1 ;
             sh:path schema:url ] ,
 
-        [ sh:datatype rdfs:langString ;
+        [ sh:nodeKind sh:IRI ;
+          sh:path interlex:ilx_0112785 ] ,
+
+        [ sh:or ( [sh:datatype xsd:string] [sh:datatype xsd:boolean] ) ;
+          sh:path interlex:ilx_0739337 ] ,
+
+        [ sh:datatype xsd:string ;
+          sh:path schema:citation ] ,
+
+        [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:path rdfs:label ] ,
 
@@ -68,7 +76,6 @@ nidm:CommonDataElementShape a sh:NodeShape ;
             sh:path dct:description ],
 
         [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
             sh:path rdfs:comment ] ,
 
         [ sh:nodeKind sh:IRI ;
@@ -124,7 +131,6 @@ nidm:ConceptShape a sh:NodeShape ;
             sh:path dct:description ],
 
         [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
             sh:path rdfs:comment ] ,
 
         [ sh:nodeKind sh:IRI ;
@@ -187,14 +193,13 @@ reproschema:ResponseOptionsShape a sh:NodeShape ;
             sh:path reproschema:multipleChoice ],
 
         [ sh:nodeKind sh:IRI ;
-          sh:minCount 1 ;
             sh:path reproschema:valueType ],
 
-        [ sh:datatype xsd:integer ;
+        [ sh:or ( [ sh:datatype xsd:integer ] [ sh:datatype xsd:float ] [ sh:datatype xsd:string ] ) ;
             sh:maxCount 1 ;
             sh:path schema:minValue ],
 
-        [ sh:datatype xsd:integer ;
+        [ sh:or ( [ sh:datatype xsd:integer ] [ sh:datatype xsd:float ] [ sh:datatype xsd:string ] ) ;
             sh:maxCount 1 ;
             sh:path schema:maxValue ],
 
@@ -202,7 +207,7 @@ reproschema:ResponseOptionsShape a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:path reproschema:datumType ],
 
-        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype rdfs:langString ] ) ;
+        [ sh:or ( [ sh:datatype schema:URL ] [ sh:datatype xsd:string ] ) ;
             sh:path schema:unitCode ],
 
         [ sh:node reproschema:UnitOptionsShape ;

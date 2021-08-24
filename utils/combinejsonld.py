@@ -171,7 +171,7 @@ def main(argv):
                     elif key == 'sourceVariable':
                         temp[context['@context']['sourceVariable']] = value
                     elif key == 'comment':
-                        temp[context['@context']['comment']] = value
+                        temp[context['@context']['comment']['@id']] = value
                     elif key == 'sameAs':
                         temp[context['@context']['sameAs']['@id']] = value
                     elif key == 'wasDerivedFrom':
@@ -232,6 +232,9 @@ def main(argv):
         if 'owl:sameAs' in d:
             d['sameAs'] = d['owl:sameAs']
             del d['owl:sameAs']
+        if 'prov:wasDerivedFrom' in d:
+            d['wasDerivedFrom'] = d['prov:wasDerivedFrom']
+            del d['prov:wasDerivedFrom']
 
 
     print('single jsonld file has been successfully created in', output)
