@@ -43,7 +43,7 @@ def main(argv):
     parser = ArgumentParser(description='This program will load an OWL ontology/terminology file and create separate'
                                         'JSON-LD NIDM-Terms compliant files for each term')
 
-    parser.add_argument('-owl', dest='owl_file', required=True,nargs='+', help="Comma separated list of "
+    parser.add_argument('-owl', dest='owl_file', required=True,nargs='+', help="Space separated list of "
                             "OWL files to convert.")
     parser.add_argument('-out', dest='output_dir', required=True, help="Output directory to save JSON files")
     parser.add_argument('-context', dest='context', required=False, help="URL to context file. If not supplied then "
