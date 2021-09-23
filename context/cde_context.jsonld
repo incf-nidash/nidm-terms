@@ -26,15 +26,22 @@
 			"@prefix": true
 		},
 		"reproschema": "http://schema.repronim.org/",
-		"comment": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+		"schema": "http://schema.org/",
+		"comment": {
+			"@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+			"@container": "@set"
+		},
 		"sourceVariable": "http://uri.interlex.org/ilx_0383246",
 		"label": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
 		"description": "http://purl.org/dc/terms/description",
 		"isAbout": {
 			"@id": "http://uri.interlex.org/ilx_0381385",
-			"@container": "@list"
+			"@container": "@set"
 		},
-		"isPartOf": "http://uri.interlex.org/ilx_0112785",
+		"isPartOf": {
+			"@id": "http://uri.interlex.org/ilx_0112785",
+			"@type": "@id"
+		},
 		"closeMatch": "https://www.w3.org/TR/2009/REC-skos-reference-20090818#closeMatch",
 		"url": {
 			"@id": "http://schema.org/url",
@@ -46,10 +53,10 @@
 		"Concept": "http://purl.org/nidash/nidm#Concept",
 		"candidateTerms": "http://purl.org/nidash/nidm#candidateTerms",
 		"valueType": {
-            "@id": "reproschema:valueType",
-            "@type": "@id",
-            "@container": "@set"
-        },
+		    "@id": "reproschema:valueType",
+		    "@type": "@id",
+		    "@container": "@set"
+		},
 		"unitCode": {
 			"@id": "schema:unitCode",
 			"@container": "@set"
@@ -92,12 +99,13 @@
 			"@container": "@set"
 		},
 		"responseOptions": {
-            "@id": "reproschema:responseOptions",
-            "@container": "@set",
-            "@type": "@id"
-        },
+		    "@id": "reproschema:responseOptions",
+		    "@container": "@set"
+		},
 		"name": "http://schema.org/name",
-		"value": "http://schema.org/value",
+		"value": {
+			"@id": "reproschema:value"
+		},
 		"ilxId": "https://scicrunch.org/nidm-terms",
 		"bids": "http://nidash.org/bids#",
 		"sameAs": {
@@ -107,7 +115,7 @@
 		"terms": {
 			"@id": "http://www.w3.org/ns/prov#hasMember",
 			"@container": [
-				"@graph"
+				"@set"
 			]
 		},
 		"version" : "http://schema.org/version"

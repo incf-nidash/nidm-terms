@@ -9,10 +9,11 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dctypes: <http://purl.org/dc/dcmitype/> .
 @prefix dicom: <http://neurolex.org/wiki/Category:DICOM_term/> .
+@prefix edam: <https://bioportal.bioontology.org/ontologies/EDAM> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix freesurfer: <https://surfer.nmr.mgh.harvard.edu/> .
 @prefix fsl: <http://purl.org/nidash/fsl#> .
-@prefix ilx: <http://uri.interlex.org/base/> .
+@prefix ilx: <http://uri.interlex.org/> .
 @prefix ncicb: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
 @prefix ncit: <http://ncitt.ncit.nih.gov/> .
 @prefix ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/> .
@@ -20,6 +21,7 @@
 @prefix nidm: <http://purl.org/nidash/nidm#> .
 @prefix niiri: <http://iri.nidash.org/> .
 @prefix nlx: <http://uri.neuinfo.org/nif/nifstd/> .
+@prefix ns1: <https://bioportal.bioontology.org/ontologies/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix onli: <http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -34,561 +36,564 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-niiri:a59d6e76-ad4a-11eb-80b8-003ee1ce9545 a onli:assessment-instrument,
-        nidm:AcquisitionObject,
-        prov:Entity ;
-    niiri:aed_3bp7hmg "Withdrawing"^^xsd:string ;
-    niiri:age_3t2d1sf "16,4"^^xsd:string ;
-    niiri:coverage_3pptfib "T"^^xsd:string ;
-    niiri:engel_1_year_28tea6f "1A"^^xsd:string ;
-    niiri:lobe_surgery_2jfjolu "T"^^xsd:string ;
-    niiri:pathology_3m7frin "tuber, no MTS"^^xsd:string ;
-    niiri:sex_3t0cudg "M"^^xsd:string ;
-    niiri:side_3lr19qs "R"^^xsd:string ;
-    niiri:type_iEEG_e9t5db "aECoG"^^xsd:string ;
-    niiri:type_surgery_2das3qh "Right anterior temporal lobectomy including amygdalohippocampectomy"^^xsd:string ;
-    nfo:filename "participants.tsv"^^xsd:string ;
-    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.tsv"^^xsd:string ;
-    prov:wasGeneratedBy niiri:a59d6ad4-ad4a-11eb-80b8-003ee1ce9545 ;
-    prov:wasInfluencedBy niiri:b59d9b6c-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:a5f4df30-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
+niiri:a002944e-f96a-11eb-b368-1094bbf2086c a nidm:Session,
         prov:Activity ;
-    bids:session_number "SITUATION2A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+    bids:session_number "SITUATION3A"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
 
-niiri:a61b48f0-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
+niiri:a00b3766-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION3B"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:ada2455a-f96a-11eb-b368-1094bbf2086c a nidm:Session,
         prov:Activity ;
     bids:session_number "SITUATION1A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
 
-niiri:a61dfd66-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION1B"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:a623b418-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION2B"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:a6265574-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION2C"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:a6576e3e-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
+niiri:adb2aecc-f96a-11eb-b368-1094bbf2086c a nidm:Session,
         prov:Activity ;
     bids:session_number "SITUATION2A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
 
-niiri:a6665944-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
+niiri:adc3be24-f96a-11eb-b368-1094bbf2086c a nidm:Session,
         prov:Activity ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
 
-niiri:a68015a0-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
+niiri:ade9cb5a-f96a-11eb-b368-1094bbf2086c a nidm:Session,
         prov:Activity ;
-    bids:session_number "SITUATION3C"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+    bids:session_number "SITUATION1B"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
 
-niiri:a6860528-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
+niiri:adf255ae-f96a-11eb-b368-1094bbf2086c a nidm:Session,
         prov:Activity ;
-    bids:session_number "SITUATION3E"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+    bids:session_number "SITUATION2A"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
 
-niiri:aed_3bp7hmg a nidm:PersonalDataElement,
+niiri:ae04c590-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION2C"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:aed_16f7l4s a nidm:PersonalDataElement,
         prov:Entity ;
     rdfs:label "aed" ;
     dct:description "anti-epileptic drug status" ;
-    nidm:source_variable "aed" ;
+    nidm:sourceVariable "aed" ;
     nidm:valueType <xsd:string> ;
     ilx:ilx_0739289 "NIDM" .
 
-niiri:age_3t2d1sf a nidm:PersonalDataElement,
+niiri:af5e479a-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION2C"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:af67f5e2-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION2D"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:aff8a222-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION2B"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:age_1gkd5e3 a nidm:PersonalDataElement,
         prov:Entity ;
     rdfs:label "age" ;
     dct:description "age of the patient during the session" ;
-    nidm:isAbout <http://uri.interlex.org/ilx_0100400> ;
-    nidm:source_variable "age" ;
+    nidm:isAbout ilx:ilx_0100400 ;
+    nidm:sourceVariable "age" ;
     nidm:valueType <xsd:string> ;
     ilx:ilx_0739289 "NIDM" .
 
-niiri:b59cfaa4-ad4a-11eb-80b8-003ee1ce9545 a onli:assessment-instrument,
-        nidm:AcquisitionObject,
-        prov:Entity ;
-    niiri:aed_3bp7hmg "Withdrawing"^^xsd:string ;
-    niiri:age_3t2d1sf "6,0"^^xsd:string ;
-    niiri:coverage_3pptfib "T"^^xsd:string ;
-    niiri:engel_1_year_28tea6f "1A"^^xsd:string ;
-    niiri:lobe_surgery_2jfjolu "T"^^xsd:string ;
-    niiri:pathology_3m7frin "diffuse glioma / astrocytoma WHO gr 2"^^xsd:string ;
-    niiri:sex_3t0cudg "M"^^xsd:string ;
-    niiri:side_3lr19qs "R"^^xsd:string ;
-    niiri:type_iEEG_e9t5db "aECoG"^^xsd:string ;
-    niiri:type_surgery_2das3qh "Right anterior temporal lobectomy including laesionectomy and amygdalohippocampectomy"^^xsd:string ;
-    nfo:filename "participants.tsv"^^xsd:string ;
-    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.tsv"^^xsd:string ;
-    prov:wasGeneratedBy niiri:b59cf590-ad4a-11eb-80b8-003ee1ce9545 ;
-    prov:wasInfluencedBy niiri:a59d272c-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b5fd224e-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b606a774-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION1A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b611a232-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b6384392-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION2APART1"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b63b0e6a-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION2APART2"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b64b9064-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION1A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b64eb7f8-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION1B"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b6635456-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION3A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b6715b5a-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION1A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b67d0e8c-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION3B"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b6830fe4-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION3D"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b68bca30-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION3G"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:c59de72a-ad4a-11eb-80b8-003ee1ce9545 a onli:assessment-instrument,
-        nidm:AcquisitionObject,
-        prov:Entity ;
-    niiri:aed_3bp7hmg "No"^^xsd:string ;
-    niiri:age_3t2d1sf "3,4"^^xsd:string ;
-    niiri:coverage_3pptfib "O"^^xsd:string ;
-    niiri:engel_1_year_28tea6f "1A"^^xsd:string ;
-    niiri:lobe_surgery_2jfjolu "O"^^xsd:string ;
-    niiri:pathology_3m7frin "ganglioglioma WHO gr 1"^^xsd:string ;
-    niiri:sex_3t0cudg "M"^^xsd:string ;
-    niiri:side_3lr19qs "R"^^xsd:string ;
-    niiri:type_iEEG_e9t5db "aECoG"^^xsd:string ;
-    niiri:type_surgery_2das3qh "Resection right mesio-occipital"^^xsd:string ;
-    nfo:filename "participants.tsv"^^xsd:string ;
-    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.tsv"^^xsd:string ;
-    prov:wasGeneratedBy niiri:c59de3e2-ad4a-11eb-80b8-003ee1ce9545 ;
-    prov:wasInfluencedBy niiri:b59e1088-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:c63550b0-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION1B"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:c63de950-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION3A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:c6409b5a-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:c651c308-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION1C"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:c65498ee-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION1D"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:c65a35d8-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION2B"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:c688e0cc-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
+niiri:b0310fcc-f96a-11eb-b368-1094bbf2086c a nidm:Session,
         prov:Activity ;
     bids:session_number "SITUATION3F"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
 
-niiri:c68e9cce-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
+niiri:bd73d77e-f96a-11eb-b368-1094bbf2086c a nidm:Session,
         prov:Activity ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+    bids:session_number "SITUATION3A"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
 
-niiri:coverage_3pptfib a nidm:PersonalDataElement,
+niiri:beb18668-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION2APART2"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:bec361f8-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:bf435f66-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION1D"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:c01527e4-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION3C"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:c042dcfc-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:cb7462fe-f96a-11eb-b368-1094bbf2086c a onli:assessment-instrument,
+        nidm:AcquisitionObject,
+        prov:Entity ;
+    niiri:aed_16f7l4s "Withdrawing"^^xsd:string ;
+    niiri:age_1gkd5e3 "6,7"^^xsd:string ;
+    niiri:coverage_1vgg42n "PO"^^xsd:string ;
+    niiri:engel_1_year_1lvgh7f "1A"^^xsd:string ;
+    niiri:lobe_surgery_2mcb634 "P"^^xsd:string ;
+    niiri:pathology_12aqg5g "gliosis"^^xsd:string ;
+    niiri:sex_2d91bv3 "F"^^xsd:string ;
+    niiri:side_2kgv1fs "R"^^xsd:string ;
+    niiri:type_iEEG_2nbsqna "aECoG"^^xsd:string ;
+    niiri:type_surgery_1g82orh "Resection right parieto-occipital"^^xsd:string ;
+    nfo:filename "participants.tsv"^^xsd:string ;
+    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.tsv"^^xsd:string ;
+    prov:wasGeneratedBy niiri:cb745d7c-f96a-11eb-b368-1094bbf2086c ;
+    prov:wasInfluencedBy niiri:db74d734-f96a-11eb-b368-1094bbf2086c .
+
+niiri:cd61d196-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION1B"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:cd7d2162-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION4A"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:cf26f2fe-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION1A"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:cf4d72d0-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION2A"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:cfe65ed2-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION1A"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:coverage_1vgg42n a nidm:PersonalDataElement,
         prov:Entity ;
     rdfs:label "coverage" ;
     dct:description "anatomical coverage of the electrodes" ;
     nidm:levels "{'T': 'temporal', 'O': 'occipital', 'P': 'parietal', 'F': 'frontal'}" ;
-    nidm:source_variable "coverage" ;
+    nidm:sourceVariable "coverage" ;
     nidm:valueType <xsd:string> ;
     ilx:ilx_0739289 "NIDM" .
 
-niiri:d59c7e26-ad4a-11eb-80b8-003ee1ce9545 a onli:assessment-instrument,
+niiri:d01f7456-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION3D"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:d03a05f0-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION3G"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:db7315c0-f96a-11eb-b368-1094bbf2086c a onli:assessment-instrument,
         nidm:AcquisitionObject,
         prov:Entity ;
-    niiri:aed_3bp7hmg "unknown"^^xsd:string ;
-    niiri:age_3t2d1sf "15,0"^^xsd:string ;
-    niiri:coverage_3pptfib "T"^^xsd:string ;
-    niiri:engel_1_year_28tea6f "1A"^^xsd:string ;
-    niiri:lobe_surgery_2jfjolu "T"^^xsd:string ;
-    niiri:pathology_3m7frin "MTS, Wyler gr 4 + basotemporal neocortical reactive tissue"^^xsd:string ;
-    niiri:sex_3t0cudg "F"^^xsd:string ;
-    niiri:side_3lr19qs "R"^^xsd:string ;
-    niiri:type_iEEG_e9t5db "aECoG"^^xsd:string ;
-    niiri:type_surgery_2das3qh "Right anterior temporal lobectomy including hippocampectomy"^^xsd:string ;
+    niiri:aed_16f7l4s "No"^^xsd:string ;
+    niiri:age_1gkd5e3 "7,3"^^xsd:string ;
+    niiri:coverage_1vgg42n "F"^^xsd:string ;
+    niiri:engel_1_year_1lvgh7f "1A"^^xsd:string ;
+    niiri:lobe_surgery_2mcb634 "F"^^xsd:string ;
+    niiri:pathology_12aqg5g "cavernoma"^^xsd:string ;
+    niiri:sex_2d91bv3 "F"^^xsd:string ;
+    niiri:side_2kgv1fs "R"^^xsd:string ;
+    niiri:type_iEEG_2nbsqna "aECoG"^^xsd:string ;
+    niiri:type_surgery_1g82orh "Resection right frontal operculum cq insula"^^xsd:string ;
     nfo:filename "participants.tsv"^^xsd:string ;
     prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.tsv"^^xsd:string ;
-    prov:wasGeneratedBy niiri:a59c79e4-ad4a-11eb-80b8-003ee1ce9545 ;
-    prov:wasInfluencedBy niiri:b59cae78-ad4a-11eb-80b8-003ee1ce9545 .
+    prov:wasGeneratedBy niiri:bb730c88-f96a-11eb-b368-1094bbf2086c ;
+    prov:wasInfluencedBy niiri:ab73a580-f96a-11eb-b368-1094bbf2086c .
 
-niiri:d59e566a-ad4a-11eb-80b8-003ee1ce9545 a onli:assessment-instrument,
+niiri:dda9d81a-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION1B"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:dea00780-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION1B"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:debb03f0-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION3A"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:df305ca4-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION1B"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:df7060ec-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION3A"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:dfefe218-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION2A"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:e027be9a-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION3E"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:eb6d69a4-f96a-11eb-b368-1094bbf2086c a onli:assessment-instrument,
         nidm:AcquisitionObject,
         prov:Entity ;
-    niiri:aed_3bp7hmg "No"^^xsd:string ;
-    niiri:age_3t2d1sf "7,3"^^xsd:string ;
-    niiri:coverage_3pptfib "F"^^xsd:string ;
-    niiri:engel_1_year_28tea6f "1A"^^xsd:string ;
-    niiri:lobe_surgery_2jfjolu "F"^^xsd:string ;
-    niiri:pathology_3m7frin "cavernoma"^^xsd:string ;
-    niiri:sex_3t0cudg "F"^^xsd:string ;
-    niiri:side_3lr19qs "R"^^xsd:string ;
-    niiri:type_iEEG_e9t5db "aECoG"^^xsd:string ;
-    niiri:type_surgery_2das3qh "Resection right frontal operculum cq insula"^^xsd:string ;
+    niiri:aed_16f7l4s "unknown"^^xsd:string ;
+    niiri:age_1gkd5e3 "15,0"^^xsd:string ;
+    niiri:coverage_1vgg42n "T"^^xsd:string ;
+    niiri:engel_1_year_1lvgh7f "1A"^^xsd:string ;
+    niiri:lobe_surgery_2mcb634 "T"^^xsd:string ;
+    niiri:pathology_12aqg5g "MTS, Wyler gr 4 + basotemporal neocortical reactive tissue"^^xsd:string ;
+    niiri:sex_2d91bv3 "F"^^xsd:string ;
+    niiri:side_2kgv1fs "R"^^xsd:string ;
+    niiri:type_iEEG_2nbsqna "aECoG"^^xsd:string ;
+    niiri:type_surgery_1g82orh "Right anterior temporal lobectomy including hippocampectomy"^^xsd:string ;
     nfo:filename "participants.tsv"^^xsd:string ;
     prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.tsv"^^xsd:string ;
-    prov:wasGeneratedBy niiri:a59e5318-ad4a-11eb-80b8-003ee1ce9545 ;
-    prov:wasInfluencedBy niiri:f59e8068-ad4a-11eb-80b8-003ee1ce9545 .
+    prov:wasGeneratedBy niiri:cb6d5e32-f96a-11eb-b368-1094bbf2086c ;
+    prov:wasInfluencedBy niiri:fb6de780-f96a-11eb-b368-1094bbf2086c .
 
-niiri:d5f7b804-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION3A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:d5fa6a2c-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION4A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:d6094fec-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION1B"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:d60bf4cc-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION2A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:d6291192-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:d6742dd0-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION2A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:d679ff9e-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION3A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:e5eeb07e-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
+niiri:ed576e0e-f96a-11eb-b368-1094bbf2086c a nidm:Session,
         prov:Activity ;
     bids:session_number "SITUATION1A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
 
-niiri:e5f1f70c-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
+niiri:ed86e404-f96a-11eb-b368-1094bbf2086c a nidm:Session,
         prov:Activity ;
-    bids:session_number "SITUATION1B"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
 
-niiri:e60eb108-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION3A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:e620b312-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    bids:session_number "SITUATION2A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:e6326148-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
+niiri:ee96d2fa-f96a-11eb-b368-1094bbf2086c a nidm:Session,
         prov:Activity ;
     bids:session_number "SITUATION1A"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
 
-niiri:e6603f78-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
+niiri:eea8fc5a-f96a-11eb-b368-1094bbf2086c a nidm:Session,
         prov:Activity ;
-    bids:session_number "SITUATION2D"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+    bids:session_number "SITUATION2APART1"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
 
-niiri:e67706b8-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
+niiri:ef78eb86-f96a-11eb-b368-1094bbf2086c a nidm:Session,
         prov:Activity ;
-    bids:session_number "SITUATION2B"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
 
-niiri:engel_1_year_28tea6f a nidm:PersonalDataElement,
+niiri:engel_1_year_1lvgh7f a nidm:PersonalDataElement,
         prov:Entity ;
     rdfs:label "engel 1 year" ;
     dct:description "Engel epilepsy surgery outcome scale" ;
-    nidm:source_variable "engel 1 year" ;
+    nidm:sourceVariable "engel 1 year" ;
     nidm:valueType <xsd:string> ;
     ilx:ilx_0739289 "NIDM" .
 
-niiri:f59eccc6-ad4a-11eb-80b8-003ee1ce9545 a onli:assessment-instrument,
+niiri:fb6ee3ec-f96a-11eb-b368-1094bbf2086c a onli:assessment-instrument,
         nidm:AcquisitionObject,
         prov:Entity ;
-    niiri:aed_3bp7hmg "Withdrawing"^^xsd:string ;
-    niiri:age_3t2d1sf "6,7"^^xsd:string ;
-    niiri:coverage_3pptfib "PO"^^xsd:string ;
-    niiri:engel_1_year_28tea6f "1A"^^xsd:string ;
-    niiri:lobe_surgery_2jfjolu "P"^^xsd:string ;
-    niiri:pathology_3m7frin "gliosis"^^xsd:string ;
-    niiri:sex_3t0cudg "F"^^xsd:string ;
-    niiri:side_3lr19qs "R"^^xsd:string ;
-    niiri:type_iEEG_e9t5db "aECoG"^^xsd:string ;
-    niiri:type_surgery_2das3qh "Resection right parieto-occipital"^^xsd:string ;
+    niiri:aed_16f7l4s "Withdrawing"^^xsd:string ;
+    niiri:age_1gkd5e3 "6,0"^^xsd:string ;
+    niiri:coverage_1vgg42n "T"^^xsd:string ;
+    niiri:engel_1_year_1lvgh7f "1A"^^xsd:string ;
+    niiri:lobe_surgery_2mcb634 "T"^^xsd:string ;
+    niiri:pathology_12aqg5g "diffuse glioma / astrocytoma WHO gr 2"^^xsd:string ;
+    niiri:sex_2d91bv3 "M"^^xsd:string ;
+    niiri:side_2kgv1fs "R"^^xsd:string ;
+    niiri:type_iEEG_2nbsqna "aECoG"^^xsd:string ;
+    niiri:type_surgery_1g82orh "Right anterior temporal lobectomy including laesionectomy and amygdalohippocampectomy"^^xsd:string ;
     nfo:filename "participants.tsv"^^xsd:string ;
     prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.tsv"^^xsd:string ;
-    prov:wasGeneratedBy niiri:e59ec8ca-ad4a-11eb-80b8-003ee1ce9545 ;
-    prov:wasInfluencedBy niiri:f59ef4ee-ad4a-11eb-80b8-003ee1ce9545 .
+    prov:wasGeneratedBy niiri:fb6edaaa-f96a-11eb-b368-1094bbf2086c ;
+    prov:wasInfluencedBy niiri:bb6f750a-f96a-11eb-b368-1094bbf2086c .
 
-niiri:f65d545c-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
+niiri:fb701bfe-f96a-11eb-b368-1094bbf2086c a onli:assessment-instrument,
+        nidm:AcquisitionObject,
+        prov:Entity ;
+    niiri:aed_16f7l4s "Withdrawing"^^xsd:string ;
+    niiri:age_1gkd5e3 "16,4"^^xsd:string ;
+    niiri:coverage_1vgg42n "T"^^xsd:string ;
+    niiri:engel_1_year_1lvgh7f "1A"^^xsd:string ;
+    niiri:lobe_surgery_2mcb634 "T"^^xsd:string ;
+    niiri:pathology_12aqg5g "tuber, no MTS"^^xsd:string ;
+    niiri:sex_2d91bv3 "M"^^xsd:string ;
+    niiri:side_2kgv1fs "R"^^xsd:string ;
+    niiri:type_iEEG_2nbsqna "aECoG"^^xsd:string ;
+    niiri:type_surgery_1g82orh "Right anterior temporal lobectomy including amygdalohippocampectomy"^^xsd:string ;
+    nfo:filename "participants.tsv"^^xsd:string ;
+    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.tsv"^^xsd:string ;
+    prov:wasGeneratedBy niiri:fb7015be-f96a-11eb-b368-1094bbf2086c ;
+    prov:wasInfluencedBy niiri:cb709408-f96a-11eb-b368-1094bbf2086c .
+
+niiri:fb71a640-f96a-11eb-b368-1094bbf2086c a onli:assessment-instrument,
+        nidm:AcquisitionObject,
+        prov:Entity ;
+    niiri:aed_16f7l4s "No"^^xsd:string ;
+    niiri:age_1gkd5e3 "3,4"^^xsd:string ;
+    niiri:coverage_1vgg42n "O"^^xsd:string ;
+    niiri:engel_1_year_1lvgh7f "1A"^^xsd:string ;
+    niiri:lobe_surgery_2mcb634 "O"^^xsd:string ;
+    niiri:pathology_12aqg5g "ganglioglioma WHO gr 1"^^xsd:string ;
+    niiri:sex_2d91bv3 "M"^^xsd:string ;
+    niiri:side_2kgv1fs "R"^^xsd:string ;
+    niiri:type_iEEG_2nbsqna "aECoG"^^xsd:string ;
+    niiri:type_surgery_1g82orh "Resection right mesio-occipital"^^xsd:string ;
+    nfo:filename "participants.tsv"^^xsd:string ;
+    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.tsv"^^xsd:string ;
+    prov:wasGeneratedBy niiri:eb719d26-f96a-11eb-b368-1094bbf2086c ;
+    prov:wasInfluencedBy niiri:fb7231d2-f96a-11eb-b368-1094bbf2086c .
+
+niiri:fd6afa32-f96a-11eb-b368-1094bbf2086c a nidm:Session,
         prov:Activity ;
-    bids:session_number "SITUATION2C"^^xsd:string ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+    bids:session_number "SITUATION2A"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
 
-niiri:lobe_surgery_2jfjolu a nidm:PersonalDataElement,
+niiri:fdba0fc8-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION3A"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:fde08da6-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION1A"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:fdfb9b32-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION2B"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:fe0d1466-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:ff3a3a94-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION1C"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:ff55e8e8-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    bids:session_number "SITUATION2B"^^xsd:string ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:lobe_surgery_2mcb634 a nidm:PersonalDataElement,
         prov:Entity ;
     rdfs:label "lobe surgery" ;
     dct:description "anatomical lobe of surgery" ;
     nidm:levels "{'T': 'temporal', 'O': 'occipital', 'P': 'parietal', 'F': 'frontal'}" ;
-    nidm:source_variable "lobe surgery" ;
+    nidm:sourceVariable "lobe surgery" ;
     nidm:valueType <xsd:string> ;
     ilx:ilx_0739289 "NIDM" .
 
-niiri:pathology_3m7frin a nidm:PersonalDataElement,
+niiri:pathology_12aqg5g a nidm:PersonalDataElement,
         prov:Entity ;
     rdfs:label "pathology" ;
     dct:description "pathology" ;
-    nidm:source_variable "pathology" ;
+    nidm:sourceVariable "pathology" ;
     nidm:valueType <xsd:string> ;
     ilx:ilx_0739289 "NIDM" .
 
-niiri:sex_3t0cudg a nidm:PersonalDataElement,
+niiri:sex_2d91bv3 a nidm:PersonalDataElement,
         prov:Entity ;
     rdfs:label "sex" ;
     dct:description "gender of the patient (male/female/unknown)" ;
-    nidm:isAbout <http://uri.interlex.org/ilx_0738439> ;
+    nidm:isAbout ilx:ilx_0738439 ;
     nidm:levels "{'M': 'male', 'F': 'female', 'unknown': 'unknown'}" ;
-    nidm:source_variable "sex" ;
+    nidm:sourceVariable "sex" ;
     nidm:valueType <xsd:string> ;
     ilx:ilx_0739289 "NIDM" .
 
-niiri:side_3lr19qs a nidm:PersonalDataElement,
+niiri:side_2kgv1fs a nidm:PersonalDataElement,
         prov:Entity ;
     rdfs:label "side" ;
     dct:description "side of the brain" ;
     nidm:levels "{'L': 'left', 'R': 'right'}" ;
-    nidm:source_variable "side" ;
+    nidm:sourceVariable "side" ;
     nidm:valueType <xsd:string> ;
     ilx:ilx_0739289 "NIDM" .
 
-niiri:type_iEEG_e9t5db a nidm:PersonalDataElement,
+niiri:type_iEEG_2nbsqna a nidm:PersonalDataElement,
         prov:Entity ;
     rdfs:label "type iEEG" ;
     dct:description "type of implantation" ;
     nidm:levels "{'aECOG': 'acute electrocorticography', 'cECOG': 'long-term electrocorticography', 'SEEG': 'stereo-encephalography'}" ;
-    nidm:source_variable "type iEEG" ;
+    nidm:sourceVariable "type iEEG" ;
     nidm:valueType <xsd:string> ;
     ilx:ilx_0739289 "NIDM" .
 
-niiri:type_surgery_2das3qh a nidm:PersonalDataElement,
+niiri:type_surgery_1g82orh a nidm:PersonalDataElement,
         prov:Entity ;
     rdfs:label "type surgery" ;
     dct:description "type of surgery" ;
-    nidm:source_variable "type surgery" ;
+    nidm:sourceVariable "type surgery" ;
     nidm:valueType <xsd:string> ;
     ilx:ilx_0739289 "NIDM" .
 
-niiri:a59d272c-ad4a-11eb-80b8-003ee1ce9545 a bids:sidecar_file,
-        prov:Entity ;
-    nfo:filename "participants.json"^^xsd:string ;
-    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.json"^^xsd:string ;
-    prov:wasGeneratedBy niiri:b59cf590-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:a59ed040-ad4a-11eb-80b8-003ee1ce9545 a prov:Agent,
-        prov:Person ;
-    ndar:src_subject_id "RESP0465"^^xsd:string .
-
-niiri:b59cae78-ad4a-11eb-80b8-003ee1ce9545 a bids:sidecar_file,
-        prov:Entity ;
-    nfo:filename "participants.json"^^xsd:string ;
-    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.json"^^xsd:string ;
-    prov:wasGeneratedBy niiri:a59c79e4-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b59cf126-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b59d67aa-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b59d9b6c-ad4a-11eb-80b8-003ee1ce9545 a bids:sidecar_file,
-        prov:Entity ;
-    nfo:filename "participants.json"^^xsd:string ;
-    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.json"^^xsd:string ;
-    prov:wasGeneratedBy niiri:a59d6ad4-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:b59e1088-ad4a-11eb-80b8-003ee1ce9545 a bids:sidecar_file,
-        prov:Entity ;
-    nfo:filename "participants.json"^^xsd:string ;
-    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.json"^^xsd:string ;
-    prov:wasGeneratedBy niiri:c59de3e2-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:c59e4fe4-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:c59e5a7a-ad4a-11eb-80b8-003ee1ce9545 a prov:Agent,
+niiri:ab732100-f96a-11eb-b368-1094bbf2086c a prov:Agent,
         prov:Person ;
     ndar:src_subject_id "RESP0384"^^xsd:string .
 
-niiri:c59ec3d4-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
+niiri:ab73a580-f96a-11eb-b368-1094bbf2086c a bids:sidecar_file,
+        prov:Entity ;
+    nfo:filename "participants.json"^^xsd:string ;
+    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.json"^^xsd:string ;
+    prov:wasGeneratedBy niiri:bb730c88-f96a-11eb-b368-1094bbf2086c .
 
-niiri:d59cfed2-ad4a-11eb-80b8-003ee1ce9545 a prov:Agent,
+niiri:ab7469d4-f96a-11eb-b368-1094bbf2086c a prov:Agent,
         prov:Person ;
-    ndar:src_subject_id "RESP0280"^^xsd:string .
+    ndar:src_subject_id "RESP0465"^^xsd:string .
 
-niiri:d59d72c2-ad4a-11eb-80b8-003ee1ce9545 a prov:Agent,
+niiri:bb6f750a-f96a-11eb-b368-1094bbf2086c a bids:sidecar_file,
+        prov:Entity ;
+    nfo:filename "participants.json"^^xsd:string ;
+    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.json"^^xsd:string ;
+    prov:wasGeneratedBy niiri:fb6edaaa-f96a-11eb-b368-1094bbf2086c .
+
+niiri:cb6eca6a-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:cb7009de-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:cb709408-f96a-11eb-b368-1094bbf2086c a bids:sidecar_file,
+        prov:Entity ;
+    nfo:filename "participants.json"^^xsd:string ;
+    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.json"^^xsd:string ;
+    prov:wasGeneratedBy niiri:fb7015be-f96a-11eb-b368-1094bbf2086c .
+
+niiri:db6d419a-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:db70232e-f96a-11eb-b368-1094bbf2086c a prov:Agent,
         prov:Person ;
     ndar:src_subject_id "RESP0356"^^xsd:string .
 
-niiri:e59c82f4-ad4a-11eb-80b8-003ee1ce9545 a prov:Agent,
-        prov:Person ;
-    ndar:src_subject_id "RESP0059"^^xsd:string .
-
-niiri:e59dea9a-ad4a-11eb-80b8-003ee1ce9545 a prov:Agent,
+niiri:db71b158-f96a-11eb-b368-1094bbf2086c a prov:Agent,
         prov:Person ;
     ndar:src_subject_id "RESP0301"^^xsd:string .
 
-niiri:f59c7480-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:f59de0cc-ad4a-11eb-80b8-003ee1ce9545 a nidm:Session,
-        prov:Activity ;
-    dct:isPartOf niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 .
-
-niiri:f59e8068-ad4a-11eb-80b8-003ee1ce9545 a bids:sidecar_file,
+niiri:db74d734-f96a-11eb-b368-1094bbf2086c a bids:sidecar_file,
         prov:Entity ;
     nfo:filename "participants.json"^^xsd:string ;
     prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.json"^^xsd:string ;
-    prov:wasGeneratedBy niiri:a59e5318-ad4a-11eb-80b8-003ee1ce9545 .
+    prov:wasGeneratedBy niiri:cb745d7c-f96a-11eb-b368-1094bbf2086c .
 
-niiri:f59ef4ee-ad4a-11eb-80b8-003ee1ce9545 a bids:sidecar_file,
+niiri:eb6d7426-f96a-11eb-b368-1094bbf2086c a prov:Agent,
+        prov:Person ;
+    ndar:src_subject_id "RESP0059"^^xsd:string .
+
+niiri:fb6de780-f96a-11eb-b368-1094bbf2086c a bids:sidecar_file,
         prov:Entity ;
     nfo:filename "participants.json"^^xsd:string ;
     prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.json"^^xsd:string ;
-    prov:wasGeneratedBy niiri:e59ec8ca-ad4a-11eb-80b8-003ee1ce9545 .
+    prov:wasGeneratedBy niiri:cb6d5e32-f96a-11eb-b368-1094bbf2086c .
 
-<http://uri.interlex.org/ilx_0100400> a prov:Entity ;
+niiri:fb6eeebe-f96a-11eb-b368-1094bbf2086c a prov:Agent,
+        prov:Person ;
+    ndar:src_subject_id "RESP0280"^^xsd:string .
+
+niiri:fb718d36-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:fb7231d2-f96a-11eb-b368-1094bbf2086c a bids:sidecar_file,
+        prov:Entity ;
+    nfo:filename "participants.json"^^xsd:string ;
+    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400/participants.json"^^xsd:string ;
+    prov:wasGeneratedBy niiri:eb719d26-f96a-11eb-b368-1094bbf2086c .
+
+niiri:fb72fbc6-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+niiri:fb745098-f96a-11eb-b368-1094bbf2086c a nidm:Session,
+        prov:Activity ;
+    dct:isPartOf niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c .
+
+ilx:ilx_0100400 a prov:Entity ;
     rdfs:label "age" .
 
-<http://uri.interlex.org/ilx_0738439> a prov:Entity ;
+ilx:ilx_0738439 a prov:Entity ;
     rdfs:label "sex" .
 
-niiri:a59c79e4-ad4a-11eb-80b8-003ee1ce9545 a onli:instrument-based-assessment,
+niiri:bb730c88-f96a-11eb-b368-1094bbf2086c a onli:instrument-based-assessment,
         nidm:Acquisition,
         prov:Activity ;
-    dct:isPartOf niiri:f59c7480-ad4a-11eb-80b8-003ee1ce9545 ;
+    dct:isPartOf niiri:fb72fbc6-f96a-11eb-b368-1094bbf2086c ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent niiri:e59c82f4-ad4a-11eb-80b8-003ee1ce9545 ;
+            prov:agent niiri:ab732100-f96a-11eb-b368-1094bbf2086c ;
             prov:hadRole sio:Subject ] .
 
-niiri:a59d6ad4-ad4a-11eb-80b8-003ee1ce9545 a onli:instrument-based-assessment,
+niiri:cb6d5e32-f96a-11eb-b368-1094bbf2086c a onli:instrument-based-assessment,
         nidm:Acquisition,
         prov:Activity ;
-    dct:isPartOf niiri:b59d67aa-ad4a-11eb-80b8-003ee1ce9545 ;
+    dct:isPartOf niiri:db6d419a-f96a-11eb-b368-1094bbf2086c ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent niiri:d59d72c2-ad4a-11eb-80b8-003ee1ce9545 ;
+            prov:agent niiri:eb6d7426-f96a-11eb-b368-1094bbf2086c ;
             prov:hadRole sio:Subject ] .
 
-niiri:a59e5318-ad4a-11eb-80b8-003ee1ce9545 a onli:instrument-based-assessment,
+niiri:cb745d7c-f96a-11eb-b368-1094bbf2086c a onli:instrument-based-assessment,
         nidm:Acquisition,
         prov:Activity ;
-    dct:isPartOf niiri:c59e4fe4-ad4a-11eb-80b8-003ee1ce9545 ;
+    dct:isPartOf niiri:fb745098-f96a-11eb-b368-1094bbf2086c ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent niiri:c59e5a7a-ad4a-11eb-80b8-003ee1ce9545 ;
+            prov:agent niiri:ab7469d4-f96a-11eb-b368-1094bbf2086c ;
             prov:hadRole sio:Subject ] .
 
-niiri:b59cf590-ad4a-11eb-80b8-003ee1ce9545 a onli:instrument-based-assessment,
+niiri:eb719d26-f96a-11eb-b368-1094bbf2086c a onli:instrument-based-assessment,
         nidm:Acquisition,
         prov:Activity ;
-    dct:isPartOf niiri:b59cf126-ad4a-11eb-80b8-003ee1ce9545 ;
+    dct:isPartOf niiri:fb718d36-f96a-11eb-b368-1094bbf2086c ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent niiri:d59cfed2-ad4a-11eb-80b8-003ee1ce9545 ;
+            prov:agent niiri:db71b158-f96a-11eb-b368-1094bbf2086c ;
             prov:hadRole sio:Subject ] .
 
-niiri:c59de3e2-ad4a-11eb-80b8-003ee1ce9545 a onli:instrument-based-assessment,
+niiri:fb6edaaa-f96a-11eb-b368-1094bbf2086c a onli:instrument-based-assessment,
         nidm:Acquisition,
         prov:Activity ;
-    dct:isPartOf niiri:f59de0cc-ad4a-11eb-80b8-003ee1ce9545 ;
+    dct:isPartOf niiri:cb6eca6a-f96a-11eb-b368-1094bbf2086c ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent niiri:e59dea9a-ad4a-11eb-80b8-003ee1ce9545 ;
+            prov:agent niiri:fb6eeebe-f96a-11eb-b368-1094bbf2086c ;
             prov:hadRole sio:Subject ] .
 
-niiri:e59ec8ca-ad4a-11eb-80b8-003ee1ce9545 a onli:instrument-based-assessment,
+niiri:fb7015be-f96a-11eb-b368-1094bbf2086c a onli:instrument-based-assessment,
         nidm:Acquisition,
         prov:Activity ;
-    dct:isPartOf niiri:c59ec3d4-ad4a-11eb-80b8-003ee1ce9545 ;
+    dct:isPartOf niiri:cb7009de-f96a-11eb-b368-1094bbf2086c ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent niiri:a59ed040-ad4a-11eb-80b8-003ee1ce9545 ;
+            prov:agent niiri:db70232e-f96a-11eb-b368-1094bbf2086c ;
             prov:hadRole sio:Subject ] .
 
 nidm:PersonalDataElement rdfs:subClassOf nidm:DataElement .
 
-niiri:f1eafe7e-ad4a-11eb-80b8-003ee1ce9545 a nidm:Project,
+niiri:ba8034f6-f96a-11eb-b368-1094bbf2086c a nidm:Project,
         prov:Activity ;
+    obo:IAO_0000324 "Demuru M., van Blooijs D., Zweiphenning W. et al 2020, A practical workflow for organizing clinical intracranial EEG data in the intraoperative and long term monitoring settings in the Brain Imaging Data Structure"^^xsd:string ;
+    obo:IAO_0000623 "Epi-Sign ProjectAlexandre Suerman Stipendium 2015Epilepsiefonds #17-07"^^xsd:string ;
     dctypes:title "Dataset Clinical Epilepsy iEEG to BIDS - RESPect_intraoperative_iEEG"^^xsd:string ;
     dct:license "CC0"^^xsd:string ;
     sio:Identifier "BEP010"^^xsd:string ;
     dcat:author "Zweiphenning W.Demuru M.van Blooijs D.Leijten F.Zijlmans M."^^xsd:string ;
     dcat:creator "articles and/or links"^^xsd:string ;
-    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400"^^xsd:string .
+    prov:Location "file://Volumes/Research/datasets.datalad.org/openneuro/ds003400"^^xsd:string ;
+    ns1:EDAMdata_1188 "10.18112/openneuro.ds003400.v1.0.1"^^xsd:string .
 

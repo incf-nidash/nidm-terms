@@ -43,7 +43,7 @@ def main(argv):
     parser = ArgumentParser(description='This program will load an OWL ontology/terminology file and create separate'
                                         'JSON-LD NIDM-Terms compliant files for each term')
 
-    parser.add_argument('-owl', dest='owl_file', required=True,nargs='+', help="Comma separated list of "
+    parser.add_argument('-owl', dest='owl_file', required=True,nargs='+', help="Space separated list of "
                             "OWL files to convert.")
     parser.add_argument('-out', dest='output_dir', required=True, help="Output directory to save JSON files")
     parser.add_argument('-context', dest='context', required=False, help="URL to context file. If not supplied then "
@@ -87,12 +87,12 @@ def main(argv):
             doc['@type'].append(NIDM+'CommonDataElement')
 
             # add associated with property
-            doc[context['@context']['associatedWith']] = []
-            doc[context['@context']['associatedWith']].append('NIDM')
+            doc[context['@context']['associatedWith']['@id']] = []
+            doc[context['@context']['associatedWith']['@id']].append('NIDM')
             # if we have an additional 'associatedWith' string to add from a known import
             # add it
             if basename(file).rstrip(",") in ASSOCIATED_WITH.keys():
-                doc[context['@context']['associatedWith']].append(ASSOCIATED_WITH[basename(file).rstrip(",")])
+                doc[context['@context']['associatedWith']['@id']].append(ASSOCIATED_WITH[basename(file).rstrip(",")])
             #doc['@type'].append(context['@context']['DefinedTerm'])
             #store term as localpart of subject identifier
             url, fragment = urldefrag(so[0])
@@ -112,19 +112,19 @@ def main(argv):
                 elif tuples[0] == OWL["closeMatch"]:
                     doc[context['@context']['closeMatch']] = tuples[1]
                 elif tuples[0] == OBO["IAO_0000116"]:
-                    if context['@context']['comment'] in doc:
-                        doc[context['@context']['comment']].append(tuples[1])
+                    if context['@context']['comment']['@id'] in doc:
+                        doc[context['@context']['comment']['@id']].append(tuples[1])
                     else:
-                        doc[context['@context']['comment']] = []
-                        doc[context['@context']['comment']].append(str(tuples[1]))
+                        doc[context['@context']['comment']['@id']] = []
+                        doc[context['@context']['comment']['@id']].append(str(tuples[1]))
                 elif tuples[0] == RDFS["subClassOf"]:
                     doc[context['@context']['supertypeCDEs']['@id']] = tuples[1]
                 elif tuples[0] == RDFS["comment"]:
-                    if context['@context']['comment'] in doc:
-                        doc[context['@context']['comment']].append(str(tuples[1]))
+                    if context['@context']['comment']['@id'] in doc:
+                        doc[context['@context']['comment']['@id']].append(str(tuples[1]))
                     else:
-                        doc[context['@context']['comment']] = []
-                        doc[context['@context']['comment']].append(str(tuples[1]))
+                        doc[context['@context']['comment']['@id']] = []
+                        doc[context['@context']['comment']['@id']].append(str(tuples[1]))
                 elif tuples[0] == RDF["type"]:
                     doc['@type'].append(str(tuples[1]))
 
@@ -140,6 +140,10 @@ def main(argv):
                 compacted['candidateTerms'] = \
                     compacted['nidm:candidateTerms']
                 del compacted['nidm:candidateTerms']
+            if "http://uri.interlex.org/ilx_0770184" in compacted.keys():
+                compacted['supertypeCDEs'] = \
+                    compacted['http://uri.interlex.org/ilx_0770184']
+                del compacted['http://uri.interlex.org/ilx_0770184']
             if "rdfs:label" in compacted.keys():
                 compacted['label'] = \
                     compacted['rdfs:label']
@@ -189,11 +193,11 @@ def main(argv):
     output_dir = os.path.split(args.output_dir)[0]
     # if a single-file jsonld file already exists than add these terms to it else create a new one
     if isfile(join(output_dir,basename(args.output_dir) + ".jsonld")):
-        cmd = "python " + join(sys.path[0],"combinebidsjsonld.py") + " -inputDir " + args.output_dir + " -outputDir " + \
+        cmd = "python " + join(sys.path[0],"combinejsonld.py") + " -inputDir " + args.output_dir + " -outputDir " + \
             join(output_dir,basename(args.output_dir) + ".jsonld") + " -jsonld " + \
             join(output_dir, basename(args.output_dir) + ".jsonld")
     else:
-        cmd = "python " + join(sys.path[0], "combinebidsjsonld.py") + " -inputDir " + args.output_dir + " -outputDir " + \
+        cmd = "python " + join(sys.path[0], "combinejsonld.py") + " -inputDir " + args.output_dir + " -outputDir " + \
               join(output_dir, basename(args.output_dir) + ".jsonld")
 
     print(cmd)
