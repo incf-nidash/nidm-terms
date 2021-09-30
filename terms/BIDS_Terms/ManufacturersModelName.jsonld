@@ -1,15 +1,18 @@
 {
-  "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
-  "@type": [
-    "CommonDataElement",
-    "owl:DatatypeProperty"
-  ],
-  "description": "RECOMMENDED. Manufacturer's model name of the equipment that produced the composite instances. Corresponds to DICOM Tag 0008, 1090 Manufacturers Model Name",
-  "candidateTerms": "ManufacturersModelName",
-  "associatedWith": [
-    "NIDM",
-    "BIDS"
-  ],
-  "label": "ManufacturersModelName",
-  "sameAs": "http://purl.org/nidash/dicom#dicom_00081090"
+    "@context": "https://raw.githubusercontent.com/NIDM-Terms/terms/master/context/cde_context.jsonld",
+    "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+    ],
+    "description": "REQUIRED PET scanner model name (for example, 'mMR Biograph').",
+    "label": "ManufacturersModelName",
+    "responseOptions": {
+        "valueType": "xsd:stringc"
+    },
+    "associatedWith": [
+        "NIDM",
+        "BIDS"
+    ],
+    "candidateTerms": "ManufacturersModelName",
+    "sameAs": "http://purl.org/nidash/dicom#dicom_00081090"
 }
