@@ -54,7 +54,11 @@ Reuse of existing neuroscience data relies, in part, on our ability to understan
 	  
 ### Demos
 
-OpenNeuro Concept Query Demo: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NIDM-Terms/terms/master?filepath=utils%2Fquery_demo)
+BIDS Sidecar File - OpenNeuro Concept Query Demo: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NIDM-Terms/terms/master?filepath=utils%2Fquery_demo)
+	* In this query demonstration we use the NIDM-Terms augmented BIDS JSON sidecar files which now contain concept-level associations between selected dataset-specific variables and broader concepts.  Using this mechanism we can load each of the BIDS sidecar files, create an internal dictionary of dataset x concept and then build a query to find datasets based on user-selected concepts. 
+	
+NIDM - OpenNeuro Concept Query Demo: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NIDM-Terms/terms/master?filepath=utils%2Fquery_demo)
+	* Compared to the BIDS sidecar file query demonstration, this one uses the NIDM semantic web documents directly.  Because we used the pynidm tool [bidsmri2nidm](https://github.com/incf-nidash/PyNIDM/blob/master/nidm/experiment/tools/bidsmri2nidm.py), we have access within the NIDM file to other imaging-related metadata beyond just the information contained in the BIDS sidecar file. If one were interested in loading the NIDM files into a RDFLib graph object one could use the RDFLib SPARQL query engine directly to perform queries.  Because we have many OpenNeuro datasets (> 150), we benefit from having a graph-based database server perform the query.  In this example, we have loaded the OpenNeuro dataset NIDM files into the ReproLake graph resource.  Here we simply post a SPARQL query to that resource and retrieve the results.
 
 ### Concept Use Frequency
 
