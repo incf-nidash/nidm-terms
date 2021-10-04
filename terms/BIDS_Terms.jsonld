@@ -7,6 +7,26 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "RECOMMENDED if PlasmaAvail is true, Measured free fraction in plasma, meaning the concentration of free compound in plasma divided by total concentration of compound in plasma (Units: 0-100%).",
+      "candidateTerms": "PlasmaFreeFraction",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "PlasmaFreeFraction"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "phase",
       "candidateTerms": "Phase",
       "associatedWith": [
@@ -90,6 +110,26 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "REQUIRED Unit format of the mass of compound injected (for example, 'ug' or 'umol'). Note this is not required for an FDG acquisition, since it is not available, and SHOULD be set to 'n/a'.",
+      "candidateTerms": "InjectedMassUnits",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "InjectedMassUnits"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "REQUIRED. Defines the coordinate system for the MEG sensors. See Appendix VIII: preferred names of Coordinate systems. If Other, provide definition of the coordinate system in [MEGCoordinateSystemDescription].",
       "candidateTerms": "MEGCoordinateSystem",
       "associatedWith": [
@@ -120,6 +160,26 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "REQUIRED Boolean flag specifying whether the image data have been decay-corrected.",
+      "candidateTerms": "ImageDecayCorrected",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "ImageDecayCorrected"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "RECOMMENDED. URL of the corresponding Cognitive Atlas Task term.",
       "candidateTerms": "CogAtlasID",
       "associatedWith": [
@@ -127,6 +187,26 @@
         "BIDS"
       ],
       "label": "CogAtlasID"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED, but REQUIRED if ModeOfAdministration is bolus-infusion, Injected volume of the radiotracer in the unit \"mL\".",
+      "candidateTerms": "InjectedVolume",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "InjectedVolume"
     },
     {
       "@type": [
@@ -171,8 +251,15 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "RECOMMENDED. Manufacturer of the equipment that produced the composite instances. Corresponds to DICOM Tag 0008, 0070 Manufacturer",
+      "description": "REQUIRED Scanner manufacturer (for example, 'Siemens').",
       "candidateTerms": "Manufacturer",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
       "associatedWith": [
         "NIDM",
         "BIDS"
@@ -191,6 +278,26 @@
       "label": "Magnetoencephalography",
       "supertypeCDEs": "http://purl.org/nidash/nidm#ImageContrastType",
       "sameAs": "http://purl.org/nidash/nidm#Magnetoencephalography"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED if PlasmaAvail is true, Method used to measure metabolites.",
+      "candidateTerms": "MetaboliteMethod",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "MetaboliteMethod"
     },
     {
       "@type": [
@@ -228,6 +335,26 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "REQUIRED Mode of administration of the injection (for example, 'bolus', 'infusion', or 'bolus-infusion').",
+      "candidateTerms": "ModOfAdministration",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "ModeOfAdministration"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "RECOMMENDED. Institution defined name of the machine that produced the composite instances. Corresponds to DICOM Tag 0008, 1010 Station Name",
       "candidateTerms": "StationName",
       "associatedWith": [
@@ -236,6 +363,26 @@
       ],
       "label": "StationName",
       "sameAs": "http://purl.org/nidash/dicom#dicom_00081010"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Unit format of the specified injected radioactivity (for example, 'MBq').",
+      "candidateTerms": "InjectedRadioactivityUnits",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "InjectedRadioactivityUnits"
     },
     {
       "@type": [
@@ -349,6 +496,26 @@
     {
       "@type": [
         "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Reconstruction method or algorithm (for example, \"3d-op-osem\").",
+      "candidateTerms": "ReconMethodName",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "ReconMethodName"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
         "owl:Class"
       ],
       "description": "sbref is a suffix name that denotes that the file contains single-band reference scans used in multiband imaging.",
@@ -373,6 +540,26 @@
       ],
       "label": "T2map",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSSuffix"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Unit of reconstruction parameters (for example, [\"none\", \"none\"]).",
+      "candidateTerms": "ReconMethodParameterUnits",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "ReconMethodParameterUnits"
     },
     {
       "@type": [
@@ -413,6 +600,26 @@
       ],
       "label": "T2star",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSSuffix"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED if WholeBloodAvail is true, Radioactivity in whole blood samples",
+      "candidateTerms": "whole_blood_radioactivity",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "whole_blood_radioactivity"
     },
     {
       "@type": [
@@ -462,6 +669,26 @@
         "BIDS"
       ],
       "label": "MEGCoordSys"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Boolean that specifies if metabolite measurements are available. If true, the metabolite_parent_fraction column MUST be present in the corresponding *_blood.tsv file.",
+      "candidateTerms": "MetaboliteAvail",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:boolean"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "MetaboliteAvail"
     },
     {
       "@type": [
@@ -630,6 +857,26 @@
     {
       "@type": [
         "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Time duration of each frame in default unit seconds. This corresponds to DICOM Tag (0018,1242) converted to seconds.",
+      "candidateTerms": "FrameDuration",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "FrameDuration"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
         "owl:Class"
       ],
       "description": "Reconstruction is a BIDS entity name that identifies a data file as being related to a specific reconstruction algorithm or method.",
@@ -663,6 +910,26 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "RECOMMENDED The length of the blood tubing, from the subject to the detector in meters.",
+      "candidateTerms": "TubingLength",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "TubingLength"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "RECOMMENDED. Key:value pairs of the labels and 3-D digitized position of anatomical landmarks, interpreted following the FiducialsCoordinateSystem (e.g., {NAS: [12.7,21.3,13.9], LPA: [5.2,11.3,9.6], RPA: [20.2,11.3,9.1]}).",
       "candidateTerms": "FiducialsCoordinates",
       "associatedWith": [
@@ -689,6 +956,46 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "REQUIRED Name of the tracer compound used (for example, 'CIMBI-36')",
+      "candidateTerms": "TracerName",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "TracerName"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED, but REQUIRED if ModeOfAdministration is bolus-infusion, If given, infusion speed.",
+      "candidateTerms": "InfusionSpeed",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "InfusionSpeed"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "OPTIONAL. A freeform text field documenting the anatomical landmarks that were used and how the head localization coils were placed relative to these. This field can describe, for instance, whether the true anatomical locations of the left and right pre-auricular points were used and digitized, or rather whether they were defined as the intersection between the tragus and the helix (the entry of the ear canal), or any other anatomical description of selected points in the vicinity of the ears.",
       "candidateTerms": "FiducialsDescription",
       "associatedWith": [
@@ -702,6 +1009,46 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "RECOMMENDED Body part of the organ / body region scanned. Corresponds to DICOM Tag 0018, 0015 Body Part Examined",
+      "candidateTerms": "BodyPart",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "BodyPart"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED, but REQUIRED if ModeOfAdministration is bolus-infusion, Amount of radioactivity infused into the patient. This value must be less than or equal to the total injected radioactivity (InjectedRadioactivity). Units should be the same as InjectedRadioactivityUnits.",
+      "candidateTerms": "InfusionRadioactivity",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "InjectedRadioactivity"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "OPTIONAL. Boolean (true or false) value specifying whether increasing voxel intensity (within sample voxels) denotes a decreased value with respect to the contrast suffix. This is commonly the case when Cerebral Blood Volume is estimated via usage of a contrast agent in conjunction with a T2* weighted acquisition protocol.",
       "candidateTerms": "NegativeContrast",
       "associatedWith": [
@@ -709,6 +1056,26 @@
         "BIDS"
       ],
       "label": "NegativeContrast"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Reference paper for the attenuation correction method used.",
+      "candidateTerms": "AttenuationCorrectionMethodReference",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "AttenuationCorrectionMethodReference"
     },
     {
       "@type": [
@@ -749,6 +1116,26 @@
       ],
       "label": "EOGChannelCount",
       "sameAs": "http://purl.org/nidash/nidm#NumberOfChannels"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Dose amount of pharmaceutical coadministered with tracer.",
+      "candidateTerms": "PharmaceuticalDoseAmount",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "PharmaceuticalDoseAmount"
     },
     {
       "@type": "owl:Class",
@@ -798,6 +1185,26 @@
         "BIDS"
       ],
       "label": "EEGCoordSys"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Time to which specific radioactivity measurement above applies in the default unit 'hh:mm:ss'.",
+      "candidateTerms": "SpecificRadioActivityMeasTime",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "SpecificRadioActivityMeasTime"
     },
     {
       "@type": [
@@ -886,6 +1293,46 @@
     {
       "@type": [
         "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Boolean flag specifying whether the blood data have been dispersion-corrected. NOTE: not customary for manual samples, and hence should be set to false.",
+      "candidateTerms": "DispersionCorrected",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:boolean"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "DispersionCorrected"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED if MetaboliteAvail is true, Metabolite recovery correction from the HPLC, for tracers where it changes with time postinjection. If true, the hplc_recovery_fractions column MUST be present in the corresponding *_blood.tsv file.",
+      "candidateTerms": "MetaboliteRecoveryCorrectionApplied",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:boolean"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "MetaboliteRecoveryCorrectionApplied"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
         "owl:AnnotationProperty"
       ],
       "description": "OPTIONAL. List of references to publication that contain information on the dataset, or links.",
@@ -922,6 +1369,26 @@
         "BIDS"
       ],
       "label": "iEEGCoordinateSystemDescription"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Time to which molar radioactivity measurement above applies in the default unit 'hh:mm:ss'.",
+      "candidateTerms": "MolarActivityMeasTime",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "MolarActivityMeasTime"
     },
     {
       "@type": [
@@ -967,6 +1434,46 @@
     {
       "@type": [
         "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Unit format relating to pharmaceutical dose (for example, \"mg\" or \"mg/kg\").",
+      "candidateTerms": "PharmaceuticalDoseUnits",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "PharmaceuticalDoseUnits"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Scale factor for each frame.",
+      "candidateTerms": "ScaleFactor",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "ScaleFactor"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
         "owl:Class"
       ],
       "description": "bold is a suffix name that denotes that the file contains data in which the Blood Oxygen-Level Dependent effect provides the image contrast.",
@@ -983,8 +1490,15 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "RECOMMENDED. The address of the institution in charge of the equipment that produced the composite instances. Corresponds to DICOM Tag 0008, 0081 InstitutionAddress.",
+      "description": "RECOMMENDED The address of the institution in charge of the equipment that produced the composite instances. Corresponds to DICOM Tag 0008, 0081 InstitutionAddress.",
       "candidateTerms": "InstitutionAddress",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
       "associatedWith": [
         "NIDM",
         "BIDS"
@@ -1063,6 +1577,26 @@
     {
       "@type": [
         "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Time zero to which all scan and/or blood measurements have been adjusted to, in the unit \"hh:mm:ss\". This should be equal to InjectionStart or ScanStart.",
+      "candidateTerms": "TimeZero",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:time"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "TimeZero"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
         "owl:Class"
       ],
       "description": "T2w is a suffix name that denotes that the file contains spin-spin relaxation weighted data.",
@@ -1073,6 +1607,66 @@
       ],
       "label": "T2w",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSSuffix"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Random rate for each frame (same units as Units, for example, \"Bq/mL\").",
+      "candidateTerms": "RandomRate",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "RandomRate"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Boolean that specifies if plasma measurements are available.",
+      "candidateTerms": "PlasmaAvail",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:boolean"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "PlasmaAvail"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Point in time from which the decay correction was applied with respect to TimeZero in the default unit seconds.",
+      "candidateTerms": "ImageDecayCorrectionTime",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "ImageDecayCorrectionTime"
     },
     {
       "@type": "CommonDataElement",
@@ -1220,8 +1814,35 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "RECOMMENDED. The name of the institution in charge of the equipment that produced the composite instances. Corresponds to DICOM Tag 0008, 0080 InstitutionName.",
+      "description": "RECOMMENDED Time of end of injection with respect to TimeZero in the default unit seconds.",
+      "candidateTerms": "InjectionEnd",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "InjectionEnd"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED The name of the institution in charge of the equipment that produced the composite instances. Corresponds to DICOM Tag 0008, 0080 InstitutionName.",
       "candidateTerms": "InstitutionName",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
       "associatedWith": [
         "NIDM",
         "BIDS"
@@ -1296,6 +1917,26 @@
         "BIDS"
       ],
       "label": "NumberShots"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Time of start of injection with respect to TimeZero in the default unit seconds. This corresponds to DICOM Tag (0018,1042) converted to seconds relative to TimeZero.",
+      "candidateTerms": "InjectionStart",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "InjectionStart"
     },
     {
       "@type": [
@@ -1449,6 +2090,26 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "RECOMMENDED Identification for the software used, such as name and version.",
+      "candidateTerms": "ReconMethodImplementationVersion",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "ReconMethodImplementationVersion"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "REQUIRED. The time at which each volume was acquired during the acquisition. It is described using a list of times (in JSON format) referring to the onset of each volume in the BOLD series. The list must have the same length as the BOLD series, and the values must be non-negative and monotonically increasing. This field is mutually exclusive with RepetitionTime and DelayTime. If defined, this requires acquisition time (TA) be defined via either SliceTiming or AcquisitionDuration be defined.",
       "candidateTerms": "VolumeTiming",
       "associatedWith": [
@@ -1469,6 +2130,26 @@
         "BIDS"
       ],
       "label": "FiducialsCoordinateSystem"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Kernel size of post-recon filter (FWHM) in default units \"mm\".",
+      "candidateTerms": "ReconFilterSize",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "ReconFilterSize"
     },
     {
       "@type": [
@@ -1502,6 +2183,46 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "RECOMMENDED Molar activity of compound injected. Corresponds to DICOM Tag (0018,1077) Radiopharmaceutical Specific Activity.",
+      "candidateTerms": "MolarActivity",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "MolarActivity"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED if MetaboliteAvail is true, Parent fraction of the radiotracer (0-1)",
+      "candidateTerms": "metabolite_parent_fraction",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "metabolite_parent_fraction"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "REQUIRED. The time in seconds between the beginning of an acquisition of one volume and the beginning of acquisition of the volume following it (TR). Please note that this definition includes time between scans (when no data has been acquired) in case of sparse acquisition schemes. This value needs to be consistent with the pixdim[4] field (after accounting for units stored in xyzt units field) in the NIfTI header. This field is mutually exclusive with VolumeTiming and is derived from DICOM Tag 0018, 0080 and converted to seconds.",
       "candidateTerms": "RepetitionTime",
       "associatedWith": [
@@ -1523,6 +2244,26 @@
         "BIDS"
       ],
       "label": "DigitizedLandmarks"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Short description of the attenuation correction method used.",
+      "candidateTerms": "AttenuationCorrection",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "AttenuationCorrection"
     },
     {
       "@type": [
@@ -1556,14 +2297,41 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "RECOMMENDED. The department in the institution in charge of the equipment that produced the composite instances. Corresponds to DICOM Tag 0008, 1040 Institutional Department Name.",
+      "description": "RECOMMENDED The department in the institution in charge of the equipment that produced the composite instances. Corresponds to DICOM Tag 0008, 1040 Institutional Department Name.",
       "candidateTerms": "InstitutionalDepartmentName",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
       "associatedWith": [
         "NIDM",
         "BIDS"
       ],
       "label": "InstitutionalDepartmentName",
       "sameAs": "http://purl.org/nidash/dicom#dicom_00081040"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Time of administration of pharmaceutical dose, relative to time zero (please see below). For an infusion, this should be a vector with two elements specifying the start and end of the infusion period. For more complex dose regimens, the regimen description should be complete enough to enable unambiguous interpretation of the DoseTime vector. Unit format of the specified pharmaceutical dose time should be seconds.",
+      "candidateTerms": "PharmaceuticalDoseTime",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "PharmaceuticalDoseTime"
     },
     {
       "@type": [
@@ -1591,6 +2359,26 @@
       ],
       "label": "angio",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSSuffix"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED The rate at which the blood was withdrawn from the subject. The unit of the specified withdrawal rate should be in \"mL/s\".",
+      "candidateTerms": "WithdrawalRate",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "WithdrawalRate"
     },
     {
       "@type": [
@@ -1790,6 +2578,26 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "RECOMMENDED Prompt rate for each frame (same units as Units, for example, \"Bq/mL\").",
+      "candidateTerms": "PromptRate",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "PromptRate"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "OPTIONAL. Units of the coordinates of DigitizedHeadPointsCoordinateSystem. MUST be m, cm, or mm.",
       "candidateTerms": "DigitizedHeadPointsCoordinateUnits",
       "associatedWith": [
@@ -1823,6 +2631,26 @@
         "BIDS"
       ],
       "label": "DigitizedHeadPoints"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED if MetaboliteRecoveryCorrectionApplied is true, HPLC recovery fractions (the fraction of activity that gets loaded onto the HPLC)",
+      "candidateTerms": "hplc_recovery_fractions",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "hplc_recovery_fractions"
     },
     {
       "@type": "CommonDataElement",
@@ -1897,6 +2725,46 @@
       "label": "HeadCoilCoordinateSystem"
     },
     {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Total mass of radiolabeled compound injected into subject (for example, 10). This can be derived as the ratio of the InjectedRadioactivity and MolarRadioactivity. For those tracers in which injected mass is not available (for example FDG) can be set to 'n/a').",
+      "candidateTerms": "InjectedMass",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "InjectedMass"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Start times for all frames relative to TimeZero in default unit seconds.",
+      "candidateTerms": "FrameTimesStart",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "FrameTimesStart"
+    },
+    {
       "@type": "CommonDataElement",
       "description": "",
       "responseOptions": [
@@ -1930,6 +2798,46 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "RECOMMENDED Scale factor for each frame.",
+      "candidateTerms": "ScatterFraction",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "ScatterFraction"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Singles rate for each frame (same units as Units, for example, \"Bq/mL\").",
+      "candidateTerms": "SinglesRate",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "SinglesRate"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "REQUIRED. General description of the reference scheme used and (when applicable) of location of the reference electrode in the raw recordings (e.g., left mastoid, bipolar, T01 for electrode with name T01, intracranial electrode on top of a grid, not included with data, upside down electrode). If different channels have a different reference, this field should have a general description and the channel specific reference should be defined in the channels.tsv file.",
       "candidateTerms": "iEEGReference",
       "associatedWith": [
@@ -1937,6 +2845,26 @@
         "BIDS"
       ],
       "label": "iEEGReference"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED if PlasmaAvail is true, Radioactivity in plasma,",
+      "candidateTerms": "plasma_radio_activity",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "plasma_radio_activity"
     },
     {
       "@type": [
@@ -1980,6 +2908,46 @@
         "BIDS"
       ],
       "label": "DelayTime"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Injected mass per kilogram bodyweight.",
+      "candidateTerms": "InjectedMassPerWeight",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "InjectedMassPerWeight"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Time of start of scan with respect to TimeZero in the default unit seconds.",
+      "candidateTerms": "ScanStart",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "ScanStart"
     },
     {
       "@type": [
@@ -2039,6 +3007,26 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "REQUIRED Type of post-recon smoothing (for example, [\"Shepp\"])",
+      "candidateTerms": "ReconFilterType",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "ReconFilterType"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "OPTIONAL. Manufacturer of the EEG cap (e.g. EasyCap)",
       "candidateTerms": "CapManufacturer",
       "associatedWith": [
@@ -2062,6 +3050,26 @@
         "BIDS"
       ],
       "label": "PulseSequenceType"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED, but REQUIRED if ModeOfAdministration is bolus-infusion, Time of start of infusion with respect to TimeZero in the default unit seconds.",
+      "candidateTerms": "InfusionStart",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:int"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "InfusionStart"
     },
     {
       "@type": [
@@ -2165,6 +3173,26 @@
       ],
       "label": "MagneticFieldStrength",
       "sameAs": "http://purl.org/nidash/dicom#dicom_00180087"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Type of acquisition of the PET data (for example, 'list mode')",
+      "candidateTerms": "AcquisitionMode",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "AcquisitionMode"
     },
     {
       "@type": [
@@ -2374,6 +3402,46 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "REQUIRED Names of reconstruction parameters (for example, [\"subsets\", \"iterations\"])",
+      "candidateTerms": "ReconMethodParameterLabels",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "ReconMethodParameterLabels"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDE Decay correction factor for each frame.",
+      "candidateTerms": "DecayCorrectionFactor",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "DecayCorrectionFactor"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "OPTIONAL. Free form description of stimulation parameters, such as frequency, shape etc. Specific onsets can be specified in the events.tsv file. Specific shapes can be described here in freeform text.",
       "candidateTerms": "ElectricalStimulationParameters",
       "associatedWith": [
@@ -2394,6 +3462,26 @@
         "BIDS"
       ],
       "label": "Columns"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Description of the type of tubing used, ideally including the material and (internal) diameter.",
+      "candidateTerms": "TubingType",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "TubingType"
     },
     {
       "@type": [
@@ -2452,6 +3540,26 @@
     {
       "@type": [
         "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Measured haematocrit, meaning the volume of erythrocytes divided by the volume of whole blood.",
+      "candidateTerms": "Haematocrit",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "Haematocrit"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
         "owl:DatatypeProperty",
         "owl:Class"
       ],
@@ -2483,6 +3591,86 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "REQUIRED Boolean that specifies if whole blood measurements are available. If true, the whole_blood_radioactivity column MUST be present in the corresponding *_blood.tsv file.",
+      "candidateTerms": "WholeBloodAvail",
+      "responseOptions": [
+        {
+          "valueType": [
+            "./"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "WholeBloodAvail"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED if PlasmaAvail is true, Method used to estimate free fraction.",
+      "candidateTerms": "PlasmaFreeFractionMethod",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "PlasmaFreeFractionMethod"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "OPTIONAL Details of anaesthesia used, if any.",
+      "candidateTerms": "Anaesthesia",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "Anaesthesia"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Details of the pharmaceutical dose regimen. Either adequate description or short-code relating to regimen documented elsewhere (for example, \"single oral bolus\").",
+      "candidateTerms": "PharmaceuticalDoseRegimen",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "PharmaceuticalDoseRegimen"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "Dir is a datatype property, which takes a value that identifies the phase-encoding application direction for a data file.",
       "candidateTerms": "dir",
       "associatedWith": [
@@ -2490,6 +3678,26 @@
         "BIDS"
       ],
       "label": "dir"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Purity of the radiolabeled compound (between 0 and 100%).",
+      "candidateTerms": "Purity",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "Purity"
     },
     {
       "@type": [
@@ -2504,6 +3712,26 @@
       ],
       "label": "Contrast Enhancing Agent",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSEntity"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Date of scan in the default unit \"YYYY-MM-DD[Z]\", with the Z indicator being optional for indicating UTC timezone",
+      "candidateTerms": "ScanDate",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "ScanDate"
     },
     {
       "@type": [
@@ -2677,6 +3905,26 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "REQUIRED Values of reconstruction parameters (for example, [21, 3])",
+      "candidateTerms": "ReconMethodParameterValues",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "ReconMethodParameterValues"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "RECOMMENDED. Text of the instructions given to participants before the scan. This is especially important in context of resting state fMRI and distinguishing between eyes open and eyes closed paradigms.",
       "candidateTerms": "Instructions",
       "associatedWith": [
@@ -2842,6 +4090,46 @@
     {
       "@type": [
         "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Radioisotope labelling tracer (for example, 'C11').",
+      "candidateTerms": "TracerRadionuclide",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "TracerRadionuclide"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Unit format of the injected mass per kilogram bodyweight (for example, 'ug/kg').",
+      "candidateTerms": "InjectedMassPerWeightUnits",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "InjectedMassPerWeightUnits"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
         "owl:Class"
       ],
       "description": "deface is a suffix name that denotes that the file contains a a mask volume used in by the defacing algorithm.",
@@ -2852,6 +4140,26 @@
       ],
       "label": "defacemask",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSSuffix"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED External dispersion time constant resulting from tubing in default unit seconds.",
+      "candidateTerms": "DispersionConstant",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "DispersionConstant"
     },
     {
       "@type": [
@@ -2999,6 +4307,26 @@
     {
       "@type": [
         "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Unit of the image file; please see BIDS main spec section 6. SI unit for radioactivity (Becquerel) should be used (for example, 'Bq/mL'). Corresponds to DICOM Tag 0054, 1001 Units.",
+      "candidateTerms": "Units",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "Units"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
         "owl:Class"
       ],
       "description": "BIDS Entity is a name that is one of the restricted set of terms used to encode metadata into a filename.",
@@ -3012,6 +4340,26 @@
       ],
       "label": "BIDS Entity",
       "supertypeCDEs": "http://semanticscience.org/resource/SIO_000116"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED ID of the tracer compound from the SNOMED Ontology (subclass of Radioactive isotope).",
+      "candidateTerms": "TracerSNOMED",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "TracerSNOMED"
     },
     {
       "@type": [
@@ -3117,6 +4465,26 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "REQUIRED Total amount of radioactivity injected into the patient (for example, 400). For bolus-infusion experiments, this value should be the sum of all injected radioactivity originating from both bolus and infusion. Corresponds to DICOM Tag (0018,1074) Radionuclide Total Dose.",
+      "candidateTerms": "InjectedRadioactivity",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "InjectedRadioactivity"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "RECOMMENDED. List of frequencies (in Hz) used by the head localisation coils (HLC in CTF systems, HPI in Elekta, COH in BTi/4D) that track the subject\u2019s head position in the MEG helmet (e.g. [293, 307, 314, 321])",
       "candidateTerms": "HeadCoilFrequency",
       "associatedWith": [
@@ -3124,6 +4492,26 @@
         "BIDS"
       ],
       "label": "HeadCoilFrequency"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Time in relation to TimeZero defined by the *_pet.json. (for example, 5)",
+      "candidateTerms": "time",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "time"
     },
     {
       "@type": [
@@ -3138,6 +4526,26 @@
       ],
       "label": "code",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSFolder"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Name of pharmaceutical coadministered with tracer.",
+      "candidateTerms": "PharmaceuticalName",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "PharmaceuticalName"
     },
     {
       "@type": [
@@ -3208,6 +4616,26 @@
     {
       "@type": [
         "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Measured blood density. Unit of blood density should be in \"g/mL\".",
+      "candidateTerms": "BloodDensity",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "BloodDensity"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
         "owl:Class"
       ],
       "description": "fieldmap is a suffix name that denotes that the file contains field map data that has been generated on the MRI scanner.",
@@ -3224,8 +4652,15 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "RECOMMENDED. Manufacturer's model name of the equipment that produced the composite instances. Corresponds to DICOM Tag 0008, 1090 Manufacturers Model Name",
+      "description": "REQUIRED PET scanner model name (for example, 'mMR Biograph').",
       "candidateTerms": "ManufacturersModelName",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:stringc"
+          ]
+        }
+      ],
       "associatedWith": [
         "NIDM",
         "BIDS"
@@ -3313,6 +4748,66 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "RECOMMENDED Unit of the molecular weights measurement (for example, 'g/mol').",
+      "candidateTerms": "TracerMolecularWaightUnits",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "TracerMolecularWaightUnits"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Specific activity of compound injected. Note this is not required for an FDG acquisition, since it is not available, and SHOULD be set to 'n/a'.",
+      "candidateTerms": "SpecificRadioactivity",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "SpecificRadioactivity"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED Accurate molecular weight of the tracer used.",
+      "candidateTerms": "TracerMolecularWeight",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:float"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "TracerMolecularWeight"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "OPTIONAL. Primary categorisation of each trial to identify them as instances of the experimental conditions. For example: for a response inhibition task, it could take on values go and no-go to refer to response initiation and response inhibition experimental conditions.",
       "candidateTerms": "trial_type",
       "associatedWith": [
@@ -3337,6 +4832,26 @@
       ],
       "label": "Task",
       "supertypeCDEs": "http://purl.org/nidash/bids#BIDSEntity"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "REQUIRED Unit format of specified specific radioactivity (for example, 'Bq/g'). Note this is not required for an FDG acquisition, since it is not available, and SHOULD be set to 'n/a'.",
+      "candidateTerms": "SpecificRadioactivityUnits",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "SpecificRadioactivityUnits"
     },
     {
       "@type": [
@@ -3383,6 +4898,46 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "RECOMMENDED Unit of the specified molar radioactivity (for example, 'GBq/umol').",
+      "candidateTerms": "MolarActivityUnits",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "MolarActivityUnits"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED, but REQUIRED if ModeOfAdministration is bolus-infusion, Unit of infusion speed (for example, \"mL/s\").",
+      "candidateTerms": "InfusionSpeedUnits",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "InfusionSpeedUnits"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "RECOMMENDED. The direction where only partial Fourier information was collected. Corresponds to DICOM Tag 0018, 9036 Partial Fourier Direction.",
       "candidateTerms": "PartialFourierDirection",
       "associatedWith": [
@@ -3391,6 +4946,26 @@
       ],
       "label": "PartialFourierDirection",
       "sameAs": "http://purl.org/nidash/dicom#dicom_00189036"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "RECOMMENDED ID of the tracer compound from the RadLex Ontology.",
+      "candidateTerms": "TracerRadLex",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "NIDM",
+        "BIDS"
+      ],
+      "label": "TracerRadLex"
     },
     {
       "@type": [
