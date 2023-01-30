@@ -7,6 +7,49 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "GFF feature format (of indeterminate version).",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "GFF",
+      "sameAs": "http://uri.interlex.org/base/ilx_0778225"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "STL is a file format native to the stereolithography CAD software created by 3D Systems. The format is used to save and share surface-rendered 3D images and also for 3D printing.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "Stereolithography format"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "STL",
+      "sameAs": "http://uri.interlex.org/base/ilx_0778885"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "Geometry format under the Neuroimaging Informatics Technology Initiative (NIfTI).",
       "citation": "Description reference: https://www.nitrc.org/projects/gifti/",
       "responseOptions": [
@@ -28,19 +71,22 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "A topic concerning high-throughput sequencing of cDNA to measure the RNA content (transcriptome) of a sample, for example, to investigate how different alleles of a gene are expressed, detect post-transcriptional mutations or identify gene fusions.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
       "responseOptions": [
         {
           "valueType": [
             "xsd:string"
-          ]
+          ],
+          "allowableValues": "RNAseq"
         }
       ],
       "associatedWith": [
         "CONP",
         "DATS"
       ],
-      "label": "MRI-BIDS",
-      "sameAs": ""
+      "label": "RNA-Seq",
+      "sameAs": "http://uri.interlex.org/base/ilx_0739716"
     },
     {
       "@type": [
@@ -89,8 +135,28 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Joint Picture Group file format for lossy graphics file.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "description": "Brain Imaging Data Structure (BIDS) for organizing and describing MRI datasets.",
+      "citation": "Gorgolewski, K., Auer, T., Calhoun, V. et al. The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. Sci Data 3, 160044 (2016). https://doi.org/10.1038/sdata.2016.44",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "Brain Imaging Data Structure"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "BIDS",
+      "sameAs": "RRID:SCR_016124"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "responseOptions": [
         {
           "valueType": [
@@ -102,8 +168,8 @@
         "CONP",
         "DATS"
       ],
-      "label": "JPEG",
-      "sameAs": "http://uri.interlex.org/base/ilx_0778757"
+      "label": "MRI-BIDS",
+      "sameAs": ""
     },
     {
       "@type": [
@@ -125,89 +191,6 @@
       ],
       "label": "JSON",
       "sameAs": "http://uri.interlex.org/base/ilx_0780238"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "OBJ",
-      "sameAs": ""
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "Textual format.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "TXT",
-      "sameAs": "http://uri.interlex.org/base/ilx_0780115"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The DICOM File Format provides a means to encapsulate in a File the Data Set representing a SOP Instance related to a DICOM Information Object.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "DICOM",
-      "sameAs": "http://uri.interlex.org/base/ilx_0382170"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "A topic concerning high-throughput sequencing of cDNA to measure the RNA content (transcriptome) of a sample, for example, to investigate how different alleles of a gene are expressed, detect post-transcriptional mutations or identify gene fusions.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "RNAseq"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "RNA-Seq",
-      "sameAs": "http://uri.interlex.org/base/ilx_0739716"
     },
     {
       "@type": [
@@ -236,8 +219,6 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Portable Document Format.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
       "responseOptions": [
         {
           "valueType": [
@@ -249,156 +230,8 @@
         "CONP",
         "DATS"
       ],
-      "label": "PDF",
-      "sameAs": "http://uri.interlex.org/base/ilx_0778375"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "GNU zip compressed file format common to Unix-based operating systems.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "GZ",
-      "sameAs": "http://uri.interlex.org/base/ilx_0780292"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "Format of Affymetrix data file of information about (raw) expression levels of the individual probes.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "CEL",
-      "sameAs": "http://uri.interlex.org/base/ilx_0780089"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "bigWig format for large sequence annotation tracks that consist of a value for each sequence position. Similar to textual WIG format.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "bigWig",
-      "sameAs": "http://uri.interlex.org/base/ilx_0778847"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "Microsoft Excel spreadsheet format.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "XLS",
-      "sameAs": "http://uri.interlex.org/base/ilx_0779721"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "GFF feature format (of indeterminate version).",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "GFF",
-      "sameAs": "http://uri.interlex.org/base/ilx_0778225"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "STL is a file format native to the stereolithography CAD software created by 3D Systems. The format is used to save and share surface-rendered 3D images and also for 3D printing.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "Stereolithography format"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "STL",
-      "sameAs": "http://uri.interlex.org/base/ilx_0778885"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "FASTA format including NCBI-style IDs.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "FASTA",
-      "sameAs": "http://uri.interlex.org/base/ilx_0778372"
+      "label": "MIF",
+      "sameAs": ""
     },
     {
       "@type": [
@@ -426,6 +259,193 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "A file format for medical imaging data building upon the NetCDF (Network Common Data Format).",
+      "citation": "Description reference: MINC Wikibook https://en.wikibooks.org/wiki/MINC/SoftwareDevelopment/MINC2.0_File_Format_Reference",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "MINC",
+      "sameAs": ""
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "Textual format.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "TXT",
+      "sameAs": "http://uri.interlex.org/base/ilx_0780115"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "bigWig format for large sequence annotation tracks that consist of a value for each sequence position. Similar to textual WIG format.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "bigWig",
+      "sameAs": "http://uri.interlex.org/base/ilx_0778847"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "Format of Affymetrix data file of information about (raw) expression levels of the individual probes.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "CEL",
+      "sameAs": "http://uri.interlex.org/base/ilx_0780089"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "FASTA format including NCBI-style IDs.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "FASTA",
+      "sameAs": "http://uri.interlex.org/base/ilx_0778372"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "GNU zip compressed file format common to Unix-based operating systems.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "GZ",
+      "sameAs": "http://uri.interlex.org/base/ilx_0780292"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "Portable Document Format.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "PDF",
+      "sameAs": "http://uri.interlex.org/base/ilx_0778375"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "The DICOM File Format provides a means to encapsulate in a File the Data Set representing a SOP Instance related to a DICOM Information Object.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "DICOM",
+      "sameAs": "http://uri.interlex.org/base/ilx_0382170"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "OBJ",
+      "sameAs": ""
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "Variant Call Format (VCF) for sequence variation (indels, polymorphisms, structural variation).",
       "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
       "responseOptions": [
@@ -441,6 +461,27 @@
       ],
       "label": "VCF",
       "sameAs": "http://uri.interlex.org/base/ilx_0778344"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "Joint Picture Group file format for lossy graphics file.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "JPEG",
+      "sameAs": "http://uri.interlex.org/base/ilx_0778757"
     },
     {
       "@type": [
@@ -489,6 +530,8 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "Microsoft Excel spreadsheet format.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
       "responseOptions": [
         {
           "valueType": [
@@ -500,51 +543,8 @@
         "CONP",
         "DATS"
       ],
-      "label": "MIF",
-      "sameAs": ""
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "A file format for medical imaging data building upon the NetCDF (Network Common Data Format).",
-      "citation": "Description reference: MINC Wikibook https://en.wikibooks.org/wiki/MINC/SoftwareDevelopment/MINC2.0_File_Format_Reference",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "MINC",
-      "sameAs": ""
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "Brain Imaging Data Structure (BIDS) for organizing and describing MRI datasets.",
-      "citation": "Gorgolewski, K., Auer, T., Calhoun, V. et al. The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. Sci Data 3, 160044 (2016). https://doi.org/10.1038/sdata.2016.44",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "Brain Imaging Data Structure"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "BIDS",
-      "sameAs": "RRID:SCR_016124"
+      "label": "XLS",
+      "sameAs": "http://uri.interlex.org/base/ilx_0779721"
     },
     {
       "@type": [
@@ -626,6 +626,1013 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "A mammal of the primate order and genus homo.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCBITaxon:9606",
+      "label": "human",
+      "sameAs": "http://uri.interlex.org/base/ilx_0105114"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "MESH:C493462",
+      "label": "VAChT"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "isAbout": [
+        {
+          "@id": "https://www.jla.nihr.ac.uk/",
+          "label": "James Lind Alliance"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "James Lind Alliance"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "The use of various techniques to directly or indirectly image the anatomy and function of the central nervous system.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCIT:C173635",
+      "label": "neuroimaging",
+      "sameAs": "http://uri.interlex.org/base/ilx_0107478"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "cytoarchitecture",
+      "closeMatch": "http://uri.interlex.org/base/ilx_0732264"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "A type of diffusion-weighted magnetic resonance imaging (DW-MRI) that maps the diffusion of water in three dimensions, the principal purpose of which is to image the white matter of the brain, specifically measuring the anisotropy, location, and orientation of the neural tracts, which can demonstrate microstructural changes or differences with neuropathology and treatment.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCIT:C64862",
+      "label": "diffusion tensor imaging",
+      "sameAs": "http://uri.interlex.org/base/ilx_0103240"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "MRI that uses a magnet capable of producing a 7 telsa field strength. This increased magnet strength is can produce images with greater signal-to-noise ratio and increased spatial resolution, or faster imaging at standard resolution.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "7 Tesla Magnetic Resonance Imaging"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCIT:C162646",
+      "label": "7T"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "A topic concerning high-throughput sequencing of cDNA to measure the RNA content (transcriptome) of a sample, for example, to investigate how different alleles of a gene are expressed, detect post-transcriptional mutations or identify gene fusions.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "RNAseq"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "RNA-seq",
+      "sameAs": "http://uri.interlex.org/base/ilx_0739716"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "isAbout": [
+        {
+          "@id": "http://id.nlm.nih.gov/mesh/D006653",
+          "label": "Histology"
+        },
+        {
+          "@id": "http://uri.interlex.org/base/ilx_0101431",
+          "label": "Brain"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "brain histology"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "behavioral response",
+      "closeMatch": "http://purl.jp/bio/4/id/201306091739721401"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "CMR-QA:T1-Mapping",
+      "label": "T1 mapping"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "human brain mapping"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "HBM"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "Branch of science that deals with the study of the nervous system.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "neuroscience",
+      "sameAs": "http://uri.interlex.org/base/ilx_0107536"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "isAbout": [
+        {
+          "@id": "http://uri.interlex.org/base/ilx_0506130",
+          "label": "fMRI"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "processed fMRI"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "isAbout": [
+        {
+          "@id": "http://purl.bioontology.org/ontology/SNOMEDCT/113091000",
+          "label": "Magnetic resonance imaging"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "structural MRI"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "BigBrain atlas"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "The movement of chemical species under the influence of a concentration difference and as a result of random thermal agitation. The species will move from the high concentration area to the low concentration area till the concentration is uniform in the whole phase.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCIT:C82333",
+      "label": "diffusion"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "ICBM152",
+      "sameAs": ""
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "Too small to be seen except under a microscope.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCIT:C25252",
+      "label": "microscopic"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "isAbout": [
+        {
+          "@id": "http://purl.bioontology.org/ontology/SNOMEDCT/113091000",
+          "label": "Magnetic resonance imaging"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "quantitative MRI"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "MEDDRA:10036654",
+      "label": "prevention"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "3D BigBrain",
+      "sameAs": ""
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "quality assurance",
+      "closeMatch": "http://uri.interlex.org/base/ilx_0486450"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "Parts of nervous system characterized by high concentrations of myelinated axons, giving a white glossy appearance in gross preparations.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "UBERON:0002316",
+      "label": "white matter",
+      "sameAs": "http://uri.interlex.org/base/ilx_0112630"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "This gene plays a role in signal transduction and apoptosis. It is also involved in the regulation of cell cycle progression.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCIT:C18256",
+      "label": "PTEN gene"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "A part of the hippocampal formation consisting of a three layered cortex located in the forebrain bordered by the medial surface of the lateral ventricle, the dentate gyrus and the subiculum. It has 3 subfields termed CA1, CA2 and CA3. The term hippocampus is often used synonymously with hippocampal formation which consists of the hippocampus proper or Cornu Ammonis, the dentate gyrus and the subiculum.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "hippocampus",
+      "sameAs": "http://uri.interlex.org/base/ilx_0105021"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "relatedConcepts": [
+        "http://uri.interlex.org/base/ilx_0107481"
+      ],
+      "label": "neuroinformatics"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "A set of statistical procedures designed to accumulate experimental and correlational results across independent studies that address a related set of research questions.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCIT:C17886",
+      "label": "meta-analysis"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "isAbout": [
+        {
+          "@id": "http://purl.bioontology.org/ontology/SNOMEDCT/46638006",
+          "label": "Diffusion"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "diffusion template"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "open science",
+      "sameAs": "https://dbpedia.org/page/Category:Open_science"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "The Reference Sequence (RefSeq) collection aims to provide a comprehensive, integrated, non-redundant set of sequences, including genomic DNA, transcript (RNA), and protein products, for major research organisms. RefSeq standards serve as the basis for medical, functional, and diversity studies; they provide a stable reference for gene identification and characterization, mutation analysis, expression studies, polymorphism discovery, and comparative analyses. RefSeqs are used as a reagent for the functional annotation of some genome sequencing projects, including those of human and mouse.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "RefSeq"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCIT:C45335",
+      "label": "reference sequence"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "isAbout": [
+        {
+          "@id": "http://id.nlm.nih.gov/mesh/D064847",
+          "label": "Multimodal Imaging"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "multimodal data"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "phantom",
+      "closeMatch": "http://dicom.nema.org/resources/ontology/DCM/113681"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "The ability to restructure knowledge and change behavioral responses depending on the context of a situation.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCIT:C99493",
+      "label": "cognitive flexibility"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "mesoscale folding",
+      "sameAs": ""
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "isAbout": [
+        {
+          "@id": "http://uri.interlex.org/base/ilx_0105114",
+          "label": "Human"
+        },
+        {
+          "@id": "http://uri.interlex.org/base/ilx_0101431",
+          "label": "Brain"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "human brain"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "Quantitative electroencephalogram"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "SNOMEDCT:870425000",
+      "label": "qEEG"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "VFA"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "variable flip angle",
+      "closeMatch": "http://uri.interlex.org/base/ilx_0112256"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "connectome"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "http://id.nlm.nih.gov/mesh/D063132",
+      "label": "connectomes"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "isAbout": [
+        {
+          "@id": "http://purl.bioontology.org/ontology/SNOMEDCT/113091000",
+          "label": "Magnetic resonance imaging"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "MRI reconstruction"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "A spectrum of developmental disorders that includes autism, Asperger syndrome, and Rett syndrome. Signs and symptoms include poor communication skills, defective social interactions, and repetitive behaviors.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "autism spectrum disorder"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "ASD",
+      "sameAs": "http://uri.interlex.org/base/ilx_0755029"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "The part of the central nervous system contained within the cranium, comprising the forebrain, midbrain, hindbrain, and metencephalon. It is derived from the anterior part of the embryonic neural tube (or the encephalon). Does not include retina. (CUMBO)The rostral topographic division of the cerebrospinal axis, while the caudal division is the spinal cord. The usual criterion for distinguishing the two divisions in the adult is that the vertebrate brain lies within the skull whereas the spinal cord lies within the spinal (vertebral) column, although this is a difficult problem. (Swanson, 2014)",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "UBERON:0000955",
+      "label": "brain",
+      "sameAs": "http://uri.interlex.org/base/ilx_0101431"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "The pattern of GENE EXPRESSION at the level of genetic transcription in a specific organism or under specific circumstances in specific cells.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "transcriptome",
+      "sameAs": "http://uri.interlex.org/base/ilx_0490137"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "A progressive degenerative disorder of the central nervous system characterized by loss of dopamine producing neurons in the substantia nigra and the presence of Lewy bodies in the substantia nigra and locus coeruleus. Signs and symptoms include tremor which is most pronounced during rest, muscle rigidity, slowing of the voluntary movements, a tendency to fall back, and a mask-like facial expression.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "Parkinson disease"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCIT:C26845",
+      "label": "Parkinson's disease",
+      "sameAs": "http://uri.interlex.org/base/ilx_0764151"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "A concerted research effort financed by the National Institutes of Health to map and create a database of neural connections of the human brain.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "human connectome project",
+      "sameAs": "http://uri.interlex.org/base/ilx_0495920"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "The use of various techniques to directly or indirectly image the anatomy and function of the central nervous system.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "Neuroimaging"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCIT:C173635",
+      "label": "brain imaging",
+      "closeMatch": "http://uri.interlex.org/base/ilx_0497864"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "magnetization-prepared 2 rapid gradient echoes"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "relatedConcepts": [
+        "NCIT:C118462"
+      ],
+      "label": "MP2RAGE",
+      "sameAs": ""
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "responseOptions": [
         {
           "valueType": [
@@ -654,28 +1661,6 @@
         {
           "valueType": [
             "xsd:string"
-          ],
-          "allowableValues": "Magnetic resonance imaging scanner"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "MRI scanner",
-      "sameAs": "http://uri.interlex.org/base/ilx_0106463"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "Having to do with children.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
           ]
         }
       ],
@@ -683,8 +1668,31 @@
         "CONP",
         "DATS"
       ],
-      "ontologyConceptID": "NCIT:C39299",
-      "label": "pediatric"
+      "label": "3D atlas",
+      "sameAs": ""
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "A childhood disorder that has a neurological basis and manifests as a developmental disability.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "neurodevelopmental disease"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCIT:C89338",
+      "label": "neurodevelopmental disorder",
+      "sameAs": "http://uri.interlex.org/base/ilx_0107459"
     },
     {
       "@type": [
@@ -698,34 +1706,18 @@
           ]
         }
       ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "quality assurance",
-      "closeMatch": "http://uri.interlex.org/base/ilx_0486450"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "MRI that uses a magnet capable of producing a 7 telsa field strength. This increased magnet strength is can produce images with greater signal-to-noise ratio and increased spatial resolution, or faster imaging at standard resolution.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
+      "isAbout": [
         {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "7 Tesla Magnetic Resonance Imaging"
+          "@id": "http://purl.bioontology.org/ontology/SNOMEDCT/713152004",
+          "label": "Early childhood"
         }
       ],
       "associatedWith": [
         "CONP",
         "DATS"
       ],
-      "ontologyConceptID": "NCIT:C162646",
-      "label": "7T"
+      "label": "brain development early childhood",
+      "closeMatch": "http://purl.obolibrary.org/obo/GO_0007420"
     },
     {
       "@type": [
@@ -784,6 +1776,8 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "The original information, collected from the primary source.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
       "responseOptions": [
         {
           "valueType": [
@@ -795,29 +1789,8 @@
         "CONP",
         "DATS"
       ],
-      "label": "3D BigBrain",
-      "sameAs": ""
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "Branch of science that deals with the study of the nervous system.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "neuroscience",
-      "sameAs": "http://uri.interlex.org/base/ilx_0107536"
+      "ontologyConceptID": "NCIT:C142663",
+      "label": "raw data"
     },
     {
       "@type": [
@@ -852,109 +1825,12 @@
           ]
         }
       ],
-      "isAbout": [
-        {
-          "@id": "https://www.jla.nihr.ac.uk/",
-          "label": "James Lind Alliance"
-        }
-      ],
       "associatedWith": [
         "CONP",
         "DATS"
       ],
-      "label": "James Lind Alliance"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "isAbout": [
-        {
-          "@id": "http://id.nlm.nih.gov/mesh/D006653",
-          "label": "Histology"
-        },
-        {
-          "@id": "http://uri.interlex.org/base/ilx_0101431",
-          "label": "Brain"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "brain histology"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "A progressive degenerative disorder of the central nervous system characterized by loss of dopamine producing neurons in the substantia nigra and the presence of Lewy bodies in the substantia nigra and locus coeruleus. Signs and symptoms include tremor which is most pronounced during rest, muscle rigidity, slowing of the voluntary movements, a tendency to fall back, and a mask-like facial expression.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "Parkinson disease"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCIT:C26845",
-      "label": "Parkinson's disease",
-      "sameAs": "http://uri.interlex.org/base/ilx_0764151"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "Parts of nervous system characterized by high concentrations of myelinated axons, giving a white glossy appearance in gross preparations.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "UBERON:0002316",
-      "label": "white matter",
-      "sameAs": "http://uri.interlex.org/base/ilx_0112630"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "CMR-QA:T1-Mapping",
-      "label": "T1 mapping"
+      "label": "functional variomics",
+      "sameAs": ""
     },
     {
       "@type": [
@@ -975,68 +1851,6 @@
       ],
       "label": "VFA",
       "closeMatch": "http://uri.interlex.org/base/ilx_0112256"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "isAbout": [
-        {
-          "@id": "http://id.nlm.nih.gov/mesh/D064847",
-          "label": "Multimodal Imaging"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "multimodal data"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "Quantitative electroencephalogram"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "SNOMEDCT:870425000",
-      "label": "qEEG"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "healthy adult"
     },
     {
       "@type": [
@@ -1066,7 +1880,52 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "The cognitive process of selectively concentrating on one aspect of the environment while ignoring other things.",
+      "description": "A point mutation occurring within the protein-coding region of a gene, and which codes for a different amino acid than expected.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCIT:C18133",
+      "label": "missense mutation"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "isAbout": [
+        {
+          "@id": "http://uri.interlex.org/base/ilx_0107536",
+          "label": "Neuroscience"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "network neuroscience"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "The analysis of transcriptomes, or a set of all the RNA molecules in a specific cell, tissue etc.",
       "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
       "responseOptions": [
         {
@@ -1079,30 +1938,86 @@
         "CONP",
         "DATS"
       ],
-      "label": "attention",
-      "sameAs": "http://uri.interlex.org/base/ilx_0100980"
+      "label": "transcriptomics",
+      "sameAs": "http://uri.interlex.org/base/ilx_0739406"
     },
     {
       "@type": [
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "A spectrum of developmental disorders that includes autism, Asperger syndrome, and Rett syndrome. Signs and symptoms include poor communication skills, defective social interactions, and repetitive behaviors.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "description": "The act of directing or determining; regulation or maintenance of a function or action; a relation of constraint of one entity (thing or person or group) by another.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
       "responseOptions": [
         {
           "valueType": [
             "xsd:string"
-          ],
-          "allowableValues": "autism spectrum disorder"
+          ]
         }
       ],
       "associatedWith": [
         "CONP",
         "DATS"
       ],
-      "label": "ASD",
-      "sameAs": "http://uri.interlex.org/base/ilx_0755029"
+      "ontologyConceptID": "NCIT:C61299",
+      "label": "control"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "healthy adult"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "Magnetic resonance imaging scanner"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "MRI scanner",
+      "sameAs": "http://uri.interlex.org/base/ilx_0106463"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "group study",
+      "closeMatch": "http://semanticscience.org/resource/SIO_000403"
     },
     {
       "@type": [
@@ -1130,10 +2045,16 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "A type of functional MRI that images dynamic changes in brain tissue while the subject performs a task or experiences a sensory stimulus designed to target specific cognitive processes.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
       "responseOptions": [
         {
           "valueType": [
             "xsd:string"
+          ],
+          "allowableValues": [
+            "task functional MRI",
+            "task function magnetic resonance imaging"
           ]
         }
       ],
@@ -1141,8 +2062,9 @@
         "CONP",
         "DATS"
       ],
-      "label": "mesoscale folding",
-      "sameAs": ""
+      "ontologyConceptID": "NCIT:C178023",
+      "label": "task fMRI",
+      "closeMatch": "http://uri.interlex.org/base/ilx_0506130"
     },
     {
       "@type": [
@@ -1181,395 +2103,6 @@
       ],
       "isAbout": [
         {
-          "@id": "http://purl.bioontology.org/ontology/SNOMEDCT/46638006",
-          "label": "Diffusion"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "diffusion template"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "isAbout": [
-        {
-          "@id": "http://uri.interlex.org/base/ilx_0105114",
-          "label": "Human"
-        },
-        {
-          "@id": "http://uri.interlex.org/base/ilx_0101431",
-          "label": "Brain"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "human brain"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "open science",
-      "sameAs": "https://dbpedia.org/page/Category:Open_science"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The movement of chemical species under the influence of a concentration difference and as a result of random thermal agitation. The species will move from the high concentration area to the low concentration area till the concentration is uniform in the whole phase.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCIT:C82333",
-      "label": "diffusion"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The act of directing or determining; regulation or maintenance of a function or action; a relation of constraint of one entity (thing or person or group) by another.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCIT:C61299",
-      "label": "control"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "A topic concerning high-throughput sequencing of cDNA to measure the RNA content (transcriptome) of a sample, for example, to investigate how different alleles of a gene are expressed, detect post-transcriptional mutations or identify gene fusions.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "RNAseq"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "RNA-seq",
-      "sameAs": "http://uri.interlex.org/base/ilx_0739716"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "A set of statistical procedures designed to accumulate experimental and correlational results across independent studies that address a related set of research questions.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCIT:C17886",
-      "label": "meta-analysis"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "group study",
-      "closeMatch": "http://semanticscience.org/resource/SIO_000403"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The original information, collected from the primary source.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCIT:C142663",
-      "label": "raw data"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "A concerted research effort financed by the National Institutes of Health to map and create a database of neural connections of the human brain.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "human connectome project",
-      "sameAs": "http://uri.interlex.org/base/ilx_0495920"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The use of various techniques to directly or indirectly image the anatomy and function of the central nervous system.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCIT:C173635",
-      "label": "neuroimaging",
-      "sameAs": "http://uri.interlex.org/base/ilx_0107478"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "behavioral response",
-      "closeMatch": "http://purl.jp/bio/4/id/201306091739721401"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "A childhood disorder that has a neurological basis and manifests as a developmental disability.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "neurodevelopmental disease"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCIT:C89338",
-      "label": "neurodevelopmental disorder",
-      "sameAs": "http://uri.interlex.org/base/ilx_0107459"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The ability to restructure knowledge and change behavioral responses depending on the context of a situation.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCIT:C99493",
-      "label": "cognitive flexibility"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "BigBrain atlas"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "magnetization-prepared 2 rapid gradient echoes"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "relatedConcepts": [
-        "NCIT:C118462"
-      ],
-      "label": "MP2RAGE",
-      "sameAs": ""
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "A mammal of the primate order and genus homo.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCBITaxon:9606",
-      "label": "human",
-      "sameAs": "http://uri.interlex.org/base/ilx_0105114"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "isAbout": [
-        {
-          "@id": "http://purl.bioontology.org/ontology/SNOMEDCT/113091000",
-          "label": "Magnetic resonance imaging"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "MRI reconstruction"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "isAbout": [
-        {
           "@id": "http://purl.bioontology.org/ontology/LNC/LA14025-3",
           "label": "hg19"
         }
@@ -1579,370 +2112,6 @@
         "DATS"
       ],
       "label": "hg19"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "isAbout": [
-        {
-          "@id": "http://purl.bioontology.org/ontology/SNOMEDCT/113091000",
-          "label": "Magnetic resonance imaging"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "quantitative MRI"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "connectome"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "http://id.nlm.nih.gov/mesh/D063132",
-      "label": "connectomes"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "cytoarchitecture",
-      "closeMatch": "http://uri.interlex.org/base/ilx_0732264"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The pattern of GENE EXPRESSION at the level of genetic transcription in a specific organism or under specific circumstances in specific cells.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "transcriptome",
-      "sameAs": "http://uri.interlex.org/base/ilx_0490137"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "isAbout": [
-        {
-          "@id": "http://uri.interlex.org/base/ilx_0107536",
-          "label": "Neuroscience"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "network neuroscience"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "A point mutation occurring within the protein-coding region of a gene, and which codes for a different amino acid than expected.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCIT:C18133",
-      "label": "missense mutation"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "Too small to be seen except under a microscope.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCIT:C25252",
-      "label": "microscopic"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "VFA"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "variable flip angle",
-      "closeMatch": "http://uri.interlex.org/base/ilx_0112256"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "relatedConcepts": [
-        "http://uri.interlex.org/base/ilx_0107481"
-      ],
-      "label": "neuroinformatics"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The analysis of transcriptomes, or a set of all the RNA molecules in a specific cell, tissue etc.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "transcriptomics",
-      "sameAs": "http://uri.interlex.org/base/ilx_0739406"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "MEDDRA:10036654",
-      "label": "prevention"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "A part of the hippocampal formation consisting of a three layered cortex located in the forebrain bordered by the medial surface of the lateral ventricle, the dentate gyrus and the subiculum. It has 3 subfields termed CA1, CA2 and CA3. The term hippocampus is often used synonymously with hippocampal formation which consists of the hippocampus proper or Cornu Ammonis, the dentate gyrus and the subiculum.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "hippocampus",
-      "sameAs": "http://uri.interlex.org/base/ilx_0105021"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The part of the central nervous system contained within the cranium, comprising the forebrain, midbrain, hindbrain, and metencephalon. It is derived from the anterior part of the embryonic neural tube (or the encephalon). Does not include retina. (CUMBO)The rostral topographic division of the cerebrospinal axis, while the caudal division is the spinal cord. The usual criterion for distinguishing the two divisions in the adult is that the vertebrate brain lies within the skull whereas the spinal cord lies within the spinal (vertebral) column, although this is a difficult problem. (Swanson, 2014)",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "UBERON:0000955",
-      "label": "brain",
-      "sameAs": "http://uri.interlex.org/base/ilx_0101431"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "isAbout": [
-        {
-          "@id": "http://purl.bioontology.org/ontology/SNOMEDCT/713152004",
-          "label": "Early childhood"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "brain development early childhood",
-      "closeMatch": "http://purl.obolibrary.org/obo/GO_0007420"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "isAbout": [
-        {
-          "@id": "http://uri.interlex.org/base/ilx_0506130",
-          "label": "fMRI"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "processed fMRI"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "ICBM152",
-      "sameAs": ""
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The Reference Sequence (RefSeq) collection aims to provide a comprehensive, integrated, non-redundant set of sequences, including genomic DNA, transcript (RNA), and protein products, for major research organisms. RefSeq standards serve as the basis for medical, functional, and diversity studies; they provide a stable reference for gene identification and characterization, mutation analysis, expression studies, polymorphism discovery, and comparative analyses. RefSeqs are used as a reagent for the functional annotation of some genome sequencing projects, including those of human and mouse.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "RefSeq"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCIT:C45335",
-      "label": "reference sequence"
     },
     {
       "@type": [
@@ -1970,6 +2139,8 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "The cognitive process of selectively concentrating on one aspect of the environment while ignoring other things.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
       "responseOptions": [
         {
           "valueType": [
@@ -1981,98 +2152,15 @@
         "CONP",
         "DATS"
       ],
-      "label": "3D atlas",
-      "sameAs": ""
+      "label": "attention",
+      "sameAs": "http://uri.interlex.org/base/ilx_0100980"
     },
     {
       "@type": [
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "human brain mapping"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "HBM"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "A type of functional MRI that images dynamic changes in brain tissue while the subject performs a task or experiences a sensory stimulus designed to target specific cognitive processes.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": [
-            "task functional MRI",
-            "task function magnetic resonance imaging"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCIT:C178023",
-      "label": "task fMRI",
-      "closeMatch": "http://uri.interlex.org/base/ilx_0506130"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "phantom",
-      "closeMatch": "http://dicom.nema.org/resources/ontology/DCM/113681"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "MESH:C493462",
-      "label": "VAChT"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "A type of diffusion-weighted magnetic resonance imaging (DW-MRI) that maps the diffusion of water in three dimensions, the principal purpose of which is to image the white matter of the brain, specifically measuring the anisotropy, location, and orientation of the neural tracts, which can demonstrate microstructural changes or differences with neuropathology and treatment.",
+      "description": "Having to do with children.",
       "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
       "responseOptions": [
         {
@@ -2085,9 +2173,8 @@
         "CONP",
         "DATS"
       ],
-      "ontologyConceptID": "NCIT:C64862",
-      "label": "diffusion tensor imaging",
-      "sameAs": "http://uri.interlex.org/base/ilx_0103240"
+      "ontologyConceptID": "NCIT:C39299",
+      "label": "pediatric"
     },
     {
       "@type": [
@@ -2114,87 +2201,21 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "The use of various techniques to directly or indirectly image the anatomy and function of the central nervous system.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "description": "The license lets others distribute, remix, tweak, and build upon your work, even commercially, as long as they credit you for the original creation.",
       "responseOptions": [
         {
           "valueType": [
             "xsd:string"
           ],
-          "allowableValues": "Neuroimaging"
+          "allowableValues": "CC BY Attribution 4.0 International"
         }
       ],
       "associatedWith": [
         "CONP",
         "DATS"
       ],
-      "ontologyConceptID": "NCIT:C173635",
-      "label": "brain imaging",
-      "closeMatch": "http://uri.interlex.org/base/ilx_0497864"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "functional variomics",
-      "sameAs": ""
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "isAbout": [
-        {
-          "@id": "http://purl.bioontology.org/ontology/SNOMEDCT/113091000",
-          "label": "Magnetic resonance imaging"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "structural MRI"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "This gene plays a role in signal transduction and apoptosis. It is also involved in the regulation of cell cycle progression.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCIT:C18256",
-      "label": "PTEN gene"
+      "label": "CC BY-4.0",
+      "sameAs": "http://uri.interlex.org/base/ilx_0778111"
     },
     {
       "@type": [
@@ -2216,6 +2237,27 @@
       ],
       "label": "CC BY-NC-ND",
       "sameAs": "http://uri.interlex.org/base/ilx_0102623"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "License that lets others remix, tweak, and build upon your work non-commercially, and although their new works must also acknowledge you in the manner specified and be non-commercial, they don't have to license their derivative works on the same terms. Notice - For any reuse or distribution, you must make clear to others the license terms of this work. The best way to do this is with a link to the CC BY-NC web page.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "Creative Commons Attribution-NonCommercial License"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "CC BY-NC",
+      "sameAs": "http://uri.interlex.org/base/ilx_0102622"
     },
     {
       "@type": [
@@ -2264,51 +2306,6 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
-      "description": "Open license requiring attribution and Share-Alike for Data/Databases.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": [
-            "ODC Open Database License",
-            "Open Data Commons Open Database License"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "ODbL",
-      "sameAs": "http://uri.interlex.org/base/ilx_0107905"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "License that lets others remix, tweak, and build upon your work non-commercially, and although their new works must also acknowledge you in the manner specified and be non-commercial, they don't have to license their derivative works on the same terms. Notice - For any reuse or distribution, you must make clear to others the license terms of this work. The best way to do this is with a link to the CC BY-NC web page.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "Creative Commons Attribution-NonCommercial License"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "CC BY-NC",
-      "sameAs": "http://uri.interlex.org/base/ilx_0102622"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
       "description": "Open license requiring attribution for data/databases.",
       "responseOptions": [
         {
@@ -2333,6 +2330,30 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "Open license requiring attribution and Share-Alike for Data/Databases.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": [
+            "ODC Open Database License",
+            "Open Data Commons Open Database License"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "ODbL",
+      "sameAs": "http://uri.interlex.org/base/ilx_0107905"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "A free software license created by Massachusetts Institute of Technology (MIT). It is a permissive license, meaning it permits reuse within proprietary software on the condition that the MIT license is distributed with the new software.NITRC definition: The MIT license, also the X Consortium License, or a derivative, is fairly permissive, placing few restrictions on the developer or user.  As a developer, you may distribute source or binaries (with or without source code).  As a tool user, you may modify and redistribute this tool or resource.  If source code is distributed, a user may browse the source code to understand the tool's workings, modify the tool to better suit local needs, and may share a modified version.  If source code is not distributed, a user may still redistribute the tool as part of another package.",
       "responseOptions": [
         {
@@ -2347,69 +2368,6 @@
       ],
       "label": "MIT license",
       "sameAs": "http://uri.interlex.org/base/ilx_0107013"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The license lets others distribute, remix, tweak, and build upon your work, even commercially, as long as they credit you for the original creation.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "CC BY Attribution 4.0 International"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "CC BY-4.0",
-      "sameAs": "http://uri.interlex.org/base/ilx_0778111"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "License that lets others remix, tweak, and build upon your work even for commercial purposes, as long as they credit you in the manner specified and license their new creations under the identical terms. This license is often compared to \"copyleft\" free and open source software licenses. All new works based on yours will carry the same license, so any derivatives will also allow commercial use. This is the license used by Wikipedia, and is recommended for materials that would benefit from incorporating content from Wikipedia and similarly licensed projects. Notice - For any reuse or distribution, you must make clear to others the license terms of this work. The best way to do this is with a link to the CC BY-SA web page.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "Creative Commons Attribution-ShareAlike License"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "CC BY-SA",
-      "sameAs": "http://uri.interlex.org/base/ilx_0102625"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "License that lets others remix, tweak, and build upon your work non-commercially, as long as they credit you n the manner specified and license their new creations under the identical terms. Notice - For any reuse or distribution, you must make clear to others the license terms of this work. The best way to do this is with a link to the CC BY-NC-SA web page.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "Creative Commons Attribution-NonCommercial-ShareAlike License"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "CC BY-NC-SA",
-      "sameAs": "http://uri.interlex.org/base/ilx_0102624"
     },
     {
       "@type": [
@@ -2438,23 +2396,44 @@
     {
       "@type": [
         "CommonDataElement",
-        "owl:AnnotationProperty"
+        "owl:DatatypeProperty"
       ],
-      "description": "Freely and publicly available.",
+      "description": "License that lets others remix, tweak, and build upon your work non-commercially, as long as they credit you n the manner specified and license their new creations under the identical terms. Notice - For any reuse or distribution, you must make clear to others the license terms of this work. The best way to do this is with a link to the CC BY-NC-SA web page.",
       "responseOptions": [
         {
           "valueType": [
             "xsd:string"
-          ]
+          ],
+          "allowableValues": "Creative Commons Attribution-NonCommercial-ShareAlike License"
         }
       ],
       "associatedWith": [
         "CONP",
         "DATS"
       ],
-      "label": "open",
-      "closeMatch": "http://uri.interlex.org/base/ilx_0491659",
-      "sameAs": "http://uri.interlex.org/base/ilx_0778036"
+      "label": "CC BY-NC-SA",
+      "sameAs": "http://uri.interlex.org/base/ilx_0102624"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "License that lets others remix, tweak, and build upon your work even for commercial purposes, as long as they credit you in the manner specified and license their new creations under the identical terms. This license is often compared to \"copyleft\" free and open source software licenses. All new works based on yours will carry the same license, so any derivatives will also allow commercial use. This is the license used by Wikipedia, and is recommended for materials that would benefit from incorporating content from Wikipedia and similarly licensed projects. Notice - For any reuse or distribution, you must make clear to others the license terms of this work. The best way to do this is with a link to the CC BY-SA web page.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "Creative Commons Attribution-ShareAlike License"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "CC BY-SA",
+      "sameAs": "http://uri.interlex.org/base/ilx_0102625"
     },
     {
       "@type": [
@@ -2475,6 +2454,27 @@
       ],
       "label": "controlled",
       "sameAs": "http://uri.interlex.org/base/ilx_0778035"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:AnnotationProperty"
+      ],
+      "description": "Freely and publicly available.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "open",
+      "closeMatch": "http://uri.interlex.org/base/ilx_0491659",
+      "sameAs": "http://uri.interlex.org/base/ilx_0778036"
     },
     {
       "@type": [
@@ -2532,28 +2532,7 @@
         "CONP",
         "DATS"
       ],
-      "label": "cognition",
-      "closeMatch": "http://purl.bioontology.org/ontology/SNOMEDCT/449888003"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "T1 weighted"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "T1W",
-      "closeMatch": "http://radlex.org/RID/RID10794"
+      "label": "neurosensory assessments"
     },
     {
       "@type": [
@@ -2571,132 +2550,8 @@
         "CONP",
         "DATS"
       ],
-      "label": "basic demographics",
-      "closeMatch": "http://purl.bioontology.org/ontology/LNC/LP204151-7"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "Research in support of healing by diagnosis, treatment, and prevention of disease.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "medicine",
-      "sameAs": "http://uri.interlex.org/base/ilx_0106723"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The ability to maintain visual information online for a limited time interval (~ 4 sec). This information has a capacity of ~15 items and is not stored permanently.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "visual working memory",
-      "sameAs": "http://uri.interlex.org/base/ilx_0112531"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The neurophysiologic exploration of the electrical activity of the brain by the application of electrodes to the scalp. The resulting traces are known as an electroencephalogram (EEG). This test is used to assess brain damage, epilepsy and other problems.",
-      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ],
-          "allowableValues": "electroencephalogram"
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "NCIT:C38054",
-      "label": "EEG",
-      "closeMatch": "http://purl.bioontology.org/ontology/SNOMEDCT/54550000"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "high-throughput expression neuroscience data",
-      "sameAs": ""
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "cognitive behavioral data",
-      "closeMatch": "http://purl.obolibrary.org/obo/NBO_0000607"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "Indicates whether or not the subject is a quality control phantom. Enumerated Values: YES NO If this Attribute is absent, then the subject may or may not be a phantom. This attribute describes a characteristic of the Imaging Subject. It is distinct from Quality Control Image (0028,0300) in the , which is used to describe an image acquired.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "quality control subject",
-      "sameAs": "http://uri.interlex.org/base/ilx_0381893"
+      "label": "demographics",
+      "sameAs": "http://purl.bioontology.org/ontology/LNC/LP204151-7"
     },
     {
       "@type": [
@@ -2741,6 +2596,27 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "description": "Research in support of healing by diagnosis, treatment, and prevention of disease.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "medicine",
+      "sameAs": "http://uri.interlex.org/base/ilx_0106723"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "The principle of functional MRI imaging is to take a series of images of an organ in quick succession and to statistically analyze the images for differences among them. Most commonly used in studies of brain function.",
       "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
       "responseOptions": [
@@ -2764,6 +2640,45 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "basic demographics",
+      "closeMatch": "http://purl.bioontology.org/ontology/LNC/LP204151-7"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "T1 weighted"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "T1W",
+      "closeMatch": "http://radlex.org/RID/RID10794"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "Imaging that uses radiofrequency waves and a strong magnetic field rather than x-rays to provide detailed pictures of internal organs and tissues. The technique is valuable for the diagnosis of many pathologic conditions, including cancer, heart and vascular disease, stroke, and joint and musculoskeletal disorders.",
       "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
       "responseOptions": [
@@ -2780,106 +2695,6 @@
       ],
       "ontologyConceptID": "NCIT:C16809",
       "label": "MRI"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The study of the epigenetic modifications of a whole cell, tissue, organism etc.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "epigenomics",
-      "sameAs": "http://uri.interlex.org/base/ilx_0103885"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The study of genes, genetic variation and heredity in living organisms.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "genetics",
-      "sameAs": "http://uri.interlex.org/base/ilx_0104598"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "ontologyConceptID": "MESH:D006653",
-      "label": "histology"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "The analysis of transcriptomes, or a set of all the RNA molecules in a specific cell, tissue etc.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "transcriptomics",
-      "sameAs": "http://uri.interlex.org/ilx_0739406"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "neurosensory assessments"
     },
     {
       "@type": [
@@ -2928,6 +2743,250 @@
         "CommonDataElement",
         "owl:DatatypeProperty"
       ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "high-throughput expression neuroscience data",
+      "sameAs": ""
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "MESH:D006653",
+      "label": "histology"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "The ability to maintain visual information online for a limited time interval (~ 4 sec). This information has a capacity of ~15 items and is not stored permanently.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "visual working memory",
+      "sameAs": "http://uri.interlex.org/base/ilx_0112531"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "Study that measures aspects related to the complete DNA genemone of an organsim.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "genomics",
+      "sameAs": "http://uri.interlex.org/ilx_0741204"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "cognition",
+      "closeMatch": "http://purl.bioontology.org/ontology/SNOMEDCT/449888003"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "The neurophysiologic exploration of the electrical activity of the brain by the application of electrodes to the scalp. The resulting traces are known as an electroencephalogram (EEG). This test is used to assess brain damage, epilepsy and other problems.",
+      "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ],
+          "allowableValues": "electroencephalogram"
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "ontologyConceptID": "NCIT:C38054",
+      "label": "EEG",
+      "closeMatch": "http://purl.bioontology.org/ontology/SNOMEDCT/54550000"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "cerebrospinal fluid proteins levels",
+      "closeMatch": "http://uri.interlex.org/base/ilx_0483441"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "The study of genes, genetic variation and heredity in living organisms.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "genetics",
+      "sameAs": "http://uri.interlex.org/base/ilx_0104598"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "The analysis of transcriptomes, or a set of all the RNA molecules in a specific cell, tissue etc.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "transcriptomics",
+      "sameAs": "http://uri.interlex.org/ilx_0739406"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "cognitive behavioral data",
+      "closeMatch": "http://purl.obolibrary.org/obo/NBO_0000607"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "The study of the epigenetic modifications of a whole cell, tissue, organism etc.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "epigenomics",
+      "sameAs": "http://uri.interlex.org/base/ilx_0103885"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
+      "description": "Indicates whether or not the subject is a quality control phantom. Enumerated Values: YES NO If this Attribute is absent, then the subject may or may not be a phantom. This attribute describes a characteristic of the Imaging Subject. It is distinct from Quality Control Image (0028,0300) in the , which is used to describe an image acquired.",
+      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
+      "responseOptions": [
+        {
+          "valueType": [
+            "xsd:string"
+          ]
+        }
+      ],
+      "associatedWith": [
+        "CONP",
+        "DATS"
+      ],
+      "label": "quality control subject",
+      "sameAs": "http://uri.interlex.org/base/ilx_0381893"
+    },
+    {
+      "@type": [
+        "CommonDataElement",
+        "owl:DatatypeProperty"
+      ],
       "description": "A type of functional MRI that images dynamic changes in brain tissue while the subject performs a task or experiences a sensory stimulus designed to target specific cognitive processes.",
       "citation": "Description reference: National Cancer Institute Thesaurus (NCIT), version 21.07d, 2021-07-27. Released under the CC BY 4.0 license.",
       "responseOptions": [
@@ -2965,66 +3024,7 @@
         "CONP",
         "DATS"
       ],
-      "label": "demographics",
-      "sameAs": "http://purl.bioontology.org/ontology/LNC/LP204151-7"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
       "label": "respondant demographics"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "cerebrospinal fluid proteins levels",
-      "closeMatch": "http://uri.interlex.org/base/ilx_0483441"
-    },
-    {
-      "@type": [
-        "CommonDataElement",
-        "owl:DatatypeProperty"
-      ],
-      "description": "Study that measures aspects related to the complete DNA genemone of an organsim.",
-      "citation": "Description reference: SciCrunch/Interlex. Licensed under Attribution 3.0 Unported (CC BY 3.0).",
-      "responseOptions": [
-        {
-          "valueType": [
-            "xsd:string"
-          ]
-        }
-      ],
-      "associatedWith": [
-        "CONP",
-        "DATS"
-      ],
-      "label": "genomics",
-      "sameAs": "http://uri.interlex.org/ilx_0741204"
     }
   ]
 }
