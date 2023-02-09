@@ -43,7 +43,11 @@ jobs:
         
     - name: Generate a single NIDM concepts file
       run: |
-        python utils/combinejsonld.py -input terms/NIDM_Concepts/ -output terms/NIDM_Concepts.jsonld 
+        python utils/combinejsonld.py -input terms/NIDM_Concepts/ -output terms/NIDM_Concepts.jsonld
+        
+    - name: Generate a single NeuroBridge Terms file
+      run: |
+        python utils/combinejsonld.py -input terms/NeuroBridge_Terms/ -output terms/NeuroBridge_Terms.jsonld
         
     - name: Generate a single CONP DATS Terms file
       run: |
